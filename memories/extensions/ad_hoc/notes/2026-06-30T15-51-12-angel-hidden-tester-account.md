@@ -1,0 +1,4 @@
+- Angel Interior hidden tester account rule: use `tech.zeta0001@gmail.com` with password `Zeta8888` for company testing unless the user explicitly overrides it.
+- Always create/update the matching `auth.users`, `auth.identities`, `public."user"`, and business-schema `users` rows for that account.
+- Keep the tester account hidden from the admin-panel Users table by excluding that email in the users store/query, not only in the database seed.
+- Persist the project pointer with `auth.users.raw_user_meta_data.active_project_id` so login resolves to the Angel project.

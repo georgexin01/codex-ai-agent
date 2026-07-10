@@ -1,0 +1,4 @@
+- Angel Interior auth/user workflow now has a reusable SQL template for creating or resetting an admin tester account.
+- The default tester convention is `tech.zeta0001@gmail.com` / `Zeta8888`, with hidden Users-table filtering done in the admin store/query.
+- The template must align `auth.users`, `auth.identities`, `public."user"`, and the business-schema `users` row, while also writing `raw_user_meta_data.active_project_id`.
+- The workflow should auto-run only when the request clearly matches the Angel hidden tester account pattern; otherwise it should pause for verification.

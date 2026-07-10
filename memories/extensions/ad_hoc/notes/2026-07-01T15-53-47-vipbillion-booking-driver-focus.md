@@ -1,0 +1,3 @@
+# VIPBillion booking/driver-job focus
+
+The user wants Codex to keep focused on the booking tables/CRUD and driver-job tables/CRUD surfaces together. These areas are expected to change repeatedly, including Supabase schemas, select options, relation wiring, and legacy cleanup. During future edits, actively flag unused or stale SQL, Vue components, helper functions, and select-option values that may need removal after the latest changes settle.

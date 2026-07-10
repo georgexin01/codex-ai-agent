@@ -1,0 +1,3 @@
+- For Angel Interior hidden tester login work, prefer the most recent historically verified credential source supplied by the user over any newly guessed password.
+- Do not invent a new secret when an earlier verified one exists in project history or user-provided references.
+- Keep the secret itself out of Codex skill text and memory; store only the rule that history wins.
