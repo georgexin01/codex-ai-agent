@@ -1,0 +1,34 @@
+name: Codex Routing Health
+
+on:
+  push:
+    paths:
+      - '00_PULSE.md'
+      - 'memories/**'
+      - 'skills/**'
+      - 'codex-router/**'
+      - 'config.toml'
+      - '.github/workflows/codex-routing.yml'
+  pull_request:
+    paths:
+      - '00_PULSE.md'
+      - 'memories/**'
+      - 'skills/**'
+      - 'codex-router/**'
+      - 'config.toml'
+      - '.github/workflows/codex-routing.yml'
+
+jobs:
+  routing-health:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit route integrity
+        shell: pwsh
+        run: .\codex-router\Audit-CodexRouting.ps1 -Quiet
+      - name: Run routing benchmark
+        shell: pwsh
+        run: .\codex-router\Test-CodexPerfBenchmark.ps1
+      - name: Measure route telemetry
+        shell: pwsh
+        run: .\codex-router\Measure-CodexRouteTelemetry.ps1 -Json
