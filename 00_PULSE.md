@@ -108,6 +108,7 @@ When rules compete, obey this order:
 7. **User taste and project truth override generic defaults** - current project docs, schema, config, and `USER_DNA.md` beat generic framework habits.
 
 ## 0.3 Response Quality Defaults
+- **Mandatory result table:** Every non-sentinel task, mission, or request must lead with a compact Markdown table using exactly `task | action | status`. Use evidence-based `&#10003;`, `&#10007;`, or `&#9888;` status markers. The exact `ai read .codex knowledge` sentinel remains table-free.
 - Identify the task type first: explain, plan, edit, debug, compare, or choose.
 - If the user wants options, give the recommended answer first, then short numbered alternatives.
 - If the request is ambiguous, make the safest reasonable assumption and say it plainly.
@@ -146,7 +147,7 @@ Matching rule: evaluate the longest exact trigger phrase first; never route a st
 "ai relation autoguard": "memories/project_notes/VBEN_RELATION_AUTOGUARD_PLAYBOOK.md"
 "ai claude app":      "skills/claude-app/WORKING_PROGRESS.md"      # mobile Vue/Capacitor/PWA (build-only, mock-default)
 "ai claude website":  "skills/claude-website/WORKING_PROGRESS.md"  # PHP + Supabase REST (consumes schema)
-"localhost test":      "memories/extensions/ad_hoc/notes/2026-07-10-localhost-test-trigger.md" # detect project types, start local dev servers, verify URLs
+"localhost test":      "skills/localhost-test/SKILL.md" # detect project types, start local dev servers, verify URLs
 "<3-builder DB handshake>": "skills/SHARED_DB_CONTRACT.md"
 "ai claude meta":     "skills/claude-meta/SKILL.md"
 "ai design app":      "skills/design/app/SKILL.md"
@@ -175,6 +176,7 @@ Matching rule: evaluate the longest exact trigger phrase first; never route a st
 "ai performance layer": "memories/extensions/ad_hoc/notes/2026-07-03T00-00-01-merged-codex-performance-layer.md"
 "ai luna 5.6":      "memories/extensions/ad_hoc/notes/2026-07-10-luna-5-6-vue-vben-execution-profile.md" # typed Vue/Vben implementation and verification gates
 "ai pinia contract": "skills/pinia-contract-workflow/SKILL.md" # exact PiniaStore, Function, Input app contract
+"ai cyroro audit":  "skills/pinia-contract-workflow/SKILL.md" # paired Cyroro admin/driver contract and runtime audit
 "ai cold storage audit": "memories/extensions/ad_hoc/notes/2026-07-07T00-00-00-cold-storage-promotion-policy.md"
 "ai promote memory": "memories/extensions/ad_hoc/notes/2026-07-07T00-00-00-cold-storage-promotion-policy.md"
 "ai hot cold gate": "memories/extensions/ad_hoc/notes/2026-07-07T00-00-00-cold-storage-promotion-policy.md"

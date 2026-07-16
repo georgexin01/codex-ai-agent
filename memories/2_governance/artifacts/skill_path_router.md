@@ -36,7 +36,8 @@ status: authoritative
 | `ai project handoff` | `skills/project-handoff-doc-stack/SKILL.md` | Durable root handoff docs, project truth docs, and sync rules |
 | `ai luna 5.6` / `GPT-5.6 Luna` | `memories/extensions/ad_hoc/notes/2026-07-10-luna-5-6-vue-vben-execution-profile.md` | Strict Vue/Vben typing, i18n, form-schema, complete-code, and verification gates |
 | `ai pinia contract` / `PiniaStore Function Input` | `skills/pinia-contract-workflow/SKILL.md` | Exact app Pinia store/action/input contract using the user's sheet and hotpot references |
-| `localhost test` | `memories/extensions/ad_hoc/notes/2026-07-10-localhost-test-trigger.md` | Detect active Vben, Vue app, and PHP roots; start and verify local development URLs |
+| `ai cyroro audit` | `skills/pinia-contract-workflow/SKILL.md` | Cyroro paired-app contract, schema, environment, and verification audit |
+| `localhost test` | `skills/localhost-test/SKILL.md` | Detect active Vben, Vue app, and PHP roots; start and verify local development URLs |
 
 ## Recipe and Knowledge Triggers
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Localhost Test"
+  short_description: "Start and verify runnable local apps safely"
+  default_prompt: "Run the localhost test workflow for the current workspace."

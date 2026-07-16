@@ -39,6 +39,10 @@ Default stack: Vue 3 Composition API, TypeScript, Pinia, Tailwind, Vben Admin, S
 
 ## Output Format
 
+- **Mandatory task table:** For every non-sentinel task, mission, request, or multi-step answer, make a compact Markdown table the primary result surface with exactly these columns: `task | action | status`.
+- Use `&#10003;` for completed, `&#10007;` for failed/not completed, and `&#9888;` for blocked or partially verified status. Keep the action specific and evidence-based.
+- The table may be one row for a simple request. Omit it only for the exact boot sentinel response `ai read .codex knowledge`, which must remain sentinel-only.
+
 For any comparison table or before/after request, include:
 
 | Metric | Before | After | Δ / Notes |
@@ -68,11 +72,11 @@ For any comparison table or before/after request, include:
 <!-- gitnexus:start -->
 # GitNexus — Code Intelligence
 
-This project is indexed by GitNexus as **codex-ai-agent** (3523 symbols, 3886 relationships, 16 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
+GitNexus indexing is workspace-specific. The `.codex` checkout is indexed as **codex-ai-agent**; do not assume the active project is indexed. First check the available repository list. If the active workspace is absent, do not run project impact/query commands or auto-index it; use current-file evidence and report GitNexus as unavailable. Auto-indexing requires an explicit user request.
 
 > If any GitNexus tool warns the index is stale, run `npx gitnexus analyze` in terminal first.
 
-## Always Do
+## When the active workspace is indexed
 
 - **MUST run impact analysis before editing any symbol.** Before modifying a function, class, or method, run `gitnexus_impact({target: "symbolName", direction: "upstream"})` and report the blast radius (direct callers, affected processes, risk level) to the user.
 - **MUST run `gitnexus_detect_changes()` before committing** to verify your changes only affect expected symbols and execution flows.

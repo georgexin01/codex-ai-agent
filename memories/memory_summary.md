@@ -1,124 +1,100 @@
 v1
 
 ## User Profile
-The user uses Codex for hands-on implementation, debugging, memory upkeep, and `.codex` routing improvements across several unrelated local checkouts. They prefer agents that route themselves from project shape, act directly, stay surgical, and verify against current files/tests/logs instead of giving abstract explanations or relying on stale memory [ad-hoc note]. They repeatedly care about preserving boundaries: keep localhost behavior intact when changing public domains, clone an existing module shell before editing internals, avoid visual drift when fixing builds, and preserve unrelated flows while repairing the active Angel behavior [ad-hoc note]. They also treat `.codex` itself as a product: boot-path efficiency, selective skill wake-up, durable notes/templates, and trustworthy memory capture are recurring priorities.
+The user uses Codex for direct implementation, debugging, `.codex` routing/memory maintenance, and Vue/Vben/Pinia work across several local workspaces. They prefer route-first execution: read the smallest correct entrypoint, act directly, and verify against current files, tests, logs, SQL, or browser/HTTP evidence instead of assumptions [ad-hoc note]. They repeatedly preserve boundaries: keep important routed markdown protected, keep secrets out of durable memory, keep localhost verification separate from unsolicited fixes, preserve exact public Store contracts when a spreadsheet or existing module defines them, and keep durable AI-facing guidance in concise English without translating app-layer labels/contracts [ad-hoc note]. In `trash-container-app`, they work across paired admin/driver apps with strict Pinia contract enforcement, Cyroro schema awareness, surgical UI edits, and evidence-backed localhost/workflow verification. They also want durable operating rules captured once and reused, especially for `.codex` boot behavior, reporting format, localhost detection, and contract-sensitive app work.
 
 ## User preferences
-- In full-access sessions, avoid repetitive confirmation pauses; continue through obvious next steps and stop only for destructive actions, hidden risk, or meaningful product tradeoffs [ad-hoc note]
-- Treat `ai read .codex knowledge` as a strict boot-read trigger: read the small boot route, return the sentinel only, then keep the matched route/skill family awake across nearby follow-up work [ad-hoc note]
-- When the user asks for options, rankings, or choices, lead with the recommended answer first, then give short numbered options
-- For `.codex` cleanup or maintenance, keep the review narrow and evidence-based; verify route references before deleting and protect important routed `.md` files by default
-- When the user asks for `.codex` improvements like `5 improvement`, `100/100`, or `help me ai performance alot more`, respond with structured/ranked changes and convert accepted rules into durable routed notes/templates
+- In full-access sessions, continue through obvious next steps without repetitive confirmation pauses; stop for destructive actions, hidden risk, or real tradeoffs [ad-hoc note]
+- Treat `ai read .codex knowledge` as a strict boot-read trigger: read the smallest routed entrypoint, return the sentinel only, and keep the matched route/skill family awake
+- For multi-step work, prefer a compact Markdown table with `task | changes | complete`; use `&#10003;`, `&#10007;`, and `&#9888;` from evidence, not assumptions [ad-hoc note]
+- When the user supplies numbered steps or the work splits into several missions, number the task rows; for page-wide updates, enumerate each discovered page as its own row [ad-hoc note]
+- For `.codex` maintenance, keep cleanup narrow, evidence-based, and route-safe; protect important routed `.md` files and report measurable before/after verification
+- When writing durable `.codex` knowledge, skill updates, Pinia contract audits, migration summaries, or generated developer guidance for this workspace, keep that guidance in concise English and do not translate application labels, DB values, sheet values, or public contract names [ad-hoc note]
+- When the user asks for options or rankings, lead with the recommended answer first, then short numbered options
 - For `3+` changes, multi-file work, or DB+code mixed work, list numbered steps first when active coordination will help [ad-hoc note]
-- For build/debug requests, fix the issue and rerun verification; do not stop at the first explanation or assume the first surfaced error is the only blocker
-- When the user worries a fix might `change any design` or break other areas, include regression-safety checks as part of completion
-- In VIPBillion admin work, prefer reusing the existing booking-related CRUD modules/drawers when the workflow already exists; only split into a new module when the data flow or UI behavior is genuinely different [ad-hoc note]
-- When the user says `copy and paste`, `duplicate`, `clone`, or `same modules`, duplicate the whole source module shell first and only then edit inside content [ad-hoc note]
-- In VIPBillion/Vben drawer work, reused or cloned CRUD drawers should reopen at the top scroll position; booking-launched drawers should also clear persisted mount state on close so reopening starts fresh [ad-hoc note]
-- For provenance/debug requests like `find this .modal where are they come from`, start from the exact snippet the user highlighted and trace outward through markup, runtime includes, and bundled code
-- If the user asks to save code to GitHub and then says `retry`, diagnose the push failure and retry in the same session
-- In VIPBillion website work, default localhost to `http://127.0.0.1:8000/` from the `website-vipbillion` root, and if it `suddenly stop`, check whether the PHP process is still alive before assuming a code regression
-- In VIPBillion assignment work, enforce duplicate-booking prevention at submit time across both `/drivers/jobs` and `/bookings/list`
-- In Kushiro domain work, preserve localhost and change only the published/staging hostnames the user explicitly named
-- Protect local Docker / local Supabase state unless the user explicitly permits stack changes in that turn [ad-hoc note]
-- For Angel hidden tester-account work, prefer the most recent historically verified credential source, never invent a secret, and only auto-run when the request clearly matches that pattern [ad-hoc note]
-- For Angel live debugging, keep the original goal in focus, prefer surgical fixes, verify the visible user flow, and preserve unrelated page flows [ad-hoc note]
+- In app-store work, preserve exact `PiniaStore -> Function -> Input` names; in `trash-container-app`, read the live `Trash` -> `Pinia` sheet first and keep intentional spellings like `getAllBinWIthOrder` [ad-hoc note]
+- For `trash-container-app` Pinia/Cyroro paired-app work, read the live contract, current schema, files, and callers first; keep the change budget to the affected route/store/util/type/caller set and avoid unrelated refactors [ad-hoc note]
+- In Vue/Vben work, keep user-visible text behind `$t('...')`, keep schemas typed, and return complete code instead of placeholders or truncated files [ad-hoc note]
+- When the user says exactly `localhost test`, auto-detect real runnable roots from the current workspace, verify HTTP responses, print each working raw URL on its own line, and stay in start/verify mode unless they separately ask for a fix [ad-hoc note]
+- For screenshot/design requests, change only the named page/component/property; if the user says `design only`, do not change content, DB mapping, status logic, or navigation behavior [ad-hoc note]
 
 ## General Tips
-- Prefer current file state, tests, logs, and schema over memory when evidence conflicts; truth before speed is the durable default [ad-hoc note]
-- Keep edits surgical and verify every meaningful change with read-back, smoke test, lint, build, or SQL validation before calling the task done [ad-hoc note]
-- For VIPBillion, route by subtree first: `website-vipbillion` is the PHP site and `admin-vipbillion` is the Vben admin
-- In `website-vipbillion`, launch from the site root with `php -S 127.0.0.1:8000 index.php`; wrong working directory/front-controller context can create misleading localhost `500` errors
-- For VIPBillion website FIUU work, use the `htdocs_wiper` pattern: redirect through `pay.fiuu.com/RMS/pay/{merchantId}`, map booking payloads server-side, keep `returnipn.php?treq=0&sa=...` only on return/result pages, and keep merchant credentials in project config [ad-hoc note]
-- In VIPBillion admin booking assignment, start at the shared `driver-job` store/form path; both booking and driver-job flows depend on it
-- In VIPBillion/Vben table edits, update body cells, summary row cells, horizontal scroll width, and action/checkbox offsets together whenever a column is inserted or removed [ad-hoc note]
-- In VIPBillion/Vben drawer reuse, reset scroll on open, on opened, and after nested content mount when needed; prefer one shared scroll reset helper over per-screen fixes [ad-hoc note]
-- For VIPBillion/Vben soft-delete CRUD, follow the table's real convention: slug modules use active-row partial unique indexes around `deleted_at`, newer business tables usually use `isDelete = false/true`, and RLS-blocked updates may need a `SECURITY DEFINER` RPC [ad-hoc note]
-- For Vue/Vben/Supabase work, keep DB columns `snake_case`, frontend/store/form fields `camelCase`, route views through stores, and prefer SQL files over inline `-c` commands [ad-hoc note]
-- For Angel localhost/public mismatches, verify env file selection, runtime host detection, and the actual Supabase project URL before chasing frontend rendering bugs [ad-hoc note]
-- Use [skills/awake-skill-routing/SKILL.md](/C:/Users/user/.codex/memories/skills/awake-skill-routing/SKILL.md) for compact project fingerprinting and one-skill-family boot routing [ad-hoc note]
+- Route first, then expand only if the trigger is still unclear [ad-hoc note]
+- Verify before done: use read-back, type-check/build, SQL/log checks, or browser/HTTP evidence
+- For deep `.codex` work in the Luna lane, use `HYDRATE route -> GROUND current evidence -> PLAN -> ACT -> VERIFY -> REPORT` [ad-hoc note]
+- After major `.codex` changes, the one-time boot refresh is one fresh chat plus exactly `ai read .codex knowledge`
+- If root Git shows `m memories` or mode `160000`, treat it as nested Git metadata: remove the cached gitlink, re-add `memories/`, and verify no nested `.git` remains
+- For `trash-container-app` paired-app audits, use bounded `Trash -> Pinia` sheet reads, run `pinia-contract-workflow/scripts/check_paired_pinia_contract.ps1`, inspect the affected store plus direct `utils/types` and one caller per app, then do static contract/env/legacy checks before authenticated reads or builds [ad-hoc note]
+- In `trash-container-app`, active implementation targets are `web-admin-app` and `web-driver-app`; `admin-panel-trash` is usually reference-only unless the user explicitly reactivates it [ad-hoc note]
+- `trash-container-app` localhost defaults currently route to `admin-panel-trash` on `6006`, `web-admin-app` on `5173`, and `web-driver-app` on `3000`; reuse [skills/localhost-test/SKILL.md](/C:/Users/user/.codex/memories/skills/localhost-test/SKILL.md)
 
 ## What's in Memory
 
-### C:\Users\user\Desktop\VIPBillion
+### workflow-global
 
-#### 2026-07-09
+#### 2026-07-15
 
-- VIPBillion booking-module reuse and Vben table/drawer alignment guardrails: admin-vipbillion, Booking Management, booking-related CRUD modules, shared booking CRUD path, Vben table, CRUD drawer, top scroll position, shared scroll reset helper [ad-hoc note]
-  - desc: Search this first for `cwd=C:\Users\user\Desktop\VIPBillion` when a Booking Management/report view should extend an existing admin CRUD flow, when a reused drawer reopens in the wrong scroll state, or when a Vben table column shifts summaries/actions/scroll alignment. [ad-hoc note]
-  - learnings: reuse the existing booking module/drawer path unless the workflow is genuinely different, treat every Vben column insert as a full structural update, and reset reused CRUD drawers on open/opened/post-mount so they always reopen at the top. [ad-hoc note]
+- Task-status table response format: task | changes | complete, &#10003;, &#10007;, &#9888;, numbered steps, page-wide updates [ad-hoc note]
+  - desc: Search this first when the user gives a multi-step mission and the response format should make progress/completion easy to audit across any workspace. See the top reporting block in [MEMORY.md](/C:/Users/user/.codex/memories/MEMORY.md). [ad-hoc note]
+  - learnings: use the compact table as the main status surface, number rows when the request is numbered, enumerate each discovered page for page-wide work, and only mark complete from file/test/SQL/log/browser evidence. [ad-hoc note]
 
-#### 2026-07-08
+### C:\Users\user\Desktop\trash-container-app
 
-- VIPBillion `.codex` boot-read sentinel confirmation: ai read .codex knowledge, 00_PULSE.md, ready sentinel, Get-Content -TotalCount 250, hydrate once per chat session
-  - desc: Search this first for `cwd=C:\Users\user\Desktop\VIPBillion` when the user repeats the boot-read request and you need the exact sentinel-only behavior rather than a project explanation.
-  - learnings: read `C:\Users\user\.codex\00_PULSE.md`, return only the ready sentinel, and keep the route awake instead of re-reading `.codex` on every follow-up.
+#### 2026-07-15
+
+- Cyroro dual-app Pinia/schema audit and paired-app fast gate: cyroro, VITE_SUPABASE_SCHEMA=cyroro, schema.sql, paymentStatus, cyroro-cartrack-vehicle-status, check_paired_pinia_contract.ps1 [ad-hoc note]
+  - desc: Search this first for `cwd=C:\Users\user\Desktop\trash-container-app` when admin/driver work touches shared Supabase schema truth, debt/task semantics, CarTrack behavior, or you need the fastest safe audit path before deep app reads. See the top trash block in [MEMORY.md](/C:/Users/user/.codex/memories/MEMORY.md). [ad-hoc note]
+  - learnings: both apps share `VITE_SUPABASE_SCHEMA=cyroro`; keep `schema.sql` reference-only, map legacy public keys at the store/util boundary, treat CarTrack 404 as an undeployed Edge Function warning, and use the bounded sheet-plus-precheck flow before broader code scans. [ad-hoc note]
+- `localhost test` verified three runnable apps after one Vben retry: localhost test, admin-panel-trash, web-admin-app, web-driver-app, HTTP 200, Unable to connect to the remote server, 6006, 5173, 3000
+  - desc: Search this first for `cwd=C:\Users\user\Desktop\trash-container-app` when the user asks only `localhost test` and you need the real runnable roots, ports, commands, and retry behavior. See the top trash block in [MEMORY.md](/C:/Users/user/.codex/memories/MEMORY.md).
+  - learnings: detect the three app roots automatically, verify each URL with HTTP, and give `admin-panel-trash` on `6006` one extra readiness pass before declaring it down.
+
+#### 2026-07-14
+
+- Trash dual-app operating rules, absolute Pinia gate, and Hotpot-style store upgrade: web-admin-app, web-driver-app, Trash sheet, getAllBinWIthOrder, OrderUpdateInput, DriverTaskUpdateInput, design only [ad-hoc note]
+  - desc: Search this first for `cwd=C:\Users\user\Desktop\trash-container-app` when the user wants exact Trash-sheet Store/Function/Input names preserved, admin/driver workflow semantics kept aligned, or visual edits kept surgical. See the same trash block in [MEMORY.md](/C:/Users/user/.codex/memories/MEMORY.md). [ad-hoc note]
+  - learnings: read the live `Trash -> Pinia` sheet first, preserve object-style `update(input)` and auth-scoped driver reads, reuse Hotpot only as a store-structure guide, and verify workflow changes with type-check/build plus visible-state and persistence-path checks. [ad-hoc note]
 
 ### C:\Users\user\.codex
 
-#### 2026-07-07
+#### 2026-07-15
 
-- `.codex` boot self-check, protected markdown, and cold-storage promotion lane: 00_PULSE.md, boot self-check, 10/10 gate, Protected Markdown Rule, cold storage audit, ai promote memory, 0_apex, 1_core, 2_governance
-  - desc: Search this first for `cwd=C:\Users\user\.codex` when the user wants `.codex` itself faster/smarter, wants to know what memory is actually hot, or wants cleanup/promotion without harming important routed markdown.
-  - learnings: keep `00_PULSE.md` small but active, use selective promotion and `(ai manage)` for durable anchors, treat direct `00_PULSE.md` references as the hot set, and protect route-critical `.md` files from deletion unless the user explicitly targets them.
+- Durable `.codex` knowledge stays English while app-layer labels/contracts stay verbatim: durable .codex knowledge, English, Pinia contract audits, migration summaries, do not translate UI labels, PiniaStore, Function, Input [ad-hoc note]
+  - desc: Search this first for `cwd=C:\Users\user\.codex` when updating memories, skills, audits, or generated developer guidance and you need the workspace language boundary. See the `.codex routing hygiene, git metadata cleanup, Luna execution, and verification` block in [MEMORY.md](/C:/Users/user/.codex/memories/MEMORY.md). [ad-hoc note]
+  - learnings: keep durable AI-facing guidance concise English, but do not translate UI labels, DB/sheet values, or public Store/Function/Input/table/column/status names. [ad-hoc note]
 
-### C:\Users\user\Desktop\angel-interior
+#### 2026-07-10
 
-#### 2026-07-06
+- `.codex` maintenance with GitNexus, ignore synchronization, route verification, and Luna execution lane: gitnexus, Validate-CodexKnowledge.ps1, Audit-CodexRouting.ps1, codexignore, claudeignore, ai read .codex knowledge, HYDRATE route
+  - desc: Search this first for `cwd=C:\Users\user\.codex` when the user wants `.codex` itself faster/smarter, wants a safe cleanup/ignore/routing sweep, or wants the current Luna execution defaults. See the `.codex routing hygiene, git metadata cleanup, Luna execution, and verification` block in [MEMORY.md](/C:/Users/user/.codex/memories/MEMORY.md).
+  - learnings: run `.codex` maintenance in phases, verify route-integrity counts instead of guessing from generated noise, and rehydrate once with a fresh-chat `ai read .codex knowledge` after major changes.
+- Nested `memories/.git` cleanup: memories/.git, gitlink, 160000, m memories, git rm --cached -r -- memories
+  - desc: Search this first for `cwd=C:\Users\user\.codex` when commits fail because `memories/` behaves like a submodule/gitlink instead of normal tracked files.
+  - learnings: `m memories` plus mode `160000` means Git metadata, not content; back up the nested `.git`, remove the cached gitlink, re-add `memories/`, then verify root status and filesystem state.
 
-- Angel surgical live-debugging and download-flow safeguards: angel-interior, localhost vs cPanel, visible flow, surgical fix, preserve unrelated flows, busy lock state, shared helpers, download routes [ad-hoc note]
-  - desc: Search this first for `cwd=C:\Users\user\Desktop\angel-interior` when the task involves a local-vs-published behavior mismatch, a fragile download/request flow, or a fix that should avoid redesigning nearby screens. [ad-hoc note]
-  - learnings: keep the original goal in focus, verify what the user actually sees, preserve unrelated flows, use a simple busy/lock state to stop duplicate clicks, and repair the shared helper/download route instead of bypassing it. [ad-hoc note]
+### C:\Users\user\Desktop\VIPBillion
+
+#### 2026-07-10
+
+- VIPBillion `.codex` boot first-runs and sentinel behavior: ai read .codex knowledge, Boot First-Runs, always wake these lanes in order, ai current lane memory, ai hot cold gate
+  - desc: Search this first for `cwd=C:\Users\user\Desktop\VIPBillion` when the user repeats the boot-read request or wants `.codex` boot behavior improved without losing the sentinel-only outward response.
+  - learnings: keep the visible trigger lean, but the internal boot now always wakes the five first-run lanes in `00_PULSE.md` for stronger follow-up routing.
 
 ### Older Memory Topics
 
 #### C:\Users\user\.codex
 
-- `.codex` safe cleanup audit for route integrity, `.sandbox` logs, and rollout-summary retention: cleanup, sandbox, rollout_summaries, Update-CodexRouting.ps1, Audit-CodexRouting.ps1, zero usage, googlesheet-email-integration
-  - desc: Use this for `cwd=C:\Users\user\.codex` when the user wants folder-count reduction or low-risk cleanup without breaking routing or deleting still-live history.
-- `.codex` hybrid metadata router, 5-point AI principles, and Vben route-graph retrofit: ai read .codex knowledge, 00_PULSE.md, skill_path_router.md, hybrid metadata router, project knowledge template, Vben Admin, analyze-schema, SOFT_DELETE_GUARD.md
-  - desc: Use this for `cwd=C:\Users\user\.codex` when the user wants AI-facing knowledge/skills to be easier to route, more self-describing, or better wired across the Vben doc/skill family.
-- `.codex` GitHub push failed with HTTP 408 while `skills-origin` also synced: git push origin main, ahead 1, HTTP 408, RPC failed, send-pack, skills-origin, rules/default.rules
-  - desc: Use this for `cwd=C:\Users\user\.codex` when GitHub push output is confusing because network failure and the extra `skills-origin` sync appear together.
-
-#### C:\Users\user\Desktop\VIPBillion
-
-- VIPBillion website localhost startup and PHP front-controller debugging: website-vipbillion, php -S 127.0.0.1:8000 index.php, router.php, localhost:8000, scratch/sessions, homepage 200
-  - desc: Use this for `cwd=C:\Users\user\Desktop\VIPBillion` when the PHP site should be restored on `127.0.0.1:8000` quickly or localhost `500` errors may come from bad launch context.
-- VIPBillion admin duplicate-booking guards and shared assignment flow: admin-vipbillion, /drivers/jobs, /bookings/list, driver-job.ts, driver-job-form.vue, assertBookingAssignable, uq_driver_jobs_booking
-  - desc: Use this for `cwd=C:\Users\user\Desktop\VIPBillion` when duplicate booking assignment must be blocked consistently across booking-side and driver-job-side entry points.
-- VIPBillion clone-first module duplication and slug soft-delete guardrails: copy and paste, duplicate, same modules, driver-job list drawer, checkSlugExists, deleted_at, uq_news_project_slug_en, skills/clone-first-module-duplication/SKILL.md
-  - desc: Use this for `cwd=C:\Users\user\Desktop\VIPBillion` when the user wants an existing admin module copied with the same shell or when slug validation should ignore soft-deleted rows. [ad-hoc note]
-- VIPBillion website FIUU routing and booking-data mapping: website-vipbillion, FIUU, htdocs_wiper, pay.fiuu.com/RMS/pay/{merchantId}, pg.e2pay.co.id, returnipn.php?treq=0&sa=..., booking payload
-  - desc: Use this for `cwd=C:\Users\user\Desktop\VIPBillion` when website checkout/payment flow work touches FIUU redirects, booking payload translation, or safe placement of merchant credentials. [ad-hoc note]
-- VIPBillion admin `isDelete` soft-delete CRUD rules: admin-vipbillion, isDelete, soft delete, relation lookups, dropdown options, SECURITY DEFINER, RLS, SOFT_DELETE_GUARD.md
-  - desc: Use this for `cwd=C:\Users\user\Desktop\VIPBillion` when a new admin CRUD flow should hide deleted rows consistently or when delete/update behavior is failing under Supabase RLS or trigger constraints. [ad-hoc note]
+- `.codex` hybrid metadata router and Vben route graph retrofit: hybrid metadata router, YAML frontmatter, skill_path_router.md, 5-point formula, project knowledge template, Vben Admin
+  - desc: Use this for `cwd=C:\Users\user\.codex` when the user wants AI-facing knowledge/skills to be more self-describing, more priority-routed, or easier for future AI runs to discover safely.
 
 #### C:\Users\user\Desktop\angel-interior
 
-- Angel hidden tester-account workflow: hidden tester account, auth.users, auth.identities, public."user", active_project_id, users table filter, skills/angel-hidden-tester-account/SKILL.md [ad-hoc note]
-  - desc: Use this when Angel work clearly matches the internal tester-account create/reset/verify flow and you need the rule set without storing or guessing secrets. [ad-hoc note]
-- Angel local Docker / local Supabase protection and env-routing cautions: local-supabase, Docker, Supabase, role_table_grants, permission denied for table awards, award_date [ad-hoc note]
-  - desc: Use this when a future Angel task could change local DB stack selection or when localhost data mismatches suggest env, GRANT, or year-field drift. [ad-hoc note]
+- Angel hidden tester-account workflow and local Supabase protection: hidden tester account, local-supabase, role_table_grants, permission denied for table awards, award_date, shared helpers, busy lock state [ad-hoc note]
+  - desc: Use this for `cwd=C:\Users\user\Desktop\angel-interior` when Angel work touches hidden tester-account flows, localhost/public data mismatches, or surgical download/request fixes that must preserve unrelated pages. [ad-hoc note]
 
-#### C:\Users\user\Desktop\New folder\admin-panel-Thongthai
+#### C:\Users\user\Desktop\VIPBillion
 
-- Vite/TypeScript build fix plus `.table-primary` CSS repair: npm run build, moduleResolution bundler, fileURLToPath, __dirname, lightningcss, table-primary, var(--primary-rgb)
-  - desc: Use this for `cwd=C:\Users\user\Desktop\New folder\admin-panel-Thongthai` when build errors start in config/type-checking or later surface as CSS minification failures and the user wants the existing design preserved.
-
-#### C:\Users\user\Desktop\New folder\thongthaimassage_v2
-
-- Reservation modal provenance tracing: reservation.js, reservation.php, reservation_vendor.min.js, .modal('show'), open-floor-plan, Bootstrap 4.6.2, jQuery 3.7.1
-  - desc: Use this for `cwd=C:\Users\user\Desktop\New folder\thongthaimassage_v2` when the user points at a UI snippet and wants to know where a modal/action really comes from.
-
-#### C:\xampp\htdocs_86cara
-
-- Homepage metadata branding and SEO/social copy sweeps: index.html, assets/favicon/site.webmanifest, LAPAN ENAM Car Accessories, Lapan Enam Car Window Film & Acessories (M) SDN BHD, og:title, twitter:description
-  - desc: Use this for `cwd=C:\xampp\htdocs_86cara` when homepage title, description, or brand text must be changed consistently across HTML head metadata and the manifest.
-
-#### C:\xampp\htdocs
-
-- Root `.gitignore` for mixed PHP/static repo layout: .gitignore, git status --short, uploads, vendor, api/logs, assets, composer.phar, node_modules
-  - desc: Use this for `cwd=C:\xampp\htdocs` when a root `.gitignore` must be added or tuned without hiding live source in a mixed-content web root.
-- Kushiro PHP API domain config and upload endpoint remap: KushiroBBQ, kushiro.my, kushirobbq.com.my, Config.php, Helper.php, upload_receiver.php, RedirectController.php, APP_ENV, localhost
-  - desc: Use this for `cwd=C:\xampp\htdocs` when Kushiro public/staging domains need updating without breaking localhost, or when you need the real PHP runtime touchpoints for a hostname swap.
+- VIPBillion booking-module reuse and Vben table/drawer alignment guardrails: admin-vipbillion, Booking Management, booking-related CRUD modules, Vben table, CRUD drawer, top scroll position, shared scroll reset helper [ad-hoc note]
+  - desc: Use this for `cwd=C:\Users\user\Desktop\VIPBillion` when a Booking Management/report view should extend an existing admin CRUD flow, when a cloned drawer reopens in the wrong scroll state, or when a Vben table column shifts summaries/actions/scroll alignment. [ad-hoc note]
+- VIPBillion website FIUU routing and booking-data mapping: website-vipbillion, FIUU, htdocs_wiper, pay.fiuu.com/RMS/pay/{merchantId}, returnipn.php?treq=0&sa=..., booking payload [ad-hoc note]
+  - desc: Use this for `cwd=C:\Users\user\Desktop\VIPBillion` when website checkout/payment flow work touches FIUU redirects, booking payload translation, or safe placement of merchant credentials. [ad-hoc note]

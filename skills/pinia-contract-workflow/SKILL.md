@@ -185,3 +185,50 @@ Preserve unrelated store actions and existing callers. Before changing a functio
 5. For auth-dependent actions, verify the logged-in role/member context and fail safely when unavailable.
 
 Do not claim the contract is complete until the store and at least one caller use the exact spreadsheet names.
+
+## Paired-app and schema migration audit
+
+### Cyroro paired-app audit entrypoint
+
+For `C:\Users\user\Desktop\trash-container-app`, treat this section as the
+single audit entrypoint for both `web-driver-app` and `web-admin-app`:
+
+1. Run `scripts/check_paired_pinia_contract.ps1` from the workspace root.
+2. Read `PROJECT_CONTEXT.md`, `DATABASE.md`, `schema.sql`, and the affected
+   store plus one direct caller per app.
+3. Confirm `VITE_SUPABASE_SCHEMA=cyroro` and reject legacy table queries.
+4. Run authenticated representative Cyroro reads only for touched features.
+5. Run both mobile type-checks, builds, and localhost HTTP checks.
+6. Report external Edge Function or browser-session blockers separately.
+
+When a product has paired admin and driver apps, run a final contract audit across both apps before declaring the migration complete:
+
+1. Read the live spreadsheet `PiniaStore`, `Function`, and `Input` columns and preserve exact spelling/casing, including intentional typos.
+2. Compare both apps' public Store exports, Pinia ids, action names, and Input types. Optional parameters not present in the sheet should be removed when unused; do not rename working actions.
+3. Verify each app's Supabase environment and client schema, then compare every store query and payload against the current reference schema. Keep spreadsheet Input names at the public boundary and map them to current database column names inside `src/utils/` or the store.
+4. Treat missing business tables as unavailable capabilities. Keep their UI design if requested, but do not invent queries or fake persistence for tables absent from the schema.
+5. Distinguish database data from external Edge Functions: a missing Edge Function (for example a vehicle-tracking endpoint returning 404) is a backend deployment warning, not evidence that the Supabase schema is wrong. Keep the required Store contract if no page calls it.
+6. For map/list migrations, verify relation joins and coordinate fallbacks explicitly: prefer order coordinates, then a related bin/location coordinate only when the order coordinate is null; never mutate source data just to make a marker render.
+7. Verify with both apps' `vue-tsc --noEmit` and production builds, authenticated reads against representative Cyroro tables, and HTTP 200 checks for each running localhost root. Report warnings separately from completed gates.
+
+The compatibility priority is: spreadsheet public contract -> current schema truth -> existing page behavior -> internal implementation style. A successful type-check alone is not enough to claim a cross-app migration is complete.
+
+## Fast lane for repeated audits
+
+Use the smallest evidence set that can answer the request:
+
+1. Read Sheet metadata plus the bounded `Pinia` contract range; do not dump unrelated tabs.
+2. Run `scripts/check_paired_pinia_contract.ps1` from the workspace root to check both app exports, required actions, Input names, Cyroro env values, and forbidden legacy references.
+3. Inspect only the affected store, its direct utility/type package, and one caller per app.
+4. Run static contract checks before expensive builds; run authenticated API checks only for tables/actions involved in the change.
+5. Keep a change budget: do not refactor unrelated stores, pages, or schema when the contract already passes. Report missing external services separately.
+
+This fast lane reduces repeated context loading while preserving the full verification gate for edits.
+
+## Durable knowledge language
+
+Write new `.codex` memory notes, skill updates, contract-audit reports, and generated developer guidance in clear English. Keep application UI text, database values, spreadsheet values, and user-requested localized content unchanged. Do not translate public Store, Function, Input, table, column, or status names.
+
+## Luna 5.6 execution profile
+
+Treat Luna 5.6 as the active execution profile for this workflow. Apply its three efficiency principles in order: evidence before implementation, minimal-context change budget, and automated verification before completion. Use the sequence `route -> ground current evidence -> make the smallest compatible change -> verify -> report warnings separately`.

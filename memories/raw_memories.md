@@ -438,3 +438,320 @@ References:
 - Trigger text: `"ai read .codex knowledge"`
 - Required response: `[🟢] Agent is Ready..`
 
+## Thread `019f4995-980b-7151-9d07-6099590444f5`
+updated_at: 2026-07-10T01:38:44+00:00
+cwd: \\?\C:\Users\user\Desktop\VIPBillion
+rollout_path: C:\Users\user\.codex\sessions\2026\07\10\rollout-2026-07-10T09-12-53-019f4995-980b-7151-9d07-6099590444f5.jsonl
+rollout_summary_file: 2026-07-10T01-12-48-4n5P-codex_boot_first_runs_always_wake_five_lanes.md
+
+---
+description: User expanded the `.codex` boot path so `ai read .codex knowledge` stays sentinel-only on output but now immediately wakes a fixed five-lane boot bundle for deeper follow-up work; user prefers boot-time completeness and automatic first-hop loading when it improves AI performance.
+task: inspect-and-patch-.codex-boot-first-runs
+task_group: .codex boot routing / knowledge capture
+ task_outcome: success
+cwd: C:\Users\user\Desktop\VIPBillion
+keywords: .codex, 00_PULSE.md, ai read .codex knowledge, sentinel-only, boot first-runs, skill_path_router, project-handoff-doc-stack, validate-knowledge, current-lane memory, hot-cold gate, knowledge routing, boot bundle, VIPBillion
+---
+
+### Task 1: Inspect `.codex` boot + identify higher-value first hops
+
+task: inspect .codex boot route and related memory/router notes for missing first-hop context
+task_group: .codex routing and knowledge layers
+task_outcome: success
+
+Preference signals:
+- user asked to include the “5 missing things” inside `ai read .codex knowledge` so AI would “never miss a thing here” -> user prefers boot-time completeness when it improves downstream performance.
+- user later clarified they wanted the 5 items to “always wake these 5 immediately after the boot sentinel” -> user prefers automatic boot follow-up loading, not conditional loading.
+
+Reusable knowledge:
+- `ai read .codex knowledge` is still a special trigger that returns only the ready sentinel; the boot can still carry an internal first-run bundle for the next step.
+- The best boot-first-hop categories here are project truth/handoff docs, exact skill routing, current reusable memory, validation, and hot/cold promotion rules.
+
+Failures and how to do differently:
+- first patch attempt failed because the text block didn’t match exactly; re-read the surrounding lines before patching `.codex` boot files.
+
+References:
+- `C:\Users\user\.codex\00_PULSE.md`
+- `skills/project-handoff-doc-stack/SKILL.md`
+- `skills/claude-meta/validate-knowledge/skill.md`
+- `memories/2_governance/artifacts/skill_path_router.md`
+- `memories/MEMORY.md`
+- `memories/extensions/ad_hoc/notes/2026-07-07T00-00-00-cold-storage-promotion-policy.md`
+
+### Task 2: Patch boot router with always-wake five-lane bundle
+
+task: add unconditional five-lane boot first-runs block to 00_PULSE.md and verify it
+task_group: .codex boot routing / PULSE edit
+task_outcome: success
+
+Preference signals:
+- user accepted a heavier boot if it “improves AI” -> user is willing to trade a larger boot file for better reasoning/routing performance.
+- user accepted a short explanation block -> user likes having compact rationale embedded in the boot file so future agents know why the bundle exists.
+
+Reusable knowledge:
+- Added trigger aliases: `ai project truth doc`, `ai semantic skill router`, `ai knowledge validation pass`, `ai current lane memory`, `ai hot cold gate`.
+- Added `## 0.1.2 Boot First-Runs` to `00_PULSE.md`.
+- Changed the instruction to unconditional: `After the boot sentinel, always wake these lanes in order:`.
+- The boot bundle rationale line explains it provides truth source, exact router, latest reusable context, validation gate, and promotion gate before deeper work starts.
+
+Failures and how to do differently:
+- one patch failed due to spacing/line-wrap mismatch; narrow the patch to exact read-back lines.
+- keep the boot sentinel behavior intact while expanding only the internal follow-up routes.
+
+References:
+- `C:\Users\user\.codex\00_PULSE.md#L41`
+- edited block:
+  - `After the boot sentinel, always wake these lanes in order:`
+  - `skills/project-handoff-doc-stack/SKILL.md`
+  - `memories/2_governance/artifacts/skill_path_router.md`
+  - `memories/MEMORY.md`
+  - `skills/claude-meta/validate-knowledge/skill.md`
+  - `memories/extensions/ad_hoc/notes/2026-07-07T00-00-00-cold-storage-promotion-policy.md`
+  - `Why this bundle stays hot: it gives the agent the project truth source, the exact router, the latest reusable context, the validation gate, and the promotion gate before deeper work starts.`
+
+## Thread `019f4ab2-470b-7d50-ac3a-d49e0258707e`
+updated_at: 2026-07-10T07:12:49+00:00
+cwd: \\?\C:\Users\user\.codex
+rollout_path: C:\Users\user\.codex\sessions\2026\07\10\rollout-2026-07-10T14-23-55-019f4ab2-470b-7d50-ac3a-d49e0258707e.jsonl
+rollout_summary_file: 2026-07-10T06-23-45-F6PQ-codex_deep_maintenance_gitnexus_cleanup_ignore_routing.md
+
+---
+description: Deep maintenance pass on the `.codex` workspace: GitNexus index + safe cleanup + ignore synchronization + route repair/verification. Outcome was success, with the main durable takeaway that after major `.codex` changes the user should start a fresh chat and run `ai read .codex knowledge` once to hydrate the latest boot state.
+task: codex-maintenance-gitnexus-cleanup-ignore-routing
+task_group: .codex maintenance / routing hygiene
+task_outcome: success
+cwd: C:\Users\user\.codex
+keywords: gitnexus, codexignore, claudeignore, geminiignore, openaiignore, AGENTS.md, PULSE, CODEX_DYNAMIC_ROUTING.md, Validate-CodexKnowledge.ps1, Audit-CodexRouting.ps1, Test-CodexPerfBenchmark.ps1, sessions cleanup, stale cache cleanup, route integrity, ignore contracts
+---
+### Task 1: GitNexus index and graph bootstrap
+
+task: index .codex with GitNexus once; inspect the generated graph and keep generated context files only after review
+task_group: GitNexus / repository graph bootstrap
+task_outcome: success
+
+Preference signals:
+- when the user said `help me run once gitnexus in .codex for this new .codex for gpt 5.6 luna workspace. learn everything then have a nice router`, they wanted a one-time graphing pass before deeper cleanup/routing work.
+- when the user said `di it step by step`, they wanted the work broken into gated steps rather than one bulk destructive pass.
+
+Reusable knowledge:
+- `npx gitnexus analyze` from `C:\Users\user\.codex` succeeded and produced `3,523 nodes | 3,886 edges | 9 clusters | 16 flows`.
+- `npx gitnexus status` reported `Status: ✅ up-to-date` after indexing.
+- GitNexus generated `CLAUDE.md`; it must be reviewed before deciding whether to keep the generated context.
+- GitNexus on `.codex` is usable only when explicitly requested; the index and generated files are tooling output, not automatically trusted durable state.
+
+Failures and how to do differently:
+- GitNexus reported a non-blocking scope-extraction warning for `skills/normal/design/systems/radix-ui-design-system/templates/component-template.tsx`; treat it as a generated-template quirk unless it impacts routing.
+- The generated `CLAUDE.md` / `AGENTS.md` context should be inspected before accepting it as part of the stable workspace state.
+
+References:
+- `npx gitnexus analyze` -> `Repository indexed successfully (11.9s)` / `3,523 nodes | 3,886 edges | 9 clusters | 16 flows`
+- `npx gitnexus status` -> `Indexed commit: df9c2a1`, `Status: ✅ up-to-date`
+- scope warning: `scope extraction failed for skills/normal/design/systems/radix-ui-design-system/templates/component-template.tsx`
+
+### Task 2: Deep cleanup of stale history/cache
+
+task: inventory `.codex`, classify stale vs active folders/files, and remove only verified low-risk noise
+task_group: cleanup / retention hygiene
+task_outcome: success
+
+Preference signals:
+- when the user asked to `make a deep clean for those lagacy content, old history nonusage files and folder remove`, they wanted real removal, but only after evidence-based classification.
+- the repeated `step by step` / `continue` / `ok what next` messages show they want staged cleanup checkpoints before deletion.
+
+Reusable knowledge:
+- Verified stale removals were about `492 MB` total.
+- Removed: `sessions/2026/06`, `archived_sessions/`, `.tmp/bundled-marketplaces/`, `.tmp/marketplaces/`, `plugins/.remote-plugin-install-staging/`, and `.codex-global-state.json.bak`.
+- Preserved active `sessions/2026/07`, installed plugin bundles, current sandbox executables, curated memories, skills, and routing files.
+- Large folders such as `sessions`, `plugins`, `.sandbox-bin`, and `.tmp` are not automatically disposable; they must be classified into active vs stale first.
+
+Failures and how to do differently:
+- Do not treat large folders as cleanup candidates without checking whether they are current runtime state.
+- Some large `.tmp` and plugin subfolders were live/generated and had to be preserved despite their size.
+
+References:
+- cleanup output: `Removing C:\Users\user\.codex\sessions\2026\06 (427.73 MB)`
+- cleanup output: `Removing C:\Users\user\.codex\archived_sessions (0.32 MB)`
+- cleanup output: `Removing C:\Users\user\.codex\.tmp\bundled-marketplaces (64.11 MB)`
+- cleanup output: `Removing C:\Users\user\.codex\.codex-global-state.json.bak (0.01 MB)`
+
+### Task 3: Ignore synchronization across Codex/Claude/Gemini/OpenAI/Git
+
+task: audit ignore contracts, add missing runtime/generated exclusions, and keep curated knowledge visible
+task_group: ignore contracts / noise control
+task_outcome: success
+
+Preference signals:
+- the user asked to `inspect all my .ignore (find all .xxxxxignore include .gitignore) in .codex make sure all ignore are setting well` -> they want a full contract sweep, not a local patch.
+- the user wants the workspace to ignore waste/noise while keeping durable instruction and knowledge files available.
+
+Reusable knowledge:
+- The root ignore set now covers `.gitnexus/`, generated `.claude/`, plugin caches/appserver state, attachments, browser/computer-use state, `node_repl`, and `process_manager` noise.
+- `memories/2_governance/CODEX_IGNORE_PROTOCOL.md` was updated to match the workspace baseline.
+- `git check-ignore` confirmed examples like `.gitnexus/lbug`, `attachments/example.bin`, `plugins/cache/item`, and `sessions/2026/07/x.jsonl` are ignored, while `memories/MEMORY.md` and `skills/claude/README.md` remain visible.
+- `skills/.gitignore` remains intentionally narrower so skill source stays tracked.
+
+Failures and how to do differently:
+- The ignore files were inconsistent before the sweep; they need synchronized updates rather than isolated edits.
+- Generated `.claude/` content appeared in the workspace and required explicit ignore coverage.
+
+References:
+- `.gitignore`, `.codexignore`, `.claudeignore`, `.geminiignore`, `.openaiignore`, and `skills/.gitignore` were the audited root ignore files.
+- `CODEX_IGNORE_PROTOCOL.md` now includes `.gitnexus/`, `.claude/`, `attachments/`, `computer-use/`, `node_repl/`, `process_manager/`, and plugin cache paths.
+
+### Task 4: Route repair, manifest regeneration, and verification
+
+task: re-read `.codex`, repair stale routes, regenerate routing, and verify active-path integrity
+task_group: routing / manifest hygiene
+task_outcome: success
+
+Preference signals:
+- when the user asked to `fix all those missing router path url connection` and later asked for a `comparison before and after`, they wanted measurable route integrity, not just narrative assurance.
+- the question about reopening a new tab and running `ai read .codex knowledge` indicates they want the boot flow to remain simple after maintenance.
+
+Reusable knowledge:
+- The final route sweep scanned 932 active Markdown/script/JSON files and 385 unique internal references.
+- The authoritative routing audit reported `0` missing active targets, `0` legacy refs, `0` trigger conflicts, and `0` missing route targets.
+- `Validate-CodexKnowledge.ps1` became the fast sign-off tool and reports actionable issues only.
+- After major `.codex` changes, the user should open a fresh chat and send `ai read .codex knowledge` once to hydrate the latest boot state.
+
+Failures and how to do differently:
+- Historical references in generated/index material are not the same as broken active routes; distinguish active routing from generated reference noise.
+- Generated files like `CLAUDE.md` and `AGENTS.md` from GitNexus need review, but they are not routing failures themselves.
+
+References:
+- routing audit: `missing_mandatory_count: 0`, `missing_fallback_count: 0`, `missing_roots_count: 0`, `legacy_ref_count: 0`, `trigger_conflict_count: 0`
+- validator: `status: PASS`, `duplicate_names: 0`, `missing_targets: 0`, `inline_secret_patterns: 0`, `warnings: 0`, `issue_count: 0`
+- benchmark: `Passed: 18`, `Failed: 0`, `Rating: 10/10`
+- `npx gitnexus status` after indexing: `Indexed commit: df9c2a1`, `Status: ✅ up-to-date`
+
+### Task 5: New-session boot behavior after major `.codex` changes
+
+task: answer how to start using the latest `.codex` state after a major maintenance pass
+task_group: boot / session restart behavior
+task_outcome: success
+
+Preference signals:
+- the user asked whether they need to reopen a new tab and send `ai read .codex knowledge` to use the current latest `.codex`; this suggests they want an explicit, repeatable boot ritual after significant changes.
+
+Reusable knowledge:
+- After major `.codex` changes, the recommended behavior is to open a new chat/thread and send exactly `ai read .codex knowledge` once.
+- The expected response is the ready sentinel `[🟢] Agent is Ready..`, after which the conversation can continue without repeating the boot trigger for every message.
+
+Failures and how to do differently:
+- Do not ask the user to re-run the boot trigger on every message; it is a one-time hydration step per chat/session.
+
+References:
+- user wording: `just asking inorder to run current latest .codex i need to re open a newtab and write "ai read .codex knowledge"?`
+- response shape: `ai read .codex knowledge` -> `[🟢] Agent is Ready..`
+
+## Thread `019f4ae7-5d93-7650-89ad-42f1ee7502ac`
+updated_at: 2026-07-10T07:24:23+00:00
+cwd: \\?\C:\Users\user\.codex
+rollout_path: C:\Users\user\.codex\sessions\2026\07\10\rollout-2026-07-10T15-21-49-019f4ae7-5d93-7650-89ad-42f1ee7502ac.jsonl
+rollout_summary_file: 2026-07-10T07-21-44-KiJe-codex_memories_nested_git_fix.md
+
+---
+description: user accidentally created a nested git repo at memories/.git inside C:\Users\user\.codex; fix converted memories from gitlink/submodule entry to normal tracked files, preserved old metadata in an external backup, and committed successfully
+task: remove nested memories/.git and make memories commit as ordinary files
+task_group: C:\Users\user\.codex / git metadata cleanup
+task_outcome: success
+cwd: C:\Users\user\.codex
+keywords: gitlink, submodule, memories/.git, git rm --cached, git status m memories, 160000, .gitmodules, nested repository, commit failure, Windows PowerShell, backup
+a---
+### Task 1: Remove nested Git metadata and convert memories to normal tracked files
+
+task: fix accidental nested git repo under memories so root .codex can commit
+task_group: git metadata cleanup
+task_outcome: success
+
+Preference signals:
+- when the user said they tried to add a new `.git` in `.codex` and “want to first commit but failed” -> inspect repository metadata first instead of assuming a content issue.
+- when the user said memories “auto added a .git” and it “is supposed not to add .git to memories” -> keep `memories/` as ordinary tracked content and avoid recreating nested repos there.
+
+Reusable knowledge:
+- Root status `m memories` plus `git ls-files --stage memories` showing `160000` means the path is tracked as a gitlink/submodule-like entry.
+- `git ls-tree HEAD memories` returning `160000 commit <hash> memories` confirms the root repo still points at a nested repo instead of ordinary files.
+- If `memories/.git` is a real directory, the root repo may fail to treat the contents as normal files until the cached gitlink is removed.
+- `git rm --cached -r -- memories` followed by `git add -- memories` converted the path back into a regular tracked tree after removing the nested `.git`.
+- Final verification should include both Git state and filesystem checks: `git status --short --branch` and a search for any `.git` directories under `memories/`.
+
+Failures and how to do differently:
+- The first add/stage attempt did not work because the old gitlink entry was still in the index; remove the cached path before re-adding.
+- Preserve the nested repo metadata outside `.codex` before deleting it if history may matter later.
+
+References:
+- Root working directory: `C:\Users\user\.codex`
+- Nested metadata path: `C:\Users\user\.codex\memories\.git`
+- Backup created: `C:\Users\user\.codex-memories-git-backup-20260710-152349`
+- Commit: `f3863f4 Track memories as regular Codex files`
+- Before fix: `m memories`
+- Before fix tree entry: `160000 95366f47c5fad20d56250ed3f6f46556dfbdc167 0	memories`
+- After fix tree entry: `040000 tree e6c19108918d381b2a64cbc2a67f0dae3fb4edbe	memories`
+
+## Thread `019f6361-d5ad-7da2-a6b1-ef6d37cabda9`
+updated_at: 2026-07-15T01:29:03+00:00
+cwd: \\?\C:\Users\user\Desktop\trash-container-app
+rollout_path: C:\Users\user\.codex\sessions\2026\07\15\rollout-2026-07-15T09-26-27-019f6361-d5ad-7da2-a6b1-ef6d37cabda9.jsonl
+rollout_summary_file: 2026-07-15T01-26-23-lv7P-codex_boot_read_and_localhost_test_verified_three_apps.md
+
+---
+description: Boot-trigger read plus localhost test across one Vben monorepo and two standalone Vue apps; all three verified after one slow-start retry for the Vben app.
+task: ai read .codex knowledge; localhost test
+task_group: codex-routing-and-localhost-verification
+task_outcome: success
+cwd: C:\Users\user\Desktop\trash-container-app
+keywords: PULSE, localhost test, Vben admin, Vue app, npm run dev, pnpm.cmd run dev:local, HTTP 200, port 6006, port 5173, port 3000, cmd.exe, detached server, workspace detection, trigger routing
+---
+### Task 1: Boot read / `.codex` knowledge
+
+task: ai read .codex knowledge
+task_group: codex boot routing
+task_outcome: success
+
+Preference signals:
+- When the user said `ai read .codex knowledge`, the boot contract treated it as a sentinel route and replied only with `[🟢] Agent is Ready..` -> future runs should treat that phrase as a boot/read trigger, not a normal task.
+
+Reusable knowledge:
+- `C:\Users\user\.codex\00_PULSE.md` is the authoritative boot file for this trigger.
+- The trigger map says `ai read .codex knowledge` should read only PULSE and avoid deeper reads for routine work.
+
+References:
+- Trigger phrase: `ai read .codex knowledge`
+- Boot file read: `C:\Users\user\.codex\00_PULSE.md`
+- Sentinel response: `[🟢] Agent is Ready..`
+
+### Task 2: Localhost test / verify runnable projects
+
+task: localhost test
+task_group: local dev server startup and verification
+task_outcome: success
+
+Preference signals:
+- When the user said only `localhost test`, the workspace note instructed to inspect the current root, detect runnable projects automatically, and verify each URL -> future localhost checks should start from workspace detection rather than asking for project names first.
+- The user did not ask for fixes or edits during this flow -> future localhost tests should stay in startup/verification mode unless separately asked to patch something.
+
+Reusable knowledge:
+- `trash-container-app` contained three runnable projects at the time of the rollout: `admin-panel-trash`, `web-admin-app`, and `web-driver-app`.
+- `admin-panel-trash` is the Vben monorepo; its root `package.json` has `dev:local: pnpm -F @vben/web-antd run dev:local`, and the active app is `apps/web-antd`.
+- `web-admin-app/package.json` has `dev: vite`, and `web-admin-app/vite.config.ts` defaults the server port to `5173`.
+- `web-driver-app/package.json` has `dev: vite`, and `web-driver-app/vite.config.ts` defaults the server port to `3000`.
+- Port precheck showed `3000 FREE`, `5173 FREE`, `6006 FREE` before launch.
+- Startup via detached `cmd.exe` processes worked for all three; the Vben app was slower to become ready and needed a retry before HTTP verification succeeded.
+- The Vben app initially returned `Unable to connect to the remote server` on the first HTTP check, then later returned HTTP 200 after additional wait time.
+
+Failures and how to do differently:
+- The first verification pass for `6006` failed because the Vben dev server had not finished booting yet; do not treat process start as readiness.
+- Use a second readiness pass for slower Vben starts, especially when the log shows Vite is still initializing.
+
+References:
+- Workspace root: `C:\Users\user\Desktop\trash-container-app`
+- Trigger note: `C:\Users\user\.codex\memories\extensions\ad_hoc\notes\2026-07-10-localhost-test-trigger.md`
+- Startup commands used:
+  - `pnpm.cmd run dev:local` in `C:\Users\user\Desktop\trash-container-app\admin-panel-trash`
+  - `npm run dev` in `C:\Users\user\Desktop\trash-container-app\web-admin-app`
+  - `npm run dev` in `C:\Users\user\Desktop\trash-container-app\web-driver-app`
+- Verified URLs:
+  - `http://127.0.0.1:6006/` — HTTP 200 OK
+  - `http://127.0.0.1:5173/` — HTTP 200 OK
+  - `http://127.0.0.1:3000/` — HTTP 200 OK
+
