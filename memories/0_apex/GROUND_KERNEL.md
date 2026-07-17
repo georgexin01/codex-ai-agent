@@ -94,7 +94,6 @@ handshake_expiry: "Any pending confirmation unanswered within 3 messages is void
 Scan each prompt for triggers; load matching domain knowledge only when needed.
 ```yaml
 CLAUDE:  { triggers: ["ai claude", "swf", "sovereign", "industrial"], loads: "skills/claude*" }
-FAUCET:  { triggers: ["faucet", "harvest", "claimer", "solana", "evm"], loads: "skills/faucet" }
 DESIGN:  { triggers: ["ai design app", "ai design website"], loads: "skills/design/*" }
 NORMAL:  { triggers: ["normal", "standard", "default"], loads: "skills/normal" }
 rules: "Modes are additive to Tier-0/1, never subtractive. A mode untriggered for 3 turns goes dormant. No mode bypasses Principle 0 or 16."

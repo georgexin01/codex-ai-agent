@@ -8,6 +8,7 @@ The user uses Codex for direct implementation, debugging, `.codex` routing/memor
 - Treat `ai read .codex knowledge` as a strict boot-read trigger: read the smallest routed entrypoint, return the sentinel only, and keep the matched route/skill family awake
 - For multi-step work, prefer a compact Markdown table with `task | changes | complete`; use `&#10003;`, `&#10007;`, and `&#9888;` from evidence, not assumptions [ad-hoc note]
 - When the user supplies numbered steps or the work splits into several missions, number the task rows; for page-wide updates, enumerate each discovered page as its own row [ad-hoc note]
+- When the user asks for comparison, before/after, optimization, or "more info in tables", keep the compact status table and add comparison metrics such as improvement %, estimated token cost, speed increase %, intelligence/context rating, and chat-flow/reply rating; label estimates clearly [ad-hoc note]
 - For `.codex` maintenance, keep cleanup narrow, evidence-based, and route-safe; protect important routed `.md` files and report measurable before/after verification
 - When writing durable `.codex` knowledge, skill updates, Pinia contract audits, migration summaries, or generated developer guidance for this workspace, keep that guidance in concise English and do not translate application labels, DB values, sheet values, or public contract names [ad-hoc note]
 - When the user asks for options or rankings, lead with the recommended answer first, then short numbered options
@@ -26,11 +27,17 @@ The user uses Codex for direct implementation, debugging, `.codex` routing/memor
 - If root Git shows `m memories` or mode `160000`, treat it as nested Git metadata: remove the cached gitlink, re-add `memories/`, and verify no nested `.git` remains
 - For `trash-container-app` paired-app audits, use bounded `Trash -> Pinia` sheet reads, run `pinia-contract-workflow/scripts/check_paired_pinia_contract.ps1`, inspect the affected store plus direct `utils/types` and one caller per app, then do static contract/env/legacy checks before authenticated reads or builds [ad-hoc note]
 - In `trash-container-app`, active implementation targets are `web-admin-app` and `web-driver-app`; `admin-panel-trash` is usually reference-only unless the user explicitly reactivates it [ad-hoc note]
-- `trash-container-app` localhost defaults currently route to `admin-panel-trash` on `6006`, `web-admin-app` on `5173`, and `web-driver-app` on `3000`; reuse [skills/localhost-test/SKILL.md](/C:/Users/user/.codex/memories/skills/localhost-test/SKILL.md)
+- `trash-container-app` localhost defaults currently route to `admin-panel-trash` on `6006`, `web-admin-app` on `5173`, and `web-driver-app` on `3000`; reuse [skills/localhost-test/SKILL.md](/C:/Users/user/.codex/skills/localhost-test/SKILL.md)
 
 ## What's in Memory
 
 ### workflow-global
+
+#### 2026-07-16
+
+- Detailed comparison-table metrics on top of the compact status table: detailed tables, comparison table, before/after, optimization, improvement %, token cost, speed increase %, intelligence rating, chat flow rating [ad-hoc note]
+  - desc: Search this first when the user wants richer reporting than the base status table, especially for before/after or optimization comparisons across any workspace. See the top reporting block in [MEMORY.md](/C:/Users/user/.codex/memories/MEMORY.md). [ad-hoc note]
+  - learnings: keep the compact status table, then add dedicated metrics columns or a second comparison table; treat token/speed/quality figures as estimates unless current evidence measured them. [ad-hoc note]
 
 #### 2026-07-15
 

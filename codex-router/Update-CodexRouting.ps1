@@ -20,6 +20,16 @@ function Resolve-RepoPath([string]$relativePath) {
   return Join-Path $codexRoot $relativePath
 }
 
+function Test-IsExcluded([string]$fullPath) {
+  $relative = ($fullPath.Replace($codexRoot, '').TrimStart('\','/')) -replace '\\','/'
+  foreach ($pattern in @($config.exclude)) {
+    if (-not $pattern) { continue }
+    $normalized = ([string]$pattern -replace '\\','/') -replace '\*\*','*'
+    if ($relative -like $normalized) { return $true }
+  }
+  return $false
+}
+
 $excludeAbs = @()
 foreach ($ex in @($config.exclude)) {
   if ($ex) { $excludeAbs += (Resolve-RepoPath $ex) }
@@ -43,11 +53,7 @@ foreach ($root in $roots) {
   if (-not (Test-Path -LiteralPath $root.path)) { continue }
   $files = Get-ChildItem -LiteralPath $root.path -Recurse -Force -File -ErrorAction SilentlyContinue | Where-Object { $_.FullName -notmatch "\\skills\\faucet\\" }
   foreach ($f in $files) {
-    $excluded = $false
-    foreach ($ex in $excludeAbs) {
-      if ($f.FullName.StartsWith($ex, [System.StringComparison]::OrdinalIgnoreCase)) { $excluded = $true; break }
-    }
-    if ($excluded) { continue }
+    if (Test-IsExcluded $f.FullName) { continue }
     $rel = $f.FullName.Substring($root.path.Length).TrimStart('\\')
     $entry = [pscustomobject]@{
       kind = $root.kind
@@ -158,8 +164,6 @@ $legacyRefCount = 0
 try {
   $legacyRoots = @(
     (Join-Path $codexRoot "00_CODEX_START_HERE.md"),
-    (Join-Path $codexRoot "00_CODEX_CUSTOM_INSTRUCTIONS_CODEX_BRIDGE.md"),
-    (Join-Path $codexRoot "CODEX_FULL_ACCESS_ROUTING.md"),
     (Join-Path $codexRoot "AGENTS.md"),
     (Join-Path $codexRoot "memories"),
     (Join-Path $codexRoot "skills")
@@ -292,3 +296,5 @@ $dynamic -join "`r`n" | Set-Content -LiteralPath $dynamicPath -Encoding UTF8
 if (-not $Quiet) {
   Write-Output "Routing updated. Indexed files: $($newEntries.Count)"
 }
+
+exit 0

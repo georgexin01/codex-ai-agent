@@ -31,9 +31,7 @@ function Test-IsExcluded([string]$fullPath) {
 
 $mandatory = @(
   "00_CODEX_START_HERE.md",
-  "00_CODEX_CUSTOM_INSTRUCTIONS_CODEX_BRIDGE.md",
   "00_REASONING_EVOLUTION_PROTOCOL.md",
-  "CODEX_FULL_ACCESS_ROUTING.md",
   "CODEX_DYNAMIC_ROUTING.md"
 )
 $mandatory += @($config.tier_map.tier_0)
@@ -63,8 +61,6 @@ foreach ($root in @($config.roots)) {
 
 $scanFiles = @(
   (Join-Path $codexRoot "00_CODEX_START_HERE.md"),
-  (Join-Path $codexRoot "00_CODEX_CUSTOM_INSTRUCTIONS_CODEX_BRIDGE.md"),
-  (Join-Path $codexRoot "CODEX_FULL_ACCESS_ROUTING.md"),
   (Join-Path $codexRoot "AGENTS.md")
 )
 $scanFiles += (Get-ChildItem -LiteralPath (Join-Path $codexRoot "memories") -Recurse -File -ErrorAction SilentlyContinue |
@@ -137,3 +133,5 @@ $summary = [pscustomobject]@{
 if (-not $Quiet) {
   $summary | ConvertTo-Json -Depth 6
 }
+
+exit 0

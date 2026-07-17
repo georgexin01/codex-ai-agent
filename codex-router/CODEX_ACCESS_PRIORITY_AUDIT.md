@@ -68,6 +68,7 @@ User request
 | `00_CODEX_START_HERE.md` | P2 Lazy | Deferred boot reference | Read only when PULSE is insufficient |
 | `00_REASONING_EVOLUTION_PROTOCOL.md` | P2 Lazy | Deeper reasoning contract | Read only for deep/high-risk reasoning work |
 | `memories/MEMORY.md` | P1 Active | Search registry for prior knowledge | Keyword lookup only; do not full-hydrate history |
+| `memories/MEMORY_DETAILS.md` | P5 Cold | Complete preserved historical memory details | Open only after a matching index hit requires exact context |
 | `memories/0_apex/` | P2 Lazy | Deep kernels, user DNA, router templates | Triggered by governance/design/deep tasks |
 | `memories/1_core/` | P2 Lazy | Reusable core knowledge | Triggered by matching topic |
 | `memories/2_governance/` | P2 Lazy | Protocols and safety policies | Triggered by matching risk/tooling need |
@@ -101,6 +102,7 @@ User request
 6. Treat project files as local truth only for the current cwd.
 7. Keep runtime/cache/log/session files out of routing.
 8. Before moving active knowledge or skill paths, update routes or leave redirect stubs.
+9. For eligible non-skill Markdown over `35 KB` or `8,000` estimated tokens, run the lossless compression protocol; treat `20 KB` or `5,000` tokens as review-only; never modify Markdown under `skills/`.
 
 ## Universal Project Fingerprint
 

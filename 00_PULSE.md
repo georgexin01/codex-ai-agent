@@ -7,7 +7,7 @@ model_hint: medium
 model_profile: luna-5.6-medium
 version: 1.1
 status: authoritative
-supersedes_in_boot: ["00_CODEX_CUSTOM_INSTRUCTIONS_CODEX_BRIDGE.md", "CODEX_FULL_ACCESS_ROUTING.md"]
+supersedes_in_boot: []
 date_updated: "2026-07-10"
 ---
 
@@ -29,6 +29,8 @@ Hydrate PULSE once per chat session, then reuse the in-session distilled context
 - When the user wants options, lead with the recommended answer first, then short numbered alternatives.
 - Keep one matching skill family awake across nearby follow-up turns when the project stays in the same lane.
 - If a lesson repeats or matters long-term, capture it in a durable note or routed template instead of leaving it only in chat.
+- **Automatic knowledge compression:** during any `.codex` knowledge or governance task, run `codex-router/Find-LargeKnowledge.ps1`. For eligible non-skill `.md` files over `35 KB` or `8,000` estimated tokens (`ceil(characters/4)`), automatically run `memories/2_governance/KNOWLEDGE_COMPRESSION_PROTOCOL.md`; treat `20 KB` or `5,000` tokens as review-only; exclude every `/skills/` Markdown file absolutely.
+- **Knowledge authoring notice:** before writing or editing any `.codex` knowledge Markdown, read `memories/2_governance/KNOWLEDGE_COMPRESSION_PROTOCOL.md` and the current target. Author less but accurate content: remove repetition, preserve unique facts/contracts/routes/examples, and keep the original goal fully usable.
 
 ## 0.1.1 Boot Self-Check (10/10 gate)
 Before answering, silently check:
@@ -172,6 +174,8 @@ Matching rule: evaluate the longest exact trigger phrase first; never route a st
 "ai read before answer": "memories/2_governance/READ_BEFORE_ANSWER_PROTOCOL.md"
 "ai single truth source": "memories/2_governance/SINGLE_TRUTH_SOURCE_PROTOCOL.md"
 "ai current lane memory": "memories/MEMORY.md"
+"ai knowledge compression": "memories/2_governance/KNOWLEDGE_COMPRESSION_PROTOCOL.md"
+"ai compress knowledge": "memories/2_governance/KNOWLEDGE_COMPRESSION_PROTOCOL.md"
 "ai custom instructions": "memories/extensions/ad_hoc/notes/2026-07-03T00-00-01-merged-codex-performance-layer.md"
 "ai performance layer": "memories/extensions/ad_hoc/notes/2026-07-03T00-00-01-merged-codex-performance-layer.md"
 "ai luna 5.6":      "memories/extensions/ad_hoc/notes/2026-07-10-luna-5-6-vue-vben-execution-profile.md" # typed Vue/Vben implementation and verification gates
@@ -206,6 +210,7 @@ Sentinel rule: `ai read .codex knowledge` reads only this boot contract, stores 
 | Supabase / SQL | PULSE §4 hot rules | `memories/2_governance/LAA_ECOSYSTEM_API_PROTOCOL.md` |
 | GitNexus | PULSE §4 / §4.1 project routing | `memories/2_governance/GITNEXUS.md` |
 | Ignore / runtime cleanup | PULSE §8 after-edit rule | `memories/2_governance/CODEX_IGNORE_PROTOCOL.md`, `memories/2_governance/KNOWLEDGE_ROT_PROTOCOL.md` |
+| Large knowledge Markdown | PULSE automatic compression rule | `memories/2_governance/KNOWLEDGE_COMPRESSION_PROTOCOL.md` |
 
 ## 2. Execution Loop
 HYDRATE (route, task-only reads) → GROUND (evidence: file state > tests > logs > memory > inference; never guess) → PLAN (surgical; for Tier-0/1 state blast radius) → ACT → VERIFY (smoke/lint/read-back every edit; on fail loop to PLAN).
@@ -213,7 +218,7 @@ HYDRATE (route, task-only reads) → GROUND (evidence: file state > tests > logs
 Context rule: before spending tokens, identify the exact context that must remain unchanged (IDs, paths, schema, errors, user constraints, acceptance criteria). Keep that verbatim. Summarize supporting context aggressively only when the summary preserves ~99% of meaning and does not hide uncertainty.
 
 ## 3. Always-On Rules (the locks)
-- **P0 Knowledge Freeze** — no structural/content change to `memories/` or `skills/` without explicit turn-by-turn approval. No unsolicited "improvements."
+- **P0 Knowledge Freeze** — no unsolicited structural/content change to `memories/` or `skills/`. The user-approved lossless compression protocol is a standing exception for eligible non-skill `.md` files above 35 KB / 8,000 estimated tokens; skills and protected boot/Tier-0 files remain approval-gated.
 - **P16 Claude Skill Lock** — never rename/move any `claude*` skill folder unless user says "change claude skills."
 - **Edit tiers**: T0 nuclear (`skills/claude*`, `GROUND_KERNEL`, `KARPATHY_TIER0_PRINCIPLES`, `codex-manifest.json`) = explicit confirm · T1 (`2_governance/`, `1_core/`, `00_*`) = plan-stop-approve · T2 = show intent/diff · T3 (project source) = surgical intent. Pending confirmation voids after 3 messages.
 - **Karpathy-4**: think-first · simplicity-first · surgical (touch only required lines) · goal-driven verification. If 200 lines can be 50, rewrite.
@@ -254,7 +259,6 @@ Workspace fingerprint rule: if the current repo contains `PROJECT_CONTEXT.md`, r
 
 ## 6. Lazy / Deferred (do NOT read at boot)
 - `codex-router/codex-manifest.json` (228KB, path+hash integrity index, no descriptions) — use only to confirm a file exists / detect drift; never full-read at boot.
-- Stubs `00_CODEX_CUSTOM_INSTRUCTIONS_CODEX_BRIDGE.md`, `CODEX_FULL_ACCESS_ROUTING.md` — superseded by PULSE; skip.
 - Tier-0 deep reads (`GROUND_KERNEL.md` full P0–P19, `KARPATHY_TIER0_PRINCIPLES.md`, `PREFLIGHT_CHECKLIST.md`) — only on architecture/governance/recovery/high-risk turns.
 - `00_CODEX_START_HERE.md` — full canonical boot reference; read only if PULSE is insufficient.
 - Historical rollouts/artifacts — only when explicitly needed.
@@ -264,7 +268,7 @@ Routine: Goal-contract + assumption-tag + token-discipline + verified-output (+ 
 - **Fable-5 lane** (when `model_hint` resolves to `claude-fable-5`): native multi-step reasoning is strong — do the reasoning internally instead of emitting scaffolding prose; spend the saved tokens on one extra counterexample/edge check before final answer. Locks are NON-negotiable regardless of model: evidence-ladder, verify-before-done, drift-guard, edit-tiers, data-sovereignty still apply. Stronger reasoning lowers output verbosity, never lowers verification.
 - **Drift Guard**: every 3–5 tool batches re-read the anchor (originating request); classify on-track/minor/major; revert on major.
 - **Output length**: hydration = 1 line · routine = outcome + 1 validation line · summary ≤100 words · architecture ≤250 words. No filler.
-- **Comparison tables (MANDATORY)**: any comparison/before-after table MUST include token cost, speed, % speed increase, rating 1/10. Estimate + flag if exact unknown; never drop a column.
+- **Comparison tables (MANDATORY)**: any comparison/before-after table MUST include token cost, speed, % improvement or speed increase, rating out of 10, intelligence/context quality out of 10, and AI chat-flow/reply quality out of 10 when the user requests detailed metrics. Estimate + flag if exact unknown; never present estimates as measured facts.
 
 ## 8. After editing `.codex`
 Route integrity is mandatory: before merging, archiving, renaming, or deleting any knowledge/skill file or folder, find every route/reference to the old path, patch them to the new target or leave a redirect stub, then verify no active route breaks.

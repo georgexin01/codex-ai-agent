@@ -158,7 +158,6 @@ Use when content is genuinely structured data:
 mode: claude
 triggers: [ai claude, architect, vben]
 folder_lock: [skills/claude, memories/claude, _shared]
-blocked: [skills/faucet, memories/faucet]
 phase_gates:
   1: data_layer
   2: mock_layer

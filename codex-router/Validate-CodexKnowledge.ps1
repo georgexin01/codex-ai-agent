@@ -26,7 +26,7 @@ $markdown = Get-ChildItem -LiteralPath $knowledgeRoots -Recurse -File -Filter '*
 $issues = [System.Collections.Generic.List[object]]::new()
 $warnings = [System.Collections.Generic.List[object]]::new()
 $deferredLarge = 0
-$deferredLargeNames = @('MEMORY.md', 'raw_memories.md', 'supabase-rls-rbac-design.md')
+$deferredLargeNames = @('MEMORY.md', 'MEMORY_DETAILS.md', 'raw_memories.md', 'supabase-rls-rbac-design.md')
 
 function Add-Issue([string]$Check, [string]$Path, [string]$Message) {
   $script:issues.Add([pscustomobject]@{ check = $Check; path = $Path; message = $Message })
@@ -57,8 +57,9 @@ foreach ($file in $markdown) {
 }
 
 foreach ($entry in $names.GetEnumerator()) {
-  if ($entry.Value.Count -gt 1) {
-    Add-Warning 'duplicate-frontmatter-name' ($entry.Value -join '; ') "Review duplicate name: $($entry.Key)"
+  $primaryFiles = @($entry.Value | Where-Object { $_ -notmatch '[\\/]([^\\/]+)_DETAILS\.md$' })
+  if ($primaryFiles.Count -gt 1) {
+    Add-Warning 'duplicate-frontmatter-name' ($primaryFiles -join '; ') "Review duplicate name: $($entry.Key)"
   }
 }
 
@@ -95,6 +96,24 @@ foreach ($file in Get-ChildItem -LiteralPath $CodexRoot -Recurse -File) {
   }
 }
 
+# Check secret-like files by metadata only; never read or print their contents.
+$secretFiles = @('auth.json', 'cap_sid', 'sandbox_users.json')
+$ignoreFiles = @('.gitignore', '.codexignore', '.claudeignore', '.openaiignore') |
+  ForEach-Object { Join-Path $CodexRoot $_ } |
+  Where-Object { Test-Path -LiteralPath $_ }
+$protectedSecretFiles = foreach ($name in $secretFiles) {
+  $matches = Get-ChildItem -LiteralPath $CodexRoot -Recurse -File -Filter $name -ErrorAction SilentlyContinue |
+    Where-Object { $_.FullName -notmatch '\\sessions\\|\\archived_sessions\\|\\.tmp\\|\\cache\\|\\plugins\\' }
+  foreach ($file in $matches) {
+    $ignored = $false
+    foreach ($ignoreFile in $ignoreFiles) {
+      if (Select-String -LiteralPath $ignoreFile -Pattern "(^|[/\\])$([regex]::Escape($name))$" -Quiet) { $ignored = $true; break }
+    }
+    [pscustomobject]@{ path = $file.FullName.Substring($CodexRoot.Length + 1); ignored = $ignored }
+    if (-not $ignored) { Add-Issue 'unignored-secret-file' $file.FullName 'Secret-like file is present but not covered by an ignore file; contents were not read.' }
+  }
+}
+
 $result = [pscustomobject]@{
   validator = 'Validate-CodexKnowledge.ps1'
   codex_root = $CodexRoot
@@ -102,6 +121,7 @@ $result = [pscustomobject]@{
   duplicate_names = @($warnings | Where-Object check -eq 'duplicate-frontmatter-name').Count
   missing_targets = @($issues | Where-Object check -eq 'missing-routed-target').Count
   inline_secret_patterns = @($issues | Where-Object check -eq 'inline-secret-pattern').Count
+  unignored_secret_files = @($issues | Where-Object check -eq 'unignored-secret-file').Count
   deferred_large_files = $deferredLarge
   warnings = $warnings.Count
   issue_count = $issues.Count
@@ -111,3 +131,4 @@ $result = [pscustomobject]@{
 }
 $result | ConvertTo-Json -Depth 5
 if ($issues.Count -gt 0) { exit 1 }
+exit 0

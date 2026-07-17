@@ -1,6 +1,7 @@
 ﻿# --- Secrets / auth ---
 auth.json
 cap_sid
+sandbox_users.json
 installation_id
 *.key
 *.pem

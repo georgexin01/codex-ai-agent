@@ -18,10 +18,6 @@
       "expect_contains": [
         "Primary boot = 00_PULSE.md only",
         "00_PULSE.md"
-      ],
-      "expect_not_contains": [
-        "00_CODEX_CUSTOM_INSTRUCTIONS_CODEX_BRIDGE.md",
-        "CODEX_FULL_ACCESS_ROUTING.md"
       ]
     },
     {

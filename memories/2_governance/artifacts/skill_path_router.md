@@ -59,6 +59,7 @@ These point at executable recipes and foundational knowledge docs, not skills.
 | `ai project handoff` | `skills/project-handoff-doc-stack/SKILL.md` | Durable root handoff docs and sync rules for multi-doc project stacks |
 | `ai validate knowledge` | `skills/claude-meta/validate-knowledge/skill.md` | Lints skills and knowledge against the hybrid format protocol |
 | `ai validate knowledge fast` | `codex-router/Validate-CodexKnowledge.ps1` | Read-only fast validation for routes, duplicate names, local target paths, secret-like patterns, and oversized files |
+| `ai knowledge compression` / `ai compress knowledge` | `memories/2_governance/KNOWLEDGE_COMPRESSION_PROTOCOL.md` | Lossless compression and two-layer rerouting for oversized non-skill Markdown |
 | `ai trigger conflict` | `codex-router/Audit-CodexRouting.ps1` | Detect exact trigger phrases that map to different destinations |
 | `ai route telemetry` | `codex-router/Measure-CodexRouteTelemetry.ps1` | Measure route bytes and estimated tokens for Luna Medium efficiency |
 | `ai router blueprint` | `memories/0_apex/templates/MASTER_ROUTER_BLUEPRINT.md` | Lightweight multi-project root router blueprint |
@@ -121,5 +122,4 @@ These point at executable recipes and foundational knowledge docs, not skills.
 - `skills/.system/openai-docs/SKILL.md` - OpenAI API reference
 
 ## Excluded from Routing
-- `skills/faucet/` - excluded per `router-config.json`
 - `skills/normal/` - reference library only, no direct triggers

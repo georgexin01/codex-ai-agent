@@ -13,8 +13,9 @@ Weekly, after a high-activity week, or on user request, the AI MUST execute a **
 5. **Route Integrity Audit**: Before any merge/archive/rename/delete, find references to the old path, patch active routes to the merged target or leave a redirect stub, then regenerate and audit routing.
 
 ## 3. MAINTENANCE MANDATE
-- **YAML Frontmatter**: Every knowledge file MUST include a `last_audit` date.
+- **YAML Frontmatter**: New or edited knowledge files MUST include/update a `last_audit` date. Legacy, cold, and preserved detail companions are not mass-retrofitted; the health report identifies missing dates.
 - **Pruning**: If a file is flagged as "Irrelevant" during an audit, it MUST be moved to `vault/archive` instead of being deleted.
+- **Knowledge authoring notice**: Before writing or editing `.codex` knowledge Markdown, AI MUST read `KNOWLEDGE_COMPRESSION_PROTOCOL.md` and the current target file. Prefer less but accurate content; preserve unique facts, contracts, routes, examples, and verification rules.
 
 ## 4. EXECUTION
 AI can trigger a rot-check by saying: `ai run rot-audit` or `ai run weekly rot-audit`.
@@ -32,7 +33,7 @@ This executes:
 - If line count exceeds 300: remove the **oldest task groups from the bottom** until the file is ≤300 lines.
 - The User Profile and Key Preferences section at the top is **never trimmed**.
 - The governance comment on line 1 is **never removed**.
-- After trimming, update the file in place — no archive needed for MEMORY.md trimmed content (task groups are already fully captured in rollout_summary files).
+- After trimming, update the file in place. If exact historical preservation is required, keep the prior content in the routed cold companion `memories/MEMORY_DETAILS.md` and do not load it during routine work.
 
 ## 6. DEAD PROJECT TOMBSTONE RULE
 
