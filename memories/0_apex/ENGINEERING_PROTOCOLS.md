@@ -4,6 +4,10 @@ description: "Agentic Engineering, Research & Swarm Protocols (V2.0)"
 triggers: ["harness", "agentic", "swarm", "flywheel", "flash hardening"]
 version: 2.0
 status: authoritative
+phase: deep-reference
+model_profile: luna-5.6-medium
+load_policy: lazy; never required for routine startup
+last_audit: "2026-07-17"
 ---
 
 # ⚙️ ENGINEERING PROTOCOLS MASTER (V2.0)
@@ -32,7 +36,7 @@ Based on the 2026 Silicon Valley "Harness Engineering" standards (Hermes & OpenC
 
 ### 1. 🧠 Memory Layer (Context Management)
 - **Concept**: AI lacks persistent state. The Harness provides it.
-- **Rule**: Upon initialization, the Harness MUST automatically ingest `GROUND_KERNEL.md`, `DESIGN_DNA.json`, and `PULSE.json`.
+- **Rule**: For this `.codex`, initialization reads `00_PULSE.md` only. Load `GROUND_KERNEL.md`, design references, or this deep bundle only when the resolved task requires them.
 - **Constraint**: The Harness operates on a "Grep-First Surgery" model. It dynamically filters memory to prevent context bloat and token waste. It respects all legacy APEX principles.
 
 ### 2. 🛠️ Tool Use (Execution Primitives)
@@ -72,7 +76,7 @@ version: 1.0
 # 🐝 INTERNAL SWARM PROTOCOL (MAS V1.0)
 
 ## ⚖️ 0. THE SWARM MANDATE
-For every turn involving complex logic or design, the AI MUST activate the **Internal Swarm**.
+For complex logic or design, use the persona checklist only when it improves coverage; it is not a mandatory extra routing layer.
 
 ## 👥 1. THE PERSONAS
 
@@ -154,7 +158,7 @@ Specific architectural constraints to maximize the intelligence ceiling of **Gem
 
 
 ## 🛡️ 2. CHAIN-OF-VERIFICATION (CoVe)
-To overcome the "Over-Eager Aggression" of the Flash model, the AI MUST implement a two-step verification loop for all code modifications:
+For high-risk code modifications, the AI should use a two-step verification loop:
 
 1.  **Drafting**: Generate the proposed code change.
 2.  **Internal Audit**: Before applying the change, the AI MUST perform a "Mental Linter" check. 
@@ -163,9 +167,9 @@ To overcome the "Over-Eager Aggression" of the Flash model, the AI MUST implemen
     - *Question*: "Is this the simplest possible solution? (Karpathy Standard)"
 
 ## 🧹 3. CONTEXT LIQUIDATION (HYGIENE)
-Flash models perform better with a "Clean Slate."
+Long or noisy sessions perform better with a clean checkpoint.
 - **Noise Ratio**: If the context window exceeds 100,000 tokens of "Conversation Noise," the AI MUST summarize the current session state into a `SESSION_CHECKPOINT.md` and "Liquidate" (request the user to start a new session or clear history) to reset reasoning quality.
-- **Ignore Injection**: Mandatory usage of `APEX 4` on every folder traversal to prevent "Token Bloat" from non-essential files.
+- **Ignore boundaries**: Apply `.codexignore`, `.gitignore`, `.claudeignore`, and `.openaiignore` before broad traversal to prevent token bloat and secret exposure.
 
 ## 🏗️ 4. ARCHITECTURAL DECOMPOSITION
 For tasks with Level 7 complexity (PhD-level logic):
@@ -173,12 +177,12 @@ For tasks with Level 7 complexity (PhD-level logic):
 - **Protocol**: Break the task into at least 3 sub-tasks. Perform a **[🎯 TARGET]** handshake after each sub-task to verify grounding.
 
 ## 📊 5. PERFORMANCE BENCHMARKS
-- **Target Velocity**: < 5s for planning, < 10s for execution.
-- **Target Fidelity**: 99% logic accuracy on first-pass surgery.
-- **Grounding Ratio**: 1 Citation per 100 words of technical advice.
+- **Target Velocity**: Measure locally when useful; never trade verification for an arbitrary time target.
+- **Target Fidelity**: Preserve contracts and verify behavior with current evidence; do not claim an unmeasured percentage.
+- **Grounding Ratio**: Cite or link the evidence needed for the decision; avoid decorative citations.
 
 ## 🛡️ 6. FIDELITY PRESERVATION (THE REGRESSION SHIELD)
 - **100% Matching Rule**: Optimization protocols (Efficiency, Vibe) MUST NOT degrade output quality. The final code produced must be 100% compliant with the existing project architecture.
 - **Side-by-Side Audit**: Before committing a "Fast" or "Efficient" implementation, the AI MUST mentally compare it against a "Full-Logic" baseline to ensure zero regression in functionality or security.
-- **Status Mandate**: Only output that is **[✅ STATUS: CRYSTAL]** is authorized for commit.
+- **Status Mandate**: Use the host-required evidence markers and never authorize a commit from prose confidence alone.
 

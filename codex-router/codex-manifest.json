@@ -1,5 +1,5 @@
 ﻿{
-    "generated_utc":  "2026-07-17T03:02:53.8504401Z",
+    "generated_utc":  "2026-07-17T07:07:52.2831619Z",
     "codex_root":  "C:\\Users\\user\\.codex",
     "config_path":  "C:\\Users\\user\\.codex\\codex-router\\router-config.json",
     "boot_profile":  "ultra-lean",
@@ -73,9 +73,9 @@
                         "root_relative":  "memories",
                         "relative_path":  "0_apex\\ENGINEERING_PROTOCOLS.md",
                         "full_path":  "C:\\Users\\user\\.codex\\memories\\0_apex\\ENGINEERING_PROTOCOLS.md",
-                        "size":  9323,
-                        "last_write_utc":  "2026-05-14T10:13:38.1805084Z",
-                        "sha256":  "EE3D107F7DF8485246A82C177429903BEA752A0B490CAE1775B4DD610F052227"
+                        "size":  9682,
+                        "last_write_utc":  "2026-07-17T07:06:34.7786295Z",
+                        "sha256":  "8BF8F585A821EB908E69A1B1647C834D6D563B73CD27D0EF453077601574719C"
                     },
                     {
                         "kind":  "knowledge",
@@ -83,9 +83,9 @@
                         "root_relative":  "memories",
                         "relative_path":  "0_apex\\GROUND_KERNEL.md",
                         "full_path":  "C:\\Users\\user\\.codex\\memories\\0_apex\\GROUND_KERNEL.md",
-                        "size":  11707,
-                        "last_write_utc":  "2026-07-17T02:01:02.8697855Z",
-                        "sha256":  "C96432EDE8883C1D86C212F5FA482FCD36A51172905923828533AF8538520FDC"
+                        "size":  13043,
+                        "last_write_utc":  "2026-07-17T07:02:38.6578978Z",
+                        "sha256":  "B5C3D1DA0B59C68CC206A80AE27D04DD065222E0E879592BD1A14C1200EE63B9"
                     },
                     {
                         "kind":  "knowledge",
@@ -103,9 +103,9 @@
                         "root_relative":  "memories",
                         "relative_path":  "0_apex\\KARPATHY_TIER0_PRINCIPLES.md",
                         "full_path":  "C:\\Users\\user\\.codex\\memories\\0_apex\\KARPATHY_TIER0_PRINCIPLES.md",
-                        "size":  2626,
-                        "last_write_utc":  "2026-05-21T01:25:39.3521933Z",
-                        "sha256":  "762195BC406FA707555655975FE4BF15D45A01CA12A1E6622594E18AC1EDC67B"
+                        "size":  3352,
+                        "last_write_utc":  "2026-07-17T07:05:23.0421136Z",
+                        "sha256":  "B7E181D5E76CDD0E519173151886CBCBA5D98560A1FA4086D94FBB3F13677F37"
                     },
                     {
                         "kind":  "knowledge",
@@ -533,9 +533,9 @@
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\PREFLIGHT_CHECKLIST.md",
                         "full_path":  "C:\\Users\\user\\.codex\\memories\\2_governance\\PREFLIGHT_CHECKLIST.md",
-                        "size":  751,
-                        "last_write_utc":  "2026-06-23T02:58:29.8367725Z",
-                        "sha256":  "0E66776A3373BF5814E4848C87DC293A86B873D61C2F5D1E78FEFF10CBF4F74E"
+                        "size":  1151,
+                        "last_write_utc":  "2026-07-17T07:05:23.0431130Z",
+                        "sha256":  "7E6413E0E64923C00ED5E0BA7FBE358C821CD387700E6B1998A8220D711F2353"
                     },
                     {
                         "kind":  "knowledge",
@@ -673,9 +673,9 @@
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\artifacts\\skill_path_router.md",
                         "full_path":  "C:\\Users\\user\\.codex\\memories\\2_governance\\artifacts\\skill_path_router.md",
-                        "size":  10892,
-                        "last_write_utc":  "2026-07-17T02:26:18.9791268Z",
-                        "sha256":  "DD37685A44A927489C0B528C923FC8A90C9181D9E380E084F3E0765AA19F1430"
+                        "size":  11203,
+                        "last_write_utc":  "2026-07-17T07:02:38.6588964Z",
+                        "sha256":  "5E6684694A3B028899A39BA5106F904B396DFC6D83A357035DCF0DD15FF2463A"
                     },
                     {
                         "kind":  "knowledge",

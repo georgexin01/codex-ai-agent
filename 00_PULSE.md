@@ -5,10 +5,11 @@ triggers: ["boot", "start", "ai read .codex knowledge"]
 phase: boot
 model_hint: medium
 model_profile: luna-5.6-medium
-version: 1.1
+version: 1.2
 status: authoritative
 supersedes_in_boot: []
-date_updated: "2026-07-10"
+date_updated: "2026-07-17"
+last_audit: "2026-07-17"
 ---
 
 # ⚡ PULSE — Single Boot Read
@@ -19,6 +20,19 @@ The only file the boot needs. Consolidates the hot 20% of rules used 80% of the 
 Read PULSE → resolve trigger below → enter the boot/task lifecycle → load only the smallest matching route. Manifest, stubs, and Tier-0 are **lazy** (§6).
 
 Hydrate PULSE once per chat session, then reuse the in-session distilled context. Do not re-read PULSE or `.codex` knowledge on every message unless the user asks, routing becomes stale, or the task crosses into deep/governance/recovery risk.
+
+## 0.0 Boot-to-task lifecycle (always use this order)
+
+| stage | required behavior | loading rule |
+|---|---|---|
+| 0. Boot | Read PULSE, resolve the longest matching trigger, and store compact context | PULSE only |
+| 1. Ready | For exact `ai read .codex knowledge`, return only `[🟢] Agent is Ready..` | No summary or extra route reads |
+| 2. Second chat | Enter `TASK` state; classify the new request and resolve its route | Do not repeat the sentinel or re-read the tree |
+| 3. Normal work | HYDRATE → GROUND → PLAN → ACT → VERIFY; keep one route/skill family awake | Read only task-relevant files |
+| 4. Deep or risky work | Load Ground Kernel, governance, or full protocol only when risk/trigger requires it | Escalate just-in-time |
+| 5. Failure recovery | Re-check paths and routing before retrying; stop after three repeated failures | Recovery files only |
+
+The sentinel is a boot acknowledgement, not a response mode for later questions. Every later chat receives a normal task answer unless the exact hydration trigger is intentionally requested again.
 
 ## 0.1 Personalized Behavior Rules (Part 1, always active)
 - Use current project files, live evidence, and current instructions over older memory when they conflict.
@@ -64,7 +78,7 @@ When the task is about your long-term preferences, behavior, routing, or reusabl
 These are the high-signal overlays for faster routing, better behavior matching, and lower ambiguity.
 `(ai manage)` means maintenance-owned: prefer to update that note or skill when a better durable rule is discovered.
 
-## 0.1.5 Luna Medium Operating Profile
+## 0.1.4 Luna Medium Operating Profile
 - Prefer one route, one source of truth, and one verification target per task.
 - Read front doors before executor files; read executor files before reference libraries.
 - Keep tool calls narrow and parallelize independent evidence reads when possible.
@@ -94,7 +108,7 @@ These are the high-signal overlays for faster routing, better behavior matching,
 - Project `AGENTS.md`/truth docs own project commands and local conventions.
 - Memories own historical lessons and user preferences, not current product facts.
 
-## 0.1.4 Protected Markdown Rule
+## 0.1.5 Protected Markdown Rule
 - Do not change or remove important routed markdown files unless the user explicitly asks for that exact file change.
 - If a markdown file is a boot rule, router, governance note, skill front door, or durable project memory, prefer additive routing or a tiny patch over deletion.
 - When in doubt, keep the file and route around it instead of pruning it.
@@ -171,6 +185,9 @@ Matching rule: evaluate the longest exact trigger phrase first; never route a st
 "ai validate knowledge": "skills/claude-meta/validate-knowledge/skill.md"
 "ai knowledge validation pass": "skills/claude-meta/validate-knowledge/skill.md"
 "ai validate knowledge fast": "codex-router/Validate-CodexKnowledge.ps1"
+"ai knowledge health": "codex-router/KnowledgeHealthReport.ps1"
+"ai ground kernel": "memories/0_apex/GROUND_KERNEL.md"
+"ai tier-0": "memories/0_apex/GROUND_KERNEL.md"
 "ai read before answer": "memories/2_governance/READ_BEFORE_ANSWER_PROTOCOL.md"
 "ai single truth source": "memories/2_governance/SINGLE_TRUTH_SOURCE_PROTOCOL.md"
 "ai current lane memory": "memories/MEMORY.md"
@@ -276,4 +293,4 @@ Route integrity is mandatory: before merging, archiving, renaming, or deleting a
 Regenerate routing: `codex-router/Update-CodexRouting.ps1 -Quiet` (if shell allows), then audit with `codex-router/Audit-CodexRouting.ps1`. If shell cannot run, update affected index entries manually and read back the changed routes.
 
 ---
-**PULSE V1.0 — single boot read. Detailed canon: `00_CODEX_START_HERE.md` + `0_apex/GROUND_KERNEL.md`.**
+**PULSE V1.2 — single boot read. Detailed canon: `00_CODEX_START_HERE.md` + `0_apex/GROUND_KERNEL.md`.**

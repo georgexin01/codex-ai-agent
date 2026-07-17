@@ -8,6 +8,13 @@ This protocol upgrades reasoning quality while preserving speed.
 - Keep Lean Fast Lane fast for routine tasks.
 - Auto-escalate reasoning depth only when risk or ambiguity is meaningful.
 
+## Luna Escalation Gate
+
+- Routine: use PULSE plus the narrow route; do not load this full protocol.
+- Medium: load this protocol when the task spans multiple files, contracts, routing, or uncertain evidence.
+- Deep: load Ground Kernel and exact governance references for architecture, security, recovery, or explicit deep/review work.
+- If evidence is missing after targeted checks, state `INSUFFICIENT DATA`; never replace missing evidence with confidence.
+
 ## Core 12 Rules
 
 1. Goal Contract First

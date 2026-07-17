@@ -30,6 +30,16 @@ Deferred boot reference only.
 - Prefer current project files over historical knowledge when they conflict.
 - Do not expose secrets, auth, tokens, cookies, or sessions unless explicitly requested and safe.
 
+## Route-Miss Recovery Order
+
+If PULSE has no matching route:
+
+1. Check the exact path and trigger in `CODEX_DYNAMIC_ROUTING.md`.
+2. For a skill request, use `memories/2_governance/artifacts/skill_path_router.md` and read only its matched front door.
+3. For a knowledge request, search `memories/` by filename, frontmatter description, and triggers while excluding archive, rollout, runtime, and skill Markdown.
+4. If a known target is missing or the generated route is stale, run `codex-router/Update-CodexRouting.ps1 -Quiet`, then `codex-router/Audit-CodexRouting.ps1`.
+5. If routing remains unresolved, state `INSUFFICIENT DATA`; do not guess a route or hydrate the full tree.
+
 ## Trigger Reminder
 
 - `ai read .codex knowledge` -> read `00_PULSE.md`, perform one route-first selective load, cache compact context, reply only `[🟢] Agent is Ready..`

@@ -2,6 +2,13 @@
 
 Use this only for deep, high-risk, governance, or recovery work.
 
+## Task Entry
+
+- Identify the task type: explain, inspect, diagnose, implement, refactor, test, review, compare, or configure.
+- Resolve the narrowest route and read the target plus one nearest related Markdown file.
+- Preserve exact user constraints, public identifiers, routes, schemas, and acceptance criteria.
+- State the change boundary, protected files, and verification target before acting.
+
 ## Before Editing
 
 - Confirm the exact task and success criteria.

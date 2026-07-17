@@ -18,7 +18,11 @@
       "skills"
     ]
   },
-  "fallback_chain": [],
+  "fallback_chain": [
+    "00_CODEX_START_HERE.md",
+    "CODEX_DYNAMIC_ROUTING.md",
+    "memories/2_governance/artifacts/skill_path_router.md"
+  ],
   "exclude": [
     "**/.git",
     "**/.git/**",

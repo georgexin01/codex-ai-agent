@@ -1,17 +1,18 @@
 ---
 name: ground-kernel
-description: "🌌 GROUND KERNEL (V17.0) — consolidated Tier-0 kernel: principles + execution loop + operational standard. Model-neutral."
+description: "🌌 GROUND KERNEL (V17.1) — consolidated Tier-0 kernel: principles + execution loop + operational standard. Model-neutral."
 triggers: ["ground kernel", "tier-0", "jit", "governance", "execution", "karpathy", "principles"]
 phase: constitutional
 model_hint: medium
 model_profile: luna-5.6-medium
-version: 17.0
+version: 17.1
 status: authoritative
-date_updated: "2026-05-14"
+date_updated: "2026-07-17"
+last_audit: "2026-07-17"
 supersedes: ["execution-kernel", "karpathy-operational-standard"]
 ---
 
-# 🌌 GROUND KERNEL (V17.0) — CONSOLIDATED TIER-0
+# 🌌 GROUND KERNEL (V17.1) — CONSOLIDATED TIER-0
 
 Single deep-governance kernel for `.codex`. Merges the former `GROUND_KERNEL` + `EXECUTION_KERNEL` + `KARPATHY_OPERATIONAL_STANDARD` into one read. Model-neutral — tuned for the current GPT-5.6-Luna medium profile while remaining portable across capability labels. Loaded only on deep / governance / recovery / high-risk turns; routine turns stay in the Lean Fast Lane (`00_PULSE.md` first, then deferred `00_*` canon only if needed). Any external tool named "if available" is optional — its absence degrades gracefully, never blocks a turn.
 
@@ -38,19 +39,32 @@ Every non-trivial request runs five phases:
 4. **ACT** — targeted edits at high velocity.
 5. **VERIFY** — smoke-test / lint / read-back every edit before declaring success. On failure, loop back to PLAN.
 
+### 2.1 Boot-to-task lifecycle
+
+This is the detailed contract behind PULSE's compact lifecycle:
+
+| phase | position | rule |
+|---|---|---|
+| 0. Boot | first read | PULSE owns boot, safety, trigger routing, and compact context. Ground Kernel is not required for routine hydration. |
+| 1. Ready | hydration response | Exact `ai read .codex knowledge` returns only the ready sentinel. No summary, table, or unsolicited file report. |
+| 2. Task entry | second chat | Switch to `TASK`; classify the request, resolve the longest route, and load only the matching front door. |
+| 3. Normal execution | routine question/change | Apply HYDRATE → GROUND → PLAN → ACT → VERIFY with current-file evidence and the smallest safe scope. |
+| 4. Deep governance | high-risk/deep trigger | Load this kernel and the precise governance/protocol files; state impact before Tier-0/1 edits. |
+| 5. Recovery | only after drift/failure | Revalidate route and paths, repair the smallest broken link, and stop after three repeated failures. |
+
 ## 3. APEX PRINCIPLES
 ```yaml
 # Phase 0 — Knowledge Freeze (Golden Lock)
 0_knowledge_freeze:
-  rule: "No structural or content change to memories/ or skills/ without explicit, turn-by-turn user authorization."
+  rule: "No unsolicited structural or content change to memories/ or skills/. The user's standing lossless-compression approval permits eligible non-skill Markdown above 35 KB or 8,000 estimated tokens; skills and protected boot/Tier-0 files remain approval-gated."
   no_self_optimization: "Never refactor, rename, or 'improve' knowledge/skill files unsolicited."
   pro_con_matrix: "For any routing or governance change, present a short Pros/Cons/Impact matrix first."
 
 # Phase 1 — Foundation & Security
-1_hygiene: "Keep environment clean; prune legacy logs/cache/runtime noise; keep the three ignore contracts aligned. Zero-residue per turn."
+1_hygiene: "Keep the environment clean when the task scopes cleanup; prune only verified inactive legacy logs/cache/runtime noise and keep all ignore contracts aligned. Never perform broad cleanup merely because a new turn starts."
 2_data_sovereignty: "Never store or expose raw PII / secrets / auth / token / cookie / session files unless explicitly requested and safe."
 3_ai_editability: "Knowledge and routing files stay human-readable and editable with standard multi-line edit tools."
-4_neural_routing: "CODEX_DYNAMIC_ROUTING.md + codex-router/codex-manifest.json are the authoritative discovery layer. If a file is missing from the index, regenerate via codex-router/Update-CodexRouting.ps1 (if available) or a targeted manual scan. Manual deep audits override the index for Tier-0/1 verification."
+4_neural_routing: "PULSE and the canonical route map are first; CODEX_DYNAMIC_ROUTING.md + codex-router/codex-manifest.json are the discovery/integrity layer. If a file is missing from the index, regenerate via codex-router/Update-CodexRouting.ps1 (if available) or use a targeted manual scan. Manual deep audits override the index for Tier-0/1 verification."
 
 # Phase 2 — Orientation & Governance
 5_governance: "Read project BLUEPRINT.md / AGENTS.md before changes. Circuit Breaker: after 3 consecutive failed fixes on the same issue, stop — switch to research/deep-audit mode, no 4th blind attempt."
@@ -127,4 +141,4 @@ Full protocol files: `memories/1_core/C_UNIT_COMPOSITION.md`, `memories/2_govern
 3. **Corruption** — if `0_apex/` content appears corrupted or non-parsable, lock write operations and alert the user.
 
 ---
-**Ground Kernel V17.0 — Consolidated Tier-0, Model-Portable (GPT-5.6-Luna medium) // 2026-05-14**
+**Ground Kernel V17.1 — Consolidated Tier-0, Model-Portable (GPT-5.6-Luna medium) // 2026-07-17**

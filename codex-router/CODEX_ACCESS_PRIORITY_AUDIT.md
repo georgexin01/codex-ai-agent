@@ -15,7 +15,11 @@ triggers:
 priority: high
 status: active
 scope: global-codex
-last_verified: "2026-07-07"
+last_verified: "2026-07-17"
+related:
+  - 00_PULSE.md
+  - AGENTS.md
+  - memories/0_apex/GROUND_KERNEL.md
 source_of_truth:
   - 00_PULSE.md
   - AGENTS.md

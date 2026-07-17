@@ -39,6 +39,20 @@ Bias: caution and correctness over speed, while preserving lean execution for tr
 
 ## Enforcement Tests
 
+## Luna Decision Gate
+
+Before acting, classify the request and choose the smallest valid lane:
+
+| request | default action | proof before completion |
+|---|---|---|
+| Explain or inspect | Read and report only | Current-file evidence |
+| Diagnose | Reproduce or trace the cause | Failure evidence and cause |
+| Implement or refactor | Plan, patch, and preserve callers/contracts | Read-back plus nearest test/check |
+| Review or compare | Report risks and evidence | No silent modification |
+| Deep/governance/recovery | Load exact Tier-0/protocol files | Route, impact, and recovery verification |
+
+Never use a stronger reasoning mode to justify a larger change; use it to improve evidence, counterexamples, and verification.
+
 - Assumption Test: Were key assumptions stated or verified?
 - Simplicity Test: Would a senior engineer call this overengineered?
 - Surgical Test: Can every changed line be traced to the user request?
