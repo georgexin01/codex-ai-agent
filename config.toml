@@ -74,6 +74,9 @@ trust_level = "trusted"
 [projects.'c:\users\user\desktop\test']
 trust_level = "trusted"
 
+[projects.'c:\users\user\desktop\sgmy189_special']
+trust_level = "trusted"
+
 [features]
 memories = true
 js_repl = false

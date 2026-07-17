@@ -114,6 +114,13 @@ $protectedSecretFiles = foreach ($name in $secretFiles) {
   }
 }
 
+# Guard against the historical nested-repository failure. Check metadata only.
+$nestedMemoriesGitPath = Join-Path $CodexRoot 'memories\.git'
+$nestedMemoriesGitPresent = Test-Path -LiteralPath $nestedMemoriesGitPath
+if ($nestedMemoriesGitPresent) {
+  Add-Issue 'nested-memories-git' $nestedMemoriesGitPath 'Nested Git metadata detected under memories; remove it and keep memories tracked by the root repository.'
+}
+
 $result = [pscustomobject]@{
   validator = 'Validate-CodexKnowledge.ps1'
   codex_root = $CodexRoot
@@ -122,6 +129,7 @@ $result = [pscustomobject]@{
   missing_targets = @($issues | Where-Object check -eq 'missing-routed-target').Count
   inline_secret_patterns = @($issues | Where-Object check -eq 'inline-secret-pattern').Count
   unignored_secret_files = @($issues | Where-Object check -eq 'unignored-secret-file').Count
+  nested_memories_git = $nestedMemoriesGitPresent
   deferred_large_files = $deferredLarge
   warnings = $warnings.Count
   issue_count = $issues.Count
