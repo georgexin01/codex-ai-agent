@@ -77,6 +77,15 @@ trust_level = "trusted"
 [projects.'c:\users\user\desktop\sgmy189_special']
 trust_level = "trusted"
 
+[projects.'c:\users\user\desktop\kingsguard']
+trust_level = "trusted"
+
+[projects.'c:\users\user\desktop\test\admin-panel-website-airbnb']
+trust_level = "trusted"
+
+[projects.'c:\users\user\desktop\hnphomestay']
+trust_level = "trusted"
+
 [features]
 memories = true
 js_repl = false

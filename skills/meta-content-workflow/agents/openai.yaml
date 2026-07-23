@@ -1,0 +1,7 @@
+interface:
+  display_name: "Meta Content Workflow"
+  short_description: "Evidence-based public metadata updates"
+  default_prompt: "Use $meta-content-workflow to audit and update this project's public metadata from current project evidence."
+
+policy:
+  allow_implicit_invocation: true

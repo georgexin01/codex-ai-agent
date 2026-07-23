@@ -85,6 +85,7 @@ This is the detailed contract behind PULSE's compact lifecycle:
 18_impact_aware: "Before editing a Tier-0/1 file, identify its dependents (blast radius) via the routing index or targeted grep, and state the impact in the plan."
 19_low_token_indexing: "Prefer index/manifest lookups and targeted reads over full-tree hydration. Discovery costs as few tokens as possible."
 20_context_compression: "Before spending large context, preserve the top 20% mission-critical facts verbatim (request, paths, schema, errors, IDs, constraints, acceptance criteria). Summarize the other 80% into compact notes only if the summary keeps ~99% of original meaning, evidence, and intent. Never compress away uncertainty or exact values needed for correctness."
+21_vue_typescript_naming_contract: "For Vue 3 + TypeScript work, read memories/0_apex/VUE_PINIA_NAMING_REFERENCE.md before generating important names. Use camelCase for frontend variables, refs, props, emits, metadata keys, and functions (for example lowerUpper, getAll, getListWithoutPagination, addUser, updateUser). Use PascalCase for Vue components, types, interfaces, classes, and enums. Pinia composables use use<Entity>Store, Pinia actions and getters use camelCase, and store state uses camelCase. Preserve exact existing or user-provided PiniaStore, Function, Input, spreadsheet, API, database, route, and public contract names even when they differ; never add renamed aliases silently."
 ```
 
 ## 4. EDIT-SAFETY TIERS
@@ -134,6 +135,44 @@ These are always-on rules loaded from `2_governance/` and `1_core/`. AI must app
 | Session Start | On new session: identify project → read SHARED_DB_CONTRACT → anchor task position. |
 
 Full protocol files: `memories/1_core/C_UNIT_COMPOSITION.md`, `memories/2_governance/*_PROTOCOL.md`
+
+### 8.1 Vue 3 + TypeScript + Pinia naming lock
+
+When the active project is a Vue 3 or TypeScript frontend, read [VUE_PINIA_NAMING_REFERENCE.md](VUE_PINIA_NAMING_REFERENCE.md) first, then apply this naming contract before creating or changing symbols. The reference contains the fuller store, page, API, type, route, lifecycle, exception, and verification guidance.
+
+- **camelCase is the default frontend identifier style.** Use it for variables, `ref`/`computed` names, component props, emitted event names, composable functions, utility functions, metadata keys, and Pinia state/actions/getters: `userName`, `selectedVehicle`, `getAll`, `getListWithoutPagination`, `addUser`, `updateUser`.
+- **PascalCase is the type/component style.** Use it for Vue component filenames and component names, interfaces, type aliases, classes, and enums: `UserCard.vue`, `User`, `UserCreateInput`, `VehicleStatus`.
+- **Pinia store names are fixed-form.** Export stores as `use<Entity>Store`, for example `useUserStore` or `useBookingStore`. Keep the Pinia id stable and verify the existing project convention before changing it. Store actions remain camelCase: `getAll`, `getList`, `getListWithoutPagination`, `getDetail`, `addUser`, `updateUser`, `deleteUser`.
+- **Store imports and local instances must mirror the domain name.** Import composables from the project store barrel when one exists, then instantiate one clearly named local variable using the same domain plus `Store`: `useAuthStore` -> `authStore`, `useProfilesStore` -> `profilesStore`, `useOrderStore` -> `ordersStore` when the page works with an order collection. Do not create vague variables such as `store`, `dataStore`, or `mainStore` when the domain is known.
+- **Store action verbs must communicate data direction.** Use the project's established public contract first. When creating new names, prefer `fetch...` for an API/remote load, `get...` for a read/select operation, `add...` or `create...` for insertion, `update...` for mutation, and `delete...`/`remove...` for removal. Keep the entity cardinality accurate: `fetchUser` for one user, `fetchAllDrivers` for all drivers, `getListWithoutPagination` for a list without pagination. Do not replace an existing contract merely to make it fit this preference.
+- **Page lifecycle orchestration follows the same vocabulary.** A page-level loading flag is normally `loading`; use `try/finally` to reset it when awaiting store actions. Authenticate or load prerequisite state before dependent stores, and keep the call order visible: `await authStore.fetchUser()` followed by `await profilesStore.fetchAllDrivers()` when that is the real dependency chain.
+- **Representative pattern (understand the relationship, do not copy blindly):**
+
+  ```ts
+  import { useAuthStore, useProfilesStore, useOrderStore } from '@/stores';
+
+  const authStore = useAuthStore();
+  const profilesStore = useProfilesStore();
+  const ordersStore = useOrderStore();
+
+  onMounted(async () => {
+    loading.value = true;
+    try {
+      await authStore.fetchUser();
+      await profilesStore.fetchAllDrivers();
+    } finally {
+      loading.value = false;
+    }
+  });
+  ```
+
+  The required lesson is the consistent `useXStore` -> `xStore` relationship, meaningful action verbs, accurate singular/plural naming, and explicit async lifecycle handling. Adapt the entities, actions, Inputs, and dependency order to the current project evidence.
+- **Use semantic singular/plural names.** A single record uses singular names (`getUser`, `addUser`, `updateUser`); collections use plural names (`getUsers`, `updateUsers`) only when the action genuinely operates on multiple records. Do not choose a name from a generic CRUD template when the actual Input/Output is different.
+- **Titles have two separate rules.** Code properties that hold titles use camelCase (`pageTitle`, `dialogTitle`, `seoTitle`). Human-visible page titles, SEO titles, headings, labels, and source content keep their intentional wording and capitalization; do not mechanically convert public text to camelCase.
+- **Use the boundary casing, not a guessed conversion.** Database/API fields may remain `snake_case` when that is the live contract; map them at the store/API boundary into frontend `camelCase` only when the current project requires that mapping. URLs and route paths remain the established kebab/lowercase contract.
+- **Exact contract names win.** Before editing, scan callers, types, route metadata, and the live contract source. Preserve exact `PiniaStore`, `Function`, and `Input` spelling/casing, including intentional legacy spellings or pluralization. Do not silently introduce `getUsers` as an alias for an existing `getAll`, or `updateUsers` as a replacement for an existing `update`.
+- **New naming must be consistent within its feature.** Do not mix `getAllUsers`, `fetchUsers`, `getUsersList`, and `listUsers` for the same operation. Select one semantically accurate camelCase name, document it when public, and reuse it across store, composable, view, test, and mock data.
+- **Naming verification is mandatory.** After a naming-sensitive change, search the repository for the exact symbol and its callers, read back the store and one caller, then run the nearest TypeScript check/build. If a contract source is unavailable, report `INSUFFICIENT DATA` instead of renaming by assumption.
 
 ## 9. EMERGENCY RECOVERY
 1. **Drift** — on path drift (files missing, index stale), regenerate via `Update-CodexRouting.ps1` (if available) or re-resolve via the `00_CODEX_START_HERE.md` fallback chain before proceeding.

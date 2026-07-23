@@ -38,6 +38,7 @@ status: authoritative
 | `ai pinia contract` / `PiniaStore Function Input` | `skills/pinia-contract-workflow/SKILL.md` | Exact app Pinia store/action/input contract using the user's sheet and hotpot references |
 | `ai cyroro audit` | `skills/pinia-contract-workflow/SKILL.md` | Cyroro paired-app contract, schema, environment, and verification audit |
 | `localhost test` | `skills/localhost-test/SKILL.md` | Detect active Vben, Vue app, and PHP roots; start and verify local development URLs |
+| `metaTitle` / `meta title` / `meta content` / `SEO metadata` | `skills/meta-content-workflow/SKILL.md` | Evidence-based public website/app metadata workflow: route inventory, unique titles/descriptions, alt text, canonical, robots, sitemap, social metadata, JSON-LD, itemprop, and `meta.md` continuation tracking |
 
 ## Recipe and Knowledge Triggers
 

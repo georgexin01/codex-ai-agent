@@ -1,0 +1,4 @@
+interface:
+  display_name: "SEO AI Search"
+  short_description: "Build crawlable, citation-ready SEO for Google and AI search"
+  default_prompt: "Audit this website for Google and AI-search discoverability, then implement verified metadata, structured data, crawl controls, sitemap, and answer-focused content."

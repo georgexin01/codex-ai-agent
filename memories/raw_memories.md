@@ -755,3 +755,231 @@ References:
   - `http://127.0.0.1:5173/` — HTTP 200 OK
   - `http://127.0.0.1:3000/` — HTTP 200 OK
 
+## Thread `019f6dc7-c3ea-7ef2-8af9-86bc462f2fbf`
+updated_at: 2026-07-17T09:06:43+00:00
+cwd: \\?\C:\Users\user\Desktop\trash-container-app
+rollout_path: C:\Users\user\.codex\sessions\2026\07\17\rollout-2026-07-17T09-54-00-019f6dc7-c3ea-7ef2-8af9-86bc462f2fbf.jsonl
+rollout_summary_file: 2026-07-17T01-53-56-GETJ-trash_container_localhost_schema_and_supabase_connectivity.md
+
+---
+description: Verified local app startup, Cyroro schema configuration, VPS build distinction, and localhost Supabase access behavior.
+task: localhost-test-and-supabase-connectivity
+ task_group: trash-container-app
+ task_outcome: success
+cwd: C:\Users\user\Desktop\trash-container-app
+keywords: localhost test, cyroro, VITE_SUPABASE_SCHEMA, VITE_SUPABASE_URL, npm run build, dev:vps, Supabase, Docker, RLS, web-driver-app, web-admin-app
+---
+
+### Task 1: Localhost readiness and app routing
+
+task: detect/start/verify local apps
+task_group: trash-container-app-localhost
+task_outcome: success
+
+Preference signals:
+- When the user says exactly `localhost test`, stay in read/start/verify mode and do not patch apps unless separately asked -> future runs should inspect shallow roots, reuse listeners, start detached servers only when needed, and verify HTTP responses.
+
+Reusable knowledge:
+- Runnable roots and commands: `admin-panel-trash` → `pnpm.cmd run dev:local` on port 6006; `web-admin-app` → `npm.cmd run dev` on 5173; `web-driver-app` → `npm.cmd run dev` on 3000.
+- A spawned process is not success; each URL must return a valid HTTP response. Verified HTTP 200 for all three configured URLs in this rollout.
+
+Failures and how to do differently:
+- No startup failure remained. Readiness polling was required because startup is asynchronous, especially for the Vben app.
+
+References:
+- `http://127.0.0.1:6006/` — HTTP 200
+- `http://127.0.0.1:5173/` — HTTP 200
+- `http://127.0.0.1:3000/` — HTTP 200
+
+### Task 2: VPS schema and build target
+
+task: distinguish schema from backend URL
+task_group: trash-container-app-build-environments
+task_outcome: success
+
+Reusable knowledge:
+- Vben VPS mode is `pnpm vite --mode development.supabase`; production build is `pnpm vite build --mode production`.
+- `.env.development.supabase` and `.env.production` both set `VITE_SUPABASE_SCHEMA=cyroro`.
+- `npm run build` compiles the frontend and does not itself connect to Supabase; the generated app connects at runtime using bundled environment values.
+- `VITE_SUPABASE_SCHEMA=cyroro` alone does not prove VPS connectivity. The backend URL must point to the VPS rather than `localhost`.
+
+References:
+- `web-driver-app/package.json`: `"build": "vue-tsc --noEmit && vite build"`
+- `web-driver-app/.env` was observed with `VITE_SUPABASE_URL=http://localhost:54321/` and `VITE_SUPABASE_SCHEMA=cyroro`.
+- `admin-panel-trash/apps/web-antd/package.json`: `dev:vps` uses `--mode development.supabase`; `build` uses `--mode production`.
+
+### Task 3: Local Docker Supabase access boundaries
+
+task: determine whether copied projects access this Docker Supabase
+task_group: trash-container-app-supabase-access
+task_outcome: success
+
+Reusable knowledge:
+- Both mobile apps were configured with `VITE_SUPABASE_URL=http://localhost:54321/` and `VITE_SUPABASE_SCHEMA=cyroro`.
+- `localhost` refers to the machine running the browser/app. Another computer cloning the project and running `npm run dev` connects to its own localhost, not this machine’s Docker Supabase.
+- A user on the same computer can reach the local Docker Supabase while it is running. VPS access requires a VPS API URL and reachable network endpoint.
+- `web-admin-app/.gitignore`, `web-driver-app/.gitignore`, and the root `.gitignore` ignore `.env` and `.env.*`; normal clones do not receive local URLs or anon keys. RLS/auth still govern anon-client reads; never expose `service_role` credentials.
+
+Failures and how to do differently:
+- Initial PowerShell inspection commands had parser errors due to unsupported ternary syntax/mismatched braces; rerunning with simpler PowerShell syntax succeeded. Avoid PowerShell `?:` syntax when compatibility is uncertain.
+
+References:
+- Local Supabase listeners were observed on ports 54321–54324.
+- `admin-panel-trash/SUPABASE.md` documents VPS API gateway port 8000 and local-only Docker Studio binding; credentials were not stored.
+
+## Thread `019f6dc8-45a2-77e2-a162-4d60741d8788`
+updated_at: 2026-07-17T07:52:38+00:00
+cwd: \\?\C:\Users\user\.codex
+rollout_path: C:\Users\user\.codex\sessions\2026\07\17\rollout-2026-07-17T09-54-34-019f6dc8-45a2-77e2-a162-4d60741d8788.jsonl
+rollout_summary_file: 2026-07-17T01-54-29-PZNu-codex_knowledge_routing_compression_git_health.md
+
+---
+description: `.codex` maintenance established lossless memory compression, route-safe cleanup, Luna 5.6 governance, GitNexus repair, and nested-Git detection; final nested-memory audit passed.
+task: maintain-and-verify-codex-knowledge-routing
+ task_group: codex-maintenance
+ task_outcome: success
+cwd: C:\Users\user\.codex
+keywords: .codex, 00_PULSE.md, MEMORY.md, MEMORY_DETAILS.md, KnowledgeHealthReport.ps1, Validate-CodexKnowledge.ps1, Audit-CodexRouting.ps1, GitNexus, memories/.git, gitlink, 160000, route integrity, Luna 5.6
+---
+
+### Task 1: `.codex` maintenance and Git health
+
+task: audit, compress, route, and verify `.codex` knowledge without editing skills Markdown
+task_group: codex-maintenance
+task_outcome: success
+
+Preference signals:
+- The user asked to “preserve the original goal,” keep old content, make documents suitable for “5.6 luna,” and “do not modify any skills .md” -> future maintenance should use lossless hot-index/cold-details separation and exclude `/skills/` Markdown.
+- The user repeatedly requested step-by-step work, deeper document inspection, nearest related Markdown updates, and complete route repair -> perform inspect → patch → regenerate → audit verification for each maintenance step.
+
+Reusable knowledge:
+- `memories/MEMORY.md` was losslessly split: the original 619-line/~21,095-token content is preserved in `memories/MEMORY_DETAILS.md`; `MEMORY.md` is now a 58-line/~900-token searchable index. `MEMORY_DETAILS.md` is cold-routed and excluded from routine indexing.
+- Active cleanup removed the duplicate `memories/skills/localhost-test/SKILL.md`, obsolete Faucet files, and superseded root routing stubs. Skills Markdown was not modified by the cleanup.
+- GitNexus was stale at `df9c2a1` versus current `a72f689`; after explicit authorization, `npx.cmd gitnexus analyze` succeeded and status became up-to-date with 3,516 nodes, 3,886 edges, 9 clusters, and 16 flows.
+- Final route/health checks passed: 111 triggers, 0 conflicts, 0 missing targets; validator PASS; health PASS; benchmark 18/18 at 10/10.
+- `memories/.git` is currently absent, `git ls-files -s -- memories` contains zero mode-`160000` entries, and `memories/` is tracked as ordinary root-repository content.
+- `codex-router/Validate-CodexKnowledge.ps1` now checks for nested `memories/.git` and reports `nested-memories-git` if it reappears.
+
+Failures and how to do differently:
+- The exact creator of a historical `memories/.git` could not be proven because it was absent during investigation. Treat IDE “Initialize Repository” or manual `git init` inside `memories` as likely causes, but do not claim certainty.
+- GitNexus initially showed stale status; do not auto-index `.codex` without authorization. When authorized, run `npx.cmd gitnexus analyze`, then recheck status and generated-file diffs.
+- A PowerShell JSON scan falsely flagged `.tmp/plugins/plugins/superhuman/package-lock.json`; Node parsed it successfully. Exclude runtime/cache data from active knowledge conclusions and use Node for JSON confirmation when PowerShell parsing is unreliable.
+
+References:
+- `C:\Users\user\.codex\memories\MEMORY.md` — compact hot memory index.
+- `C:\Users\user\.codex\memories\MEMORY_DETAILS.md` — complete preserved historical memory.
+- `C:\Users\user\.codex\codex-router\Validate-CodexKnowledge.ps1` — validator including nested-memory-Git guard.
+- `C:\Users\user\.codex\codex-router\KnowledgeHealthReport.ps1 -Json` — combined read-only health check.
+- `C:\Users\user\.codex\codex-router\Audit-CodexRouting.ps1` — route integrity audit.
+- `npx.cmd gitnexus analyze` — successful refresh command.
+- Diagnostic signals: `Test-Path memories/.git` → `False`; gitlink count → `0`; `nested_memories_git=false`.
+
+## Thread `019f87aa-2319-7471-ab82-ee9cbf2f6f95`
+updated_at: 2026-07-22T02:42:41+00:00
+cwd: \\?\C:\Users\user\.codex
+rollout_path: C:\Users\user\.codex\sessions\2026\07\22\rollout-2026-07-22T10-31-46-019f87aa-2319-7471-ab82-ee9cbf2f6f95.jsonl
+rollout_summary_file: 2026-07-22T02-31-42-4A6x-meta_content_workflow_skill_routing.md
+
+---
+description: Created a reusable evidence-based metaTitle/SEO workflow skill and route for future website/app projects; routing passed, while validator completion remained blocked by missing Python yaml dependency and pre-existing nested Git metadata.
+task: create and route reusable meta-content workflow skill
+task_group: codex-knowledge-routing
+ task_outcome: partial
+cwd: C:\Users\user\.codex
+keywords: metaTitle, meta-content-workflow, SEO metadata, seo-ai-search, skill_path_router, Update-CodexRouting.ps1, Audit-CodexRouting.ps1, Validate-CodexKnowledge.ps1, nested-memories-git, yaml
+---
+
+### Task 1: Reusable meta-content workflow
+
+task: create and route a triggerable website/app metadata workflow
+ task_group: codex-knowledge-routing
+ task_outcome: partial
+
+Preference signals:
+- The user said the same workflow may be pasted “in next project” and should cooperate with `.codex` knowledge and skills -> inspect each new project's real routes/content and do not carry over example brands, locations, or claims.
+- The user explicitly limited the workflow to “website or app only, not admin panel” -> exclude admin-panel-only metadata by default.
+- The user requested a project-root `meta.md` to remember incomplete work -> maintain a continuation checklist when the project task spans chats.
+
+Reusable knowledge:
+- Skill created at `skills/meta-content-workflow/SKILL.md`; it covers route inventory, unique metadata, optional `A | B | C` titles, descriptions/alt text, canonical, robots, sitemap, OG/Twitter, JSON-LD/itemprop, favicon/manifest checks, and verification.
+- Knowledge route created at `memories/project_notes/META_CONTENT_WORKFLOW.md`; it points to the skill and `skills/seo-ai-search/SKILL.md` and states that KingsGuard/VIP Billion/Johor Bahru examples are not portable facts.
+- Routing entry added to `memories/2_governance/artifacts/skill_path_router.md` for `metaTitle`, `meta title`, `meta content`, and `SEO metadata`.
+- `Update-CodexRouting.ps1 -Quiet` and `Audit-CodexRouting.ps1` completed; audit showed zero missing targets and zero trigger conflicts.
+
+Failures and how to do differently:
+- `generate_openai_yaml.py` and `quick_validate.py` failed with `ModuleNotFoundError: No module named 'yaml'`; manual `agents/openai.yaml` was added and read back successfully.
+- `Validate-CodexKnowledge.ps1` ended `FAIL` because of pre-existing `C:\Users\user\.codex\memories\.git`; the new duplicate frontmatter warning was fixed. Preserve the nested Git state unless explicitly authorized to change it.
+
+References:
+- `skills/meta-content-workflow/SKILL.md` (41 lines; contains trigger, `A | B | C`, and anti-invention guardrails).
+- `memories/project_notes/META_CONTENT_WORKFLOW.md` (22 lines; route and continuation guidance).
+- Audit evidence: `trigger_count: 111`, `trigger_conflict_count: 0`, `missing_trigger_target_count: 0`.
+- Validation blocker: `nested Git metadata detected under memories; remove it and keep memories tracked by the root repository.`
+
+## Thread `019f887c-460e-7992-bd16-abac9f629694`
+updated_at: 2026-07-22T07:38:05+00:00
+cwd: \\?\C:\xampp\htdocs
+rollout_path: C:\Users\user\.codex\sessions\2026\07\22\rollout-2026-07-22T14-21-22-019f887c-460e-7992-bd16-abac9f629694.jsonl
+rollout_summary_file: 2026-07-22T06-21-13-XZxW-hnp_homestay_localhost_i18n_routing_debug.md
+
+---
+description: Added localhost:8080 support and route-based EN/CN i18n to the HNP Homestay PHP project; fixed Composer helper redeclaration; live pages remain blocked by an unresolved DB/runtime HTTP 500.
+task: hnp-homestay-localhost-i18n-and-runtime-debug
+task_group: php-website-localhost-routing
+task_outcome: partial
+cwd: C:\xampp\htdocs
+keywords: localhost:8080, PHP, MySQL, phpMyAdmin, CORS, i18n, /cn, Composer autoload, siteLanguage, HTTP 500, redeclaration
+---
+
+### Task 1: Localhost and database setup
+
+task: configure and verify HNP Homestay on localhost:8080
+task_group: php-website-localhost-routing
+task_outcome: success
+
+Preference signals:
+- The user wanted the current project served at `http://localhost:8080` while continuing to read the existing MySQL database -> preserve DB schema/data and make only routing/runtime changes unless explicitly asked otherwise.
+
+Reusable knowledge:
+- Root server command was `php -S 127.0.0.1:8080 index.php` from `C:\xampp\htdocs`.
+- MySQL listened on port 3306; phpMyAdmin at `http://localhost/phpmyadmin/` returned 200.
+- `api/Website/Config.php` uses database `airbnb.com_db`, host `localhost`, driver `mysqli`.
+- Added `http://localhost:8080` to the development CORS allow-list in `api/Website/Config.php`.
+
+Failures and how to do differently:
+- `/properties` returned an existing 404 during initial checks; do not assume every route is healthy just because `/` returns 200.
+
+References:
+- `api/Website/Config.php`
+- `index.php`
+- `router.php`
+- Verification: `http://localhost:8080/ -> 200`, `http://localhost/phpmyadmin/ -> 200`.
+
+### Task 2: Route-based bilingual i18n
+
+task: implement English/Chinese website switching with `/cn/...` routes
+task_group: php-website-i18n
+ task_outcome: partial
+
+Preference signals:
+- The user specifically said footer copyright/provider text must not change with language -> keep `© 2026 HNP Homestay. All rights reserved.` and `Provided by Zeta Capital Sdn. Bhd.` in English on both locales.
+- The user expected language switching to affect navigation/content URLs, not merely a client-side label toggle -> use route-prefixed URLs and server-side locale loading.
+
+Reusable knowledge:
+- Locale catalogs: `i18n/en.json`, `i18n/cn.json`.
+- Shared helpers: `api/Website/Helper.php` functions `siteLanguage`, `sitePath`, `localizedPath`, `isCurrentPath`, and `t`.
+- `index.php` strips `/cn` before existing route matching and sets `zh-CN` language metadata.
+- Composer already autoloads `api/Website/Helper.php` through `autoload.files`.
+- The footer English-only requirement is implemented directly in `template/lib/footer.php`.
+
+Failures and how to do differently:
+- Fatal error `Cannot redeclare Website\siteLanguage()` came from loading `Helper.php` both directly in `index.php` and through Composer. Remove the direct helper include; load Composer autoload once.
+- Live route checks still returned HTTP 500 for `/`, `/about`, `/properties`, and `/cn/...`; the remaining blocker is the database/application runtime layer and was not verified as fixed.
+- PHP/PowerShell inline quoting caused repeated parse errors; use PowerShell here-strings or standalone validation scripts.
+
+References:
+- Redeclaration search showed `index.php` direct include plus `composer.json`/`vendor/composer/autoload_files.php` registration.
+- Successful helper check: English `/about` + `About`; Chinese `/cn/about` + `关于我们`.
+- `php -l` passed for changed PHP files; locale JSON files parsed; CSS asset returned 200.
+- Live evidence: `curl.exe -i http://127.0.0.1:8080/cn/about` returned `HTTP/1.0 500 Internal Server Error` but rendered `lang="zh-CN"` before the application failure.
+
