@@ -983,3 +983,161 @@ References:
 - `php -l` passed for changed PHP files; locale JSON files parsed; CSS asset returned 200.
 - Live evidence: `curl.exe -i http://127.0.0.1:8080/cn/about` returned `HTTP/1.0 500 Internal Server Error` but rendered `lang="zh-CN"` before the application failure.
 
+## Thread `019fa1bc-28c3-7131-a311-b52649a250bd`
+updated_at: 2026-07-27T09:36:42+00:00
+cwd: \\?\C:\Users\user\Desktop\admin-panel-labour-v4
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\07\27\rollout-2026-07-27T12-01-30-019fa1bc-28c3-7131-a311-b52649a250bd.jsonl
+rollout_summary_file: 2026-07-27T04-01-30-Bvhr-labour_vben_env_docker_supabase_workflow_audit.md
+
+---
+description: Windows Vben Labour admin setup/debugging: env-mode routing, Supabase startup/login failures, Docker WSL outage, and strict read-only workflow-audit preference
+ task: debug and audit admin-panel-labour-v4 local/VPS runtime and business flows
+ task_group: vben-supabase-windows-runtime
+ task_outcome: partial
+ cwd: C:\Users\user\Desktop\admin-panel-labour-v4
+ keywords: pnpm, Vite, development.localhost, development.supabase, VITE_APP_TITLE, VITE_SUPABASE_URL, VITE_NITRO_MOCK, Supabase, Docker, WSL, PuTTY, labour2, labour4, slots, worker replacement
+---
+
+### Task 1: Environment and Vite startup
+
+task: resolve missing env configuration after clone
+ task_group: Vben/Vite setup
+ task_outcome: success
+
+Preference signals:
+- The user requested a “fast read” of the cloned project before deciding whether more installation was needed -> inspect package scripts, env loading, Docker files, and runtime modes before prescribing setup.
+
+Reusable knowledge:
+- Root is a pnpm monorepo; Node `v25.2.1`, pnpm `10.22.0`, Docker `29.3.1`, and Compose `v5.1.1` were installed.
+- Main app is `apps/web-antd`; `pnpm dev:local` selects `.env.development.localhost`; `pnpm dev:vps` selects `.env.development.supabase`.
+- The repository initially had no env files and no Compose file. Vite frontend and Supabase/Docker are separate runtime layers.
+- `VITE_APP_TITLE` was missing, causing EJS failure before Vue mounted. Creating ignored `apps/web-antd/.env.development.localhost` with `VITE_APP_TITLE=Labour Admin` fixed the HTML transformation; HTTP verification returned 200 with title `Labour Admin`.
+
+Failures and how to do differently:
+- Foreground Vite smoke commands time out by design; run detached/background and poll HTTP instead.
+
+References:
+- `apps/web-antd/index.html`: `<title><%= VITE_APP_TITLE %></title>`
+- `apps/web-antd/.env.development.localhost`
+- Error: `VITE_APP_TITLE is not defined`
+
+### Task 2: Docker/WSL recovery
+
+task: diagnose Docker Desktop WSL command timeout
+ task_group: Windows Docker/WSL
+ task_outcome: partial
+
+Reusable knowledge:
+- `wsl --status` / `wsl --list --verbose` hung; `com.docker.service` and `LxssManager` were stopped, `vmcompute` running, virtualization detected, and Docker API unavailable.
+- Safe commands did not recover the host because `wsl --shutdown` itself hung. The correct escalation was Windows restart; do not unregister `docker-desktop`, reset Docker, or delete volumes without explicit confirmation.
+
+Failures and how to do differently:
+- Initial PowerShell command failed because `"$svc:"` is invalid interpolation; use `${svc}:`.
+- No destructive reset or data deletion occurred.
+
+References:
+- Error: `Wsl/CommandTimeout`
+- Error: `failed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine`
+
+### Task 3: Supabase blank page and login
+
+task: diagnose missing Supabase URL and invalid local login
+ task_group: Supabase/Vite auth
+ task_outcome: partial
+
+Reusable knowledge:
+- `apps/web-antd/src/api/supabase.ts` creates the Supabase client at module load, before Vue mounts. Missing `VITE_SUPABASE_URL` causes `supabaseUrl is required` and a blank page.
+- Mock mode still needs a valid placeholder URL because the Supabase module is imported even when `VITE_NITRO_MOCK=true`.
+- Once the app sent `POST http://127.0.0.1:54321/auth/v1/token`, the URL was proven loaded and reachable. `400 Invalid login credentials` means authentication/user seed/schema/project state is wrong, not that pnpm or env installation is missing.
+- Real Labour login needs running Supabase plus Labour migrations/seed users; dependency installation does not create database state.
+- The current observed local env used `VITE_NITRO_MOCK=false`, `VITE_PORT=5888`, and schema `insurancecrm2`; this differed from the expected Labour/local setup and from screenshots using port 5173.
+
+Failures and how to do differently:
+- Always confirm the active Vite mode, effective port, schema, and whether the running process was restarted before diagnosing credentials.
+- Do not assume a newly edited env file is active in an already-running Vite process.
+
+References:
+- Errors: `supabaseUrl is required`; `Invalid login credentials`
+- `apps/web-antd/src/api/core/auth.ts`: `VITE_NITRO_MOCK === 'true'`
+- `apps/web-antd/src/api/core/supabase-auth.ts`: `signInWithPassword`
+
+### Task 4: Port 3001 and VPS routing
+
+task: identify env used by localhost:3001/VPS Supabase
+ task_group: VPS SSH tunnel and Vite modes
+ task_outcome: success
+
+Reusable knowledge:
+- Port `3001` was owned by `putty.exe`, so `http://localhost:3001/` is an SSH tunnel, not a Vite frontend and does not directly select a project env file.
+- `pnpm dev:vps` selects `apps/web-antd/.env.development.supabase`; the Vue frontend normally runs on its configured Vite port (observed as 5173 in VPS env), while 3001 is the tunneled Supabase dashboard/service.
+
+References:
+- Listener: `putty.exe` on port 3001
+- `apps/web-antd/.env.development.supabase`
+- `apps/web-antd/package.json`: `dev:vps = pnpm vite --mode development.supabase`
+
+### Task 5: Owner business workflow audit
+
+task: read-only audit of customer → service item → quotation → company → contract and worker lifecycle rules
+ task_group: Labour business workflow audit
+ task_outcome: partial
+
+Preference signals:
+- The user explicitly requested “do nothing no update, no changes to my project” and wanted check/X tables for existing, missing, and partial workflows -> keep future audits read-only, separate UI existence from actual validation/RPC enforcement, and report uncertainty with evidence.
+
+Reusable knowledge:
+- Routes/views/stores exist for customers, service items, quotations, companies, contracts, workers, placements, salaries, and slots.
+- Strong code evidence exists for customer-linked companies, company-linked contracts, contract slot generation, worker assignment/replacement, standby/working transitions, increasing worker count, and replacement workflows.
+- Relevant retrieval paths: `apps/web-antd/src/router/routes/modules/labour.ts`; `apps/web-antd/src/stores/customers.ts`; `labour-companies.ts`; `labour-contracts.ts`; `labour-worker-placements.ts`; `slots.ts`; SQL under `apps/web-antd/src/sql/migrations_labour4/`.
+- Locale text includes `reasonPlaceholder: ... optional`; verify the UI and DB RPC before claiming the owner’s “replacement reason required” rule is enforced.
+
+Failures and how to do differently:
+- The rollout stopped after inventory and did not produce the requested full check/X matrix. A future run should continue with targeted reads of forms, date validation, RPC definitions, and tests, while making no edits or database writes.
+
+References:
+- `apps/web-antd/src/sql/migrations_labour4/113_labour2_contract_slots.sql`
+- `apps/web-antd/src/sql/migrations_labour4/101_labour2_replace_worker_placement_rpc.sql`
+- `apps/web-antd/src/sql/migrations_labour4/104_labour2_worker_status_sync_trigger.sql`
+- `apps/web-antd/src/sql/migrations_labour4/105_labour2_lifecycle_cascade_rpc.sql`
+- Locale keys: `replaceWorker`, `replacedReason`, `standby`, `working`, `requiredWorkerCount`
+
+## Thread `019fa2ef-8652-7c11-bfd3-cfb30a3d33fb`
+updated_at: 2026-07-27T10:54:32+00:00
+cwd: \\?\C:\Users\user\Desktop\admin-panel-labour-v4
+rollout_path: C:\Users\user\.codex\sessions\2026\07\27\rollout-2026-07-27T17-37-14-019fa2ef-8652-7c11-bfd3-cfb30a3d33fb.jsonl
+rollout_summary_file: 2026-07-27T09-37-14-CMEb-admin_panel_workflow_check_summary.md
+
+---
+description: User prefers concise, human-style mixed English/Chinese CRUD workflow checklists for the labour admin panel, focused on observable office-user gaps rather than AI-style exhaustive reports.
+task: maintain workflow checking summary and test-report style for labour admin panel
+task_group: admin-panel-labour-v4 workflow audit
+ task_outcome: success
+cwd: C:\Users\user\Desktop\admin-panel-labour-v4
+keywords: WORKFLOW_CHECKING_SUMMARY.md, CRUD checklist, company customer link, worker status, vacant occupied, standby working, Excel unique key, quotation contract, browser unavailable
+---
+
+### Task 1: Maintain concise workflow-checking report
+
+task: refine a labour admin-panel workflow audit into a copy-pasteable short report
+task_group: admin-panel workflow/reporting
+task_outcome: success
+
+Preference signals:
+- The user asked for wording “像是人在test”, “使用者的人视角”, and “内容再次减少一点” -> write short, colloquial observations with some uncertainty; avoid polished AI audit language and repetitive explanations.
+- The user prefers module headings and terse bullets similar to their own format: `Customer`, `Service Item`, `Quotation`, `Companies`, `Contacts`, `Contracts`, `Workers`, `Worker Placements`, `Worker Salary Records`.
+- The user explicitly defined test markers: `[]` not tested, `[k]` checked/test complete, `[x]` wrong or failed; also uses `→` for process transitions and `x` for a system block.
+
+Reusable knowledge:
+- The final report should center on the office-user chain `Customer → Service Item → Quotation → Company / Contact → Contract`; earlier records must be findable later.
+- Key gaps worth keeping concise: business unique keys for Excel import/update; required Customer on Company; quotation date ordering and Company prerequisite; contract date controls; automatic slot/status transitions; required replacement/end reason; avoiding duplicate worker assignment; choosing one source of truth between Worker Placements and Contract Slots; incomplete salary workflow.
+- The artifact is `WORKFLOW_CHECKING_SUMMARY.md` in the project root and was read back successfully as UTF-8.
+
+Failures and how to do differently:
+- Do not mark checklist items `[k]` from static code evidence alone. Browser testing could not run because the in-app browser returned `Browser is not available: iab`; leave items untested or explain the limitation.
+- Before patching the report, read the exact current section because repeated patch attempts failed on text mismatch.
+
+References:
+- Project cwd: `C:\Users\user\Desktop\admin-panel-labour-v4`.
+- Final report path: `WORKFLOW_CHECKING_SUMMARY.md`.
+- Relevant implementation paths: `apps/web-antd/src/sql/migrations_labour4/113_labour2_contract_slots.sql`, `101_labour2_replace_worker_placement_rpc.sql`, `104_labour2_worker_status_sync_trigger.sql`, `116_labour2_quotations_company_link.sql`, and `apps/web-antd/src/views/labour-contracts/`.
+

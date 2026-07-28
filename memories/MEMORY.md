@@ -1,3 +1,51 @@
+# Task Group: admin-panel-labour-v4 Vben runtime, Supabase diagnosis, and workflow checks
+
+scope: Set up or diagnose the Labour Vben/Vite frontend on Windows, distinguish Vite, Supabase, Docker/WSL, and SSH-tunnel layers, and produce evidence-backed office-user workflow audits.
+applies_to: cwd=C:\Users\user\Desktop\admin-panel-labour-v4; reuse_rule=checkout-specific; inspect active env files, Vite mode/process, listeners, migrations, and live state before reusing ports, schemas, credentials conclusions, or workflow enforcement claims.
+
+## Task 1: Diagnose local/VPS Vite modes, Supabase startup/login, Docker/WSL, and localhost:3001
+
+### rollout_summary_files
+
+- rollout_summaries/2026-07-27T04-01-30-Bvhr-labour_vben_env_docker_supabase_workflow_audit.md (cwd=\\?\C:\Users\user\Desktop\admin-panel-labour-v4, rollout_path=\\?\C:\Users\user\.codex\sessions\2026\07\27\rollout-2026-07-27T12-01-30-019fa1bc-28c3-7131-a311-b52649a250bd.jsonl, updated_at=2026-07-27T09:36:42+00:00, thread_id=019fa1bc-28c3-7131-a311-b52649a250bd, partial: Vite title and tunnel routing verified; WSL and real login required host/database recovery)
+
+### keywords
+
+- admin-panel-labour-v4, apps/web-antd, pnpm dev:local, pnpm dev:vps, development.localhost, development.supabase, VITE_APP_TITLE, VITE_NITRO_MOCK, VITE_SUPABASE_URL, VITE_SUPABASE_SCHEMA, supabaseUrl is required, Invalid login credentials, Wsl/CommandTimeout, dockerDesktopLinuxEngine, putty.exe, localhost:3001
+
+## Task 2: Produce a concise, read-only Labour CRUD/workflow checklist
+
+### rollout_summary_files
+
+- rollout_summaries/2026-07-27T09-37-14-CMEb-admin_panel_workflow_check_summary.md (cwd=\\?\C:\Users\user\Desktop\admin-panel-labour-v4, rollout_path=C:\Users\user\.codex\sessions\2026\07\27\rollout-2026-07-27T17-37-14-019fa2ef-8652-7c11-bfd3-cfb30a3d33fb.jsonl, updated_at=2026-07-27T10:54:32+00:00, thread_id=019fa2ef-8652-7c11-bfd3-cfb30a3d33fb, success: WORKFLOW_CHECKING_SUMMARY.md read back as UTF-8)
+
+### keywords
+
+- WORKFLOW_CHECKING_SUMMARY.md, Customer, Service Item, Quotation, Companies, Contacts, Contracts, Workers, Worker Placements, Worker Salary Records, Customer → Service Item → Quotation → Company/Contact → Contract, vacant → occupied, standby → working, Contract Slots, Excel unique key, Browser is not available: iab, 113_labour2_contract_slots.sql, 101_labour2_replace_worker_placement_rpc.sql, 104_labour2_worker_status_sync_trigger.sql, 116_labour2_quotations_company_link.sql
+
+## User preferences
+
+- When asking for a “fast read” of a cloned project before deciding whether installation is needed -> inspect package scripts, env loading, Docker/Supabase files, and runtime modes before prescribing setup. [Task 1]
+- For a Labour business workflow audit, the user explicitly said “do nothing no update, no changes to my project” and wanted check/X coverage -> remain read-only, separate UI presence from validation/RPC enforcement, and state evidence and uncertainty. [Task 1]
+- For workflow reports, the user asked for “short,” human-style mixed English/Chinese notes from an office-user perspective, with fewer repeated explanations -> use the requested CRUD headings and short observable gaps rather than an exhaustive AI-style audit. [Task 2]
+- Use the user-defined test notation: `[]` not tested, `[k]` checked/test complete or success, `[x]` wrong/failed or system block; show transitions such as `vacant → occupied` and `standby → working` directly. [Task 2]
+
+## Reusable knowledge
+
+- This is a pnpm Vben monorepo with main app `apps/web-antd`. `pnpm dev:local` selects `development.localhost` and `pnpm dev:vps` selects `development.supabase`; Vite reads `.env`, `.env.local`, `.env.<mode>`, and `.env.<mode>.local` from the app directory. The Vite frontend and Docker/Supabase services are separate runtime layers. [Task 1]
+- `VITE_APP_TITLE is not defined` comes from `apps/web-antd/index.html` when the active env lacks the title; an ignored `.env.development.localhost` with `VITE_APP_TITLE=Labour Admin` previously restored HTML transformation and HTTP 200. [Task 1]
+- `src/api/supabase.ts` creates the client before Vue mounts. Even mock mode requires a syntactically valid `VITE_SUPABASE_URL`; `supabaseUrl is required` is an env/startup failure. A token request returning `400 Invalid login credentials` proves the URL is loaded/reachable and redirects diagnosis to credentials, seed users, schema/project, and Labour migrations. `pnpm install` does not create database state. [Task 1]
+- Always establish active Vite mode, effective port, schema, and process restart before attributing login failures. The observed local configuration was `VITE_NITRO_MOCK=false`, `VITE_PORT=5888`, schema `insurancecrm2`, differing from an earlier 5173 expectation. [Task 1]
+- `localhost:3001` was owned by `putty.exe`: it is an SSH tunnel for VPS Supabase/dashboard/service, not the Vite frontend or an env selector. The frontend runs on its configured Vite port. [Task 1]
+- For audits, start at `apps/web-antd/src/router/routes/modules/labour.ts`, the Labour stores, `apps/web-antd/src/views/labour-*`, and `apps/web-antd/src/sql/migrations_labour4/`. Core code evidence covers customer/company/contract links, slots, placements, replacement, and state handling; investigate Excel business keys, date validation, required reasons, duplicate assignment, quotation-to-contract handoff, and Worker Placements versus Contract Slots as distinct workflow risks. [Task 1][Task 2]
+- `WORKFLOW_CHECKING_SUMMARY.md` is the concise report artifact. Its office-user chain is `Customer → Service Item → Quotation → Company/Contact → Contract`; earlier records must be findable later. [Task 2]
+
+## Failures and how to do differently
+
+- A foreground Vite smoke command timing out is expected for a long-running dev server: start it detached/background and poll HTTP. Do not assume a changed env file is active until the Vite process is restarted. [Task 1]
+- WSL/Docker evidence: `wsl --status`/`wsl --list --verbose` and even `wsl --shutdown` hung, while Docker API was unavailable. The supported escalation was a Windows restart; do not unregister `docker-desktop`, reset Docker, or delete volumes without explicit confirmation. In PowerShell use `${svc}:`, not invalid `"$svc:"` interpolation. [Task 1]
+- Do not mark `[k]` from static code alone. The browser was unavailable (`Browser is not available: iab`), so leave the item untested or name that limitation. Before patching the report, read the exact current section; text-mismatch patches failed until this was done. [Task 2]
+
 # Task Group: HNP Homestay localhost, MySQL, and EN/CN route-based i18n
 
 scope: Configure and diagnose the PHP/MySQL public site on localhost:8080, including server-side `/cn/...` localization without changing the existing database schema/data.

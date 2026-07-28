@@ -2,7 +2,7 @@ v1
 
 ## User Profile
 
-The user works with Codex on Windows/PowerShell, `.codex` knowledge routing, Vue/Vben/Pinia apps, and PHP/MySQL/Supabase websites. They prefer authoritative entrypoints, narrow requested scope, preserved public/database contracts, and evidence-backed completion (HTTP, lint, tests, logs, or read-back). They use reusable `.codex` skill routing for future projects, but expect agents to inspect each live project rather than reuse example brands, locations, or claims. [ad-hoc note]
+The user works with Codex on Windows/PowerShell, `.codex` knowledge routing, Vue/Vben/Pinia apps, and PHP/MySQL/Supabase websites. They prefer authoritative entrypoints, narrow requested scope, preserved public/database contracts, and evidence-backed completion (HTTP, lint, tests, logs, or read-back). They use reusable `.codex` skill routing for future projects, but expect agents to inspect each live project rather than reuse example brands, locations, or claims. [ad-hoc note] They also request concise office-user workflow checks for Vben admin panels, with explicit distinction between source evidence and live testing.
 
 ## User preferences
 
@@ -15,6 +15,8 @@ The user works with Codex on Windows/PowerShell, `.codex` knowledge routing, Vue
 - Protect local Docker/Supabase stacks; confirm before actions that change project identity, routing, configuration, or database state. [ad-hoc note]
 - For public metadata, inspect real project routes/content; exclude admin-panel-only metadata by default, avoid invented claims, and use a root `meta.md` continuation checklist when work spans chats.
 - For HNP Homestay language work, preserve existing MySQL schema/data, use route-prefixed server-side locale URLs, and keep the footer copyright/provider strings English in both locales.
+- Before recommending Vben/Supabase setup, do a “fast read” of scripts, env modes, Docker/Supabase files, and active listeners; distinguish Vite frontend, SSH tunnels, and database services.
+- For a requested read-only workflow audit, make no project changes; use concise human-style CRUD headings and `[]`/`[k]`/`[x]` only at the evidence level actually achieved.
 
 ## General Tips
 
@@ -24,8 +26,20 @@ The user works with Codex on Windows/PowerShell, `.codex` knowledge routing, Vue
 - For `.codex` Git issues, `m memories`/mode `160000` signals nested-git/gitlink diagnosis; inspect before content edits.
 - Metadata routing: `metaTitle`, `meta title`, `meta content`, `SEO metadata`, `metaTitle update`, and `SEO meta audit` route to `skills/meta-content-workflow/SKILL.md`; add `skills/seo-ai-search/SKILL.md` for public search behavior.
 - PHP lint, JSON parsing, and helper checks do not prove a DB-backed page is live: confirm representative English and localized routes independently.
+- In Vite, an env edit is not active until the relevant dev process restarts; a reachable Supabase token endpoint with `Invalid login credentials` shifts diagnosis from install/env to auth seed/schema/project state.
 
 ## What's in Memory
+
+### C:\Users\user\Desktop\admin-panel-labour-v4
+
+#### 2026-07-27
+
+- Vben/Supabase runtime, Docker/WSL, and PuTTY tunnel diagnosis: apps/web-antd, pnpm dev:local, pnpm dev:vps, development.localhost, development.supabase, VITE_APP_TITLE, supabaseUrl is required, Invalid login credentials, localhost:3001, putty.exe
+  - desc: Search first for Labour local/VPS setup, blank page/login failures, Docker/WSL decisions, or “which env is localhost:3001”; checkout-specific to cwd=C:\Users\user\Desktop\admin-panel-labour-v4.
+  - learnings: Vite and Supabase/Docker are separate; mock still imports the Supabase client; `400 Invalid login credentials` proves reachability; 3001 is the PuTTY tunnel, not Vite.
+- Concise Labour CRUD/workflow checking report: WORKFLOW_CHECKING_SUMMARY.md, Customer → Service Item → Quotation → Company/Contact → Contract, vacant → occupied, standby → working, Contract Slots, Browser is not available: iab
+  - desc: Use for read-only office-user workflow reports and retrieval of the concise root report; source evidence must not be represented as browser-tested.
+  - learnings: Preserve the requested short module headings and `[]`/`[k]`/`[x]`; check date/reason/duplicate-assignment and placement-versus-slot gaps separately.
 
 ### C:\xampp\htdocs
 
