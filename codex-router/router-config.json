@@ -61,7 +61,21 @@
     "memories/2_governance/bridges",
     "memories/2_governance/bridges/**",
     "memories\\2_governance\\bridges",
-    "memories\\2_governance\\bridges\\**"
+    "memories\\2_governance\\bridges\\**",
+    "skills/.system",
+    "skills/.system/**",
+    "skills\\.system",
+    "skills\\.system\\**",
+    "skills/normal",
+    "skills/normal/**",
+    "skills\\normal",
+    "skills\\normal\\**",
+    "**/__pycache__",
+    "**/__pycache__/**",
+    "**\\__pycache__",
+    "**\\__pycache__\\**",
+    "**/*.pyc",
+    "**\\*.pyc"
   ],
   "roots": [
     { "kind": "knowledge", "path": "memories" },

@@ -9,7 +9,9 @@ $checks = @(
   [pscustomobject]@{ Name = 'large-knowledge-detector'; Script = (Join-Path $PSScriptRoot 'Find-LargeKnowledge.ps1'); Json = $true },
   [pscustomobject]@{ Name = 'knowledge-validator'; Script = (Join-Path $PSScriptRoot 'Validate-CodexKnowledge.ps1'); Json = $false },
   [pscustomobject]@{ Name = 'routing-audit'; Script = (Join-Path $PSScriptRoot 'Audit-CodexRouting.ps1'); Json = $false },
-  [pscustomobject]@{ Name = 'performance-benchmark'; Script = (Join-Path $PSScriptRoot 'Test-CodexPerfBenchmark.ps1'); Json = $true }
+  [pscustomobject]@{ Name = 'performance-benchmark'; Script = (Join-Path $PSScriptRoot 'Test-CodexPerfBenchmark.ps1'); Json = $true },
+  [pscustomobject]@{ Name = 'route-telemetry'; Script = (Join-Path $PSScriptRoot 'Measure-CodexRouteTelemetry.ps1'); Json = $true },
+  [pscustomobject]@{ Name = 'skill-catalog-telemetry'; Script = (Join-Path $PSScriptRoot 'Measure-CodexSkillCatalog.ps1'); Json = $true }
 )
 
 $results = foreach ($check in $checks) {

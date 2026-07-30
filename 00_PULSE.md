@@ -164,6 +164,11 @@ Matching rule: evaluate the longest exact trigger phrase first; never route a st
 "ai claude app":      "skills/claude-app/WORKING_PROGRESS.md"      # mobile Vue/Capacitor/PWA (build-only, mock-default)
 "ai claude website":  "skills/claude-website/WORKING_PROGRESS.md"  # PHP + Supabase REST (consumes schema)
 "localhost test":      "skills/localhost-test/SKILL.md" # detect project types, start local dev servers, verify URLs
+"update meta skills":  "skills/meta-skills/SKILL.md" # complete public website/app metadata pack
+"use meta skills":     "skills/meta-skills/SKILL.md"
+"update website metadata": "skills/meta-skills/SKILL.md"
+"full metadata audit": "skills/meta-skills/SKILL.md"
+"apply metadata pack": "skills/meta-skills/SKILL.md"
 "<3-builder DB handshake>": "skills/SHARED_DB_CONTRACT.md"
 "ai claude meta":     "skills/claude-meta/SKILL.md"
 "ai design app":      "skills/design/app/SKILL.md"
@@ -186,6 +191,7 @@ Matching rule: evaluate the longest exact trigger phrase first; never route a st
 "ai knowledge validation pass": "skills/claude-meta/validate-knowledge/skill.md"
 "ai validate knowledge fast": "codex-router/Validate-CodexKnowledge.ps1"
 "ai knowledge health": "codex-router/KnowledgeHealthReport.ps1"
+"ai codex health": "codex-router/KnowledgeHealthReport.ps1"
 "ai ground kernel": "memories/0_apex/GROUND_KERNEL.md"
 "ai tier-0": "memories/0_apex/GROUND_KERNEL.md"
 "ai read before answer": "memories/2_governance/READ_BEFORE_ANSWER_PROTOCOL.md"

@@ -2,17 +2,26 @@
 name: skill-path-router
 description: "Canonical skill path index - maps trigger phrases to exact skill entry points. Read this before scanning skill directories."
 triggers: ["skill path router", "skill_path_router", "ai read .codex skills", "which skill", "what skill"]
-version: 2.2
-date_updated: "2026-07-10"
+version: 2.3
+date_updated: "2026-07-30"
 status: authoritative
 ---
 
-# SKILL PATH ROUTER V2.1
+# SKILL PATH ROUTER V2.3
 
 ## How to use
 1. Match the user trigger phrase against the table below.
 2. Read only the matched skill file - do not scan the full skill tree.
 3. If no match, fall back to `skills/` directory listing and frontmatter `description`.
+
+Frontmatter semantics:
+
+- `triggers`: deliberate workflow invocation phrases.
+- `aliases`: alternate invocation phrases for the same route.
+- `contains`: retrieval-only keywords; they do not automatically invoke a skill.
+- `description`: native implicit-selection intent for a valid runtime `SKILL.md`.
+
+Legacy frontmatter remains searchable. New and edited files should use the fields above consistently; routing validation reports field coverage without treating retrieval hints as invocation failures.
 
 ## Trigger to Entry Point Map
 
@@ -38,6 +47,7 @@ status: authoritative
 | `ai pinia contract` / `PiniaStore Function Input` | `skills/pinia-contract-workflow/SKILL.md` | Exact app Pinia store/action/input contract using the user's sheet and hotpot references |
 | `ai cyroro audit` | `skills/pinia-contract-workflow/SKILL.md` | Cyroro paired-app contract, schema, environment, and verification audit |
 | `localhost test` | `skills/localhost-test/SKILL.md` | Detect active Vben, Vue app, and PHP roots; start and verify local development URLs |
+| `update meta skills` / `use meta skills` / `update website metadata` / `full metadata audit` / `apply metadata pack` | `skills/meta-skills/SKILL.md` | Complete public website/app metadata pack: project discovery, titles/descriptions, canonical, social cards, favicon/manifest, robots, sitemap, JSON-LD, crawlability, and verification |
 | `metaTitle` / `meta title` / `meta content` / `SEO metadata` | `skills/meta-content-workflow/SKILL.md` | Evidence-based public website/app metadata workflow: route inventory, unique titles/descriptions, alt text, canonical, robots, sitemap, social metadata, JSON-LD, itemprop, and `meta.md` continuation tracking |
 
 ## Recipe and Knowledge Triggers
@@ -57,7 +67,6 @@ These point at executable recipes and foundational knowledge docs, not skills.
 | `ai 5 point formula` / `ai 100 point prompt` | `memories/extensions/ad_hoc/notes/2026-07-01T18-14-43-5-point-ai-principles.md` | Five-principle routing and response clarity rule |
 | `ai hybrid metadata router` / `ai metadata router` | `memories/extensions/ad_hoc/notes/2026-07-01T18-27-54-hybrid-metadata-router.md` | Frontmatter schema for AI-friendly knowledge docs and skills |
 | `ai project knowledge template` | `memories/extensions/ad_hoc/notes/2026-07-01T18-19-47-project-knowledge-template.md` | Reusable project knowledge scaffolding for future AI runs |
-| `ai project handoff` | `skills/project-handoff-doc-stack/SKILL.md` | Durable root handoff docs and sync rules for multi-doc project stacks |
 | `ai validate knowledge` | `skills/claude-meta/validate-knowledge/skill.md` | Lints skills and knowledge against the hybrid format protocol |
 | `ai validate knowledge fast` | `codex-router/Validate-CodexKnowledge.ps1` | Read-only fast validation for routes, duplicate names, local target paths, secret-like patterns, and oversized files |
 | `ai knowledge health` | `codex-router/KnowledgeHealthReport.ps1` | Run detector, validator, routing audit, and performance benchmark as one read-only health check |
@@ -109,6 +118,16 @@ These point at executable recipes and foundational knowledge docs, not skills.
 | MCP Supabase connection | `skills/claude/mcp-supabase-postgres-connection.md` |
 | Local Docker lessons | `skills/claude/VBEN_SUPABASE_LOCAL_LESSONS.md` |
 | SEO tables planner | `skills/claude/seo-tables-planner/skill.md` |
+
+### Internal admin pattern references
+
+These are routed support documents, not native runtime entry points. They intentionally remain behind the Vben Admin front door.
+
+| Pattern | Path |
+|---|---|
+| Array foreign-key count | `skills/admin-panel/array-fk-count/SKILL.md` |
+| Embedded list drawer | `skills/admin-panel/embedded-list-drawer/SKILL.md` |
+| Conditional blue link | `skills/admin-panel/vxe-conditional-blue-link/SKILL.md` |
 
 ### `skills/design/` sub-skills
 | Sub-skill | Path |

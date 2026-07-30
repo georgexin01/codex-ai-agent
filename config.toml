@@ -95,6 +95,18 @@ trust_level = "trusted"
 [projects.'c:\users\user\desktop\test1\skin2\html.themehour.net\rasm\demo']
 trust_level = "trusted"
 
+[projects.'d:\project\mincorner']
+trust_level = "trusted"
+
+[projects.'d:\backup\zeta-website-v4']
+trust_level = "trusted"
+
+[projects.'d:\backup\website-zetasoftware']
+trust_level = "trusted"
+
+[projects.'d:\backup\senseidc']
+trust_level = "trusted"
+
 [features]
 memories = true
 js_repl = false
@@ -136,34 +148,32 @@ enabled = true
 [plugins."browser@openai-bundled"]
 enabled = true
 
-# GitNexus — MCP knowledge-graph engine: gives the agent structural codebase
-# awareness (dependencies, call chains, blast radius) in one query.
-# Uses the global install (npm i -g gitnexus). Run `gitnexus analyze` inside a
-# git repo first so the server has a graph to serve.
 [mcp_servers.gitnexus]
-command = "C:\\Users\\user\\AppData\\Roaming\\npm\\gitnexus.cmd"
+command = 'C:\Users\user\AppData\Roaming\npm\gitnexus.cmd'
 args = ["mcp"]
 
 [mcp_servers.node_repl]
-args = []
 command = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\1b23c930bdf84ed6\bin\node_repl.exe'
-startup_timeout_sec = 120
+startup_timeout_sec = 120.0
 
 [mcp_servers.node_repl.env]
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.616.51431"
+CODEX_CLI_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\bin\8e55c2dd143b6354\codex.exe'
+CODEX_HOME = 'C:\Users\user\.codex'
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
 NODE_REPL_NODE_MODULE_DIRS = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\1b23c930bdf84ed6\bin\node_modules'
 NODE_REPL_NODE_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\1b23c930bdf84ed6\bin\node.exe'
-NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\user\.codex'
-CODEX_HOME = 'C:\Users\user\.codex'
 NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "2c20141b13bec5a64cd2874d8e2df011430d5b1a70e4f5425aa10d01743311a8,566be6ef352eb3de899adc56a9cd7b5e46c8f65b00e56b5630dd7a580e10cbea"
-BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
-NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
-NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
-BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.616.51431"
+NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\user\.codex'
 SKY_CUA_NATIVE_PIPE = "1"
 SKY_CUA_NATIVE_PIPE_DIRECTORY = '\\.\pipe\codex-computer-use-89534c29-de2a-47e2-833d-79850eda32ac'
-CODEX_CLI_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\bin\8e55c2dd143b6354\codex.exe'
+
+[mcp_servers.openaiDeveloperDocs]
+url = "https://developers.openai.com/mcp"
 
 [desktop]
 ambient-suggestions-enabled = true

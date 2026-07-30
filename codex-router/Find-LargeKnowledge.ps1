@@ -23,6 +23,12 @@ $rows = foreach ($file in ($candidateFiles | Sort-Object FullName -Unique)) {
   elseif ($relative -match '(^|/)(sessions|rollout_summaries|archive|raw_memories\.md|.+_DETAILS\.md)(/|$)') { $excludedReason = 'cold-history' }
   elseif ($relative -match '(^|/)(00_PULSE\.md|AGENTS\.md)$') { $excludedReason = 'protected-hot' }
   elseif ($relative -match '(^|/)(\.git|\.sandbox|\.tmp|cache)(/|$)') { $excludedReason = 'runtime' }
+  else {
+    $detailsPath = Join-Path $file.DirectoryName ("{0}_DETAILS.md" -f $file.BaseName)
+    if (Test-Path -LiteralPath $detailsPath -PathType Leaf) {
+      $excludedReason = 'hot-index-with-details'
+    }
+  }
 
   $text = [System.IO.File]::ReadAllText($file.FullName)
   $estimatedTokens = [math]::Ceiling($text.Length / 4)
@@ -33,7 +39,13 @@ $rows = foreach ($file in ($candidateFiles | Sort-Object FullName -Unique)) {
       estimated_tokens = $estimatedTokens
       eligible = [string]::IsNullOrWhiteSpace($excludedReason)
       excluded_reason = $excludedReason
-      action = if ([string]::IsNullOrWhiteSpace($excludedReason)) { 'run knowledge-compression-protocol' } else { 'report only' }
+      action = if ([string]::IsNullOrWhiteSpace($excludedReason)) {
+        'run knowledge-compression-protocol'
+      } elseif ($excludedReason -eq 'hot-index-with-details') {
+        'review index only; complete details preserved'
+      } else {
+        'report only'
+      }
     }
   }
 }

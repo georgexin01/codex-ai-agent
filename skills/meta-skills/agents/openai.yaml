@@ -1,0 +1,4 @@
+interface:
+  display_name: "Website Metadata Pack"
+  short_description: "Apply complete website metadata and SEO workflow"
+  default_prompt: "Use $meta-skills to find the public website project and apply the complete evidence-based metadata and search-discoverability workflow."

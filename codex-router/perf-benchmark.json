@@ -1,14 +1,23 @@
 {
-  "version": "1.0",
-  "updated": "2026-05-29",
+  "version": "1.3",
+  "updated": "2026-07-30",
   "targets": {
     "max_safe_indexed_files": 380,
-    "max_knowledge_routes": 80,
+    "max_knowledge_routes": 85,
     "max_missing_entries": 0,
     "max_legacy_refs": 60,
     "max_trigger_conflicts": 0,
     "max_standalone_ai_triggers": 0,
-    "max_missing_trigger_targets": 0
+    "max_missing_trigger_targets": 0,
+    "max_missing_manifest_paths": 0,
+    "max_excluded_manifest_paths": 0,
+    "max_unclassified_invalid_native_skills": 0,
+    "min_semantic_router_aliases": 1,
+    "max_duplicate_same_target_triggers": 45,
+    "max_pulse_bytes": 28000,
+    "max_memory_hot_bytes": 52000,
+    "min_pulse_exact_triggers": 77,
+    "min_knowledge_routes": 82
   },
   "cases": [
     {
@@ -71,6 +80,15 @@
       ]
     },
     {
+      "id": "codex-health-route",
+      "type": "tooling",
+      "prompt": "ai codex health",
+      "file": "00_PULSE.md",
+      "expect_contains": [
+        "\"ai codex health\": \"codex-router/KnowledgeHealthReport.ps1\""
+      ]
+    },
+    {
       "id": "gitnexus-policy-route",
       "type": "route",
       "prompt": "ai gitnexus",
@@ -120,6 +138,15 @@
       "expect_contains": [
         "Route integrity is mandatory",
         "Regenerate routing"
+      ]
+    },
+    {
+      "id": "removed-history-preserved",
+      "type": "integrity",
+      "prompt": "manifest regeneration preserves removed path evidence",
+      "file": "codex-router/Update-CodexRouting.ps1",
+      "expect_contains": [
+        "removed = $removed"
       ]
     }
   ]

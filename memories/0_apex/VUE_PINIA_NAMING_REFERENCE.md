@@ -26,7 +26,7 @@ Apply naming decisions in this order:
 1. Security, framework validity, and current runtime behavior.
 2. Exact user, spreadsheet, API, database, route, or public contract names.
 3. Existing names used by callers and tests.
-4. This reference's recommended naming defaults.
+4. This reference's recommended naming defaults
 5. Generic CRUD or framework habits.
 
 Never rename a working public symbol only because this reference recommends a different name. Never add a renamed alias silently. If the contract source is unavailable, report `INSUFFICIENT DATA` instead of guessing.

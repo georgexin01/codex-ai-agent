@@ -23,8 +23,12 @@ $routes = New-Object System.Collections.Generic.List[object]
 foreach ($hit in (Select-String -LiteralPath $pulsePath -Pattern '^\s*"([^"]+)"\s*:\s*"([^"]+)"')) {
   Add-Route $routes $hit.Matches[0].Groups[1].Value $hit.Matches[0].Groups[2].Value "00_PULSE.md"
 }
-foreach ($hit in (Select-String -LiteralPath $semanticRouterPath -Pattern '^\s*\|\s*`([^`]+)`\s*\|\s*`([^`]+)`')) {
-  Add-Route $routes $hit.Matches[0].Groups[1].Value $hit.Matches[0].Groups[2].Value "skill_path_router.md"
+foreach ($line in (Get-Content -LiteralPath $semanticRouterPath)) {
+  $rowMatch = [regex]::Match($line, '^\s*\|\s*(?<triggers>.+?)\s*\|\s*`(?<target>[^`]+)`\s*\|')
+  if (-not $rowMatch.Success) { continue }
+  foreach ($aliasMatch in [regex]::Matches($rowMatch.Groups["triggers"].Value, '`([^`]+)`')) {
+    Add-Route $routes $aliasMatch.Groups[1].Value $rowMatch.Groups["target"].Value "skill_path_router.md"
+  }
 }
 
 # The knowledge sentinel is an instruction, but its real read target is PULSE.

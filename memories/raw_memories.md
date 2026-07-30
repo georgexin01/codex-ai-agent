@@ -1141,3 +1141,302 @@ References:
 - Final report path: `WORKFLOW_CHECKING_SUMMARY.md`.
 - Relevant implementation paths: `apps/web-antd/src/sql/migrations_labour4/113_labour2_contract_slots.sql`, `101_labour2_replace_worker_placement_rpc.sql`, `104_labour2_worker_status_sync_trigger.sql`, `116_labour2_quotations_company_link.sql`, and `apps/web-antd/src/views/labour-contracts/`.
 
+## Thread `019fa673-6683-7871-af20-989111fefe84`
+updated_at: 2026-07-28T02:01:17+00:00
+cwd: \\?\C:\Users\user\Desktop\test1\skin2\html.themehour.net\rasm\demo
+rollout_path: C:\Users\user\.codex\sessions\2026\07\28\rollout-2026-07-28T10-00-08-019fa673-6683-7871-af20-989111fefe84.jsonl
+rollout_summary_file: 2026-07-28T02-00-08-qQdu-project_wide_html_formatting_guidance.md
+
+---
+description: Clarified single-file VS Code formatting versus recursive project-wide HTML formatting; execution was not performed.
+task: format all HTML files recursively with Prettier
+task_group: html-formatting
+ task_outcome: partial
+cwd: C:\Users\user\Desktop\test1\skin2\html.themehour.net\rasm\demo
+keywords: VS Code, Shift Alt F, Prettier, HTML, PowerShell, recursive formatting
+---
+
+### Task 1: Project-wide HTML formatting
+
+task: format all HTML files recursively with Prettier
+task_group: html-formatting
+task_outcome: partial
+
+Preference signals:
+- The user asked, “yes can ai help me do it?” -> in similar tasks, offer to inspect and execute the formatting, but wait for clear authorization before modifying many files.
+
+Reusable knowledge:
+- `Shift + Alt + F` formats only the currently open file in VS Code.
+- The proposed recursive command is `npx prettier "**/*.html" --write`; review or commit changes before running because it can modify many files.
+
+Failures and how to do differently:
+- No formatting or verification occurred; the assistant only offered to act after the user explicitly says “format all HTML files.”
+
+References:
+- `npx prettier "**/*.html" --write`
+- Project cwd: `C:\Users\user\Desktop\test1\skin2\html.themehour.net\rasm\demo`
+
+## Thread `019fa6c6-c142-7e32-a728-16af9e9bcafa`
+updated_at: 2026-07-28T03:56:37+00:00
+cwd: \\?\C:\Users\user\Desktop\admin-panel-labour-v4
+rollout_path: C:\Users\user\.codex\sessions\2026\07\28\rollout-2026-07-28T11-31-11-019fa6c6-c142-7e32-a728-16af9e9bcafa.jsonl
+rollout_summary_file: 2026-07-28T03-31-11-5kiS-vben_build_dist_env_and_jiti_diagnosis.md
+
+---
+description: Diagnosed Vben monorepo build/output issues, added missing app title env files, repaired lockfile installation, and isolated an unresolved jiti browser-bundling failure.
+task: diagnose-and-repair-vben-monorepo-build
+ task_group: vben-vite-pnpm-build
+ task_outcome: partial
+cwd: C:\Users\user\Desktop\admin-panel-labour-v4
+keywords: pnpm, vite, turbo, VITE_APP_TITLE, dist, dev:vps, web-naive, jiti, createRequire, frozen-lockfile
+---
+
+### Task 1: Locate production output and explain dev:vps
+
+task: determine where `pnpm run dev:vps` stores `dist`
+task_group: vben-vite-build
+ task_outcome: success
+
+Reusable knowledge:
+- Root `dev:vps` runs `pnpm -F @vben/web-antd run dev:vps`; the app script is `pnpm vite --mode development.supabase`. It is a dev server and does not create production `dist`.
+- Build the VPS Labour app with `pnpm --filter @vben/web-antd run build`; output is `apps\web-antd\dist`.
+
+References:
+- `package.json`: `"dev:vps": "pnpm -F @vben/web-antd run dev:vps"`
+- `apps/web-antd/package.json`: `"dev:vps": "pnpm vite --mode development.supabase"`
+
+### Task 2: Fix missing VITE_APP_TITLE configuration
+
+task: identify and repair repeated Turbo build failures
+task_group: vben-vite-build
+ task_outcome: partial
+
+Preference signals:
+- When given a Turbo summary such as `Failed: @vben/web-naive#build`, the user wanted the underlying first real error identified, not merely the summary repeated; future debugging should rerun the failing package directly.
+
+Reusable knowledge:
+- The affected HTML templates use `<title><%= VITE_APP_TITLE %></title>` and fail with `VITE_APP_TITLE is not defined` when the app has no `.env` defining it.
+- Added non-secret `VITE_APP_TITLE=Labour` to:
+  - `apps/web-naive/.env`
+  - `apps/web-ele/.env`
+  - `apps/web-tdesign/.env`
+  - `playground/.env`
+- Several verification builds overlapped with existing root builds and timed out; verify packages sequentially after all previous builds exit.
+
+References:
+- Fatal error: `VITE_APP_TITLE is not defined`
+- Template location: `apps/web-naive/index.html:15` (same line pattern in web-ele, web-tdesign, and playground)
+
+### Task 3: Verify installation and isolate remaining web-naive failure
+
+task: check missing packages, install from lockfile, and rebuild web-naive
+task_group: pnpm-dependency-repair
+ task_outcome: partial
+
+Reusable knowledge:
+- Environment verified: pnpm `10.22.0`, Node `v25.2.1`, root/app `node_modules`, workspace package links, and Vben dependencies are present.
+- `pnpm install --frozen-lockfile` succeeded: `Lockfile is up to date`, `Already up to date`, postinstall stubs completed.
+- After adding `.env`, `web-naive` transformed 6,802 modules, confirming the original issue was not missing installation.
+- Remaining fatal error: `"createRequire" is not exported by "__vite-browser-external"`, originating from `jiti@2.6.1`.
+- Dependency path: `@vben/stores -> pinia-plugin-persistedstate -> @nuxt/kit -> jiti`.
+- Do not treat `--localstorage-file`, stale baseline-browser-mapping, or old Browserslist data as the root failure.
+
+Failures and how to do differently:
+- The dependency install was fixed, but no targeted code/config compatibility fix for `jiti` was completed; `apps\web-naive\dist` was not produced. Next agent should inspect why the `@nuxt/kit`/persisted-state dependency is entering the browser bundle before changing versions or aliases.
+
+References:
+- `pnpm install --frozen-lockfile`
+- `pnpm --filter @vben/web-naive run build`
+- Fatal snippet: `jiti@2.6.1 ... "createRequire" is not exported by "__vite-browser-external"`
+- `apps/web-naive/vite.config.mts` imports `@vben/vite-config`; `tailwind.config.mjs` and `postcss.config.mjs` import `@vben/tailwind-config`.
+
+## Thread `019fa7ad-33f8-7253-bbc3-04080049bbb4`
+updated_at: 2026-07-28T08:43:24+00:00
+cwd: \\?\D:\project\mincorner
+rollout_path: C:\Users\user\.codex\sessions\2026\07\28\rollout-2026-07-28T15-42-54-019fa7ad-33f8-7253-bbc3-04080049bbb4.jsonl
+rollout_summary_file: 2026-07-28T07-42-53-kh4o-mincorner_admin_auth_and_htaccess_cache.md
+
+---
+description: Min Corner PHP admin auth audit, temporary cPanel password bypass, and root/admin no-cache .htaccess configuration; bypass remains enabled and live deployment was not tested
+task: admin auth bypass and htaccess cache configuration
+task_group: mincorner-php-cpanel-admin
+ task_outcome: partial
+cwd: D:\project\mincorner
+keywords: mincorner, admin/authenticate.php, temporaryCpanelBypass, password_verify, OTP, isAuth, htaccess, no-cache, cPanel, public_html, php-l
+---
+
+### Task 1: Audit admin authentication
+
+task: trace username/password/session/OTP checks
+task_group: mincorner-admin-auth
+task_outcome: success
+
+Reusable knowledge:
+- `admin/index.php` posts `username` and `password` to `admin/authenticate.php`.
+- `admin/authenticate.php` requires both fields, queries `new_accounts` by username using a prepared statement, normally validates with `password_verify()`, sets `$_SESSION['user']`, and redirects to `dashboard.php`.
+- Protected pages call `isAuth()` from `admin/include/config.php`; it checks that the session account ID exists in `new_accounts`.
+- OTP implementation is in `admin/verify.php`, `admin/check.php`, and `admin/Authenticator.php`, but the active password-success path redirects directly to `dashboard.php`; `isAuth()` does not require `$_SESSION['google_verify']`.
+
+References:
+- `admin/index.php`
+- `admin/authenticate.php`
+- `admin/include/config.php`
+- `admin/verify.php`
+- `admin/check.php`
+- `admin/Authenticator.php`
+
+### Task 2: Temporary cPanel password bypass
+
+task: permit login with any password for a valid admin username temporarily
+task_group: mincorner-admin-auth
+task_outcome: partial
+
+Reusable knowledge:
+- `admin/authenticate.php` currently contains a clearly marked `$temporaryCpanelBypass = true`; the condition is `if ($temporaryCpanelBypass || password_verify(...))`.
+- Existing username lookup, session assignment, and dashboard redirect were preserved.
+- Exact rollback: change `$temporaryCpanelBypass = true;` to `$temporaryCpanelBypass = false;`.
+- `admin/AUTH_TEMPORARY_CHANGE_LOG.md` records the change and rollback without storing credentials, password hashes, or OTP secrets.
+
+Failures and how to do differently:
+- The bypass was initially localhost-only, then changed at the user’s request to work remotely on cPanel. Treat the current state as high-risk and restore password verification immediately after temporary use.
+- No real cPanel/browser/database login test was performed; only source read-back, `php -l admin\authenticate.php`, and `git diff --check` passed.
+
+References:
+- `php -l admin\authenticate.php` -> `No syntax errors detected`
+- `admin/AUTH_TEMPORARY_CHANGE_LOG.md`
+
+### Task 3: Root website `.htaccess`
+
+task: replace unsuitable HNP rules and configure Min Corner cache behavior
+task_group: mincorner-cpanel-htaccess
+task_outcome: partial
+
+Reusable knowledge:
+- Min Corner uses many direct PHP pages, so HNP-style `RewriteRule ... index.php` front-controller rules are unsuitable.
+- Root destination is `public_html/.htaccess`.
+- Current intended root rules force HTTPS/non-www to `https://mincorner.com.my` and set `Cache-Control: no-store, no-cache, must-revalidate, max-age=0`, `Pragma: no-cache`, `Expires: 0`, plus `FileETag None`.
+- A malformed `RewriteCond` was caught by read-back and corrected to `RewriteCond %{HTTPS} !=on [OR]`; expected-rule checks and `git diff --check` passed.
+- Live cPanel redirect and headers were not tested.
+
+Failures and how to do differently:
+- Do not reuse the old HNP file or place its front-controller rewrite in this direct-PHP project.
+- Always read back `.htaccess` after patching; the first generated version contained a malformed condition.
+
+References:
+- `.htaccess`
+- Canonical host: `https://mincorner.com.my/`
+- `public_html/.htaccess`
+
+### Task 4: Admin `.htaccess`
+
+task: apply admin-scoped no-cache headers without changing routing
+task_group: mincorner-cpanel-htaccess
+task_outcome: success
+
+Reusable knowledge:
+- `admin/.htaccess` now contains only no-cache headers and `FileETag None`; no `RewriteRule` remains.
+- cPanel destination is `public_html/admin/.htaccess`.
+- Root no-cache rules already cover `/admin/`, but the scoped admin file was retained as an explicit duplicate.
+
+References:
+- `admin/.htaccess`
+- Verification output: `Admin no-cache rules present; no rewrite rules found`
+
+### Task 5: Cache refresh behavior and response style
+
+task: explain browser hard refresh and cache limits
+task_group: website-cache-guidance
+task_outcome: success
+
+Preference signals:
+- When shown Mac shortcut symbols, the user said: "i dont want icon" -> provide plain text such as `Option + Command + R`, without glyphs.
+
+Reusable knowledge:
+- Server `.htaccess` cannot force-refresh an already-open page or remotely delete existing browser cache, cookies, localStorage, sessionStorage, or service-worker data.
+- No-cache headers affect future requests; users may still need a normal reload, and CDN/Cloudflare cache may require purging.
+- There is no reliable JavaScript equivalent of `Ctrl + Shift + R`; avoid automatic reload loops.
+
+## Thread `019fabca-28db-7753-b6c2-67db7101e777`
+updated_at: 2026-07-29T09:15:35+00:00
+cwd: D:\backup\zeta-website-v4
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\07\29\rollout-2026-07-29T10-53-00-019fabca-28db-7753-b6c2-67db7101e777.jsonl
+rollout_summary_file: 2026-07-29T02-53-00-jdfV-zeta_website_bilingual_seo_forms_favicon_og_metadata.md
+
+---
+description: Static Zeta Software website rollout covering bilingual clean routes, exact SEO metadata, Google Sheets forms, favicon/OG assets, and cache versioning; implementation largely validated locally, but live Apps Script deployment and production social-preview verification remain pending
+task: zeta-static-website-seo-routing-forms-metadata
+task_group: static-website-workflow
+ task_outcome: success
+cwd: D:\backup\website-zetasoftware
+keywords: zeta-website, html, bilingual-routing, cn, seo, meta-content-workflow, seo-ai-search, ogImage_v1, favicon, site.webmanifest, google-sheets, apps-script, form-submit.js, style.css?v=0126
+---
+
+### Task 1: Site-wide public metadata and favicon/OG assets
+
+task: update all page OG images, favicon paths, manifests, and SEO metadata
+task_group: static-website-seo
+task_outcome: success
+
+Preference signals:
+- The user said all pages/every single page must be updated and specifically required the new `/favicon/` paths and `ogImage_v1.jpg` -> future metadata changes should be applied route-wide, not only to the homepage.
+
+Reusable knowledge:
+- Active project cwd is `D:\backup\website-zetasoftware`; the earlier `D:\backup\zeta-website-v4` path became invalid.
+- There are 12 public HTML pages: six English routes and six `/cn/` routes.
+- Every page now uses `https://zetasoftware.my/favicon/ogImage_v1.jpg`, OG secure/type/600x400 metadata, localized OG/Twitter alt text, `/favicon/favicon.svg`, `/favicon/favicon-96x96.png`, `/favicon/favicon.ico`, `/favicon/apple-touch-icon.png`, and `/site.webmanifest`.
+- Root and `favicon/site.webmanifest` identify Zeta Software Sdn Bhd, use `/` start/scope, red theme `#ff0000`, and `/favicon/web-app-manifest-192x192.png` plus 512px icons.
+- Validation passed for all 12 pages: one `og:image`, one `twitter:image`, four favicon declarations, one root manifest link, valid JSON-LD, manifest JSON, and physical asset existence.
+
+Failures and how to do differently:
+- Distinguish the three expected OG URL occurrences (`og:image`, `og:image:secure_url`, `twitter:image`) from duplicate tags.
+- Local static validation passed, but production HTTP/social-preview verification was not performed because no listener was available and a temporary server command was policy-blocked.
+
+References:
+- `favicon/ogImage_v1.jpg` is confirmed 600x400 and 77064 bytes.
+- `site.webmanifest`, `favicon/site.webmanifest`, `meta.md`, `README.md`.
+
+### Task 2: Exact bilingual form contract and Apps Script
+
+task: synchronize four HTML forms and Google Sheets Apps Script to exact fields
+task_group: static-website-forms
+ task_outcome: success
+
+Preference signals:
+- The user explicitly required “only those data” and no file upload/file name fields -> keep the active form/table contract strictly limited to `Date`, `Name`, `Email`, `Contact`, `Project Name`, `Project Requirements`.
+- The user required Email and Contact to be 50% width on desktop -> preserve `.form-row`/`.form-half` layout and mobile stacking.
+
+Reusable knowledge:
+- Four forms exist: `index.html`, `cn/index.html`, `contact/index.html`, `cn/contact/index.html`.
+- Submitted names are exactly `Name`, `Email`, `Contact`, `Project Name`, `Project Requirements`; Apps Script generates `Date`.
+- `js/form-submit.js` submits pure JSON; no PHP endpoint exists.
+- `scripts/zeta-google-apps-script.gs` creates/synchronizes `Contacts`, freezes row 1, and reads `EmailAccount` without recreating it.
+
+Failures and how to do differently:
+- Local syntax, field, and HTTP checks passed; Google deployment/authorization and a live submission remain external verification and must be reported as pending.
+- Corrupted/mangled Chinese source text made line-based patches unreliable; replacing the complete form block worked.
+
+References:
+- Exact headers: `Date`, `Name`, `Email`, `Contact`, `Project Name`, `Project Requirements`.
+- Form types remain `enquiry` for homepage and `contact` for contact pages, but are not stored as table columns.
+
+### Task 3: Clean routes, language selector, and cache version
+
+task: preserve hardcoded HTML while adding EN/CN folder routes and stylesheet cache busting
+task_group: static-website-routing
+ task_outcome: partial
+
+Preference signals:
+- The user corrected that English must not use `/en/index.html`; English homepage is `/`/`index.html`, while Chinese uses `/cn/`.
+
+Reusable knowledge:
+- English routes: `/`, `/about/`, `/services/`, `/portfolio/`, `/contact/`, `/faq/`.
+- Chinese routes: `/cn/`, `/cn/about/`, `/cn/services/`, `/cn/portfolio/`, `/cn/contact/`, `/cn/faq/`.
+- `js/main.js` contains language route mapping and static route normalization.
+- All 12 HTML pages use `css/style.css?v=0126`; next CSS bump should be `?v=0127`.
+
+Failures and how to do differently:
+- Broad route/content migration was only partially cleanly verified in the rollout; future work should separately verify link targets, translation completeness, browser behavior, and nested asset paths.
+
+References:
+- `js/main.js`, `.htaccess`, `meta.md`, `README.md`.
+
