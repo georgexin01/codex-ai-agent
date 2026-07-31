@@ -49,6 +49,7 @@ Legacy frontmatter remains searchable. New and edited files should use the field
 | `localhost test` | `skills/localhost-test/SKILL.md` | Detect active Vben, Vue app, and PHP roots; start and verify local development URLs |
 | `update meta skills` / `use meta skills` / `update website metadata` / `full metadata audit` / `apply metadata pack` | `skills/meta-skills/SKILL.md` | Complete public website/app metadata pack: project discovery, titles/descriptions, canonical, social cards, favicon/manifest, robots, sitemap, JSON-LD, crawlability, and verification |
 | `metaTitle` / `meta title` / `meta content` / `SEO metadata` | `skills/meta-content-workflow/SKILL.md` | Evidence-based public website/app metadata workflow: route inventory, unique titles/descriptions, alt text, canonical, robots, sitemap, social metadata, JSON-LD, itemprop, and `meta.md` continuation tracking |
+| `ai opportunity radar` / `find AI business opportunities` / `research monetizable repositories` / `open-source business scan` | `skills/ai-opportunity-radar/SKILL.md` | Current-source discovery, license and safety gates, project-fit analysis, evidence scoring, and small commercial validation experiments |
 
 ## Recipe and Knowledge Triggers
 
