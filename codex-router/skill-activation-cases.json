@@ -60,6 +60,36 @@
       "id": "meta-pack-alias",
       "prompt": "Apply metadata pack to the public website.",
       "expected_target": "skills/meta-skills/SKILL.md"
+    },
+    {
+      "id": "luna-medium-default",
+      "prompt": "Use ai luna reasoning for this small verified fix.",
+      "expected_target": "memories/2_governance/LUNA_5_6_REASONING_MODES.md"
+    },
+    {
+      "id": "luna-high-escalation",
+      "prompt": "Use ai medium high reasoning to review this security-sensitive schema change.",
+      "expected_target": "memories/2_governance/LUNA_5_6_REASONING_MODES.md"
+    },
+    {
+      "id": "luna-performance-mode",
+      "prompt": "Use ai luna performance mode to improve token use and speed.",
+      "expected_target": "memories/2_governance/LUNA_5_6_REASONING_MODES.md"
+    },
+    {
+      "id": "negative-stale-route",
+      "prompt": "Use the missing ai opportunity radar skill.",
+      "expect_no_match": true
+    },
+    {
+      "id": "project-truth-detection",
+      "prompt": "Use ai project truth detection before coding.",
+      "expected_target": "codex-router/Detect-CodexProjectTruth.ps1"
+    },
+    {
+      "id": "safe-maintenance-runner",
+      "prompt": "Use ai safe codex maintenance to run automatic checks.",
+      "expected_target": "codex-router/Run-CodexLunaMaintenance.ps1"
     }
   ]
 }

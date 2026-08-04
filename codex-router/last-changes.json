@@ -1,14 +1,13 @@
 ﻿{
     "schema_version":  2,
     "added_count":  0,
-    "modified_count":  2,
+    "modified_count":  1,
     "removed_count":  0,
     "added":  [
 
               ],
     "modified":  [
-                     "memories/MEMORY.md",
-                     "memories/memory_summary.md"
+                     "skills/.gitignore"
                  ],
     "removed":  [
 

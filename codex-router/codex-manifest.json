@@ -13,7 +13,7 @@
                       "path":  "skills"
                   }
               ],
-    "indexed_files":  243,
+    "indexed_files":  244,
     "entries":  [
                     {
                         "kind":  "knowledge",
@@ -300,8 +300,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\artifacts\\skill_path_router.md",
                         "relative_id":  "memories/2_governance/artifacts/skill_path_router.md",
-                        "size":  12657,
-                        "sha256":  "7378124FD0570E28E18A43E2A3853DD49ADB427BED01FB3A47FB979989E6B1C6"
+                        "size":  13280,
+                        "sha256":  "023F079023BAA0348F7A8A428B44FBE028C4423BC17A4A74138F8E15F7AADDDE"
                     },
                     {
                         "kind":  "knowledge",
@@ -414,6 +414,14 @@
                         "relative_id":  "memories/2_governance/LOCALHOST_PHP_TEST_PROTOCOL.md",
                         "size":  3956,
                         "sha256":  "542ED6B56B895A4069742A6012BFAEEE4A54B29296FD60F5A1E2B11F60802BCF"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "2_governance\\LUNA_5_6_REASONING_MODES.md",
+                        "relative_id":  "memories/2_governance/LUNA_5_6_REASONING_MODES.md",
+                        "size":  2531,
+                        "sha256":  "C2963C628199BBE2776BB8AE20C84E526F162C7C052B8BC6A83D0DF02E3E4E29"
                     },
                     {
                         "kind":  "knowledge",
@@ -540,16 +548,16 @@
                         "root_relative":  "memories",
                         "relative_path":  "MEMORY.md",
                         "relative_id":  "memories/MEMORY.md",
-                        "size":  48624,
-                        "sha256":  "429F8ED4E634BADDB2C721A23A2C38241C863FB5ECCA6D8B6E7CB11733A184AF"
+                        "size":  51699,
+                        "sha256":  "A69E18ECCA7358B1E9312C28809CF136A98CE0BFEB60CA520F6A8C6900C6460C"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "memory_summary.md",
                         "relative_id":  "memories/memory_summary.md",
-                        "size":  9203,
-                        "sha256":  "F7F81F5AAB2E10467B5E8AFC3BE82AFE38CB177B5DC18FFBE75F47EC9135C3A8"
+                        "size":  10343,
+                        "sha256":  "D435DBED7B05C3E3F235D6D25F37E360D1464AA8BCDC5527A4384216411088F9"
                     },
                     {
                         "kind":  "knowledge",
@@ -676,8 +684,8 @@
                         "root_relative":  "skills",
                         "relative_path":  ".gitignore",
                         "relative_id":  "skills/.gitignore",
-                        "size":  336,
-                        "sha256":  "D2EB9C3197215E4EF9C42F0AF5B00FCC2AE631FE98B2D1092E01B39E111FECB8"
+                        "size":  328,
+                        "sha256":  "912297421680E93A45A0B191951579E87BBA36104FF06E73F58AF75465DDAEA1"
                     },
                     {
                         "kind":  "skill-reference",

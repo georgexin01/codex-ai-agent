@@ -17,6 +17,7 @@ The user works with Codex on Windows/PowerShell, `.codex` knowledge routing, Vue
 - Use plain keyboard-shortcut text such as `Option + Command + R`; do not use icon glyphs.
 - For static public sites, “all pages/every single page” means route-wide asset/metadata changes; preserve exact supplied title/description and report production social previews or external form delivery as pending until live-tested.
 - Preserve exact website contracts: Zeta English is `/` rather than `/en/`, Chinese is `/cn/`; its form storage is only `Date`, `Name`, `Email`, `Contact`, `Project Name`, `Project Requirements` and uses JavaScript/HTML, not PHP.
+- For bilingual static-site changes such as GTM, explicitly inventory EN and `/cn/` route coverage, give exact page/button counts, and report the stable tracking selector.
 
 ## General Tips
 
@@ -30,7 +31,21 @@ The user works with Codex on Windows/PowerShell, `.codex` knowledge routing, Vue
 
 ## What's in Memory
 
+### C:\Users\user\Desktop\cermin_v2
+
+#### 2026-08-03
+
+- Cermin PHP front-controller localhost verification: php -S 127.0.0.1:8000 index.php, router.php, /skudai, /skudai/home, /unknown, BLUEPRINT.md
+  - desc: Search first for a read-only `localhost test` of the Cermin PHP site in cwd=C:\Users\user\Desktop\cermin_v2.
+  - learnings: The prior run was aborted before any HTTP status; recheck port 8000/leftover PHP, lint, then verify each route individually and require `/unknown` to be 404.
+
 ### D:\backup\website-zetasoftware
+
+#### 2026-07-31
+
+- Zeta GTM installation and contact analytics hook: Google Tag Manager, GTM-W9GQ37RT, gtm-contact-submit, Click Classes contains, total_pages=12
+  - desc: Search first for site-wide GTM placement, bilingual `/cn/` coverage, or contact/enquiry click tracking in cwd=D:\backup\website-zetasoftware.
+  - learnings: Source has one GTM head/noscript pair on all 12 pages and the selector hook on four forms; publishing and Tag Assistant detection remain pending.
 
 #### 2026-07-29
 

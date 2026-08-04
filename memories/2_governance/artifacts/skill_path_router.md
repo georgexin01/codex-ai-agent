@@ -49,7 +49,9 @@ Legacy frontmatter remains searchable. New and edited files should use the field
 | `localhost test` | `skills/localhost-test/SKILL.md` | Detect active Vben, Vue app, and PHP roots; start and verify local development URLs |
 | `update meta skills` / `use meta skills` / `update website metadata` / `full metadata audit` / `apply metadata pack` | `skills/meta-skills/SKILL.md` | Complete public website/app metadata pack: project discovery, titles/descriptions, canonical, social cards, favicon/manifest, robots, sitemap, JSON-LD, crawlability, and verification |
 | `metaTitle` / `meta title` / `meta content` / `SEO metadata` | `skills/meta-content-workflow/SKILL.md` | Evidence-based public website/app metadata workflow: route inventory, unique titles/descriptions, alt text, canonical, robots, sitemap, social metadata, JSON-LD, itemprop, and `meta.md` continuation tracking |
-| `ai opportunity radar` / `find AI business opportunities` / `research monetizable repositories` / `open-source business scan` | `skills/ai-opportunity-radar/SKILL.md` | Current-source discovery, license and safety gates, project-fit analysis, evidence scoring, and small commercial validation experiments |
+| `ai luna reasoning` / `ai medium high reasoning` / `ai luna performance mode` | `memories/2_governance/LUNA_5_6_REASONING_MODES.md` | GPT-5.6 Luna Medium/High reasoning modes, context budgets, escalation, and controlled automation |
+| `ai project truth detection` / `find project truth` | `codex-router/Detect-CodexProjectTruth.ps1` | Detect the nearest current project truth documents before loading project memory |
+| `ai safe codex maintenance` / `run codex maintenance` | `codex-router/Run-CodexLunaMaintenance.ps1` | Run Luna activation, truth, routing, telemetry, and benchmark checks with safe generated refresh |
 
 ## Recipe and Knowledge Triggers
 

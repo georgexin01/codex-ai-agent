@@ -12,9 +12,7 @@ $relPaths = @(
     'cache',
     'ambient-suggestions',
     'plugins/cache',
-    'models_cache.json',
-    'vendor_imports/skills/skills/.curated',
-    'vendor_imports/skills/skills-curated-cache.json'
+    'models_cache.json'
 )
 
 $fullPaths = $relPaths | ForEach-Object { Join-Path $root $_ }

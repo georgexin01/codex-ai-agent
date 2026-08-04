@@ -1,5 +1,4 @@
 # --- Transient / temporary folders ---
-faucet/
 .system/
 *.tmp
 *.log

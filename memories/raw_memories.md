@@ -1440,3 +1440,97 @@ Failures and how to do differently:
 References:
 - `js/main.js`, `.htaccess`, `meta.md`, `README.md`.
 
+## Thread `019fb660-87b8-7d40-b7b0-e08962ae6fbc`
+updated_at: 2026-07-31T06:32:39+00:00
+cwd: \\?\D:\backup\website-zetasoftware
+rollout_path: C:\Users\user\.codex\sessions\2026\07\31\rollout-2026-07-31T12-13-27-019fb660-87b8-7d40-b7b0-e08962ae6fbc.jsonl
+rollout_summary_file: 2026-07-31T04-13-27-2IWg-zeta_static_site_gtm_bilingual_button_hook.md
+
+---
+description: Installed Google Tag Manager across the 12-page bilingual static Zeta Software site and added a shared contact-submit analytics hook; source validation passed, live deployment validation remains pending.
+task: static bilingual HTML GTM installation and contact-button tracking hook
+task_group: zeta-software-static-site
+task_outcome: success
+cwd: D:\backup\website-zetasoftware
+keywords: Google Tag Manager, GTM-W9GQ37RT, gtm-contact-submit, static HTML, /cn/, bilingual, contact form, PowerShell validation
+---
+
+### Task 1: Site-wide GTM installation
+
+task: Add GTM head and noscript snippets to every English and Chinese HTML page.
+task_group: zeta-software-static-site
+ task_outcome: success
+
+Preference signals:
+- The user requested GTM on “every pages” and specifically included Chinese `/cn/` pages -> future site-wide edits should inventory and report complete bilingual route coverage explicitly.
+
+Reusable knowledge:
+- The project is a hardcoded static site with 12 public HTML entry pages: six English and six `/cn/` equivalents. There is no shared PHP/layout include, so GTM was inserted into each HTML file individually.
+- Container ID used: `GTM-W9GQ37RT`.
+- Required placement: head block immediately after `<head>`; noscript block immediately after opening `<body>`.
+- Final checker passed: 12 pages, 12 head blocks, 12 body blocks, one of each per page.
+
+Failures and how to do differently:
+- An initial checker falsely failed because it compared exact whitespace offsets. Use whitespace-tolerant structural regex/HTML checks instead of raw position equality.
+- Source validation does not confirm deployment or Tag Assistant detection. After publishing, verify the live domain with Google Tag Assistant and confirm the GTM container is published.
+
+References:
+- Routes include `index.html`, `about/index.html`, `services/index.html`, `portfolio/index.html`, `contact/index.html`, `faq/index.html`, and matching `cn/*/index.html` files.
+- Verification output: `total_pages=12`, `head_blocks=12`, `body_blocks=12`, `every_page=PASS`.
+
+### Task 2: Contact-form GTM button hook
+
+task: Add one stable class to all bilingual contact/enquiry submit buttons.
+task_group: zeta-software-static-site
+ task_outcome: success
+
+Preference signals:
+- The user repeatedly asked for confirmation that both language versions and every page were covered -> provide exact file lists and counts when validating similar changes.
+
+Reusable knowledge:
+- Shared class added: `gtm-contact-submit`.
+- Applied to four form buttons: `index.html`, `cn/index.html`, `contact/index.html`, `cn/contact/index.html`.
+- GTM selector: `Click Classes contains gtm-contact-submit`.
+- Existing classes such as `btn btn-primary` and form behavior were preserved.
+
+Failures and how to do differently:
+- A first PowerShell `rg` command failed due to unterminated quoting; a simpler quoting form succeeded. Prefer simple PowerShell quoting for mixed HTML/regex searches.
+
+References:
+- Validation output: `form_pages=4`, `gtm_contact_submit_buttons=4`, `class_hook_validation=PASS`.
+
+## Thread `019fc638-d5a6-7730-8981-2b46478192aa`
+updated_at: 2026-08-03T06:05:57+00:00
+cwd: \\?\C:\Users\user\Desktop\cermin_v2
+rollout_path: C:\Users\user\.codex\sessions\2026\08\03\rollout-2026-08-03T14-04-01-019fc638-d5a6-7730-8981-2b46478192aa.jsonl
+rollout_summary_file: 2026-08-03T06-04-01-bI14-cermin_php_localhost_test_aborted.md
+
+---
+description: Cermin PHP front-controller localhost test was only partially completed; server/HTTP verification was aborted before statuses were obtained
+task: localhost test PHP front controller and clean branch routes
+task_group: cermin_v2 local development
+ task_outcome: partial
+cwd: C:\Users\user\Desktop\cermin_v2
+keywords: localhost-test, PHP, php-built-in-server, index.php, router.php, /skudai, HTTP-404, PowerShell
+---
+
+### Task 1: Localhost test
+
+task: Start and verify the Cermin PHP site locally without modifying source or configuration
+task_group: cermin_v2 local development
+task_outcome: partial
+
+Reusable knowledge:
+- The workspace is a PHP front-controller site with `index.php`, `router.php`, `lib/`, and `template/`; it has no package/Vite app.
+- PHP 8.3.8 is installed. No listener was detected on the checked ports, so port 8000 was selected.
+- Documented route checks are `/`, `/skudai`, `/skudai/home`, and `/unknown`; the unknown route should return 404.
+
+Failures and how to do differently:
+- The detached server start plus HTTP verification command was aborted by the user after 8.5 seconds, so no URL status was validated. A PHP process may remain; inspect port 8000/processes before retrying.
+- Earlier PowerShell inspection scripts failed from malformed pipeline syntax (`An empty pipe element is not allowed`) and an uninformative parallel-command exit 1. Prefer simple sequential PowerShell commands.
+
+References:
+- Start shape: `php -S 127.0.0.1:8000 index.php`
+- Verification docs: `BLUEPRINT.md` says to lint PHP files and verify `/`, `/skudai`, `/skudai/home`, unknown-path 404, branch isolation, and canonical implementation URLs.
+- Abort evidence: server/request command output was `aborted by user after 8.5s`.
+

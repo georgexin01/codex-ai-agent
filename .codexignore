@@ -50,9 +50,6 @@ plugins/.remote-plugin-install-staging/
 **/.git/
 **/.git/**
 
-# Archived skill clusters (kept on disk, excluded from AI indexing)
-skills/faucet/
-
 # Keep curated knowledge/skills/routing available
 !AGENTS.md
 !00_CODEX_START_HERE.md

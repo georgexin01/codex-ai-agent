@@ -46,9 +46,16 @@ $results = foreach ($case in @($caseConfig.cases)) {
     Sort-Object { $_.trigger.Length } -Descending |
     Select-Object -First 1
   $actualTarget = if ($null -ne $matched) { [string]$matched.target } else { $null }
+  $expectsNoMatch = [bool]$case.expect_no_match
+  $passed = if ($expectsNoMatch) {
+    $null -eq $matched
+  } else {
+    $actualTarget -eq [string]$case.expected_target
+  }
   [pscustomobject]@{
     id = [string]$case.id
-    passed = $actualTarget -eq [string]$case.expected_target
+    passed = $passed
+    expect_no_match = $expectsNoMatch
     expected_target = [string]$case.expected_target
     actual_target = $actualTarget
     matched_trigger = if ($null -ne $matched) { [string]$matched.trigger } else { $null }
