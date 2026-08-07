@@ -1,0 +1,7 @@
+{
+  "git.ignoredRepositories": [
+    "memories",
+    ".tmp/plugins",
+    "vendor_imports/skills"
+  ]
+}

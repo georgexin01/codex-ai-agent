@@ -1,5 +1,5 @@
 ---
-name: angel-interior-local-dev-skill
+name: angel-interior-local-dev
 description: Start the Angel Interior website and admin panel locally with the verified commands when `run-local.bat` exits or the user asks to run/check localhost.
 argument-hint: "[website|admin|both]"
 user-invocable: false

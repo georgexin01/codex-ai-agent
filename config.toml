@@ -2,7 +2,7 @@ model = "gpt-5.6-luna"
 model_reasoning_effort = "high"
 approval_policy = "on-request"
 personality = "pragmatic"
-service_tier = "default"
+service_tier = "priority"
 
 notify = [ "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\1b23c930bdf84ed6\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
 [windows]
@@ -108,6 +108,24 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [projects.'c:\users\user\desktop\cermin_v2']
+trust_level = "trusted"
+
+[projects.'c:\users\user\desktop\mermaid']
+trust_level = "trusted"
+
+[projects.'c:\users\user\desktop\saleshero']
+trust_level = "trusted"
+
+[projects.'c:\users\user\desktop\thongthai2\admin-panel-thongthai']
+trust_level = "trusted"
+
+[projects.'c:\users\user\desktop\motorcycle']
+trust_level = "trusted"
+
+[projects.'c:\users\user\desktop\motorcycle\jambolive']
+trust_level = "trusted"
+
+[projects.'c:\users\user\desktop\thongthai2\thongthaimassage_v3']
 trust_level = "trusted"
 
 [features]

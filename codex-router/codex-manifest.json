@@ -13,7 +13,7 @@
                       "path":  "skills"
                   }
               ],
-    "indexed_files":  244,
+    "indexed_files":  247,
     "entries":  [
                     {
                         "kind":  "knowledge",
@@ -548,16 +548,16 @@
                         "root_relative":  "memories",
                         "relative_path":  "MEMORY.md",
                         "relative_id":  "memories/MEMORY.md",
-                        "size":  51699,
-                        "sha256":  "A69E18ECCA7358B1E9312C28809CF136A98CE0BFEB60CA520F6A8C6900C6460C"
+                        "size":  27019,
+                        "sha256":  "B35CDE1625AD471A832FCDA27DA3D983109AE550819EDCE92E64695E25C84D98"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "memory_summary.md",
                         "relative_id":  "memories/memory_summary.md",
-                        "size":  10343,
-                        "sha256":  "D435DBED7B05C3E3F235D6D25F37E360D1464AA8BCDC5527A4384216411088F9"
+                        "size":  6379,
+                        "sha256":  "E3601A2CA045A98B7262061EC517B795F3D27A6C1ADBC54D679D43DB237BCDB7"
                     },
                     {
                         "kind":  "knowledge",
@@ -636,8 +636,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "skills\\angel-interior-local-dev\\SKILL.md",
                         "relative_id":  "memories/skills/angel-interior-local-dev/SKILL.md",
-                        "size":  2973,
-                        "sha256":  "F83BA82BD53932376675DD6D08C84C58BEED48D1AE05213C7C37C8DED3951512"
+                        "size":  2967,
+                        "sha256":  "42E29CEC9F8A670B7BFC07FF17A956ACF996B7D8CB3CABCA87BB2D4C8F9901DF"
                     },
                     {
                         "kind":  "knowledge",
@@ -670,6 +670,30 @@
                         "relative_id":  "memories/skills/hierarchical-replica-chunking/templates/replica-breakdown.md",
                         "size":  647,
                         "sha256":  "31C6E5CE4613F32936DA636E2887CE24C3F975F053B5EDFC5403C4D81262E0BE"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "skills\\html-to-php-website-migration\\agents\\openai.yaml",
+                        "relative_id":  "memories/skills/html-to-php-website-migration/agents/openai.yaml",
+                        "size":  275,
+                        "sha256":  "CDC87FB932D35517FDCF017AA574F795DBE5661672873718DF1C16747C39945D"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "skills\\html-to-php-website-migration\\SKILL.md",
+                        "relative_id":  "memories/skills/html-to-php-website-migration/SKILL.md",
+                        "size":  4835,
+                        "sha256":  "100FB4FEA5B59D2820EC26815AE3E5B2896A59D97E647EE58054153BC60BFDF2"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "skills\\local-supabase-protection\\SKILL.md",
+                        "relative_id":  "memories/skills/local-supabase-protection/SKILL.md",
+                        "size":  2702,
+                        "sha256":  "1100462E03AFDB7D8E6EE21D0E80C95B44E19E1E25D6F34F27AC9ED4F4CF2B37"
                     },
                     {
                         "kind":  "knowledge",

@@ -1,0 +1,7 @@
+interface:
+  display_name: "HTML to PHP Website Migration"
+  short_description: "Migrate HTML pages into reusable PHP shells and routes."
+  default_prompt: "Use $html-to-php-website-migration to handle this website migration task."
+
+policy:
+  allow_implicit_invocation: true

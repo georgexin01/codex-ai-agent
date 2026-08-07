@@ -2,131 +2,97 @@ v1
 
 ## User Profile
 
-The user works with Codex on Windows/PowerShell, `.codex` knowledge routing, Vue/Vben/Pinia applications, and PHP/MySQL/Supabase websites. They value authoritative entrypoints, narrow scope, preserved public/database contracts, and evidence-backed completion (HTTP, lint, tests, logs, or read-back). They use reusable `.codex` routing but expect current-project inspection rather than reuse of sample brands, locations, or claims. For Genie Skin Beauty, the copied template is visual/reference-only and historical VIPBillion material must never become current public content. [ad-hoc note]
+Works across Windows/PowerShell, PHP sites, Vue/Vben/Pinia, Supabase/Postgres, Codex routing, and public-site SEO. They favor current workspace/live-source evidence, surgical changes, exact naming/contracts, preservation of available source data, and meaningful verification. Local Docker/Supabase state is protected. For copied or screenshot-driven web work, they want the reference shell and visual structure preserved. [ad-hoc note]
 
 ## User preferences
 
-- In full-access sessions, continue obvious safe implementation steps without repetitive confirmation; pause for destructive actions, hidden risk, or meaningful tradeoffs. [ad-hoc note]
-- Exact `ai read .codex knowledge`: read PULSE once and reply only `[🟢] Agent is Ready..`; keep the relevant route/skill family awake.
-- For multi-step work, use `task | changes | complete` with evidence-grounded `✓`, `✕`, `⚠`; add labelled estimates only when comparison/optimization is requested. [ad-hoc note]
-- Keep `.codex` cleanup narrow and route-safe; do not modify skills Markdown or important Markdown without explicit authorization.
-- Exact `localhost test`: auto-detect roots, reuse healthy listeners, start/verify only, and report raw URLs with HTTP status; do not patch apps unless separately asked.
-- Preserve exact `PiniaStore -> Function -> Input` names and clone modules first for “copy and paste,” “duplicate,” or “same modules.” [ad-hoc note]
-- Before recommending Vben/Supabase setup or diagnosing Turbo, inspect scripts/env/runtime layers and rerun the failing package to expose the first real error.
-- For a requested read-only workflow audit, make no project changes; use concise human-style CRUD headings and `[]`/`[k]`/`[x]` only at the evidence level actually achieved.
-- Use plain keyboard-shortcut text such as `Option + Command + R`; do not use icon glyphs.
-- For static public sites, “all pages/every single page” means route-wide asset/metadata changes; preserve exact supplied title/description and report production social previews or external form delivery as pending until live-tested.
-- Preserve exact website contracts: Zeta English is `/` rather than `/en/`, Chinese is `/cn/`; its form storage is only `Date`, `Name`, `Email`, `Contact`, `Project Name`, `Project Requirements` and uses JavaScript/HTML, not PHP.
-- For bilingual static-site changes such as GTM, explicitly inventory EN and `/cn/` route coverage, give exact page/button counts, and report the stable tracking selector.
+- For non-sentinel work, lead with a compact `task | action | status` table and evidence-backed `&#10003;` / `&#10007;` / `&#9888;`; add comparison metrics only when asked. [ad-hoc note]
+- In full-access sessions, continue obvious scoped work; pause only for meaningful decisions, hidden/destructive risk, or ambiguous tradeoffs. [ad-hoc note]
+- `ai read .codex knowledge` must return only `[ðŸŸ¢] Agent is Ready..` after the PULSE read.
+- Protect local Docker/Supabase: never rename, stop, reset, prune, recreate, migrate, repoint, or otherwise change database stack/config/state without explicit same-turn permission. [ad-hoc note]
+- "copy and paste", "duplicate", "clone", or "same modules" means find and clone the exact whole source shell before inner-content edits. [ad-hoc note]
+- Preserve exact `PiniaStore -> Function -> Input` spelling/casing and keep `views -> stores -> utils/types -> API/Supabase`; views must not query Supabase directly. [ad-hoc note]
+- For catalogue import/audit work, preserve all available source fields and verify exact counts; compare live human-readable category labels as well as IDs.
 
 ## General Tips
 
-- Prefer current files and live evidence over historical memory; route first, then expand.
-- Never store or expose secrets. Treat temporary authentication bypasses as severe, explicitly roll back, and distinguish source checks from live deployment tests.
-- On PowerShell, service spawn is not readiness—check HTTP. An env edit requires a relevant Vite-process restart.
-- Vite and Docker/Supabase are separate layers; a reachable Supabase token endpoint returning `Invalid login credentials` shifts diagnosis to auth seed/schema/project state.
-- For public metadata, inspect real routes/content, exclude admin-only metadata by default, and avoid invented claims.
-- PHP lint, JSON parsing, and helper checks do not prove a DB-backed page is live: confirm representative routes independently.
-- Static metadata validation must distinguish `og:image`, `og:image:secure_url`, and `twitter:image`; do not count the expected three image URL occurrences as duplicates.
+- Route first with the smallest relevant entrypoint; current files, schema, tests, logs, and live data override historical memory. Verify with the nearest useful read-back, lint, build, smoke, or data audit.
+- Localhost readiness requires port/process ownership plus representative HTTP requests; process launch alone is not success.
+- Keep secrets out of memory, chat, reports, and skills; report configuration presence/shape only. [ad-hoc note]
+- For copied HTML-to-PHP sites, keep only project-owned assets/routes/data active; copied router/i18n/analytics/vendor endpoints are references, not target behavior. Verify routes, local media, dynamic data, and visible controls. [ad-hoc note]
+- For public SEO, inventory real routes, use rendered HTML and truthful visible content, keep staging/localhost noindex, and do not promise rankings/citations. [ad-hoc note]
 
 ## What's in Memory
 
-### C:\Users\user\Desktop\cermin_v2
+### C:\Users\user\Desktop\motorcycle
 
-#### 2026-08-03
+#### 2026-08-07
 
-- Cermin PHP front-controller localhost verification: php -S 127.0.0.1:8000 index.php, router.php, /skudai, /skudai/home, /unknown, BLUEPRINT.md
-  - desc: Search first for a read-only `localhost test` of the Cermin PHP site in cwd=C:\Users\user\Desktop\cermin_v2.
-  - learnings: The prior run was aborted before any HTTP status; recheck port 8000/leftover PHP, lint, then verify each route individually and require `/unknown` to be 404.
+- `fc-moto-new` absolute lazy-image rule: lazyload, data-src, fc-moto:lazyload:refresh, data-lazy-loaded, lazyload.js
+  - desc: Use first when adding or changing lazy images, dynamically revealed cards, or gallery selection in cwd=C:\Users\user\Desktop\motorcycle.
+  - learnings: Real asset URLs stay in `data-src`; retain the inline placeholder `src`, refresh dynamic cards, and verify fallback plus HTTP paths. [ad-hoc note]
 
-### D:\backup\website-zetasoftware
+### C:\Users\user\Desktop\motorcycle\jambolive
 
-#### 2026-07-31
+#### 2026-08-06
 
-- Zeta GTM installation and contact analytics hook: Google Tag Manager, GTM-W9GQ37RT, gtm-contact-submit, Click Classes contains, total_pages=12
-  - desc: Search first for site-wide GTM placement, bilingual `/cn/` coverage, or contact/enquiry click tracking in cwd=D:\backup\website-zetasoftware.
-  - learnings: Source has one GTM head/noscript pair on all 12 pages and the selector hook on four forms; publishing and Tag Assistant detection remain pending.
+- JamboLive product import and category audit: data/database.json, tools/import-public-products.ps1, 317 products, Category 12521, ?cat=<id>, HtmlDecode
+  - desc: Use first for the JamboLive local catalogue mirror or category taxonomy work in cwd=C:\Users\user\Desktop\motorcycle\jambolive.
+  - learnings: 317 products/detail pages and local image data were verified; 39 stored category names remain placeholders and hierarchy was not corrected.
 
-#### 2026-07-29
+### C:\Users\user\Desktop\motorcycle / C:\Users\user\.codex
 
-- Zeta public metadata, favicon, and SEO assets: zeta-website, ogImage_v1.jpg, favicon, site.webmanifest, meta.md, JSON-LD
-  - desc: Search first for route-wide SEO/social tags, manifest/favicon updates, exact metadata copy, or cache versioning on the hardcoded bilingual Zeta site; checkout-specific to cwd=D:\backup\website-zetasoftware.
-  - learnings: Twelve EN/CN pages were locally validated; production social-preview/deployment verification remains pending. Count OG tag types separately.
-- Zeta Google Sheets forms: form-submit.js, zeta-google-apps-script.gs, Contacts, EmailAccount, Project Requirements, form-half
-  - desc: Exact four-form/Apps-Script contract, pure-JSON submission, and responsive Email/Contact layout; use only for the Zeta `Contacts` sheet workflow.
-  - learnings: Deployment/authorization and a controlled live submission are still required before claiming Sheets/email delivery.
-- Zeta bilingual clean routes: languageRoutes, staticRoutes, /cn/, /en/, `<base href="/">`, EN / CN
-  - desc: Root-English and `/cn/`-Chinese folder-index routes, selector navigation, and nested asset behavior for the hardcoded Zeta site.
-  - learnings: Representative routes returned HTTP 200, but link targets, translations, and browser parity need separate full migration verification.
+#### 2026-08-05
 
-### D:\project\mincorner
+- Exact Codex boot and routing maintenance: ai read .codex knowledge, [ðŸŸ¢] Agent is Ready.., 00_PULSE.md, Find-LargeKnowledge.ps1, Test-CodexPerfBenchmark.ps1
+  - desc: Search first for sentinel-only boot behavior or `.codex` route/performance/Git hygiene.
+  - learnings: PULSE is one boot read; rerun validator chains rather than assuming historical benchmark results persist.
 
-#### 2026-07-28
+#### 2026-08-04
 
-- Min Corner admin authentication and cPanel cache rules: admin/authenticate.php, temporaryCpanelBypass, password_verify, public_html/.htaccess, FileETag None
-  - desc: Search first for Min Corner admin login, temporary password bypass, cPanel deployment, or no-cache/redirect rules; checkout-specific to cwd=D:\project\mincorner.
-  - learnings: `$temporaryCpanelBypass = true` remains a severe untested remote exposure; direct PHP pages must not inherit HNP front-controller rewrites, and `.htaccess` source checks do not prove live headers.
+- `.codex` routing performance and nested Git: skill_path_router.md, Update-CodexRouting.ps1, .codexignore, memories/.git
+  - desc: Use for route repair, stale-skill removal, locked-runtime boundaries, and nested-repo hygiene in cwd=C:\Users\user\.codex.
+  - learnings: Remove stale routes instead of inventing skills; do not force-delete locked runtime or vendor state.
 
-### C:\Users\user\Desktop\admin-panel-labour-v4
+### C:\Users\user\Desktop\saleshero
 
-#### 2026-07-28
+#### 2026-08-05
 
-- Vben production build and `jiti` diagnosis: pnpm run dev:vps, @vben/web-antd, @vben/web-naive, VITE_APP_TITLE is not defined, createRequire, __vite-browser-external
-  - desc: Search for Labour build output, Turbo build summaries, missing app titles, or the remaining web-naive failure; checkout-specific.
-  - learnings: `dev:vps` is a dev server; build web-antd to `apps/web-antd/dist`. Frozen-lockfile install is healthy; inspect why `@nuxt/kit`/`jiti` enters the browser bundle before version/alias changes.
+- Sales Hero evidence-based knowledge and compressed Mermaid flow: sales_hero.sql, knowledge.md, testflow_saleshero.md, flowchart TD, discountTierId, totalSalesCommision
+  - desc: Use for role/schema/workflow analysis or test-flow changes in cwd=C:\Users\user\Desktop\saleshero.
+  - learnings: Keep payment/demo/territory/commission/stock gaps explicit; merge only same-screen flow steps and retain credit/payment/refund/permission branches.
 
-#### 2026-07-27
+### C:\Users\user\Desktop\thongthai2\admin-panel-Thongthai
 
-- Vben/Supabase runtime, Docker/WSL, and PuTTY tunnel diagnosis: apps/web-antd, pnpm dev:local, development.localhost, VITE_SUPABASE_URL, Invalid login credentials, localhost:3001, putty.exe
-  - desc: Use for Labour local/VPS setup, blank page/login failures, Docker/WSL decisions, or “which env is localhost:3001”.
-  - learnings: Vite and Supabase/Docker are separate; 3001 is the PuTTY tunnel, not Vite.
-- Concise Labour CRUD/workflow checking report: WORKFLOW_CHECKING_SUMMARY.md, Contract Slots, Worker Placements, Browser is not available: iab
-  - desc: Use for read-only office-user workflow reports; source evidence must not be represented as browser-tested.
-  - learnings: Preserve requested short headings and `[]`/`[k]`/`[x]`; inspect workflow gaps separately.
+#### 2026-08-05
 
-### C:\Users\user\Desktop\test1\skin2\html.themehour.net\rasm\demo
-
-#### 2026-07-28
-
-- Project-wide HTML formatting: Shift + Alt + F, Prettier, npx prettier "**/*.html" --write
-  - desc: Use for recursive HTML formatting in this Windows project.
-  - learnings: VS Code formats only the open file; confirm broad-write authorization and review the resulting diff.
-
-### C:\Users\user\Desktop\genieskinbeauty
-
-#### 2026-07-28
-
-- Genie Skin Beauty template and content boundary: download-template, website-genieskinbeauty, PROJECT_CONTEXT.md, VIPBillion reference
-  - desc: Search before editing Genie or reusing copied PHP/template pages; `download-template/` is read-only and the public target is `website-genieskinbeauty/`.
-  - learnings: Historical VIPBillion content is never Genie content. [ad-hoc note]
+- Floor-plan statistics seat interaction: floorplanstatistics, red seat, reserved, isAvailableSeat, @click, @pointerdown
+  - desc: Source-confirmed behavior for statistics-page seats; search before adding seat details, modals, or click behavior.
+  - learnings: `floorplanstatistics` seats are display-only; `reserved` is visual-only, unlike editable `floorplans` seats.
 
 ### Older Memory Topics
 
-#### C:\xampp\htdocs
+#### C:\Users\user\Desktop\cermin_v2
 
-- HNP Homestay localhost and bilingual routing: localhost:8080, airbnb.com_db, /cn, siteLanguage, HTTP 500
-  - desc: PHP/MySQL setup and EN/CN route localization; cwd=C:\xampp\htdocs.
+- Cermin PHP front-controller localhost verification: php -S 127.0.0.1:8000 index.php, router.php, /skudai, /unknown, BLUEPRINT.md
+  - desc: Read-only PHP local-test retry; prior HTTP verification was aborted, so recheck port ownership and request each route individually.
 
-#### C:\Users\user\.codex
+#### C:\Users\user\Desktop\angel-interior / C:\Users\user\Documents\local-supabase
 
-- Reusable public meta-content workflow: metaTitle, SEO metadata, meta-content-workflow, meta.md
-  - desc: Public website/app metadata routing; excludes admin-only content.
-- `.codex` maintenance and Git health: MEMORY_DETAILS.md, KnowledgeHealthReport.ps1, GitNexus, nested-memories-git, 160000
-  - desc: Route-safe cleanup, validators, and nested-Git diagnosis.
+- Angel admin, Stripe downloads, and protected local Supabase: 064_angel_make_user_rpc_role_status_agnostic.sql, create_user, role_table_grants, session_id, local-supabase
+  - desc: RPC schema drift, empty-site env diagnosis, verified Stripe-download chains, and local Supabase protection. [ad-hoc note]
+
+#### C:\Users\user\Desktop\trash-container-app
+
+- CY RORO paired-app Pinia and workflow: Trash Pinia, getAllBinWIthOrder, OrderUpdateInput, web-admin-app, web-driver-app
+  - desc: Exact Sheet contracts, c-to-c store boundaries, task flow, Vben lifecycle, and paired-app verification. [ad-hoc note]
 
 #### C:\Users\user\Desktop\VIPBillion
 
-- Vben booking reuse and FIUU routing: clone-first, deleted_at, isDelete, checkSlugExists, FIUU
-  - desc: Cloned booking/driver modules and payment mapping; cwd=C:\Users\user\Desktop\VIPBillion. [ad-hoc note]
+- VIPBillion CRUD, FIUU, and metadata: isDelete, checkSlugExists, pay.fiuu.com/RMS/pay, website-vipbillion/lib/metaData.php
+  - desc: Soft-delete/attachment lifecycle, booking-module reuse, payment mapping, and truthful metadata conventions. [ad-hoc note]
 
-#### C:\Users\user\Desktop\angel-interior
+#### public sites / C:\Users\user\Desktop\genieskinbeauty
 
-- Protected local Supabase and Angel website/admin flows: local-supabase, role_table_grants, create_user, Stripe Checkout
-  - desc: Angel database/RPC/RLS and paid-download flows; cwd=C:\Users\user\Desktop\angel-interior. [ad-hoc note]
-
-#### workflow-global
-
-- Public SEO, AI Search, and metadata checklist: robots.txt, sitemap.xml, JSON-LD, canonical, Open Graph
-  - desc: Crawlability and structured-data work; excludes private/authenticated routes. [ad-hoc note]
-- Reporting/status tables and screenshot replicas: task | changes | complete, Hierarchical Replica Chunking, design DNA
-  - desc: Requested status-table formats and screenshot replication. [ad-hoc note]
+- Public SEO, exact template reuse, and HTML-to-PHP migration: robots.txt, OAI-SearchBot, JSON-LD, download-template, index.php, router.php, html-to-php-website-migration
+  - desc: Public-search implementation, strict Genie boundary, source-shell reuse, and verified PHP migration workflow. [ad-hoc note]

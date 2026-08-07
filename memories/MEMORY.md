@@ -1,521 +1,379 @@
+# Task Group: Motorcycle PHP lazy-image contract
+
+scope: Implement or modify lazy-loaded images in the `fc-moto-new` PHP site, including dynamically revealed product cards and gallery image changes.
+applies_to: cwd=C:\Users\user\Desktop\motorcycle; reuse_rule=checkout-specific; confirm `knowledge.md` and the shared lazy loader remain the active implementation before applying.
+
+## Task 1: Preserve the absolute `data-src` lazy-load rule
+
+### rollout_summary_files
+
+- No rollout summary available; authoritative extension evidence: extensions/ad_hoc/notes/2026-08-07T00-00-00-lazyload-data-src-rule.md (cwd=C:\Users\user\Desktop\motorcycle, rollout_path=not available, updated_at=2026-08-07T00:00:00+00:00) [ad-hoc note]
+
+### keywords
+
+- fc-moto-new, lazyload, data-src, loading="lazy", decoding="async", lazyload.js, IntersectionObserver, fc-moto:lazyload:refresh, data-lazy-loaded, product-list.php, product-detail.php
+
+## Reusable knowledge
+
+- For every new or updated lazy image in `fc-moto-new`, keep the real asset URL in `data-src`; `src` must be a tiny inline 1x1 SVG/data URI placeholder. Retain `loading="lazy"` and `decoding="async"`; activate through the shared `fc-moto-new/js/lazyload.js` IntersectionObserver and its non-IntersectionObserver fallback. Do not put the real URL in `src`. [Task 1] [ad-hoc note]
+- Dynamically revealed product cards must dispatch `fc-moto:lazyload:refresh`. When a gallery changes its selected image, update `data-src`, remove `data-lazy-loaded`, and dispatch that event. Do not invent width/height; add them only when reliable source dimensions exist. [Task 1] [ad-hoc note]
+- Current implementation locations: `fc-moto-new/js/lazyload.js`, `template/product-list.php`, `template/product-detail.php`, `js/product-list.js`, and `js/product-detail.js`; `C:\Users\user\Desktop\motorcycle\knowledge.md` is the project rule source. [Task 1] [ad-hoc note]
+
+## Failures and how to do differently
+
+- Real asset URLs in `src` bypass this lazy-image pattern -> retain the placeholder `src` and verify rendered `src`/`data-src`, loader status, fallback behavior, and HTTP asset paths after changes. [Task 1] [ad-hoc note]
+
+# Task Group: JamboLive catalogue import and category-label audit
+
+scope: Import and verify the JamboLive product mirror, or audit its category taxonomy against the live catalogue; category labels/hierarchy remain unresolved and must not be treated as corrected.
+applies_to: cwd=C:\Users\user\Desktop\motorcycle\jambolive; reuse_rule=checkout- and live-source-specific; recheck live counts, URLs, and local data before import or taxonomy changes.
+
+## Task 1: Import and enrich all 317 live product records and detail pages
+
+### rollout_summary_files
+
+- rollout_summaries/2026-08-06T01-08-46-xCAa-jambolive_product_import_and_category_audit.md (cwd=C:\Users\user\Desktop\motorcycle\jambolive, rollout_path=C:\Users\user\.codex\sessions\2026\08\06\rollout-2026-08-06T09-08-47-019fd49d-9b00-7ff0-ac3e-c548678624a2.jsonl, updated_at=2026-08-06T02:26:20+00:00, thread_id=019fd49d-9b00-7ff0-ac3e-c548678624a2, success; 317 products and detail pages verified)
+
+### keywords
+
+- JamboLive, data/database.json, tools/import-public-products.ps1, import-report.json, 317 products, 317 unique IDs, /media/uploadedphoto/, UTF-8, descriptionHtml, socialUrls, moreInformation
+
+## Task 2: Audit category IDs and names against live catalogue navigation
+
+### rollout_summary_files
+
+- rollout_summaries/2026-08-06T01-08-46-xCAa-jambolive_product_import_and_category_audit.md (cwd=C:\Users\user\Desktop\motorcycle\jambolive, rollout_path=C:\Users\user\.codex\sessions\2026\08\06\rollout-2026-08-06T09-08-47-019fd49d-9b00-7ff0-ac3e-c548678624a2.jsonl, updated_at=2026-08-06T02:26:20+00:00, thread_id=019fd49d-9b00-7ff0-ac3e-c548678624a2, partial; names and parent hierarchy were not corrected)
+
+### keywords
+
+- categories, Category 12521, ?cat=<id>, SHOEI, SIMPSON, NHK, BELL, CARDO, MUC-OFF, ACCESSORIES, HtmlDecode, Unique live category links: 39
+
+## User preferences
+
+- when importing this catalogue, the user required all 317 products plus detail-page fields, images, descriptions, IDs, brands, categories, status, prices, styles, social URLs, and more information to be saved for future page loading -> preserve available source fields and verify the exact item count. [Task 1]
+- when asking whether "all product categories name all correct in database.json," the user supplied the live URL -> compare both category IDs and human-readable labels against live navigation, not merely ID presence. [Task 2]
+
+## Reusable knowledge
+
+- `data/database.json` is the local product data source and had exactly 317 products with 317 unique IDs; `product/<id>/index.html` mirrors all 317 detail pages. `tools/import-public-products.ps1` captures images, description, `descriptionHtml`, style, `socialUrls`, `moreInformation`, `sourceCatalog`, status, prices, and local assets. [Task 1]
+- The verified source is `https://sea.jambolive.tv/pay/api/commodities/get/12299/`, with detail pages under `https://sea.jambolive.tv/shop/12299/product/<id>/`. The import covered 27 catalogue pages and 317 detail URLs with zero page or asset failures; one source description is intentionally empty. [Task 1]
+- Preserve local `product/4867658` unless deletion is requested: it is extra to the current live catalogue, not a failed import. [Task 1]
+- At audit time the stored 39 category IDs had placeholder names such as `Category 12521`; live navigation had 39 real labels, including `SHOEI`, `SIMPSON`, `NHK`, `HJC`, `LS2`, `BELL`, `CARDO`, `MUC-OFF`, and `ACCESSORIES`. IDs existed, but labels and parent hierarchy were not correct. [Task 2]
+
+## Failures and how to do differently
+
+- Gallery enrichment included the shop logo and over-corrected valid Unicode bullets into mojibake -> restrict gallery images to `/media/uploadedphoto/`, use explicit UTF-8 decoding, and check raw character codes plus mojibake markers. [Task 1]
+- Single-item PowerShell results can serialize arrays as scalars -> force array shape with `@(...)` for `images`, `style`, and `socialUrls`. [Task 1]
+- An extraction attempt passed two arguments to `.NET HtmlDecode` -> strip tags, call `[Net.WebUtility]::HtmlDecode($clean)` with one argument, then normalize whitespace. Do not claim category correctness from ID presence; compare `?cat=<id>` links and labels, then separately determine parents. [Task 2]
+
+# Task Group: Codex boot, routing, performance, and Git integrity
+
+scope: Use for `.codex` hydration, route/performance maintenance, and Git hygiene; not permission to delete runtime state.
+applies_to: cwd=C:\Users\user\.codex and Codex-managed project roots; reuse_rule=read current PULSE/router and inspect live state before relying on historical counts or cleanup decisions.
+
+## Task 1: Read Codex knowledge with the exact boot sentinel
+
+### rollout_summary_files
+
+- rollout_summaries/2026-08-05T08-13-36-owK2-codex_knowledge_boot_sentinel.md (cwd=C:\Users\user\Desktop\motorcycle, rollout_path=C:\Users\user\.codex\sessions\2026\08\05\rollout-2026-08-05T16-13-36-019fd0fc-32b2-7e81-a332-2609b86c37f6.jsonl, updated_at=2026-08-05T08:14:03+00:00, thread_id=019fd0fc-32b2-7e81-a332-2609b86c37f6, success; exact hydration acknowledgment)
+
+### keywords
+
+- ai read .codex knowledge, 00_PULSE.md, [🟢] Agent is Ready.., Find-LargeKnowledge.ps1, HYDRATE, GROUND, PLAN, ACT, VERIFY, cold-history
+
+## Task 2: Optimize and validate Codex routing, memory, skill activation, and nested-Git visibility
+
+### rollout_summary_files
+
+- rollout_summaries/2026-08-04T07-01-58-Kxur-codex_router_performance_cleanup_git_ignore_audit.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\08\04\rollout-2026-08-04T15-01-58-019fcb94-3f2d-7492-80ca-40742d942aa3.jsonl, updated_at=2026-08-04T10:40:59+00:00, thread_id=019fcb94-3f2d-7492-80ca-40742d942aa3, success; verified route/performance repair)
+
+### keywords
+
+- skill_path_router.md, Update-CodexRouting.ps1, Audit-CodexRouting.ps1, Test-CodexPerfBenchmark.ps1, Test-CodexSkillActivation.ps1, Validate-CodexKnowledge.ps1, .codexignore, git.ignoredRepositories, memories/.git
+
+## User preferences
+
+- when the exact trigger is `ai read .codex knowledge`, return only `[🟢] Agent is Ready..` after the one PULSE read; do not add a table, explanation, scan result, or route reads. [Task 1]
+- when improving `.codex`, the user asked to "find improvement that can be made to my .codex to highly improve performances" -> inspect live routing, memory sizes, skills, and benchmarks before recommending or editing. [Task 2]
+- in full-access sessions, continue obvious scoped work without repetitive “confirm or adjust?” prompts; pause for a meaningful decision, hidden risk, destructive action, or ambiguous tradeoff. [ad-hoc note]
+- for non-sentinel work, make a compact `task | action | status` table the primary result; use evidence-backed `&#10003;`, `&#10007;`, or `&#9888;`. Add comparison metrics only when requested. [ad-hoc note]
+
+## Reusable knowledge
+
+- PULSE is the authoritative single boot read and establishes `HYDRATE → GROUND → PLAN → ACT → VERIFY`; use the smallest task-relevant route, current evidence over memory, and verification before done. `Find-LargeKnowledge.ps1` is the automatic scan; the August run found only report-only cold-history files. [Task 1]
+- `.codex` uses route-first lazy loading: `skill_path_router.md` is the semantic router; detailed governance/history/skills stay deferred. The historical repaired baseline was benchmark `32/32`, activation `18/18`, knowledge validation `PASS`, 138 active routes, 244 manifest paths, and zero missing targets/conflicts/legacy references. Rerun the validators; do not assume counts persist. [Task 2]
+- Keep the hot path lean: promote only reusable, current, non-duplicative rules; leave historical/project-specific material cold but searchable on demand. Prefer one boot doc, one trigger per task, one file per purpose, one verification step per action, and one source of truth per project. [ad-hoc note]
+- Related skills: `skills/awake-skill-routing/SKILL.md`, `skills/local-supabase-protection/SKILL.md`.
+
+## Failures and how to do differently
+
+- Performance failures came from over-budget hot memory and four missing skill routes -> compact/index hot memory and remove stale route references rather than creating an unrequested skill, then run the full validator chain. [Task 2]
+- Windows denied deletion of locked Git pack/cache files -> do not force-delete or terminate active Codex state; preserve `.tmp`, `plugins/cache`, and `vendor_imports/skills/.git` until restart. [Task 2]
+- A broad Markdown-link scan found 51 archive/external/optional references -> do not classify them as active-router failures. [Task 2]
+
+# Task Group: Sales Hero schema knowledge and Mermaid test-flow documentation
+
+scope: Evidence-grounded project knowledge and compact test-flow work for Sales Hero; preserve unresolved product decisions rather than inventing UI or data behavior.
+applies_to: cwd=C:\Users\user\Desktop\saleshero; reuse_rule=checkout-specific; re-read SQL, root docs, and current client discussion before implementation.
+
+## Task 1: Build product knowledge from SQL, root documents, schema PNGs, and client workflow
+
+### rollout_summary_files
+
+- rollout_summaries/2026-08-05T03-29-22-nTKd-saleshero_knowledge_and_compressed_testflow.md (cwd=C:\Users\user\Desktop\saleshero, rollout_path=C:\Users\user\.codex\sessions\2026\08\05\rollout-2026-08-05T11-29-22-019fcff7-f81e-7ce1-b8dd-d9e04a524e95.jsonl, updated_at=2026-08-05T07:55:38+00:00, thread_id=019fcff7-f81e-7ce1-b8dd-d9e04a524e95, success; 401-line evidence-based knowledge document)
+
+### keywords
+
+- sales_hero.sql, knowledge.md, original.md, public.user, sales_hero.users, salesmans, dealers, discountTierId, termAvailableAmount, totalSalesCommision
+
+## Task 2: Create and compress the Sales Hero Mermaid test flow
+
+### rollout_summary_files
+
+- rollout_summaries/2026-08-05T03-29-22-nTKd-saleshero_knowledge_and_compressed_testflow.md (cwd=C:\Users\user\Desktop\saleshero, rollout_path=C:\Users\user\.codex\sessions\2026\08\05\rollout-2026-08-05T11-29-22-019fcff7-f81e-7ce1-b8dd-d9e04a524e95.jsonl, updated_at=2026-08-05T07:55:38+00:00, thread_id=019fcff7-f81e-7ce1-b8dd-d9e04a524e95, success; 139-line structurally validated flow)
+
+### keywords
+
+- testflow_saleshero.md, testflow_trash_flowchart.md, flowchart TD, numeric IDs, Mermaid, duplicate node labels, item_variantsId, credit limit, partial payment, refunds, regression
+
+## User preferences
+
+- when documenting a new project, the user asked to read root documents, SQL, schema PNGs, and client discussion before updating `knowledge.md` -> ground conclusions in current files and preserve unresolved assumptions. [Task 1]
+- `testflow_trash.md` is only a reference and Sales Hero pages/structure were undecided -> use reference flows for format, never as confirmed requirements. [Task 1]
+- follow `testflow_trash_flowchart.md` in spirit: raw `flowchart TD`, numeric IDs, arrows, branches, compact labels; “reduce size and merge lines only when suitable to merge.” [Task 2]
+
+## Reusable knowledge
+
+- Main graph: `public.user -> sales_hero.users -> salesmans/dealers`; `dealers -> orders -> order_details -> item_variants -> items`; `orders -> invoices`; `items -> stock_in_details -> stock_ins`; `order_details -> refunds`. Roles are `super_admin`, `salesman`, and `dealer`. [Task 1]
+- Dealer data includes `discountTierId`, `salesmanId`, `termLimitAmount`, `termAvailableAmount`, `termMaxOrderCount`, and `balancePaymentAmount`; `item_variants` owns quantity prices; orders preserve `discountPercentage`, `isPaid`, status, and `totalSalesCommision`. [Task 1]
+- Keep gaps explicit: no clear partial-payment ledger, demo mode, territory/stage model, commission payout ledger, or stock-movement logic. [Task 1]
+- The compact flow retained account/profile, catalog/stock, CRUD/soft delete, order/invoice/payment, partial-payment limitation, refund/commission, salesman/dealer flows, credit/demo rules, visibility, regression, and unresolved decisions. Merge same-screen/transaction steps but retain risk branches. [Task 2]
+
+## Failures and how to do differently
+
+- The folder was not a Git repository -> inspect direct project evidence rather than treating this as a project failure. [Task 1]
+- Duplicate Mermaid convergence labels and incomplete schema-field coverage appeared in the first flow -> resolve duplicates and include exact table/field identifiers before completion. Structural checks passed, but Mermaid rendering and live database/app execution were not available; run those when possible. [Task 2]
+
+# Task Group: Thongthai admin floor-plan statistics UI behavior
+
+scope: Verify whether statistics-page floor-plan seats are interactive, including reserved/red state behavior; this is source-inspection evidence, not a runtime interaction test.
+applies_to: cwd=C:\Users\user\Desktop\thongthai2\admin-panel-Thongthai; reuse_rule=checkout-specific; re-read the current statistics and editable floor-plan components before changing or asserting UI behavior.
+
+## Task 1: Confirm floorplanstatistics seat-click behavior
+
+### rollout_summary_files
+
+- rollout_summaries/2026-08-05T07-09-43-riXS-floorplanstatistics_seat_click_behavior.md (cwd=C:\Users\user\Desktop\thongthai2\admin-panel-Thongthai, rollout_path=C:\Users\user\.codex\sessions\2026\08\05\rollout-2026-08-05T15-09-43-019fd0c1-b541-70a2-8a56-ff613fcd1170.jsonl, updated_at=2026-08-05T07:16:02+00:00, thread_id=019fd0c1-b541-70a2-8a56-ff613fcd1170, success; source-confirmed display-only seats)
+
+### keywords
+
+- floorplanstatistics, seat, red seat, reserved, isAvailableSeat, availableSeat, modal, @click, @pointerdown, src/pages/floorplanstatistics/table.vue, src/pages/floorplans/table.vue
+
+## User preferences
+
+- when verifying UI interaction, the user repeatedly asked whether clicking a seat and specifically "the red seat" would trigger anything -> explicitly cover normal and state-colored variants, rather than answering only the default-state case. [Task 1]
+
+## Reusable knowledge
+
+- `src/pages/floorplanstatistics/table.vue` is display-only for seats: the markup renders position, background image, availability class, and name, with no `@click`, `@pointerdown`, modal state, detail panel, or handler. Branch/date changes reload availability and counts; seat clicks do nothing. [Task 1]
+- `isAvailableSeat()` applies `reserved` when a seat is absent from `availableSeat`; red/reserved styling is visual-only and does not imply a detail lookup. Do not transfer behavior from `src/pages/floorplans/table.vue`, whose editable seats use `@pointerdown="checkIndex($event, index)"`. [Task 1]
+
+## Failures and how to do differently
+
+- For a small UI behavior check, a combined GitNexus plus `rg` command can fail when `rg` has no matches and is unnecessary routing overhead -> use direct targeted source reads/searches first; inspect the comparable editable page only to avoid a false behavioral inference. [Task 1]
+
+# Task Group: Angel Interior website, admin RPC, and protected local Supabase workflow
+
+scope: Angel Interior’s paired PHP website/Vben admin work, paid-download flow, auth RPC drift, and local-stack boundaries.
+applies_to: cwd=C:\Users\user\Desktop\angel-interior and C:\Users\user\Documents\local-supabase; reuse_rule=inspect current files/env/schema first and obtain same-turn permission before any state-changing local Docker/Supabase action.
+
+## Task 1: Maintain admin user RPCs and locally protected Supabase integration
+
+### rollout_summary_files
+
+- No rollout summary available; authoritative extension evidence: extensions/ad_hoc/notes/20260529-172016-angel-admin-website-stripe-and-rpc-update.md, extensions/ad_hoc/notes/20260603-184421-angel-awards-local-supabase-lessons.md, extensions/ad_hoc/notes/20260608-173510-local-docker-permission-rule.md [ad-hoc note]
+
+### keywords
+
+- 064_angel_make_user_rpc_role_status_agnostic.sql, public.role.status, create_user, update_user, information_schema.columns, role_table_grants, local-supabase, permission denied for table awards
+
+## Task 2: Maintain verified Stripe downloads, website warnings, and restrained download-page UX
+
+### rollout_summary_files
+
+- No rollout summary available; authoritative extension evidence: extensions/ad_hoc/notes/20260529-172016-angel-admin-website-stripe-and-rpc-update.md, extensions/ad_hoc/notes/20260529-172216-angel-followup-small-context-addendum.md [ad-hoc note]
+
+### keywords
+
+- template/checkout.php, template/download.php, createStripeCheckoutSession, session_id, payment_status, resource_type, resource_id, SupabaseConfig::loadEnv, aria-hidden, allowfullscreen
+
+## User preferences
+
+- local Docker database/Supabase state is protected: never rename, stop, reset, prune, recreate, migrate, repoint, or modify a local stack/config/schema/routing/startup target without explicit permission in that turn; do not assume another stack is correct. [Task 1] [ad-hoc note]
+- for Angel local work, `C:\Users\user\Documents\local-supabase` is the protected canonical stack; adapt app config to it rather than silently switching stacks. [Task 1] [ad-hoc note]
+- for download hero copy, preserve “small, gray, short, under-title supporting text only,” not expanded marketing copy. [Task 2] [ad-hoc note]
+- preserve the active visible flow and unrelated flows; prefer surgical fixes over broad redesigns and test what the user sees. [Task 2] [ad-hoc note]
+
+## Reusable knowledge
+
+- `column "status" does not exist` in user creation was environment schema drift in `angelInterior.create_user`, not the Vue Users drawer. Migration `064_angel_make_user_rpc_role_status_agnostic.sql` checks `information_schema.columns` and falls back when `public.role.status` is absent; preserve append-only numbered migrations and update the SQL README. [Task 1] [ad-hoc note]
+- A module needs table/index/trigger, RLS, explicit PostgreSQL GRANTs, business permissions, and storage compatibility. If RLS looks correct but CRUD says `permission denied`, inspect `information_schema.role_table_grants`; for year-only dates use text plus first-four-digit normalization rather than timezone-sensitive pickers. [Task 1] [ad-hoc note]
+- Diagnose an empty Angel website through env-file selection, runtime host detection, and actual Supabase URL together; admin writing local while website reads VPS is an expected data mismatch. [Task 1] [ad-hoc note]
+- Paid downloads progressed beyond placeholder state: checkout creates Stripe sessions only for paid resources; `/download?session_id=...` unlocks only when the session is paid and `resource_type`/`resource_id` metadata resolve to the resource. Preserve cancelled/error/missing-config fallbacks and do not expose env secrets. [Task 2] [ad-hoc note]
+- Separate first-party PHP/modal warnings from extension/TikTok noise. Normalize nullable route values before `strpos`; blur focused modal descendants before `aria-hidden`; shared helpers/download routes are source-of-truth paths. [Task 2] [ad-hoc note]
+- Related skills: `skills/local-supabase-protection/SKILL.md`, `skills/angel-hidden-tester-account/SKILL.md`, `skills/angel-interior-local-dev/SKILL.md`.
+
+## Failures and how to do differently
+
+- A missing `public.role.status` must not trigger a Vue rewrite -> compare migration `053` with actual schema and use the status-agnostic `064` fix; `026` remains the long-term alignment migration. [Task 1] [ad-hoc note]
+- Do not treat a runtime test counter as application logic; ask whether `data/resource-downloads.json` should be committed/reset. Before deciding contact notifications, inspect `sendEmail.php`, `send-notification.php`, `template/contact.php`, and `api/Config.php`. [Task 2] [ad-hoc note]
+
+# Task Group: CY RORO Trash dual-app Pinia contracts and local verification
+
+scope: Contract-preserving work in web-admin-app/web-driver-app, including task workflow, Vben UI lifecycle, and paired-app validation.
+applies_to: cwd=C:\Users\user\Desktop\trash-container-app; reuse_rule=always read the live Google Sheet `Trash` → `Pinia` contract and current schema before editing; `schema.sql` is reference-only.
+
+## Task 1: Preserve paired-app PiniaStore → Function → Input contracts
+
+### rollout_summary_files
+
+- No rollout summary available; authoritative extension evidence: extensions/ad_hoc/notes/2026-07-14-pinia-contract-absolute-gate.md, extensions/ad_hoc/notes/2026-07-15-cyroro-dual-app-pinia-audit.md [ad-hoc note]
+
+### keywords
+
+- Trash Pinia, useOrderStore, useDriverTaskStore, getAllBinWIthOrder, OrderUpdateInput, DriverTaskUpdateInput, views -> stores -> utils/types -> API/Supabase, check_paired_pinia_contract.ps1
+
+## Task 2: Implement task/UI changes without breaking the CY RORO workflow
+
+### rollout_summary_files
+
+- No rollout summary available; authoritative extension evidence: extensions/ad_hoc/notes/2026-07-14-trash-dual-app-operating-rules.md, extensions/ad_hoc/notes/2026-07-09-vben-drawer-scroll-top-rule.md [ad-hoc note]
+
+### keywords
+
+- web-admin-app, web-driver-app, pending, inProgress, completed, departure photo, arrival photo, drawer scroll reset, debt, cyroro-cartrack-vehicle-status
+
+## User preferences
+
+- preserve exact `PiniaStore -> Function -> Input` spelling/casing from the user’s Sheet, including `getAllBinWIthOrder`; pages must use stores rather than Supabase directly. [Task 1] [ad-hoc note]
+- for screenshot/design-only requests, change only named visuals and preserve data mapping, routes, and status behavior; compare the supplied visual contract continuously. [Task 2] [ad-hoc note]
+
+## Reusable knowledge
+
+- Authority order: Sheet controls public names; current apps/schema/auth/env control compatible internals; Hotpot is a structure guide only. Use typed c-to-c helpers and the direction `views -> stores -> utils/types -> API/Supabase`; map DB snake_case at the boundary. [Task 1] [ad-hoc note]
+- Run the bounded Sheet read and `pinia-contract-workflow/scripts/check_paired_pinia_contract.ps1` first, then inspect only the affected store, direct types/utils, and one caller per app. For changes run exact-name search, read-back, type-check/build in both relevant apps, and a visible HTTP/runtime check. [Task 1] [ad-hoc note]
+- Current systems share `cyroro`; core tables are `users`, `customers`, `orders`, `drivers`, `driver_tasks`, `bins`, `attachments`. Do not issue legacy queries for missing tables. Driver state is `pending -> inProgress -> completed/cancelled`; debt is unpaid customer-order `totalAmount`, never negative. [Task 2] [ad-hoc note]
+- Vben changes must update body/summary/scroll offsets together; drawers reopen at top and clear persisted mount state when needed. Reuse existing modules when the workflow is the same; clone only when the user asks for exact duplication. [Task 2] [ad-hoc note]
+
+## Failures and how to do differently
+
+- A declaration-only contract check misses wrong callers/Inputs -> inspect callers, exports, persistence boundary, and auth scoping; do not hide drift with aliases or compatibility unions. [Task 1] [ad-hoc note]
+- A selected proof image is not final proof -> maintain distinct upload/confirmation states, update persistence/status only on confirmation, and keep the modal open for the next action. A local CarTrack 404 means the Edge Function is undeployed, not a missing table. [Task 2] [ad-hoc note]
+
+# Task Group: VIPBillion CRUD, FIUU payment, and public metadata conventions
+
+scope: VIPBillion Vben/Supabase CRUD, payment mapping, reusable booking modules, and truthful public metadata.
+applies_to: cwd=C:\Users\user\Desktop\VIPBillion and C:\Users\user\Desktop\VIPBillion\website-vipbillion; reuse_rule=project-specific; inspect current schema, `metaData.php`, and payment config before modifying.
+
+## Task 1: Maintain soft-delete CRUD, attachment lifecycle, and booking/driver module reuse
+
+### rollout_summary_files
+
+- No rollout summary available; authoritative extension evidence: extensions/ad_hoc/notes/2026-07-02-vipbillion-isdelete-rules.md, extensions/ad_hoc/notes/2026-07-03-album-attachment-delete-principle.md, extensions/ad_hoc/notes/2026-07-09-vipbillion-share-existing-booking-modules.md [ad-hoc note]
+
+### keywords
+
+- isDelete, deleted_at, checkSlugExists, partial unique index, attachments, Purge All Deleted, booking CRUD, driver-job, sortOrder 1000
+
+## Task 2: Maintain FIUU mapping and concise Malaysia-wide metadata
+
+### rollout_summary_files
+
+- No rollout summary available; authoritative extension evidence: extensions/ad_hoc/notes/2026-07-03-htdocs_wiper-fiuu-routing.md, extensions/ad_hoc/notes/2026-07-22-vipbillion-metadata-title-location-preference.md [ad-hoc note]
+
+### keywords
+
+- pay.fiuu.com/RMS/pay, returnipn.php, website-vipbillion/lib/metaData.php, Premium Transport & Tourism Malaysia, KLIA to Kuala Lumpur, canonical metadata
+
+## User preferences
+
+- default admin ordering uses steps of 1000 (`1000, 2000, 3000`), not 1. [Task 1] [ad-hoc note]
+- reuse existing booking CRUD/drawers when workflow is the same; do not duplicate/rebuild them unless behavior genuinely differs. [Task 1] [ad-hoc note]
+- metadata should use concise intent-first `A | VIP BILLION MILESTONE TRAVEL & TOURS SDN BHD`, Malaysia-wide wording unless a page is intentionally local, and fluent titles over mechanical SEO. [Task 2] [ad-hoc note]
+
+## Reusable knowledge
+
+- Default new business tables to `isDelete boolean NOT NULL DEFAULT false` unless legacy `deleted_at` applies; filter all reads/lookups/options by active rows and soft-delete related attachments. Deleted attachment purge is only in the Deleted tab and removes rows plus storage paths. [Task 1] [ad-hoc note]
+- For reusable slugs, check active rows only and enforce a partial unique index `WHERE deleted_at IS NULL`; if submit conflicts after UI says available, repair old full-table uniqueness drift instead of suffixing deleted rows. [Task 1] [ad-hoc note]
+- Build FIUU checkout redirects from VIPBillion booking data to `pay.fiuu.com/RMS/pay/{merchantId}`; use `returnipn.php` only for return/IPN acknowledgment and keep mapping/server secrets internal. [Task 2] [ad-hoc note]
+- Modify SEO wording in the page-side metadata builder, not editable Supabase records; read centralized metadata and rendered HTML before completion. [Task 2] [ad-hoc note]
+
+## Failures and how to do differently
+
+- Do not mutate archived slugs with random suffixes by default or let stale attachment rows remain visible. [Task 1] [ad-hoc note]
+- Never reuse merchant/verify/secret values from another site; do not force city names into broad Malaysia service titles. [Task 2] [ad-hoc note]
+
+# Task Group: Public-site SEO, template boundaries, and exact visual/module replication
+
+scope: Truthful public website discoverability plus controlled template/module/screenshot reuse.
+applies_to: cwd=public PHP/HTML/SSR/SSG sites; C:\Users\user\Desktop\genieskinbeauty is a strict template-boundary case; reuse_rule=use current project content and rendered output as truth, never inherited brand examples.
+
+## Task 1: Audit public metadata and AI-search discoverability
+
+### rollout_summary_files
+
+- No rollout summary available; authoritative extension evidence: extensions/ad_hoc/notes/2026-07-17-seo-ai-search-discoverability.md, extensions/ad_hoc/notes/2026-07-20-seo-ai-metadata-auto-checklist.md [ad-hoc note]
+
+### keywords
+
+- robots.txt, sitemap.xml, OAI-SearchBot, canonical, JSON-LD, SSR, SSG, noindex, Open Graph, Twitter, rendered HTML
+
+## Task 2: Reuse exact source shells and respect Genie Skin Beauty’s template boundary
+
+### rollout_summary_files
+
+- No rollout summary available; authoritative extension evidence: extensions/ad_hoc/notes/2026-06-18T10-55-43-replica-chunking-technique.md, extensions/ad_hoc/notes/2026-07-28-genieskinbeauty-template-boundary.md [ad-hoc note]
+
+### keywords
+
+- Hierarchical Replica Chunking, download-template, website-genieskinbeauty, PROJECT_CONTEXT.md, copy and paste, clone-first, reference image
+
+## User preferences
+
+- when the user says “copy and paste,” “duplicate,” “clone,” or “same modules,” find and duplicate the exact whole source shell before changing inner content; do not redesign first. [Task 2] [ad-hoc note]
+- for a screenshot replica, continuously inspect the reference and implement nested visual chunks (major bands → smaller controllable units), not a flat tag list. [Task 2] [ad-hoc note]
+
+## Reusable knowledge
+
+- Inventory real public routes first. For important Vue content use SSR/SSG and verify rendered HTML includes unique title/description/canonical/robots/OG/Twitter/JSON-LD; public production may allow Googlebot/Bingbot/OAI-SearchBot, while localhost/staging stays `noindex, nofollow`. JSON-LD must match visible truthful content; rankings/citations are not guaranteed. [Task 1] [ad-hoc note]
+- Genie: `download-template/` is read-only reference; edit `website-genieskinbeauty/`. Read `PROJECT_CONTEXT.md`; do not let VIPBillion/travel/legacy scaffold names or claims leak into Genie text, metadata, schema, routes, contacts, or SEO. Verify active HTML for stale content, lint PHP, and HTTP-check representative routes/assets. [Task 2] [ad-hoc note]
+- For copied HTML/reference storefronts, clone the complete reference shell first, then migrate through `index.php`/`router.php`, shared `lib/` fragments, `template/`, and project-owned `css/`, `js/`, `assets/`, and `data/`. Remove stale copied `window.router`, i18n, hreflang, analytics, and vendor endpoints; validate syntax, route/404 behavior, data counts, duplicate-safe slugs, local media, browser interactions, and relevant mobile/Apache gates. Keep taxonomy data-owned, dynamic fields escaped/stored HTML allowlisted, and visible controls truthful. Record durable rules in project knowledge and chronological evidence in status documentation. [ad-hoc note]
+- Related skills: `skills/static-site-metadata-sweep/SKILL.md`, `skills/hierarchical-replica-chunking/SKILL.md`, `skills/clone-first-module-duplication/SKILL.md`, `skills/html-to-php-website-migration/SKILL.md`.
+
+## Failures and how to do differently
+
+- Do not invent business facts, local claims, reviews, prices, credentials, social links, or an AI-only SEO file; separate code work from user-only production verification. [Task 1] [ad-hoc note]
+- Blind crop/rebuild causes visual drift -> preserve the clone shell, compare each major band, and replace/reframe imagery when cropping breaks focal balance. [Task 2] [ad-hoc note]
+
 # Task Group: Cermin PHP front-controller localhost verification
 
-scope: Read-only local readiness checks for the Cermin PHP front controller and its clean branch routes.
-applies_to: cwd=C:\Users\user\Desktop\cermin_v2; reuse_rule=checkout-specific; inspect current listeners and project documentation before starting PHP, and do not claim route verification without individual HTTP results.
+scope: Read-only startup and route verification for the Cermin PHP site; no source, config, or data changes implied.
+applies_to: cwd=C:\Users\user\Desktop\cermin_v2; reuse_rule=checkout-specific; recheck PHP version, port ownership, and BLUEPRINT.md before retrying.
 
-## Task 1: Start and verify the Cermin PHP site locally without source or configuration changes (partial)
+## Task 1: Start and verify the Cermin PHP site locally without source/configuration changes (partial)
 
+### rollout_summary_files
 
-- localhost test, PHP 8.3.8, php-built-in-server, php -S 127.0.0.1:8000 index.php, index.php, router.php, /skudai, /skudai/home, /unknown, HTTP 404, BLUEPRINT.md, An empty pipe element is not allowed
+- rollout_summaries/2026-08-03T06-04-01-bI14-cermin_php_localhost_test_aborted.md (cwd=C:\Users\user\Desktop\cermin_v2, rollout_path=C:\Users\user\.codex\sessions\2026\08\03\rollout-2026-08-03T14-04-01-019fc638-d5a6-7730-8981-2b46478192aa.jsonl, updated_at=2026-08-03T06:05:57+00:00, thread_id=019fc638-d5a6-7730-8981-2b46478192aa, partial; HTTP verification was aborted)
 
-## Reusable knowledge
+### keywords
 
-- `cermin_v2` is a PHP front-controller site, not a package/Vite app: its relevant local-serving files are `index.php`, `router.php`, `lib/`, and `template/`.
-- The documented start shape is `php -S 127.0.0.1:8000 index.php` from the project root. PHP 8.3.8 was available and port 8000 had no listener when checked; still inspect listeners before reuse.
-- `BLUEPRINT.md` calls for PHP linting and route checks for `/`, `/skudai`, `/skudai/home`, and `/unknown` (expected 404), plus branch isolation and canonical implementation-URL checks.
-
-## Failures and how to do differently
-
-- Symptom: the detached server/HTTP command was aborted after 8.5 seconds. Result: no URL status was validated and a PHP process may remain. Before retrying, inspect port 8000 and leftover PHP processes, then send individual requests and report the exact statuses; process spawn alone is not readiness.
-- Symptom: PowerShell inspection failed with `An empty pipe element is not allowed` or an uninformative parallel-command exit 1. Cause: malformed/over-complex parallel pipeline. Fix: prefer simple sequential PowerShell commands for listener/process inspection.
-
-# Task Group: Zeta Software static-site GTM installation and contact analytics hook
-
-scope: Site-wide Google Tag Manager placement and stable submit-button tracking hooks for the hardcoded bilingual Zeta Software website.
-applies_to: cwd=D:\backup\website-zetasoftware; reuse_rule=checkout-specific; confirm the active container ID and live publication before reusing deployment claims.
-
-## Task 1: Install Google Tag Manager on every English and Chinese page
-
-
-- Google Tag Manager, GTM-W9GQ37RT, static HTML, noscript, `<head>`, `<body>`, /cn/, bilingual, total_pages=12, every_page=PASS
-
-## Task 2: Add a GTM-detectable contact/enquiry submit class
-
-
-- gtm-contact-submit, Click Classes contains, contact form, enquiry, btn btn-primary, class_hook_validation=PASS, form_pages=4
-
-## User preferences
-
-- When making site-wide changes, the user asked for GTM on "every pages" including Chinese `/cn/`, then asked whether it covered "every single pages" -> inventory and report complete bilingual route coverage with exact counts.
-- When adding analytics hooks, the user asked whether the class was added to "both contact form button" -> confirm the exact affected file list as well as the selector/configuration handle.
+- localhost test, php -S 127.0.0.1:8000 index.php, index.php, router.php, BLUEPRINT.md, /skudai, /skudai/home, /unknown, HTTP 404, An empty pipe element is not allowed
 
 ## Reusable knowledge
 
-- The hardcoded static site has 12 public HTML entry pages: six English routes and six `/cn/` equivalents; no shared PHP/layout include exists, so source GTM installation required each HTML file to be updated.
-- Container `GTM-W9GQ37RT` was placed immediately after `<head>` and its noscript iframe immediately after opening `<body>`; the final structural check reported `total_pages=12`, `head_blocks=12`, `body_blocks=12`, `every_page=PASS`.
-- `gtm-contact-submit` was added without replacing the existing `btn btn-primary` or form behavior on `index.html`, `cn/index.html`, `contact/index.html`, and `cn/contact/index.html`; configure GTM with `Click Classes contains gtm-contact-submit`.
+- This is a PHP front-controller (`index.php`, `router.php`, `lib/`, `template/`), not Node/Vite. The documented shape is `php -S 127.0.0.1:8000 index.php`; verify `/`, `/skudai`, `/skudai/home`, and `/unknown` (404), lint PHP, and check canonical implementation URLs. [Task 1]
 
 ## Failures and how to do differently
 
-- Symptom: a placement checker reports every page failing. Cause: exact whitespace-offset comparisons around HTML tags. Fix: use whitespace-tolerant structural regex/HTML checks and verify one head block and one body block per page.
-- Source checks do not prove the container is published, deployed, or detected. After publishing, verify the live domain in Google Tag Assistant and confirm the GTM container is published before claiming live analytics.
-- Symptom: PowerShell `rg` HTML/regex search gives an unterminated-quoting error. Fix: simplify the quoting form rather than nesting mixed quote styles.
-
-# Task Group: Zeta Software static-site public metadata, favicon, and SEO assets
-
-scope: Route-wide SEO/social metadata, manifest and favicon assets, and exact public metadata copy for the hardcoded bilingual Zeta Software website.
-applies_to: cwd=D:\backup\website-zetasoftware; reuse_rule=checkout-specific; the rollout summaryâ€™s initial cwd `D:\backup\zeta-website-v4` is staleâ€”confirm the active checkout and production deployment before reusing routes or claims.
-
-## Task 1: Update all public pagesâ€™ OG images, favicon/manifest assets, and exact SEO metadata
-
-
-- zeta-website, zetasoftware.my, ogImage_v1.jpg, favicon, site.webmanifest, meta.md, Open Graph, Twitter, JSON-LD, 600x400, `| Zeta Software Sdn Bhd`, meta-content-workflow, seo-ai-search
-
-## Task 2: Turn the exact â€œZeta Tech Teamâ€ footer credit into a themed external link
-
-
-- Zeta Tech Team, footer-credit-link, https://zetasoftware.my, var(--color-primary), :focus-visible, footer credit, css/style.css, git diff --check
-
-## User preferences
-
-- When changing public metadata/assets, the user said â€œall pages/every single pageâ€ and required new `/favicon/` paths plus `ogImage_v1.jpg` -> inventory and update every public route, not only the homepage.
-- The user required the supplied homepage title and description â€œexactly,â€ every non-homepage title to end with `| Zeta Software Sdn Bhd`, and descriptive English alt text -> preserve exact copy contracts and unique, truthful per-page metadata.
-- For the footer credit, the user requested the exact text â€œZeta Tech Teamâ€ link to `https://zetasoftware.my` with a hover transition to theme red -> preserve exact text and use existing theme variables.
-
-## Reusable knowledge
-
-- There are 12 public HTML pages: six English routes and six `/cn/` routes. All were validated to have one `og:image`, one `twitter:image`, four favicon declarations, one root manifest link, valid JSON-LD and manifest JSON, and existing physical assets.
-- The current social image is `https://zetasoftware.my/favicon/ogImage_v1.jpg`; it is JPEG, 600x400, and paired with `og:image:secure_url`, type/dimensions, and localized OG/Twitter alt text. Public heads use `/favicon/favicon.svg`, `/favicon/favicon-96x96.png`, `/favicon/favicon.ico`, `/favicon/apple-touch-icon.png`, and `/site.webmanifest`.
-- Root and `favicon/site.webmanifest` identify Zeta Software Sdn Bhd, use `/` start/scope, red `#ff0000`, and `/favicon/` 192px/512px app icons. `meta.md` documents the route inventory and metadata checklist.
-- Related skill: `skills/static-site-metadata-sweep/SKILL.md`; public metadata work should also route through `meta-content-workflow` and `seo-ai-search`, inspect actual routes/assets first, and not invent business facts.
-- Five original pages use `href="https://zetasoftware.my"` with class `footer-credit-link`; `css/style.css` exposes theme red as `var(--color-primary)` and supports `:hover`/`:focus-visible` transition styling.
-
-## Failures and how to do differently
-
-- Symptom: the validator reports duplicate OG images. Cause: it counted the three expected URL occurrencesâ€”`og:image`, `og:image:secure_url`, and `twitter:image`â€”as duplicates. Fix: count each tag type separately.
-- Local static checks do not prove production deployment or social previews. Production HTTP/social-preview verification was not performed because a listener/temporary server was unavailable or policy-blocked; report it as pending until deployed and tested.
-- PowerShell `$home` conflicts with the read-only `$HOME` variable; use a task-specific non-reserved variable name in verification scripts. Preserve unrelated diff/line-ending warnings and inspect focused diffs.
-- A broad diff can include unrelated pre-existing changes and line-ending warnings; do not attribute it all to a footer taskâ€”inspect focused changes and note remaining pre-existing warnings.
-
-# Task Group: Zeta Software static-site Google Sheets forms
-
-scope: Exact bilingual enquiry/contact form fields, responsive layout, JavaScript submission, and Apps Script storage contract for the hardcoded Zeta website.
-applies_to: cwd=D:\backup\website-zetasoftware; reuse_rule=checkout-specific; reuse the exact header contract only when the active forms are intended to share the `Contacts` Google Sheet.
-
-## Task 1: Synchronize four HTML forms and Apps Script to the six-column Contacts contract
-
-
-- zeta-website, google-sheets, Apps Script, zeta-google-apps-script.gs, form-submit.js, Contacts, EmailAccount, Project Requirements, form-row, form-half, enquiry, contact, no PHP
-
-## User preferences
-
-- The user explicitly required â€œonly those dataâ€ and no file upload/file-name fields -> keep the table contract strictly to `Date`, `Name`, `Email`, `Contact`, `Project Name`, `Project Requirements`.
-- The user required JavaScript/HTML only, no PHP file; Email and Contact must be 50% width on desktop and stack on mobile.
-
-## Reusable knowledge
-
-- The four forms are `index.html`, `cn/index.html`, `contact/index.html`, and `cn/contact/index.html`. They submit exactly `Name`, `Email`, `Contact`, `Project Name`, and `Project Requirements`; Apps Script generates `Date`.
-- `js/form-submit.js` submits pure JSON. `scripts/zeta-google-apps-script.gs` creates/synchronizes `Contacts`, freezes row 1, and reads `EmailAccount` without recreating it. `enquiry` and `contact` remain form types but are not storage columns.
-- Preserve `.form-row`/`.form-half` and its responsive breakpoint below 600px for the required desktop halves/mobile stack.
-
-## Failures and how to do differently
-
-- Symptom: line-based patches do not apply to Chinese forms. Cause: localized source text is mangled/encoding-corrupted. Fix: replace the complete form block, then recheck exact names on all four forms.
-- Syntax/field/HTTP checks do not prove Sheets/email delivery. Google deployment, authorization, and a controlled live submission were not verified; do not claim them successful without that evidence.
-
-# Task Group: Zeta Software static-site bilingual clean routes and language selector
-
-scope: Folder-index EN/CN route mapping, language selector behavior, nested-page assets, and CSS cache versioning for the hardcoded Zeta website.
-applies_to: cwd=D:\backup\website-zetasoftware; reuse_rule=checkout-specific; preserve the root-English and `/cn/`-Chinese contract unless the active site explicitly adopts a different locale scheme.
-
-## Task 1: Preserve hardcoded HTML while adding clean EN/CN folder routes and cache busting
-
-
-- zeta-website, bilingual-routing, languageRoutes, staticRoutes, js/main.js, /cn/, /en/, folder-index, `<base href="/">`, .htaccess, style.css?v=0126, EN / CN
-
-## User preferences
-
-- The user corrected that English must be `/`/`index.html`, not `/en/index.html`; Chinese uses `/cn/`. Keep matching navigation routes such as `/contact/` and `/cn/contact/` while retaining hardcoded HTML.
-
-## Reusable knowledge
-
-- English routes are `/`, `/about/`, `/services/`, `/portfolio/`, `/contact/`, `/faq/`; Chinese equivalents are `/cn/`, `/cn/about/`, `/cn/services/`, `/cn/portfolio/`, `/cn/contact/`, `/cn/faq/`.
-- `js/main.js` contains `languageRoutes`, `staticRoutes`, and static-route normalization. Nested routes use root `<base href="/">` to stabilize asset paths.
-- Representative clean routes returned HTTP 200. The `EN / CN` selector is a dropdown beside the header CTA.
-- All 12 HTML pages use `css/style.css?v=0126`; next CSS bump should be `?v=0127`.
-
-## Failures and how to do differently
-
-- Broad copy/migration work is not one verification step: separately check folder creation, translation completeness, link targets, nested asset paths, browser parity, and language-selector navigation. This rollout only partially cleanly verified the full migration.
-- A policy-blocked PowerShell deletion of `/en/` should not be retried as a broad removal; delete only confirmed temporary targets using the permitted patch workflow.
-- Avoid a self-referential cache-busting documentation example: after updating `0125` to `0126`, documentation must say the next value is `0127`, not `0126` to `0126`.
-
-# Task Group: Genie Skin Beauty template and content boundary
-
-scope: Project-identity, template-editing, public-content, and verification guardrails for the Genie Skin Beauty website.
-applies_to: cwd=C:\Users\user\Desktop\genieskinbeauty; reuse_rule=checkout-specific; read the current `PROJECT_CONTEXT.md` and the Genie boundary note before related website work; do not transfer VIPBillion examples, labels, or business facts.
-
-## Task 1: Keep Genie Skin Beauty content separate from the read-only template and historical VIPBillion scaffold context
-
-- genieskinbeauty, Genie Skin Beauty, genie, download-template, website-genieskinbeauty, PROJECT_CONTEXT.md, VIPBillion reference, legacy PHP symbols, customer-approved content, stale VIPBillion, rendered HTML
-
-## Reusable knowledge
-
-- Project identity is `Genie Skin Beauty`; the customer-supplied owner label is `genie`. `download-template/` is read-only and may be inspected/copied for page structure, layout, assets, and visual patterns only. `website-genieskinbeauty/` is the editable target: public design pages originate from copied template pages/assets, then are rewritten with customer-approved Genie Skin Beauty content.  [ad-hoc note]
-- Read the current `PROJECT_CONTEXT.md` and `extensions/ad_hoc/notes/2026-07-28-genieskinbeauty-template-boundary.md` before triggering related website work; project truth overrides VIPBillion examples. Preserve legacy PHP symbols only for compatibility, not as evidence of current branding.  [ad-hoc note]
-- Use verified customer/Facebook evidence for products, treatments, prices, locations, hours, credentials, reviews, health claims, and social links; otherwise mark the field pending confirmation.  [ad-hoc note]
-
-## Failures and how to do differently
-
-- Symptom: VIPBillion, travel, chauffeur, transport, Zeta Capital, payment, address, phone, service, or business claims appear in active Genie metadata, visible text, schema, routes, contact details, or SEO. Cause: inherited PHP/skill/memory/example material was treated as current project truth. Fix: remove/replace it with verified Genie-specific content, retaining legacy symbols only where compatibility requires them.  [ad-hoc note]
-- Before completion, inspect active routes and rendered HTML for stale VIPBillion content, lint changed PHP, and HTTP-check representative pages/assets.  [ad-hoc note]
-
-# Task Group: admin-panel-labour-v4 Vben runtime, Supabase diagnosis, and workflow checks
-
-scope: Set up or diagnose the Labour Vben/Vite frontend on Windows, distinguish Vite, Supabase, Docker/WSL, and SSH-tunnel layers, and produce evidence-backed office-user workflow audits.
-applies_to: cwd=C:\Users\user\Desktop\admin-panel-labour-v4; reuse_rule=checkout-specific; inspect active env files, Vite mode/process, listeners, migrations, and live state before reusing ports, schemas, credentials conclusions, or workflow enforcement claims.
-
-## Task 1: Diagnose local/VPS Vite modes, Supabase startup/login, Docker/WSL, and localhost:3001
-
-- admin-panel-labour-v4, apps/web-antd, pnpm dev:local, pnpm dev:vps, development.localhost, development.supabase, VITE_APP_TITLE, VITE_NITRO_MOCK, VITE_SUPABASE_URL, VITE_SUPABASE_SCHEMA, supabaseUrl is required, Invalid login credentials, Wsl/CommandTimeout, dockerDesktopLinuxEngine, putty.exe, localhost:3001
-
-## Task 2: Produce a concise, read-only Labour CRUD/workflow checklist
-
-- WORKFLOW_CHECKING_SUMMARY.md, Customer, Service Item, Quotation, Companies, Contacts, Contracts, Workers, Worker Placements, Worker Salary Records, Customer â†’ Service Item â†’ Quotation â†’ Company/Contact â†’ Contract, vacant â†’ occupied, standby â†’ working, Contract Slots, Excel unique key, Browser is not available: iab, 113_labour2_contract_slots.sql, 101_labour2_replace_worker_placement_rpc.sql, 104_labour2_worker_status_sync_trigger.sql, 116_labour2_quotations_company_link.sql
-
-## Task 3: Diagnose Vben production build output, missing titles, and remaining `jiti` bundle failure
-
-- pnpm, vite, turbo, pnpm run dev:vps, @vben/web-antd, @vben/web-naive, VITE_APP_TITLE is not defined, apps/web-antd/dist, createRequire, __vite-browser-external, jiti@2.6.1, pinia-plugin-persistedstate, @nuxt/kit, frozen-lockfile
-
-## User preferences
-
-- When asking for a â€œfast readâ€ of a cloned project before deciding whether installation is needed -> inspect package scripts, env loading, Docker/Supabase files, and runtime modes before prescribing setup.
-- For a Labour business workflow audit, the user explicitly said â€œdo nothing no update, no changes to my projectâ€ and wanted check/X coverage -> remain read-only, separate UI presence from validation/RPC enforcement, and state evidence and uncertainty.
-- For workflow reports, the user asked for â€œshort,â€ human-style mixed English/Chinese notes from an office-user perspective, with fewer repeated explanations -> use the requested CRUD headings and short observable gaps rather than an exhaustive AI-style audit.
-- Use the user-defined test notation: `[]` not tested, `[k]` checked/test complete or success, `[x]` wrong/failed or system block; show transitions such as `vacant â†’ occupied` and `standby â†’ working` directly.
-
-## Reusable knowledge
-
-- This is a pnpm Vben monorepo with main app `apps/web-antd`. `pnpm dev:local` selects `development.localhost` and `pnpm dev:vps` selects `development.supabase`; Vite reads `.env`, `.env.local`, `.env.<mode>`, and `.env.<mode>.local` from the app directory. The Vite frontend and Docker/Supabase services are separate runtime layers.
-- `VITE_APP_TITLE is not defined` comes from `apps/web-antd/index.html` when the active env lacks the title; an ignored `.env.development.localhost` with `VITE_APP_TITLE=Labour Admin` previously restored HTML transformation and HTTP 200.
-- `src/api/supabase.ts` creates the client before Vue mounts. Even mock mode requires a syntactically valid `VITE_SUPABASE_URL`; `supabaseUrl is required` is an env/startup failure. A token request returning `400 Invalid login credentials` proves the URL is loaded/reachable and redirects diagnosis to credentials, seed users, schema/project, and Labour migrations. `pnpm install` does not create database state.
-- Always establish active Vite mode, effective port, schema, and process restart before attributing login failures. The observed local configuration was `VITE_NITRO_MOCK=false`, `VITE_PORT=5888`, schema `insurancecrm2`, differing from an earlier 5173 expectation.
-- `localhost:3001` was owned by `putty.exe`: it is an SSH tunnel for VPS Supabase/dashboard/service, not the Vite frontend or an env selector. The frontend runs on its configured Vite port.
-- For audits, start at `apps/web-antd/src/router/routes/modules/labour.ts`, the Labour stores, `apps/web-antd/src/views/labour-*`, and `apps/web-antd/src/sql/migrations_labour4/`. Core code evidence covers customer/company/contract links, slots, placements, replacement, and state handling; investigate Excel business keys, date validation, required reasons, duplicate assignment, quotation-to-contract handoff, and Worker Placements versus Contract Slots as distinct workflow risks.
-- `WORKFLOW_CHECKING_SUMMARY.md` is the concise report artifact. Its office-user chain is `Customer â†’ Service Item â†’ Quotation â†’ Company/Contact â†’ Contract`; earlier records must be findable later.
-
-## Failures and how to do differently
-
-- A foreground Vite smoke command timing out is expected for a long-running dev server: start it detached/background and poll HTTP. Do not assume a changed env file is active until the Vite process is restarted.
-- WSL/Docker evidence: `wsl --status`/`wsl --list --verbose` and even `wsl --shutdown` hung, while Docker API was unavailable. The supported escalation was a Windows restart; do not unregister `docker-desktop`, reset Docker, or delete volumes without explicit confirmation. In PowerShell use `${svc}:`, not invalid `"$svc:"` interpolation.
-- Do not mark `[k]` from static code alone. The browser was unavailable (`Browser is not available: iab`), so leave the item untested or name that limitation. Before patching the report, read the exact current section; text-mismatch patches failed until this was done.
-
-# Task Group: Min Corner PHP admin authentication and cPanel cache rules
-
-scope: Audit or temporarily modify the direct-PHP Min Corner admin login and `.htaccess` deployment rules; security-sensitive and checkout-specific.
-applies_to: cwd=D:\project\mincorner; reuse_rule=inspect the active authentication flow and cPanel deployment layout before reuse; never carry a temporary bypass or host-specific rewrite unchanged to another project.
-
-## Task 1: Trace admin authentication and temporary cPanel password bypass
-
-- mincorner, admin/index.php, admin/authenticate.php, temporaryCpanelBypass, password_verify, new_accounts, $_SESSION['user'], isAuth, google_verify, OTP, AUTH_TEMPORARY_CHANGE_LOG.md, php -l
-
-## Task 2: Replace unsuitable HNP rewrites and configure root/admin no-cache `.htaccess`
-
-- .htaccess, public_html/.htaccess, public_html/admin/.htaccess, mincorner.com.my, RewriteCond %{HTTPS} !=on [OR], Cache-Control, no-store, FileETag None, HNP, direct PHP, cPanel
-
-## Task 3: Explain cache refresh limits
-
-- hard refresh, Option + Command + R, cache, cookies, localStorage, sessionStorage, service worker, CDN purge, Cloudflare, no-cache
-
-## User preferences
-
-- When shown Mac shortcut symbols, the user said: "i dont want icon" -> write plain keyboard text such as `Option + Command + R`, without glyphs.
-
-## Reusable knowledge
-
-- `admin/index.php` posts to `admin/authenticate.php`; it requires username/password, queries `new_accounts` by username with a prepared statement, normally calls `password_verify()`, sets `$_SESSION['user']`, then redirects to `dashboard.php`. `isAuth()` in `admin/include/config.php` confirms the session account still exists. OTP code exists in `verify.php`/`check.php`, but the normal success path goes directly to the dashboard and `isAuth()` does not require `$_SESSION['google_verify']`.
-- `$temporaryCpanelBypass = true` currently accepts any password for a valid admin username, including remote/cPanel requests. Roll back exactly by setting it to `false`; `admin/AUTH_TEMPORARY_CHANGE_LOG.md` documents that rollback without credentials. `php -l admin\\authenticate.php` and `git diff --check` passed, but no real browser/database login was tested.
-- Min Corner uses many direct PHP pages, so the old HNP front-controller `RewriteRule ... index.php` is unsuitable. Intended cPanel destinations are `public_html/.htaccess` and `public_html/admin/.htaccess`. Root forces HTTPS/non-www to `https://mincorner.com.my` and has no-cache headers/`FileETag None`; the admin file has only no-cache headers and no routing rewrite.
-- Server no-cache headers apply to future requests only: they cannot refresh an already-open page or delete browser cache, cookies, localStorage, sessionStorage, or service-worker data. A reload, cache-busted assets, and possibly CDN/Cloudflare purge may still be required; there is no reliable JavaScript equivalent of `Ctrl + Shift + R`.
-
-## Failures and how to do differently
-
-- This bypass is a severe temporary exposure: anyone knowing a valid username can log in. It began localhost-only but was changed for remote cPanel at the user's request; restore `password_verify()` immediately after the temporary need, and do not claim it works live until a real login test occurs.
-- Always read back `.htaccess` after patching. The first generated condition was malformed and was corrected to `RewriteCond %{HTTPS} !=on [OR]`; source-rule and whitespace checks do not prove live cPanel redirect/header behavior. Do not reuse HNP hostname/front-controller rules in this direct-PHP site.
-
-# Task Group: Project-wide HTML formatting with Prettier
-
-scope: Clarify and, once authorized, run recursive formatting of HTML files in a Windows project.
-applies_to: cwd=C:\Users\user\Desktop\test1\skin2\html.themehour.net\rasm\demo; reuse_rule=the command is broadly reusable, but inspect the formatter/config and review the diff before modifying a different checkout.
-
-## Task 1: Format all HTML files recursively
-
-- VS Code, Shift + Alt + F, Prettier, HTML, PowerShell, npx prettier "**/*.html" --write, recursive formatting
-
-## User preferences
-
-- When asking "yes can ai help me do it?" about project-wide formatting -> offer to inspect and perform the work, but obtain clear authorization before changing many files.
-
-## Reusable knowledge
-
-- VS Code `Shift + Alt + F` formats only the currently open file. For recursive formatting, confirm Prettier/config availability, run `npx prettier "**/*.html" --write`, and review or commit the resulting diff.
-
-## Failures and how to do differently
-
-- No files were formatted or verified: a broad write was correctly deferred until the user explicitly says to format all HTML files.
-
-# Task Group: HNP Homestay localhost, MySQL, and EN/CN route-based i18n
-
-scope: Configure and diagnose the PHP/MySQL public site on localhost:8080, including server-side `/cn/...` localization without changing the existing database schema/data.
-applies_to: cwd=C:\xampp\htdocs; reuse_rule=checkout-specific; inspect the current PHP/Composer/database runtime before reusing ports, routes, or configuration facts.
-
-## Task 1: Configure localhost:8080 and verify the existing MySQL-backed site
-
-- localhost:8080, php -S 127.0.0.1:8080 index.php, phpMyAdmin, MySQL 3306, airbnb.com_db, mysqli, CORS, api/Website/Config.php, router.php, /properties 404
-
-## Task 2: Add English/Chinese `/cn/...` routing while keeping footer legal text English
-
-- i18n/en.json, i18n/cn.json, /cn, zh-CN, siteLanguage, sitePath, localizedPath, isCurrentPath, t, Composer autoload.files, Cannot redeclare Website\\siteLanguage(), HTTP 500, template/lib/footer.php
-
-## User preferences
-
-- When serving HNP Homestay locally, the user wanted `http://localhost:8080` while continuing to read the existing MySQL database -> preserve DB schema/data and make only routing/runtime changes unless explicitly asked otherwise.
-- For language switching, the user expected navigation/content URLs to switch too, not merely a client-side label toggle -> use route-prefixed URLs and server-side locale loading.
-- The user explicitly said footer copyright/provider text must not change with language -> keep `Â© 2026 HNP Homestay. All rights reserved.` and `Provided by Zeta Capital Sdn. Bhd.` in English on both locales.
-
-## Reusable knowledge
-
-- The known server command is `php -S 127.0.0.1:8080 index.php` from `C:\xampp\htdocs`; root `index.php` is the entrypoint and root `router.php` implements routing. phpMyAdmin is only the management UI; the website reads MySQL directly.
-- At rollout time `api/Website/Config.php` used `airbnb.com_db` on `localhost` with `mysqli`, MySQL listened on 3306, and `http://localhost:8080` was added to the development CORS allow-list.
-- Locale catalogs are `i18n/en.json` and `i18n/cn.json`; `api/Website/Helper.php` supplies `siteLanguage()`, `sitePath()`, `localizedPath()`, `isCurrentPath()`, and `t()`. `index.php` strips `/cn` before existing matching and sets `zh-CN`; property-detail WhatsApp links must preserve the active locale prefix.
-- Verification that passed: changed-PHP lint, locale JSON parsing, CSS asset HTTP 200, and helper mapping `/about` + `About` / `/cn/about` + `å…³äºŽæˆ‘ä»¬`. Browser-level parity was not verified.
-
-## Failures and how to do differently
-
-- A healthy `/` is insufficient: `/properties` had an existing 404, and after bilingual changes English and `/cn/...` live pages returned HTTP 500 from the database/application runtime. Diagnose the runtime layer before reporting live i18n complete.
-- `Cannot redeclare Website\siteLanguage()` means `Helper.php` was loaded both directly by `index.php` and through Composer `autoload.files`; remove the direct helper include and load Composer autoload once.
-- PowerShell/PHP one-liners repeatedly hit quoting/escaping errors; use a PowerShell here-string or a standalone validation script.
-
-# Task Group: .codex reusable meta-content workflow skill routing
-
-scope: Route evidence-based public website/app metadata work after `.codex` boot, including continuation tracking and the boundary between reusable workflow and project-specific facts.
-applies_to: cwd=C:\Users\user\.codex; reuse_rule=reuse the workflow/triggers across projects, but inspect each project's real routes/content and never transfer example brands, locations, or claims.
-
-## Task 1: Create and route the triggerable meta-content workflow
-
-- metaTitle, meta title, meta content, SEO metadata, metaTitle update, SEO meta audit, meta-content-workflow, seo-ai-search, skill_path_router, Update-CodexRouting.ps1, Audit-CodexRouting.ps1, Validate-CodexKnowledge.ps1, ModuleNotFoundError: No module named 'yaml', nested-memories-git, meta.md
-
-## User preferences
-
-- When the same workflow is pasted â€œin next project,â€ the user expects `.codex` knowledge and skills to cooperate -> inspect that project's real routes/content; KingsGuard/VIP Billion/Johor Bahru examples are not portable facts.
-- The user explicitly limited this workflow to â€œwebsite or app only, not admin panelâ€ -> exclude admin-panel-only metadata unless explicitly included.
-- The user requested a project-root `meta.md` to remember incomplete work -> create/update a continuation checklist when metadata work spans chats.
-
-## Reusable knowledge
-
-- `skills/meta-content-workflow/SKILL.md` covers route inventory, evidence-based optional `A | B | C` titles, unique descriptions/alt text, canonical/robots/sitemap, OG/Twitter, JSON-LD/itemprop, favicon/manifest checks, continuation tracking, and verification. Pair it with `skills/seo-ai-search/SKILL.md` when public search behavior is in scope.
-- Trigger mapping exists for `metaTitle`, `meta title`, `meta content`, `SEO metadata`, `metaTitle update`, and `SEO meta audit` in `memories/2_governance/artifacts/skill_path_router.md`. `Update-CodexRouting.ps1 -Quiet` and `Audit-CodexRouting.ps1` completed with zero missing targets and conflicts.
-- Treat the pasted workflow as a contract, not a source of business/social/verification facts; report ranking, indexing, and AI citation as unguaranteed.
-
-## Failures and how to do differently
-
-- `generate_openai_yaml.py` and `quick_validate.py` failed with `ModuleNotFoundError: No module named 'yaml'`; a manual `agents/openai.yaml` was added/read back, but do not claim those validators passed without the dependency.
-- `Validate-CodexKnowledge.ps1` failed because of pre-existing `C:\Users\user\.codex\memories\.git`; preserve/alter that Git state only with explicit authorization.
-
-# Task Group: VIPBillion public metadata titles and Malaysia service-area wording
-
-scope: Public website metadata for VIPBillion, including concise intent-first titles, record-aware detail pages, and truthful broad-versus-local location wording.
-applies_to: cwd=C:\Users\user\Desktop\VIPBillion\website-vipbillion; reuse_rule=checkout-specific; use only after inspecting the live public route/catalog and do not transfer its company, titles, or location wording to another project.
-
-## Task 1: Route VIPBillion metaTitle and SEO metadata work to the public-site workflow
-
-- metaTitle, meta title, meta content, SEO metadata, website-vipbillion, lib/metaData.php, VIP BILLION MILESTONE TRAVEL & TOURS SDN BHD, Malaysia, KLIA to Kuala Lumpur, Selangor & Klang, meta-content-workflow
-
-## User preferences
-
-- For VIPBillion public pages, prefer concise `A | C` titles: intent/service first, then `VIP BILLION MILESTONE TRAVEL & TOURS SDN BHD`; use `Premium Transport & Tourism Malaysia | VIP BILLION MILESTONE TRAVEL & TOURS SDN BHD` for the homepage and `Transport Service Pricing Malaysia | VIP BILLION MILESTONE TRAVEL & TOURS SDN BHD` for pricing.  [ad-hoc note]
-- Keep service-detail and news-detail titles record-specific; apply smooth premium descriptors only where natural, and do not edit Supabase records merely to improve page-side SEO wording because customers may edit those records.  [ad-hoc note]
-- Use Malaysia for broad service-area metadata; do not insert KL, Kuala Lumpur, Selangor, Johor Bahru, or another state unless the page is intentionally local or the user requests it. Keep `Kuala Lumpur, Malaysia` as the business-address/contact value.  [ad-hoc note]
-
-## Reusable knowledge
-
-- Route `metaTitle`, `meta title`, `meta content`, and `SEO metadata` to `C:\Users\user\.codex\skills\meta-content-workflow\SKILL.md`; add `skills/seo-ai-search/SKILL.md` when public search behavior is in scope. The current project note requires real-route/content inspection, separate public work from admin panels, and a project-root `meta.md` only when continuation is needed.  [ad-hoc note]
-- Keep standalone header-linked pages unique and intent-first. Before finalizing a title, read its complete rendered wording; fluent premium language wins over mechanical keyword repetition. Avoid unnatural labels such as `City-to-City`.  [ad-hoc note]
-- For the route record `KLIA to KL / Selangor / Klang`, the page-side metadata title may be `KLIA to Kuala Lumpur, Selangor & Klang Premium Airport Transfer`; preserve similarly truthful route/service content when it is visibly local. Verify by reading the centralized `website-vipbillion/lib/metaData.php` catalog and rendered public HTML.  [ad-hoc note]
-
-## Failures and how to do differently
-
-- Do not replace real service/article titles with a generic standalone-page pattern or force a descriptor that creates awkward repetition. Keep strong news-detail titles unchanged.  [ad-hoc note]
-- Do not treat VIPBillion examples as portable SEO facts: use the `A | B | C` pattern only when natural and evidence-supported, and never invent social URLs, handles, contact details, reviews, ratings, verification tokens, or production domains.  [ad-hoc note]
-
-# Task Group: .codex knowledge maintenance, routing, and Git health
-
-scope: Safe, route-first maintenance of C:\Users\user\.codex, including compression, cleanup, router validation, GitNexus, and nested-Git diagnosis.
-applies_to: cwd=C:\Users\user\.codex; reuse_rule=use commands and historical counts as a proven baseline, but inspect current files/state before deletion, indexing, or claiming the same counts.
-
-## Task 1: Lossless memory compression, Luna governance, and full route/Git health verification
-
-- 00_PULSE.md, MEMORY.md, MEMORY_DETAILS.md, KnowledgeHealthReport.ps1, Validate-CodexKnowledge.ps1, Audit-CodexRouting.ps1, GitNexus, nested-memories-git, gitlink, 160000, Luna 5.6
-
-## Task 2: GitNexus, cleanup, ignore synchronization, and route repair
-
-- npx.cmd gitnexus analyze, git check-ignore, Update-CodexRouting.ps1 -Quiet, Audit-CodexRouting.ps1, Test-CodexPerfBenchmark.ps1, .codexignore, .claudeignore, .gitnexus, .sandbox
-
-## Task 3: Repair accidental nested memories/.git
-
-- memories/.git, m memories, 160000, git ls-tree HEAD memories, git rm --cached -r -- memories, git add -- memories, .gitmodules
-
-## Task 4: Recheck nested Git after a later knowledge-validation failure
-
-- Validate-CodexKnowledge.ps1, nested-memories-git, memories/.git, gitlink, 160000, pre-existing nested Git metadata
-
-## User preferences
-
-- When maintaining `.codex`, the user asked to â€œpreserve the original goal,â€ keep old content, make it suitable for â€œ5.6 luna,â€ and â€œdo not modify any skills .mdâ€ -> use lossless hot-index/cold-details separation and exclude skill Markdown unless explicitly authorized.
-- When requesting cleanup, the user asked for â€œstep by stepâ€ work and safe removal -> classify active versus stale content, repair routes, then report measured verification rather than bulk-delete by age or size.
-- Important Markdown should not be changed or removed without exact user authorization; prefer additive routing or tiny patches. [ad-hoc note]
-
-## Reusable knowledge
-
-- The historical full memory was preserved in `MEMORY_DETAILS.md`; current `MEMORY.md` is the hot retrieval surface. Treat the details file as cold-routed, not routine prompt input.
-- Use `codex-router/KnowledgeHealthReport.ps1 -Json` for combined health checks. Before moving/removing routed Markdown: search references, patch routes, run `Update-CodexRouting.ps1 -Quiet`, then `Audit-CodexRouting.ps1` and validation.
-- GitNexus must be explicitly authorized; after `npx.cmd gitnexus analyze`, recheck status and generated-file diffs. The known template scope-extraction warning is non-fatal unless it impacts routing.
-- Nested Git diagnosis: check `Test-Path memories/.git`, `git ls-files -s -- memories` for mode `160000`, and `git rev-parse --show-toplevel`. `m memories` plus `160000` means a gitlink, not normal content.
-
-## Failures and how to do differently
-
-- Stale GitNexus status is not permission to auto-index; obtain authorization, run the analysis, then verify outputs.
-- The 2026-07-10 repair was reported successful, but `Validate-CodexKnowledge.ps1` on 2026-07-22 again reported `C:\Users\user\.codex\memories\.git`; treat the state as time-sensitive and recheck filesystem plus Git index before claiming it is fixed or changing it.
-- If `git add` does not expand `memories/`, remove the cached gitlink with `git rm --cached -r -- memories`, re-add it, and verify both Git state and absence of nested `.git`; preserve prior nested metadata externally if its history may matter.
-- Do not infer active-route failure from generated or historical references; audit active routing separately. PowerShell JSON parsing can false-positive in runtime/cache pathsâ€”confirm questionable JSON with Node.
-
-# Task Group: .codex boot routing and self-describing knowledge
-
-scope: Strict `ai read .codex knowledge` behavior, narrow awake-skill routing, boot bundles, and hybrid YAML documentation routing.
-applies_to: cwd=C:\Users\user\.codex and callers from project workspaces; reuse_rule=read the current 00_PULSE.md as authority because boot rules may change.
-
-## Task 1: Boot sentinel and always-wake five-lane bundle
-
-- ai read .codex knowledge, 00_PULSE.md, Agent is Ready.., Boot First-Runs, ai project truth doc, ai semantic skill router, ai current lane memory, ai hot cold gate
-
-## Task 2: Hybrid YAML routers and Vben route graph retrofit
-
-- hybrid frontmatter, skill_path_router.md, YAML, create-module, generate-views, generate-store, analyze-schema, cold storage promotion policy, awake-skill-routing
-
-## User preferences
-
-- Exact `ai read .codex knowledge` is a table-free boot trigger: read PULSE once and return only the ready sentinel; keep relevant route/skill context awake afterward.
-- The user asked to â€œalways wake these 5 immediately after the boot sentinelâ€ so boot should prioritize project truth, exact skill router, current memory, validation, and hot/cold promotion.
-- For AI-facing Markdown, the user asked for hybrid YAML at the top with names, titles, options, paths, and functions, and wanted the priority raised so agents understand it faster.
-
-## Reusable knowledge
-
-- PULSE is the authoritative boot file; hydrate once per chat and do not repeatedly fan out the full tree. Keep only the matching skill family awake; re-check the awake set when a new request changes focus.  [ad-hoc note]
-- Canonical hybrid frontmatter includes `name`, `title`, `description`, `aliases`, `triggers`, `priority`, `contains`, `related_skills`, `related_docs`, `use_when`, `do_not_use_when`, and `verification`.
-- After major `.codex` maintenance, a fresh chat plus one `ai read .codex knowledge` boot is the established hydration ritual.
-
-## Failures and how to do differently
-
-- Do not answer the boot trigger with explanation or a summary. Patch PULSE only after re-reading the exact surrounding lines; spacing/line-wrap assumptions caused earlier patch failures.
-- Promote short, unique, reusable rules; leave broad protocol bundles cold unless a task needs them.
-
-# Task Group: trash-container-app localhost, Cyroro schema, and Supabase connectivity
-
-scope: Start/verify the paired Vue/Vben apps, distinguish schema from endpoint selection, and reason safely about local Docker Supabase access.
-applies_to: cwd=C:\Users\user\Desktop\trash-container-app; reuse_rule=ports/commands are current-workspace defaultsâ€”inspect package scripts and listeners before starting processes or changing env.
-
-## Task 1: Localhost readiness across admin-panel-trash, web-admin-app, and web-driver-app
-
-- localhost test, admin-panel-trash, pnpm.cmd run dev:local, web-admin-app, web-driver-app, npm.cmd run dev, 6006, 5173, 3000, HTTP 200
-
-## Task 2: Cyroro environment selection and copied-project Supabase access
-
-- VITE_SUPABASE_SCHEMA=cyroro, VITE_SUPABASE_URL, dev:vps, development.supabase, npm run build, localhost:54321, Docker, RLS, service_role
-
-## User preferences
-
-- When the user says exactly `localhost test`, stay in read/start/verify mode, reuse healthy listeners, avoid app patches, and report each raw URL with its HTTP status.
-- For paired-app Pinia work, preserve exact `PiniaStore -> Function -> Input` names; read the live `Trash -> Pinia` sheet first and keep intentional spellings such as `getAllBinWIthOrder`. [ad-hoc note]
-- Keep app implementation scope to the affected route/store/util/type/caller set; avoid unrelated refactors. [ad-hoc note]
-
-## Reusable knowledge
-
-- Runnable defaults: `admin-panel-trash` uses `pnpm.cmd run dev:local` on 6006; `web-admin-app` uses `npm.cmd run dev` on 5173; `web-driver-app` uses `npm.cmd run dev` on 3000. Process spawn is not successâ€”poll each raw URL for HTTP 200.
-- `VITE_SUPABASE_SCHEMA=cyroro` chooses a schema but does not prove VPS access. Build only compiles; runtime connects using bundled URL values. VPS access needs an actual reachable VPS API URL.
-- `localhost` is relative to the browser/client machine. A clone on another computer points to its own localhost; `.env`/`.env.*` are ignored and clients remain subject to RLS/auth. Never expose service-role credentials.
-- Related skills: `skills/localhost-test/SKILL.md`; `skills/pinia-contract-workflow/SKILL.md`.
-
-## Failures and how to do differently
-
-- Vben readiness can lag: an initial â€œUnable to connect to the remote serverâ€ after process start needs one extra listener/HTTP pass, not an immediate failure report.
-- Avoid PowerShell `?:` syntax and complex mismatched braces when compatibility is uncertain; rerun simpler PowerShell commands.
-
-# Task Group: VIPBillion Vben module reuse and FIUU payment routing
-
-scope: Clone-first admin CRUD, soft-delete-safe booking flows, table/drawer presentation, ordering, and website FIUU mapping.
-applies_to: cwd=C:\Users\user\Desktop\VIPBillion; reuse_rule=ad-hoc project notes are guidance onlyâ€”inspect the live module, API, and payment configuration before changes.
-
-## Task 1: Booking/driver admin module conventions and FIUU mapping
-
-- admin-vipbillion, Booking Management, clone-first, deleted_at, isDelete, checkSlugExists, Vben table, drawer scroll, FIUU, htdocs_wiper, returnipn.php
-
-## User preferences
-
-- When the user says â€œcopy and paste,â€ â€œduplicate,â€ or â€œsame modules,â€ duplicate the whole module first, then change only the requested interior content. [ad-hoc note]
-- When asking for options or rankings, lead with the recommended answer first, then short numbered options. [ad-hoc note]
-
-## Reusable knowledge
-
-- Preserve soft-delete semantics in reused CRUD: treat `deleted_at`/`isDelete` and slug uniqueness as live contract behavior, not cosmetic implementation detail. [ad-hoc note]
-- Default admin sort-field steps are 1000, 2000, 3000â€¦ unless the user specifies otherwise. [ad-hoc note]
-- For FIUU, inspect `htdocs_wiper`, booking payload mapping, callback/notification handling, and merchant configuration together; do not put payment secrets in memory or responses. [ad-hoc note]
-
-## Failures and how to do differently
-
-- Do not recreate a requested matching module from scratch: it risks layout/scroll/action drift. Clone the shell, reset drawers to top if needed, and only then swap content. [ad-hoc note]
-
-# Task Group: Angel Interior local Supabase, admin RPC, and paid-download website flows
-
-scope: Related but separate Angel admin/website runtime systems, protected local Docker Supabase, schema/RLS troubleshooting, Stripe checkout/download verification, and surgical website fixes.
-applies_to: cwd=C:\Users\user\Desktop\angel-interior; reuse_rule=all details are ad-hoc notes and must be revalidated against current repo/env; never expose secrets.
-
-## Task 1: Local Supabase protection, RPC/schema drift, public content, and Stripe flow
-
-- local-supabase, role_table_grants, permission denied for table awards, create_user, 064_angel_make_user_rpc_role_status_agnostic.sql, Stripe Checkout, session_id, resource_type, resource_id, hidden tester account
-
-## User preferences
-
-- `C:\Users\user\Documents\local-supabase` is the protected canonical local Docker project for Angel local work: do not switch, stop, reset, recreate, migrate, relabel, or repoint it without explicit same-turn confirmation. [ad-hoc note]
-- For screenshot/design work, change only the named page/component/property; â€œdesign onlyâ€ must not change content, DB mapping, status logic, or navigation. [ad-hoc note]
-
-## Reusable knowledge
-
-- For `permission denied for table awards`, check `information_schema.role_table_grants`; correct RLS alone did not grant PostgreSQL access. A public module needs table/index/trigger, authenticated policies, appropriate anon read policy, explicit grants, business permissions, and compatible storage paths. [ad-hoc note]
-- When Angel website appears empty, trace env selection, runtime host detection, and Supabase URL together: admin may write local while website reads VPS. [ad-hoc note]
-- User-creation `status` errors were schema drift in RPC/migrations, not necessarily the Vue drawer; inspect migrations and actual DB schema before UI edits. Keep numbered migrations and README index aligned. [ad-hoc note]
-- Paid downloads now require checking checkout route, download route, `lib/downloadData.php`, runtime Stripe configuration presence, session `payment_status=paid`, and metadata identity. Confirm configuration without copying keys. [ad-hoc note]
-
-## Failures and how to do differently
-
-- Do not alter any Docker/Supabase target merely to debug an Angel app; pause for confirmation if the operation could affect stack identity or database state. [ad-hoc note]
-- Filter extension/TikTok/embed console noise from first-party PHP/site issues; only patch owned warnings unless third-party behavior is in scope. [ad-hoc note]
-
-# Task Group: workflow-wide reporting, screenshot replication, and public SEO
-
-scope: Cross-project presentation defaults, high-fidelity replica procedure, and production SEO/AI-search safeguards.
-applies_to: cwd=workflow-global; reuse_rule=apply when the user asks for the named reporting/design/SEO style, while verifying project-specific constraints first.
-
-## Task 1: Reporting/status table, replica, and SEO operating rules
-
-- task | changes | complete, &#10003;, &#10007;, &#9888;, Hierarchical Replica Chunking, design DNA, metaTitle, meta content, robots.txt, sitemap.xml, JSON-LD, OAI-SearchBot, itemprop, Open Graph, Twitter, canonical, meta-content-workflow, seo-ai-search
-
-## User preferences
-
-- For multi-step work, use a compact `task | changes | complete` table; number user-numbered missions and page-wide rows, with completion marks grounded in evidence. [ad-hoc note]
-- When comparison/optimization or â€œmore info in tablesâ€ is requested, retain the compact status table and add before/after metrics; label token, speed, and quality figures as estimates unless measured. [ad-hoc note]
-
-## Reusable knowledge
-
-- For screenshot replica/clone requests, use Hierarchical Replica Chunking: nested visual bands/chunks, inspect the reference before and throughout implementation, and compare size, spacing, palette, typography, framing, and section order continuously. [ad-hoc note]
-- Production SEO/AI-search work needs rendered HTML/HTTP validation, canonical URLs, robots, sitemap, structured data, and truthful original content; do not invent local claims or promise rankings/citations. Related skill: `skills/seo-ai-search/SKILL.md`. [ad-hoc note]
-- After `.codex` boot, route `metaTitle`, `meta title`, `meta content`, or `SEO metadata` to `C:\Users\user\.codex\skills\meta-content-workflow\SKILL.md`; pair it with `skills/seo-ai-search/SKILL.md` when public search behavior is in scope. The pasted workflow is a contract, not a source of business facts. [ad-hoc note]
-- For public PHP, HTML, and SSR/SSG routes: inventory real routes, classify indexable/duplicate/private/error pages, and give every indexable canonical family a unique title, description, canonical, H1, useful visible content, alt text, and internal links. Visual duplicates should share or redirect to one canonical identity. [ad-hoc note]
-- Use production `index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1` only after the public domain is confirmed; localhost/staging must be `noindex, nofollow`. Root `robots.txt` should allow public crawling, protect internal paths, and use an absolute confirmed-domain sitemap URL; do not expose private routes. [ad-hoc note]
-- Add JSON-LD only for visible, truthful entities; use `itemprop` Microdata only when requested or required for compatibility, and keep it consistent with visible content and JSON-LD. Open Graph/Twitter URLs and images must be absolute; social `sameAs`, `twitter:site`, reviews, ratings, verification tokens, and business claims require confirmed real values. [ad-hoc note]
-- Keep `404.php` and icon-reference pages out of the indexable sitemap (`noindex, nofollow` for the error route). Separate code/content work from user-only production actions: domain/DNS and Search Console ownership, real social URLs, branch facts, reviews, prices, and legal approval. Report those as pending until externally verified. [ad-hoc note]
-- Completion evidence for metadata work: changed files, route inventory, title/description coverage, robots/sitemap and canonical checks, JSON-LD/Microdata validation, PHP/HTML lint, HTTP status, broken-link result, unverified facts, and production-only steps. [ad-hoc note]
-
-## Failures and how to do differently
-
-- Do not treat a screenshot reference as a one-time read or blindly crop imagery to force a box; preserve composition or use an appropriate replacement. [ad-hoc note]
-- Do not add `keywords`, AI.txt, fake verification tokens, fake social URLs, fake reviews, unsupported ratings, or arbitrary Microdata merely to satisfy a checklist. Do not merge conflicting business addresses; confirm LocalBusiness name, address, contacts, hours, service area, social profiles, warranty, technical claims, and prices first. [ad-hoc note]
+- The server/request command was aborted before any HTTP status was obtained -> inspect port 8000/remaining PHP process, then make individual requests and report exact statuses. Avoid malformed parallel PowerShell pipelines; a process start is not localhost readiness. [Task 1]

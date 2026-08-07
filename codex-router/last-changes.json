@@ -1,13 +1,17 @@
 ﻿{
     "schema_version":  2,
-    "added_count":  0,
-    "modified_count":  1,
+    "added_count":  3,
+    "modified_count":  3,
     "removed_count":  0,
     "added":  [
-
+                  "memories/skills/html-to-php-website-migration/agents/openai.yaml",
+                  "memories/skills/html-to-php-website-migration/SKILL.md",
+                  "memories/skills/local-supabase-protection/SKILL.md"
               ],
     "modified":  [
-                     "skills/.gitignore"
+                     "memories/MEMORY.md",
+                     "memories/memory_summary.md",
+                     "memories/skills/angel-interior-local-dev/SKILL.md"
                  ],
     "removed":  [
 
