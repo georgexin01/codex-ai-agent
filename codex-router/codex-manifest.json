@@ -13,16 +13,8 @@
                       "path":  "skills"
                   }
               ],
-    "indexed_files":  247,
+    "indexed_files":  240,
     "entries":  [
-                    {
-                        "kind":  "knowledge",
-                        "root_relative":  "memories",
-                        "relative_path":  "0_apex\\ENGINEERING_PROTOCOLS.md",
-                        "relative_id":  "memories/0_apex/ENGINEERING_PROTOCOLS.md",
-                        "size":  9682,
-                        "sha256":  "8BF8F585A821EB908E69A1B1647C834D6D563B73CD27D0EF453077601574719C"
-                    },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
@@ -36,8 +28,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "0_apex\\HYBRID_FORMAT_PROTOCOL.md",
                         "relative_id":  "memories/0_apex/HYBRID_FORMAT_PROTOCOL.md",
-                        "size":  12997,
-                        "sha256":  "8F0C1129FE44FBE36136CF8042738114415B3963C390CFCF6954D1A24D7CA169"
+                        "size":  11325,
+                        "sha256":  "47C431E3E82EDC120FF3F3B42A2242B8F8FC443FA304E73D3E7DB2B30C6E87DC"
                     },
                     {
                         "kind":  "knowledge",
@@ -52,8 +44,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "0_apex\\SOVEREIGN_BLUEPRINT_PROTOCOL.md",
                         "relative_id":  "memories/0_apex/SOVEREIGN_BLUEPRINT_PROTOCOL.md",
-                        "size":  7040,
-                        "sha256":  "2D25776856CE3FE11E41891A7D6A794A5CB79B9168A6C4C7C08BAEF926B80BDC"
+                        "size":  7578,
+                        "sha256":  "68265FF21178C52A76D5AFE5D188F24E9E157D337F6345AEB608AECC1373A901"
                     },
                     {
                         "kind":  "knowledge",
@@ -100,8 +92,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "0_apex\\USER_DNA.md",
                         "relative_id":  "memories/0_apex/USER_DNA.md",
-                        "size":  4315,
-                        "sha256":  "66B778937676417D4C53A8A19A1AF0AAD99829402520418E7D7EA69D67F7C455"
+                        "size":  4661,
+                        "sha256":  "E8EEAE91232F99D671A1877033A5723C26FAA1EA28EC5035FAD002D4D960821C"
                     },
                     {
                         "kind":  "knowledge",
@@ -122,34 +114,18 @@
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
-                        "relative_path":  "1_core\\DESIGN_EVOLUTION_PROTOCOL.md",
-                        "relative_id":  "memories/1_core/DESIGN_EVOLUTION_PROTOCOL.md",
-                        "size":  2397,
-                        "sha256":  "6BED2CFCBCD6D177EB23E127233C46A18AAB80F5F343CCF40B64097446B734B1"
-                    },
-                    {
-                        "kind":  "knowledge",
-                        "root_relative":  "memories",
                         "relative_path":  "1_core\\DESIGN_PSYCHOLOGY_2026.yaml",
                         "relative_id":  "memories/1_core/DESIGN_PSYCHOLOGY_2026.yaml",
-                        "size":  3804,
-                        "sha256":  "DE7136975BF391BAAEEF44DACFF95FDDF23E36CB347DAF65AE87BB2E3F070B3B"
+                        "size":  3810,
+                        "sha256":  "E5CDFC774C1D504A90983F025EC07A90650E0B7DE74E07A0ED7B2341727A00F3"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "1_core\\DESIGN_SOP.md",
                         "relative_id":  "memories/1_core/DESIGN_SOP.md",
-                        "size":  3819,
-                        "sha256":  "6E0A9E2B363DB1A0EB7EA6FA70B905C1957824224FD323A73744E6DF4139247D"
-                    },
-                    {
-                        "kind":  "knowledge",
-                        "root_relative":  "memories",
-                        "relative_path":  "1_core\\DESIGN_TOKENS.yaml",
-                        "relative_id":  "memories/1_core/DESIGN_TOKENS.yaml",
-                        "size":  661,
-                        "sha256":  "AF674CEFB8076EFD61E7FC363DF3879D13DCB444D1C12FFDA4945C158D1CDA7E"
+                        "size":  4393,
+                        "sha256":  "5A8494D718BDE72E8EEB6ED2E57C4850AD5CCC140433C365E2B17C09734B0F25"
                     },
                     {
                         "kind":  "knowledge",
@@ -196,8 +172,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "1_core\\INDUSTRIAL_INTERACTION_LIBRARY.md",
                         "relative_id":  "memories/1_core/INDUSTRIAL_INTERACTION_LIBRARY.md",
-                        "size":  19718,
-                        "sha256":  "2BD83CF8BC5699BBB482E92BDF54EFA0CD91BF4EC4C2004FC954B776B0B178C7"
+                        "size":  6361,
+                        "sha256":  "B60820FDD2F67EE91308CEF1643935AE6374547B63BB3AA05DF4FDBC27C2A99D"
                     },
                     {
                         "kind":  "knowledge",
@@ -210,18 +186,18 @@
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
-                        "relative_path":  "1_core\\PREMIUM_ORCHESTRATION_DNA.md",
-                        "relative_id":  "memories/1_core/PREMIUM_ORCHESTRATION_DNA.md",
-                        "size":  2960,
-                        "sha256":  "384E8E3E3E99A6B1F237EEE079D69219A90C341E0ED5021FF3376A2AAA50321C"
+                        "relative_path":  "1_core\\MOBILE_POPUP_MODAL_SIDEBAR.md",
+                        "relative_id":  "memories/1_core/MOBILE_POPUP_MODAL_SIDEBAR.md",
+                        "size":  12184,
+                        "sha256":  "96AAB8CAC5A325C9AA2AE90C17109278294278F90A41DF5A346E837E0CE19745"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
-                        "relative_path":  "1_core\\PWA_FAVICON_META_SETUP.md",
-                        "relative_id":  "memories/1_core/PWA_FAVICON_META_SETUP.md",
-                        "size":  12767,
-                        "sha256":  "C91542530BC7E668F04EF3BA519CB3978D12004A5FA9387A24549C1943D0F1AA"
+                        "relative_path":  "1_core\\PREMIUM_ORCHESTRATION_DNA.md",
+                        "relative_id":  "memories/1_core/PREMIUM_ORCHESTRATION_DNA.md",
+                        "size":  2960,
+                        "sha256":  "384E8E3E3E99A6B1F237EEE079D69219A90C341E0ED5021FF3376A2AAA50321C"
                     },
                     {
                         "kind":  "knowledge",
@@ -244,8 +220,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "1_core\\UI_DNA_MASTER.md",
                         "relative_id":  "memories/1_core/UI_DNA_MASTER.md",
-                        "size":  9547,
-                        "sha256":  "7F7F733F11F15F4EF68D1CECA54E6E663BC1EF748BD63D79760E2BA819CEF661"
+                        "size":  4199,
+                        "sha256":  "709085E9D4AD8BE4B02902E20E749D2665902E153C8BD599DB532DB7A71DAA9D"
                     },
                     {
                         "kind":  "knowledge",
@@ -266,42 +242,10 @@
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
-                        "relative_path":  "2_governance\\artifacts\\AI_AGENT_KEYS.md",
-                        "relative_id":  "memories/2_governance/artifacts/AI_AGENT_KEYS.md",
-                        "size":  5206,
-                        "sha256":  "13A30124D233D222F6878ED9A26894BA69241CB12D4A498D772F7D516C891484"
-                    },
-                    {
-                        "kind":  "knowledge",
-                        "root_relative":  "memories",
-                        "relative_path":  "2_governance\\artifacts\\CORE_VITALS.md",
-                        "relative_id":  "memories/2_governance/artifacts/CORE_VITALS.md",
-                        "size":  2821,
-                        "sha256":  "1FDDA1A36FE539A324B2C80D30E403F7B7B14B5980A039DDD0A1C8B037C54520"
-                    },
-                    {
-                        "kind":  "knowledge",
-                        "root_relative":  "memories",
-                        "relative_path":  "2_governance\\artifacts\\FEEDBACK_SYNTHESIS_PROTOCOL.md",
-                        "relative_id":  "memories/2_governance/artifacts/FEEDBACK_SYNTHESIS_PROTOCOL.md",
-                        "size":  1775,
-                        "sha256":  "DC791575B0AAFE5BCAA2536699B3ADCE29EA93D2202DD1514A45EB6B7E5F5BE0"
-                    },
-                    {
-                        "kind":  "knowledge",
-                        "root_relative":  "memories",
-                        "relative_path":  "2_governance\\artifacts\\JIT_VITALS.md",
-                        "relative_id":  "memories/2_governance/artifacts/JIT_VITALS.md",
-                        "size":  726,
-                        "sha256":  "1DE8B1632A828365BB38F9869D330460633EE9524E9F572493C5F469345459D4"
-                    },
-                    {
-                        "kind":  "knowledge",
-                        "root_relative":  "memories",
                         "relative_path":  "2_governance\\artifacts\\skill_path_router.md",
                         "relative_id":  "memories/2_governance/artifacts/skill_path_router.md",
-                        "size":  13280,
-                        "sha256":  "023F079023BAA0348F7A8A428B44FBE028C4423BC17A4A74138F8E15F7AADDDE"
+                        "size":  13406,
+                        "sha256":  "F599BC0461146ADAE22B0D84740A01D4EDDF837F6257DCC7D3D2013314814A19"
                     },
                     {
                         "kind":  "knowledge",
@@ -362,14 +306,6 @@
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
-                        "relative_path":  "2_governance\\experience_vault.md",
-                        "relative_id":  "memories/2_governance/experience_vault.md",
-                        "size":  1469,
-                        "sha256":  "95E0F7B6E8A67B898E43B7409F5304A79870A9137FE27B5096FE2E0039FF0D43"
-                    },
-                    {
-                        "kind":  "knowledge",
-                        "root_relative":  "memories",
                         "relative_path":  "2_governance\\GITNEXUS.md",
                         "relative_id":  "memories/2_governance/GITNEXUS.md",
                         "size":  7122,
@@ -388,8 +324,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\KNOWLEDGE_ROT_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/KNOWLEDGE_ROT_PROTOCOL.md",
-                        "size":  4085,
-                        "sha256":  "1E32D8C0F5F940A454CCE7216C5309EEED4F25D8FC85D023670DBB62F36EC706"
+                        "size":  4810,
+                        "sha256":  "0BCF68CA4C2408CE5449024A59A7940477071997F647E5468417143C1F7A9B35"
                     },
                     {
                         "kind":  "knowledge",
@@ -420,24 +356,24 @@
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\LUNA_5_6_REASONING_MODES.md",
                         "relative_id":  "memories/2_governance/LUNA_5_6_REASONING_MODES.md",
-                        "size":  2531,
-                        "sha256":  "C2963C628199BBE2776BB8AE20C84E526F162C7C052B8BC6A83D0DF02E3E4E29"
+                        "size":  2595,
+                        "sha256":  "A3FB5E19DA0D070AFDE7B58880145681D4EB2FBB3054223D3F88D0F248ABB85C"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\MODEL_COST_OPTIMIZATION_POLICY.md",
                         "relative_id":  "memories/2_governance/MODEL_COST_OPTIMIZATION_POLICY.md",
-                        "size":  7460,
-                        "sha256":  "3743F37AF85CF1431B9C4B12D61BB35181E2958E0AC5D3B76B8A5766B888A2EF"
+                        "size":  8157,
+                        "sha256":  "831041BBDAE7C53C2117720DAECFE0B60F94B0E8F227240F69F897AD677A4000"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\MODULE_AUDIT_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/MODULE_AUDIT_PROTOCOL.md",
-                        "size":  6914,
-                        "sha256":  "19397342280843566D119DDC767933CB4B08E0B715773CF9DB19EF31C40D040F"
+                        "size":  3666,
+                        "sha256":  "84B323EF1551270036909A17B7C7294CF36660AB582F8F1C46070A9CDC2C44E5"
                     },
                     {
                         "kind":  "knowledge",
@@ -500,8 +436,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\SOVEREIGN_BLUEPRINT_PROCEDURE.md",
                         "relative_id":  "memories/2_governance/SOVEREIGN_BLUEPRINT_PROCEDURE.md",
-                        "size":  2262,
-                        "sha256":  "0A16EA5F962EA16E844D883D99845C4E581E0E1D92CF8CD97F2ED884FF315F10"
+                        "size":  2826,
+                        "sha256":  "1C7A5A627FA7E36D8AB8C7FF0CDAF5654B01B2C329AB3EFB0789D170DC88C509"
                     },
                     {
                         "kind":  "knowledge",
@@ -548,16 +484,16 @@
                         "root_relative":  "memories",
                         "relative_path":  "MEMORY.md",
                         "relative_id":  "memories/MEMORY.md",
-                        "size":  27019,
-                        "sha256":  "B35CDE1625AD471A832FCDA27DA3D983109AE550819EDCE92E64695E25C84D98"
+                        "size":  34134,
+                        "sha256":  "E5E9A89936F942C346C088F682F0BD1D1BD3BF247CF5748CA0FCA5EC0C4516D1"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "memory_summary.md",
                         "relative_id":  "memories/memory_summary.md",
-                        "size":  6379,
-                        "sha256":  "E3601A2CA045A98B7262061EC517B795F3D27A6C1ADBC54D679D43DB237BCDB7"
+                        "size":  6980,
+                        "sha256":  "B95F8C4D04AB8421723BD1CE294FF567AE16DFAB939A1439ADBBBAAFD4F1AF2A"
                     },
                     {
                         "kind":  "knowledge",
@@ -684,8 +620,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "skills\\html-to-php-website-migration\\SKILL.md",
                         "relative_id":  "memories/skills/html-to-php-website-migration/SKILL.md",
-                        "size":  4835,
-                        "sha256":  "100FB4FEA5B59D2820EC26815AE3E5B2896A59D97E647EE58054153BC60BFDF2"
+                        "size":  6157,
+                        "sha256":  "D138836A210BC7B95A3982B331907FDB83012C72C4BC77D8E5730F2350C5FF3C"
                     },
                     {
                         "kind":  "knowledge",
@@ -726,6 +662,14 @@
                         "relative_id":  "skills/admin-panel/embedded-list-drawer/SKILL.md",
                         "size":  3335,
                         "sha256":  "D9FCDFCC295B8EAAE3F2096A8F935EA0687B57DF7888605AE58EA5D69BADF39A"
+                    },
+                    {
+                        "kind":  "skill-reference",
+                        "root_relative":  "skills",
+                        "relative_path":  "admin-panel\\README.md",
+                        "relative_id":  "skills/admin-panel/README.md",
+                        "size":  1155,
+                        "sha256":  "5E66A98D4B8D5FAD350611D857F65804E96E781EDE347E89BD416A4F55EE8EDF"
                     },
                     {
                         "kind":  "skill-reference",
@@ -1908,8 +1852,8 @@
                         "root_relative":  "skills",
                         "relative_path":  "meta-skills\\SKILL.md",
                         "relative_id":  "skills/meta-skills/SKILL.md",
-                        "size":  5353,
-                        "sha256":  "8651DC7C146D74A61989821F94F550E3331B3ED7B97ECE6638C3054846DD6C00"
+                        "size":  5389,
+                        "sha256":  "192365E1A7B854443D6461960A272E674891C04970E8F8ED8480C75E381000B2"
                     },
                     {
                         "kind":  "skill-reference",
@@ -1940,8 +1884,8 @@
                         "root_relative":  "skills",
                         "relative_path":  "README.md",
                         "relative_id":  "skills/README.md",
-                        "size":  1991,
-                        "sha256":  "3565C9EF0E8A3E7AEC5A909B3941824E00302FE9769A008DC3A3C54E67229F82"
+                        "size":  3914,
+                        "sha256":  "D13E22727DBB1C480B3264B369F78608F2BDAF0800E22347D70DC7D1E604A81A"
                     },
                     {
                         "kind":  "skill-reference",
@@ -1972,8 +1916,8 @@
                         "root_relative":  "skills",
                         "relative_path":  "SHARED_DB_CONTRACT.md",
                         "relative_id":  "skills/SHARED_DB_CONTRACT.md",
-                        "size":  5196,
-                        "sha256":  "917AC3CC8E057D72A268A8FCF5E017893E46ED3982C1BF8A99134B21E8AC5214"
+                        "size":  5312,
+                        "sha256":  "868A0E0DDD134C6485B822D426EF3D13A78DC6CC619F564F34550AA95C833A3D"
                     },
                     {
                         "kind":  "skill-reference",

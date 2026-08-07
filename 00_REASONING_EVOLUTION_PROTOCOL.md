@@ -2,6 +2,8 @@
 
 This protocol upgrades reasoning quality while preserving speed.
 
+> **Layer note (2026-08-07)**: this file owns reasoning *quality* (the 12 rules below) — it applies within whichever lane/mode is already active. It is not a duplicate of `memories/2_governance/MODEL_COST_OPTIMIZATION_POLICY.md` (owns work-scope economy: Lean/Balanced/Deep lanes) or `memories/2_governance/LUNA_5_6_REASONING_MODES.md` (owns the literal `model_reasoning_effort` setting: only `medium`/`high` exist, per `codex-router/controlled-auto-policy.json`). This file's own "Routine/Medium/Deep" language below is about how many of the 12 rules to apply, not a third reasoning-effort setting.
+
 ## Intent
 
 - Produce clearer thinking, stronger validation, and more reliable decisions.

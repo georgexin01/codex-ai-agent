@@ -128,6 +128,9 @@ trust_level = "trusted"
 [projects.'c:\users\user\desktop\thongthai2\thongthaimassage_v3']
 trust_level = "trusted"
 
+[projects.'c:\users\user\desktop\motorcycle\fc-moto-new']
+trust_level = "trusted"
+
 [features]
 memories = true
 js_repl = false

@@ -1,10 +1,13 @@
 ---
 name: jit-vitals
-description: "⚡ JIT VITALS (V12.0) — TOKEN-LEAN HEADER"
+description: "ARCHIVED — legacy Antigravity/Gemini-era vitals file, scoped to dead project FP-QUIZ-LAA. Not a global default."
 version: 12.0
+status: archived
 ---
 
-# ⚡ JIT VITALS V12.0
+> **ARCHIVED (tombstone)**: this file is scoped to the dead project `FP-QUIZ-LAA` and a prior Antigravity/Gemini harness ("Ground Kernel V15.0" does not match the current `GROUND_KERNEL.md`). It is NOT a global default. Moved out of `2_governance/artifacts/` 2026-08-07 per `KNOWLEDGE_ROT_PROTOCOL.md` §6. `USER_DNA.md` is the current global design-DNA default.
+
+# ⚡ JIT VITALS V12.0 (historical, FP-QUIZ-LAA only)
 
 **Project**: `FP-QUIZ-LAA` (LAA Admin) | **Mode**: `DEEP_PLANNING`
 **Stack**: Vue 3 + Vite + Supabase | **Law**: Ground Kernel V15.0

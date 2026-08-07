@@ -4,7 +4,10 @@ tier: 1
 priority: CRITICAL
 scope: ["chat", "blueprint", "evolution", "memory"]
 version: 2.0
+status: archived
 ---
+
+> **ARCHIVED (tombstone)**: not referenced from `00_PULSE.md` or `skill_path_router.md` — unreachable except by direct path. Also majority Chinese-language, which conflicts with the established English-for-durable-knowledge rule (`2026-07-15-codex-knowledge-english-rule.md`, now routed in `00_PULSE.md` §0.1.3). Moved out of `2_governance/artifacts/` 2026-08-07 per `KNOWLEDGE_ROT_PROTOCOL.md` §6.
 
 # 🧠 对话合成协议 (FEEDBACK SYNTHESIS PROTOCOL V2.0)
 

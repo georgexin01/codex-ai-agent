@@ -1,8 +1,11 @@
 {
-  "version": "1.0",
+  "version": "1.1",
+  "_meta": {
+    "default_reasoning_source": "config.toml -> model_reasoning_effort is the single source of truth for the live default; do not hardcode a value in this file (see memories/2_governance/SINGLE_TRUTH_SOURCE_PROTOCOL.md)"
+  },
   "model_profile": "luna-5.6-medium",
   "reasoning_levels": ["medium", "high"],
-  "default_reasoning": "medium",
+  "default_reasoning": null,
   "escalate_to_high_when": [
     "explicit deep, thorough, or review request",
     "security, authentication, schema, governance, or recovery work",

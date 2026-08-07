@@ -74,6 +74,8 @@ When the task is about your long-term preferences, behavior, routing, or reusabl
 3. `memories/extensions/ad_hoc/notes/2026-07-01T18-19-47-project-knowledge-template.md` `(ai manage)`
 4. `memories/extensions/ad_hoc/notes/2026-07-01T18-27-54-hybrid-metadata-router.md` `(ai manage)`
 5. `memories/0_apex/USER_DNA.md` `(ai manage)`
+6. `memories/extensions/ad_hoc/notes/2026-05-26T16-15-05-full-access-auto-confirm-preference.md` `(ai manage)` — in full-access sessions, don't repeat "confirm or adjust?" prompts for obvious scoped work.
+7. `memories/extensions/ad_hoc/notes/2026-07-15-codex-knowledge-english-rule.md` `(ai manage)` — write new durable `.codex` knowledge in English.
 
 These are the high-signal overlays for faster routing, better behavior matching, and lower ambiguity.
 `(ai manage)` means maintenance-owned: prefer to update that note or skill when a better durable rule is discovered.
@@ -276,6 +278,7 @@ Vue 3 + TS + Pinia + Tailwind + Vben Admin + Supabase/Postgres · PHP for sites.
 Workspace fingerprint rule: if the current repo contains `PROJECT_CONTEXT.md`, read it immediately after boot and treat it as the tiny project fingerprint for awake/sleep routing. Keep its guidance active for the current project until the user changes focus or the area is complete.
 
 ## 5. Design DNA ("Trusta Industrial")
+`USER_DNA.md` is the sole default design DNA for new projects. Project-specific palettes in `memories/archive/` (wRider, dead `FP-QUIZ-LAA`, etc.) are historical records, not alternative defaults — apply them only inside their origin project.
 **Must-follow rules**: 700 weight default (900 numbers-only, never <500) · 6px progress bars · headers **fixed not sticky**, ≤90px, pure `bg-white` + `.shadow-header` · BottomNav fixed ≤90px, icon+label, inactive `text-slate-400` · zero gray-on-gray · **no silent buttons** (dead CTA → "Coming soon" toast) · canonical Tailwind only (no arbitrary `[Npx]`) · viewport **always `width=device-width, initial-scale=1.0, viewport-fit=cover`** (never hardcode 412, no `maximum-scale`) · video URL fields platform-agnostic (no "YouTube") · Vben notification widget `false` unless backend wired · i18n strings in `/locales/*.json` only (literal CN/EN in templates = fail).
 
 **Taste preferences**: glassmorphism for overlays/modals only · violet/teal/dark glow direction · clickable cards over plain buttons · compact industrial density · sharp contrast · `max-w-103`/412px desktop clamp only when the project already uses that mobile-shell pattern.

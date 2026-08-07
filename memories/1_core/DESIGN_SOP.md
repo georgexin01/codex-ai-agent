@@ -1,5 +1,6 @@
 # 📐 wRider Design SOP (Standard Operating Procedure)
 > 🤖 **MODEL SYNC**: This is the structural manifest for page-level architecture. Any AI model joining the session MUST replicate these blueprints for all new view creations.
+> **Note (2026-08-07)**: originated from the wRider project, but is now the active general page-blueprint reference for the whole mobile-app pipeline (`MOBILE_APP_DESIGN_RECIPE.md`, `IMAGE_TO_MOBILE_APP_PIPELINE.md`, `HEADER_FOOTER_DESIGN_RULES.md`, `CLAUDE_BLUEPRINT_RECIPE.md`, `design-intelligence.md` all `require:` it). It stays in `1_core/` — not archived — despite the wRider-specific title; colors/branding in the blueprints below should still be treated as adaptable pattern examples, not literal defaults (`USER_DNA.md` owns the literal color/token defaults).
 
 > Detailed structural guides for building consistent, high-density industrial pages within the wRider ecosystem.
 

@@ -8,7 +8,10 @@ version: 1.0
 status: active
 date_added: "2026-04-15"
 risk: high
+status: archived
 ---
+
+> **ARCHIVED (tombstone)**: describes an MCP multi-model bridge marked "NOT YET CONFIGURED" as of 2026-04-15 and never referenced from `00_PULSE.md` or `skill_path_router.md`. The live equivalent today is the `gitnexus` MCP server already wired in `config.toml`. Moved out of `2_governance/artifacts/` 2026-08-07 per `KNOWLEDGE_ROT_PROTOCOL.md` §6.
 
 # 🔑 AI AGENT KEYS (V1.0) — Multi-Model Router Registry
 

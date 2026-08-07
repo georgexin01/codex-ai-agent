@@ -2,8 +2,9 @@
 name: shared-db-contract
 description: "Handshake contract shared by skills/claude (Vben admin), skills/claude-website (PHP API), and skills/claude-app (mobile app). Defines the one database all three connect to: schema, storage bucket, project_id, env-file matrix, and who owns the schema."
 triggers: ["db contract", "shared db contract", "handshake", "schema ownership", "which skill owns the schema"]
-version: 1.0
-date_updated: "2026-05-22"
+version: 1.1
+date_updated: "2026-08-07"
+last_audit: "2026-08-07"
 status: authoritative
 ---
 
@@ -91,9 +92,9 @@ In angel-interior: `users`, `permissions`, `attachments` are locked.
 
 ## 6. UNIVERSAL TABLE RULES (all three skills)
 
-- **Soft delete**: every table has `isDelete boolean NOT NULL DEFAULT false` (or `deleted_at`). Never hard-delete from the client.
-- **Timestamps**: `createdAt` + `updatedAt timestamptz`, with an `updatedAt` trigger.
-- **camelCase columns** in project schemas (e.g. `updatedAt`, not `updated_at`) — add a camelCase trigger helper, do not reuse snake_case helpers.
+- **Soft delete**: every table has `is_delete boolean NOT NULL DEFAULT false` (or `deleted_at`). Never hard-delete from the client.
+- **Timestamps**: `created_at` + `updated_at timestamptz`, with an `updated_at` trigger.
+- **snake_case columns** in the database (e.g. `updated_at`, not `updatedAt`); map to camelCase only at the store/frontend boundary — never expose snake_case past the store layer, and never write a camelCase DB trigger/column helper.
 - **UUID primary keys**: `id uuid PRIMARY KEY DEFAULT gen_random_uuid()`.
 - **RLS on every table**: a policy is only half a grant — the role also needs the matching `permissions` row.
 - **Storage paths** never start with `/` (avoids `//` 404s).

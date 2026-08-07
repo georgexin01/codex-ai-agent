@@ -1,6 +1,6 @@
-# 🧠 Design Evolution Protocol (V1.0)
+> **ARCHIVED (tombstone)**: this protocol was written against the wRider project's feedback history and a prior Antigravity harness. It is NOT a global default — `USER_DNA.md` is the current global design-DNA default for new projects. Moved out of `1_core/` 2026-08-07 per `KNOWLEDGE_ROT_PROTOCOL.md` §6.
 
-> This protocol dictates how the AI analyzes user feedback to evolve its "Design Senses" (The Antigravity Design DNA).
+# 🧠 Design Evolution Protocol (V1.0) — wRider project only
 
 ## 1. The "Why" Deduction Framework
 When a user requests a design change, the AI must categorize the intent using the following 5 dimensions:

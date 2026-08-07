@@ -7,8 +7,11 @@ status: authoritative
 phase: deep-reference
 model_profile: luna-5.6-medium
 load_policy: lazy; never required for routine startup
-last_audit: "2026-07-17"
+last_audit: "2026-08-07"
+status: archived
 ---
+
+> **ARCHIVED (tombstone)**: written for a prior "Gemini 3 Flash"/Antigravity harness generation and not referenced from `00_PULSE.md` or `skill_path_router.md`. Kept for historical reference — a prior review (`memories/MEMORY_DETAILS.md`) already concluded this large bundle should stay cold unless a specific unique rule is extracted. Moved out of `0_apex/` 2026-08-07 per `KNOWLEDGE_ROT_PROTOCOL.md` §6.
 
 # ⚙️ ENGINEERING PROTOCOLS MASTER (V2.0)
 

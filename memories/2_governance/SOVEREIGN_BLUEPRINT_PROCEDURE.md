@@ -3,10 +3,14 @@ name: sovereign-blueprint-procedure
 tier: 2
 priority: HIGH
 scope: ["planning", "architecture", "simulation", "start"]
-version: 3.0
+version: 3.1
+date_updated: "2026-08-07"
+last_audit: "2026-08-07"
 ---
 
-# 🧭 主权蓝图协议 (SOVEREIGN BLUEPRINT PROTOCOL V3.0)
+# 🧭 蓝图预飞规划程序 (BLUEPRINT PRE-FLIGHT PLANNING PROCEDURE V3.1)
+
+> **Scope note (2026-08-07)**: this file owns the pre-flight **planning methodology** (simulation gate, deep-dive study flow, guided questioning) that produces a blueprint's content. It is a companion to — not a newer version of — `memories/0_apex/SOVEREIGN_BLUEPRINT_PROTOCOL.md`, which owns the BLUEPRINT/DESIGN file lifecycle mechanics. The version number here (V3.1) is this file's own history; it does not supersede the V2.0 protocol file.
 
 ## ⚖️ 0. CORE DIRECTIVE
 AI MUST generate an `APP_BLUEPRINT.md` before any project starts. V3.0 adds the **Simulation Gate**.
@@ -39,4 +43,4 @@ AI MUST ask the "Deep 4" questions:
 - **Security**: AOE-Tier requirements?
 
 ---
-**Sovereign Blueprint Protocol V3.1 — Master Architect Active // 2026-05-03**
+**Blueprint Pre-Flight Planning Procedure V3.1 — Master Architect Active // 2026-05-03, scope-clarified 2026-08-07**

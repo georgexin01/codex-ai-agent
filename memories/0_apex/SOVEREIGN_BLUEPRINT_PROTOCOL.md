@@ -13,6 +13,8 @@ accepted_filenames: ["BLUEPRINT.md", "APP_BLUEPRINT.md"]
 
 > **Universal applicability**: These rules activate for **ANY project**, past or future, regardless of technology stack, company, or location. The BLUEPRINT system is not specific to any one project or client.
 
+> **Scope note (2026-08-07)**: this file owns BLUEPRINT/DESIGN file **lifecycle mechanics** — when to create them, type detection, change-log discipline, isolation firewall, archiving/cloning. The pre-flight **planning methodology** that produces a blueprint's content (simulation gate, deep-dive study flow, guided questioning) lives separately in `memories/2_governance/SOVEREIGN_BLUEPRINT_PROCEDURE.md` — despite its filename, that file is not a newer version of this one; the two are complementary, not sequential versions.
+
 ---
 
 ## ⚖️ 1. MANDATORY RULES

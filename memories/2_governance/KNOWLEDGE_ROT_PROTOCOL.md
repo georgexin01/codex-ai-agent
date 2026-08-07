@@ -48,7 +48,5 @@ Project-specific memory files that are no longer active are auto-moved to `memor
 2. Log the move: `[date] moved [filename] to archive — tombstone trigger: [reason]`.
 3. Do not require user confirmation for tombstone moves; notify the user in one line after.
 
-**Immediately tombstoned files (2026-05-21):**
-- `wrider_complete_recipe.md` → `memories/archive/`
-- `wrider_design_senses.md` → `memories/archive/`
-- `wrider_chat_mining.md` → `memories/archive/`
+**Immediately tombstoned files (2026-05-21) — claim corrected 2026-08-07:**
+- `wrider_complete_recipe.md`, `wrider_design_senses.md`, `wrider_chat_mining.md` were logged as moved to `memories/archive/` but the move never actually happened — none of the three exist anywhere in `.codex`. They exist only under `C:\Users\user\.gemini\antigravity\knowledge\`, a different assistant's knowledge directory. At least 5 live `.codex` files (`CLAUDE_BLUEPRINT_RECIPE.md`, `HEADER_FOOTER_DESIGN_RULES_DETAILS.md`, `IMAGE_TO_MOBILE_APP_PIPELINE_DETAILS.md`, `MOBILE_APP_DESIGN_RECIPE_DETAILS.md`, `skills/normal/mobile-template-from-samples/skill.md`) still reference them by a `memories/archive/` path that resolves to nothing. Importing the 3 files from `.gemini` into `.codex/memories/archive/` would fix this cleanly but is a cross-assistant content decision — flag to the user rather than doing it silently.

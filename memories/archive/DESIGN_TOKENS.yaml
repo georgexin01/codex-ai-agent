@@ -1,3 +1,7 @@
+# ARCHIVED (tombstone): one specific project palette, NOT the global default.
+# USER_DNA.md (violet/teal industrial glassmorphism) is the current global design-DNA default for new projects.
+# hud_masks.apex below is the retired emoji HUD line removed from HYBRID_FORMAT_PROTOCOL.md V1.2 — kept here only as historical record.
+# Moved out of 1_core/ 2026-08-07 per KNOWLEDGE_ROT_PROTOCOL.md §6.
 theme=Cyber Luxury / Deep Onyx
 palette.bg=#080808
 palette.surface=#121212

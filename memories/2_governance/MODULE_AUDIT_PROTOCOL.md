@@ -1,120 +1,59 @@
 ---
 name: module-audit-protocol
-description: "Sovereign Module Audit & Comparison Protocol (V2.0)"
-triggers: ["audit", "dashboard", "crud integrity", "comparison", "scp", "before and after"]
-version: 2.0
+description: "Sovereign Module Audit Protocol (V2.1) — relation-check and CRUD-integrity QA for module create/edit/delete work."
+triggers: ["audit", "crud integrity", "module audit"]
+version: 2.1
 status: authoritative
+date_updated: "2026-08-07"
+last_audit: "2026-08-07"
 ---
 
-# Sovereign Module Audit Protocol (V2.0) — SYSTEM-WIDE MANDATE
+# Sovereign Module Audit Protocol (V2.1)
 
-> [!IMPORTANT]
-> **MANDATORY DISPLAY RULE**: This protocol and its **Visual Audit Dashboard** MUST be displayed at the end of EVERY interaction involving module Create, Edit, Update, Delete, Error Check, or Testing. It is the authoritative proof of architectural integrity.
+Run this check at the end of any interaction involving module Create, Edit, Update, Delete, Error Check, or Testing. Report results as plain text — no mandatory decorative dashboard or emoji table (see `00_PULSE.md` §0.3 / `GROUND_KERNEL.md` on decoration-free output).
 
-# === MODULE_AUDIT_PROTOCOL.md ===
-## 🕵️ Phase 1: Relation Check (Referral: 5. has relation)
-Whenever a module is updated or created, the AI MUST proactively scan for existing relations using **Smarter Detection Logic**:
+## Phase 1: Relation Check (Referral: 5. has relation)
+Whenever a module is updated or created, proactively scan for existing relations using this detection logic:
 
 ### 1.1 Detection Intelligence
-- **Strong Signal**: If a table (e.g. `agent_review`) contains a column ending in `Id` (e.g. `agentId`) where the prefix matches a **partial or single word** from a parent table name (e.g. `agent_list`).
-- **Ambiguous Signal**: If the `Id` prefix (e.g. `report`) only vaguely matches a table name or exists in a non-standard module (e.g. `report_list`).
+- **Strong Signal**: a table (e.g. `agent_review`) contains a column ending in `Id` (e.g. `agentId`) where the prefix matches a partial or single word from a parent table name (e.g. `agent_list`).
+- **Ambiguous Signal**: the `Id` prefix (e.g. `report`) only vaguely matches a table name or exists in a non-standard module (e.g. `report_list`).
 
 ### 1.2 The Handshake Rule (MUST ASK)
-- **Automatic**: If the relation is a Clear-Cut 1:N (e.g. Agents -> Reviews), proceed with the standard injection.
-- **Handshake**: If the relation is ambiguous (e.g. Reports -> Agents), **the agent MUST ask the user**: *"I detected an agentId in report_list. Should I add the LayerIcon and relationship modules?"*
-- **No Unilateral Change**: Never add relationship drawers or icons for ambiguous cases without explicit "GO" from the user. Cleaning up redundant modules is difficult.
+- **Automatic**: if the relation is a clear-cut 1:N (e.g. Agents -> Reviews), proceed with the standard injection.
+- **Handshake**: if the relation is ambiguous (e.g. Reports -> Agents), ask the user: *"I detected an agentId in report_list. Should I add the LayerIcon and relationship modules?"*
+- **No unilateral change**: never add relationship drawers or icons for ambiguous cases without explicit go-ahead from the user — cleaning up redundant modules is difficult.
 
-## 🧪 Phase 2: CRUD Integrity Audit (Referral: 6. create + 7. edit)
-The AI MUST perform a mental or code-level audit of the "popup modules" (Drawers) to prevent technical debt.
+## Phase 2: CRUD Integrity Audit (Referral: 6. create + 7. edit)
+Audit the "popup modules" (drawers) to prevent technical debt.
 
 ### 2.1 Audit: 6. Create Tables (Left-Side Popup)
-- **Action**: Verify the `submit` logic and Supabase integration. 
-- **Requirement**: Ensure the list refreshes on success.
+- Verify the `submit` logic and Supabase integration.
+- Ensure the list refreshes on success.
 
 ### 2.2 Audit: 7. Edit Tables (Right-Side Popup)
-- **Action**: Verify the "input is empty" bug is NOT present.
-- **Requirement**: Ensure `getDetailApi` and `idKey` are correctly synced in `useEditDrawer`.
+- Verify the "input is empty" bug is NOT present.
+- Ensure `getDetailApi` and `idKey` are correctly synced in `useEditDrawer`.
 
-## 📊 Phase 3: The Visual Audit Dashboard (GUI Report)
+## Phase 3: Completion Checklist
+State pass/fail plainly (no emoji, no mandatory GUI table) for each applicable node: Create module (left-drawer integrity), Edit module (right-drawer hydration), CRUD registry (lifecycle verification), relation wiring (if any), i18n namespace, workflow bridge (if E2E-registered), and Malaysian seed-data conventions. Mark N/A with a one-line reason for anything not applicable to the current module.
 
-Gemini MUST display a graphical summary table after finishing a module. This provides the user with an at-a-glance confirmation of architectural health.
+## Phase 4: The Failure-Correction Loop
+When a user reports a failure or a bug (e.g. "Edit form is empty" or "Submission failed"):
 
-### 🛡️ [Module Name] Industrial Audit Report
-| Functional Node | Audit logic | Status | Industrial Element |
-|---|---|---|---|
-| **6. Create Module** | Left-Side Popup Integrity | ✅ PASSED | `lucide:plus` |
-| **7. Edit Module** | Right-Side Popup Hydration | ✅ PASSED | `lucide:edit-3` |
-| **8. CRUD Registry** | Lifecycle Verification | ✅ PASSED | `supabase:rpc` |
-| **5. Has Relation** | Down: LayerIcon / Up: FkLink | 🔗 LINKED | `lucide:layers` |
-| **Relational Tray** | Dropdown Module Column | ✅ SYNCED | `vben:tray` |
-| **i18n Namespace** | Namespace Check (Step 12) | ✅ CLEAN | `$t('page.*')` |
-| **Workflow Bridge** | E2E Action Registry (Step 14) | ✅ READY | `__workflow_*` |
-| **Sovereign Data** | Malaysian Seed Standard | ✅ SYNCED | `Sdn Bhd / +60` |
+1. **Code-level audit**: inspect the store, forms, and views. Identify the structural mismatch.
+2. **Surgical repair**: apply the fix while preserving the module's density conventions (no stray Card padding, correct `idKey`/`api` bindings).
+3. **Proof of fix**: state plainly which specific node from the Phase 3 checklist now passes.
 
-> [!NOTE]
-> If a feature is omitted (e.g. no relations), the status should be **N/A** with a brief explanation.
-
-## 🔁 Phase 4: The Failure-Correction Loop
-
-Whenever a user reports a failure or a "bug" (e.g., *"Edit form is empty"* or *"Submission failed"*), Gemini MUST follow this three-step industrial sequence:
-
-1.  **Code-Level Audit**: Use `view_file` to audit the store (Step 04), forms (Step 06/07), and views (Step 09). Identify the structural mismatch.
-2.  **Surgical Repair**: Apply the fix while maintaining 100% industrial density (removing Card padding, ensuring correct `idKey` and `api` bindings).
-3.  **GUI Proof-of-Fix**: Display the **Visual Audit Dashboard** at the end of the response to show that the specific failing node is now **✅ PASSED**.
-
-## 📐 Pattern: The Clean Module Standard
+## Pattern: The Clean Module Standard
 A module is considered "Clean" only if it meets these criteria:
 - **RAW Density**: VXE tables have `border: true` and no surrounding Cards/padding.
-- **Universal CRUD**: All 4 actions (Create, Read, Update, Delete) are functional.
-- **Malaysian Context**: Mock data and seed logic follow the Malaysian high-fidelity specs.
+- **Universal CRUD**: all 4 actions (Create, Read, Update, Delete) are functional.
+- **Malaysian Context**: mock data and seed logic follow the Malaysian high-fidelity specs.
+
+## Comparison / audit tables
+
+For any "before/after" or comparison table this protocol's Phase 3/4 output feeds into, use the single canonical spec in `00_PULSE.md` §7 — do not restate the column list here.
 
 ---
-**Status**: Authoritative | **Last Update**: 2026-04-21 | **Referral**: GEMINI-V9-EVOLVE
-
-# === SOVEREIGN_COMPARISON_PROTOCOL.md ===
----
-name: sovereign-comparison-protocol
-description: "SCP V1.0 — The authoritative standard for before/after system comparisons and audit tables."
-triggers: ["comparison tables", "before and after", "compare", "before", "after", "comparison"]
-phase: constitutional
-model_hint: medium
-version: 1.0
-status: authoritative
----
-
-# 📊 SOVEREIGN COMPARISON PROTOCOL (SCP V1.0)
-
-Every analytical Turn requiring a "Before vs After" or "Comparison" MUST utilize this template for 10/10 clinical visibility.
-
-## 🪐 1. THE CANONICAL SCP TABLE
-Whenever a comparison is triggered, the AI MUST generate this specific table.
-
-| Metric | Baseline (Pre) | Optimization (Post) | Rating 1/10 |
-| :--- | :--- | :--- | :--- |
-| **Token Spend** | [Words/Tokens] | [Words/Tokens] | [Score] |
-| **Token Cost** | [USD/Credits] | [USD/Credits] | [Score] |
-| **Speed Time** | [Latency in s/ms] | [Latency in s/ms] | [Score] |
-| **Speed % Increase**| Baseline | [% Percentage Gain] | [Score] |
-| **Rating 1/10** | [Pre-Score] | [Post-Score] | [Score] |
-
-## 🧪 2. EXAMPLE: KNOWLEDGE BUILD UPGRADE
-Use this as the "High Fidelity" reference for data-heavy missions.
-
-| Metric | Baseline (Pre-Pull) | Optimization (Current) | Rating 1/10 |
-| :--- | :--- | :--- | :--- |
-| **Token Build Size** | 214,945 Tokens | **169,130 Tokens** | 10/10 |
-| **Path Integrity** | 181+ Broken Links | **0 Broken Links** | 10/10 |
-| **Portability** | Machine-Bound | **Universal (Relative)** | 10/10 |
-
-## 📈 4. MULTI-AGENT BETTERMENT BENCHMARKS (V1.1)
-When evaluating "Agentic Upgrades" or system evolutions, AI MUST include these 4 core pillars:
-
-| Betterment Pillar | Before (Monolithic AI) | After (Agentic Stack) | Efficiency Impact |
-| :--- | :--- | :--- | :--- |
-| **Context Engineering** | Bulk Reading (Context Bloat) | Surgical Retrieval (Hygiene) | **Thousands of Tokens Saved** |
-| **GV-Loop Fidelity** | High Error Rate (Retry Loops) | Internal Verifier (Audit) | **9.5/10 1st Draft Success** |
-| **Cost Routing** | Fixed High-Cost (Expensive) | Dynamic Triage (Flash/Pro) | **~85% Financial Savings** |
-| **Skill Evolution** | Monolithic Skills (Rigid) | Orchestrated Nodes (Liquid) | **Multi-Agent Coordination** |
-
----
-**SCP V1.1 — Sovereign Comparison Standard (2026-05-01)**
+**Status**: Authoritative | **Last Update**: 2026-08-07**

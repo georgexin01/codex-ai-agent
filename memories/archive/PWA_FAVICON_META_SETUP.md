@@ -1,16 +1,18 @@
 ---
 name: pwa-favicon-meta-setup
-description: "Authoritative recipe for PWA install + favicon + Open Graph + Twitter Card + Apple/Microsoft meta tag wiring. Apply to every wRider-style web app at scaffold time so the install banner, share previews, and home-screen icons all light up on first deploy."
-triggers: ["pwa", "favicon", "manifest", "open graph", "og image", "twitter card", "apple touch icon", "theme color", "site.webmanifest", "meta tags"]
-phase: 1-scaffold
+description: "ARCHIVED — wRider-project-scoped PWA/favicon/meta recipe. For the current general PWA+SEO setup flow, see meta-skills/SKILL.md."
+triggers: []
+phase: archive
 version: 1.0.0
-status: authoritative
+status: archived
 date_authored: "2026-05-05"
 project: "c:/Users/user/Desktop/wRider"
 companion: "./wrider_complete_recipe.md"
 ---
 
-# 🛡️ PWA + Favicon + Meta — Drop-in Recipe
+> **ARCHIVED (tombstone)**: this recipe encodes wRider-specific branding, colors, and defaults. It is NOT a global default. The current general-purpose PWA+SEO setup flow lives in `skills/meta-skills/SKILL.md`, which already warns callers not to copy this file's wRider-specific values. Moved out of `1_core/` 2026-08-07 per `KNOWLEDGE_ROT_PROTOCOL.md` §6.
+
+# 🛡️ PWA + Favicon + Meta — Drop-in Recipe (wRider project only)
 
 Any new web app should get installable PWA support, crisp favicons, and branded share previews on the first commit.
 

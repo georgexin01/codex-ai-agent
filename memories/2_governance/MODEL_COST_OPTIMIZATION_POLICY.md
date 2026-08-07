@@ -3,9 +3,10 @@ name: model-cost-optimization-policy
 description: "Model usage policy for minimizing token spend, controlling reasoning depth, and improving cache efficiency across Codex and Claude Code workflows."
 triggers: ["model cost", "token cost", "optimize model", "reasoning effort", "cache efficiency", "lean mode", "deep mode", "claude pricing", "codex pricing"]
 phase: governance
-version: 1.0
+version: 1.1
 status: active
-date_updated: "2026-07-10"
+date_updated: "2026-08-07"
+last_audit: "2026-08-07"
 ---
 
 # Model Cost Optimization Policy
@@ -29,6 +30,8 @@ For general GPT-5.6 Luna behavior, read the single canonical playbook:
 `memories/extensions/ad_hoc/notes/2026-07-10-gpt-5-6-luna-operating-playbook.md`
 
 This policy owns model-cost lanes and escalation only; it does not duplicate the Luna playbook.
+
+**Layer note (2026-08-07)**: "Lean/Balanced/Deep" below are work-scope lanes (how much to read/spend), not a third `model_reasoning_effort` setting — only `medium` and `high` exist (see `LUNA_5_6_REASONING_MODES.md`, `codex-router/controlled-auto-policy.json`). Roughly: Lean and Balanced both run at the live `medium` default; Deep is where escalating to `high` actually applies. For reasoning *quality* (not effort or scope), see `00_REASONING_EVOLUTION_PROTOCOL.md`.
 
 ## Core Rule
 
@@ -115,10 +118,10 @@ Target effect:
 
 Current baseline:
 - model: `gpt-5.6-luna` / local profile `luna-5.6-medium`
-- default reasoning: `low`
+- default reasoning: read `config.toml`'s `model_reasoning_effort` for the live value — do not hardcode a value here, it drifts (single-truth-source rule, see `SINGLE_TRUTH_SOURCE_PROTOCOL.md`)
 
 Codex defaults:
-- routine work -> GPT-5.6 Luna with `low`
+- routine work -> GPT-5.6 Luna with the live default from `config.toml`
 - deep work -> GPT-5.6 Luna with higher reasoning only when the task clearly qualifies
 
 Codex optimization rules:

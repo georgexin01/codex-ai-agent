@@ -5,8 +5,10 @@ triggers: ["experience vault", "mission log", "neural vectors", "breakthroughs"]
 phase: governance
 model_hint: medium
 version: 15.1
-status: authoritative
+status: archived
 ---
+
+> **ARCHIVED (tombstone)**: not referenced from `00_PULSE.md` or `skill_path_router.md` — unreachable except by direct path. From a prior Antigravity/Gemini-era harness ("Apex V15.1"). Moved out of `2_governance/` 2026-08-07 per `KNOWLEDGE_ROT_PROTOCOL.md` §6.
 
 # [🛸 VAULT] | [⚡ MODE: RECALL] | [✅ STATUS: AUTHORITATIVE]
 

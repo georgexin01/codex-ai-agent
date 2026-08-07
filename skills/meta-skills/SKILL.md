@@ -11,7 +11,7 @@ Use this skill as a front door. Do not duplicate or replace the canonical workfl
 
 1. Read [`../meta-content-workflow/SKILL.md`](../meta-content-workflow/SKILL.md) completely for route inventory, metadata content, asset truth, and verification.
 2. Read [`../seo-ai-search/SKILL.md`](../seo-ai-search/SKILL.md) completely for indexing, crawler, sitemap, structured-data, SSR/SSG, and AI-search guardrails.
-3. Read [`../../memories/1_core/PWA_FAVICON_META_SETUP.md`](../../memories/1_core/PWA_FAVICON_META_SETUP.md) only when favicon, Apple icon, PWA install, theme-color, or manifest creation is in scope. Reuse only generic asset and manifest guidance; do not copy its wRider brand, colors, routes, analytics query parameters, or project-specific defaults.
+3. Read [`../../memories/archive/PWA_FAVICON_META_SETUP.md`](../../memories/archive/PWA_FAVICON_META_SETUP.md) (archived, wRider-project-scoped) only when favicon, Apple icon, PWA install, theme-color, or manifest creation is in scope. Reuse only generic asset and manifest guidance; do not copy its wRider brand, colors, routes, analytics query parameters, or project-specific defaults.
 4. For current platform rules or validation links, read [`../seo-ai-search/references/platform-guidance.md`](../seo-ai-search/references/platform-guidance.md).
 
 Current project files, rendered output, the two canonical skills above, and current official platform guidance outrank older recipes and examples.

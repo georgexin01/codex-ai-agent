@@ -64,9 +64,9 @@ These point at executable recipes and foundational knowledge docs, not skills.
 | `ai recipe image to app` | `memories/IMAGE_TO_MOBILE_APP_PIPELINE.md` | Convert design images into Vue mobile app structure |
 | `ai recipe header footer` | `memories/1_core/HEADER_FOOTER_DESIGN_RULES.md` | Header and bottom-nav rules |
 | `ai recipe free images` | `memories/1_core/IMAGE_SOURCING_FREE.md` | Free image sourcing waterfall |
-| `ai recipe pwa` | `memories/1_core/PWA_FAVICON_META_SETUP.md` | PWA and meta setup |
+| `ai recipe pwa` | `skills/meta-skills/SKILL.md` (general); `memories/archive/PWA_FAVICON_META_SETUP.md` (archived wRider-specific recipe, generic guidance only) | PWA and meta setup |
 | `ai design sop` | `memories/1_core/DESIGN_SOP.md` | Page-level structural manifest |
-| `ai design evolution` | `memories/1_core/DESIGN_EVOLUTION_PROTOCOL.md` | Design-sense evolution framework |
+| `ai design evolution` | `memories/archive/DESIGN_EVOLUTION_PROTOCOL.md` (archived, wRider-scoped) | Design-sense evolution framework |
 | `ai 5 point formula` / `ai 100 point prompt` | `memories/extensions/ad_hoc/notes/2026-07-01T18-14-43-5-point-ai-principles.md` | Five-principle routing and response clarity rule |
 | `ai hybrid metadata router` / `ai metadata router` | `memories/extensions/ad_hoc/notes/2026-07-01T18-27-54-hybrid-metadata-router.md` | Frontmatter schema for AI-friendly knowledge docs and skills |
 | `ai project knowledge template` | `memories/extensions/ad_hoc/notes/2026-07-01T18-19-47-project-knowledge-template.md` | Reusable project knowledge scaffolding for future AI runs |

@@ -1,5 +1,6 @@
 # 🧬 User Taste Profile: "Trusta Industrial" (2026-05-05)
 > 🤖 **MODEL SYNC**: This file contains the User's subjective aesthetic preferences. Any AI model working on this project MUST respect these "Taste Fingerprints" above all general design knowledge.
+> **Sole default (2026-08-07)**: this is the ONE default design DNA for new projects. Other palette/DNA files that live under `memories/archive/` (e.g. `CORE_VITALS.md`, `JIT_VITALS.md`, `DESIGN_TOKENS.yaml`) are project-specific historical records, not alternative defaults — they apply only when actively working inside their origin project.
 
 > This document captures the aesthetic "DNA" and personal taste of the User. It serves as the primary guidance for all future "Design Senses" evolution.
 

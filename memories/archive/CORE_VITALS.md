@@ -1,12 +1,15 @@
 name: core-vitals
-description: "⚡ CORE VITALS (V3.0) — SLIM ACTIVATION ENGINE"
-triggers: ["vitals", "core vitals", "round 1 vitals", "activation"]
-phase: constitutional
+description: "ARCHIVED — legacy Antigravity/Gemini-era vitals file, scoped to dead project FP-QUIZ-LAA. Not a global default."
+triggers: []
+phase: archive
 model_hint: medium
 version: 3.0
+status: archived
 ---
 
-# ⚡ CORE VITALS (V3.0) — ROUND 1 CONTEXT
+> **ARCHIVED (tombstone)**: this file is scoped to the dead project `FP-QUIZ-LAA` and a prior Antigravity/Gemini-3-Flash harness. It is NOT a global default (design tokens, model routing, activation rules below do not apply outside that project). Moved out of `2_governance/artifacts/` 2026-08-07 per `KNOWLEDGE_ROT_PROTOCOL.md` §6. `USER_DNA.md` is the current global design-DNA default.
+
+# ⚡ CORE VITALS (V3.0) — ROUND 1 CONTEXT (historical, FP-QUIZ-LAA only)
 
 **Status**: ACTIVE | **Tier**: ROUND 1 (Slim Boot) | **Target**: <10s
 

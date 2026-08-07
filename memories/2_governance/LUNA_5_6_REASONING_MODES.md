@@ -22,6 +22,7 @@ related_docs:
   - AGENTS.md
   - memories/2_governance/MODEL_COST_OPTIMIZATION_POLICY.md
   - codex-router/controlled-auto-policy.json
+  - 00_REASONING_EVOLUTION_PROTOCOL.md
 verification:
   - Run codex-router/Run-CodexLunaMaintenance.ps1.
   - Confirm route, memory, skill, and benchmark checks before completion.
@@ -30,7 +31,8 @@ model_hint: medium
 model_profile: luna-5.6-medium
 version: 1.0
 status: authoritative
-date_updated: "2026-08-04"
+date_updated: "2026-08-07"
+last_audit: "2026-08-07"
 ---
 
 # GPT-5.6 Luna reasoning modes

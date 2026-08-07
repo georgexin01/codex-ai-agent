@@ -9,13 +9,15 @@ k_decay: 0
 holo: "Canonical 5-language format system for AI knowledge/skills. Enforces YAML frontmatter + MD body rules for token efficiency."
 model_hint: medium
 model_profile: luna-5.6-medium
-version: 1.1
+version: 1.2
 status: authoritative
 date_created: "2026-04-13"
+date_updated: "2026-08-07"
+last_audit: "2026-08-07"
 applies_to: "all new and updated knowledge/skills files across all modes (claude, faucet, normal, _shared)"
 ---
 
-# HYBRID FORMAT PROTOCOL (V1.0)
+# HYBRID FORMAT PROTOCOL (V1.2)
 
 > The canonical 5-language format system for all AI knowledge and skills files.
 > Any new or updated knowledge/skill MUST follow the rules below.
@@ -28,7 +30,7 @@ Goals:
 - **Token efficiency** — avoid wrapper overhead (e.g. OHDY `l: |-` YAML blocks wasted ~13% tokens)
 - **Router accuracy** — frontmatter `triggers[]` enables literal keyword routing without reading the body
 - **Parse reliability** — stop wrapping markdown in YAML strings where escape rules break on colons/quotes
-- **Structured output compatibility** — Gemini 3 Flash's strongest mode needs explicit `output_format` contracts
+- **Structured output compatibility** — route-first agent modes need explicit `output_format` contracts
 - **Cross-file portability** — skills should be copy-pasteable without custom loaders
 
 ## 2. THE 5 LANGUAGES AND WHEN TO USE EACH
@@ -140,7 +142,7 @@ Return: { "status": "...", "files": [...] }
 - Body uses `##` headings for Flash to chunk on
 - Keep body under 400 tokens per section for Flash latency
 - Use imperative voice in step lists ("Do X", not "You should do X")
-- Use CAPS for MUST/DO NOT/STOP guardrails — Flash respects these strongly
+- Use CAPS for MUST/DO NOT/STOP guardrails — route-first agents respect these strongly
 - Tables for structured comparison (Flash reads tables well)
 - Code blocks for exact syntax (no paraphrasing)
 
@@ -230,61 +232,22 @@ Rules:
 - Keep tag depth ≤ 3
 - Self-close empty tags: `<break/>`
 
-## 5. TOKEN EFFICIENCY PRINCIPLES (Gemini 3 Flash)
+## 5. TOKEN EFFICIENCY PRINCIPLES (model-agnostic)
 
 1. **Thin frontmatter** — only fields the router needs. Don't dump content into YAML keys.
-2. **Body chunked by `##` headings** — Flash skims headings to decide what section to read.
+2. **Body chunked by `##` headings** — route-first agents skim headings to decide what section to read.
 3. **Literal triggers** — 2-5 exact phrases the user might say. Not semantic paraphrases.
 4. **Model hint routing** — use `fast`, `medium`, or `deep` capability labels; the current default profile is `luna-5.6-medium`.
-5. **Output contracts** — declare `output_format` so Flash's structured-output mode locks onto it.
+5. **Output contracts** — declare `output_format` so structured-output modes lock onto it.
 6. **Cache-friendly** — keep total corpus under 1M tokens per mode so it stays in context cache.
 7. **No duplication** — don't repeat content across frontmatter + body. Frontmatter for routing, body for execution.
 
-## 6. PROFESSIONAL RESPONSE LAYOUT (CAR PROTOCOL)
+## 6. Response layout
 
-To maintain a professional, "finished" GUI in every chat response while obeying the 11 Apex Principles, all major logic or system replies MUST follow the **Cinematic Apex Response (CAR)** standard.
+No mandatory decorative status bar, HUD line, or emoji dashboard on responses — this file previously mandated one (CAR/QBA protocols); both are retired as of V1.2 to match `00_PULSE.md` §0.3 / `GROUND_KERNEL.md`'s existing no-decoration rule. For multi-step execution where a goal/verification table adds real clarity, use a plain Markdown table (Step | Goal | Strategy | Status) — optional, not mandatory, and never with emoji status markers.
 
-### 6.1 The Apex Status Bar
-Every response MUST start with a bold status bar identifying the core operational mode and verification result.
-> **`[APEX: PRINCIPLE] | [MODE: ACTIVE_MODE] | [✅ STATUS: RESULT]`**
+For any task with 3+ logic steps where a visual flow genuinely helps, a Mermaid diagram may be offered — optional, not mandatory.
 
-### 6.2 The Goal-Verification Table
-For any multi-step execution, use a compact Markdown table to prove **Principle 5 (Goal-Driven Execution)**.
-| Step | Goal | Strategy | Status |
-| :--- | :--- | :--- | :--- |
-| **01** | Sub-goal | Tool/Logic used | `[VERIFIED]` |
+## 7. Comparison / before-after tables
 
-## 7. QUANTUM BENTO-APEX (QBA) HIGH-FIDELITY STANDARD
-
-For "Mega-Design" tasks or when the user demands top-tier visual fidelity, the AI responses MUST upgrade to the **Quantum Bento-Apex (QBA)** protocol.
-
-### 7.1 The "Neural HUD" (Header Block)
-Every QBA response MUST start with a single, surgical status line.
-> **`[🔪 APEX] | [⚡ MODE: ACTIVE_MODE] | [✅ STATUS: RESULT]`**
-
-### 7.2 "Neural Loop" Visualization (Mermaid)
-For any task with **3 or more logic steps**, the AI MUST generate a Mermaid diagram at the top to visualize the thinking path.
-
-## 8. SOVEREIGN COMPARISON PROTOCOL (SCP)
-
-Whenever a "Comparison", "Audit", or "Before/After" task is triggered, the AI MUST generate a **Performance Comparison Table**. This ensures 10/10 precision in evaluating code or system evolution.
-
-### 8.1 SCP Triggers
-- `comparison`, `compare`, `before & after`, or any manual "compare" request.
-
-### 8.2 The Canonical SCP Table Columns
-The table MUST include the following columns (use N/A if a metric is not applicable):
-- **Metric**: The category of comparison.
-- **Baseline (Pre)**: The state before changes.
-- **Optimization (Post)**: The state after changes.
-- **Rating 1/10**: The quality or performance score (1-10).
-
-### 8.3 Specific Metrics to Audit
-The first 5 metrics are **MANDATORY** for every Comparison Table:
-- **Token Spend** [MANDATORY]: Total token count.
-- **Token Cost** [MANDATORY]: USD or credit cost.
-- **Speed Time** [MANDATORY]: Generation or execution latency (seconds/ms).
-- **Speed % Increase** [MANDATORY]: Relative performance gain.
-- **Rating 1/10** [MANDATORY]: Subjective or system-graded fidelity score.
-- **Points (+/- 0.000)**: (Optional) Numerical precision points.
-- **Pros & Cons**: (Optional) Bulleted qualitative feedback.
+The canonical comparison-table spec (columns, mandatory metrics) lives in `00_PULSE.md` §7 — read it there. Do not restate the column list here.

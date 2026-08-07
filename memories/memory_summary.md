@@ -8,7 +8,7 @@ Works across Windows/PowerShell, PHP sites, Vue/Vben/Pinia, Supabase/Postgres, C
 
 - For non-sentinel work, lead with a compact `task | action | status` table and evidence-backed `&#10003;` / `&#10007;` / `&#9888;`; add comparison metrics only when asked. [ad-hoc note]
 - In full-access sessions, continue obvious scoped work; pause only for meaningful decisions, hidden/destructive risk, or ambiguous tradeoffs. [ad-hoc note]
-- `ai read .codex knowledge` must return only `[ðŸŸ¢] Agent is Ready..` after the PULSE read.
+- `ai read .codex knowledge` must return only `[🟢] Agent is Ready..` after the PULSE read.
 - Protect local Docker/Supabase: never rename, stop, reset, prune, recreate, migrate, repoint, or otherwise change database stack/config/state without explicit same-turn permission. [ad-hoc note]
 - "copy and paste", "duplicate", "clone", or "same modules" means find and clone the exact whole source shell before inner-content edits. [ad-hoc note]
 - Preserve exact `PiniaStore -> Function -> Input` spelling/casing and keep `views -> stores -> utils/types -> API/Supabase`; views must not query Supabase directly. [ad-hoc note]
@@ -44,7 +44,7 @@ Works across Windows/PowerShell, PHP sites, Vue/Vben/Pinia, Supabase/Postgres, C
 
 #### 2026-08-05
 
-- Exact Codex boot and routing maintenance: ai read .codex knowledge, [ðŸŸ¢] Agent is Ready.., 00_PULSE.md, Find-LargeKnowledge.ps1, Test-CodexPerfBenchmark.ps1
+- Exact Codex boot and routing maintenance: ai read .codex knowledge, [🟢] Agent is Ready.., 00_PULSE.md, Find-LargeKnowledge.ps1, Test-CodexPerfBenchmark.ps1
   - desc: Search first for sentinel-only boot behavior or `.codex` route/performance/Git hygiene.
   - learnings: PULSE is one boot read; rerun validator chains rather than assuming historical benchmark results persist.
 
