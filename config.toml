@@ -4,7 +4,7 @@ approval_policy = "on-request"
 personality = "pragmatic"
 service_tier = "priority"
 
-notify = [ "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\1b23c930bdf84ed6\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
+notify = [ "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\2fb562745e6d66f0\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
 [windows]
 sandbox = "elevated"
 
@@ -131,12 +131,18 @@ trust_level = "trusted"
 [projects.'c:\users\user\desktop\motorcycle\fc-moto-new']
 trust_level = "trusted"
 
+[projects.'c:\users\user\desktop\huwa']
+trust_level = "trusted"
+
+[projects.'c:\users\user\desktop\edsb']
+trust_level = "trusted"
+
 [features]
 memories = true
 js_repl = false
 
 [marketplaces.openai-bundled]
-last_updated = "2026-06-23T08:40:29Z"
+last_updated = "2026-08-19T03:20:30Z"
 source_type = "local"
 source = '\\?\C:\Users\user\.codex\.tmp\bundled-marketplaces\openai-bundled'
 
@@ -172,29 +178,39 @@ enabled = true
 [plugins."browser@openai-bundled"]
 enabled = true
 
+[plugins."codex-app-tools@openai-bundled"]
+enabled = true
+
+[plugins."sites@openai-bundled"]
+enabled = true
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
 [mcp_servers.gitnexus]
 command = 'C:\Users\user\AppData\Roaming\npm\gitnexus.cmd'
 args = ["mcp"]
 
 [mcp_servers.node_repl]
-command = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\1b23c930bdf84ed6\bin\node_repl.exe'
-startup_timeout_sec = 120.0
+args = []
+command = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\2fb562745e6d66f0\bin\node_repl.exe'
+startup_timeout_sec = 120
 
 [mcp_servers.node_repl.env]
-BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
-BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.616.51431"
-CODEX_CLI_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\bin\8e55c2dd143b6354\codex.exe'
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\2fb562745e6d66f0\bin\node_modules'
+NODE_REPL_NODE_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\2fb562745e6d66f0\bin\node.exe'
+NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\user\.codex;C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\2fb562745e6d66f0\bin\node_modules'
 CODEX_HOME = 'C:\Users\user\.codex'
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
-NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
-NODE_REPL_NODE_MODULE_DIRS = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\1b23c930bdf84ed6\bin\node_modules'
-NODE_REPL_NODE_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\1b23c930bdf84ed6\bin\node.exe'
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "2c20141b13bec5a64cd2874d8e2df011430d5b1a70e4f5425aa10d01743311a8,566be6ef352eb3de899adc56a9cd7b5e46c8f65b00e56b5630dd7a580e10cbea"
-NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\user\.codex'
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.814.41407"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"C:/Users/user/.codex/plugins/cache/openai-bundled/browser/26.814.41407/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
 SKY_CUA_NATIVE_PIPE = "1"
-SKY_CUA_NATIVE_PIPE_DIRECTORY = '\\.\pipe\codex-computer-use-89534c29-de2a-47e2-833d-79850eda32ac'
+SKY_CUA_NATIVE_PIPE_DIRECTORY = '\\.\pipe\codex-computer-use-a122c58b-4775-4811-b7a7-04273bc614c6'
+CODEX_CLI_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\bin\39633208fb6e0c47\codex.exe'
 
 [mcp_servers.openaiDeveloperDocs]
 url = "https://developers.openai.com/mcp"
