@@ -166,6 +166,10 @@ Matching rule: evaluate the longest exact trigger phrase first; never route a st
 "ai claude app":      "skills/claude-app/WORKING_PROGRESS.md"      # mobile Vue/Capacitor/PWA (build-only, mock-default)
 "ai claude website":  "skills/claude-website/WORKING_PROGRESS.md"  # PHP + Supabase REST (consumes schema)
 "localhost test":      "skills/localhost-test/SKILL.md" # detect project types, start local dev servers, verify URLs
+"copy project template": "skills/template-to-php-project/SKILL.md" # high-priority downloaded HTML template -> PHP workflow
+"duplicate HTML template": "skills/template-to-php-project/SKILL.md"
+"HTML template to PHP": "skills/template-to-php-project/SKILL.md"
+"convert downloaded template": "skills/template-to-php-project/SKILL.md"
 "update meta skills":  "skills/meta-skills/SKILL.md" # complete public website/app metadata pack
 "use meta skills":     "skills/meta-skills/SKILL.md"
 "update website metadata": "skills/meta-skills/SKILL.md"

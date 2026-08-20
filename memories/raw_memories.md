@@ -939,3 +939,34 @@ References:
 - Error: `Could not locate compose file for 'supabase_rest_local-supabase'.`
 - Verification: `PGRST_DB_SCHEMAS=...,huwa2`; `project=1`; `schema=1`; `orphan_identities=0`
 
+## Thread `01a01cc5-ef06-7613-ab20-48507ef62f16`
+updated_at: 2026-08-20T01:26:38+00:00
+cwd: \\?\C:\Users\user\Desktop\huwa
+rollout_path: C:\Users\user\.codex\sessions\2026\08\20\rollout-2026-08-20T09-25-28-01a01cc5-ef06-7613-ab20-48507ef62f16.jsonl
+rollout_summary_file: 2026-08-20T01-25-28-9wIS-locate_gemma4_ollama_model_folder.md
+
+---
+description: Located the user's Gemma 4 Ollama model manifests on Windows; broad scanning timed out, but targeted cache scanning succeeded.
+task: locate Gemma 4 model folder
+ task_group: local-model-cache
+ task_outcome: success
+cwd: C:\Users\user\Desktop\huwa
+keywords: Gemma 4, Ollama, Windows, .ollama, model manifests, cache paths, timeout
+---
+
+### Task 1: Locate Gemma 4 model folder
+
+task: locate Gemma 4 model folder
+task_group: local-model-cache
+task_outcome: success
+
+Reusable knowledge:
+- Gemma 4 manifests were found at `C:\Users\user\.ollama\models\manifests\registry.ollama.ai\library\gemma4\e2b` and `C:\Users\user\.ollama\models\manifests\registry.ollama.ai\library\gemma4\e4b`.
+- Ollama stores actual model blobs separately under `C:\Users\user\.ollama\models\blobs`.
+
+Failures and how to do differently:
+- Recursive scanning of all of `C:\Users\user` timed out after 20 seconds. Search known model-cache roots first, especially `C:\Users\user\.ollama`, Hugging Face, and LM Studio paths.
+
+References:
+- Exact verified paths: `C:\Users\user\.ollama\models\manifests\registry.ollama.ai\library\gemma4\e2b`; `C:\Users\user\.ollama\models\manifests\registry.ollama.ai\library\gemma4\e4b`.
+

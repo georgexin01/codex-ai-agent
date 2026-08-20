@@ -23,6 +23,7 @@ session_index.jsonl
 .codex-global-state.json
 .codex-global-state.json.bak
 models_cache.json
+thread-writer-locks/
 
 # --- Local/system folders ---
 .sandbox/

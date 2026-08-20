@@ -2,90 +2,86 @@ v1
 
 ## User Profile
 
-The user maintains several local web/app projects, including a HUWA2 customer-facing Vue app, bilingual English/Chinese static sites, PHP front-controller sites, and local Supabase environments. They work on Windows/PowerShell and value source-grounded identity/content, faithful UI parity, protected local state, and verification that matches the requested outcome. They expect checkout boundaries to be respected rather than importing assumptions from another project. Long work should retain a precise continuation state. [ad-hoc note]
+Works across Windows/PowerShell web, PHP, static bilingual, Supabase, and Codex-maintenance projects. Values evidence from current project files, exact requested contracts, and verification over generic recommendations or inferred completion. Frequently needs English/Chinese parity, centralized metadata, and faithful reuse of existing design systems.
 
 ## User preferences
 
-- For bilingual Zeta work, English markup is the source of truth; update and verify the matching `cn/` counterpart before completion.
-- Treat "exact same design" as reuse of the canonical existing DOM/CSS/component, not an approximation.
-- Derive identity, claims, metadata, and product requirements from active-project evidence; use `INSUFFICIENT DATA` rather than historic/example facts.
-- Prefer surgical, reversible maintenance over heavy `.codex` changes; inspect live routes and benchmarks before recommendations.
-- For long work, retain exact constraints, IDs, errors, decisions, verification, and the smallest `NEXT` action.
-- For local Supabase work, preserve original backups and protected state; verify both data restore and API exposure.
-- Every AI-generated image must be <=1600px; resize oversize output, default to JPG unless alpha is needed, verify final dimensions, and log provenance/use. HUWA is capped at 1200px. [ad-hoc note]
-- For HUWA2 visual work, preserve Vue/Pinia/API/RPC/route/i18n/database contracts; use `src/assets/images/generate/`, avoid duplicate `--v2`-style CSS roles, and log batches in `PROJECT_CHANGELOG.md`. [ad-hoc note]
+- For `.codex` maintenance, inspect live routes/memory/skills/benchmarks first; prefer surgical, reversible changes and do not remove protected or repository state without authorization.
+- For bilingual sites, English is the markup/design source and `cn/` must be updated with localized text and structural parity; verify both sides, not English alone.
+- For metadata, derive the actual active project identity and the broadest truthful scope from evidence; use `INSUFFICIENT DATA` rather than old names or invented claims.
+- “Exact same design” means reuse the canonical markup/classes and measured dimensions, not a visual approximation.
+- For project image generation, use measurement-first asset sizing and save final files in the project asset folder, never `.codex\generated_images`. [ad-hoc note]
+- Do not claim success from a running server/process, partial generation, or an unverified deployment; report exact verification status and remaining work.
 
 ## General Tips
 
-- Current files, tests, logs, and router output override historical memory and old counts.
-- Do not call interrupted or locally-only checked work complete; record the missing browser/deployment/live gate.
-- For multilingual JSON/HTML, use explicit UTF-8-safe reads/writes, parse JSON after edits, and check paired IDs/counts.
-- Use `Select-String -LiteralPath` for literal exact-file PowerShell scans; `rg --literal-path` is unsupported.
-- For long tasks, use [skills/fast-batch-checkpoint/SKILL.md](C:/Users/user/.codex/memories/skills/fast-batch-checkpoint/SKILL.md).
-- For HUWA2 visual claims, `npm.cmd run build` is necessary but insufficient: inspect the mobile route against `/sample`, or explicitly report the visual gate as blocked/partial. [ad-hoc note]
+- On Windows, favor targeted scans over recursive user-profile scans; inspect known cache roots and project files first.
+- Preserve UTF-8 explicitly for multilingual files; after JSON edits, parse and check counts, duplicates, paired IDs, and rendered/routes where applicable.
+- Treat local HTTP checks and deployed/browser checks as separate gates.
+- For long work, checkpoint exact constraints, paths, decisions, changed files, verification, and `NEXT` action; only batch independent read-only checks.
+- Route image generation only when a generation verb and image-asset intent are both present. [ad-hoc note]
 
 ## What's in Memory
 
-### C:\Users\user\Desktop\huwa\webApp-huwa2
+### C:\Users\user\Desktop\huwa
 
-#### 2026-08-19
+#### 2026-08-20
 
-- HUWA2 customer Vue app visual-work continuation: webApp-huwa2, PROJECT_CHANGELOG.md, npm.cmd run build, /luckydraw, checkoutApi.ts, cartStore
-  - desc: Current-state routing for customer-facing Vue visual changes; preserve stores/API/RPC/i18n/database contracts and use read-only `/sample` references. [ad-hoc note]
-  - learnings: Lucky Numbers routes to `/luckydraw`; database/checkout behavior remains contract-owned, while visual parity requires a mobile screenshot check beyond build success. [ad-hoc note]
+- Gemma 4 Ollama location: Gemma 4, .ollama, manifests, blobs
+  - desc: Targeted Windows Ollama cache paths and broad-scan timeout shield.
+  - learnings: Start at `.ollama\models\manifests\registry.ollama.ai\library\gemma4`; blobs are separate.
+
+### C:\Users\user\.codex
+
+#### 2026-08-20
+
+- Image-generation asset policy: IMAGE_GENERATION_ASSET_POLICY.md, generated_images, JPG, PNG
+  - desc: Routing, measurement, format, and project-storage policy for generated raster assets.
+  - learnings: Final project assets never remain under `.codex`; semantic generation intent activates the policy. [ad-hoc note]
+
+#### 2026-08-12
+
+- Codex routing and fast-batch maintenance: 00_PULSE.md, Update-CodexRouting.ps1, FAST BATCH STATE
+  - desc: Route-first boot, lossless hot-memory compression, tests, and resumable checkpoints.
+  - learnings: Preserve exact requirements and verify before refreshing state; nested `memories\.git` is protected unless explicitly authorized.
 
 ### C:\Users\user\Documents\supabase-project-backup-restore
 
 #### 2026-08-14
 
-- Huwa2 VPS backup restore and local PostgREST exposure: huwa2, 04-auth-rows.sql, identities_user_id_fkey, scripts/04-restore-local.sh, PGRST_DB_SCHEMAS, [api].schemas
-  - desc: Search first for orphan `auth.identities` repair, atomic local restore checks, or exposing `huwa2` through CLI-managed local-supabase.
-  - learnings: Validate identity parents before retrying; Compose expose tooling does not apply to `com.supabase.cli.project`—edit `supabase/config.toml`, restart with CLI, then verify database and API independently.
+- Huwa2 backup restore and PostgREST exposure: auth.identities, identities_user_id_fkey, PGRST_DB_SCHEMAS
+  - desc: Repair orphan auth identities, atomic restore, and CLI-managed API schema exposure.
+  - learnings: Validate identity parent rows first; edit Supabase CLI `config.toml`, not Compose labels.
 
 ### D:\backup\website-zetasoftware
 
 #### 2026-08-13
 
-- Bilingual FAQ, homepage/blog, services, and pricing parity: faq.json, js/faq.js, home-blogs.js, pricing-section, Orbitron
-  - desc: English/Chinese parity, FAQPage JSON-LD, exact blog-card contracts, Week labels, pricing/font fixes; cwd=D:\backup\website-zetasoftware.
-  - learnings: Keep 30 paired FAQ IDs/fallback/schema; five Zeta IDs are first; visual deployment still requires upload, hard-refresh, and browser inspection.
-- Blog system and portfolio phone cards: blogs.json, blogs-cn.json, blogs.md, contentHtml, sticky-phone, portfolio-card-phone
-  - desc: Verified blog rules, incomplete ten-article regeneration, and exact homepage phone-frame reuse.
-  - learnings: Copy/validate generated assets before JSON references; portfolio has eight canonical phone structures per language.
+- Bilingual FAQ, blogs, homepage/services, portfolio parity: faq.json, blogs-cn.json, sticky-phone, status.md
+  - desc: English/Chinese static-site contracts, data sources, exact UI reuse, localhost checks, and incomplete blog-regeneration guard.
+  - learnings: Paired IDs/structure and UTF-8 validation are mandatory; re-read unfinished blog/UX work before editing.
+
+### C:\Users\user\Desktop\motorcycle\fc-moto-new / C:\Users\user\Desktop\ai comment
+
+#### 2026-08-10
+
+- Centralized metadata and noindex policy: fcMotoPageMeta, noindex, site.webmanifest, INSUFFICIENT DATA
+  - desc: FC-Moto shared PHP metadata and project-agnostic evidence-bound metadata guidance.
+  - learnings: FC-Moto stays `noindex, nofollow` until authorized; never transfer historical identity or claims.
 
 ### Older Memory Topics
 
-#### C:\Users\user\.codex
-
-- Lean routing and fast-batch checkpoints: 00_PULSE.md, Update-CodexRouting.ps1, FAST BATCH STATE, nested-memories-git
-  - desc: Route-first maintenance, compression, boot sentinel, task-continuation workflow, and VIPBillion additive news-import overlay; cwd=C:\Users\user\.codex. [ad-hoc note]
-
-#### C:\Users\user\Desktop\motorcycle\fc-moto-new
-
-- FC-Moto metadata, noindex, and shared footer: fcMotoPageMeta, noindex, nofollow, site.webmanifest, category.json
-  - desc: Central PHP metadata/indexing policy, UTF-8 cleanup, and data-driven footer requirements; cwd=C:\Users\user\Desktop\motorcycle\fc-moto-new.
-
-#### C:\Users\user\Desktop\ai comment
-
-- Truthful current-project metadata and manifest: metaTitle.txt, INSUFFICIENT DATA, site.webmanifest, Select-String -LiteralPath
-  - desc: Reusable workflow for active-project identity and existing installable-app manifest updates; cwd=C:\Users\user\Desktop\ai comment.
-
 #### C:\Users\user\Desktop\motorcycle\jambolive
 
-- JamboLive 317-product import and taxonomy audit: database.json, import-public-products.ps1, 317 products, /media/uploadedphoto/
-  - desc: Product import integrity and live category-label checks; cwd=C:\Users\user\Desktop\motorcycle\jambolive.
+- JamboLive import/category audit: database.json, import-public-products.ps1, 317 products, categories
+  - desc: Full product import verification and unresolved live category-label mismatch; cwd=C:\Users\user\Desktop\motorcycle\jambolive.
 
 #### C:\Users\user\Desktop\saleshero
 
-- Sales Hero schema and Mermaid test flow: sales_hero.sql, testflow_saleshero.md, flowchart TD, credit-limit, refunds
-  - desc: SQL-grounded workflow knowledge and compact flowchart contract; cwd=C:\Users\user\Desktop\saleshero.
+- Sales Hero documentation/test flow: sales_hero.sql, knowledge.md, testflow_saleshero.md, flowchart TD
+  - desc: Evidence-based role/schema knowledge and compact Mermaid validation; cwd=C:\Users\user\Desktop\saleshero.
 
-#### C:\Users\user\Desktop\thongthai2\admin-panel-Thongthai
+#### C:\Users\user\Desktop\thongthai2\admin-panel-Thongthai / C:\Users\user\Desktop\cermin_v2
 
-- Floorplanstatistics seat behavior: isAvailableSeat, reserved, @pointerdown, floorplans/table.vue
-  - desc: Red/reserved seats in statistics are visual-only; distinguish the editable floorplan page.
-
-#### C:\Users\user\Desktop\cermin_v2
-
-- Cermin PHP localhost test: php -S 127.0.0.1:8000 index.php, /skudai, /unknown, HTTP-404
-  - desc: Prior run was aborted before HTTP statuses; inspect port/processes and retest routes sequentially.
+- Focused UI behavior and PHP localhost: floorplanstatistics, reserved, php -S, /skudai, HTTP-404
+  - desc: Seat-click source verification and uncompleted Cermin front-controller test; use exact cwd routing.

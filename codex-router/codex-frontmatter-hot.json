@@ -1,0 +1,63 @@
+﻿{
+    "generated_utc":  "2026-08-20T06:55:56.3292192Z",
+    "source_root":  "C:\\Users\\user\\.codex",
+    "read_mode":  "compact route metadata only; full catalog and Markdown bodies remain lazy",
+    "file_count":  10,
+    "fields":  [
+                   "path",
+                   "triggers",
+                   "aliases"
+               ],
+    "entries":  [
+                    {
+                        "path":  "00_PULSE.md",
+                        "triggers":  "[\"boot\", \"start\", \"ai read .codex knowledge\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "codex-router/IMAGE_GENERATION_ASSET_POLICY.md",
+                        "triggers":  "[\"ai imagegen\", \"generate image\", \"generate images\", \"create image\", \"create images\", \"make an image\", \"make images\", \"AI image\", \"image generation\", \"image asset\"]",
+                        "aliases":  "[\"gpt image 2\", \"gpt-image-2\", \"GPT 2.0 images\", \"responsive image asset\", \"fit image to card\", \"image size\", \"image for website\", \"image for mobile app\", \"transparent image\", \"transparent logo\", \"website image\", \"app image\", \"hero image\", \"banner image\", \"card image\", \"profile image\", \"gallery image\", \"ad image\"]"
+                    },
+                    {
+                        "path":  "memories/2_governance/artifacts/boot_connection_map.md",
+                        "triggers":  "[\"ai boot connections\", \"ai frequent routes\", \"ai project connections\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/artifacts/intent_action_contracts.md",
+                        "triggers":  "[\"ai action contracts\", \"ai next action routing\", \"ai intent action\", \"next action contract\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/artifacts/knowledge_relation_router.md",
+                        "triggers":  "[\"ai knowledge relations\", \"ai related knowledge\", \"knowledge relation router\", \"codex relation map\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/artifacts/trigger_intent_index.md",
+                        "triggers":  "[\"ai trigger keywords\", \"ai intent map\", \"ai ui intent\", \"ai phrase frequency\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/COMPARISON_REPORTING_PROTOCOL.md",
+                        "triggers":  "[\"automatic comparison\", \"automatic before after\", \"comparison report\", \"update comparison\", \"show before and after\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/EVIDENCE_GATE_MATRIX.md",
+                        "triggers":  "[\"ai evidence gate\", \"ai verification matrix\", \"what test should run\", \"verify before done\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/FRONTMATTER_MAINTENANCE_PROTOCOL.md",
+                        "triggers":  "[\"ai yaml knowledge\", \"ai frontmatter audit\", \"ai metadata index\", \"frontmatter maintenance\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/OVERSIZED_SKILL_LOADING_PROTOCOL.md",
+                        "triggers":  "[\"ai oversized skill\", \"ai skill loading\", \"large skill route\", \"skill context budget\"]",
+                        "aliases":  null
+                    }
+                ]
+}

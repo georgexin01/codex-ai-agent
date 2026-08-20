@@ -9,7 +9,6 @@ Rollout context: In `C:\Users\user\Desktop\ai comment`, the user asked to revise
 
 ## Task 1: Generalize metadata identity and scope rules
 
-
 Outcome: success
 
 Preference signals:
