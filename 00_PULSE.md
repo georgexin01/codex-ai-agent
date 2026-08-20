@@ -8,8 +8,8 @@ model_profile: luna-5.6-medium
 version: 1.2
 status: authoritative
 supersedes_in_boot: []
-date_updated: "2026-07-17"
-last_audit: "2026-07-17"
+date_updated: "2026-08-20"
+last_audit: "2026-08-20"
 ---
 
 # ⚡ PULSE — Single Boot Read
@@ -177,7 +177,7 @@ Matching rule: evaluate the longest exact trigger phrase first; never route a st
 "ai design website":  "skills/design/website/SKILL.md"
 "ai design spec":     "skills/design/_spec/SKILL.md"               # DESIGN.md contract/lint
 "ai karpathy":        "skills/karpathy-guidelines/SKILL.md"
-"ai imagegen":        "skills/imagegen/SKILL.md"
+"ai imagegen":        "codex-router/IMAGE_GENERATION_ASSET_POLICY.md" # then read skills/.system/imagegen/SKILL.md
 "ai starting point":  "skills/starting-point/README.md"          # bootstrap front door (read README first)
 "ai clean module":    "skills/clean-module/skill.md"
 "ai personality":     "skills/ai-personality/skill.md"
@@ -220,7 +220,7 @@ Matching rule: evaluate the longest exact trigger phrase first; never route a st
 "ai benchmark live":  "memories/2_governance/MODEL_COST_OPTIMIZATION_POLICY.md"
 "ai trigger conflict": "codex-router/Audit-CodexRouting.ps1"
 "ai route telemetry": "codex-router/Measure-CodexRouteTelemetry.ps1"
-route_miss: "skills → memories/2_governance/artifacts/skill_path_router.md (semantic skill index). knowledge → grep memories/ by filename + frontmatter description/triggers, including excluded cold notes when task terms match, but excluding archive/rollout history and generated logs. manifest = path/integrity index only (no descriptions) — never full-read."
+route_miss: "image-generation intent (generate/create/make/render/produce + image/photo/banner/logo/illustration/asset) → codex-router/IMAGE_GENERATION_ASSET_POLICY.md → skills/.system/imagegen/SKILL.md; skills → memories/2_governance/artifacts/skill_path_router.md (semantic skill index). knowledge → grep memories/ by filename + frontmatter description/triggers, including excluded cold notes when task terms match, but excluding archive/rollout history and generated logs. manifest = path/integrity index only (no descriptions) — never full-read."
 ```
 
 Sentinel rule: `ai read .codex knowledge` reads only this boot contract, stores compact in-session context, then replies only with the ready sentinel. The next task enters TASK state: resolve its route, load only the required files, and keep the selected lane awake. Do not load the full Luna playbook for routine work, and do not re-read PULSE or `.codex` on every message.
