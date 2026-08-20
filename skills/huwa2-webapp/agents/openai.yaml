@@ -1,0 +1,4 @@
+interface:
+  display_name: HUWA2 Web App
+  short_description: Safely update the HUWA2 customer app
+  default_prompt: Use $huwa2-webapp to inspect and update the HUWA2 customer app while preserving its existing contracts.
