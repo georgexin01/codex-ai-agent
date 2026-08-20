@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if test -e "memories/.git"; then
+  echo "ERROR: nested Git metadata detected at memories/.git."
+  echo "Use the root .codex repository; remove or quarantine the nested metadata after inspection."
+  exit 1
+fi
+
+exit 0
