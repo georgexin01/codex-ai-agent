@@ -5,11 +5,11 @@ triggers: ["boot", "start", "ai read .codex knowledge"]
 phase: boot
 model_hint: medium
 model_profile: luna-5.6-medium
-version: 1.2
+version: 1.3
 status: authoritative
 supersedes_in_boot: []
-date_updated: "2026-08-20"
-last_audit: "2026-08-20"
+date_updated: "2026-09-03"
+last_audit: "2026-09-03"
 ---
 
 # ⚡ PULSE — Single Boot Read
@@ -165,6 +165,10 @@ Matching rule: evaluate the longest exact trigger phrase first; never route a st
 "ai relation autoguard": "memories/project_notes/VBEN_RELATION_AUTOGUARD_PLAYBOOK.md"
 "ai claude app":      "skills/claude-app/WORKING_PROGRESS.md"      # mobile Vue/Capacitor/PWA (build-only, mock-default)
 "ai claude website":  "skills/claude-website/WORKING_PROGRESS.md"  # PHP + Supabase REST (consumes schema)
+"Apache .htaccess":   "skills/apache-htaccess-maintenance/SKILL.md" # Apache cache, headers, rewrites
+"htaccess audit":     "skills/apache-htaccess-maintenance/SKILL.md"
+"update htaccess":    "skills/apache-htaccess-maintenance/SKILL.md"
+"PHP cache headers":  "skills/apache-htaccess-maintenance/SKILL.md"
 "localhost test":      "skills/localhost-test/SKILL.md" # detect project types, start local dev servers, verify URLs
 "copy project template": "skills/template-to-php-project/SKILL.md" # high-priority downloaded HTML template -> PHP workflow
 "duplicate HTML template": "skills/template-to-php-project/SKILL.md"
@@ -273,7 +277,7 @@ Vue 3 + TS + Pinia + Tailwind + Vben Admin + Supabase/Postgres · PHP for sites.
 |---|---|
 | `.codex` knowledge / skills | PULSE first; targeted `memories/` or `skills/` reads only. GitNexus is explicit-opt-in only. Never full-read `codex-manifest.json` unless debugging routing drift. |
 | Vben Admin panel with CRUD tables | Use `skills/claude/README.md` first; if `.gitnexus/` exists, use graph impact/context/query for large Supabase work. |
-| PHP website | Use `skills/claude-website/WORKING_PROGRESS.md` and keep PHP/API/site knowledge separate from Admin panel routing. |
+| PHP website | Use `skills/claude-website/WORKING_PROGRESS.md` when available; if `.htaccess` exists, also route Apache cache/header/rewrite work to `skills/apache-htaccess-maintenance/SKILL.md`. Keep PHP/API/site knowledge separate from Admin panel routing. |
 | Vue/Capacitor app | Use `skills/claude-app/WORKING_PROGRESS.md` and keep mobile/app knowledge separate from website and Admin panel routing. |
 | Supabase / schema / migration | Load SQL protocol only when needed; evidence ladder is mandatory; apply SQL from files, not inline PowerShell `psql -c`. |
 | PHP/static/marketing site | Use docs + grep/glob/read. Skip GitNexus. Keep live content safe. |
