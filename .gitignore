@@ -26,6 +26,7 @@ models_cache.json
 thread-writer-locks/
 
 # --- Local/system folders ---
+generated_images/
 .sandbox/
 .sandbox-bin/
 .sandbox-secrets/

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Apache .htaccess Maintenance"
+  short_description: "Maintain Apache cache and rewrite rules"
+  default_prompt: "Use $apache-htaccess-maintenance to audit and safely update this project's Apache .htaccess configuration."
+
+policy:
+  allow_implicit_invocation: true
