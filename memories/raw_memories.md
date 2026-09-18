@@ -59,109 +59,6 @@ References:
 - `.codexignore` and `skills/.gitignore`
 - Verification: `memories_nested_git=0`; root Git remains `C:/Users/user/.codex`.
 
-## Thread `019fcff7-f81e-7ce1-b8dd-d9e04a524e95`
-updated_at: 2026-08-05T07:55:38+00:00
-cwd: \\?\C:\Users\user\Desktop\saleshero
-rollout_path: C:\Users\user\.codex\sessions\2026\08\05\rollout-2026-08-05T11-29-22-019fcff7-f81e-7ce1-b8dd-d9e04a524e95.jsonl
-rollout_summary_file: 2026-08-05T03-29-22-nTKd-saleshero_knowledge_and_compressed_testflow.md
-
----
-description: Sales Hero schema analysis, role-based product knowledge, and compressed Mermaid test-flow authoring; completed successfully with structural validation
- task: analyze sales_hero.sql and client workflow, then create and compress testflow_saleshero.md
- task_group: saleshero-documentation
- task_outcome: success
- cwd: C:\Users\user\Desktop\saleshero
- keywords: saleshero, sales_hero.sql, knowledge.md, testflow_saleshero.md, Mermaid, flowchart TD, Supabase, salesman, dealer, super-admin, credit-limit, discount-tier, refunds
----
-
-### Task 1: Build project knowledge
-
-task: derive product direction, SQL relationships, and role workflows from project evidence
-task_group: saleshero-documentation
-task_outcome: success
-
-Preference signals:
-- The user explicitly asked to read the root documents, SQL, schema PNGs, and client discussion, then update `knowledge.md` -> future agents should ground product/design conclusions in current project files and preserve unresolved assumptions instead of inventing page structures.
-- The user specified that `testflow_trash.md` is only a reference and that Sales Hero pages/structure were undecided -> use reference flows for format, not as confirmed product requirements.
-
-Reusable knowledge:
-- Main business graph: `public.user -> sales_hero.users -> salesmans/dealers`; `dealers -> orders -> order_details -> item_variants -> items`; `orders -> invoices`; `items -> stock_in_details -> stock_ins`; `order_details -> refunds`.
-- Core roles are `super_admin`, `salesman`, and `dealer` in `sales_hero.users.role`.
-- Dealer records include `discountTierId`, `salesmanId`, `termLimitAmount`, `termAvailableAmount`, `termMaxOrderCount`, and `balancePaymentAmount`.
-- `item_variants` owns quantity-based prices; orders preserve `discountPercentage`, `isPaid`, status, and `totalSalesCommision`.
-- Client requirements include dealer onboarding by Salesman/Super Admin, credit limits, first-order/demo restrictions, manual payment confirmation, discount snapshots, and refund commission adjustments.
-- Important schema gaps must remain explicit: no clear payment ledger for partial payments, no explicit demo mode, no territory/stage model, no commission payout ledger, and no shown stock movement logic.
-
-Failures and how to do differently:
-- Initial repository check failed because the folder was not a Git repository; proceed with direct file inspection rather than treating this as a project failure.
-
-References:
-- `C:\Users\user\Desktop\saleshero\sales_hero.sql`
-- `C:\Users\user\Desktop\saleshero\original.md`
-- `C:\Users\user\Desktop\saleshero\knowledge.md`
-
-### Task 2: Create and compress Mermaid test flow
-
-task: create a full Sales Hero test flow in the user's Trash Mermaid style, then safely merge adjacent steps
-task_group: saleshero-testflow
- task_outcome: success
-
-Preference signals:
-- The user asked to follow `testflow_trash_flowchart.md` exactly in spirit: raw `flowchart TD`, numeric IDs, arrows, branches, and compact labels -> preserve this format for future test-flow documents.
-- The user asked to reduce size and merge lines only when “suitable to merge” -> merge steps belonging to the same screen/transaction, but keep separate branches for credit limits, partial payment, refunds, permissions, and regression checks.
-
-Reusable knowledge:
-- Final `testflow_saleshero.md` is 139 lines / approximately 5.9 KB, reduced from 391 lines / approximately 14.4 KB.
-- Final flow covers Admin account/profile setup, catalog and stock, core CRUD and soft delete, order/invoice/payment management, partial-payment limitation, refunds/commission, Salesman app, Dealer app, credit/demo rules, end-to-end sale, visibility, regression, and unresolved decisions.
-- Structural validation confirmed `flowchart TD`, 100 node definitions with no duplicate labels, all core table names and SQL fields, no passwords, and no code fences.
-
-Failures and how to do differently:
-- The first large flow had duplicate Mermaid node definitions and an incomplete field-check result. Fix duplicate convergence labels and add exact schema identifiers before considering the artifact complete.
-- Mermaid rendering and runtime/database execution were not available; future agents should render the diagram and test against a live app/database when possible.
-
-References:
-- `C:\Users\user\Desktop\saleshero\testflow_trash_flowchart.md`
-- `C:\Users\user\Desktop\saleshero\testflow_saleshero.md`
-- Validation checks: `flowchart_TD=True`, `no_duplicate_node_labels=True`, `all_core_tables=True`, `sql_fields=True`, `business_branches=True`, `no_passwords=True`
-
-## Thread `019fd0c1-b541-70a2-8a56-ff613fcd1170`
-updated_at: 2026-08-05T07:16:02+00:00
-cwd: \\?\C:\Users\user\Desktop\thongthai2\admin-panel-Thongthai
-rollout_path: C:\Users\user\.codex\sessions\2026\08\05\rollout-2026-08-05T15-09-43-019fd0c1-b541-70a2-8a56-ff613fcd1170.jsonl
-rollout_summary_file: 2026-08-05T07-09-43-riXS-floorplanstatistics_seat_click_behavior.md
-
----
-description: Verified that seats on the floorplanstatistics page are non-interactive; red seats only indicate unavailable/reserved status.
-task: inspect floorplanstatistics seat click behavior
-task_group: thongthai-admin-panel-ui
-task_outcome: success
-cwd: C:\Users\user\Desktop\thongthai2\admin-panel-Thongthai
-keywords: floorplanstatistics, seat, click, reserved, modal, Vue, table.vue
----
-
-### Task 1: Verify seat-click behavior
-
-task: determine whether clicking any seat, especially a red seat, opens details or a modal
-task_group: admin-panel floor-plan UI
-task_outcome: success
-
-Preference signals:
-- The user repeatedly asked whether clicking a seat or “the red seat” would trigger anything -> future answers should explicitly cover both normal and state-colored seats.
-
-Reusable knowledge:
-- In `src/pages/floorplanstatistics/table.vue`, seat elements only render position, background image, availability class, and name. There is no `@click`, `@pointerdown`, modal state, or detail handler.
-- `isAvailableSeat()` applies the `reserved` class when the seat is absent from `availableSeat`; the red/reserved appearance is visual-only.
-- The page updates seats and statistics when branch/date changes, not when seats are clicked.
-- `src/pages/floorplans/table.vue` is a separate editable page with `@pointerdown="checkIndex($event, index)"`; do not infer that behavior exists on the statistics page.
-
-Failures and how to do differently:
-- A combined GitNexus plus `rg` command exited nonzero due to no memory matches. For small UI behavior checks, use direct targeted file reads/searches and avoid unnecessary GitNexus routing.
-
-References:
-- `src/pages/floorplanstatistics/table.vue:192-204`
-- `src/pages/floorplanstatistics/table.vue:111-113`
-- `src/pages/floorplans/table.vue:333-345`
-
 ## Thread `019fd0fc-32b2-7e81-a332-2609b86c37f6`
 updated_at: 2026-08-05T08:14:03+00:00
 cwd: \\?\C:\Users\user\Desktop\motorcycle
@@ -196,151 +93,6 @@ References:
 - User trigger: `ai read .codex knowledge`
 - Boot file: `C:\Users\user\.codex\00_PULSE.md`
 - Scan script: `C:\Users\user\.codex\codex-router\Find-LargeKnowledge.ps1`
-
-## Thread `019fd49d-9b00-7ff0-ac3e-c548678624a2`
-updated_at: 2026-08-06T02:26:20+00:00
-cwd: \\?\C:\Users\user\Desktop\motorcycle\jambolive
-rollout_path: C:\Users\user\.codex\sessions\2026\08\06\rollout-2026-08-06T09-08-47-019fd49d-9b00-7ff0-ac3e-c548678624a2.jsonl
-rollout_summary_file: 2026-08-06T01-08-46-xCAa-jambolive_product_import_and_category_audit.md
-
----
-description: Imported and verified 317 JamboLive products into the local database, then found category labels are placeholders rather than live names.
-task: crawl-live-jambolive-products-and-audit-categories
-task_group: jambolive-catalogue
-task_outcome: partial
-cwd: C:\Users\user\Desktop\motorcycle\jambolive
-keywords: JamboLive, database.json, product importer, 317 products, categories, PowerShell, UTF-8, import-report
----
-
-### Task 1: Import and enrich product catalogue
-
-task: crawl all 317 live product records and detail pages into local JSON
- task_group: jambolive-catalogue
- task_outcome: success
-
-Preference signals:
-- The user explicitly required all 317 products, detail-page fields, images, descriptions, IDs, brands, categories, status, prices, styles, social URLs, and more information to be saved for future page loading -> similar tasks should preserve as much source data as available and verify the exact item count.
-
-Reusable knowledge:
-- `data/database.json` contains exactly 317 products with 317 unique IDs and no duplicates.
-- Live catalogue count was verified as 317; the importer crawled 27 catalogue pages and all 317 detail URLs with 0 page failures and 0 asset failures.
-- All 317 corresponding `product/<id>/index.html` files exist and every product has local image data. One local folder, `product/4867658`, is extra and was preserved because it is not in the current live catalogue.
-- The importer is `tools/import-public-products.ps1`; it captures `images`, `description`, `descriptionHtml`, `style`, `socialUrls`, `moreInformation`, `sourceCatalog`, status, prices, and local assets.
-- One source product has no description; the empty value reflects source truth.
-
-Failures and how to do differently:
-- Initial enrichment incorrectly included the shop logo in image arrays and over-corrected valid Unicode bullets into mojibake. Restrict gallery images to `/media/uploadedphoto/`, use explicit UTF-8 decoding, and validate raw character codes plus mojibake markers.
-- Single-item PowerShell outputs can serialize arrays as scalars; force array shape with `@(...)` for fields such as `images`, `style`, and `socialUrls`.
-
-References:
-- `data/database.json`
-- `data/import-report.json`
-- `tools/import-public-products.ps1`
-- Live API: `https://sea.jambolive.tv/pay/api/commodities/get/12299/`
-- Detail URL pattern: `https://sea.jambolive.tv/shop/12299/product/<id>/`
-- Verification result: `Products=317`, `UniqueIds=317`, `DetailPages=317`, `MissingImages=0`, `BadImagePaths=0`, `RawCatalog=0`, `MoreInformation=0`.
-
-### Task 2: Audit category names against live catalogue
-
-task: compare category IDs and names in database.json with live catalogue navigation
- task_group: jambolive-category-audit
- task_outcome: partial
-
-Preference signals:
-- The user asked whether “all product categories name all correct in database.json,” and supplied the live URL -> future audits should compare both category IDs and human-readable labels against the live navigation, not just verify that IDs exist.
-
-Reusable knowledge:
-- `database.json` currently has 39 category IDs, but names are placeholders such as `Category 12521`.
-- The live page exposes 39 category links with real names: `SHOEI`, `SIMPSON`, `NHK`, `HJC`, `LS2`, `SUPERFLY`, `J CRUISE`, `J FORCE`, `NEOTEC`, `GT AIR`, `Z8`, `X15`, `J.O`, `HORNET ADV`, `EX ZERO`, `GLAMSTER`, `SPEED BANDIT`, `DARKSOME`, `VENOM`, `M52`, `M30`, `M82`, `CHOPPER`, `STROBE 2`, `ADVANT 2`, `ADVANT X`, `S1GP S`, `S1GP PRO`, `K5R`, `C71`, `I31`, `X-CURSION`, `BELL`, `BULLIT SE`, `CARDO`, `MUC-OFF`, `ACCESSORIES`, `AIRFLOW 2`, and `GLOVE`.
-- Category IDs were present, but names and parent hierarchy were not correct. No database correction was completed in this rollout.
-
-Failures and how to do differently:
-- An initial extraction command called `.NET HtmlDecode` with two arguments and emitted repeated overload errors. The corrected sequence is: strip tags first, call `[Net.WebUtility]::HtmlDecode($clean)` with one argument, then normalize whitespace.
-- Do not claim category correctness from ID presence alone; compare live `?cat=<id>` links and labels, then separately determine parent relationships.
-
-References:
-- Live category URL: `https://sea.jambolive.tv/shop/12299/product/`
-- Stored categories: `data/database.json` → `categories`
-- Evidence: live extraction found `Unique live category links: 39`; stored names were all `Category <id>`.
-
-## Thread `019fdb71-b29e-7ad3-85f2-fa36bb94a3c3`
-updated_at: 2026-08-10T04:31:01+00:00
-cwd: \\?\C:\Users\user\Desktop\motorcycle\fc-moto-new
-rollout_path: \\?\C:\Users\user\.codex\sessions\2026\08\07\rollout-2026-08-07T16-58-09-019fdb71-b29e-7ad3-85f2-fa36bb94a3c3.jsonl
-rollout_summary_file: 2026-08-07T08-58-09-YPrd-fc_moto_metadata_noindex_and_homepage_cleanup.md
-
----
-description: FC-Moto PHP site metadata was centralized, crawl assets were added, homepage mojibake was fixed, and the user explicitly required sitewide noindex/nofollow.
-task: fc-moto-new metadata, SEO, manifest, robots, sitemap, mojibake cleanup
- task_group: php-website-seo
- task_outcome: success
-cwd: C:\Users\user\Desktop\motorcycle\fc-moto-new
-keywords: fc-moto-new, PHP, lib/initData.php, lib/htmlhead.php, meta.md, site.webmanifest, robots.txt, sitemap.xml, noindex, nofollow, mojibake
----
-
-### Task 1: Centralized metadata and indexing policy
-
-task: update FC-Moto public website metadata and related SEO assets
-task_group: php-website-seo
-task_outcome: success
-
-Preference signals:
-- The user explicitly said: "noindex, nofollow please" -> default future behavior to sitewide `noindex, nofollow` for both general crawlers and Googlebot until the user explicitly authorizes indexing.
-
-Reusable knowledge:
-- Metadata is centralized in `lib/initData.php` (`fcMotoSiteData()` and `fcMotoPageMeta()`), then rendered by shared `lib/htmlhead.php`; avoid scattering metadata across templates.
-- Confirmed project identity is `FC-Moto`, with configured production domain `https://fc-moto.aisolo.vip`, language `en-US`, locale `en_US`, and theme color `#FED900`.
-- Added `robots.txt`, dynamic `/sitemap.xml`, `site.webmanifest`, and `meta.md`.
-- `fcMotoIsIndexable()` now unconditionally returns `false`, so all pages emit `noindex, nofollow` and Googlebot receives the same directive.
-- Dynamic sitemap contains 341 URLs, including static pages, categories, magazine records, and product detail routes; it remains available for testing but does not override page-level noindex.
-- Existing official Facebook, Instagram, and YouTube URLs were used in JSON-LD `sameAs`; X/Twitter was intentionally omitted because no confirmed account was found.
-
-Failures and how to do differently:
-- Production indexing, Apache behavior, Search Console, Bing Webmaster, and real crawler access were not verified locally; report these as deployment checks rather than claiming completion.
-- When reading `.webmanifest` through PowerShell, `Invoke-WebRequest` returned bytes; decode with `[Text.Encoding]::UTF8.GetString(...)` before parsing JSON.
-
-References:
-- `lib/initData.php`: `fcMotoSiteData()`, `fcMotoPageMeta()`, `fcMotoIsIndexable()`
-- `lib/htmlhead.php`: canonical, robots/googlebot, OG, JSON-LD, favicon, manifest
-- `lib/sitemap.php`, `robots.txt`, `site.webmanifest`, `meta.md`
-- Verification: `php -l` passed for all `lib/` and `template/` PHP files; representative routes returned HTTP 200; production-host simulation showed canonical `https://fc-moto.aisolo.vip/...` while still emitting `noindex, nofollow`.
-
-### Task 2: Homepage mojibake cleanup
-
-task: fix corrupted UTF-8 symbols in homepage content
-task_group: php-website-content
- task_outcome: success
-
-Reusable knowledge:
-- `template/home.php` had 17 malformed sequences across 12 lines. A surgical text-only patch corrected dashes, apostrophes, trademark symbols, `ü`, and the FC‑Moto hyphen.
-- Verification command pattern: `rg -n 'â|Ã|Â|�' template/home.php`; then `php -l template/home.php` and an HTTP 200 check.
-- Unrelated wording/layout changes were intentionally preserved.
-
-References:
-- `template/home.php`
-- Verified: no mojibake markers remained; PHP lint passed; homepage returned HTTP 200.
-
-### Task 3: Footer taxonomy update
-
-task: make shared footer category columns data-driven and remove Top Brands
-task_group: php-website-content
- task_outcome: partial
-
-Preference signals:
-- The user requested footer categories be taken from `category.json` in basic/source order, six per column, with the second title empty and Top Brands removed -> future footer edits should preserve source ordering and use the project taxonomy rather than hardcoded labels.
-
-Reusable knowledge:
-- `lib/footer.php` is the shared footer include.
-- Taxonomy source is `data/category.json`, exposed through `fcMotoProductSubcategoryDefinitions('moto')`; labels/slugs should be escaped before output.
-- The first six entries were assigned to Top Categories and the next six to the untitled second column; Top Brands markup was removed.
-
-Failures and how to do differently:
-- A combined patch initially failed against minified CSS context. Use smaller patches and verify the final rendered footer markup/layout after editing.
-
-References:
-- `lib/footer.php`
-- `data/category.json`
-- `lib/initData.php` taxonomy helpers
 
 ## Thread `019fe9e0-8772-7143-8b6b-11cc8a866137`
 updated_at: 2026-08-10T04:22:20+00:00
@@ -487,109 +239,6 @@ References:
 - `codex-router/Audit-CodexRouting.ps1`: 0 missing targets, 0 trigger conflicts, 181 triggers.
 - Manifest contains exactly one entry for `memories/2_governance/FAST_BATCH_WORKFLOW_PROTOCOL.md`.
 - `git diff --check` passed; validator otherwise found 0 missing targets, 0 duplicate names, 0 secret-pattern issues, and 0 unignored secret files.
-
-## Thread `019ff8b2-757c-7922-bc4f-99b7ec3f1f53`
-updated_at: 2026-08-13T06:18:23+00:00
-cwd: \\?\D:\backup\website-zetasoftware
-rollout_path: C:\Users\user\.codex\sessions\2026\08\13\rollout-2026-08-13T09-17-53-019ff8b2-757c-7922-bc4f-99b7ec3f1f53.jsonl
-rollout_summary_file: 2026-08-13T01-17-52-eGXh-zetasoftware_bilingual_blog_system_revisions.md
-
----
-description: Iterative bilingual Zeta Software blog implementation and revision workflow; final user-requested UX article replacement was interrupted and remains unverified
-task: bilingual-static-site-blog-system
- task_group: D:\\backup\\website-zetasoftware
-task_outcome: partial
-cwd: D:\\backup\\website-zetasoftware
-keywords: blogs, bilingual, cn, JSON, blogs.js, slug-routing, htaccess, 1200px, breadcrumb, footer, related-articles, author-removal, PHP localhost, node-check
----
-
-### Task 1: Localhost verification
-
-task: verify the static bilingual website locally
-task_group: localhost testing
-task_outcome: success
-
-Preference signals:
-- The user’s workflow trigger was exactly `localhost test` -> use the localhost-test route and report raw URLs/statuses.
-
-Reusable knowledge:
-- This workspace is a static bilingual HTML site with English routes `/`, `/about/`, `/services/`, `/portfolio/`, `/contact/`, `/faq/` and Chinese equivalents under `/cn/`.
-- On this Windows host, Python’s Store alias was unusable and the detached Python server returned empty replies. PHP was available and stable with `php.exe -S 127.0.0.1:8080 -t .`.
-
-Failures and how to do differently:
-- Do not treat an open listener as healthy; verify HTTP responses. Prefer PHP for this workspace unless a known-good server already exists.
-
-References:
-- Stable server command: `cmd.exe /d /c start "" /b php.exe -S 127.0.0.1:8080 -t .`
-- Stable server observed at `127.0.0.1:8080`, PID `10108`.
-
-### Task 2: Bilingual blog system
-
-task: add and maintain data-driven English/Chinese blog pages
-task_group: website blog implementation
-task_outcome: success
-
-Preference signals:
-- The user asked to “copy the english parts and duplicate in chinese parts replace with it” -> use English markup/layout as the source of truth and mirror it into Chinese with translated visible text.
-- The user wanted future growth beyond 100 posts -> retain JSON-driven records and matching stable slugs rather than hardcoding each article page.
-- The user explicitly wanted homepage content left unchanged during blog work -> avoid unrelated homepage edits.
-
-Reusable knowledge:
-- Blog datasets: `data/blogs.json` and `data/blogs-cn.json`; each initially contained five matching records.
-- Renderer: `js/blogs.js`; clean routes use `.htaccess` rewrites and pass the slug via `?slug=...`.
-- Blog cover assets are under `images/blog/` and JSON image paths are root-relative, e.g. `/images/blog/blog-app-planning.png`.
-- Shared blog styling is in `css/style.css`; current blog stylesheet version is `v0136`.
-- The final blog detail design uses compact typography, a consistent 1200px blog container, breadcrumb navigation, longer paragraph content, no related-article section, and a standard footer in both languages.
-
-Failures and how to do differently:
-- A PowerShell bulk replacement using default encoding corrupted visible UTF-8 text in existing HTML. Avoid default `Get-Content`/`Set-Content` for multilingual files; use explicit UTF-8/no-BOM handling or surgical patches.
-- The initial image check incorrectly treated `/images/...` as a filesystem-root path. Resolve root-relative URLs against the project directory before declaring missing assets.
-- Blog shells initially lacked GSAP/Lenis while shared `main.js` assumed them. The renderer now guards optional motion libraries and provides fallbacks; preserve this when creating lightweight shells.
-
-References:
-- Main files: `js/blogs.js`, `data/blogs.json`, `data/blogs-cn.json`, `css/style.css`, `blogs/index.html`, `cn/blogs/index.html`, `.htaccess`.
-- Verification commands: `node --check js/blogs.js`; `node --check js/main.js`; `git diff --check`.
-- Verified URLs include `/blogs/`, `/blogs/why-user-experience-should-shape-the-build/`, `/cn/blogs/`, and the corresponding Chinese slug; all returned HTTP 200.
-
-### Task 3: Remove blog author attribution
-
-task: remove author data and author display from blog articles
-task_group: blog content cleanup
- task_outcome: success
-
-Preference signals:
-- The user said: `"author": "Zeta Software Team", ai remove this also remove the display of this` -> do not show author attribution and remove the field from both language datasets.
-
-Reusable knowledge:
-- Author fields were removed from both JSON files and the renderer’s `.blog-author` output.
-
-Failures and how to do differently:
-- Check both data files and shared renderer; changing only the visible template leaves stale author metadata behind.
-
-References:
-- `rg -n 'author|blog-author' data js css blogs cn/blogs` was used to locate the references.
-- Final verification reported `author-removal-verification=pass`.
-
-### Task 4: UX article content replacement
-
-task: replace the UX article body with user-supplied paragraph-focused content
-task_group: blog content editing
- task_outcome: uncertain
-
-Preference signals:
-- The user supplied a complete article body and requested: “do not use title using only normal text paragraph field” -> render the supplied section content as normal paragraphs, not headings, unless they later approve headings.
-- The user allowed HTML symbols for icon usage in descriptions -> small inline symbols may be used only if they do not replace the requested paragraph text.
-
-Reusable knowledge:
-- Target slug: `why-user-experience-should-shape-the-build`.
-- The request was interrupted before any edit or verification; current files must be re-read before changing them.
-
-Failures and how to do differently:
-- Do not claim completion. Update the English and corresponding Chinese `contentHtml` carefully, preserve UTF-8, then validate JSON and both detail routes.
-
-References:
-- Target files: `data/blogs.json`, `data/blogs-cn.json`.
-- Required checks: `node --check js/blogs.js`, parse both JSON datasets, and request `/blogs/why-user-experience-should-shape-the-build/` plus `/cn/blogs/why-user-experience-should-shape-the-build/` with HTTP 200.
 
 ## Thread `019ff9c5-febf-7151-a502-860618d376c8`
 updated_at: 2026-08-13T09:01:23+00:00
@@ -1312,4 +961,261 @@ References:
 - Removed: `template/src/components/LoanContactSheet.vue`
 - Verification command: `pnpm.cmd exec vite build --mode development.localhost`
 - Verification string: `No remaining precise-quote button or loan contact sheet references.`
+
+## Thread `01a069fe-d709-7e00-b7e6-2069c0077bea`
+updated_at: 2026-09-04T01:19:08+00:00
+cwd: \\?\C:\Users\user\.codex
+rollout_path: C:\Users\user\.codex\sessions\2026\09\04\rollout-2026-09-04T09-18-24-01a069fe-d709-7e00-b7e6-2069c0077bea.jsonl
+rollout_summary_file: 2026-09-04T01-18-24-1Zuq-codex_boot_and_localhost_test_blocked.md
+
+description: Codex knowledge boot succeeded; localhost test was blocked because the command ran in the .codex workspace rather than an application project directory.
+task: boot codex knowledge and run localhost test
+task_group: codex workflow / local development verification
+task_outcome: partial
+cwd: C:\Users\user\.codex
+keywords: 00_PULSE.md, localhost-test, ports 3000, 5173, 6006, project root, HYDRATE GROUND PLAN ACT VERIFY
+
+### Task 1: Codex knowledge boot
+task: read .codex knowledge using the exact hydration trigger
+task_group: codex boot and routing
+task_outcome: success
+
+Reusable knowledge:
+- `00_PULSE.md` is authoritative for boot routing and says the exact trigger `ai read .codex knowledge` must return only `[🟢] Agent is Ready..`.
+- Hydrate once per chat session; use lazy, task-specific reads afterward.
+
+Failures and how to do differently:
+- None observed.
+
+References:
+- `C:\Users\user\.codex\00_PULSE.md`
+- Exact sentinel: `[🟢] Agent is Ready..`
+
+### Task 2: Localhost readiness check
+task: detect and verify runnable local web projects
+task_group: localhost testing
+ task_outcome: fail
+
+Reusable knowledge:
+- `skills\localhost-test\SKILL.md` requires shallow project discovery, port reuse checks, detached startup when needed, and HTTP verification; startup alone is not success.
+- Known workspace defaults include `admin-panel-trash` on 6006, `web-admin-app` on 5173, and `web-driver-app` on 3000, but these were not present under the scanned workspace.
+
+Failures and how to do differently:
+- Scanning `C:\Users\user\.codex` found no runnable project and no listeners on ports 3000/5173/6006. Rerun from the actual application/project root instead of the Codex configuration directory.
+
+References:
+- `C:\Users\user\.codex\skills\localhost-test\SKILL.md`
+- Checked ports: `3000`, `5173`, `6006`
+- Final blocker: “No runnable web project or active localhost server was found in the current workspace.”
+
+## Thread `01a06a00-5a37-7e72-bbbc-b6b33c856356`
+updated_at: 2026-09-07T05:56:45+00:00
+cwd: \\?\D:\backup\website-zetasoftware
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\09\04\rollout-2026-09-04T09-20-03-01a06a00-5a37-7e72-bbbc-b6b33c856356.jsonl
+rollout_summary_file: 2026-09-04T01-20-03-IpkW-zeta_static_site_localhost_performance_image_loading.md
+
+---
+description: Zeta Software static bilingual-site localhost verification, performance optimization, and incomplete image lazy-loading/JPG migration; preserve the verified runtime and prevent premature WebP deletion
+task: static website localhost test, Lighthouse optimization, body-image lazy loading, and mobile/website JPG canonicalization
+task_group: zeta-software-static-bilingual-website
+ task_outcome: partial
+cwd: D:\backup\website-zetasoftware
+keywords: localhost-test, php-server, 127.0.0.1:8080, Lighthouse, WebP, JPG, data-src, IntersectionObserver, style.min.css, apply-body-image-lazyload, mobile, website, PowerShell regex
+---
+
+### Task 1: Localhost verification
+
+task: Detect and serve the static bilingual website locally, then verify representative routes
+task_group: zeta-software-localhost
+task_outcome: success
+
+Preference signals:
+- When the user said `localhost test`, the agent should detect the project type, start only the needed server, and verify actual URLs rather than treating process startup as success.
+
+Reusable knowledge:
+- The checkout has no package manifest, Vite config, or PHP entry file; serve it as static files with PHP built-in server: `php -S 127.0.0.1:8080 -t <workspace>`.
+- Representative English/CN core, blog, legal, robots, and sitemap routes returned HTTP 200. Browser visual QA and production deployment are separate verification steps.
+
+Failures and how to do differently:
+- None for this task.
+
+References:
+- `D:\backup\website-zetasoftware\README.md`
+- `D:\backup\website-zetasoftware\status.md`
+- `.htaccess`
+- Verified command shape: `php -S 127.0.0.1:8080 -t <workspace>`
+
+### Task 2: Performance and static quality optimization
+
+task: Reduce image/CSS/script cost while preserving bilingual site behavior
+task_group: zeta-software-performance
+ task_outcome: success
+
+Preference signals:
+- The user values concrete performance recommendations backed by Lighthouse and source audits, not generic format advice.
+
+Reusable knowledge:
+- 94 WebP sidecars were generated while original raster files were retained.
+- CSS minification reduced `css/style.css` from 175,182 bytes to 133,367 bytes. Pages use `css/style.min.css?v=0175`.
+- Apache `.htaccess` contains production gzip and long-lived cache rules, but local PHP/http-server verification does not exercise those rules.
+- Lighthouse results: homepage Performance 65 / Accessibility 100 / Best Practices 100 / SEO 100; B2B detail Performance 71 / Accessibility 100 / Best Practices 100 / SEO 100.
+- All 154 HTML files passed metadata, menu-label, heading, malformed-image, external-link, and WebP-candidate checks; 94 WebPs decoded successfully.
+
+Failures and how to do differently:
+- The first modern-image pass missed root-relative `images/...` paths; the script was corrected to resolve those paths from the project root.
+- A generated malformed image-attribute pattern (`/ fetchpriority=`) was found in 40 detail pages and normalized. Future bulk HTML transforms must validate for whitespace before attributes.
+
+References:
+- `scripts/update-style-cache.js`
+- `scripts/update-site-navigation.js`
+- `scripts/add-modern-image-sources.js`
+- `scripts/normalize-script-loading.js`
+- `css/style.min.css`
+- `.htaccess`
+
+### Task 3: Body lazy loading and JPG migration request
+
+task: Apply true body-image lazy loading and convert only `images/mobile` and `images/website` to JPG defaults
+task_group: zeta-software-image-loading
+ task_outcome: partial
+
+Preference signals:
+- The user specified: body images should use `data-src="..."` plus a 1×1 SVG `src`, with header/footer/logo/icon/brand images excluded from lazy loading.
+- The user specified that `images/mobile` and `images/website` must use `.jpg` as their basic sources, then requested removal of only the WebPs in those two folders after all references are safely updated.
+
+Reusable knowledge:
+- `js/main.js` originally exposed `window.ZetaLazyImages`, but its `refresh()` immediately loaded all `img[data-src]`; this is not viewport-triggered lazy loading.
+- `scripts/apply-body-image-lazyload.js` was added and applied to 138 HTML files. It preserves header/footer/logo/icon ranges, moves image URLs to `data-src`/`data-srcset`, and uses a 1×1 SVG placeholder.
+- At audit time, `images/mobile` had PNG + WebP pairs for `mobile_01`–`mobile_08` and `mobile-frame-02`; `images/website` had PNG + WebP pairs for `website_01`–`website_08`.
+
+Failures and how to do differently:
+- The mobile/website JPG conversion was not completed: the reference search hit a ripgrep regex parse error, and the user then aborted the turn. Do not delete any WebPs or claim migration completion.
+- Follow-up should use a robust script (not the failed regex) to resolve references across HTML, JS, JSON, and CSS, switch only those two folders to JPG defaults, verify all referenced JPGs exist and all routes load, then delete only WebPs inside those folders.
+- Re-verify the lazy loader with an actual `IntersectionObserver`-based implementation and dynamically inserted blog images before declaring the task complete.
+
+References:
+- `js/main.js`
+- `scripts/apply-body-image-lazyload.js`
+- User wording: `src="1x1px svg data:img"` and `data-src="xxxx"`; exclude `project logo, icon, zcapital2, logo-zeta, header and footer`.
+- Rollout ended with `<turn_aborted>` immediately after the two-folder audit began.
+
+## Thread `01a07a71-4c56-70b0-a1e2-b8a02742ecb4`
+updated_at: 2026-09-07T09:41:02+00:00
+cwd: \\?\D:\backup\website-zetasoftware
+rollout_path: C:\Users\user\.codex\sessions\2026\09\07\rollout-2026-09-07T13-57-20-01a07a71-4c56-70b0-a1e2-b8a02742ecb4.jsonl
+rollout_summary_file: 2026-09-07T05-57-20-zPhy-zeta_website_project_audit_navigation_content_performance.md
+
+description: Zeta bilingual static-site audit, generator fixes, content formatting, cache guidance, and partial CSS minification; strongest reusable takeaways are generator pipeline coupling, bilingual preservation, selective sentence grouping, cache policy, and verification limits
+task: maintain and optimize Zeta Software bilingual static website
+task_group: D:\\backup\\website-zetasoftware
+task_outcome: partial
+cwd: D:\\backup\\website-zetasoftware
+keywords: Zeta Software, bilingual static HTML, update-site-navigation, generate-standard-internal-management-pages, format-detail-content, long-form-intros, clean-css-cli, style.min.css, Cloudflare cache, main-thread work
+
+### Task 1: Restore generated SIM navigation
+
+task: fix missing desktop/mobile navigation on Standard Internal Management generated pages
+task_group: static-site generators and shared navigation
+task_outcome: success
+
+Preference signals:
+- When the user asked to restore the header/menu, they also emphasized not removing unrequested content -> preserve descriptions, images, CSS, routes, and unrelated page content during narrowly scoped fixes.
+
+Reusable knowledge:
+- `scripts/generate-standard-internal-management-pages.js` previously wrote empty desktop/mobile nav containers and skipped the shared updater. The durable fix is to invoke `require("./update-site-navigation");` after generation.
+- Regeneration covered 10 English and 10 Chinese SIM detail pages plus both hubs. All 20 pages then had non-empty desktop/mobile navigation and one active SIM state.
+
+Failures and how to do differently:
+- Any generator that emits placeholder navigation must either render the shared navigation directly or invoke `scripts/update-site-navigation.js` before completion; otherwise later output can regress to empty menus.
+
+References:
+- `scripts/generate-standard-internal-management-pages.js:120`
+- Exact fix: `require("./update-site-navigation");`
+- Verification: `http=40/40 status-200`, `syntax=passed`, `targeted-diff-check=passed`.
+
+### Task 2: Regroup and shorten bilingual detail descriptions
+
+task: make Business Models and Standard Internal Management descriptions more human-readable and 50–100 words shorter
+task_group: generated bilingual content formatting
+ task_outcome: success
+
+Preference signals:
+- The user said not every sentence should be separated and asked to “merge back some suitable” endings -> group related sentences into natural visual blocks instead of inserting a break after every sentence.
+- The user requested reducing descriptions by roughly 50–100 words -> shorten shared reusable tails while retaining topic-specific content.
+
+Reusable knowledge:
+- `scripts/format-detail-content.js` now groups sentences in pairs, uses selective `<br />`/`<br /><br />`, and preserves paragraph/list handling.
+- `scripts/long-form-intros.js` contains compact shared English/Chinese tails used by both content families.
+- All 40 bilingual detail pages passed audits for language consistency, no duplicated hero descriptions, and no old generic English tails.
+
+Failures and how to do differently:
+- Preserve technical acronyms and proper names while shortening shared guidance; do not rewrite unrelated topic-specific copy.
+
+References:
+- `scripts/format-detail-content.js:15`
+- `scripts/long-form-intros.js:7-10`
+- Examples: C2B English ~496→404 words; Small-business ERP ~540→460 words.
+- Verification: `total: 40, valid: 40`; all 40 routes HTTP 200.
+
+### Task 3: Cache policy for Lighthouse “efficient cache lifetimes”
+
+task: recommend suitable lifetime for listed site images/assets
+task_group: static-site performance and Cloudflare cache policy
+task_outcome: success
+
+Reusable knowledge:
+- Versioned static CSS/JS should use `Cache-Control: public, max-age=31536000, immutable`.
+- Replaceable unversioned images should use approximately 30 days until filenames/query strings are versioned; then one year plus `immutable` is appropriate.
+- HTML should revalidate frequently; third-party Cloudflare utility files remain provider-controlled.
+- `.htaccess` already applies one-year immutable caching to CSS/JS and zero-second HTML expiration.
+
+Failures and how to do differently:
+- Do not apply one-year immutable caching to unversioned images that may be replaced, because browsers can retain stale copies even after CDN purge.
+
+References:
+- `.htaccess` lines 53–56: `Header set Cache-Control "public, max-age=31536000, immutable"` for `\\.(css|js)$`.
+- Minifier/homepage cache reference observed: `style.min.css?v=0179` in `index.html` and `cn/index.html`.
+
+### Task 4: Main-thread performance investigation
+
+task: explain and prioritize fixes for Lighthouse “Minimize main-thread work 4.5 s”
+task_group: browser performance diagnostics
+ task_outcome: partial
+
+Reusable knowledge:
+- `js/main.js` is approximately 27.6 KB and globally combines lazy images, navigation, forms, homepage slider behavior, testimonials, and animations.
+- Lucide is loaded on roughly 148 HTML pages; GSAP/ScrollTrigger/Lenis appear on 14 pages. `main.js` runs continuous `requestAnimationFrame`/animation behavior when optional motion libraries exist.
+- The highest-value investigation is a Chrome Performance trace under mobile CPU throttling, checking `Evaluate Script`, `Recalculate Style/Layout`, `Animation Frame Fired`, and `Image Decode`.
+- Recommended optimization order: split page-specific JavaScript, defer or self-host only needed icons, pause/restrict continuous animations, reduce repeated `MutationObserver` scans, and avoid repeated `lucide.createIcons()` calls.
+
+Failures and how to do differently:
+- No performance code was changed or measured in this task; recommendations remain hypotheses until a trace identifies the dominant category.
+
+References:
+- `js/main.js` contains the global behavior and is loaded with `main.js?v=5.8`.
+- `widgets/client-feedback.js` is about 11.8 KB and mounts testimonial widgets on four pages.
+- Chrome/web.dev guidance treats tasks over 50 ms as long tasks; use trace evidence before choosing a code change.
+
+### Task 5: Regenerate minified CSS
+
+task: update `css/style.min.css` from current `css/style.css`
+task_group: CSS build/asset maintenance
+ task_outcome: partial
+
+Preference signals:
+- The user asked for only the minified counterpart to be updated, with no HTML, JavaScript, layout, or content changes -> keep this operation narrowly scoped.
+
+Reusable knowledge:
+- The repository has no `package.json`, checked-in minifier script, or existing CSS minification tool configuration.
+- The successful command was `npx --yes clean-css-cli@5.6.3 -o css/style.min.css css/style.css`.
+- Output size was 172,801 bytes source versus 131,645 bytes minified, approximately 23.8% savings.
+- Only `index.html` and `cn/index.html` reference `style.min.css?v=0179`; most other pages reference `style.css`.
+
+Failures and how to do differently:
+- A complex combined PowerShell verification command failed because of malformed command-wrapper syntax, and the user then interrupted. The minified file was written, but served-file, idempotence, and final diff verification remain incomplete.
+
+References:
+- Files: `css/style.css`, `css/style.min.css`, `index.html`, `cn/index.html`.
+- Pending checks: run clean separate commands for `Get-FileHash`, a second clean-css output comparison, `Invoke-WebRequest http://127.0.0.1:8080/css/style.min.css?v=0179`, selector presence, `git diff --check -- css/style.min.css`, and `git status --short -- css/style.min.css`.
+- Browser availability check: `{"apps":[],"browsers":[]}`.
 
