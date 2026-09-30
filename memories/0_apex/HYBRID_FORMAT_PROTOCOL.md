@@ -8,7 +8,7 @@ v_score: 1.0
 k_decay: 0
 holo: "Canonical 5-language format system for AI knowledge/skills. Enforces YAML frontmatter + MD body rules for token efficiency."
 model_hint: medium
-model_profile: luna-5.6-medium
+model_profile: gpt-6-luna-high
 version: 1.2
 status: authoritative
 date_created: "2026-04-13"
@@ -111,7 +111,7 @@ unlocks: []
 inputs: [entity_name, field_list]
 output_format: typescript_files
 model_hint: medium
-model_profile: luna-5.6-medium
+model_profile: gpt-6-luna-high
 version: 1.0
 ---
 
@@ -237,7 +237,7 @@ Rules:
 1. **Thin frontmatter** — only fields the router needs. Don't dump content into YAML keys.
 2. **Body chunked by `##` headings** — route-first agents skim headings to decide what section to read.
 3. **Literal triggers** — 2-5 exact phrases the user might say. Not semantic paraphrases.
-4. **Model hint routing** — use `fast`, `medium`, or `deep` capability labels; the current default profile is `luna-5.6-medium`.
+4. **Model hint routing** — use `fast`, `medium`, or `deep` capability labels for task complexity; the current runtime profile is `gpt-6-luna-high` (`gpt-6-luna` model plus high reasoning effort).
 5. **Output contracts** — declare `output_format` so structured-output modes lock onto it.
 6. **Cache-friendly** — keep total corpus under 1M tokens per mode so it stays in context cache.
 7. **No duplication** — don't repeat content across frontmatter + body. Frontmatter for routing, body for execution.

@@ -262,8 +262,7 @@ Total time: ~6 minutes for a clean app.
   senses (theme color, weight, smoothing) that the meta tags inherit.
 - [`wrider_chat_mining.md`](../archive/wrider_chat_mining.md) — protocol for
   evolving these standards from observed user edits.
-- [`../../../Desktop/wRider/BLUEPRINT.md`](../../../Desktop/wRider/BLUEPRINT.md)
-  — architectural manifest; §14 KNOWLEDGE TREE references this file.
+- `C:/Users/user/Desktop/wRider/BLUEPRINT.md` — historical architectural manifest; unavailable in this checkout, so its contents and current path cannot be verified.
 
 ---
 

@@ -76,7 +76,7 @@
       "file": "codex-router/Measure-CodexRouteTelemetry.ps1",
       "expect_contains": [
         "estimated_tokens",
-        "luna-5.6-medium"
+        "gpt-6-luna-high"
       ]
     },
     {

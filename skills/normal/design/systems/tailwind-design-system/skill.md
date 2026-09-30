@@ -49,11 +49,11 @@ Build production-ready design systems with Tailwind CSS, including design tokens
 - Clarify goals, constraints, and required inputs.
 - Apply relevant best practices and validate outcomes.
 - Provide actionable steps and verification.
-- If detailed examples are required, open `resources/implementation-playbook.yaml`.
+- If detailed examples are required, open `resources/implementation-playbook.md`.
 
 ## Resources
 
-- `resources/implementation-playbook.yaml` for detailed patterns and examples.
+- `resources/implementation-playbook.md` for detailed patterns and examples.
 
 ## Mobile Form-Component Pattern Library (carMVP feedback, 2026-05-08)
 

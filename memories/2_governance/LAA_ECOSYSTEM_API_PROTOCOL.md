@@ -5,7 +5,7 @@ tier: 2_governance
 version: 1.0.0
 status: authoritative
 last_updated: "2026-04-30"
-applies_to: ["claude", "claude-code", "luna-5.6-medium"]
+applies_to: ["claude", "claude-code", "gpt-6-luna"]
 triggers:
   # Concept
   - "supabase"

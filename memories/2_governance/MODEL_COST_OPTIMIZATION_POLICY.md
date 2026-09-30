@@ -3,35 +3,36 @@ name: model-cost-optimization-policy
 description: "Model usage policy for minimizing token spend, controlling reasoning depth, and improving cache efficiency across Codex and Claude Code workflows."
 triggers: ["model cost", "token cost", "optimize model", "reasoning effort", "cache efficiency", "lean mode", "deep mode", "claude pricing", "codex pricing"]
 phase: governance
-version: 1.1
+model_profile: gpt-6-luna-high
+version: 1.2
 status: active
-date_updated: "2026-08-07"
-last_audit: "2026-08-07"
+date_updated: "2026-09-30"
+last_audit: "2026-09-30"
 ---
 
 # Model Cost Optimization Policy
 
 ## Mission
 
-Use the strongest model behavior that is necessary, not the strongest behavior that is available.
+Use the configured GPT-6 Luna high profile while keeping context, tool use, and output proportional to the task.
 
 This policy exists to reduce:
 - unnecessary prompt-token spend,
 - unnecessary completion-token spend,
-- unnecessary high-reasoning usage,
+- unnecessary context and output,
 - unnecessary re-hydration of the same `.codex` knowledge,
 - unnecessary long answers that do not improve correctness.
 
 It applies to both:
-- Codex using the current GPT-5.6 Luna medium profile
+- Codex using the current GPT-6 Luna high profile (`gpt-6-luna` plus `model_reasoning_effort = "high"`)
 - Claude Code using Sonnet 4.6
 
-For general GPT-5.6 Luna behavior, read the single canonical playbook:
+For general GPT-6 Luna high behavior, read the single canonical playbook:
 `memories/extensions/ad_hoc/notes/2026-07-10-gpt-5-6-luna-operating-playbook.md`
 
-This policy owns model-cost lanes and escalation only; it does not duplicate the Luna playbook.
+This policy owns context-cost lanes only; it does not switch the configured model or reasoning effort by task phase.
 
-**Layer note (2026-08-07)**: "Lean/Balanced/Deep" below are work-scope lanes (how much to read/spend), not a third `model_reasoning_effort` setting — only `medium` and `high` exist (see `LUNA_5_6_REASONING_MODES.md`, `codex-router/controlled-auto-policy.json`). Roughly: Lean and Balanced both run at the live `medium` default; Deep is where escalating to `high` actually applies. For reasoning *quality* (not effort or scope), see `00_REASONING_EVOLUTION_PROTOCOL.md`.
+**Layer note (2026-09-30)**: "Lean/Balanced/Deep" are work-scope lanes, not `model_reasoning_effort` settings. The runtime model and effort come from `config.toml`; the current configured profile is GPT-6 Luna with high effort. See `LUNA_5_6_REASONING_MODES.md` and `codex-router/controlled-auto-policy.json`.
 
 ## Core Rule
 
@@ -39,8 +40,8 @@ Optimize in this order:
 1. reduce context volume,
 2. improve route precision,
 3. keep outputs short,
-4. keep reasoning low by default,
-5. escalate only when complexity or risk justifies it.
+4. retain the configured high reasoning effort,
+5. reserve deeper context loading for tasks whose complexity or risk justifies it.
 
 Do not start by increasing model effort. Start by shrinking the work the model must process.
 
@@ -61,8 +62,7 @@ Rules:
 - use route-first loading,
 - read `00_PULSE.md` first and stop at first valid match,
 - keep Tier-0 deferred,
-- keep reasoning low,
-- keep replies concise,
+- keep evidence and replies concise while retaining configured high reasoning effort,
 - avoid broad tree scans,
 - avoid re-reading `.codex` knowledge in the same chat unless risk changed.
 
@@ -84,9 +84,8 @@ Use for:
 Rules:
 - keep route-first loading,
 - load only the exact deferred files needed,
-- keep reasoning low unless ambiguity persists,
 - expand output only when needed for clarity,
-- verify before escalating into deep mode.
+- verify before expanding into deep context.
 
 Target effect:
 - moderate token cost,
@@ -107,7 +106,7 @@ Rules:
 - escalation must be deliberate,
 - read only the exact higher-tier governance files required,
 - keep a visible scope boundary,
-- use richer reasoning only after lower-cost checks fail,
+- use deeper context only when lower-cost checks fail or task risk requires it,
 - compress supporting context aggressively without hiding uncertainty.
 
 Target effect:
@@ -117,12 +116,12 @@ Target effect:
 ## Codex Policy
 
 Current baseline:
-- model: `gpt-5.6-luna` / local profile `luna-5.6-medium`
-- default reasoning: read `config.toml`'s `model_reasoning_effort` for the live value — do not hardcode a value here, it drifts (single-truth-source rule, see `SINGLE_TRUTH_SOURCE_PROTOCOL.md`)
+- model: `gpt-6-luna` / local profile `gpt-6-luna-high`
+- default reasoning: `high` in the current `config.toml`; keep that file as the runtime source of truth
 
 Codex defaults:
-- routine work -> GPT-5.6 Luna with the live default from `config.toml`
-- deep work -> GPT-5.6 Luna with higher reasoning only when the task clearly qualifies
+- routine work -> GPT-6 Luna with configured high effort and a narrow evidence set
+- deep work -> GPT-6 Luna with configured high effort and additional governance/project truth when required
 
 Codex optimization rules:
 - keep the stable instruction prefix at the front so provider-side prompt caching can hit repeatedly,

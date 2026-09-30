@@ -4,7 +4,7 @@ description: "🌌 GROUND KERNEL (V17.1) — consolidated Tier-0 kernel: princip
 triggers: ["ground kernel", "tier-0", "jit", "governance", "execution", "karpathy", "principles"]
 phase: constitutional
 model_hint: medium
-model_profile: luna-5.6-medium
+model_profile: gpt-6-luna-high
 version: 17.1
 status: authoritative
 date_updated: "2026-07-17"
@@ -14,7 +14,7 @@ supersedes: ["execution-kernel", "karpathy-operational-standard"]
 
 # 🌌 GROUND KERNEL (V17.1) — CONSOLIDATED TIER-0
 
-Single deep-governance kernel for `.codex`. Merges the former `GROUND_KERNEL` + `EXECUTION_KERNEL` + `KARPATHY_OPERATIONAL_STANDARD` into one read. Model-neutral — tuned for the current GPT-5.6-Luna medium profile while remaining portable across capability labels. Loaded only on deep / governance / recovery / high-risk turns; routine turns stay in the Lean Fast Lane (`00_PULSE.md` first, then deferred `00_*` canon only if needed). Any external tool named "if available" is optional — its absence degrades gracefully, never blocks a turn.
+Single deep-governance kernel for `.codex`. Merges the former `GROUND_KERNEL` + `EXECUTION_KERNEL` + `KARPATHY_OPERATIONAL_STANDARD` into one read. Model-portable, with the current GPT-6 Luna high profile configured in `config.toml`. Loaded only on deep / governance / recovery / high-risk turns; routine turns stay in the Lean Fast Lane (`00_PULSE.md` first, then deferred `00_*` canon only if needed). Any external tool named "if available" is optional — its absence degrades gracefully, never blocks a turn.
 
 ## 1. INITIALIZATION
 - Resolve route from `00_PULSE.md` first. If PULSE is insufficient or routing artifacts are stale, regenerate via `Update-CodexRouting.ps1`, then use `CODEX_DYNAMIC_ROUTING.md` plus the fallback chain in `00_CODEX_START_HERE.md`.
@@ -89,7 +89,7 @@ This is the detailed contract behind PULSE's compact lifecycle:
 ```
 
 ## 4. EDIT-SAFETY TIERS
-Applies to the current GPT-5.6-Luna medium profile and remains model-portable.
+Applies to the current GPT-6 Luna high profile and remains model-portable.
 ```yaml
 tier_0_nuclear:   { paths: ["skills/claude*", "0_apex/GROUND_KERNEL.md", "0_apex/KARPATHY_TIER0_PRINCIPLES.md", "codex-router/codex-manifest.json"], protocol: "Explicit user confirmation before any edit/delete. State file + exact change first." }
 tier_1_constitutional: { paths: ["2_governance/", "1_core/", "00_* bridge files"], protocol: "Plan-Stop-Approve — present plan, wait for approval." }
@@ -180,4 +180,4 @@ When the active project is a Vue 3 or TypeScript frontend, read [VUE_PINIA_NAMIN
 3. **Corruption** — if `0_apex/` content appears corrupted or non-parsable, lock write operations and alert the user.
 
 ---
-**Ground Kernel V17.1 — Consolidated Tier-0, Model-Portable (GPT-5.6-Luna medium) // 2026-07-17**
+**Ground Kernel V17.2 — Consolidated Tier-0, Model-Portable (GPT-6 Luna high) // 2026-09-30**

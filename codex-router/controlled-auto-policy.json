@@ -3,10 +3,10 @@
   "_meta": {
     "default_reasoning_source": "config.toml -> model_reasoning_effort is the single source of truth for the live default; do not hardcode a value in this file (see memories/2_governance/SINGLE_TRUTH_SOURCE_PROTOCOL.md)"
   },
-  "model_profile": "luna-5.6-medium",
+  "model_profile": "gpt-6-luna-high",
   "reasoning_levels": ["medium", "high"],
   "default_reasoning": null,
-  "escalate_to_high_when": [
+  "high_effort_use_cases": [
     "explicit deep, thorough, or review request",
     "security, authentication, schema, governance, or recovery work",
     "unresolved ambiguity after a lower-cost check",
@@ -38,10 +38,10 @@
     "low confidence"
   ],
   "budgets": {
-    "medium_boot_tokens": 3500,
-    "medium_frontdoor_tokens": 3000,
-    "high_evidence_files": 8,
-    "high_context_tokens": 18000,
+    "routine_boot_tokens": 3500,
+    "routine_frontdoor_tokens": 3000,
+    "deep_evidence_files": 8,
+    "deep_context_tokens": 18000,
     "final_summary_words": 180
   },
   "verification": [

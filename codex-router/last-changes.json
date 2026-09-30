@@ -1,42 +1,15 @@
 ﻿{
     "schema_version":  2,
-    "added_count":  2,
-    "modified_count":  19,
-    "removed_count":  9,
+    "added_count":  0,
+    "modified_count":  0,
+    "removed_count":  0,
     "added":  [
-                  "memories/1_core/MOBILE_POPUP_MODAL_SIDEBAR.md",
-                  "skills/admin-panel/README.md"
+
               ],
     "modified":  [
-                     "memories/2_governance/SOVEREIGN_BLUEPRINT_PROCEDURE.md",
-                     "memories/1_core/DESIGN_SOP.md",
-                     "memories/2_governance/MODEL_COST_OPTIMIZATION_POLICY.md",
-                     "memories/skills/html-to-php-website-migration/SKILL.md",
-                     "memories/MEMORY.md",
-                     "memories/0_apex/HYBRID_FORMAT_PROTOCOL.md",
-                     "skills/SHARED_DB_CONTRACT.md",
-                     "memories/1_core/INDUSTRIAL_INTERACTION_LIBRARY.md",
-                     "memories/0_apex/SOVEREIGN_BLUEPRINT_PROTOCOL.md",
-                     "memories/2_governance/MODULE_AUDIT_PROTOCOL.md",
-                     "memories/1_core/UI_DNA_MASTER.md",
-                     "skills/meta-skills/SKILL.md",
-                     "memories/1_core/DESIGN_PSYCHOLOGY_2026.yaml",
-                     "memories/memory_summary.md",
-                     "memories/2_governance/KNOWLEDGE_ROT_PROTOCOL.md",
-                     "memories/2_governance/artifacts/skill_path_router.md",
-                     "memories/0_apex/USER_DNA.md",
-                     "skills/README.md",
-                     "memories/2_governance/LUNA_5_6_REASONING_MODES.md"
+
                  ],
     "removed":  [
-                    "memories/0_apex/ENGINEERING_PROTOCOLS.md",
-                    "memories/2_governance/artifacts/JIT_VITALS.md",
-                    "memories/2_governance/artifacts/AI_AGENT_KEYS.md",
-                    "memories/2_governance/artifacts/CORE_VITALS.md",
-                    "memories/2_governance/artifacts/FEEDBACK_SYNTHESIS_PROTOCOL.md",
-                    "memories/1_core/DESIGN_EVOLUTION_PROTOCOL.md",
-                    "memories/1_core/PWA_FAVICON_META_SETUP.md",
-                    "memories/1_core/DESIGN_TOKENS.yaml",
-                    "memories/2_governance/experience_vault.md"
+
                 ]
 }

@@ -8,7 +8,7 @@ unlocks: [analyze-schema, create-module, generate-supabase-schema, generate-stor
 inputs: [user_intent, target_entity, project_context]
 output_format: structured_plan_document
 model_hint: medium
-model_profile: luna-5.6-medium
+model_profile: gpt-6-luna-high
 version: 15.3
 status: authoritative
 date_created: "2026-04-16"
@@ -29,13 +29,13 @@ Inject or verify `.codexignore` at project root. Ensure current session is isola
 ### Step 1 — SOVEREIGN LOGIC CASCADE (RECURSIVE)
 
 Instead of linear matching, use recursive path verification:
-1. **Identify Target**: Verify exists via `Test-Path` or `GLOBAL_ATLAS.yaml`.
+1. **Identify Target**: Verify it exists with `Test-Path`; resolve skill triggers through the current [skill path router](../../../memories/2_governance/artifacts/skill_path_router.md).
 2. **Domain Mapping (APEX V15.3)**:
    - *Logic / Backend / Auth / Supabase schemas*: Route to `skills/claude/`
    - *Vue 3 mobile / PWA apps (13-step)*: Route to `skills/claude-app/`
    - *PHP + Supabase REST websites (13-step)*: Route to `skills/claude-website/`
    - *General design / research / testing*: Route to `skills/normal/`
-3. **Signature Scan**: Match user tokens against [ATLAS.yaml](../../../knowledge/ATLAS.yaml) trigger keywords (Principle 10 — Navigation Mastery).
+3. **Signature Scan**: Match user intent against the current [skill path router](../../../memories/2_governance/artifacts/skill_path_router.md) and the active project's truth documents.
 4. **Reality Check**: If target logic exists, compare current state with goal. If 100% parity, STOP (Simplicity First).
 
 ### Step 1.5 — SOVEREIGN COMPARISON (when ≥2 paths exist)
@@ -50,7 +50,7 @@ If the Logic Cascade surfaces **more than one viable recipe**, emit the mandator
 Pick the highest Rating. Justify selection in one sentence. Proceed to Step 2.
 
 ### Step 2 — LOAD RECIPE
-Map the winning intent to a Skill Chain from the authoritative Atlas.
+Map the winning intent to a skill chain from the current skill router and project instructions.
 
 ### Step 3 — BUILD PLAN DOCUMENT (APEX HUD)
 
@@ -74,12 +74,12 @@ Fill this template (Clinical HUD format):
 ## 🛡️ ROLLBACK PROTOCOL
 - Failure at Step {N} -> {undo action}
 
-[⚡ STATUS: PENDING_APPROVAL]
-> **Reply "go" to execute.**
+[⚡ STATUS: READY TO EXECUTE WITHIN USER AUTHORIZATION]
+> Continue within the user's existing authorization. Pause only for a material missing decision or a required safety approval.
 ```
 
-### Step 4 — PRESENT + STOP
-Output the plan. DO NOT proceed until user handshake received.
+### Step 4 — PRESENT + PROCEED
+Summarize the plan when useful, then proceed within the user's authorized scope. Pause only when a material decision is missing or host safety rules require approval.
 
 ### Step 5 — EXECUTION & MICRO-VERIFICATION
 For each step in the cascade:
@@ -105,7 +105,7 @@ Full rule: [SCREENSHOT_HYGIENE.md](../../../memories/2_governance/SCREENSHOT_HYG
 Generate a clinical summary of files touched and verification status.
 
 ## Output Contract
-Plan saved to `C:/Users/User/.codex/brain/tactical/plan_{timestamp}.md`.
+Keep the plan in the current conversation unless the user or active project explicitly requires a durable plan document; then use an existing project path.
 
 ## Guardrails
 - **Zero speculation**: Solve only the immediate goal.

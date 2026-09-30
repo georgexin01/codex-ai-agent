@@ -17,8 +17,8 @@ Surgical index of Tailwind patterns for high-velocity UI scaffolding.
 | **Tokens** | HSL CSS Variables + Config Extend | [Quick Start](#quick-start) |
 | **Variants** | Class Variance Authority (CVA) | [button-cva.ts](patterns/button-cva.ts) |
 | **Composition**| React.forwardRef + cn() utility | [card-compound.ts](patterns/card-compound.ts) |
-| **Accessibility**| Aria-attributes + Peering | [input-pattern.ts](patterns/input-pattern.ts) |
-| **Animation** | tailwindcss-animate + GSAP | [animation-utils.ts](patterns/animation-utils.ts) |
+| **Accessibility**| Aria-attributes + Peering | [AppInput shape](../skill.md#appinput-shape) |
+| **Animation** | tailwindcss-animate + GSAP | [micro-interactions.md](../../../design_vault/micro-interactions.md) |
 
 ## ⚡ 2. QUICK START (CONFIG)
 ```typescript
@@ -40,7 +40,7 @@ theme: {
 | :--- | :--- | :--- | :--- |
 | **P1** | **CVA Button** | Type-safe variant management | [button-cva.ts](patterns/button-cva.ts) |
 | **P2** | **Compound Card** | Flexible slot-based composition | [card-compound.ts](patterns/card-compound.ts) |
-| **P3** | **Sovereign Input**| Accessible forms with ARIA/Errors| [input-pattern.ts](patterns/input-pattern.ts) |
+| **P3** | **Sovereign Input**| Accessible forms with ARIA/Errors| [AppInput shape](../skill.md#appinput-shape) |
 | **P6** | **Theme Provider**| Runtime Light/Dark/System sync | [theme-provider.ts](patterns/theme-provider.ts) |
 
 ## 🛡️ 4. APEX GUARDRAILS

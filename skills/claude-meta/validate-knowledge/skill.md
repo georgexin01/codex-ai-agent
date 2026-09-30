@@ -8,7 +8,7 @@ unlocks: []
 inputs: []
 output_format: lint_report
 model_hint: medium
-model_profile: luna-5.6-medium
+model_profile: gpt-6-luna-high
 version: 15.3
 status: authoritative
 date_created: "2026-04-16"
@@ -111,7 +111,7 @@ Per [SCREENSHOT_HYGIENE.md](../../../memories/2_governance/SCREENSHOT_HYGIENE.md
 
 ### Step 8 — WRITE REPORT
 
-Save to `C:/Users/User/.codex/brain/tactical/LINT_REPORT_{date}.md`.
+Report findings in the current response. Save a report only when requested, using an existing project-owned documentation path supplied by the user.
 
 ## Guardrails
 

@@ -5,7 +5,7 @@ priority: CRITICAL
 scope: ["website", "webapp", "monorepo", "any-project"]
 version: 2.0
 last_updated: "2026-04-29"
-applies_to: ["claude", "claude-code", "luna-5.6-medium", "antigravity"]
+applies_to: ["claude", "claude-code", "gpt-6-luna", "antigravity"]
 accepted_filenames: ["BLUEPRINT.md", "APP_BLUEPRINT.md"]
 ---
 

@@ -37,7 +37,7 @@ $entries = foreach ($file in Get-ChildItem -LiteralPath $skillsRoot -Recurse -Fi
     bytes = $bytes
     estimated_tokens = $tokens
     role = if ($isFrontDoor) { 'frontdoor' } else { 'executor-or-reference' }
-    recommended_reasoning = if ($tokens -gt 5000) { 'high-or-deferred' } else { 'medium' }
+    recommended_reasoning = 'high'
     auto_load = [bool]($isFrontDoor -and $tokens -le 3000)
     do_not_auto_load = [bool](!$isFrontDoor -or $tokens -gt 5000)
   }
@@ -45,10 +45,10 @@ $entries = foreach ($file in Get-ChildItem -LiteralPath $skillsRoot -Recurse -Fi
 
 $manifest = [pscustomobject]@{
   generated_utc = [DateTime]::UtcNow.ToString('o')
-  model_profile = 'luna-5.6-medium'
+  model_profile = 'gpt-6-luna-high'
   reasoning_levels = @('medium', 'high')
   budgets = [pscustomobject]@{
-    medium_frontdoor_tokens = 3000
+    routine_frontdoor_tokens = 3000
     high_deferred_tokens = 18000
   }
   entry_count = @($entries).Count

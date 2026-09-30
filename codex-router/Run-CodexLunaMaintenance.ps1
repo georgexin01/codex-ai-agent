@@ -34,7 +34,7 @@ $results += Invoke-JsonScript (Join-Path $PSScriptRoot 'Test-CodexPerfBenchmark.
 
 $report = [pscustomobject]@{
   generated_utc = [DateTime]::UtcNow.ToString('o')
-  model_profile = 'luna-5.6-medium'
+  model_profile = 'gpt-6-luna-high'
   reasoning_levels = @('medium', 'high')
   apply_safe = [bool]$ApplySafe
   checks = @($results)

@@ -247,7 +247,7 @@ Keep durable AI guidance concise English. Preserve application labels, database 
 - `AGENTS.md` owns host safety, implementation conventions, verification, response format, and handoff requirements.
 - `memories/0_apex/GROUND_KERNEL.md` owns deep governance, Tier-0 edit rules, and recovery behavior; load it only when the task requires that depth.
 - When a rule is duplicated, follow the priority order in this file and prefer current file evidence over historical wording.
-- Every edited non-skill Markdown file must suit Luna 5.6: one clear purpose, concise English, explicit route/related-file links when applicable, exact identifiers/contracts preserved, uncertainty stated, and a verification path recorded.
+- Every edited non-skill Markdown file must suit the configured GPT-6 Luna High profile: one clear purpose, concise English, explicit route/related-file links when applicable, exact identifiers/contracts preserved, uncertainty stated, and a verification path recorded.
 - Never modify Markdown inside any `/skills/` folder for this maintenance lane.
 
 ## 12. Final handoff

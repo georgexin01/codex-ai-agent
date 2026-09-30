@@ -5,7 +5,7 @@ type: reference
 tier: 1
 phase: design
 priority: HIGH
-applies_to: ["claude", "claude-code", "codex", "luna-5.6-medium"]
+applies_to: ["claude", "claude-code", "codex", "gpt-6-luna"]
 related:
   - "2_governance/sovereign_framework_mastery.md"
   - "0_apex/GROUND_KERNEL.md"

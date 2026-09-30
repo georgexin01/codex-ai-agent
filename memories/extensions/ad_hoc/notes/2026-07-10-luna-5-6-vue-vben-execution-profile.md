@@ -1,9 +1,12 @@
 ---
-name: luna-5-6-vue-vben-execution-profile
-description: "Luna 5.6 execution profile for Vue 3 Composition API, strict TypeScript, Ant Design Vue, and Vben Admin work. Converts the user's coding preferences into enforceable implementation and verification gates."
-triggers: ["ai luna 5.6", "GPT-5.6 Luna", "Vue 3 Vben rules", "strict Vben form rules"]
+name: gpt-6-luna-high-vue-vben-execution-profile
+description: "GPT-6 Luna high-reasoning execution profile for Vue 3 Composition API, strict TypeScript, Ant Design Vue, and Vben Admin work. Converts the user's coding preferences into enforceable implementation and verification gates."
+triggers: ["ai gpt-6 luna vue vben", "ai luna vue vben", "Vue 3 Vben rules", "strict Vben form rules"]
+model_hint: medium
+model_profile: gpt-6-luna-high
+applies_to: ["gpt-6-luna", "Vue 3", "Vben Admin"]
 status: authoritative
-date_updated: "2026-07-10"
+date_updated: "2026-09-30"
 related_docs:
   - skills/claude/README.md
   - skills/claude/VBEN_ADMIN_MANDATORY_CHECKLIST.md
@@ -11,7 +14,7 @@ related_docs:
   - memories/extensions/ad_hoc/notes/2026-07-03T00-00-01-merged-codex-performance-layer.md
 ---
 
-# Luna 5.6 Vue/Vben execution profile
+# GPT-6 Luna High Vue/Vben execution profile
 
 Use this profile as a compact enforcement layer. Existing project files and the Vben checklist remain the source of truth when a project-specific convention differs.
 
@@ -26,7 +29,7 @@ Use this profile as a compact enforcement layer. Existing project files and the 
 7. All user-visible labels, placeholders, messages, titles, empty states, and action text must use `$t('...')` and have matching keys in every required locale file. Never leave literal English or Chinese UI copy in templates.
 8. Output complete code structures. Never use placeholders such as `// rest of the code`, omit closing blocks, or truncate a file in a way that cannot compile.
 
-## Luna execution loop
+## GPT-6 Luna execution loop
 
 1. Read the smallest matching project truth document and skill front door.
 2. Preserve the user's fixed constraints verbatim before editing.

@@ -5,7 +5,7 @@ type: skill
 tier: 2
 phase: 06-component-engineering
 priority: HIGH
-applies_to: ["claude", "claude-code", "codex", "luna-5.6-medium"]
+applies_to: ["claude", "claude-code", "codex", "gpt-6-luna"]
 related:
   - "SKILL.md"
   - "ECOWORLD_COLOR_SYSTEM.md"

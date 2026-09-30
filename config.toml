@@ -1,10 +1,10 @@
-model = "gpt-5.6-luna"
+model = "gpt-6-luna"
 model_reasoning_effort = "high"
 approval_policy = "on-request"
 personality = "pragmatic"
 service_tier = "priority"
 
-notify = [ "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\6f12e0ef1c6e5061\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
+notify = [ "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\b63ee7ee40c23b77\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
 [windows]
 sandbox = "elevated"
 
@@ -137,6 +137,9 @@ trust_level = "trusted"
 [projects.'c:\users\user\desktop\edsb']
 trust_level = "trusted"
 
+[projects.'d:\project\xhs-tiktok-inbox']
+trust_level = "trusted"
+
 [features]
 memories = true
 js_repl = false
@@ -180,9 +183,6 @@ enabled = true
 [plugins."codex-app-tools@openai-bundled"]
 enabled = true
 
-[plugins."sites@openai-bundled"]
-enabled = true
-
 [plugins."visualize@openai-bundled"]
 enabled = true
 
@@ -198,25 +198,27 @@ args = ["mcp"]
 
 [mcp_servers.node_repl]
 args = []
-command = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\6f12e0ef1c6e5061\bin\node_repl.exe'
+command = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\b63ee7ee40c23b77\bin\node_repl.exe'
+env_vars = ["CODEX_WINDOWS_REGISTERED_CORE"]
 startup_timeout_sec = 120
 
 [mcp_servers.node_repl.env]
 NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
-NODE_REPL_NODE_MODULE_DIRS = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\6f12e0ef1c6e5061\bin\node_modules'
-NODE_REPL_NODE_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\6f12e0ef1c6e5061\bin\node.exe'
-NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\user\.codex;C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\6f12e0ef1c6e5061\bin\node_modules'
+NODE_REPL_NODE_MODULE_DIRS = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\b63ee7ee40c23b77\bin\node_modules'
+NODE_REPL_NODE_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\b63ee7ee40c23b77\bin\node.exe'
+NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\user\.codex;C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\b63ee7ee40c23b77\bin\node_modules'
 CODEX_HOME = 'C:\Users\user\.codex'
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 BROWSER_USE_TINYSKY_ENABLED = "1"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.908.70816"
-NODE_REPL_TRUSTED_SERVICES = '{"browser":"C:/Users/user/.codex/plugins/cache/openai-bundled/browser/26.908.70816/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+BROWSER_USE_CODEX_APP_VERSION = "26.924.22138"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"C:/Users/user/.codex/plugins/cache/openai-bundled/browser/26.924.22138/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
 SKY_CUA_NATIVE_PIPE = "1"
-SKY_CUA_NATIVE_PIPE_DIRECTORY = '\\.\pipe\codex-computer-use-2f6bd957-5083-43c7-8ac3-2e66f7af6b16'
-CODEX_CLI_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\bin\12219cbfbcbddde7\codex.exe'
+SKY_CUA_NATIVE_PIPE_DIRECTORY = '\\.\pipe\codex-computer-use-deb37f47-ab1f-4d55-8a35-5da4370f28e7'
+CODEX_CLI_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\bin\faa963e871dd422c\codex.exe'
+NODE_REPL_UNTRUSTED_ENV_ALLOWLIST = "CODEX_WINDOWS_REGISTERED_CORE"
 
 [mcp_servers.openaiDeveloperDocs]
 url = "https://developers.openai.com/mcp"

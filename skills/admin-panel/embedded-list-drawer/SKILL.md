@@ -1,3 +1,12 @@
+---
+name: embedded-list-drawer
+description: "Build a related-record drawer that embeds the full paginated list and its normal toolbar."
+triggers: ["embedded list drawer", "related-record drawer", "full list in drawer"]
+phase: implementation
+model_hint: medium
+model_profile: gpt-6-luna-high
+---
+
 # Embedded List in Drawer — QuizLAA Pattern
 
 ## When to use

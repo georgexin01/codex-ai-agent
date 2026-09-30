@@ -1,6 +1,7 @@
 ---
 name: pinia-contract-workflow
 description: "Preserve exact PiniaStore, Function, and Input contracts for Vue TypeScript apps and Vben Admin panels by researching the project spreadsheet and reference stores before editing app code."
+model_profile: gpt-6-luna-high
 ---
 
 # Pinia Contract Workflow
@@ -229,6 +230,6 @@ This fast lane reduces repeated context loading while preserving the full verifi
 
 Write new `.codex` memory notes, skill updates, contract-audit reports, and generated developer guidance in clear English. Keep application UI text, database values, spreadsheet values, and user-requested localized content unchanged. Do not translate public Store, Function, Input, table, column, or status names.
 
-## Luna 5.6 execution profile
+## GPT-6 Luna High execution profile
 
-Treat Luna 5.6 as the active execution profile for this workflow. Apply its three efficiency principles in order: evidence before implementation, minimal-context change budget, and automated verification before completion. Use the sequence `route -> ground current evidence -> make the smallest compatible change -> verify -> report warnings separately`.
+Treat GPT-6 Luna High as the active execution profile for this workflow. Apply its three efficiency principles in order: evidence before implementation, minimal-context change budget, and automated verification before completion. Use the sequence `route -> ground current evidence -> make the smallest compatible change -> verify -> report warnings separately`.

@@ -6,7 +6,7 @@ tier: 2
 phase: design
 priority: HIGH
 model_hint: medium
-applies_to: ["claude", "claude-code", "luna-5.6-medium", "antigravity"]
+applies_to: ["claude", "claude-code", "gpt-6-luna", "antigravity"]
 authored_for: "shared cross-AI use"
 requires: ["../MOBILE_APP_DESIGN_RECIPE.md", "../0_apex/USER_DNA.md", "DESIGN_SOP.md", "../0_apex/SOVEREIGN_BLUEPRINT_PROTOCOL.md"]
 details: "HEADER_FOOTER_DESIGN_RULES_DETAILS.md"

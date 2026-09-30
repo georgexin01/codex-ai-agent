@@ -4,7 +4,7 @@ description: "Automatic lossless compression and routing protocol for oversized 
 triggers: ["ai knowledge compression", "ai compress knowledge", "large knowledge markdown", "knowledge size audit"]
 phase: governance
 model_hint: medium
-model_profile: luna-5.6-medium
+model_profile: gpt-6-luna-high
 version: 1.0
 status: authoritative
 read_before_write: true

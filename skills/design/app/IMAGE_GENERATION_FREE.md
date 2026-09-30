@@ -5,7 +5,7 @@ type: skill
 tier: 2
 phase: 02-asset-orchestration
 priority: HIGH
-applies_to: ["claude", "claude-code", "codex", "luna-5.6-medium"]
+applies_to: ["claude", "claude-code", "codex", "gpt-6-luna"]
 related:
   - "SKILL.md"
   - "02-asset-orchestration/skill.md"
@@ -183,7 +183,7 @@ Append to `BLUEPRINT.md` (project root):
 ## Reference implementation
 
 Mobile app generator pattern (TypeScript / Node):
-- *(No live mobile-app reference yet — first production run pending. Until then, mirror the PHP/website reference at [ecoworld/scripts/generate-images.php](../../../../Desktop/ecoworld/scripts/generate-images.php) and adapt to TS.)*
+- *(No live mobile-app reference yet — first production run pending. The historical PHP/website reference was `C:/Users/user/Desktop/ecoworld/scripts/generate-images.php`; that external project file is unavailable in this checkout. Adapt only after verifying it in the active project.)*
 
 ---
 

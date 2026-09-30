@@ -84,9 +84,9 @@ Use this as a starting map, then validate against the repository's workload:
 | Existing role | Starting target | Reason |
 | --- | --- | --- |
 | GPT-5.6 Sol or an earlier flagship | `gpt-6-astra` | Astra is the flagship-equivalent tier. |
-| Balanced quality, latency, and cost | `gpt-5.6-terra` | Terra is the balanced option. |
-| Faster or cheaper work, classification, extraction, routing, high-volume, or strict-latency route | `gpt-5.6-luna` | Luna is the primary speed and cost option. |
-| GPT-4.1 or GPT-4o latency-sensitive flow | Start with Luna; evaluate Terra or Astra if quality requires it | A flagship replacement can change latency and cost materially. |
+| Balanced quality, latency, and cost | Compare `gpt-6-sol` and `gpt-6-luna` against the workload | The GPT-6 catalog does not list a Terra model; verify latency and cost in current docs. |
+| Faster or cheaper work, classification, extraction, routing, high-volume, or strict-latency route | `gpt-6-luna` | Luna is the efficient GPT-6 option for focused, repeatable work. |
+| GPT-4.1 or GPT-4o latency-sensitive flow | Start with Luna; evaluate Sol or Astra if quality requires it | A flagship replacement can change latency and cost materially. |
 | Reasoning-heavy or hardest quality-first flow | Start with Astra at the old effective effort | Preserve the reasoning contract before tuning. |
 | Router, fallback, or model picker | Add the family by role | Do not collapse a multi-model design into Astra. |
 | Third-party or provider-specific model | Leave unchanged unless the user explicitly requests provider migration | Model-name similarity is not a safe mapping. |
@@ -99,7 +99,7 @@ Important limits to check in live docs:
 
 Do not invent prices, limits, or capability flags. Fetch them from current docs before updating a registry or UI.
 
-For model pickers and registries, preserve existing model entries by default. Add GPT-6 Astra and retain the existing Terra and Luna options unless the user explicitly asks to replace or remove them. Do not invent pricing, context limits, capabilities, or metadata unless confirmed from canonical docs.
+For model pickers and registries, preserve existing entries by default. Add GPT-6 Astra, Sol, and Luna as separate role-appropriate options; retire GPT-5.6 options only when the user requests replacement. Do not invent pricing, context limits, capabilities, or metadata unless confirmed from canonical docs.
 
 If using the `gpt-6` alias, record the returned `response.model` during validation. Do not assume an alias and an explicit Astra slug appear identically in dashboards, rate-limit configuration, analytics, or billing metadata.
 

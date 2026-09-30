@@ -1,8 +1,8 @@
 ﻿{
-    "generated_utc":  "2026-08-20T06:55:56.3292192Z",
+    "generated_utc":  "2026-09-30T02:57:16.1224639Z",
     "source_root":  "C:\\Users\\user\\.codex",
     "read_mode":  "compact route metadata only; full catalog and Markdown bodies remain lazy",
-    "file_count":  10,
+    "file_count":  69,
     "fields":  [
                    "path",
                    "triggers",
@@ -15,9 +15,79 @@
                         "aliases":  null
                     },
                     {
+                        "path":  "codex-router/CODEX_ACCESS_PRIORITY_AUDIT.md",
+                        "triggers":  "- ai codex inventory",
+                        "aliases":  "- codex inventory"
+                    },
+                    {
                         "path":  "codex-router/IMAGE_GENERATION_ASSET_POLICY.md",
                         "triggers":  "[\"ai imagegen\", \"generate image\", \"generate images\", \"create image\", \"create images\", \"make an image\", \"make images\", \"AI image\", \"image generation\", \"image asset\"]",
                         "aliases":  "[\"gpt image 2\", \"gpt-image-2\", \"GPT 2.0 images\", \"responsive image asset\", \"fit image to card\", \"image size\", \"image for website\", \"image for mobile app\", \"transparent image\", \"transparent logo\", \"website image\", \"app image\", \"hero image\", \"banner image\", \"card image\", \"profile image\", \"gallery image\", \"ad image\"]"
+                    },
+                    {
+                        "path":  "memories/0_apex/FCMOTO_DATABASE_NAMING_GATE.md",
+                        "triggers":  "[\"ai read .codex knowledge\", \"fcmoto database naming\", \"fcmoto schema\", \"fcmoto supabase\", \"fcmoto initData\", \"camelCase database\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/0_apex/GROUND_KERNEL.md",
+                        "triggers":  "[\"ground kernel\", \"tier-0\", \"jit\", \"governance\", \"execution\", \"karpathy\", \"principles\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/0_apex/HYBRID_FORMAT_PROTOCOL.md",
+                        "triggers":  "[\"hybrid format\", \"format rules\", \"how to write skill\", \"how to write knowledge\", \"new skill\", \"new knowledge\", \"format protocol\", \"fast format routing\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/0_apex/VUE_PINIA_NAMING_REFERENCE.md",
+                        "triggers":  "[\"Vue naming\", \"Pinia naming\", \"store naming\", \"function naming\", \"API naming\", \"camelCase\", \"useStore\", \"PiniaStore Function Input\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/1_core/DNA_LOGIC.md",
+                        "triggers":  "[\"typescript\", \"ts\", \"pinia\", \"store\", \"state\", \"entity\", \"component\", \"quality\", \"logic\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/1_core/DNA_SPECIALTY.md",
+                        "triggers":  "[\"pwa\", \"offline\", \"service worker\", \"manifest\", \"i18n\", \"lang\", \"translate\", \"locale\", \"capacitor\", \"native bridge\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/1_core/IMAGE_SOURCING_FREE.md",
+                        "triggers":  "- \"generate images\"",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/1_core/INDUSTRIAL_INTERACTION_LIBRARY.md",
+                        "triggers":  "[\"industrial patterns\", \"ui patterns\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/1_core/MOBILE_POPUP_MODAL_SIDEBAR.md",
+                        "triggers":  "[\"mobile popup\", \"modal\", \"sidebar\", \"hamburger menu\", \"mobile-menu-toggle\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/1_core/PREMIUM_ORCHESTRATION_DNA.md",
+                        "triggers":  "[\"stitch\", \"nano banana\", \"premium design\", \"liquid glass\", \"kinetic typography\", \"v2.0\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/1_core/SOFTWARE_3_0_DNA.md",
+                        "triggers":  "[\"software 3.0\", \"vibe coding\", \"agentic engineering\", \"jagged intelligence\", \"understanding bottleneck\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/1_core/SOVEREIGN_UTILITIES.md",
+                        "triggers":  "[\"utils\", \"helpers\", \"reset\", \"pinia\", \"mock\", \"upload\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/1_core/UI_DNA_MASTER.md",
+                        "triggers":  "[\"ui\", \"design\", \"tailwind\", \"vue\", \"button\", \"input\", \"checkbox\", \"premium\"]",
+                        "aliases":  null
                     },
                     {
                         "path":  "memories/2_governance/artifacts/boot_connection_map.md",
@@ -35,8 +105,38 @@
                         "aliases":  null
                     },
                     {
+                        "path":  "memories/2_governance/artifacts/skill_path_router.md",
+                        "triggers":  "[\"skill path router\", \"skill_path_router\", \"ai read .codex skills\", \"which skill\", \"what skill\"]",
+                        "aliases":  null
+                    },
+                    {
                         "path":  "memories/2_governance/artifacts/trigger_intent_index.md",
                         "triggers":  "[\"ai trigger keywords\", \"ai intent map\", \"ai ui intent\", \"ai phrase frequency\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/artifacts/web-content-recall.md",
+                        "triggers":  "[\"write article\", \"generate article\", \"news article content\", \"blog post content\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/bridges/ai_studio_bridge.md",
+                        "triggers":  "[\"ai studio bridge\", \"ai_studio_bridge\", \"google studio vision\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/bridges/interactive_ui_bridge.md",
+                        "triggers":  "[\"interactive ui bridge\", \"interactive_ui_bridge\", \"interactive hyper\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/bridges/stitch_bridge.md",
+                        "triggers":  "[\"stitch bridge\", \"stitch_bridge\", \"google stitch logic\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/CODEX_IGNORE_PROTOCOL.md",
+                        "triggers":  "[\"codexignore\", \".codexignore\", \"ignore setting\", \"ai ignore\", \"codex ignore\"]",
                         "aliases":  null
                     },
                     {
@@ -45,8 +145,23 @@
                         "aliases":  null
                     },
                     {
+                        "path":  "memories/2_governance/DRIFT_GUARD_PROTOCOL.md",
+                        "triggers":  "[\"drift guard\", \"stay on task\", \"scope drift\", \"re-anchor\", \"off topic\", \"gone too far\", \"follow my instruction\", \"long task checkpoint\"]",
+                        "aliases":  null
+                    },
+                    {
                         "path":  "memories/2_governance/EVIDENCE_GATE_MATRIX.md",
                         "triggers":  "[\"ai evidence gate\", \"ai verification matrix\", \"what test should run\", \"verify before done\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/FAST_BATCH_WORKFLOW_PROTOCOL.md",
+                        "triggers":  "[\"ai fast batch workflow\", \"ai batch context\", \"ai task checkpoint\", \"long task checkpoint\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/FCMOTO_DATABASE_NAMING_CONTRACT.md",
+                        "triggers":  "[\"ai read .codex knowledge\", \"fcmoto database naming\", \"fcmoto schema\", \"fcmoto supabase\", \"fcmoto initData\", \"camelCase database\"]",
                         "aliases":  null
                     },
                     {
@@ -55,8 +170,188 @@
                         "aliases":  null
                     },
                     {
+                        "path":  "memories/2_governance/GITNEXUS.md",
+                        "triggers":  "[\"gitnexus\", \"knowledge graph\", \"blast radius\", \"impact analysis\", \"code structure\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/KNOWLEDGE_COMPRESSION_PROTOCOL.md",
+                        "triggers":  "[\"ai knowledge compression\", \"ai compress knowledge\", \"large knowledge markdown\", \"knowledge size audit\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/LAA_ECOSYSTEM_API_PROTOCOL.md",
+                        "triggers":  "# Concept",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/LOCALHOST_PHP_TEST_PROTOCOL.md",
+                        "triggers":  "[\"localhost\", \"php -S\", \"run php website\", \"test website locally\", \"ERR_CONNECTION_REFUSED\", \"local server\", \"8000\", \"8001\", \"8002\", \"8003\", \"run-local\", \"serve php\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/LUNA_5_6_REASONING_MODES.md",
+                        "triggers":  "- ai luna reasoning",
+                        "aliases":  "- luna reasoning modes"
+                    },
+                    {
+                        "path":  "memories/2_governance/MODEL_COST_OPTIMIZATION_POLICY.md",
+                        "triggers":  "[\"model cost\", \"token cost\", \"optimize model\", \"reasoning effort\", \"cache efficiency\", \"lean mode\", \"deep mode\", \"claude pricing\", \"codex pricing\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/MODULE_AUDIT_PROTOCOL.md",
+                        "triggers":  "[\"audit\", \"crud integrity\", \"module audit\"]",
+                        "aliases":  null
+                    },
+                    {
                         "path":  "memories/2_governance/OVERSIZED_SKILL_LOADING_PROTOCOL.md",
                         "triggers":  "[\"ai oversized skill\", \"ai skill loading\", \"large skill route\", \"skill context budget\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/SCREENSHOT_HYGIENE.md",
+                        "triggers":  "[\"screenshot hygiene\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/SOVEREIGN_AUTO_REPAIR_PROTOCOL.md",
+                        "triggers":  "[\"error\", \"bug\", \"build fail\", \"tailwind v4\", \"postcss\", \"initialization\", \"white screen\", \"localhost\", \"php server\", \"blank page\", \"port conflict\", \"already allocated\", \"supabase stop\", \"project-id\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/2_governance/VBEN_ADMIN_LOCAL_DEV_PROTOCOL.md",
+                        "triggers":  "[\"pnpm dev\", \"pnpm run dev:local\", \"dev:local\", \"dev:vps\", \"vben dev\", \"admin panel local\", \"vite dev\", \"localhost 6006\", \"run admin panel\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/3_domains/claude/LAA_PROJECT_SNAPSHOT.md",
+                        "triggers":  "[\"project snapshot\", \"laa snapshot\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/CLAUDE_BLUEPRINT_RECIPE.md",
+                        "triggers":  "- \"redesign app blueprint\"",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/extensions/ad_hoc/notes/2026-07-01T18-19-47-project-knowledge-template.md",
+                        "triggers":  "- ai project knowledge template",
+                        "aliases":  "- knowledge template"
+                    },
+                    {
+                        "path":  "memories/extensions/ad_hoc/notes/2026-07-01T18-27-54-hybrid-metadata-router.md",
+                        "triggers":  "- ai hybrid metadata router",
+                        "aliases":  "- metadata router"
+                    },
+                    {
+                        "path":  "memories/extensions/ad_hoc/notes/2026-07-07T00-00-00-cold-storage-promotion-policy.md",
+                        "triggers":  "- ai cold storage audit",
+                        "aliases":  "- cold storage audit"
+                    },
+                    {
+                        "path":  "memories/extensions/ad_hoc/notes/2026-07-10-gpt-5-6-luna-operating-playbook.md",
+                        "triggers":  "[\"__auto_after_codex_boot__\", \"__luna_context__\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/extensions/ad_hoc/notes/2026-07-10-localhost-test-trigger.md",
+                        "triggers":  "[\"localhost test\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/extensions/ad_hoc/notes/2026-07-10-luna-5-6-vue-vben-execution-profile.md",
+                        "triggers":  "[\"ai gpt-6 luna vue vben\", \"ai luna vue vben\", \"Vue 3 Vben rules\", \"strict Vben form rules\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/extensions/ad_hoc/notes/2026-07-10-pinia-store-contract-reference.md",
+                        "triggers":  "[\"PiniaStore Function Input\", \"useOrderStore\", \"Pinia contract\", \"Google Sheet Pinia\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/extensions/ad_hoc/notes/2026-07-14-pinia-contract-absolute-gate.md",
+                        "triggers":  "[\"absolute Pinia rules\", \"forced Pinia contract\", \"recheck Pinia\", \"exact function input name\", \"Google Sheet contract gate\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/extensions/ad_hoc/notes/2026-07-14-pinia-hotpot-contract-upgrade.md",
+                        "triggers":  "[\"PiniaStore Function Input\", \"Hotpot Pinia style\", \"admin-panel-hotpot\", \"Trash Pinia migration\", \"OrderUpdateInput\", \"DriverTaskUpdateInput\", \"getAllBinWIthOrder\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/extensions/ad_hoc/notes/2026-07-14-trash-dual-app-operating-rules.md",
+                        "triggers":  "[\"trash-container-app\", \"web-driver-app\", \"web-admin-app\", \"order timeline\", \"driver task workflow\", \"admin order modal\", \"bin label\", \"customer debt\", \"localhost test\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/extensions/ad_hoc/notes/2026-07-16T00-00-00-mandatory-task-action-status-table.md",
+                        "triggers":  "[\"task action status\", \"status table\", \"completion table\", \"show the table\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/extensions/ad_hoc/notes/2026-07-16T00-30-00-detailed-chat-table-metrics.md",
+                        "triggers":  "[\"detailed tables\", \"more info in tables\", \"improvement %\", \"token cost\", \"intelligence rating\", \"chat flow rating\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/extensions/ad_hoc/notes/2026-07-17-seo-ai-search-discoverability.md",
+                        "triggers":  "[\"SEO\", \"AI search\", \"Google AI Overview\", \"ChatGPT Search\", \"Gemini search\", \"robots.txt\", \"sitemap\", \"JSON-LD\", \"structured data\", \"citation-ready content\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/extensions/ad_hoc/notes/2026-07-20-seo-ai-metadata-auto-checklist.md",
+                        "triggers":  "- website SEO",
+                        "aliases":  "- SEO metadata checklist"
+                    },
+                    {
+                        "path":  "memories/extensions/ad_hoc/notes/2026-07-22-vipbillion-metadata-title-location-preference.md",
+                        "triggers":  "- VIPBillion meta title",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/extensions/ad_hoc/notes/2026-07-28-genieskinbeauty-template-boundary.md",
+                        "triggers":  "[\"genieskinbeauty\", \"Genie Skin Beauty\", \"download-template\", \"VIPBillion reference\", \"website-genieskinbeauty\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/extensions/ad_hoc/notes/2026-08-06T18-09-44-html-to-php-website-workflow.md",
+                        "triggers":  "[\"HTML to PHP\", \"PHP website migration\", \"replica website PHP\", \"shared PHP includes\", \"extensionless PHP routes\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/extensions/ad_hoc/notes/2026-08-07T00-00-00-lazyload-data-src-rule.md",
+                        "triggers":  "[\"lazyload\", \"lazy load\", \"lazy-loading\", \"data-src\", \"image lazy loading\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/extensions/ad_hoc/notes/2026-08-14T00-00-00-global-ai-image-size-policy.md",
+                        "triggers":  "[generate image, AI image, image generation, image asset, image size]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/extensions/ad_hoc/notes/2026-08-26-product-development-operating-model.md",
+                        "triggers":  "[\"product strategy\", \"app architecture\", \"customer value\", \"UX planning\", \"metadata\", \"SEO content\", \"AI research\", \"AI search visibility\", \"keyword research\", \"AI article generation\", \"MVP prioritization\", \"meta update\", \"meta seo\", \"news information generate\", \"ai news generate\", \"ai news articles generate\", \"ai search result\", \"ai google research\", \"google research\", \"bing research\", \"gemini research\", \"chatgpt search\", \"search result optimization\", \"local seo research\", \"geo research\", \"keyword catch\", \"content gap research\", \"search visibility audit\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/MOBILE_APP_DESIGN_RECIPE.md",
+                        "triggers":  "- \"build me a mobile app\"",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/project_notes/KUSHIRO_ROOT_DOCS_ROUTER.md",
+                        "triggers":  "[\"kushiro\", \"kushirobbq\", \"kushiro root docs\", \"kushiro project\", \"kushiro status\", \"kushiro database\", \"kushiro crosswalk\"]",
+                        "aliases":  null
+                    },
+                    {
+                        "path":  "memories/project_notes/META_CONTENT_WORKFLOW.md",
+                        "triggers":  "[metaTitle update, meta title update, update meta content, SEO meta audit, update meta skills, use meta skills, update website metadata, full metadata audit, apply metadata pack]",
+                        "aliases":  "[metaTitle, meta title, meta content, SEO metadata, public page metadata, website metadata pack]"
+                    },
+                    {
+                        "path":  "memories/project_notes/VBEN_RELATION_AUTOGUARD_PLAYBOOK.md",
+                        "triggers":  "[\"vben relation autoguard\", \"auto detect relation issue\", \"parent child auto fix\", \"typed delete relation\"]",
                         "aliases":  null
                     }
                 ]

@@ -13,39 +13,47 @@
                       "path":  "skills"
                   }
               ],
-    "indexed_files":  240,
+    "indexed_files":  274,
     "entries":  [
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "0_apex\\FCMOTO_DATABASE_NAMING_GATE.md",
+                        "relative_id":  "memories/0_apex/FCMOTO_DATABASE_NAMING_GATE.md",
+                        "size":  1180,
+                        "sha256":  "55FAA7926B726608EB627BF4F2B2165122A61ED9641DE67259ADE01264D0A34D"
+                    },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "0_apex\\GROUND_KERNEL.md",
                         "relative_id":  "memories/0_apex/GROUND_KERNEL.md",
-                        "size":  19097,
-                        "sha256":  "D47B2F4CD7F55B721DBF8CC3717E2817F2D356853EA4C4B90C512EF1B01626AD"
+                        "size":  19239,
+                        "sha256":  "611FED2431A62C6AD2DBAE1E09F55CCD691A6E495C86B341B9BB40F71D3F3088"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "0_apex\\HYBRID_FORMAT_PROTOCOL.md",
                         "relative_id":  "memories/0_apex/HYBRID_FORMAT_PROTOCOL.md",
-                        "size":  11325,
-                        "sha256":  "47C431E3E82EDC120FF3F3B42A2242B8F8FC443FA304E73D3E7DB2B30C6E87DC"
+                        "size":  11393,
+                        "sha256":  "20F9B41725AA9760445571F5B49F2297B9045AE73B527A59AEB07699DBB892E7"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "0_apex\\KARPATHY_TIER0_PRINCIPLES.md",
                         "relative_id":  "memories/0_apex/KARPATHY_TIER0_PRINCIPLES.md",
-                        "size":  3352,
-                        "sha256":  "B7E181D5E76CDD0E519173151886CBCBA5D98560A1FA4086D94FBB3F13677F37"
+                        "size":  3435,
+                        "sha256":  "9C9045BFBA72076764895EAAD050729FD97A6D0D8AEF77EA0B0048157B2BFEB9"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "0_apex\\SOVEREIGN_BLUEPRINT_PROTOCOL.md",
                         "relative_id":  "memories/0_apex/SOVEREIGN_BLUEPRINT_PROTOCOL.md",
-                        "size":  7578,
-                        "sha256":  "68265FF21178C52A76D5AFE5D188F24E9E157D337F6345AEB608AECC1373A901"
+                        "size":  7573,
+                        "sha256":  "AE2D572E55751650F6F4710984FE93DEC57472DC35AC697464F8A93543588577"
                     },
                     {
                         "kind":  "knowledge",
@@ -60,16 +68,16 @@
                         "root_relative":  "memories",
                         "relative_path":  "0_apex\\templates\\MASTER_APP_BLUEPRINT.md",
                         "relative_id":  "memories/0_apex/templates/MASTER_APP_BLUEPRINT.md",
-                        "size":  2776,
-                        "sha256":  "7F842E167D9B3F09750A7F7DC06DC5E49B5415CB0F4C09E579CF975BF0DD2846"
+                        "size":  2841,
+                        "sha256":  "7FA35EEDFF421A82C104EFE86DA604227D08020A7DE23C5207155EF992D7BF11"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "0_apex\\templates\\MASTER_BLUEPRINT.md",
                         "relative_id":  "memories/0_apex/templates/MASTER_BLUEPRINT.md",
-                        "size":  5475,
-                        "sha256":  "F100756FCBC5121BE0AD85D749633A330DAF55BA24C55908EFB7EA0931603163"
+                        "size":  5619,
+                        "sha256":  "9B1181F021209A4D374FF96646725775EB63A882C89E932765401C3CE15850EF"
                     },
                     {
                         "kind":  "knowledge",
@@ -84,32 +92,32 @@
                         "root_relative":  "memories",
                         "relative_path":  "0_apex\\templates\\MASTER_ROUTER_BLUEPRINT.md",
                         "relative_id":  "memories/0_apex/templates/MASTER_ROUTER_BLUEPRINT.md",
-                        "size":  2953,
-                        "sha256":  "7B6BDA949C30DC830EF11B637D5FABF4AE00C45AB8570DD488ED4A043ABB6D18"
+                        "size":  3034,
+                        "sha256":  "46487EB34D1477491FF8ED8846539B3479212850151D848B6DE9B718A1B8578B"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "0_apex\\USER_DNA.md",
                         "relative_id":  "memories/0_apex/USER_DNA.md",
-                        "size":  4661,
-                        "sha256":  "E8EEAE91232F99D671A1877033A5723C26FAA1EA28EC5035FAD002D4D960821C"
+                        "size":  4708,
+                        "sha256":  "A3A54EEDEA3AA8EDC71B0EC321BBD1827C9582AE667AF1E5A14D19C7E85425F0"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "0_apex\\VUE_PINIA_NAMING_REFERENCE.md",
                         "relative_id":  "memories/0_apex/VUE_PINIA_NAMING_REFERENCE.md",
-                        "size":  22016,
-                        "sha256":  "750712B24BAF207044DEC49D3120F19C0D85C9E7705645725F0CB441E1F908BE"
+                        "size":  22479,
+                        "sha256":  "6D9EC00E0E6E39148E71DF4915F029695EC71DCBFB2AAEB2FF1BE9D58CDF78B0"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "1_core\\C_UNIT_COMPOSITION.md",
                         "relative_id":  "memories/1_core/C_UNIT_COMPOSITION.md",
-                        "size":  2441,
-                        "sha256":  "94AE2C39E94A6F18502991C18E8900B12F5C568BF98CC8C38172312AF99B1A42"
+                        "size":  2523,
+                        "sha256":  "B612CE9367AE139D659527F0ACA557097A1DA1012769AB6B2CE24B53426D5734"
                     },
                     {
                         "kind":  "knowledge",
@@ -124,32 +132,32 @@
                         "root_relative":  "memories",
                         "relative_path":  "1_core\\DESIGN_SOP.md",
                         "relative_id":  "memories/1_core/DESIGN_SOP.md",
-                        "size":  4393,
-                        "sha256":  "5A8494D718BDE72E8EEB6ED2E57C4850AD5CCC140433C365E2B17C09734B0F25"
+                        "size":  4457,
+                        "sha256":  "01EB36E459D56E61EBD8D19ED79299B25F71FAB8F262C022FB23C7312E246C34"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "1_core\\DNA_LOGIC.md",
                         "relative_id":  "memories/1_core/DNA_LOGIC.md",
-                        "size":  3607,
-                        "sha256":  "8A7EC226882E33A9B430A2074A2F0632012ED22AD27A441CF3E2890CE10512DE"
+                        "size":  3732,
+                        "sha256":  "FCA35840670BF919AF66AF77700F67F4E10240943F45359C5960EC5614BD9C3F"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "1_core\\DNA_SPECIALTY.md",
                         "relative_id":  "memories/1_core/DNA_SPECIALTY.md",
-                        "size":  5668,
-                        "sha256":  "85572661AA66EB709501BA94BAB9ABFBB0C885441B5F10D66BBEC6886B62EBAE"
+                        "size":  5741,
+                        "sha256":  "EF2995F6460FCF52E4C9CEB528872BF47F15CDF157502F2130F3C8E845907021"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "1_core\\HEADER_FOOTER_DESIGN_RULES.md",
                         "relative_id":  "memories/1_core/HEADER_FOOTER_DESIGN_RULES.md",
-                        "size":  2247,
-                        "sha256":  "CC5A77CDB2A842F22725CD7AA7DDF0C5F3B14710DD2B67D207C4A891C92AE38A"
+                        "size":  2289,
+                        "sha256":  "0315205850DBAA30402BD48E18AE14F809B8581FF3094CA0B779F51A36DB7A7F"
                     },
                     {
                         "kind":  "knowledge",
@@ -164,8 +172,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "1_core\\IMAGE_SOURCING_FREE.md",
                         "relative_id":  "memories/1_core/IMAGE_SOURCING_FREE.md",
-                        "size":  13264,
-                        "sha256":  "06EB4FE5EB3AB250A450FCD973540347801E79D119EF63D5349D90B44C3C3D48"
+                        "size":  13515,
+                        "sha256":  "D02B95679534A07E8B4B89F56A581DD076578F29AEAF95B279E4D48F3657D0B6"
                     },
                     {
                         "kind":  "knowledge",
@@ -188,8 +196,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "1_core\\MOBILE_POPUP_MODAL_SIDEBAR.md",
                         "relative_id":  "memories/1_core/MOBILE_POPUP_MODAL_SIDEBAR.md",
-                        "size":  12184,
-                        "sha256":  "96AAB8CAC5A325C9AA2AE90C17109278294278F90A41DF5A346E837E0CE19745"
+                        "size":  12497,
+                        "sha256":  "FCFDAC8146F5DBCC5161390FD6A76C59FFA1C1E99368DADCAE442AF8818A27B0"
                     },
                     {
                         "kind":  "knowledge",
@@ -242,98 +250,178 @@
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
+                        "relative_path":  "2_governance\\artifacts\\boot_connection_map.md",
+                        "relative_id":  "memories/2_governance/artifacts/boot_connection_map.md",
+                        "size":  6835,
+                        "sha256":  "1EF380CFCA79FDD5F00095311C1F6C68BD312E3C69EF5F3A105A3D31F1395453"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "2_governance\\artifacts\\intent_action_contracts.md",
+                        "relative_id":  "memories/2_governance/artifacts/intent_action_contracts.md",
+                        "size":  4811,
+                        "sha256":  "C2D57E86D36BCDE18A16690B4E10E39B0756A505471D04F58412933AC423B37F"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "2_governance\\artifacts\\knowledge_relation_router.md",
+                        "relative_id":  "memories/2_governance/artifacts/knowledge_relation_router.md",
+                        "size":  8419,
+                        "sha256":  "5780683CF144FC2FAF7DE116EAF92D73B91D1DA407673BCD1243E0248CA39775"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
                         "relative_path":  "2_governance\\artifacts\\skill_path_router.md",
                         "relative_id":  "memories/2_governance/artifacts/skill_path_router.md",
-                        "size":  13406,
-                        "sha256":  "F599BC0461146ADAE22B0D84740A01D4EDDF837F6257DCC7D3D2013314814A19"
+                        "size":  13835,
+                        "sha256":  "083CDE06B3AC8DE3CB1C2B96D53A6570CA98D6B98FB174429F99EBB6EF8FF09D"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "2_governance\\artifacts\\trigger_intent_index.md",
+                        "relative_id":  "memories/2_governance/artifacts/trigger_intent_index.md",
+                        "size":  15988,
+                        "sha256":  "94BD2032F794DC7FD8260488DCA1CBDDC7F6AC74F71FD5A970E9AE8563036F0C"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "2_governance\\artifacts\\web-content-recall.md",
+                        "relative_id":  "memories/2_governance/artifacts/web-content-recall.md",
+                        "size":  2285,
+                        "sha256":  "6BDB0793951E1A921A2B65183957FCC7C4357E4333F197EDF6B023CC9D3AE14F"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\BILINGUAL_GATE_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/BILINGUAL_GATE_PROTOCOL.md",
-                        "size":  1913,
-                        "sha256":  "9AF8FD6DC430E27EF542BF9F1279AADCF006F3D1F19D343324DA87305E3041BB"
+                        "size":  1984,
+                        "sha256":  "A62FB2236BD34735993A3D5C8E33833D849D0FB01A8F277D3EBB6C44CBAED8FD"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\CODEX_IGNORE_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/CODEX_IGNORE_PROTOCOL.md",
-                        "size":  3235,
-                        "sha256":  "028594EA81744C4CE18D9A053941F12686A5C23302898AAE9801B2E842035DA2"
+                        "size":  3338,
+                        "sha256":  "EDF6F8D7A3B03D8B8032B2D566D50C158BDBA8B44CB1110C25E292B76F07615C"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "2_governance\\COMPARISON_REPORTING_PROTOCOL.md",
+                        "relative_id":  "memories/2_governance/COMPARISON_REPORTING_PROTOCOL.md",
+                        "size":  5330,
+                        "sha256":  "AFB03484BCBFBDB845515BBC64D89F789BE719FE6ABE2AD670FEA101CD89A738"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\CONFIDENCE_DECLARATION_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/CONFIDENCE_DECLARATION_PROTOCOL.md",
-                        "size":  2043,
-                        "sha256":  "3835E08B62194FD10B14696C913C34761856916A1787D38BA40C3EA1E06747CB"
+                        "size":  2112,
+                        "sha256":  "D378E5C6A01C702F7904C4E414483D52B1B313A0DDCB8DAB3E3D48044A26CF75"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\CONSTRAINT_FIRST_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/CONSTRAINT_FIRST_PROTOCOL.md",
-                        "size":  1734,
-                        "sha256":  "B5BB29D8B35A16AB05D716FB7DCAD8D771FE205C8A8A43C1784BEF1BA1544CC7"
+                        "size":  1795,
+                        "sha256":  "1E51D4D6EE3ED218CD8D8BCEB1AB7A26AFACD5DD643664241F34B3763F55CF6F"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\CONTRACT_FIRST_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/CONTRACT_FIRST_PROTOCOL.md",
-                        "size":  1919,
-                        "sha256":  "E45C2D9335028365CF7E2CFD94DC058108DE2AC3D9E6C9E1E3E72225ADDD5938"
+                        "size":  1988,
+                        "sha256":  "0BCBFD8730BB9467278D6CD97919328FCF5F8C32D1D0985FF93E7A1D9F6787D7"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\CROSS_SKILL_RIPPLE_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/CROSS_SKILL_RIPPLE_PROTOCOL.md",
-                        "size":  1926,
-                        "sha256":  "6AA08995380A5E3B81386C599538DA8646CF803F023510A7A9E386E0491AB883"
+                        "size":  1992,
+                        "sha256":  "1C02CD67E9996E17F7536B46A026178AB55C1B23E5BABA7C43694906D7520B4D"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\DRIFT_GUARD_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/DRIFT_GUARD_PROTOCOL.md",
-                        "size":  4184,
-                        "sha256":  "82E5E7F507735D7FA707C8BE24A364D4BCFC164F64DF12A8B52D1B40C22CBF34"
+                        "size":  4268,
+                        "sha256":  "B4EF1071481C020426783C9ACA30CF346C4553E83E895C69BF7D50C3F16D3A6E"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "2_governance\\EVIDENCE_GATE_MATRIX.md",
+                        "relative_id":  "memories/2_governance/EVIDENCE_GATE_MATRIX.md",
+                        "size":  1908,
+                        "sha256":  "A69159D1BF1C7BBB7EF2455829AF41ED12B1ABF93162E07B31B61D81D5EB9C13"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "2_governance\\FAST_BATCH_WORKFLOW_PROTOCOL.md",
+                        "relative_id":  "memories/2_governance/FAST_BATCH_WORKFLOW_PROTOCOL.md",
+                        "size":  3567,
+                        "sha256":  "E5583C2E4E17D69A7CE750EFB0D83DDA13C0038BC52B8986C1700DEFD4C9F084"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "2_governance\\FCMOTO_DATABASE_NAMING_CONTRACT.md",
+                        "relative_id":  "memories/2_governance/FCMOTO_DATABASE_NAMING_CONTRACT.md",
+                        "size":  4173,
+                        "sha256":  "48BE62097F5C29F14D9075881EF89BA96EA8A91868578BA1029C653A592C674C"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "2_governance\\FRONTMATTER_MAINTENANCE_PROTOCOL.md",
+                        "relative_id":  "memories/2_governance/FRONTMATTER_MAINTENANCE_PROTOCOL.md",
+                        "size":  4065,
+                        "sha256":  "CE1042870A221F865DB7AFBAFBF46E14596A0DA0008DF9958E6AAF3564DC35C1"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\GITNEXUS.md",
                         "relative_id":  "memories/2_governance/GITNEXUS.md",
-                        "size":  7122,
-                        "sha256":  "B593195BC02AAE405872B539D5D4599CB094B0896B28859B83B98B505A72E931"
+                        "size":  7219,
+                        "sha256":  "AD6B0B32783271F5E9D0DCFA1C3906A46EF5230AE09F10AC990E8BDAA56BD0B5"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\KNOWLEDGE_COMPRESSION_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/KNOWLEDGE_COMPRESSION_PROTOCOL.md",
-                        "size":  4414,
-                        "sha256":  "57F1AFD938D325F617E6C48539E3944E7C2A1AE03F267E2DC6D1FFE7EB5A0A8A"
+                        "size":  4480,
+                        "sha256":  "B4FCF62C890B4BF66FE64BDEEF61538AE712F89A487DC330A059188BE376FED0"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\KNOWLEDGE_ROT_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/KNOWLEDGE_ROT_PROTOCOL.md",
-                        "size":  4810,
-                        "sha256":  "0BCF68CA4C2408CE5449024A59A7940477071997F647E5468417143C1F7A9B35"
+                        "size":  4348,
+                        "sha256":  "AEACB10A18E9F1726802A2C8F0170E21925AC1679A53BC97244DA06EBF505010"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\LAA_ECOSYSTEM_API_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/LAA_ECOSYSTEM_API_PROTOCOL.md",
-                        "size":  8067,
-                        "sha256":  "186BC9396EDFB71DFBB60EF6C4E661C1D4C9EFDFB07C10B5947DA3EE634D5F19"
+                        "size":  8236,
+                        "sha256":  "A4A099098061A7AF15F2991333A5827386F60E27BE80D6A1E5B6B05B7AFD2DA9"
                     },
                     {
                         "kind":  "knowledge",
@@ -348,88 +436,96 @@
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\LOCALHOST_PHP_TEST_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/LOCALHOST_PHP_TEST_PROTOCOL.md",
-                        "size":  3956,
-                        "sha256":  "542ED6B56B895A4069742A6012BFAEEE4A54B29296FD60F5A1E2B11F60802BCF"
+                        "size":  4030,
+                        "sha256":  "BFEBB44C04F76FF844921C336F37DA9DF244A4D5B3418210EBEC41A196CD2983"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\LUNA_5_6_REASONING_MODES.md",
                         "relative_id":  "memories/2_governance/LUNA_5_6_REASONING_MODES.md",
-                        "size":  2595,
-                        "sha256":  "A3FB5E19DA0D070AFDE7B58880145681D4EB2FBB3054223D3F88D0F248ABB85C"
+                        "size":  2835,
+                        "sha256":  "CD92A4BDEF571DE20E29C9F8B844FF110C829DCE494BAF2E280F9606AF01DBAD"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\MODEL_COST_OPTIMIZATION_POLICY.md",
                         "relative_id":  "memories/2_governance/MODEL_COST_OPTIMIZATION_POLICY.md",
-                        "size":  8157,
-                        "sha256":  "831041BBDAE7C53C2117720DAECFE0B60F94B0E8F227240F69F897AD677A4000"
+                        "size":  8354,
+                        "sha256":  "D495E821AEA836566144397BCA2527BA03738CE1A5CF13D00C4E7BAB987D3C44"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\MODULE_AUDIT_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/MODULE_AUDIT_PROTOCOL.md",
-                        "size":  3666,
-                        "sha256":  "84B323EF1551270036909A17B7C7294CF36660AB582F8F1C46070A9CDC2C44E5"
+                        "size":  3725,
+                        "sha256":  "BC20B914FF0D7549402CA05BC1C95A3A23B92AC607CD932CFF142B6237583E76"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "2_governance\\OVERSIZED_SKILL_LOADING_PROTOCOL.md",
+                        "relative_id":  "memories/2_governance/OVERSIZED_SKILL_LOADING_PROTOCOL.md",
+                        "size":  1959,
+                        "sha256":  "FE462857897E696A6916491D2FBC75537BE4017F2D99FCAC74D15110105243CB"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\PREFLIGHT_CHECKLIST.md",
                         "relative_id":  "memories/2_governance/PREFLIGHT_CHECKLIST.md",
-                        "size":  1151,
-                        "sha256":  "7E6413E0E64923C00ED5E0BA7FBE358C821CD387700E6B1998A8220D711F2353"
+                        "size":  1180,
+                        "sha256":  "2237150251D0D5E963F37A0F8FB1AF950F57B26AB923E5CB8F296552C43F9A4F"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\READ_BEFORE_ANSWER_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/READ_BEFORE_ANSWER_PROTOCOL.md",
-                        "size":  1430,
-                        "sha256":  "B5B9856D0FCB9CBB38CCE19363B04D01E423F657F970A0AED378F0A04B4F31DA"
+                        "size":  1480,
+                        "sha256":  "EBFC115BE9023B145A55184730EC5E475453B5CAE513F594599243DD10C285AB"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\SCAN_BEFORE_WRITE_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/SCAN_BEFORE_WRITE_PROTOCOL.md",
-                        "size":  1560,
-                        "sha256":  "D7CA6C7C3DEC662014A30FB2E0753D3A4EDAFE343B0B5703F449076A600C046C"
+                        "size":  1608,
+                        "sha256":  "806DFB70103756CE75D24F23560D89056C34D54F99103581CFE35B00EAA95AC8"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\SCREENSHOT_HYGIENE.md",
                         "relative_id":  "memories/2_governance/SCREENSHOT_HYGIENE.md",
-                        "size":  1413,
-                        "sha256":  "E6C4234779ED954E8209AF21A970585589F758990192D71F9FC7F8FBEBCDB3BE"
+                        "size":  1436,
+                        "sha256":  "2C557470FE330A6153D98007D13409594EB939AE746CA5AB689B6FA838E46A69"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\SESSION_START_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/SESSION_START_PROTOCOL.md",
-                        "size":  1728,
-                        "sha256":  "975AF91626D12C518724A980F3C0555FE3DF4E4402103F4FE24005AFB95F582E"
+                        "size":  1793,
+                        "sha256":  "3C58209946B6447B32C2DB49618CAC8A9736573BFB21BC2D9D8C870EF432C00E"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\SINGLE_TRUTH_SOURCE_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/SINGLE_TRUTH_SOURCE_PROTOCOL.md",
-                        "size":  1412,
-                        "sha256":  "782B6FD3F995F6D0A396E96612B18E98FE9E472333C65885A20DDFA5F0925197"
+                        "size":  1459,
+                        "sha256":  "7387A69BB3FD881AD2ED0F1E7162AFD583962D2C0195565CF2FDF3F1A7093A63"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\SOVEREIGN_AUTO_REPAIR_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/SOVEREIGN_AUTO_REPAIR_PROTOCOL.md",
-                        "size":  5948,
-                        "sha256":  "7074AF74A04AB27795C7D26526DA9D0A00BCC4D7DA66679CC7B13217A6B98020"
+                        "size":  6033,
+                        "sha256":  "9D170B27E233CF340E17E72A257548382CCEEC30F0594964ADDB2E296FF1C056"
                     },
                     {
                         "kind":  "knowledge",
@@ -444,352 +540,424 @@
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\TASK_POSITION_ANCHOR_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/TASK_POSITION_ANCHOR_PROTOCOL.md",
-                        "size":  1688,
-                        "sha256":  "39EE00F8D7141A4BC2A6B065FC51E6572A84E1D7FDD0670C526B7FF58B76E1FD"
+                        "size":  1756,
+                        "sha256":  "0E8CB3E5C3FDDFF4A5864B9EDFE6A6DE2B68E1E842B7E2870C7607A223FBB2CF"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\VBEN_ADMIN_LOCAL_DEV_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/VBEN_ADMIN_LOCAL_DEV_PROTOCOL.md",
-                        "size":  3049,
-                        "sha256":  "34F98E8CDF1E44D6FC49D0A18EF8E337BAE5377C3957F03A72D637474F5DC9EF"
+                        "size":  3107,
+                        "sha256":  "24027E60CCEA393CB12F76881E1D2BDAD0900E3C6869BB44791F89766FEED364"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "3_domains\\claude\\LAA_PROJECT_SNAPSHOT.md",
                         "relative_id":  "memories/3_domains/claude/LAA_PROJECT_SNAPSHOT.md",
-                        "size":  1528,
-                        "sha256":  "BD6E88DF93F9D7C31283353ED097BB9BD656FBDF4E16D5E1A9ADAAF77AFBC6DF"
+                        "size":  1568,
+                        "sha256":  "CA4BB9955116C0CFD8BBD94F94A759BF1F8336F916DFAF669AF91735DEA7898A"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "CLAUDE_BLUEPRINT_RECIPE.md",
                         "relative_id":  "memories/CLAUDE_BLUEPRINT_RECIPE.md",
-                        "size":  18257,
-                        "sha256":  "7DC9EB86248D13FCBBD94BBFA7D72ECA52FAE9C2961D4605499F4064831592E8"
+                        "size":  18604,
+                        "sha256":  "2D856F2E05FBA76EF8D504B869D792A76D919843BB36B85B34233C3172B6573F"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "IMAGE_TO_MOBILE_APP_PIPELINE.md",
                         "relative_id":  "memories/IMAGE_TO_MOBILE_APP_PIPELINE.md",
-                        "size":  3093,
-                        "sha256":  "B07182B30FD7BCA0DD6ADD8D9685DED22D2B16ECF133C1E09D7CC861540E70B8"
+                        "size":  3156,
+                        "sha256":  "BB2B50341917F6385680155C3E8C3617D54B9563A806DC96D6CBAFB69AE53863"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "MEMORY.md",
                         "relative_id":  "memories/MEMORY.md",
-                        "size":  34134,
-                        "sha256":  "E5E9A89936F942C346C088F682F0BD1D1BD3BF247CF5748CA0FCA5EC0C4516D1"
+                        "size":  26049,
+                        "sha256":  "A4F76468A3449C9F1BEBA8FB200F3F4011431F9D9482480B1EC30A7D76560E99"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "memory_summary.md",
                         "relative_id":  "memories/memory_summary.md",
-                        "size":  6980,
-                        "sha256":  "B95F8C4D04AB8421723BD1CE294FF567AE16DFAB939A1439ADBBBAAFD4F1AF2A"
+                        "size":  5776,
+                        "sha256":  "4AEA5947B4604C566995E4E8DC9A886560100A45EA276883E9CEF8C516C52835"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "MOBILE_APP_DESIGN_RECIPE.md",
                         "relative_id":  "memories/MOBILE_APP_DESIGN_RECIPE.md",
-                        "size":  3836,
-                        "sha256":  "8C2F68F5F93D9C36F7FDB90B267E1FB26852B22545897AAA3E768932EE4B8503"
+                        "size":  3909,
+                        "sha256":  "6626AD337DAABAEFCBEDD7895C61D6126823870250006F9E765D738D4803A23E"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "project_notes\\ANGEL_INTERIOR_LOCAL_DEV.md",
                         "relative_id":  "memories/project_notes/ANGEL_INTERIOR_LOCAL_DEV.md",
-                        "size":  2059,
-                        "sha256":  "E6D12B0FA06F8F8A307FDE812F87C2175D6DEE77B1F7962380D56BD606B08645"
+                        "size":  2117,
+                        "sha256":  "AA09FA80004788754832EE0231A9806CBA3206EFDC075361D4D07DC76B9EBBB9"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "project_notes\\ECOWORLD_APP_IMPROVEMENTS_2026-05-13.md",
                         "relative_id":  "memories/project_notes/ECOWORLD_APP_IMPROVEMENTS_2026-05-13.md",
-                        "size":  1248,
-                        "sha256":  "43E54C79A9B5D275DE47CDD87492F44FCD95FE9D6681659D0C8D2310089BAD3F"
+                        "size":  1272,
+                        "sha256":  "0A15D419A9B694B6AB2744C66C556EC2C3CC0484E9BF95121E87D09697FDE32D"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "project_notes\\ECOWORLD_APP_TEMPLATE_STRUCTURE_WORKFLOW_2026-05-13.md",
                         "relative_id":  "memories/project_notes/ECOWORLD_APP_TEMPLATE_STRUCTURE_WORKFLOW_2026-05-13.md",
-                        "size":  8584,
-                        "sha256":  "52245A58201AFD0FB1BB965EB0ED55C68882FA615DCEDE21B57AFB8AA3AA47F8"
+                        "size":  8643,
+                        "sha256":  "B44463A7A4B5B078650118F618A87407B3272B6A2AA3C91E17DD3E56151BADC2"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "project_notes\\ECOWORLD_IMPLEMENTED_UI_NOTES_2026-05-12.md",
                         "relative_id":  "memories/project_notes/ECOWORLD_IMPLEMENTED_UI_NOTES_2026-05-12.md",
-                        "size":  1890,
-                        "sha256":  "CA039AA811D0D26C4F4BA9AFF27B60F76408578F7E76EE062A624716315481B4"
+                        "size":  1933,
+                        "sha256":  "4DBA79D1990BDB53D4C23CCB73B1BD0B189D5E3FFC5FCC83CDF285C08FD92630"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "project_notes\\HUWA2_WEBAPP_CURRENT_STATE.md",
+                        "relative_id":  "memories/project_notes/HUWA2_WEBAPP_CURRENT_STATE.md",
+                        "size":  4404,
+                        "sha256":  "A3E8942A9C800C11D04F6FBEBD7FBD5DF5D682BCFA049AD147AF1A3663444A1A"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "project_notes\\KUSHIRO_ROOT_DOCS_ROUTER.md",
                         "relative_id":  "memories/project_notes/KUSHIRO_ROOT_DOCS_ROUTER.md",
-                        "size":  2659,
-                        "sha256":  "72A4A26DFB274465489C1E0890AB31DAFDED9466EDF979DCF87DE57E1C025FBF"
+                        "size":  2732,
+                        "sha256":  "C49BC7592CC0923C695B1164E83BF41662F1F96BEC3FF7A4B3D20A7A8AA16D90"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "project_notes\\META_CONTENT_WORKFLOW.md",
                         "relative_id":  "memories/project_notes/META_CONTENT_WORKFLOW.md",
-                        "size":  2345,
-                        "sha256":  "273B7F7BEA8E5FFF9B155E472C9E78C72574921255252AF59133288BC2F279B4"
+                        "size":  2367,
+                        "sha256":  "83B4C90DBE5051FA2F51D0C694C993369592B3EC2927094424C09AC0E6BD57C5"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "project_notes\\VBEN_RELATION_AUTOGUARD_PLAYBOOK.md",
                         "relative_id":  "memories/project_notes/VBEN_RELATION_AUTOGUARD_PLAYBOOK.md",
-                        "size":  4031,
-                        "sha256":  "516693D3C2172C097FDC16E83FD052C4035909914FB0D9357F747A86247633D1"
+                        "size":  4086,
+                        "sha256":  "781E56F43DB3B18157E0100971CD072C61E96775F793F9FD696BE32972C75446"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "skills\\angel-hidden-tester-account\\SKILL.md",
                         "relative_id":  "memories/skills/angel-hidden-tester-account/SKILL.md",
-                        "size":  3874,
-                        "sha256":  "9B3D7E7CFABC0CDEDF315F4DAECD062AE774E35F56DC3A07A114D8313122C59C"
+                        "size":  3945,
+                        "sha256":  "C9E0A540553D8D3CD63A5314F15F96C3968B14E37071B92DF614B54B8B4ACD76"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "skills\\angel-interior-local-dev\\SKILL.md",
                         "relative_id":  "memories/skills/angel-interior-local-dev/SKILL.md",
-                        "size":  2967,
-                        "sha256":  "42E29CEC9F8A670B7BFC07FF17A956ACF996B7D8CB3CABCA87BB2D4C8F9901DF"
+                        "size":  3033,
+                        "sha256":  "76D4928C33C775C576FB9EE7BB11B072ED360D421D89754316C25A3A30E35FC5"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "skills\\awake-skill-routing\\SKILL.md",
                         "relative_id":  "memories/skills/awake-skill-routing/SKILL.md",
-                        "size":  3527,
-                        "sha256":  "9973B4633CBAAB32A12DD45A0DE8BE1DAFB0E6F9051442FE0F89EDDA32732798"
+                        "size":  3595,
+                        "sha256":  "99783DD14E73506F923D5ADCB6DF502F70B525A245F7C810B223E059F657116A"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "skills\\clone-first-module-duplication\\SKILL.md",
                         "relative_id":  "memories/skills/clone-first-module-duplication/SKILL.md",
-                        "size":  3038,
-                        "sha256":  "C813D87DD5B275BE4386D798920C2344C1A8CBA04627822E927E17FBC277CF94"
+                        "size":  3102,
+                        "sha256":  "A27A06F2762DFD9AB0A65E3F256B15468F106FAB7BDCC9DE1A5FE922786C45E0"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "skills\\fast-batch-checkpoint\\SKILL.md",
+                        "relative_id":  "memories/skills/fast-batch-checkpoint/SKILL.md",
+                        "size":  2792,
+                        "sha256":  "6E8E63612490435BB06A2CD5FAED6CB08D08A181C3AB12C172AA5CEA80E80158"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "skills\\hierarchical-replica-chunking\\SKILL.md",
                         "relative_id":  "memories/skills/hierarchical-replica-chunking/SKILL.md",
-                        "size":  3843,
-                        "sha256":  "7CB8D0E3F4852E5F646379A2FCE55B465124F18DC5FCCEA3F8F1F97BDBB4562C"
+                        "size":  3915,
+                        "sha256":  "C07EBAF4EDD2B85B872DFD4EBB3AFA29F43FAF381C7E3350B115ABF3CFB85F67"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "skills\\hierarchical-replica-chunking\\templates\\replica-breakdown.md",
                         "relative_id":  "memories/skills/hierarchical-replica-chunking/templates/replica-breakdown.md",
-                        "size":  647,
-                        "sha256":  "31C6E5CE4613F32936DA636E2887CE24C3F975F053B5EDFC5403C4D81262E0BE"
+                        "size":  693,
+                        "sha256":  "6D4661FD9D89B162A67CAEC4F73D0543E72FF99B2931C09E543F24EA20F84950"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "skills\\html-to-php-website-migration\\agents\\openai.yaml",
                         "relative_id":  "memories/skills/html-to-php-website-migration/agents/openai.yaml",
-                        "size":  275,
-                        "sha256":  "CDC87FB932D35517FDCF017AA574F795DBE5661672873718DF1C16747C39945D"
+                        "size":  282,
+                        "sha256":  "F8164E99E09A796A5C13BE73DE01A29AB30B68768726C11FEBD23C0BFBC0D50D"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "skills\\html-to-php-website-migration\\SKILL.md",
                         "relative_id":  "memories/skills/html-to-php-website-migration/SKILL.md",
-                        "size":  6157,
-                        "sha256":  "D138836A210BC7B95A3982B331907FDB83012C72C4BC77D8E5730F2350C5FF3C"
+                        "size":  6231,
+                        "sha256":  "A00C715A00437845641487DEA472BC8AE15953F2D00DF07F63430C02617A35E9"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "skills\\localhost-project-match\\SKILL.md",
+                        "relative_id":  "memories/skills/localhost-project-match/SKILL.md",
+                        "size":  2390,
+                        "sha256":  "74F9F30EB6CF936C3A3B4E255675D3286F12716DE3932E460884671003899263"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "skills\\local-supabase-protection\\SKILL.md",
                         "relative_id":  "memories/skills/local-supabase-protection/SKILL.md",
-                        "size":  2702,
-                        "sha256":  "1100462E03AFDB7D8E6EE21D0E80C95B44E19E1E25D6F34F27AC9ED4F4CF2B37"
+                        "size":  2753,
+                        "sha256":  "765565C44E368E4F8125567A4A8454949B3D4FE46986F1D1A9A57E2FE3673F1B"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "skills\\static-site-metadata-sweep\\SKILL.md",
                         "relative_id":  "memories/skills/static-site-metadata-sweep/SKILL.md",
-                        "size":  3714,
-                        "sha256":  "702C05697E4DA558DDC01A5751AEB3932C6F95123F69D086C5F302E8F418D0D7"
+                        "size":  3786,
+                        "sha256":  "BE70E91F34079EB920721B14CD14D1A19B7F921990EB7526A017B121698C613A"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "skills\\zeta-bilingual-static-site\\SKILL.md",
+                        "relative_id":  "memories/skills/zeta-bilingual-static-site/SKILL.md",
+                        "size":  3535,
+                        "sha256":  "1AC6F384ABABFA44114C30E7DC4977A34299C6AFECCB3A52C0A5273FB6ED5C06"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  ".gitignore",
                         "relative_id":  "skills/.gitignore",
-                        "size":  328,
-                        "sha256":  "912297421680E93A45A0B191951579E87BBA36104FF06E73F58AF75465DDAEA1"
+                        "size":  356,
+                        "sha256":  "2EF078406E755290CA7BE649F82D9FA6AEA166122CC114A68435BD1EE94DC6F9"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "admin-panel\\array-fk-count\\SKILL.md",
                         "relative_id":  "skills/admin-panel/array-fk-count/SKILL.md",
-                        "size":  1553,
-                        "sha256":  "C6A30D67632E965B87542CF077E68366FF7F783AEBFA5DF8990927E16344C572"
+                        "size":  1929,
+                        "sha256":  "650D209D3DF5965992B470F82DD1356BE3178FF6C7B0BCABE6C7F0A646A2D405"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "admin-panel\\embedded-list-drawer\\SKILL.md",
                         "relative_id":  "skills/admin-panel/embedded-list-drawer/SKILL.md",
-                        "size":  3335,
-                        "sha256":  "D9FCDFCC295B8EAAE3F2096A8F935EA0687B57DF7888605AE58EA5D69BADF39A"
+                        "size":  3741,
+                        "sha256":  "D9383BE64D21B68AAC6A43DCC8921718A3528B085E453C1612F2E4CC2A1915C4"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "admin-panel\\README.md",
                         "relative_id":  "skills/admin-panel/README.md",
-                        "size":  1155,
-                        "sha256":  "5E66A98D4B8D5FAD350611D857F65804E96E781EDE347E89BD416A4F55EE8EDF"
+                        "size":  1174,
+                        "sha256":  "FB2134A748D8E994BD8B20D11BC4E6914C33DAB9ABD5C147F84BD07C71286AD3"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "admin-panel\\vxe-conditional-blue-link\\SKILL.md",
                         "relative_id":  "skills/admin-panel/vxe-conditional-blue-link/SKILL.md",
-                        "size":  1667,
-                        "sha256":  "728C5B4A3D5C8D58BB695DD34BA761BE8268D9B7D83C0689362AFC38AD543F27"
+                        "size":  2025,
+                        "sha256":  "D751D6F3B11AB233669EEBD3FD9F0FB33E0A963DA0DEDBB95A26A91CCCC8E52B"
+                    },
+                    {
+                        "kind":  "skill-reference",
+                        "root_relative":  "skills",
+                        "relative_path":  "ai-growth\\references\\growth-loop.md",
+                        "relative_id":  "skills/ai-growth/references/growth-loop.md",
+                        "size":  2768,
+                        "sha256":  "AA1C3C26EC8B1BAF083CC0996FF41C53482BAC4BFE023EA2C15E0506835A5D66"
+                    },
+                    {
+                        "kind":  "skill-reference",
+                        "root_relative":  "skills",
+                        "relative_path":  "ai-growth\\SKILL.md",
+                        "relative_id":  "skills/ai-growth/SKILL.md",
+                        "size":  4581,
+                        "sha256":  "360B9A6C3BECE80674E00635551E5E444632B4D00661B41CF2B296EC5431574C"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "ai-personality\\skill.md",
                         "relative_id":  "skills/ai-personality/skill.md",
-                        "size":  8734,
-                        "sha256":  "492637ABBC4BA06F9213CC0F85FC654E5C4AE174656E7346C00BF38213303CDD"
+                        "size":  8955,
+                        "sha256":  "CE82970CD270148B6847ACB3121E0703C7EE5E1AAD24F1C12D84F6961292E8F6"
+                    },
+                    {
+                        "kind":  "skill-reference",
+                        "root_relative":  "skills",
+                        "relative_path":  "apache-htaccess-maintenance\\agents\\openai.yaml",
+                        "relative_id":  "skills/apache-htaccess-maintenance/agents/openai.yaml",
+                        "size":  298,
+                        "sha256":  "EE23FF644F4C1E6B56D99597705840ECC4C59C838176ECE9AE365F407BA10D4D"
+                    },
+                    {
+                        "kind":  "skill-reference",
+                        "root_relative":  "skills",
+                        "relative_path":  "apache-htaccess-maintenance\\SKILL.md",
+                        "relative_id":  "skills/apache-htaccess-maintenance/SKILL.md",
+                        "size":  4296,
+                        "sha256":  "D0DF2E683CF58749A81DCB5C2BF46B0DDFCC347B1F34606EEB5AC6E8AA9AAC11"
+                    },
+                    {
+                        "kind":  "skill-reference",
+                        "root_relative":  "skills",
+                        "relative_path":  "articles-research-way\\SKILL.md",
+                        "relative_id":  "skills/articles-research-way/SKILL.md",
+                        "size":  9458,
+                        "sha256":  "2A19712CDB143C78FD0FBEC9B2585170818A2FE136EDE7179E9C24FF1C2BA5E9"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\analyze-schema\\skill.md",
                         "relative_id":  "skills/claude/analyze-schema/skill.md",
-                        "size":  11922,
-                        "sha256":  "9148DCBEEAA28A65B9B80C467CC35709DD5475D3DDD0F0197B511914C9C9FED7"
+                        "size":  11955,
+                        "sha256":  "E09F54FF2C09E4206CB6153E8578653CE21A984FF51D343317966E3DC30E2130"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\ANTI_DOUBLE_SUBMIT_PATTERN.md",
                         "relative_id":  "skills/claude/ANTI_DOUBLE_SUBMIT_PATTERN.md",
-                        "size":  7287,
-                        "sha256":  "B7BF142914CE6D879426DC3799430C40F97F4EF4FCB10E00AAD10DB7ED52591A"
+                        "size":  7516,
+                        "sha256":  "3F8F15D176AA9E382CB59E68E6381B3149459C27769A44515179C655D049E285"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\BLOG_TITLE_DUPLICATE_CHECK_PATTERN.md",
                         "relative_id":  "skills/claude/BLOG_TITLE_DUPLICATE_CHECK_PATTERN.md",
-                        "size":  15131,
-                        "sha256":  "FFB509FDD044028C15C538E87E87E777A57709BD452B4780694B378B0A952F61"
+                        "size":  15586,
+                        "sha256":  "D522A666DB952EA3DE082A4D96F78F4D69B505E796D9B0E23FE0495B35EE323B"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\create-module\\skill.md",
                         "relative_id":  "skills/claude/create-module/skill.md",
-                        "size":  32888,
-                        "sha256":  "361A952801F042F00E33ACDCA617E001869395FAFCF0E8FADED000C69F45A5D4"
+                        "size":  32946,
+                        "sha256":  "62DA0FFE785743BEC3B7A959589C98B2A0168FCEB6EDE4826D862439F79E9AAA"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\database-markmap-sync\\skill.md",
                         "relative_id":  "skills/claude/database-markmap-sync/skill.md",
-                        "size":  2168,
-                        "sha256":  "FB630850FDA48CF1B4A1A46BACDADD0FEC86E8C3AC3C49837BF3C533729CC3CA"
+                        "size":  2228,
+                        "sha256":  "0FBF4857432DDE1EB2CB322A63A73DD16D51C5E012B3C5A256CCC70913B2D713"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\drawer-resizable\\skill.md",
                         "relative_id":  "skills/claude/drawer-resizable/skill.md",
-                        "size":  5122,
-                        "sha256":  "690A140639D7FBD07BD21BEDEB2EABFFC13ED1FBF660EBEFB5DC8BAC2326B419"
+                        "size":  5282,
+                        "sha256":  "644669EE26CFF54F4AE66CB32F740559D30B137D1B29E8D2EC3DE9BF2BAE42FD"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\generate-e2e\\skill.md",
                         "relative_id":  "skills/claude/generate-e2e/skill.md",
-                        "size":  6852,
-                        "sha256":  "ADEB5D88C00C13D0067E41092903F136F5A379E4172C342163F64F4D55034C96"
+                        "size":  6884,
+                        "sha256":  "9F715F2E7CC642AF8C5FA5F774971871BF96494EFDB6A273A52E0196CD9F1BA3"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\generate-i18n\\skill.md",
                         "relative_id":  "skills/claude/generate-i18n/skill.md",
-                        "size":  8017,
-                        "sha256":  "C06FA7F3A664ADE959A01B2A0620F2E5209A02E11984E30F50A4E0D4973A2E8C"
+                        "size":  8049,
+                        "sha256":  "4032DA3019B72AB801BC0AD9B2EEFEE043C043214340B4D1C7606B5CDF5D85A1"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\generate-route\\skill.md",
                         "relative_id":  "skills/claude/generate-route/skill.md",
-                        "size":  7939,
-                        "sha256":  "078645DF33AAAB494A5331C18292B8AB20B6F5F65C94352D661DEF6550A3FCA4"
+                        "size":  7971,
+                        "sha256":  "99849C2F01E6A1E90C0F0FA1DA10B04F5E1990AF9E5AFAF8EA7B8C7DD5718B1E"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\generate-store\\skill.md",
                         "relative_id":  "skills/claude/generate-store/skill.md",
-                        "size":  23989,
-                        "sha256":  "476CD6A91536FE6D65F5261469F525C63647FC96B6C12CD00761874E095C98C3"
+                        "size":  24033,
+                        "sha256":  "026977F4F9C9753A9DAFA7D1BDC02F01CE09E297BD715A93CCFAF049165BEFEE"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\generate-supabase-schema\\skill.md",
                         "relative_id":  "skills/claude/generate-supabase-schema/skill.md",
-                        "size":  20950,
-                        "sha256":  "5105F5550936B0D6755452D5884E7DEEB9725FC92149801B2B0D0377F14182FB"
+                        "size":  20984,
+                        "sha256":  "DD3FDA72B8890076D8EB5860A3EE6256945B9DAC82D3CB70FF6473740AF79408"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\generate-views\\skill.md",
                         "relative_id":  "skills/claude/generate-views/skill.md",
-                        "size":  45113,
-                        "sha256":  "DE825EF61C0443FC7CCA9D01E43D733B8174A6B7B634A01F42D1C819870FBD65"
+                        "size":  45152,
+                        "sha256":  "EAE9DBE7AAF54F9218088A0D270D6A211C2B194DEFD7BDDBD94D88E213128B99"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\googlesheet-form-integration\\skill.md",
                         "relative_id":  "skills/claude/googlesheet-form-integration/skill.md",
-                        "size":  11879,
-                        "sha256":  "F4F034F51872266745FA4D4420EDB81005900199F3456EBE4E75D3CA23EABF92"
+                        "size":  12070,
+                        "sha256":  "8DD8604CAB217C96C4451C08C81B299D3D5C679E7721338A130B5AF27B804070"
                     },
                     {
                         "kind":  "skill-reference",
@@ -804,8 +972,8 @@
                         "root_relative":  "skills",
                         "relative_path":  "claude\\laa-api-connection-htaccess\\skill.md",
                         "relative_id":  "skills/claude/laa-api-connection-htaccess/skill.md",
-                        "size":  13097,
-                        "sha256":  "357EA8B0D720AEBF69CE5DB8FBE08DA651D37692644C87EDDC6C03AB64B978C3"
+                        "size":  13451,
+                        "sha256":  "7EED1179E605E222AFAD03A26E9C189B8ACCAE3D7A9BFFFBD50F9DCDC9B6BA9E"
                     },
                     {
                         "kind":  "skill-reference",
@@ -820,48 +988,112 @@
                         "root_relative":  "skills",
                         "relative_path":  "claude\\README.md",
                         "relative_id":  "skills/claude/README.md",
-                        "size":  3679,
-                        "sha256":  "4C5A85D9678AFF6694C34F614FA075D8EA35288160CE76D860573323EC6EB0D8"
+                        "size":  3760,
+                        "sha256":  "2C4FA85E54AD7BD7C1F997442C18D8C9A5E3D7FED77CA05452329E6FE621EA59"
+                    },
+                    {
+                        "kind":  "skill-reference",
+                        "root_relative":  "skills",
+                        "relative_path":  "claude\\references\\end-to-end-runbook.md",
+                        "relative_id":  "skills/claude/references/end-to-end-runbook.md",
+                        "size":  6423,
+                        "sha256":  "B81DAD01BD07D92315619D69ACA6F5A1516AA1A9C8525D3FDBF44F56C23B5569"
+                    },
+                    {
+                        "kind":  "skill-reference",
+                        "root_relative":  "skills",
+                        "relative_path":  "claude\\references\\local-supabase-playbook.md",
+                        "relative_id":  "skills/claude/references/local-supabase-playbook.md",
+                        "size":  2467,
+                        "sha256":  "DF1BC21C3E6A3D2ED258A94BDAC485BE85CB9E6208632646B907984D27097468"
+                    },
+                    {
+                        "kind":  "skill-reference",
+                        "root_relative":  "skills",
+                        "relative_path":  "claude\\references\\recurring-crud-defaults.md",
+                        "relative_id":  "skills/claude/references/recurring-crud-defaults.md",
+                        "size":  9253,
+                        "sha256":  "955499CB4F73DE88866CB24089A223B97B809BEC19607863ABECE27D2077E47C"
+                    },
+                    {
+                        "kind":  "skill-reference",
+                        "root_relative":  "skills",
+                        "relative_path":  "claude\\references\\research-and-benchmark.md",
+                        "relative_id":  "skills/claude/references/research-and-benchmark.md",
+                        "size":  3083,
+                        "sha256":  "F8F1291DD75E5B7541254432F276E28350B1F5C10A125EBDC603CBFFAE3E261F"
+                    },
+                    {
+                        "kind":  "skill-reference",
+                        "root_relative":  "skills",
+                        "relative_path":  "claude\\references\\vben-supabase-patterns.md",
+                        "relative_id":  "skills/claude/references/vben-supabase-patterns.md",
+                        "size":  3627,
+                        "sha256":  "2061FD366DF55E57A17FED05C5DD359E0DA4A2DD1D970937FFB89E1F76506C3D"
+                    },
+                    {
+                        "kind":  "skill-reference",
+                        "root_relative":  "skills",
+                        "relative_path":  "claude\\scripts\\panel-check.ps1",
+                        "relative_id":  "skills/claude/scripts/panel-check.ps1",
+                        "size":  1393,
+                        "sha256":  "5B6A23333C4437D466B1839E41CDFA4DA8AF4203646A6F0A326738B26016CB23"
+                    },
+                    {
+                        "kind":  "skill-reference",
+                        "root_relative":  "skills",
+                        "relative_path":  "claude\\scripts\\project-preflight.ps1",
+                        "relative_id":  "skills/claude/scripts/project-preflight.ps1",
+                        "size":  4094,
+                        "sha256":  "09113002DB4872BEFFE96DBC8CF59F446AEE3F8DDBA4EB89782AA2A2981D2011"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\seo-tables-planner\\skill.md",
                         "relative_id":  "skills/claude/seo-tables-planner/skill.md",
-                        "size":  10507,
-                        "sha256":  "3490AC636D353DC61B5BF17D8C16D89967C2C04C1C14227E79D4370836B00F79"
+                        "size":  10834,
+                        "sha256":  "048C03A93E24CCA9ADE750BBBE822CEA8B6E73DDB727E7F6D4F9632C9D64558A"
+                    },
+                    {
+                        "kind":  "skill-reference",
+                        "root_relative":  "skills",
+                        "relative_path":  "claude\\SKILL.md",
+                        "relative_id":  "skills/claude/SKILL.md",
+                        "size":  9553,
+                        "sha256":  "DBAFA48A92619ACCFD7BB78F3317A4026F425510736168ABEB401D719879F790"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\SOFT_DELETE_GUARD.md",
                         "relative_id":  "skills/claude/SOFT_DELETE_GUARD.md",
-                        "size":  10128,
-                        "sha256":  "33E25609FFF2CADA58E7F9F50CBDDE865CE96E3B430342506251F0F55317225E"
+                        "size":  10411,
+                        "sha256":  "29BFA7E97FFA0C762B435380FF11FB6B733192CC844519E328D8A0ADE5EB5A99"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\staging\\skill.md",
                         "relative_id":  "skills/claude/staging/skill.md",
-                        "size":  3243,
-                        "sha256":  "659BC6F134A56F075291A82395F8896419B95E0A34FED82733983579F8B4D519"
+                        "size":  3336,
+                        "sha256":  "FB7C945482DB7FD62C2DED1F1BA2B4E89BF2716A749AAA6A3B413ED02BE7D07C"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\SUPABASE_VPS_URL_MIGRATION.md",
                         "relative_id":  "skills/claude/SUPABASE_VPS_URL_MIGRATION.md",
-                        "size":  4502,
-                        "sha256":  "AA0999318AB07D4E3A1AC88C92F6630BEC4BCCA40B00FF6B4A22BB86980EE08E"
+                        "size":  4624,
+                        "sha256":  "4B42F742365F2C914C7651B8D6E89C47D64A35B55E79F4E7EDE8EA68BAA9F185"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\supabase-auth-architecture\\skill.md",
                         "relative_id":  "skills/claude/supabase-auth-architecture/skill.md",
-                        "size":  16803,
-                        "sha256":  "79CA222824356BD63151A33D943BF9B391420D7F21EC62D4392656A67D8D21A1"
+                        "size":  16991,
+                        "sha256":  "5BB0969A1A432BEE0202C479F11445805E2B170E9BBDCBB7EF0F08F3E95D4376"
                     },
                     {
                         "kind":  "skill-reference",
@@ -884,352 +1116,352 @@
                         "root_relative":  "skills",
                         "relative_path":  "claude\\ui-standardization\\skill.md",
                         "relative_id":  "skills/claude/ui-standardization/skill.md",
-                        "size":  9940,
-                        "sha256":  "888FD3619D89DF941D0C1397558E9C59A8752E28349CC139879DE5B830B176EA"
+                        "size":  10028,
+                        "sha256":  "330D3759C64D01BCA786D85B6BDEE5A03814B89E1593ED63EF675B9999CD4301"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\ui-standardization\\VIPBILLION_THEME_SURFACE_UPDATE.md",
                         "relative_id":  "skills/claude/ui-standardization/VIPBILLION_THEME_SURFACE_UPDATE.md",
-                        "size":  3217,
-                        "sha256":  "AD7A4D4A2B27F9CAB75850BC15C3658D50DC05189D12318C2E2F9747DE4331C7"
+                        "size":  3343,
+                        "sha256":  "CAFF8506BB26B6CE2B3ECEF7B418CCEF069AED3B6B9D626DCDDE2629783CB55F"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\VBEN_ADMIN_MANDATORY_CHECKLIST.md",
                         "relative_id":  "skills/claude/VBEN_ADMIN_MANDATORY_CHECKLIST.md",
-                        "size":  11765,
-                        "sha256":  "7C2255F309963406B561BA0AEB2691710686052E577010E0B42D22BA2B264C85"
+                        "size":  12111,
+                        "sha256":  "DBCEB55F1D0AF8A6A645A09FA0B62A1B5B4DD4DB7C0CCF6B1B6CD727EA3A3C34"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\VBEN_RELATION_AUTOGUARD_PLAYBOOK.md",
                         "relative_id":  "skills/claude/VBEN_RELATION_AUTOGUARD_PLAYBOOK.md",
-                        "size":  2807,
-                        "sha256":  "DDC9AC35F6B9DE90DA595C506E22AC8D582111F493A9C9D88B03BBBE5EA82E5B"
+                        "size":  2836,
+                        "sha256":  "7D4B12166A2F4155E0362C08C2807604EDCF68FC38143085E19821735721D81B"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\VBEN_SUPABASE_LOCAL_LESSONS.md",
                         "relative_id":  "skills/claude/VBEN_SUPABASE_LOCAL_LESSONS.md",
-                        "size":  9817,
-                        "sha256":  "FC3DACA514EA90270F695DC6C206AA949029338B181CF5A23E0DA2B4C5217EEC"
+                        "size":  10038,
+                        "sha256":  "AC18A264F03B6FDC5B9C0E62AB3ECE543D1FF0CE5A76976862BA722B1224417A"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\workflow-test\\skill.md",
                         "relative_id":  "skills/claude/workflow-test/skill.md",
-                        "size":  17537,
-                        "sha256":  "085EEC60A1F3B425D4521C10F267EBDCD0ECB3CA96198A0C487D7579EA83B2BB"
+                        "size":  17569,
+                        "sha256":  "33D3553865A1D16051E48E55CA795DA28B00C4CACF16C2A5E6F38A7ED03CCB96"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude\\WORKING_PROGRESS.md",
                         "relative_id":  "skills/claude/WORKING_PROGRESS.md",
-                        "size":  16176,
-                        "sha256":  "859DFA67744EDD0A18F35E1D8740E46206841C6A2CCF44F0EAED47F848ABDE6D"
+                        "size":  16540,
+                        "sha256":  "CB08B7AB0127636E5B88740D64B0F84D7A3DA6E21B9C914692E40F58BF81E855"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-app\\_cookbook.md",
                         "relative_id":  "skills/claude-app/_cookbook.md",
-                        "size":  18293,
-                        "sha256":  "08FA34C306DDFB514BC10C2EA8B6C6457F02FE5710C92C7E708ECB05A5EBF5DF"
+                        "size":  18780,
+                        "sha256":  "486EE852F58FDFDE8CFE4C50AD4037F34FA17FA2D8582357475B1B51D2D1BAAD"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-app\\01-handshake-genesis\\skill.md",
                         "relative_id":  "skills/claude-app/01-handshake-genesis/skill.md",
-                        "size":  7753,
-                        "sha256":  "498BBB44A88CFDACDFDF7607865D17D46D8392AE6FE6465488D9E6F7F6AFC5FA"
+                        "size":  7986,
+                        "sha256":  "AF540EF2116C394E299D0FFAA18967B9E6813BA344A12052CD74D5904F03C620"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-app\\02-config-hardening\\skill.md",
                         "relative_id":  "skills/claude-app/02-config-hardening/skill.md",
-                        "size":  6358,
-                        "sha256":  "FC0D3447D555C8B108F73F0148AACC7133BC67714F3E604EA12CA8BEDA462A5C"
+                        "size":  6523,
+                        "sha256":  "ED870C232EBC74669412632F8DA704283F266A0058AF3B230FA22676831E4D7A"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-app\\03-api-connectivity\\skill.md",
                         "relative_id":  "skills/claude-app/03-api-connectivity/skill.md",
-                        "size":  8936,
-                        "sha256":  "9E8C01A4E0BC08314FE1278368DE454FE430B2E4B8787571758093B05750D2AD"
+                        "size":  9170,
+                        "sha256":  "62EC7C5EC43E62D7487A95E5F7E8D1272E099876352BA19AB430DD27E23E18C7"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-app\\04-auth-architecture\\skill.md",
                         "relative_id":  "skills/claude-app/04-auth-architecture/skill.md",
-                        "size":  12014,
-                        "sha256":  "B2C6E4A22FA8FD1A86CA0D4466839ABDC35B926FBD0609EDC3DCE9E971E083BB"
+                        "size":  12312,
+                        "sha256":  "F3FF2BC2AF66B196CD61844077F4F3AA0583C163FA9EAC1B3D2A09FFFB87E5D1"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-app\\05-types-foundry\\skill.md",
                         "relative_id":  "skills/claude-app/05-types-foundry/skill.md",
-                        "size":  9270,
-                        "sha256":  "4016D1299934BD748BCBDC145910E2532CD18E86C1F6D62C96690780300B8E1C"
+                        "size":  9551,
+                        "sha256":  "C9F7D9C7EBB95F327F42D72EB464C00C69CA3D17E61CC20C88FD9B1D92C07678"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-app\\06-industrial-stores\\skill.md",
                         "relative_id":  "skills/claude-app/06-industrial-stores/skill.md",
-                        "size":  14799,
-                        "sha256":  "A6B43F11CE9D120396C8FF2016C4A45434FC30EDF875656633FC60794105AB3F"
+                        "size":  15181,
+                        "sha256":  "46015DF9C1C5FBD481C37A312F7635E353DA9403B4E2DCBEED006744CA0E8302"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-app\\07-image-spec\\skill.md",
                         "relative_id":  "skills/claude-app/07-image-spec/skill.md",
-                        "size":  7954,
-                        "sha256":  "50FE89F038BB889DD9336C4E78F6F5FF3A309748FD57A3ED6A76384344A2C166"
+                        "size":  8168,
+                        "sha256":  "13764DF9141501F78F0FD803FE3517179DF173D196B206932BF7915025D8F2FB"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-app\\08-ui-standardization\\skill.md",
                         "relative_id":  "skills/claude-app/08-ui-standardization/skill.md",
-                        "size":  11161,
-                        "sha256":  "ADE0BD77FB349B6564002679069DE76DD84EEAABA12F7C25E294026B776AC708"
+                        "size":  11424,
+                        "sha256":  "5FF571A532DD29ABD73037EBD0258E8BB8764AC633D5D9896CDCD5FE5974316D"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-app\\09-view-scaffolding\\skill.md",
                         "relative_id":  "skills/claude-app/09-view-scaffolding/skill.md",
-                        "size":  13170,
-                        "sha256":  "01EF21E08D6BFCE6D65DD1A2D050BF8ED88162DBCE51D9C0D57C13419EA17786"
+                        "size":  13529,
+                        "sha256":  "87DBC17260549575A88F35D68CD970B82F490F2A4E67F759CF69D5F64F44508C"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-app\\10-routing-logic\\skill.md",
                         "relative_id":  "skills/claude-app/10-routing-logic/skill.md",
-                        "size":  9096,
-                        "sha256":  "5A6176D857C562D736D0EC71544AB346C76435BEC8BCA1CC1CD0B72CBAFB03A0"
+                        "size":  9315,
+                        "sha256":  "8B4810284F8CE01C1906E68A6A29B43888F35ABA5AAE6D94DC1E23D7F6852483"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-app\\11-relational-sync\\skill.md",
                         "relative_id":  "skills/claude-app/11-relational-sync/skill.md",
-                        "size":  7330,
-                        "sha256":  "CCFE8ADEF6426AE49F5C977EDF177C41AEC2A007A005B9ACF731E47C608DF7C0"
+                        "size":  7473,
+                        "sha256":  "0B41E8F4DB35B710817C5F2069BFB01DB91FED7AF77B4B2F23A19D30BF9FD30A"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-app\\12-i18n-composables\\skill.md",
                         "relative_id":  "skills/claude-app/12-i18n-composables/skill.md",
-                        "size":  8618,
-                        "sha256":  "BD76BF5DFEE84CD59FE3FEF4A8DD979E6216F4E39F1A514006FEB3BBAE95C144"
+                        "size":  8857,
+                        "sha256":  "A0FD78E14E35E3F019CB91718799D38E46882FABBDAB4E7657A9F61DB2FA1AFC"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-app\\13-native-pwa-deploy\\skill.md",
                         "relative_id":  "skills/claude-app/13-native-pwa-deploy/skill.md",
-                        "size":  9940,
-                        "sha256":  "15B361E754F3859E6FF960B61734F71185DA4C7F90F89DBB0C43BD8435D04253"
+                        "size":  10205,
+                        "sha256":  "027A0C0B1837C6AFCF70713BFE3548E63F5CBE92E88ABFC54E33D9593130DA20"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-app\\image-crop-tool\\skill.md",
                         "relative_id":  "skills/claude-app/image-crop-tool/skill.md",
-                        "size":  7595,
-                        "sha256":  "4315C8F7DF7CC4ADC2BB507026564007361B2206AD4A6BF86619215E3B50C4D7"
+                        "size":  7795,
+                        "sha256":  "4635945444DF9CE46012B2AA4C01AE61364796EEEEB74C053A53B4BAB97416A7"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-app\\MOBILE_APP_LESSONS.md",
                         "relative_id":  "skills/claude-app/MOBILE_APP_LESSONS.md",
-                        "size":  3503,
-                        "sha256":  "F78870D994107DB99E07DD2E157332E130B2B3A75E42C4897225F2861A88DC05"
+                        "size":  3607,
+                        "sha256":  "AEA600AD0B1FA1411D8D29766A2BBCD584E24009B0CEFC3F5C905BA8A0D6DDD7"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-app\\README.md",
                         "relative_id":  "skills/claude-app/README.md",
-                        "size":  823,
-                        "sha256":  "DAB511BF13E547B9509E56DE382C22F7E9D0046B717745C7B589D1C0AEDD109A"
+                        "size":  841,
+                        "sha256":  "A7104F8119532FAEEE70AD2DA5C628700163A11AB4E78A1485FE3ACC07E34299"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-app\\SKILL.md",
                         "relative_id":  "skills/claude-app/SKILL.md",
-                        "size":  23818,
-                        "sha256":  "36BA398100962BF01D3D97037439688B4CBA79CFA6382AEA379255D76C664A2D"
+                        "size":  24330,
+                        "sha256":  "DA4AEC5838B575D98CAD9C6AEAC7C37EE412AECB8C8F87190624EF8213921658"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-app\\SOFT_DELETE_GUARD.md",
                         "relative_id":  "skills/claude-app/SOFT_DELETE_GUARD.md",
-                        "size":  1458,
-                        "sha256":  "5B2DEC4A18EFF6E0782120263DE32088A148C0F4099AF3A84134EBEE5A22FD4F"
+                        "size":  1500,
+                        "sha256":  "8732937B4DACECFEB9AAEE70C52BD8DC0007FD9B8C181DD98B6DAB72A4F27B0F"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-app\\WORKING_PROGRESS.md",
                         "relative_id":  "skills/claude-app/WORKING_PROGRESS.md",
-                        "size":  10295,
-                        "sha256":  "550150BBB23836362A1E16CF509CCFFC0A1AC585CDC8A985ED7F5E64B2DC98CA"
+                        "size":  10560,
+                        "sha256":  "3424CBAC5AA020B0E208668E5A5DE28B3EB41118DA80F6C91D3AA979CC8AD8B9"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-meta\\plan-first\\skill.md",
                         "relative_id":  "skills/claude-meta/plan-first/skill.md",
-                        "size":  4863,
-                        "sha256":  "BCFA2ADB927A881AE7F9367CA4071FC339C8286C3D4ABA751AD28C68E1A56186"
+                        "size":  5463,
+                        "sha256":  "4E3F95B4EDDB3CEBCBFBC91D7D10855D007AC31EF02D1BEF9E1AD309399C37A3"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-meta\\README.md",
                         "relative_id":  "skills/claude-meta/README.md",
-                        "size":  2062,
-                        "sha256":  "653E49498B56989696A8D24C3A903DA9D81549AB717820A7C7004ADA8E2C1974"
+                        "size":  2181,
+                        "sha256":  "13194A3FEFD891C333E83122D0EA73F25A3C9BA55B1441F14BE5D4F3E6199718"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-meta\\SKILL.md",
                         "relative_id":  "skills/claude-meta/SKILL.md",
-                        "size":  4332,
-                        "sha256":  "8003D6D50DB096122C7DC425F707C97FA29C9BB53DC90532E152078CE51A5A44"
+                        "size":  4622,
+                        "sha256":  "FDBDC78D28B18171C033A841E0DE52B159796868BC5343DCC46DC12CA903EDDA"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-meta\\validate-knowledge\\skill.md",
                         "relative_id":  "skills/claude-meta/validate-knowledge/skill.md",
-                        "size":  5177,
-                        "sha256":  "60A7D7901A7DADBEBB0735CBDF17384328328DD1E9FA632BF91868FF4383A7F8"
+                        "size":  5383,
+                        "sha256":  "3F2D7F077E711CE35BE403F75E6F0A0F34C7C60B2A282095090939C8AC70C53C"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-website\\_cookbook.md",
                         "relative_id":  "skills/claude-website/_cookbook.md",
-                        "size":  14500,
-                        "sha256":  "7AEC0CFE188495120F976F175444B3840CE971BDF5D26E3DAF807F2F53AB1E87"
+                        "size":  14908,
+                        "sha256":  "B88C0255247864035CE78FAFA94718F058901C0727C8A432C2A36BD44F3EB8CD"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-website\\01-config-generation\\skill.md",
                         "relative_id":  "skills/claude-website/01-config-generation/skill.md",
-                        "size":  6185,
-                        "sha256":  "9B3E8AB1DA676AA4DC20031B0790DE968FADFB4D590A375944491436667B5338"
+                        "size":  6341,
+                        "sha256":  "5361C6755ACAF657D19204FA3EBBC6373D8782D79CFECDE2E5E96FB25510B36D"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-website\\02-env-loader\\skill.md",
                         "relative_id":  "skills/claude-website/02-env-loader/skill.md",
-                        "size":  15548,
-                        "sha256":  "CED6E83754AAF3B33B0EA761EBBA905606DC3FD6DF497BD135383032321B7A34"
+                        "size":  15961,
+                        "sha256":  "7D81AF2344B7534671D2D7022217A358EFD7BFA202A77A0BD995F445A5477181"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-website\\03-composer-autoload\\skill.md",
                         "relative_id":  "skills/claude-website/03-composer-autoload/skill.md",
-                        "size":  6794,
-                        "sha256":  "E3DAA2C575DF5C8EAD53C9F5AC5D60DBC8F2E8F298EF139038465C577FA0A723"
+                        "size":  6943,
+                        "sha256":  "050902210A0B52B3AE2647A4DC87D07ADD3EF0EA19CAF6702765F48A8F28A2E9"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-website\\04-schema-building\\skill.md",
                         "relative_id":  "skills/claude-website/04-schema-building/skill.md",
-                        "size":  9438,
-                        "sha256":  "0DC8E31D08F27FC2E0F3AF7DD59C539FF32FFC3ADC16A10F3FBDEFD7883452EA"
+                        "size":  9633,
+                        "sha256":  "C06F144BE101D51F52498CB94F201856607213D56111C937091081E32B51C1B0"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-website\\05-security-lock\\skill.md",
                         "relative_id":  "skills/claude-website/05-security-lock/skill.md",
-                        "size":  7918,
-                        "sha256":  "9134D01F4832736CBCF3CB94F7896469D75990934FE8F39BE9A6FE6FA6927C76"
+                        "size":  8099,
+                        "sha256":  "422BC03C74E3A046FC4B3765E20D5EA736773E225EC76D8D1E43996D758FCDCC"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-website\\06-seeding\\skill.md",
                         "relative_id":  "skills/claude-website/06-seeding/skill.md",
-                        "size":  10480,
-                        "sha256":  "0DDDC8BCDF771DA8618C1564FC98CF259FCDE06FBC25F60F36AEC679BE52678C"
+                        "size":  10729,
+                        "sha256":  "F1E9BEF4F6FCAE9CB4A96131D536EE3F233D9A421078A9C571960C25DAD927BD"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-website\\07-rest-client\\skill.md",
                         "relative_id":  "skills/claude-website/07-rest-client/skill.md",
-                        "size":  15837,
-                        "sha256":  "3316F29CB089864C256BAA952A6DB90378BA08BDB415FB8E5344EFED1802E329"
+                        "size":  16234,
+                        "sha256":  "ABA3B3B2740666944C9BAFA80D42F4142D4365A1E278FF02522AE5EE80518A4B"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-website\\08-models-layer\\skill.md",
                         "relative_id":  "skills/claude-website/08-models-layer/skill.md",
-                        "size":  13878,
-                        "sha256":  "E9C2F471BF26DF09ED66A81137C4B722709CEDA175E0C2B5490E4DCA1C474437"
+                        "size":  14251,
+                        "sha256":  "04166400D6F7FD943CC18C85A73FC83C5349ACB88D5ECF8665BB8AAEAE71BE01"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-website\\09-controllers-layer\\skill.md",
                         "relative_id":  "skills/claude-website/09-controllers-layer/skill.md",
-                        "size":  13224,
-                        "sha256":  "337D0FEFDD8E8704A28D7AD406AA3E924F1D007459E6D3DC00EE6F0570FC1903"
+                        "size":  13596,
+                        "sha256":  "A62FBDB3F82910114BE9B4844F0E81B8E9AD7AA57BA68E8B1FF1295340CBC38E"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-website\\10-error-handler\\skill.md",
                         "relative_id":  "skills/claude-website/10-error-handler/skill.md",
-                        "size":  8652,
-                        "sha256":  "7917394269A4F11AB917D94637DC36756ABB5587426D0DDE79B2B18B45CE2518"
+                        "size":  8863,
+                        "sha256":  "6CC6B6E926F3238AB1EF16CE1C600B2AAA9538CF24DD26A05D1571F638F49B33"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-website\\11-router-v1-endpoints\\skill.md",
                         "relative_id":  "skills/claude-website/11-router-v1-endpoints/skill.md",
-                        "size":  14019,
-                        "sha256":  "9E87A05FBD40CB525F3E01ABBB5347812FBC55E7C990EEC44FF704C5541B9AB7"
+                        "size":  14377,
+                        "sha256":  "D806610F8705F16735A2AF2DF873231F925466CA8A32C65FA0B6E17E78481377"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-website\\12-ui-refactor\\skill.md",
                         "relative_id":  "skills/claude-website/12-ui-refactor/skill.md",
-                        "size":  12935,
-                        "sha256":  "1E4701FF525C404514125BDDEBA9838D9F6F4E2633A4A40582C1A75D05E0AC24"
+                        "size":  13298,
+                        "sha256":  "C2F4D0DB353BEC3027C72C60794698C0452039870ED607B46D64A589946F6F68"
                     },
                     {
                         "kind":  "skill-reference",
@@ -1244,320 +1476,320 @@
                         "root_relative":  "skills",
                         "relative_path":  "claude-website\\14-seo-structured-data\\skill.md",
                         "relative_id":  "skills/claude-website/14-seo-structured-data/skill.md",
-                        "size":  17776,
-                        "sha256":  "2DC2B922FBCF7D12D2F7B7231EB939D7E5F52528612DFE7A2E8E312434C7908A"
+                        "size":  18149,
+                        "sha256":  "5022FC44DF83F6B382498B482070B0D65F9CD65689F1DABB84DB02107FE81E11"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-website\\PHP_SOVEREIGN_LESSONS.md",
                         "relative_id":  "skills/claude-website/PHP_SOVEREIGN_LESSONS.md",
-                        "size":  3412,
-                        "sha256":  "F88680B54A736138D8475C0ED6CA8C83F3C1F9EBCD4FE9986F2B455CED11D065"
+                        "size":  3518,
+                        "sha256":  "BDCFE824C4B7607C9D2B650383BAF4A6CBB8BA562ADDB8B107B0FE4403E71BA5"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-website\\SKILL.md",
                         "relative_id":  "skills/claude-website/SKILL.md",
-                        "size":  10109,
-                        "sha256":  "699E78F390C02FBBA8E318FFBF2C695AECD7652A901DFF67AA65F382E6747D0C"
+                        "size":  10311,
+                        "sha256":  "51B815EE2A165B2A3D1659EB3A8AAF5660A5C373AC7A5D3D854849367FEB2AF0"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-website\\SOFT_DELETE_GUARD.md",
                         "relative_id":  "skills/claude-website/SOFT_DELETE_GUARD.md",
-                        "size":  2243,
-                        "sha256":  "893EBD6A83388B166FA5CC64D6AF802AD726FDF0215347BEA435F47537E928B3"
+                        "size":  2312,
+                        "sha256":  "896CD36BB5865D2239B74021BDD3562A99EE7272F59AF5578310132F3C6D469D"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "claude-website\\WORKING_PROGRESS.md",
                         "relative_id":  "skills/claude-website/WORKING_PROGRESS.md",
-                        "size":  12113,
-                        "sha256":  "F858987C06837CE1AD16A223C787138BD4C50E186A31DDEB4F18BABAF0493062"
+                        "size":  12410,
+                        "sha256":  "95B99E231679CAC6105EB6778F2D56C0040AB0113C916295F2077F23D9C56A69"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "clean-module\\skill.md",
                         "relative_id":  "skills/clean-module/skill.md",
-                        "size":  6382,
-                        "sha256":  "AC8FFCFA6854E92E6BDFEED70D116F78206CAEC60072F5C1B7366C490DD7E089"
+                        "size":  6553,
+                        "sha256":  "3133CB675C42012FC8F17AA411B1161B4919D944579BF3D3E1106FE9924CF236"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\_spec\\examples\\atmospheric-glass\\DESIGN.md",
                         "relative_id":  "skills/design/_spec/examples/atmospheric-glass/DESIGN.md",
-                        "size":  8659,
-                        "sha256":  "66AD920A828142FCA6E47D632755C71F14B4FFC5EAE848FB1C4AD2A7E293F0F4"
+                        "size":  8869,
+                        "sha256":  "A43A15825CC4F910090E0B9D584C58507D1CA28B55510253D5221357D9FED2AB"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\_spec\\examples\\atmospheric-glass\\design_tokens.json",
                         "relative_id":  "skills/design/_spec/examples/atmospheric-glass/design_tokens.json",
-                        "size":  17324,
-                        "sha256":  "CD61FB52AF028C398A94376EC49224DE8CD55B047D718C189DFA16FEFE5AE569"
+                        "size":  18233,
+                        "sha256":  "E5F1EFE185CDA62C5043F0A10D67588F99B1A2E8EF2B7F3999A316A575AE45DF"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\_spec\\examples\\atmospheric-glass\\README.md",
                         "relative_id":  "skills/design/_spec/examples/atmospheric-glass/README.md",
-                        "size":  1190,
-                        "sha256":  "C7ACBE1BF50CF3D3813946DAB957A31A99A813F5EEFDFB7E40F9CA21A3225D8D"
+                        "size":  1201,
+                        "sha256":  "0D5BCFAC864EF40CDD4A3279AAC218CFF696DD03D599CF5195E5B6B37A415506"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\_spec\\examples\\atmospheric-glass\\tailwind.config.js",
                         "relative_id":  "skills/design/_spec/examples/atmospheric-glass/tailwind.config.js",
-                        "size":  4114,
-                        "sha256":  "F5FDB7E3A1EAAF6F9FDDE81D99B72E77999E129317785CD40531DCDD625B3C23"
+                        "size":  4255,
+                        "sha256":  "7B22B944A051F14787C155B7EF2789EC3CAECDFE555433DEA5D57F22BE62777C"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\_spec\\examples\\paws-and-paths\\DESIGN.md",
                         "relative_id":  "skills/design/_spec/examples/paws-and-paths/DESIGN.md",
-                        "size":  8413,
-                        "sha256":  "467717BDCD6CFC7D58D54B8337EB8964C08F813A04F5F918C068693A7F144208"
+                        "size":  8632,
+                        "sha256":  "F27A447DB5EF395721109E2336C5EFD684CE593D0A15B02024D9ECD215BD463A"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\_spec\\examples\\paws-and-paths\\design_tokens.json",
                         "relative_id":  "skills/design/_spec/examples/paws-and-paths/design_tokens.json",
-                        "size":  16943,
-                        "sha256":  "622BC37369D5DFEDFC20583E28F6842C989D634F858CB73D3A5641B7819C650C"
+                        "size":  17819,
+                        "sha256":  "D6AFDF6B4526099915EC12AF96B4812430DD2EFE06C655C841612D0E85C2AD33"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\_spec\\examples\\paws-and-paths\\README.md",
                         "relative_id":  "skills/design/_spec/examples/paws-and-paths/README.md",
-                        "size":  1116,
-                        "sha256":  "7796EB305E28E4D46FC154739D720A2973000F1250635F3E28AE667C18D04206"
+                        "size":  1127,
+                        "sha256":  "880B51EE658329A44014DC85E7BBFA70754A5DF9C9205D1ED19934265B30737E"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\_spec\\examples\\paws-and-paths\\tailwind.config.js",
                         "relative_id":  "skills/design/_spec/examples/paws-and-paths/tailwind.config.js",
-                        "size":  4573,
-                        "sha256":  "96D4A987E603C3084D40929DA3840D41167471CDE4FAF0B1270B19D73E532F57"
+                        "size":  4733,
+                        "sha256":  "B6749B547CB92D59BB187918A230C388D1057E52A82ED8C117B82F212F90B569"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\_spec\\examples\\totality-festival\\DESIGN.md",
                         "relative_id":  "skills/design/_spec/examples/totality-festival/DESIGN.md",
-                        "size":  9045,
-                        "sha256":  "AA255842F7059BA1D463E5DAB408FFF427D95312C6CB503E1DFDE16DC9CF5619"
+                        "size":  9255,
+                        "sha256":  "495EA218CC4D3DF6CDFF0B173026AFE82F1EFDB8F2C2B8CB74BF9BE07EEB48FD"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\_spec\\examples\\totality-festival\\design_tokens.json",
                         "relative_id":  "skills/design/_spec/examples/totality-festival/design_tokens.json",
-                        "size":  17457,
-                        "sha256":  "F2FBCE4031EF051BFC32EA893FA3680C003EA17631E29A3D74C02E19D77444E6"
+                        "size":  18368,
+                        "sha256":  "12BDF5C0267D5D13DDD5A4C55928F9FF37DA8C7A3B8938954CCE467765F62A90"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\_spec\\examples\\totality-festival\\README.md",
                         "relative_id":  "skills/design/_spec/examples/totality-festival/README.md",
-                        "size":  1155,
-                        "sha256":  "F4D5678C9F36F7333C0116FED51FE0CE2A59D0B400EF1ADBCAD24636F30D0DB9"
+                        "size":  1166,
+                        "sha256":  "53F0D461FC1FABBA32582F6F6B4A3977EECE8765BD6AFE6ED238AB439660D1B4"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\_spec\\examples\\totality-festival\\tailwind.config.js",
                         "relative_id":  "skills/design/_spec/examples/totality-festival/tailwind.config.js",
-                        "size":  4251,
-                        "sha256":  "8D520098DEC6D6F5592A47A97579E40A9DFA5B54FAC15DE2ACAC3936924F263C"
+                        "size":  4395,
+                        "sha256":  "DEFCC7D7F88570CE4C98437891B10BD5F29F1D6ECEF2FD176C1579EAABF482D4"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\_spec\\EXPORT_GUIDE.md",
                         "relative_id":  "skills/design/_spec/EXPORT_GUIDE.md",
-                        "size":  4962,
-                        "sha256":  "CD3739142BC221C1C3839899C912EC111EDD1CADC0A861146BF0741ED346E7B7"
+                        "size":  5123,
+                        "sha256":  "859578A28D4FF09851B0732482E9DEB4A4FAE1712A3CE1302E03941AF06D78EA"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\_spec\\LINT_CHECKLIST.md",
                         "relative_id":  "skills/design/_spec/LINT_CHECKLIST.md",
-                        "size":  3196,
-                        "sha256":  "2C4E14F0313C5326DAE2AE9AE400C12263D69CC3C8E9B4A53D24298CF57F649B"
+                        "size":  3289,
+                        "sha256":  "7D7619266F6952A698392340282D20CDBAF150A6B82F8B46C97B083FEDC04932"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\_spec\\SKILL.md",
                         "relative_id":  "skills/design/_spec/SKILL.md",
-                        "size":  4018,
-                        "sha256":  "2121765B58745839ECE6E2994B2542857F62E75196AA0370B7DA210D2F3FCDA9"
+                        "size":  4108,
+                        "sha256":  "27B51218118DC745B40B6EA547B3489D4D2EC2F6825EA85086DC28D419C7CAC3"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\_spec\\UPSTREAM_LICENSE.txt",
                         "relative_id":  "skills/design/_spec/UPSTREAM_LICENSE.txt",
-                        "size":  11360,
-                        "sha256":  "1BDD03995456D191707E379EB06CEAC20CF30D520BEC90C97C2B6D220906C66E"
+                        "size":  11560,
+                        "sha256":  "B40CA82F906F1F3CAB6946B08EAF6906DFFFF5A16B03C568FA767D09ABC03DE4"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\_spec\\UPSTREAM_SPEC.md",
                         "relative_id":  "skills/design/_spec/UPSTREAM_SPEC.md",
-                        "size":  14271,
-                        "sha256":  "4E1CB4085AF57675BF487ABF8009C8BEC0C7C2E61212A2EF1EF8F702D4A0BBAC"
+                        "size":  14626,
+                        "sha256":  "205E90A982B56784AADE7CCA2FB5AA02CA0FA2903FF9F752D9DB675B4B5339A6"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\app\\01-handshake-genesis\\skill.md",
                         "relative_id":  "skills/design/app/01-handshake-genesis/skill.md",
-                        "size":  994,
-                        "sha256":  "9F92EE2242A9FBF595BB488FFB25952F2A063B2C1125677981841B9DCE99D80C"
+                        "size":  1018,
+                        "sha256":  "08A94BBD8A7D9C6533CF7DEF70BB0F9D35EF3259CA4928A36486D7F79E2BCA08"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\app\\02-asset-orchestration\\skill.md",
                         "relative_id":  "skills/design/app/02-asset-orchestration/skill.md",
-                        "size":  2001,
-                        "sha256":  "94794B87A522CD93DB35E69D0836C198A03592013E2A40239E6D81C1D388FF51"
+                        "size":  2042,
+                        "sha256":  "1E8AA3A2E0B557DCD3E73F6FF505335F272B036E48896023DA11DD695EB9BC5C"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\app\\03-config-hardening\\skill.md",
                         "relative_id":  "skills/design/app/03-config-hardening/skill.md",
-                        "size":  1118,
-                        "sha256":  "E50A960D6F84400FEC15475F9ABA73D0D37AC70E3A85AADE8982F4036B3EAEA8"
+                        "size":  1146,
+                        "sha256":  "BD221F25B617F84661D37B2ACC339412836675123CD80703C6F6F58C5AF1B54C"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\app\\04-mock-state-foundry\\skill.md",
                         "relative_id":  "skills/design/app/04-mock-state-foundry/skill.md",
-                        "size":  1225,
-                        "sha256":  "1D0FF01C6372B9018FF9108B7B7D1BB56059D924A5AD0E2996E8CE9DC11FB7E9"
+                        "size":  1261,
+                        "sha256":  "DA8393AA5BA99137BE1B77C0831257882C047EE8741E01AB9EBABD57155616CE"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\app\\05-ui-standardization\\skill.md",
                         "relative_id":  "skills/design/app/05-ui-standardization/skill.md",
-                        "size":  1157,
-                        "sha256":  "106C17CDD15AFD4171574672E591C4C266EBAA5E2401F2597CA408C62728DD48"
+                        "size":  1192,
+                        "sha256":  "93A8333C98DD81B625D6382BC56A00427114DFD4D146F5631903D4E20A1AA043"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\app\\06-view-scaffolding\\skill.md",
                         "relative_id":  "skills/design/app/06-view-scaffolding/skill.md",
-                        "size":  1026,
-                        "sha256":  "D80A7A608E8B3B094D0D1B8CB3911589A67D8448711CD0934296628256540A2B"
+                        "size":  1054,
+                        "sha256":  "F696CE5C2A3AA333E63AF5FEB55365377BEF2AE9DC0751008C48FFC245F4D688"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\app\\07-interaction-polish\\skill.md",
                         "relative_id":  "skills/design/app/07-interaction-polish/skill.md",
-                        "size":  1312,
-                        "sha256":  "6533E72A6BB0055FEDA46AADEF812014B4DCE85EF9E1CD27FE3595D6F06EEF48"
+                        "size":  1343,
+                        "sha256":  "F86D2FD8B2D42474B30E47CC1B6D9E800D3B950A6087F02E6363B801BC6D40DB"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\app\\08-asset-orchestration\\skill.md",
                         "relative_id":  "skills/design/app/08-asset-orchestration/skill.md",
-                        "size":  1264,
-                        "sha256":  "2EDC1B8C7ADCCF9382BF8B1100844AA03B4788EB99EDBF361E411CBCD849B4F0"
+                        "size":  1294,
+                        "sha256":  "DB9DBCAEA13D1D38FC1FE20C796B5F76157B60085AC095CEB6A0763680D2C06B"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\app\\09-interactive-routing\\skill.md",
                         "relative_id":  "skills/design/app/09-interactive-routing/skill.md",
-                        "size":  867,
-                        "sha256":  "CE8FF83E455ABC08597F30960D59E7993184A0C0B7B28443D3741928494CCAFE"
+                        "size":  890,
+                        "sha256":  "EDFBFE52DCB7EDFF1CA4D1049B56B4EF285873C758F7E5883BC0C513392476DB"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\app\\design-intelligence.md",
                         "relative_id":  "skills/design/app/design-intelligence.md",
-                        "size":  4111,
-                        "sha256":  "82F058974D0C3FC51D4C7AB133267DB5680A5ED8B4E096026E342E6D369F2EF7"
+                        "size":  4195,
+                        "sha256":  "639840FB850A27027DAACB1E91D5784746A121E367E508BC7AD5E94C399D6762"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\app\\IMAGE_GENERATION_FREE.md",
                         "relative_id":  "skills/design/app/IMAGE_GENERATION_FREE.md",
-                        "size":  8138,
-                        "sha256":  "328720D87CFC263A335F4C54063125772E3899616C33B037AFAE065DBC60C488"
+                        "size":  8187,
+                        "sha256":  "E110C7DF0C974D98305A57A4AF0E015FC83059AF9F462BC6C0ECF486EE11303F"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\app\\SKILL.md",
                         "relative_id":  "skills/design/app/SKILL.md",
-                        "size":  7199,
-                        "sha256":  "225D25C675A13D81519E811A7FBB7D16AA9B0AEEE680BCFC9CC639E6E13E96EB"
+                        "size":  7358,
+                        "sha256":  "8BAF32E60BB2CDCBEA5B5A7C44DEBE80EAFB2028F9F90F4E9AEB246FD2062A82"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\SKILL.md",
                         "relative_id":  "skills/design/SKILL.md",
-                        "size":  1105,
-                        "sha256":  "F008902942A4879FA30C9E20C887F94F0FFE1740C903B436892D6B66FD245DE5"
+                        "size":  1129,
+                        "sha256":  "052AF517FD4A41841862C3AA54D5F25FAA39E582B0F06E98B6EB0582C41DA257"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\TIER_0_PROTOCOL.md",
                         "relative_id":  "skills/design/TIER_0_PROTOCOL.md",
-                        "size":  2484,
-                        "sha256":  "1B84257FBD74DD9305E000968F956ACA80F0B9CE639AB77CBE7E0CCB41164C62"
+                        "size":  2533,
+                        "sha256":  "349426115160723D877630AB9D401A59702605461EDCED0B3A381BC679BEFC39"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\website\\01-handshake-genesis\\skill.md",
                         "relative_id":  "skills/design/website/01-handshake-genesis/skill.md",
-                        "size":  2190,
-                        "sha256":  "2032312CACD44C9F252F1B4336F9D63B7DD2C9AC511847CB0CAD32242CAB7C1E"
+                        "size":  2191,
+                        "sha256":  "E698831A05821B653B4EB94F7E5335C07FBE24C6946E91CA230E7E6CA5CCD28A"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\website\\02-asset-orchestration\\skill.md",
                         "relative_id":  "skills/design/website/02-asset-orchestration/skill.md",
-                        "size":  3633,
-                        "sha256":  "D5312C23E96121EFDF74FC83DE993288B293D80777EAEC3B47A56448ADD60EC3"
+                        "size":  3648,
+                        "sha256":  "D6BC7AC41C4B32D280789ED25E759ED866D948E6EE61DC0BC228E69E59523EE4"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\website\\03-inventory-mapping\\skill.md",
                         "relative_id":  "skills/design/website/03-inventory-mapping/skill.md",
-                        "size":  2095,
-                        "sha256":  "B944C9C98697D807A500B4C5579C9E1BA0D0B16778FC0E24E8B872AE0DE7464C"
+                        "size":  2142,
+                        "sha256":  "95FA5D05FF45D6676E5E638D8F568D057957914D5E93CC7C487C34A3C5BB42AB"
                     },
                     {
                         "kind":  "skill-reference",
@@ -1596,16 +1828,16 @@
                         "root_relative":  "skills",
                         "relative_path":  "design\\website\\08-hydrogen-hydration\\skill.md",
                         "relative_id":  "skills/design/website/08-hydrogen-hydration/skill.md",
-                        "size":  2140,
-                        "sha256":  "AB4B334795CE4BB32B8012861316CF4F760AED9811C4A67932F9A706A470E03D"
+                        "size":  2199,
+                        "sha256":  "7306291C40E36A26F71FF9D4AECFEC7391771CE1383F2F8F3CEB8D298DDAC1BF"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\website\\09-seo-hardening\\skill.md",
                         "relative_id":  "skills/design/website/09-seo-hardening/skill.md",
-                        "size":  2899,
-                        "sha256":  "F17798F82E7DC9B0A6F5D09911D53FFD73EC8C8277203B1774C6BF3E13A1182A"
+                        "size":  2971,
+                        "sha256":  "1A9056B46C116FB4EEF70AEE6D79302B6901F85BF71C6C33698FEF7A833381E3"
                     },
                     {
                         "kind":  "skill-reference",
@@ -1620,8 +1852,8 @@
                         "root_relative":  "skills",
                         "relative_path":  "design\\website\\11-governance-scan\\skill.md",
                         "relative_id":  "skills/design/website/11-governance-scan/skill.md",
-                        "size":  1812,
-                        "sha256":  "1402CE43565706DFAF23D547CB54BAC1996E2276367F8C6A818D3DED7F64778A"
+                        "size":  1853,
+                        "sha256":  "6C30218BC8CC2400199876D5A7210AC07BD7168FF29BB36BB9587C97D6709FE8"
                     },
                     {
                         "kind":  "skill-reference",
@@ -1644,64 +1876,80 @@
                         "root_relative":  "skills",
                         "relative_path":  "design\\website\\CONTACT_FORM_PATTERN.md",
                         "relative_id":  "skills/design/website/CONTACT_FORM_PATTERN.md",
-                        "size":  12941,
-                        "sha256":  "ED3A973210BB672CEA5C9B404A300B5721939239CE003AC5460D7B271E4C4D9C"
+                        "size":  12936,
+                        "sha256":  "FDE7946A3F214D9C25F0EC07448179580600297C4A1328AB01B37880BFBB4E68"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\website\\DRAGGABLE_SLIDESHOW_PATTERN.md",
                         "relative_id":  "skills/design/website/DRAGGABLE_SLIDESHOW_PATTERN.md",
-                        "size":  10343,
-                        "sha256":  "4D05B03E719BCB852EF596843B45947D6BC65456ECFE4398748972125F524EA1"
+                        "size":  10338,
+                        "sha256":  "9A31894FE5687D6E2079DB3DCB55A3A06DF302EB0F98668F98F6FF8C7D87AFED"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\website\\ECOWORLD_COLOR_SYSTEM.md",
                         "relative_id":  "skills/design/website/ECOWORLD_COLOR_SYSTEM.md",
-                        "size":  16460,
-                        "sha256":  "83867BC30469AD8C46150B2389BD4BFE62DB5BAE9C2B015B937386F35DC3350C"
+                        "size":  16726,
+                        "sha256":  "9C966DD862A35C324772E80170A14EFBBF8AE17CD8649A982F0CAC4239697637"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\website\\HEADER_FOOTER_BOOTSTRAP_PATTERN.md",
                         "relative_id":  "skills/design/website/HEADER_FOOTER_BOOTSTRAP_PATTERN.md",
-                        "size":  11272,
-                        "sha256":  "0417B6AB9136FEE5E2237D11BC7BDF00BC6FF114BF5D53B86CF8AF87DF95E09B"
+                        "size":  11267,
+                        "sha256":  "5EF6BED0397AFF6EB1E3BF0FF693418793784B0020A5D2C0A57562C4BBD9E28E"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\website\\IMAGE_GENERATION_FREE.md",
                         "relative_id":  "skills/design/website/IMAGE_GENERATION_FREE.md",
-                        "size":  7514,
-                        "sha256":  "371927DD686096A7B63F8D2CF99FF2DF4AA2345F89CA84326CD6E37C790CA843"
+                        "size":  7851,
+                        "sha256":  "5A6A366D05E5831B747CDD702A5A76BDAC57FD74C6295C8562E2416F4DDE2110"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\website\\LIFESTYLE_DETAIL_PURE_DISPLAY.md",
                         "relative_id":  "skills/design/website/LIFESTYLE_DETAIL_PURE_DISPLAY.md",
-                        "size":  6416,
-                        "sha256":  "F14EE7676E66DDA0CED843E0CFA10C61EB6BFBF517E1684B63DAA7A73F90FB35"
+                        "size":  6411,
+                        "sha256":  "D9C8CA42C8294D00CD6C9E0EA0C697ED9E445FF94226720A3ACDB40F6DA35937"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\website\\SCROLL_FADEIN_PATTERN.md",
                         "relative_id":  "skills/design/website/SCROLL_FADEIN_PATTERN.md",
-                        "size":  7313,
-                        "sha256":  "BBD2820C09716C896B85FEAFE29DE9953017CC5E82FBA3A12C6F247D00C10806"
+                        "size":  7308,
+                        "sha256":  "36F4AA396AA298D7DAD8919303660F79471AEFD1E4E4085E08DE7868A43DB1C4"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "design\\website\\SKILL.md",
                         "relative_id":  "skills/design/website/SKILL.md",
-                        "size":  13318,
-                        "sha256":  "A06E8E90500D7A9D9184F60B92DDA15465FDD01294282815767296BC929888B1"
+                        "size":  13550,
+                        "sha256":  "939EC95A94FD371AA9B8D042EFB5B4AD60D7BCDA42225752E8B6D222AA2DA4BF"
+                    },
+                    {
+                        "kind":  "skill-reference",
+                        "root_relative":  "skills",
+                        "relative_path":  "huwa2-webapp\\agents\\openai.yaml",
+                        "relative_id":  "skills/huwa2-webapp/agents/openai.yaml",
+                        "size":  225,
+                        "sha256":  "DA644BFBDE93EEA80D1C0487DD342F33A7A06BF3EE12B13A95BD390B108B840B"
+                    },
+                    {
+                        "kind":  "skill-reference",
+                        "root_relative":  "skills",
+                        "relative_path":  "huwa2-webapp\\SKILL.md",
+                        "relative_id":  "skills/huwa2-webapp/SKILL.md",
+                        "size":  2841,
+                        "sha256":  "FBB6EFFF8AB24127815F5E2996583116A5A740DC94C4B8FE009EAAE54C3170A7"
                     },
                     {
                         "kind":  "skill-reference",
@@ -1788,16 +2036,16 @@
                         "root_relative":  "skills",
                         "relative_path":  "imagegen\\SKILL.md",
                         "relative_id":  "skills/imagegen/SKILL.md",
-                        "size":  10093,
-                        "sha256":  "D1C1DA38A476039D20F22CE488DC2732AF7731493DB1A14A794C641E3AABE611"
+                        "size":  10094,
+                        "sha256":  "98A142B031E02946A07A7630E9EFD12AB26A23852FC9BCB4E428E46E59E1F810"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "karpathy-guidelines\\SKILL.md",
                         "relative_id":  "skills/karpathy-guidelines/SKILL.md",
-                        "size":  2216,
-                        "sha256":  "04ADA9F0122B3A92945C4C26B45FD4180BC4E31802296FAE3DD801D6AF4725EB"
+                        "size":  2281,
+                        "sha256":  "E3BBB94E02AEF4BA490F7F2ED43079B69BB684246A91844022A42C2C898525D6"
                     },
                     {
                         "kind":  "skill-reference",
@@ -1810,34 +2058,42 @@
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
+                        "relative_path":  "localhost-test\\scripts\\localhost-test.ps1",
+                        "relative_id":  "skills/localhost-test/scripts/localhost-test.ps1",
+                        "size":  9266,
+                        "sha256":  "1E5A699E58B2B09B62FB2522A11C695100F8DA0C29083CF0881A6ACDDBB07E79"
+                    },
+                    {
+                        "kind":  "skill-reference",
+                        "root_relative":  "skills",
                         "relative_path":  "localhost-test\\SKILL.md",
                         "relative_id":  "skills/localhost-test/SKILL.md",
-                        "size":  2760,
-                        "sha256":  "A70A8CC9351F7E761A3C29E532099F865CECB8D2A4299701C230EC53E7B3C368"
+                        "size":  2821,
+                        "sha256":  "E0B65A0C170D9CDE109967D2EC0FB996785D2A48D92E0FC46AB1E9ECB318EF9C"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "markdown-database-mindmap\\SKILL.md",
                         "relative_id":  "skills/markdown-database-mindmap/SKILL.md",
-                        "size":  2750,
-                        "sha256":  "4B58041132121E0F483ABEB329ED9F71D0F8813E15D4E0E9343E658ABD2C139E"
+                        "size":  2817,
+                        "sha256":  "A565070DC6613B397133400B5FA92C40299C02859EA7A7C925D83FE8A1975A8C"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "meta-content-workflow\\agents\\openai.yaml",
                         "relative_id":  "skills/meta-content-workflow/agents/openai.yaml",
-                        "size":  285,
-                        "sha256":  "187C73905A63B14FBD9B8EFE38B8F221B499E25EA38028B1E85DCD681C9AE563"
+                        "size":  292,
+                        "sha256":  "4BB1632C8C90EA3AB814FBB377DCF5FFD22E9DD3A66044D11CEFB0F6AE65B7FC"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "meta-content-workflow\\SKILL.md",
                         "relative_id":  "skills/meta-content-workflow/SKILL.md",
-                        "size":  5673,
-                        "sha256":  "B155AE2E7392A421598ED03E95C2FAEF023EB2F2EAAAB05E2E83890FC7181D0D"
+                        "size":  5714,
+                        "sha256":  "D7E5A22E871DE4EC62FAFD03D02937B738716A080CD1D98E0ED6081B8DA9D670"
                     },
                     {
                         "kind":  "skill-reference",
@@ -1852,40 +2108,48 @@
                         "root_relative":  "skills",
                         "relative_path":  "meta-skills\\SKILL.md",
                         "relative_id":  "skills/meta-skills/SKILL.md",
-                        "size":  5389,
-                        "sha256":  "192365E1A7B854443D6461960A272E674891C04970E8F8ED8480C75E381000B2"
+                        "size":  2331,
+                        "sha256":  "BD8955694CCAD5693B159EA5D99F16B4DFE1D4E62FAC639D2F4AA4AA5FCFCC81"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "pinia-contract-workflow\\scripts\\check_paired_pinia_contract.ps1",
                         "relative_id":  "skills/pinia-contract-workflow/scripts/check_paired_pinia_contract.ps1",
-                        "size":  2330,
-                        "sha256":  "B02221C1D0AF8BEA1D34403DB5ADF0CB7D323782C6BE4FBC1564BE4F20F0F2FA"
+                        "size":  2382,
+                        "sha256":  "781A2639769DC16B61B267797303F273E0402F5C846A6E5D635CA4C3CD0D65DF"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "pinia-contract-workflow\\SKILL.md",
                         "relative_id":  "skills/pinia-contract-workflow/SKILL.md",
-                        "size":  15830,
-                        "sha256":  "2345174E7D2FB578C761087F3F26BB1258658E871C9E60269F0D49159A218554"
+                        "size":  16110,
+                        "sha256":  "B8E3DC003EC550BA1D939B19087E4F70E7E7FE2C7E972E13B8297F8D95E1ABA8"
+                    },
+                    {
+                        "kind":  "skill-reference",
+                        "root_relative":  "skills",
+                        "relative_path":  "product-development-operating-model\\SKILL.md",
+                        "relative_id":  "skills/product-development-operating-model/SKILL.md",
+                        "size":  7211,
+                        "sha256":  "05A888E1FD5653F987CE2917411396F6B99EC6CEFA574DEC4647FAEAA6F8F482"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "project-handoff-doc-stack\\SKILL.md",
                         "relative_id":  "skills/project-handoff-doc-stack/SKILL.md",
-                        "size":  2805,
-                        "sha256":  "862EC9557843C5E464558DA6289586E6EFD4660DCD2A613860F860F0DD981C2C"
+                        "size":  2861,
+                        "sha256":  "D02C8381407190A464EF1C847D2A5E413B450ABA670167AA106E4D427675B7A7"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "README.md",
                         "relative_id":  "skills/README.md",
-                        "size":  3914,
-                        "sha256":  "D13E22727DBB1C480B3264B369F78608F2BDAF0800E22347D70DC7D1E604A81A"
+                        "size":  3970,
+                        "sha256":  "EDEB795F15BEC700F42E686149ED2E0684FCC5234181C4E72D8F1569C6C29F97"
                     },
                     {
                         "kind":  "skill-reference",
@@ -1900,40 +2164,48 @@
                         "root_relative":  "skills",
                         "relative_path":  "seo-ai-search\\references\\platform-guidance.md",
                         "relative_id":  "skills/seo-ai-search/references/platform-guidance.md",
-                        "size":  2078,
-                        "sha256":  "CD5687DD4C2DE193435943F40DCE3DE9AA3F4E33E2781E783D24FF743125DA79"
+                        "size":  2100,
+                        "sha256":  "6D407371BA24FA5D6F3AA1F79B30500E626F36C8CF5041E28685D4930179AAFD"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "seo-ai-search\\SKILL.md",
                         "relative_id":  "skills/seo-ai-search/SKILL.md",
-                        "size":  4581,
-                        "sha256":  "B56EF7B85979255F22C66DC199775CCB58A190BC9C22E450799FFB096E456CA5"
+                        "size":  4628,
+                        "sha256":  "824756A40457EB46E1E9A7D19CC254EB08FF8EC936BB2F819D242BFCB37CE43E"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "SHARED_DB_CONTRACT.md",
                         "relative_id":  "skills/SHARED_DB_CONTRACT.md",
-                        "size":  5312,
-                        "sha256":  "868A0E0DDD134C6485B822D426EF3D13A78DC6CC619F564F34550AA95C833A3D"
+                        "size":  5423,
+                        "sha256":  "8B4DA01CFFFA3E66AD2C5568AF82FC266675ED160FA9153FF762AC5151E5AFEC"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "starting-point\\README.md",
                         "relative_id":  "skills/starting-point/README.md",
-                        "size":  1428,
-                        "sha256":  "EB5E93B2E78B5132F9A943407F322586198930131D6B1E0B536F83307651D3F1"
+                        "size":  1465,
+                        "sha256":  "28400F8201A0FB068747C1D9E1172A5A62B07C64449BFA19A555B50F68D1BDD5"
                     },
                     {
                         "kind":  "skill-reference",
                         "root_relative":  "skills",
                         "relative_path":  "starting-point\\skill.md",
                         "relative_id":  "skills/starting-point/skill.md",
-                        "size":  9636,
-                        "sha256":  "970692127F6CE1AD36307ADB80A3137B62D769475AD5A78E054A973DBFA03F34"
+                        "size":  9883,
+                        "sha256":  "46CF05A33E516F22E1AC43C36EF077AB550670E06A05E5FD3CEF10495F4758CA"
+                    },
+                    {
+                        "kind":  "skill-reference",
+                        "root_relative":  "skills",
+                        "relative_path":  "template-to-php-project\\SKILL.md",
+                        "relative_id":  "skills/template-to-php-project/SKILL.md",
+                        "size":  11130,
+                        "sha256":  "926C3D057C944BB4762C1BE97FCC8F8D01F7CD561CA577CA5E06E7B4B315BEB6"
                     }
                 ]
 }

@@ -5,7 +5,7 @@ type: skill
 tier: 2
 phase: 07-motion-design
 priority: HIGH
-applies_to: ["claude", "claude-code", "codex", "luna-5.6-medium"]
+applies_to: ["claude", "claude-code", "codex", "gpt-6-luna"]
 related:
   - "SKILL.md"
   - "07-motion-design/skill.md"

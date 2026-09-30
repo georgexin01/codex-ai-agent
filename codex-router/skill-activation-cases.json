@@ -62,19 +62,24 @@
       "expected_target": "skills/meta-skills/SKILL.md"
     },
     {
-      "id": "luna-medium-default",
-      "prompt": "Use ai luna reasoning for this small verified fix.",
+      "id": "gpt6-high-profile-small-fix",
+      "prompt": "Use ai gpt-6 luna reasoning for this small verified fix.",
       "expected_target": "memories/2_governance/LUNA_5_6_REASONING_MODES.md"
     },
     {
-      "id": "luna-high-escalation",
-      "prompt": "Use ai medium high reasoning to review this security-sensitive schema change.",
+      "id": "gpt6-high-profile-security-review",
+      "prompt": "Use ai gpt-6 luna reasoning to review this security-sensitive schema change.",
       "expected_target": "memories/2_governance/LUNA_5_6_REASONING_MODES.md"
     },
     {
-      "id": "luna-performance-mode",
-      "prompt": "Use ai luna performance mode to improve token use and speed.",
+      "id": "gpt6-high-profile-context-efficiency",
+      "prompt": "Use ai gpt-6 luna reasoning to improve context efficiency.",
       "expected_target": "memories/2_governance/LUNA_5_6_REASONING_MODES.md"
+    },
+    {
+      "id": "gpt6-high-profile-vue-vben",
+      "prompt": "Use ai gpt-6 luna vue vben for this form update.",
+      "expected_target": "memories/extensions/ad_hoc/notes/2026-07-10-luna-5-6-vue-vben-execution-profile.md"
     },
     {
       "id": "negative-stale-route",

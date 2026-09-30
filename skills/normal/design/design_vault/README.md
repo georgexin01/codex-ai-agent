@@ -25,16 +25,16 @@ Rule: AI checks vault → runs match score → **≥55% = use vault**, <55% = cr
 ## 📦 2. VAULT INDEX
 | # | Component | Score | Match Profile | Data File |
 | :--- | :--- | :--- | :--- | :--- |
-| **D1**| Gradient Order Card| 95 | F&B, E-commerce | [order-card.yaml](components/order-card.yaml) |
-| **D2**| Auth Login (Dark) | 95 | Core Mobile Auth | [auth-login.yaml](components/auth-login.yaml) |
-| **D3**| Mobile Nav Dark | 95 | Agency/Portfolio | [mobile-nav.yaml](components/mobile-nav.yaml) |
-| **D4**| Phone Showcase | 95 | Landing Pages | [showcase.yaml](components/showcase.yaml) |
+| **D1**| Gradient Order Card| 95 | F&B, E-commerce | [order-card-gradient.md](order-card-gradient.md) |
+| **D2**| Auth Login (Dark) | 95 | Core Mobile Auth | [auth-login-gradient.md](auth-login-gradient.md) |
+| **D3**| Mobile Nav Dark | 95 | Agency/Portfolio | [mobile-nav-fullscreen-dark.md](mobile-nav-fullscreen-dark.md) |
+| **D4**| Phone Showcase | 95 | Landing Pages | [phone-showcase-sticky.md](phone-showcase-sticky.md) |
 
 ## 🎨 3. THEME & INTERACTION
 | Asset Group | Count | Source |
 | :--- | :--- | :--- |
 | **Primary Themes** | 5 Variants | [theme-system.md](theme-system.md) |
-| **Button Vault** | 20 Variants | [button-vault.yaml](components/button-vault.yaml) |
+| **Button Vault** | No separate button-vault resource exists in this checkout | No linked YAML file is available |
 | **Interactions** | 10 Patterns | [micro-interactions.md](micro-interactions.md) |
 
 ## 🛡️ 4. APEX GUARDRAILS

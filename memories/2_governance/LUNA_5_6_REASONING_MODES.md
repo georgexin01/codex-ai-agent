@@ -1,13 +1,14 @@
 ---
-name: luna-5-6-reasoning-modes
-title: GPT-5.6 Luna Medium and High Reasoning Modes
-description: "Compact operating contract for GPT-5.6 Luna reasoning levels, context budgets, escalation, and controlled automation."
+name: gpt-6-luna-high-reasoning-profile
+title: GPT-6 Luna High Reasoning Profile
+description: "Runtime profile contract for GPT-6 Luna high reasoning effort, task context lanes, and controlled automation."
 aliases:
   - luna reasoning modes
   - medium high reasoning
-  - gpt 5.6 luna modes
+  - gpt 6 luna high reasoning
 triggers:
   - ai luna reasoning
+  - ai gpt-6 luna reasoning
   - ai medium high reasoning
   - ai luna performance mode
 priority: high
@@ -28,34 +29,36 @@ verification:
   - Confirm route, memory, skill, and benchmark checks before completion.
 phase: governance
 model_hint: medium
-model_profile: luna-5.6-medium
-version: 1.0
+model_profile: gpt-6-luna-high
+applies_to: ["gpt-6-luna"]
+version: 1.1
 status: authoritative
-date_updated: "2026-08-07"
-last_audit: "2026-08-07"
+date_updated: "2026-09-30"
+last_audit: "2026-09-30"
 ---
 
-# GPT-5.6 Luna reasoning modes
+# GPT-6 Luna high reasoning profile
 
-This is the compact mode contract for the user's GPT-5.6 Luna runtime. Reasoning depth changes evidence quality and verification depth; it never authorizes broader scope or weaker safety.
+This is the compact contract for the configured GPT-6 Luna runtime. `config.toml` selects model `gpt-6-luna` and high reasoning effort. `model_profile` is a local label; Markdown frontmatter does not change runtime configuration.
 
-## Medium mode — default
+## High reasoning effort — configured default
 
-- Resolve the longest route first.
-- Load PULSE, one matching front door, and only targeted evidence.
-- Keep one verification target and concise output.
-- Do not load Tier-0, rollout history, or broad memory unless the route requires it.
-- Use for routine coding, lookup, small fixes, local tests, and known-scope changes.
+- High effort applies to routine and complex tasks through the runtime configuration.
+- Keep evidence and output proportional to the request; high effort does not authorize broader scope.
+- Resolve the longest route first and load only the relevant front door and evidence.
+- Keep one verification target for narrow work; expand checks when risk requires it.
 
-## High mode — deliberate escalation
+## Task context lanes
 
-Use only for explicit `deep`, `thorough`, or `review` requests, unresolved ambiguity, security/auth/schema work, architecture, recovery, or a failed Medium check.
+- Routine, balanced, and deep describe context scope, not model choice or reasoning effort.
+- Routine work uses PULSE, one matching front door, and a few current project files.
+- Deep work adds exact governance or project truth when risk, ambiguity, or the task requires it.
+
+## High-effort checks
 
 - Preserve the exact task contract, paths, identifiers, errors, and acceptance criteria.
-- Read the exact higher-tier sources required by the route.
-- Test counterexamples, source conflicts, stale routes, and rollback paths.
+- Test counterexamples, source conflicts, stale routes, and rollback paths when relevant.
 - Run full relevant validation before claiming completion.
-- Return to Medium after the high-risk task is complete.
 
 ## Shared locks
 

@@ -6,7 +6,7 @@ tier: 2
 phase: 1-execution
 priority: HIGH
 model_hint: medium
-applies_to: ["claude", "claude-code", "luna-5.6-medium", "antigravity"]
+applies_to: ["claude", "claude-code", "gpt-6-luna", "antigravity"]
 requires: ["0_apex/SOVEREIGN_BLUEPRINT_PROTOCOL.md", "2_governance/SOVEREIGN_BLUEPRINT_PROCEDURE.md", "0_apex/templates/MASTER_BLUEPRINT.md", "0_apex/templates/MASTER_APP_BLUEPRINT.md", "0_apex/templates/MASTER_DESIGN.md", "0_apex/templates/MASTER_ROUTER_BLUEPRINT.md", "0_apex/templates/BLUEPRINT_SAMPLES.md"]
 unlocks: ["MOBILE_APP_DESIGN_RECIPE.md", "IMAGE_TO_MOBILE_APP_PIPELINE.md"]
 related: ["0_apex/USER_DNA.md", "1_core/DESIGN_SOP.md", "1_core/UI_DNA_MASTER.md", "archive/wrider_design_senses.md"]

@@ -1,12 +1,12 @@
 ---
 name: mobile-app-design-recipe
-description: "Canonical mobile app build recipe index for the user's preferred fintech/utility aesthetic, sample-driven mobile builds, and Luna 5.6 routing."
+description: "Canonical mobile app build recipe index for the user's preferred fintech/utility aesthetic, sample-driven mobile builds, and GPT-6 Luna High routing."
 type: procedure-index
 tier: 2
 phase: 1-execution
 priority: HIGH
 model_hint: medium
-applies_to: ["claude", "claude-code", "luna-5.6-medium", "antigravity"]
+applies_to: ["claude", "claude-code", "gpt-6-luna", "antigravity"]
 authored_for: "shared cross-AI use"
 requires: ["CLAUDE_BLUEPRINT_RECIPE.md", "0_apex/USER_DNA.md", "1_core/DESIGN_SOP.md", "0_apex/SOVEREIGN_BLUEPRINT_PROTOCOL.md"]
 unlocks: ["IMAGE_TO_MOBILE_APP_PIPELINE.md"]

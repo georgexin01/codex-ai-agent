@@ -1,3 +1,12 @@
+---
+name: array-fk-count
+description: "Count records related through UUID array fields when a native PostgREST foreign-key count is unavailable."
+triggers: ["array FK count", "PostgREST UUID array count", "count related records array field"]
+phase: implementation
+model_hint: medium
+model_profile: gpt-6-luna-high
+---
+
 # Array FK Count Pattern
 
 ## Problem

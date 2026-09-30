@@ -1,6 +1,6 @@
-# Luna 5.6 Pinia execution profile
+# GPT-6 Luna High Pinia execution profile
 
-This workspace uses Luna 5.6 as the active execution profile.
+This workspace uses GPT-6 Luna with high reasoning effort as the active execution profile. The model ID is `gpt-6-luna`; high effort is configured separately in `config.toml`.
 
 For Pinia, Cyroro, and paired-app work, prioritize:
 

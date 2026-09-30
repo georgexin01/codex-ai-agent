@@ -62,7 +62,7 @@ if (-not [string]::IsNullOrWhiteSpace($Trigger)) {
 $rows = if ($null -ne $selected) { @($selected) } else { $allRows }
 $summary = [pscustomobject]@{
   generated_utc = [DateTime]::UtcNow.ToString("o")
-  model_profile = "luna-5.6-medium"
+  model_profile = "gpt-6-luna-high"
   selected_trigger = if ($Trigger) { $Trigger.Trim() } else { $null }
   route_count = $rows.Count
   missing_target_count = @($rows | Where-Object { -not $_.exists }).Count

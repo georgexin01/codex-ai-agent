@@ -1,6 +1,6 @@
 ---
-name: gpt-5-6-luna-operating-playbook
-description: "General GPT-5.6 Luna operating rules for high-context, tool-using, cache-aware Codex work."
+name: gpt-6-luna-high-operating-playbook
+description: "General GPT-6 Luna high operating rules for tool-using Codex work."
 triggers: ["__auto_after_codex_boot__", "__luna_context__"]
 activation: task_state_deep
 read_mode: deep_only
@@ -11,10 +11,13 @@ canonical_for: [model_optimization, knowledge_review, routing_validation]
 status: authoritative
 phase: execution
 model_hint: medium
-model_profile: luna-5.6-medium
+model_profile: gpt-6-luna-high
 version: 1.0
-date_updated: "2026-07-10"
+date_updated: "2026-09-30"
 source:
+  - "https://developers.openai.com/api/docs/guides/latest-model"
+  - "https://developers.openai.com/api/docs/guides/reasoning"
+historical_sources:
   - "https://docsbot.ai/models/compare/gpt-5-6-luna/gpt-5-4-mini"
 related_docs:
   - memories/2_governance/MODEL_COST_OPTIMIZATION_POLICY.md
@@ -22,7 +25,7 @@ related_docs:
   - skills/claude-meta/validate-knowledge/skill.md
 ---
 
-# GPT-5.6 Luna operating playbook
+# GPT-6 Luna high operating playbook
 
 This is the general Luna layer for deep model-optimization, knowledge review, routing validation, and explicit `.codex` improvement work. Project-specific files, current source, tests, and explicit user instructions remain higher-signal than this note.
 
@@ -42,7 +45,7 @@ Knowledge labels used in this file:
 4. **RULE — Prompt-cache stability is a design constraint.** Keep durable instructions and stable route prefixes unchanged; place volatile task details after them. Avoid needless edits to hot boot files.
 5. **RULE — Tool use should be an inspect-act-verify loop.** For coding tasks, gather current file evidence, make the smallest patch, read it back, and run the nearest useful check.
 6. **Use parallelism for independent evidence.** Batch unrelated file reads, searches, and checks together; keep dependent operations sequential so the evidence chain stays clear.
-7. **Spend deeper reasoning on ambiguity and risk.** Start with low-cost hypotheses and escalate only for unknown root causes, architecture, security, governance, or failed verification.
+7. **Spend deeper context on ambiguity and risk.** The runtime stays at high reasoning effort; expand evidence for unknown root causes, architecture, security, governance, or failed verification.
 8. **Exploit terminal strength through executable acceptance criteria.** Prefer `rg`, focused scripts, type checks, builds, smoke requests, and browser checks over prose claims that code is correct.
 9. **Keep model uncertainty visible.** A comparison page may contain stale, incomplete, or vendor-generated data; label article-derived claims, verify unstable facts, and never invent missing capabilities, prices, or access entitlements.
 10. **Measure the workflow, not only the model.** For repeated routes, track prompt/completion tokens when available, cache reuse, wall-clock time, route correctness, verification result, and whether the extra context changed the outcome.
@@ -66,6 +69,6 @@ Task-specific routes still take precedence when a project or skill requires deep
 ## What this changes in `.codex`
 
 - General Luna behavior lives here instead of bloating `00_PULSE.md`.
-- `ai luna 5.6` remains the only user-facing Luna-specific route, for Vue/Vben work.
-- The cost policy uses Luna as the active baseline while retaining portable Lean/Balanced/Deep lanes.
+- `ai gpt-6 luna reasoning` routes to the current reasoning profile; `ai gpt-6 luna vue vben` routes to the Vue/Vben execution profile.
+- The cost policy uses GPT-6 Luna high as the active baseline while retaining portable Lean/Balanced/Deep context lanes.
 - Existing project-specific skills remain authoritative for their own workflows.

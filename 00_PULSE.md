@@ -4,12 +4,12 @@ description: "⚡ PULSE — single boot read. Hot rules + trigger map + reasonin
 triggers: ["boot", "start", "ai read .codex knowledge"]
 phase: boot
 model_hint: medium
-model_profile: luna-5.6-medium
-version: 1.3
+model_profile: gpt-6-luna-high
+version: 1.4
 status: authoritative
 supersedes_in_boot: []
-date_updated: "2026-09-03"
-last_audit: "2026-09-03"
+date_updated: "2026-09-30"
+last_audit: "2026-09-30"
 ---
 
 # ⚡ PULSE — Single Boot Read
@@ -80,27 +80,28 @@ When the task is about your long-term preferences, behavior, routing, or reusabl
 These are the high-signal overlays for faster routing, better behavior matching, and lower ambiguity.
 `(ai manage)` means maintenance-owned: prefer to update that note or skill when a better durable rule is discovered.
 
-## 0.1.4 Luna Medium Operating Profile
+## 0.1.4 GPT-6 Luna High Operating Profile
 - Prefer one route, one source of truth, and one verification target per task.
 - Read front doors before executor files; read executor files before reference libraries.
 - Keep tool calls narrow and parallelize independent evidence reads when possible.
 - State uncertainty when evidence is missing; do not fill gaps with historical memory.
 - For edits, inspect current files, patch the smallest scope, then run the nearest useful check.
 
-### Compact Luna digest (always active after PULSE)
+### Compact GPT-6 Luna digest (always active after PULSE)
 - Use the large context window for connected evidence, never full-tree dumping.
 - Keep stable instruction prefixes and route text unchanged when cache reuse matters.
 - Use `inspect → act → verify`; terminal checks outrank prose confidence.
 - Parallelize independent reads and checks; keep dependent operations sequential.
-- Stay in Lean Lane by default; escalate only for ambiguity, risk, or failed checks.
+- Use the configured high reasoning effort; keep context and output proportional to the task.
 - Label facts, user rules, preferences, and historical evidence separately.
 - Keep one matching skill family awake; unload it when the task lane changes.
 - Preserve exact user constraints, IDs, paths, schema, and error text.
 
 ### Context budget
 - Routine: PULSE + one matching skill/front door + 1–3 current project files.
-- Medium: PULSE + one skill family + targeted evidence and one verification target.
+- Balanced: PULSE + one skill family + targeted evidence and one verification target.
 - Deep: PULSE + exact governance/project truth + full Luna playbook only when justified.
+- These lanes control context scope, not the configured model or reasoning effort.
 
 ### Source ownership
 - PULSE owns boot, safety, routing, compact defaults, and context budgets.
@@ -211,7 +212,8 @@ Matching rule: evaluate the longest exact trigger phrase first; never route a st
 "ai compress knowledge": "memories/2_governance/KNOWLEDGE_COMPRESSION_PROTOCOL.md"
 "ai custom instructions": "memories/extensions/ad_hoc/notes/2026-07-03T00-00-01-merged-codex-performance-layer.md"
 "ai performance layer": "memories/extensions/ad_hoc/notes/2026-07-03T00-00-01-merged-codex-performance-layer.md"
-"ai luna 5.6":      "memories/extensions/ad_hoc/notes/2026-07-10-luna-5-6-vue-vben-execution-profile.md" # typed Vue/Vben implementation and verification gates
+"ai gpt-6 luna vue vben": "memories/extensions/ad_hoc/notes/2026-07-10-luna-5-6-vue-vben-execution-profile.md" # GPT-6 Luna high-reasoning Vue/Vben implementation and verification gates
+"ai luna vue vben": "memories/extensions/ad_hoc/notes/2026-07-10-luna-5-6-vue-vben-execution-profile.md" # concise alias for the current Vue/Vben profile
 "ai pinia contract": "skills/pinia-contract-workflow/SKILL.md" # exact PiniaStore, Function, Input app contract
 "ai cyroro audit":  "skills/pinia-contract-workflow/SKILL.md" # paired Cyroro admin/driver contract and runtime audit
 "ai cold storage audit": "memories/extensions/ad_hoc/notes/2026-07-07T00-00-00-cold-storage-promotion-policy.md"
@@ -224,6 +226,7 @@ Matching rule: evaluate the longest exact trigger phrase first; never route a st
 "ai drift guard":     "memories/2_governance/DRIFT_GUARD_PROTOCOL.md"
 "ai mode lean":       "memories/2_governance/MODEL_COST_OPTIMIZATION_POLICY.md"
 "ai mode deep":       "memories/2_governance/MODEL_COST_OPTIMIZATION_POLICY.md"
+"ai gpt-6 luna reasoning": "memories/2_governance/LUNA_5_6_REASONING_MODES.md"
 "ai reply terse":     "memories/2_governance/MODEL_COST_OPTIMIZATION_POLICY.md"
 "ai benchmark live":  "memories/2_governance/MODEL_COST_OPTIMIZATION_POLICY.md"
 "ai trigger conflict": "codex-router/Audit-CodexRouting.ps1"
@@ -298,7 +301,7 @@ Workspace fingerprint rule: if the current repo contains `PROJECT_CONTEXT.md`, r
 - Historical rollouts/artifacts — only when explicitly needed.
 
 ## 7. Reasoning Profile (compact)
-Routine: Goal-contract + assumption-tag + token-discipline + verified-output (+ drift-guard if long). Medium: add evidence-ladder, hypothesis-test, risk+rollback. Deep/high-risk (`deep/thorough/review`): all 12 (incl. counterexample check + drift-guard checkpoint). Full set: `00_REASONING_EVOLUTION_PROTOCOL.md`.
+GPT-6 Luna runs with the configured `high` reasoning effort. Apply the routine, balanced, or deep context lane to control how much evidence to load; do not change the runtime effort by task phase. Deep/high-risk (`deep/thorough/review`): use all 12 reasoning checks (including counterexample check + drift-guard checkpoint). Full set: `00_REASONING_EVOLUTION_PROTOCOL.md`.
 - **Fable-5 lane** (when `model_hint` resolves to `claude-fable-5`): native multi-step reasoning is strong — do the reasoning internally instead of emitting scaffolding prose; spend the saved tokens on one extra counterexample/edge check before final answer. Locks are NON-negotiable regardless of model: evidence-ladder, verify-before-done, drift-guard, edit-tiers, data-sovereignty still apply. Stronger reasoning lowers output verbosity, never lowers verification.
 - **Drift Guard**: every 3–5 tool batches re-read the anchor (originating request); classify on-track/minor/major; revert on major.
 - **Output length**: hydration = 1 line · routine = outcome + 1 validation line · summary ≤100 words · architecture ≤250 words. No filler.
@@ -310,4 +313,4 @@ Route integrity is mandatory: before merging, archiving, renaming, or deleting a
 Regenerate routing: `codex-router/Update-CodexRouting.ps1 -Quiet` (if shell allows), then audit with `codex-router/Audit-CodexRouting.ps1`. If shell cannot run, update affected index entries manually and read back the changed routes.
 
 ---
-**PULSE V1.2 — single boot read. Detailed canon: `00_CODEX_START_HERE.md` + `0_apex/GROUND_KERNEL.md`.**
+**PULSE V1.4 — single boot read. Detailed canon: `00_CODEX_START_HERE.md` + `memories/0_apex/GROUND_KERNEL.md`.**

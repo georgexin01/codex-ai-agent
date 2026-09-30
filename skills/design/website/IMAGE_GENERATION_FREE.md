@@ -5,7 +5,7 @@ type: skill
 tier: 2
 phase: 02-asset-orchestration
 priority: HIGH
-applies_to: ["claude", "claude-code", "codex", "luna-5.6-medium"]
+applies_to: ["claude", "claude-code", "codex", "gpt-6-luna"]
 related:
   - "SKILL.md"
   - "02-asset-orchestration/skill.md"
@@ -56,7 +56,7 @@ Before scaffolding anything new, look for:
 
 ### Step 2 — Scaffold `scripts/generate-images.php` if missing
 
-Use the canonical template at [ecoworld/scripts/generate-images.php](../../../../Desktop/ecoworld/scripts/generate-images.php). It supports:
+The documented canonical template is `C:/Users/user/Desktop/ecoworld/scripts/generate-images.php`; that external project file is unavailable in this checkout. Verify it in the active project before using it. It supports:
 
 - `--slot=hero|slideshow|masonry|blueprint|all` — generate a single slot or everything
 - `--limit=N` — generate only first N items in a slot
@@ -118,7 +118,7 @@ function project_media(array $item): void {
 }
 ```
 
-This means generation can run incrementally and the site never displays broken-image icons. See [ecoworld/lib/components.php::eco_unit_media()](../../../../Desktop/ecoworld/lib/components.php) for the reference implementation.
+This means generation can run incrementally and the site never displays broken-image icons. The historical reference implementation is `C:/Users/user/Desktop/ecoworld/lib/components.php::eco_unit_media()`; that external file is unavailable in this checkout.
 
 ### Step 7 — Document the run
 
@@ -155,9 +155,9 @@ Per [SKILL.md addendum](SKILL.md#codex-php-website-structure-addendum):
 ## Reference implementation
 
 - Project: `c:/Users/user/Desktop/ecoworld/`
-- Generator: [scripts/generate-images.php](../../../../Desktop/ecoworld/scripts/generate-images.php)
-- Prompt source: [data/visuals.php](../../../../Desktop/ecoworld/data/visuals.php) + [api/database.php::eco_category_image_prompt()](../../../../Desktop/ecoworld/api/database.php)
-- Renderer with fallback: [lib/components.php::eco_unit_media()](../../../../Desktop/ecoworld/lib/components.php)
+- Generator: `C:/Users/user/Desktop/ecoworld/scripts/generate-images.php` (external source unavailable in this checkout)
+- Prompt source: `C:/Users/user/Desktop/ecoworld/data/visuals.php` + `C:/Users/user/Desktop/ecoworld/api/database.php::eco_category_image_prompt()` (external sources unavailable in this checkout)
+- Renderer with fallback: `C:/Users/user/Desktop/ecoworld/lib/components.php::eco_unit_media()` (external source unavailable in this checkout)
 - First production run: 2026-05-11, slot=slideshow, 5 images in ~10 seconds, all visually QA'd.
 
 ---

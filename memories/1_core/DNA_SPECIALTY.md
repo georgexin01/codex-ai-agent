@@ -102,7 +102,7 @@ date_updated: "2026-04-24"
 
 - [claude-app/12-i18n-composables/skill.md](../../skills/claude-app/12-i18n-composables/skill.md) — 逐步实现指南
 - [claude-app/13-native-pwa-deploy/skill.md](../../skills/claude-app/13-native-pwa-deploy/skill.md) — 部署流水线
-- [lib/htmlHead.php](../../../../alexis/lib/htmlHead.php) — 视口 412 参考实现
+- `alexis/lib/htmlHead.php` — 视口 412 参考实现; the original external project root is not available in this checkout, so its path cannot be verified.
 
 ---
 **DNA Specialty V2.0 — 2026-04-24**

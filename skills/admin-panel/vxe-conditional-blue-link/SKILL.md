@@ -1,3 +1,12 @@
+---
+name: vxe-conditional-blue-link
+description: "Style VXE table cells as links only when row data contains a clickable value."
+triggers: ["conditional blue link column", "VXE conditional link", "row-dependent cell link"]
+phase: implementation
+model_hint: medium
+model_profile: gpt-6-luna-high
+---
+
 # VXE Table — Conditional Blue Link Column
 
 ## Problem

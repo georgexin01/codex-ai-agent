@@ -44,20 +44,26 @@ $entries = foreach ($file in $files) {
 
   $lines = [System.IO.File]::ReadAllLines($file.FullName)
   $firstIndex = -1
-  for ($i = 0; $i -lt [math]::Min($lines.Length, 80); $i++) {
+  for ($i = 0; $i -lt $lines.Length; $i++) {
     if (-not [string]::IsNullOrWhiteSpace($lines[$i])) { $firstIndex = $i; break }
   }
 
   $top = $firstIndex -ge 0 -and $lines[$firstIndex].Trim() -eq '---'
   $closingIndex = -1
   if ($top) {
-    for ($i = $firstIndex + 1; $i -lt [math]::Min($lines.Length, 80); $i++) {
+    for ($i = $firstIndex + 1; $i -lt $lines.Length; $i++) {
       if ($lines[$i].Trim() -eq '---') { $closingIndex = $i; break }
     }
   }
 
   $state = if (-not $top) { 'missing' } elseif ($closingIndex -lt 0) { 'unclosed' } else { 'valid' }
   $header = if ($state -eq 'valid') { ($lines[($firstIndex + 1)..($closingIndex - 1)] -join "`n") } else { '' }
+  $headerMetadata = @{}
+  foreach ($fieldName in @('requires','unlocks','related_docs','applies_to','details','related')) {
+    $fieldPattern = "(?ms)^$([regex]::Escape($fieldName))\s*:\s*(.*?)(?=^[A-Za-z_][A-Za-z0-9_-]*\s*:|\z)"
+    $fieldMatch = [regex]::Match($header, $fieldPattern)
+    $headerMetadata[$fieldName] = if ($fieldMatch.Success -and $fieldMatch.Groups[1].Value.Trim()) { $fieldMatch.Groups[1].Value.Trim() } else { $null }
+  }
   $heading = ($lines | Where-Object { $_ -match '^\s{0,3}#\s+(.+?)\s*$' } | Select-Object -First 1)
   $heading = if ($heading) { ([regex]::Match($heading, '^\s{0,3}#\s+(.+?)\s*$')).Groups[1].Value.Trim() } else { $null }
   $hash = (Get-FileHash -LiteralPath $file.FullName -Algorithm SHA256).Hash
@@ -75,11 +81,18 @@ $entries = foreach ($file in $files) {
     triggers = Get-RawField $header 'triggers'
     aliases = Get-RawField $header 'aliases'
     contains = Get-RawField $header 'contains'
+    model_hint = Get-Field $header 'model_hint'
+    model_profile = Get-Field $header 'model_profile'
+    requires = $headerMetadata['requires']
+    unlocks = $headerMetadata['unlocks']
+    related_docs = $headerMetadata['related_docs']
+    applies_to = $headerMetadata['applies_to']
+    details = $headerMetadata['details']
     phase = Get-Field $header 'phase'
     version = Get-Field $header 'version'
     status = Get-Field $header 'status'
     date_updated = Get-Field $header 'date_updated'
-    related = Get-RawField $header 'related'
+    related = $headerMetadata['related']
     heading = $heading
   }
 }

@@ -4,7 +4,7 @@ description: "Automatic one-table before-and-after reporting for substantial .co
 triggers: ["automatic comparison", "automatic before after", "comparison report", "update comparison", "show before and after"]
 phase: governance
 model_hint: medium
-model_profile: luna-5.6-medium
+model_profile: gpt-6-luna-high
 version: 1.0
 status: authoritative
 read_before_write: true

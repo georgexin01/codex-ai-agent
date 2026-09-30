@@ -40,16 +40,17 @@ Legacy frontmatter remains searchable. New and edited files should use the field
 | `ai design website` | `skills/design/website/SKILL.md` | Website design execution |
 | `ai design spec` | `skills/design/_spec/SKILL.md` | DESIGN.md contract layer, lint rules, and export guidance |
 | `ai karpathy` | `skills/karpathy-guidelines/SKILL.md` | Karpathy coding quality rules |
-| `ai imagegen` | `skills/imagegen/SKILL.md` | Image generation workflows and free-asset fallback |
+| `ai imagegen` | `codex-router/IMAGE_GENERATION_ASSET_POLICY.md` | Image generation gate; the policy then routes to `skills/.system/imagegen/SKILL.md` |
+| `ai intent action contracts` | `memories/2_governance/artifacts/intent_action_contracts.md` | Intent phrase, action, verification, and ambiguity boundaries |
 | `ai markdown mindmap` | `skills/markdown-database-mindmap/SKILL.md` | Database schema to Markmap visualization |
 | `ai project handoff` | `skills/project-handoff-doc-stack/SKILL.md` | Durable root handoff docs, project truth docs, and sync rules |
-| `ai luna 5.6` / `GPT-5.6 Luna` | `memories/extensions/ad_hoc/notes/2026-07-10-luna-5-6-vue-vben-execution-profile.md` | Strict Vue/Vben typing, i18n, form-schema, complete-code, and verification gates |
+| `ai gpt-6 luna vue vben` / `ai luna vue vben` | `memories/extensions/ad_hoc/notes/2026-07-10-luna-5-6-vue-vben-execution-profile.md` | GPT-6 Luna high-reasoning profile for strict Vue/Vben typing, i18n, form-schema, complete-code, and verification gates |
 | `ai pinia contract` / `PiniaStore Function Input` | `skills/pinia-contract-workflow/SKILL.md` | Exact app Pinia store/action/input contract using the user's sheet and hotpot references |
 | `ai cyroro audit` | `skills/pinia-contract-workflow/SKILL.md` | Cyroro paired-app contract, schema, environment, and verification audit |
 | `localhost test` | `skills/localhost-test/SKILL.md` | Detect active Vben, Vue app, and PHP roots; start and verify local development URLs |
 | `update meta skills` / `use meta skills` / `update website metadata` / `full metadata audit` / `apply metadata pack` | `skills/meta-skills/SKILL.md` | Complete public website/app metadata pack: project discovery, titles/descriptions, canonical, social cards, favicon/manifest, robots, sitemap, JSON-LD, crawlability, and verification |
 | `metaTitle` / `meta title` / `meta content` / `SEO metadata` | `skills/meta-content-workflow/SKILL.md` | Evidence-based public website/app metadata workflow: route inventory, unique titles/descriptions, alt text, canonical, robots, sitemap, social metadata, JSON-LD, itemprop, and `meta.md` continuation tracking |
-| `ai luna reasoning` / `ai medium high reasoning` / `ai luna performance mode` | `memories/2_governance/LUNA_5_6_REASONING_MODES.md` | GPT-5.6 Luna Medium/High reasoning modes, context budgets, escalation, and controlled automation |
+| `ai gpt-6 luna reasoning` / `ai luna reasoning` / `ai medium high reasoning` / `ai luna performance mode` | `memories/2_governance/LUNA_5_6_REASONING_MODES.md` | GPT-6 Luna high reasoning effort, task context lanes, and controlled automation |
 | `ai project truth detection` / `find project truth` | `codex-router/Detect-CodexProjectTruth.ps1` | Detect the nearest current project truth documents before loading project memory |
 | `ai safe codex maintenance` / `run codex maintenance` | `codex-router/Run-CodexLunaMaintenance.ps1` | Run Luna activation, truth, routing, telemetry, and benchmark checks with safe generated refresh |
 

@@ -22,13 +22,13 @@ AI 必须在每轮对话结束时，通过以下阶梯进行提取：
 
 ## 🧪 3. 高密度存储 (STORAGE)
 所有提炼出的 "Synthesis Nodes" 必须记录在：
-**[SYNTHESIS_LOG.json](../../memory/SYNTHESIS_LOG.json)**
+`SYNTHESIS_LOG.json` (the referenced log is unavailable in this checkout. This archived protocol's logging and promotion steps cannot be followed until the original log is recovered; do not infer or recreate its contents).
 
 - **Pending**: 尚未验证或尚未同步至蓝图的节点。
 - **Promoted**: 已正式进入 Tier-0/1 治理文件的规则。
 
 ## 🔄 4. 治理联动 (GOVERNANCE SYNC)
-1.  **Pillar-0 Check**: 每一轮对话开始时，AI 必须读取 `SYNTHESIS_LOG.json` 中的 `pending_nodes`。
+1.  **Pillar-0 Check**: Historical instruction to read `pending_nodes` from `SYNTHESIS_LOG.json`; currently unavailable, so this archived step is inactive.
 2.  **Auto-Promotion**: 如果一个 Pending 节点在连续 3 轮对话中被验证有效，AI 必须主动发起 "Handshake Approved" 将其同步至 `GROUND_KERNEL.md` 或 `TIER_1_CORE_MASTER.md`。
 
 ## 🧹 5. 纯度审计 (PURITY AUDIT)
