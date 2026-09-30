@@ -24,6 +24,7 @@ session_index.jsonl
 .codex-global-state.json.bak
 models_cache.json
 thread-writer-locks/
+/automations/.run-jitter-salt
 
 # --- Local/system folders ---
 generated_images/

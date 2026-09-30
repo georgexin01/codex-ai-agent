@@ -1,9 +1,13 @@
 #!/bin/sh
 
-if test -e "memories/.git"; then
-  echo "ERROR: nested Git metadata detected at memories/.git."
-  echo "Use the root .codex repository; remove or quarantine the nested metadata after inspection."
+if git ls-files --stage -- memories | grep -q '^160000 '; then
+  echo "ERROR: memories is staged as a nested Git repository (gitlink)."
+  echo "Keep memories tracked as ordinary files in the root .codex repository."
   exit 1
+fi
+
+if test -e "memories/.git"; then
+  echo "WARNING: preserving memories/.git; root index tracks memories as ordinary files."
 fi
 
 exit 0
