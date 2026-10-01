@@ -1,0 +1,16 @@
+PERMANENT NO-DELETION PROTECTION
+
+Protected skill roots:
+- C:\Users\user\.codex\skills\ (all files and folders recursively)
+- C:\Users\user\.agents\skills\ (all files and folders recursively)
+
+This protects every current and future skill and supporting file, including:
+- the newest or most recently used skills;
+- frequently used and high-importance skills;
+- the largest skills;
+- all Claude-related skills and nested Claude skill families;
+- every other skill in either protected root, whether or not it is listed above.
+
+Before any mutation, inspect this marker and the exact affected paths. If an operation could delete, overwrite, replace, move, rename, archive, or otherwise remove protected content, stop before acting and ask the user for separate explicit confirmation naming the exact path(s) and operation. A broad task request is not confirmation. If the affected scope is unclear, do not proceed with that mutation.
+
+This protection is permanent unless the user explicitly asks to revise it. This marker is protected too.

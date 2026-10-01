@@ -1,0 +1,9 @@
+PERMANENT CONTENT PRESERVATION
+
+Scope: C:\Users\user\.codex\ and every descendant, including all current and future skills, memories, rules, routers, configuration, automation files, and this marker.
+
+Before any filesystem mutation, check every affected absolute path. Never delete, truncate, overwrite away existing content, move, rename, archive, reset, clean, mirror, or otherwise remove protected content without separate explicit user confirmation naming the exact paths and operation. Broad posting, repair, maintenance, or cleanup requests are not removal authorization. Stop if scope is uncertain.
+
+Routine daily Zeta social publishing has read-only access to this tree. It must not perform knowledge maintenance, compression, reconstruction, cleanup, or installation here. Missing required files must be reported as blockers.
+
+Application-managed runtime/session writes may continue; agents must not manually remove them. This instruction safeguard is not an operating-system access-control lock.

@@ -1,13 +1,13 @@
 ﻿{
     "schema_version":  2,
     "added_count":  0,
-    "modified_count":  0,
+    "modified_count":  1,
     "removed_count":  0,
     "added":  [
 
               ],
     "modified":  [
-
+                     "memories/CLAUDE_BLUEPRINT_RECIPE.md"
                  ],
     "removed":  [
 

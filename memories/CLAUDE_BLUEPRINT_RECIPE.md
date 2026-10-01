@@ -309,13 +309,13 @@ Every new user chat message → AI MUST scan project root for `BLUEPRINT.md` (or
 
 ## 18. Reference implementation
 
-The first execution of this recipe produced:
+The first execution of this recipe produced these files in a historical checkout; the source files are not present on this host:
 
-- [c:\Users\user\Desktop\insurance-CRM\webApp-insuranceCRM-agent\BLUEPRINT.md](c:/Users/user/Desktop/insurance-CRM/webApp-insuranceCRM-agent/BLUEPRINT.md)
-- [c:\Users\user\Desktop\insurance-CRM\webApp-insuranceCRM-customer\BLUEPRINT.md](c:/Users/user/Desktop/insurance-CRM/webApp-insuranceCRM-customer/BLUEPRINT.md)
-- [c:\Users\user\Desktop\insurance-CRM\template\BLUEPRINT.md](c:/Users/user/Desktop/insurance-CRM/template/BLUEPRINT.md)
+- `C:\Users\user\Desktop\insurance-CRM\webApp-insuranceCRM-agent\BLUEPRINT.md`
+- `C:\Users\user\Desktop\insurance-CRM\webApp-insuranceCRM-customer\BLUEPRINT.md`
+- `C:\Users\user\Desktop\insurance-CRM\template\BLUEPRINT.md`
 
-Use those as the canonical shape when regenerating any future project blueprint.
+For the current project-handoff workflow, use the [project handoff doc stack skill](../skills/project-handoff-doc-stack/SKILL.md) and the master templates linked above. The historical outputs are provenance only, not available canonical examples.
 
 ---
 

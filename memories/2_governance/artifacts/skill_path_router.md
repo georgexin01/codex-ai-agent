@@ -143,8 +143,7 @@ These are routed support documents, not native runtime entry points. They intent
 
 ## System Skills
 - `skills/.system/skill-installer/SKILL.md` - install skills from GitHub
-- `skills/.system/skill-creator/SKILL.md` - create new skill packages
-- `skills/.system/plugin-creator/SKILL.md` - create OpenAI plugins
+- `skills/.system/skill-creator/SKILL.md` - create local Codex skills and supporting skill packages
 - `skills/.system/openai-docs/SKILL.md` - OpenAI API reference
 
 ## Excluded from Routing

@@ -1,5 +1,12 @@
 #!/bin/sh
 
+if test -n "$(git diff --cached --name-only --diff-filter=D -- skills memories)"; then
+  echo "ERROR: staged deletion of protected skills or memories is blocked."
+  echo "Restore the staged deletion and obtain separate exact-path user confirmation before any removal."
+  git diff --cached --name-only --diff-filter=D -- skills memories
+  exit 1
+fi
+
 if git ls-files --stage -- memories | grep -q '^160000 '; then
   echo "ERROR: memories is staged as a nested Git repository (gitlink)."
   echo "Keep memories tracked as ordinary files in the root .codex repository."

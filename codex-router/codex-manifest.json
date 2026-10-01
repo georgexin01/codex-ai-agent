@@ -13,15 +13,15 @@
                       "path":  "skills"
                   }
               ],
-    "indexed_files":  274,
+    "indexed_files":  275,
     "entries":  [
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "0_apex\\FCMOTO_DATABASE_NAMING_GATE.md",
                         "relative_id":  "memories/0_apex/FCMOTO_DATABASE_NAMING_GATE.md",
-                        "size":  1180,
-                        "sha256":  "55FAA7926B726608EB627BF4F2B2165122A61ED9641DE67259ADE01264D0A34D"
+                        "size":  1204,
+                        "sha256":  "10F895A07398DD63C7A5A0706CAB39A5DC188B72228D5FCB499358F84E43CCBF"
                     },
                     {
                         "kind":  "knowledge",
@@ -276,8 +276,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\artifacts\\skill_path_router.md",
                         "relative_id":  "memories/2_governance/artifacts/skill_path_router.md",
-                        "size":  13835,
-                        "sha256":  "083CDE06B3AC8DE3CB1C2B96D53A6570CA98D6B98FB174429F99EBB6EF8FF09D"
+                        "size":  13797,
+                        "sha256":  "DCC77371C11D5870BF15769BF5FDB8C43E131CFA29E551429AEBD0B8826E63FA"
                     },
                     {
                         "kind":  "knowledge",
@@ -292,8 +292,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\artifacts\\web-content-recall.md",
                         "relative_id":  "memories/2_governance/artifacts/web-content-recall.md",
-                        "size":  2285,
-                        "sha256":  "6BDB0793951E1A921A2B65183957FCC7C4357E4333F197EDF6B023CC9D3AE14F"
+                        "size":  2311,
+                        "sha256":  "DFDAE5CF8382A39EA03094CBA2E9A5B9A40C429153FD8ECDABB940CB461F1059"
                     },
                     {
                         "kind":  "knowledge",
@@ -380,8 +380,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\FCMOTO_DATABASE_NAMING_CONTRACT.md",
                         "relative_id":  "memories/2_governance/FCMOTO_DATABASE_NAMING_CONTRACT.md",
-                        "size":  4173,
-                        "sha256":  "48BE62097F5C29F14D9075881EF89BA96EA8A91868578BA1029C653A592C674C"
+                        "size":  4243,
+                        "sha256":  "B7520401702BF5ADC5E7981E841DEA242B6DF79D90CEEE6C28A94ADF5EA626E9"
                     },
                     {
                         "kind":  "knowledge",
@@ -412,8 +412,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\KNOWLEDGE_ROT_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/KNOWLEDGE_ROT_PROTOCOL.md",
-                        "size":  4348,
-                        "sha256":  "AEACB10A18E9F1726802A2C8F0170E21925AC1679A53BC97244DA06EBF505010"
+                        "size":  4349,
+                        "sha256":  "01B370C15A586DB3BF653D8179F8C5016E322152A53AFC405DA9CAFFD3B7E440"
                     },
                     {
                         "kind":  "knowledge",
@@ -452,8 +452,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\MODEL_COST_OPTIMIZATION_POLICY.md",
                         "relative_id":  "memories/2_governance/MODEL_COST_OPTIMIZATION_POLICY.md",
-                        "size":  8354,
-                        "sha256":  "D495E821AEA836566144397BCA2527BA03738CE1A5CF13D00C4E7BAB987D3C44"
+                        "size":  8355,
+                        "sha256":  "A09CF16C71742FA9D4E3F240BE1D09525F98B4920E542B582B368EA5C32596FB"
                     },
                     {
                         "kind":  "knowledge",
@@ -564,8 +564,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "CLAUDE_BLUEPRINT_RECIPE.md",
                         "relative_id":  "memories/CLAUDE_BLUEPRINT_RECIPE.md",
-                        "size":  18604,
-                        "sha256":  "2D856F2E05FBA76EF8D504B869D792A76D919843BB36B85B34233C3172B6573F"
+                        "size":  18640,
+                        "sha256":  "2DDD51494F8AE5AD4AB8A4DDCF7E05454C8AE7A102C02E3681E519CDABA8FC01"
                     },
                     {
                         "kind":  "knowledge",
@@ -740,8 +740,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "skills\\localhost-project-match\\SKILL.md",
                         "relative_id":  "memories/skills/localhost-project-match/SKILL.md",
-                        "size":  2390,
-                        "sha256":  "74F9F30EB6CF936C3A3B4E255675D3286F12716DE3932E460884671003899263"
+                        "size":  2439,
+                        "sha256":  "0B5131B761B7BB26FD350F90FD28396C3026FAA88F246305651247B6AFF4311C"
                     },
                     {
                         "kind":  "knowledge",
@@ -852,8 +852,8 @@
                         "root_relative":  "skills",
                         "relative_path":  "articles-research-way\\SKILL.md",
                         "relative_id":  "skills/articles-research-way/SKILL.md",
-                        "size":  9458,
-                        "sha256":  "2A19712CDB143C78FD0FBEC9B2585170818A2FE136EDE7179E9C24FF1C2BA5E9"
+                        "size":  9523,
+                        "sha256":  "85DBB0A4E42A67B1302F12031320E821A7AB4AE6F798AB64F3932F617F740518"
                     },
                     {
                         "kind":  "skill-reference",
@@ -2110,6 +2110,14 @@
                         "relative_id":  "skills/meta-skills/SKILL.md",
                         "size":  2331,
                         "sha256":  "BD8955694CCAD5693B159EA5D99F16B4DFE1D4E62FAC639D2F4AA4AA5FCFCC81"
+                    },
+                    {
+                        "kind":  "skill-reference",
+                        "root_relative":  "skills",
+                        "relative_path":  "NO_DELETE.txt",
+                        "relative_id":  "skills/NO_DELETE.txt",
+                        "size":  1036,
+                        "sha256":  "6ECD032C102292BAD99544F594CC6764DFFABE3B03F85988C5EB192FAD57A79E"
                     },
                     {
                         "kind":  "skill-reference",
