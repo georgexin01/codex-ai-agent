@@ -8,8 +8,8 @@ This is a compact, non-authoritative fallback, not a source for current availabi
 | --- | --- |
 | `gpt-6` | GPT-6 family alias; verify its currently documented routing and availability. |
 | `gpt-6-astra` | Quality-first flagship, reasoning, and difficult coding work. |
-| `gpt-6-sol` | Strong reasoning for demanding coding and agentic workflows. |
-| `gpt-6-luna` | Efficient choice for focused, repeatable, high-volume work; reasoning effort is configured separately. |
+| `gpt-5.6-terra` | Balanced quality, latency, and cost. |
+| `gpt-5.6-luna` | Primary choice for faster or cheaper workloads. |
 
 Use `https://developers.openai.com/api/docs/guides/latest-model/gpt-6-astra.md#migration-quickstart` for an actual GPT-6 migration and `https://developers.openai.com/api/docs/guides/latest-model/gpt-6-astra.md#prompting-best-practices` for requested GPT-6 prompting. Open and read the relevant page before recommending a request shape, reasoning setting, endpoint, tool behavior, or migration.
 
