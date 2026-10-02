@@ -13,7 +13,6 @@ Works across Windows web projects: bilingual static sites, Vue/ViteSSG/Supabase 
 - For project understanding, read project-owned Markdown and current source; treat sample/reference assets as non-production evidence.
 - For metadata, derive the actual active project identity/scope from evidence; use `INSUFFICIENT DATA` rather than historical names or invented claims.
 - Prefer reversible, narrow changes and current source/test/runtime evidence over broad cleanup or stale documentation.
-- For long or context-heavy work, retain a precise continuation state: constraints, paths, IDs, errors, decisions, changed files, and verification.
 - Keep EDSB Auth/CRUD phone-first and do not clear shared email data without explicit owner approval. [ad-hoc note]
 
 ## General Tips
@@ -64,6 +63,8 @@ Works across Windows web projects: bilingual static sites, Vue/ViteSSG/Supabase 
 
 - Used-Car audit, schema boundary, local build: PROJECT_CONTEXT.md, template/, _archived, development.localhost, Favorites.vue
   - desc: Vue/ViteSSG project map, external-admin SQL boundary, local verification, and saved-loan UI reversal; cwd=C:\Users\user\Desktop\used-car.
+- Chrome SideBySide repair: Dependent Assembly, new_chrome.exe, chrome_proxy.exe, 151.0.7922.175
+  - desc: Host-specific pending-Chrome-update repair; inspect event/file-version evidence before replacing launchers; cwd=C:\Users\user\Desktop\used-car.
 
 #### C:\Users\user\Documents\supabase-project-backup-restore
 
@@ -72,15 +73,10 @@ Works across Windows web projects: bilingual static sites, Vue/ViteSSG/Supabase 
 
 #### C:\Users\user\.codex
 
-- Codex routing/performance/Git: Update-CodexRouting.ps1, FAST BATCH STATE, git sparse-checkout, memories/.git
+- Codex routing/performance/Git: Update-CodexRouting.ps1, KNOWLEDGE_COMPRESSION_PROTOCOL.md, git sparse-checkout, memories/.git
   - desc: Route-first maintenance, checkpoints, sparse staging, and historical nested-Git caution; cwd=C:\Users\user\.codex.
 
 #### C:\Users\user\Desktop\ai comment
 
 - Project-agnostic metadata: (AI) metaTitle.txt, site.webmanifest, INSUFFICIENT DATA
   - desc: Evidence-based identity/scope and centralized metadata/manifest workflow; cwd=C:\Users\user\Desktop\ai comment.
-
-#### Windows host
-
-- Model cache and Chrome repair: .ollama, Gemma 4, SideBySide, new_chrome.exe
-  - desc: Targeted local model-cache search and host-specific Chrome pending-update repair evidence; cwd=C:\Users\user\Desktop\huwa or C:\Users\user\Desktop\used-car.

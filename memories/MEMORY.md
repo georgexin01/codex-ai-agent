@@ -105,21 +105,10 @@ applies_to: cwd=C:\Users\user\Desktop\used-car; reuse_rule=checkout-specific: ap
 ### rollout_summary_files
 
 - rollout_summaries/2026-08-27T07-28-15-vpVJ-used_car_project_audit_localhost_sql_loan_card_revision.md (cwd=C:\Users\user\Desktop\used-car, rollout_path=\\?\C:\Users\user\.codex\sessions\2026\08\27\rollout-2026-08-27T15-28-15-01a0421e-939f-7453-b375-f3a5f387b2a7.jsonl, updated_at=2026-08-28T09:08:56+00:00, thread_id=01a0421e-939f-7453-b375-f3a5f387b2a7)
-- rollout_summaries/2026-08-26T07-59-08-hW4u-used_car_project_context_product_operating_model_search_audi.md (cwd=C:\Users\user\Desktop\used-car, rollout_path=C:\Users\user\.codex\sessions\2026\08\26\rollout-2026-08-26T15-59-08-01a03d14-7cf8-7140-a996-b323c2e5e046.jsonl, updated_at=2026-08-26T11:02:31+00:00, thread_id=01a03d14-7cf8-7140-a996-b323c2e5e046, search audit incomplete)
 
 ### keywords
 
 - PROJECT_CONTEXT.md, LOCAL-SEARCH-MAP.md, template/, ViteSSG, Pinia, Supabase, _archived, Favorites.vue, MyLoans.vue, development.localhost, useSEO.ts, robots.txt, sitemap.xml
-
-## Task 2: Boot and deferred project reading
-
-### rollout_summary_files
-
-- rollout_summaries/2026-08-27T07-26-14-HZEO-used_car_codex_boot_and_project_read_deferred.md (cwd=C:\Users\user\Desktop\used-car, rollout_path=C:\Users\user\.codex\sessions\2026\08\27\rollout-2026-08-27T15-26-14-01a0421c-bb2c-7070-ac68-04167f73867e.jsonl, updated_at=2026-08-27T07:26:42+00:00, thread_id=01a0421c-bb2c-7070-ac68-04167f73867e, project read deferred)
-
-### keywords
-
-- ai read .codex knowledge, 00_PULSE.md, PROJECT_CONTEXT.md, sentinel, project handoff
 
 ## User preferences
 
@@ -150,7 +139,6 @@ applies_to: cwd=C:\Users\user\.codex and boot requests from other cwd; reuse_rul
 ### rollout_summary_files
 
 - rollout_summaries/2026-09-04T01-18-24-1Zuq-codex_boot_and_localhost_test_blocked.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\09\04\rollout-2026-09-04T09-18-24-01a069fe-d709-7e00-b7e6-2069c0077bea.jsonl, updated_at=2026-09-04T01:19:08+00:00, thread_id=01a069fe-d709-7e00-b7e6-2069c0077bea, localhost test correctly blocked)
-- rollout_summaries/2026-08-05T08-13-36-owK2-codex_knowledge_boot_sentinel.md (cwd=C:\Users\user\Desktop\motorcycle, rollout_path=C:\Users\user\.codex\sessions\2026\08\05\rollout-2026-08-05T16-13-36-019fd0fc-32b2-7e81-a332-2609b86c37f6.jsonl, updated_at=2026-08-05T08:14:03+00:00, thread_id=019fd0fc-32b2-7e81-a332-2609b86c37f6)
 
 ### keywords
 
@@ -161,31 +149,26 @@ applies_to: cwd=C:\Users\user\.codex and boot requests from other cwd; reuse_rul
 ### rollout_summary_files
 
 - rollout_summaries/2026-08-20T01-54-45-Rl4o-codex_git_sparse_checkout_and_generated_images_cleanup.md (cwd=C:\Users\user\.codex, rollout_path=\\?\C:\Users\user\.codex\sessions\2026\08\20\rollout-2026-08-20T09-54-45-01a01ce0-bb0d-76b1-898a-dabc3ae2eddc.jsonl, updated_at=2026-08-20T08:30:33+00:00, thread_id=01a01ce0-bb0d-76b1-898a-dabc3ae2eddc, historical nested-Git status; recheck current worktree)
-- rollout_summaries/2026-08-12T08-56-09-fmgd-codex_fast_batch_workflow_protocol.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\08\12\rollout-2026-08-12T16-56-09-019ff52f-a88b-7893-a2b3-9a5d5e75097d.jsonl, updated_at=2026-08-12T09:01:25+00:00, thread_id=019ff52f-a88b-7893-a2b3-9a5d5e75097d)
 - rollout_summaries/2026-08-12T07-57-58-bZCY-codex_lean_maintenance_and_memory_compression.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\08\12\rollout-2026-08-12T15-57-58-019ff4fa-668d-74d2-bc92-64724b087b5c.jsonl, updated_at=2026-08-12T08:30:52+00:00, thread_id=019ff4fa-668d-74d2-bc92-64724b087b5c)
-- rollout_summaries/2026-08-04T07-01-58-Kxur-codex_router_performance_cleanup_git_ignore_audit.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\08\04\rollout-2026-08-04T15-01-58-019fcb94-3f2d-7492-80ca-40742d942aa3.jsonl, updated_at=2026-08-04T10:40:59+00:00, thread_id=019fcb94-3f2d-7492-80ca-40742d942aa3)
 
 ### keywords
 
-- Update-CodexRouting.ps1, Audit-CodexRouting.ps1, Test-CodexPerfBenchmark.ps1, FAST BATCH STATE, git sparse-checkout, thread-writer-locks, nested memories/.git
+- Update-CodexRouting.ps1, Audit-CodexRouting.ps1, Test-CodexPerfBenchmark.ps1, knowledge compression, git sparse-checkout, thread-writer-locks, nested memories/.git
 
 ## User preferences
 
 - when asking for `.codex` improvements, "find improvement ... to highly improve performances" -> inspect live routes, memory sizes, skills, and benchmarks before recommending/editing. [Task 2]
 - when asking to "take action ... wont make heavy changes," prefer reversible surgical maintenance; preserve skills, secrets, routes, and repository state. [Task 2]
-- when work is long/context-heavy, the user requested "fast batch workflow knowledge" -> retain exact constraints, paths, IDs, errors, decisions, changed files, and verification in a precise continuation state. [Task 2]
 
 ## Reusable knowledge
 
 - Exact trigger `ai read .codex knowledge` reads current `00_PULSE.md` once and replies only `[🟢] Agent is Ready..`; on the next normal turn, enter task state without repeating boot. [Task 1]
 - For localhost testing, discover a runnable application/project root first. `.codex` had no runnable project/listener on 3000/5173/6006, so starting there is a stop condition. [Task 1]
 - Route first and keep deep knowledge lazy. Refresh generated routing via `codex-router/Update-CodexRouting.ps1 -Quiet`, then audit/benchmark/activation as applicable. [Task 2]
-- Use fast-batch states `DONE`, `ACTIVE`, `NEXT`, `BLOCKED`, `DEFERRED`, `OBSOLETE`; checkpoint after coherent batches and resume from the smallest verified next action. [Task 2]
 - In sparse checkout, inspect `git status` before staging; historical explicit staging used `git add --sparse -A -- . ':!thread-writer-locks/**'`. [Task 2]
 
 ## Failures and how to do differently
 
-- Do not satisfy a stale missing-skill route by creating a skill; remove the obsolete route if the feature is absent. [Task 2]
 - Do not mutate `memories/.git` or other nested Git metadata without explicit cleanup authorization; current status must be rechecked. [Task 2]
 - Large encoded Markdown patches can fail -> inspect exact context and use smaller stable patches; do not treat truncated command output as source evidence. [Task 2]
 
@@ -248,21 +231,11 @@ applies_to: cwd=C:\Users\user\Desktop\ai comment; reuse_rule=apply to current-pr
 
 - `rg --literal-path` is unsupported -> use PowerShell `Select-String -LiteralPath` for exact-file scans. If workspace has no Git repo, use targeted scans/read-back rather than claiming `git diff` verification. [Task 1]
 
-# Task Group: Windows/local environment troubleshooting
-scope: Locate local model files and diagnose a specific Chrome SideBySide update failure.
-applies_to: cwd=C:\Users\user\Desktop\huwa or C:\Users\user\Desktop\used-car; reuse_rule=host-specific and time-sensitive: verify paths/versions live before action.
+# Task Group: Windows Chrome SideBySide repair
+scope: Diagnose a specific Chrome update failure where the launcher exists but its dependent assembly is missing.
+applies_to: cwd=C:\Users\user\Desktop\used-car; reuse_rule=host-specific and time-sensitive: verify current event, paths, pending files, and versions before action.
 
-## Task 1: Locate Gemma 4 Ollama manifests
-
-### rollout_summary_files
-
-- rollout_summaries/2026-08-20T01-25-28-9wIS-locate_gemma4_ollama_model_folder.md (cwd=C:\Users\user\Desktop\huwa, rollout_path=C:\Users\user\.codex\sessions\2026\08\20\rollout-2026-08-20T09-25-28-01a01cc5-ef06-7613-ab20-48507ef62f16.jsonl, updated_at=2026-08-20T01:26:38+00:00, thread_id=01a01cc5-ef06-7613-ab20-48507ef62f16)
-
-### keywords
-
-- Gemma 4, Ollama, .ollama, registry.ollama.ai/library/gemma4, blobs
-
-## Task 2: Chrome missing SideBySide assembly repair
+## Task 1: Chrome missing SideBySide assembly repair
 
 ### rollout_summary_files
 
@@ -274,10 +247,8 @@ applies_to: cwd=C:\Users\user\Desktop\huwa or C:\Users\user\Desktop\used-car; re
 
 ## Reusable knowledge
 
-- Ollama manifests were found under `C:\Users\user\.ollama\models\manifests\registry.ollama.ai\library\gemma4\`; blobs are separately in `models\blobs`. Search known cache roots before broad profile scans. [Task 1]
-- For Chrome SideBySide with an existing valid shortcut, inspect event/versioned application files and pending `new_chrome*` before recreating a shortcut. Historical repair replaced launchers only after elevated version-checked backup and verified 151.0.7922.175 process launch. [Task 2]
+- For Chrome SideBySide with an existing valid shortcut, inspect event/versioned application files and pending `new_chrome*` before recreating a shortcut. Historical repair replaced launchers only after elevated version-checked backup and verified 151.0.7922.175 process launch. [Task 1]
 
 ## Failures and how to do differently
 
-- Broad recursive `C:\Users\user` model scans timed out -> search `.ollama`, Hugging Face, and LM Studio roots first. [Task 1]
-- `chrome.exe --version` may launch Chrome rather than reliably report version -> use file version, registry, and running processes. [Task 2]
+- `chrome.exe --version` may launch Chrome rather than reliably report version -> use file version, registry, and running processes. [Task 1]
