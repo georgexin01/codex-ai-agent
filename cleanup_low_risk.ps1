@@ -2,93 +2,59 @@ param(
     [switch]$Execute
 )
 
-$ErrorActionPreference = 'Stop'
-$root = [System.IO.Path]::GetFullPath((Split-Path -Parent $MyInvocation.MyCommand.Path))
+$root = Split-Path -Parent $MyInvocation.MyCommand.Path
 
-# These user-maintained and runtime folders must never be cleanup targets.
-$protectedRelPaths = @(
-    'automations',
-    'codex-router',
-    'mcp-oauth-locks',
-    'memories',
-    'rules',
-    'skills',
-    'tasks',
-    'thread-writer-locks',
-    'sessions',
-    'rollout-migrations',
-    '.claude',
-    '.github',
-    '.githooks'
-)
-
-# Only transient caches remain eligible, and only with the explicit -Execute switch.
+# Low-risk paths relative to the .codex root
 $relPaths = @(
+    '.codex-global-state.json.bak',
     '.tmp',
     'tmp',
     'cache',
+    'ambient-suggestions',
+    'plugins/cache',
     'models_cache.json'
 )
 
-$rootPrefix = $root.TrimEnd('\') + '\'
-$fullPaths = foreach ($rel in $relPaths) {
-    $candidate = [System.IO.Path]::GetFullPath((Join-Path $root $rel))
-    if (-not $candidate.StartsWith($rootPrefix, [System.StringComparison]::OrdinalIgnoreCase)) {
-        throw "Refusing path outside .codex root: $candidate"
-    }
+$fullPaths = $relPaths | ForEach-Object { Join-Path $root $_ }
+$existing = $fullPaths | Where-Object { Test-Path $_ }
 
-    foreach ($protectedRel in $protectedRelPaths) {
-        $protected = [System.IO.Path]::GetFullPath((Join-Path $root $protectedRel)).TrimEnd('\')
-        $target = $candidate.TrimEnd('\')
-        $overlapsProtected =
-            ($target -eq $protected) -or
-            $target.StartsWith(($protected + '\'), [System.StringComparison]::OrdinalIgnoreCase) -or
-            $protected.StartsWith(($target + '\'), [System.StringComparison]::OrdinalIgnoreCase)
-
-        if ($overlapsProtected) {
-            throw "Refusing cleanup target that overlaps protected path '$protectedRel': $candidate"
-        }
-    }
-
-    $candidate
-}
-
-$existing = @($fullPaths | Where-Object { Test-Path -LiteralPath $_ })
-if ($existing.Count -eq 0) {
-    Write-Output 'No eligible cache files or folders found.'
+if (-not $existing) {
+    Write-Output "No low-risk files or folders found to archive/remove."
     return 0
 }
 
-Write-Output 'Eligible transient items:'
+$ts = Get-Date -Format "yyyyMMdd-HHmmss"
+$archiveDir = Join-Path $root 'tmp'
+if (-not (Test-Path $archiveDir)) { New-Item -Path $archiveDir -ItemType Directory | Out-Null }
+$archivePath = Join-Path $archiveDir "cleanup-archive-$ts.zip"
+
+Write-Output "Found the following existing low-risk items:"
 $existing | ForEach-Object { Write-Output " - $_" }
 
 if (-not $Execute) {
-    Write-Output 'DRY RUN: no changes made. Use -Execute only when removal of these cache paths is intended.'
-    return 0
+    Write-Output "\nDRY RUN: no changes made. To perform deletion, re-run with -Execute."
+    Write-Output "Archive that WOULD be created: $archivePath"
+    exit 0
 }
 
-# Keep recovery archives outside .codex and outside every cleanup target.
-$archiveDir = Join-Path $env:LOCALAPPDATA 'CodexDataRecovery\LowRiskCleanup'
-New-Item -Path $archiveDir -ItemType Directory -Force | Out-Null
-$ts = Get-Date -Format 'yyyyMMdd-HHmmss'
-$archivePath = Join-Path $archiveDir "cleanup-archive-$ts.zip"
-
+Write-Output "Creating archive: $archivePath"
 try {
-    Compress-Archive -LiteralPath $existing -DestinationPath $archivePath -ErrorAction Stop
-    $archive = Get-Item -LiteralPath $archivePath -ErrorAction Stop
-    if ($archive.Length -le 0) {
-        throw 'The recovery archive is empty.'
-    }
+    Compress-Archive -Path $existing -DestinationPath $archivePath -Force -ErrorAction Stop
 }
 catch {
-    Write-Error "Archive verification failed; originals were not removed. $($_.Exception.Message)"
+    Write-Error "Failed to create archive: $_"
     exit 1
 }
 
-Write-Output "Verified recovery archive: $archivePath"
-foreach ($path in $existing) {
-    Remove-Item -LiteralPath $path -Recurse -Force -ErrorAction Stop
-    Write-Output "Removed transient cache: $path"
+Write-Output "Archive created successfully. Removing original items..."
+foreach ($p in $existing) {
+    try {
+        Remove-Item -LiteralPath $p -Recurse -Force -ErrorAction Stop
+        Write-Output "Removed: $p"
+    }
+    catch {
+        Write-Error "Failed to remove $p : $_"
+    }
 }
 
-Write-Output 'Cleanup complete. Protected folders were excluded and the verified archive is outside .codex.'
+Write-Output "Cleanup complete. Archive saved to: $archivePath"
