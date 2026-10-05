@@ -1,58 +1,85 @@
-# Task Group: EDSB Admin phone-only login and Docker-local Auth parity
-scope: Maintain the EDSB Admin phone-first identity contract and reproduce the supplied reference only in Docker-local Supabase.
-applies_to: cwd=C:\Users\user\Desktop\EDSB\admin-panel-edsb; reuse_rule=checkout- and state-specific: apply phone/Auth parity only to Docker-local EDSB, never to the VPS; protect shared identity data.
+# Task Group: Codex routing, collaboration, and localhost project match
+scope: Use exact lightweight boot routing, activate only matching knowledge, and prove a localhost listener belongs to the requested checkout.
+applies_to: cwd=C:\Users\user\.codex and cross-project workflows; reuse_rule=read current routing/skill state first; runtime/project-match rules are reusable but ports/counts are time-sensitive.
 
-## Task 1: Phone-only EDSB Admin login and local parity verification
+## Task 1: Exact boot, focused routing, and root-Git maintenance
 
 ### rollout_summary_files
 
-- extensions/ad_hoc/notes/2026-09-18T02-15-00-edsb-local-vps-parity.md (cwd=C:\Users\user\Desktop\EDSB\admin-panel-edsb, rollout_path=INSUFFICIENT DATA, updated_at=2026-09-18T02:15:00+00:00, ad-hoc note; Docker-local parity verified)
-- extensions/ad_hoc/notes/2026-09-18T00-00-00-edsb-phone-only-admin-login.md (cwd=C:\Users\user\Desktop\EDSB\admin-panel-edsb, rollout_path=INSUFFICIENT DATA, updated_at=2026-09-18T00:00:00+00:00, ad-hoc note; migration contract verified)
+- extensions/ad_hoc/notes/2026-09-24T15-35-00-codex-focused-routing-maintenance.md (cwd=C:\Users\user\.codex, rollout_path=INSUFFICIENT DATA, updated_at=2026-09-24T15:35:00+00:00, ad-hoc note; routing audit/activation evidence)
+- rollout_summaries/2026-09-04T01-18-24-1Zuq-codex_boot_and_localhost_test_blocked.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\09\04\rollout-2026-09-04T09-18-24-01a069fe-d709-7e00-b7e6-2069c0077bea.jsonl, updated_at=2026-09-04T01:19:08+00:00, thread_id=01a069fe-d709-7e00-b7e6-2069c0077bea)
 
 ### keywords
 
-- admin-panel-edsb, auth.users.phone, phone/password, 050_edsb_phone_only_admin_users.sql, edsb.users, public."user", Docker-local Supabase, /auth/login, /users/list
+- ai read .codex knowledge, 00_PULSE.md, Agent is Ready, root Git only, memories/.git, generated_images, skill-activation-cases.json
+
+## Task 2: Localhost runtime detection and route match
+
+### rollout_summary_files
+
+- extensions/ad_hoc/notes/2026-09-22T00-00-00-localhost-test-performance.md (cwd=D:\backup\zeta-capital\website-zetaCapital, rollout_path=INSUFFICIENT DATA, updated_at=2026-09-22T00:00:00+00:00, ad-hoc note; PHP project match verified)
+
+### keywords
+
+- localhost test, NO_DEV_SCRIPT, php-built-in, index.php, index.html, HTTP 2xx/3xx, localhost-project-match
+
+## Task 3: Cross-project operating overlays and reporting conventions
+
+### rollout_summary_files
+
+- extensions/ad_hoc/notes/2026-08-26-product-development-operating-model.md (cwd=cross-project product work, rollout_path=INSUFFICIENT DATA, updated_at=2026-08-26T00:00:00+00:00, ad-hoc note; evidence-gated product overlay)
+- extensions/ad_hoc/notes/2026-07-15-codex-knowledge-english-rule.md (cwd=C:\Users\user\.codex, rollout_path=INSUFFICIENT DATA, updated_at=2026-07-15T00:00:00+00:00, ad-hoc note; knowledge language rule)
+- extensions/ad_hoc/notes/2026-07-16T00-00-00-mandatory-task-action-status-table.md (cwd=cross-project reporting, rollout_path=INSUFFICIENT DATA, updated_at=2026-07-16T00:00:00+00:00, ad-hoc note; task/action/status convention)
+
+### keywords
+
+- 60/40 focus gate, customer value loop, one boot doc, one trigger per task, English knowledge, task action status table
 
 ## User preferences
 
-- when matching the supplied VPS identity data locally, keep the operation scoped to Docker-local EDSB; do not apply the parity operation to the VPS. [Task 1]
-- do not clear existing `auth.users.email` or `public."user".email` without explicit owner approval; shared identity data is outside the EDSB User CRUD boundary. [Task 1]
+- in full-access mode, avoid repetitive “Step X done — confirm or adjust?” prompts; continue obvious implementation and pause only for a meaningful decision, hidden risk, destructive action, or ambiguous tradeoff. [Task 1] [ad-hoc note]
+- for `ai read .codex knowledge`, reply only `[🟢] Agent is Ready..`; hydrate once and do not repeat boot. [Task 1]
+- wake only the relevant skill family, keep it awake during related work, then sleep it when focus changes. [Task 1] [ad-hoc note]
+- for `localhost test`, report project root, runtime, port, and requested URL/status checks—not merely a listener. [Task 2]
+- keep durable Codex knowledge in English; use a compact task/action/status table when the user asks for a structured progress report. [Task 3] [ad-hoc note]
 
 ## Reusable knowledge
 
-- EDSB Admin login identity is `auth.users.phone`; phone is required in User CRUD and profile updates. New EDSB Auth identities use `email = NULL` by default; active EDSB CRUD does not store or expose email. [Task 1]
-- `apps/web-antd/src/sql/migrations/050_edsb_phone_only_admin_users.sql` implements the contract. Local verification confirmed `edsb.users.email` is absent, phone is non-null, and EDSB create/update RPCs exist. [Task 1]
-- A supplied profile can retain a nullable profile-email column to preserve its local shape even though active EDSB CRUD remains phone-first; Auth login phone and profile phone may intentionally differ in the supplied reference. [Task 1]
-- The cited local parity check passed Auth identity, EDSB `public.user` link, EDSB profile shape, 16 EDSB business tables, and HTTP 200 for `/`, `/auth/login`, and `/users/list`. [Task 1]
+- `C:\Users\user\.codex\.git` is the only Git repository for this knowledge tree; `memories/` is ordinary tracked content. If `memories/.git` reappears, inspect it before changing it. [Task 1] [ad-hoc note]
+- A `package.json` without `dev`, `start`, or `dev:local` does not prove a package runtime. Continue to `index.php`/`index.html`; reuse a listener only if every requested path returns HTTP 2xx/3xx from the intended project. [Task 2]
+- Keep route-first knowledge lazy; refresh/audit routing after route changes. Use project folders, never `.codex/generated_images/`, for final image assets. [Task 1] [ad-hoc note]
+- Related skills: skills/awake-skill-routing/SKILL.md; skills/localhost-project-match/SKILL.md. [Task 1][Task 2]
+- For cross-page/product decisions, prioritize the verified 60% foundation (customer problem, working journey, trustworthy data, clear action, reliability) over unproven expansion. Record unknowns as `INSUFFICIENT DATA`; do not force a strategy review onto a narrow mechanical fix. [Task 3] [ad-hoc note]
 
 ## Failures and how to do differently
 
-- VPS/reference data is not a generic migration source -> never copy a reference row's unrelated project linkage into local EDSB, and do not carry database password hashes into guidance. [Task 1]
-- Phone-only CRUD does not authorize destructive email cleanup -> preserve shared Auth/public email fields unless the owner explicitly approves it. [Task 1]
+- `NO_DEV_SCRIPT` on a PHP/static site -> inspect entrypoints instead of stopping. [Task 2]
+- root HTTP 200 but requested route fails -> another project owns the listener; choose another port or obtain authority to stop it. [Task 2]
 
 # Task Group: Zeta Software bilingual static-site maintenance
-scope: Maintain English/Simplified-Chinese generated pages, source-faithful design reuse, local checks, performance/cache work, and safe image-migration follow-up.
+scope: Maintain English/Simplified-Chinese generated pages, source-faithful reuse, local checks, performance/cache work, and safe image-loading follow-up.
 applies_to: cwd=D:\backup\website-zetasoftware; reuse_rule=checkout-specific: read README.md, status.md, meta.md, and current generators first; English markup/design is canonical and `cn/` needs localized visible-text parity.
 
-## Task 1: Generated navigation, bilingual content formatting, cache policy, and CSS minification
+## Task 1: Generator/navigation, content formatting, cache policy, and CSS minification
 
 ### rollout_summary_files
 
-- rollout_summaries/2026-09-07T05-57-20-zPhy-zeta_website_project_audit_navigation_content_performance.md (cwd=D:\backup\website-zetasoftware, rollout_path=C:\Users\user\.codex\sessions\2026\09\07\rollout-2026-09-07T13-57-20-01a07a71-4c56-70b0-a1e2-b8a02742ecb4.jsonl, updated_at=2026-09-07T09:41:02+00:00, thread_id=01a07a71-4c56-70b0-a1e2-b8a02742ecb4, minified CSS written; final served-file/idempotence check incomplete)
+- rollout_summaries/2026-09-07T05-57-20-zPhy-zeta_website_project_audit_navigation_content_performance.md (cwd=D:\backup\website-zetasoftware, rollout_path=C:\Users\user\.codex\sessions\2026\09\07\rollout-2026-09-07T13-57-20-01a07a71-4c56-70b0-a1e2-b8a02742ecb4.jsonl, updated_at=2026-09-07T09:41:02+00:00, thread_id=01a07a71-4c56-70b0-a1e2-b8a02742ecb4, CSS final verification incomplete)
 
 ### keywords
 
-- generate-standard-internal-management-pages.js, update-site-navigation.js, format-detail-content.js, long-form-intros.js, style.min.css, clean-css-cli, Cloudflare cache, main.js, Lucide, GSAP, Lenis
+- generate-standard-internal-management-pages.js, update-site-navigation.js, format-detail-content.js, long-form-intros.js, style.min.css, clean-css-cli, Cloudflare cache, main.js
 
-## Task 2: Localhost, Lighthouse/image work, true lazy loading, and incomplete JPG migration
+## Task 2: Localhost, Lighthouse/image work, lazyloading, and incomplete JPG migration
 
 ### rollout_summary_files
 
 - rollout_summaries/2026-09-04T01-20-03-IpkW-zeta_static_site_localhost_performance_image_loading.md (cwd=D:\backup\website-zetasoftware, rollout_path=\\?\C:\Users\user\.codex\sessions\2026\09\04\rollout-2026-09-04T09-20-03-01a06a00-5a37-7e72-bbbc-b6b33c856356.jsonl, updated_at=2026-09-07T05:56:45+00:00, thread_id=01a06a00-5a37-7e72-bbbc-b6b33c856356, JPG/WebP follow-up incomplete)
+- extensions/ad_hoc/notes/2026-08-21-high-priority-data-src-lazyload.md (cwd=workflow-wide, rollout_path=INSUFFICIENT DATA, updated_at=2026-08-21T00:00:00+00:00, ad-hoc note; lazy-image contract)
 
 ### keywords
 
-- php -S 127.0.0.1:8080 -t, Lighthouse, data-src, IntersectionObserver, apply-body-image-lazyload.js, images/mobile, images/website, WebP, JPG
+- php -S 127.0.0.1:8080 -t, Lighthouse, data-src, 1x1 SVG, IntersectionObserver, images/mobile, images/website, WebP, JPG
 
 ## Task 3: FAQ/blog/homepage/services parity and exact phone-frame reuse
 
@@ -68,39 +95,176 @@ applies_to: cwd=D:\backup\website-zetasoftware; reuse_rule=checkout-specific: re
 
 ## User preferences
 
-- when bilingual content/layout is requested, English markup/design is the source; update the Chinese counterpart with localized visible text and parity checks in the same task. [Task 1][Task 3]
-- when restoring a missing header/menu, preserve descriptions, images, CSS, routes, and unrelated page content during narrow fixes. [Task 1]
-- when revising long descriptions, the user said "merge back some suitable" endings and requested roughly 50-100 fewer words -> group related sentences naturally, not one break per sentence. [Task 1]
-- when requesting `localhost test`, detect the project type, start only the needed server, and report verified URLs/statuses rather than a process launch. [Task 2]
-- body images should use `data-src` plus a 1x1 SVG placeholder; exclude project logo, icon, zcapital2, logo-zeta, header, and footer. Do not remove WebPs in the two target folders until requested JPG sources and all references are verified. [Task 2]
-- when FAQ content is requested, favor "long and human friendly" answers tied to blog/search questions and local audience intent, with a distinct company-focused subset rather than keyword stuffing. [Task 3]
-- when requesting "exact same design," reuse canonical homepage markup/classes and measured structure instead of a visual approximation. [Task 3]
+- bilingual content/layout: English markup/design is the source; update Chinese localized visible text and parity checks in the same task. Read `status.md` first and keep status/meta evidence current. [Task 1][Task 3] [ad-hoc note]
+- preserve unrelated descriptions, images, CSS, routes, and content in narrow menu/layout fixes; for “exact same design,” reuse canonical markup/classes and dimensions. [Task 1][Task 3]
+- “merge back some suitable” endings and roughly 50–100 fewer words -> group related sentences naturally, not a break per sentence. [Task 1]
+- body images use `data-src` plus a 1x1 SVG placeholder; exclude logo/icon/header/footer/mobile-menu/floating UI and do not delete WebPs before JPG/reference verification. [Task 2]
 
 ## Reusable knowledge
 
-- Related skill: skills/zeta-bilingual-static-site/SKILL.md. [Task 1][Task 2][Task 3]
-- This static checkout has no package/Vite/PHP entry: serve with `php -S 127.0.0.1:8080 -t <workspace>`; representative EN/CN HTTP 200 checks do not prove Apache `.htaccess`, browser visual QA, or deployment. [Task 2]
-- SIM generator emitted empty desktop/mobile nav because it skipped the shared updater. Keep `require("./update-site-navigation");` after generation, regenerate, then inspect non-empty navigation and an active state. [Task 1]
-- `scripts/format-detail-content.js` selectively groups sentences; `scripts/long-form-intros.js` holds compact shared EN/CN tails. Preserve technical acronyms/proper names while shortening shared copy. [Task 1]
-- Versioned CSS/JS can use `Cache-Control: public, max-age=31536000, immutable`; keep replaceable unversioned images around 30 days until filenames/query strings are versioned; HTML should revalidate. [Task 1]
-- `main.js` combines navigation, lazy images, sliders, testimonials, forms, and optional animation. Take a throttled Chrome trace before main-thread changes; inspect Evaluate Script, layout, animation frames, and image decode. [Task 1]
-- FAQ source is `data/faq.json` with `en`/`cn`; `js/faq.js` renders accordions and matching FAQPage JSON-LD. Preserve 30 paired unique IDs, crawlable fallback HTML, and schema alignment. [Task 3]
-- `js/home-blogs.js` sorts localized data by date, selects three, escapes text, refreshes Lucide icons, and integrates lazy-image loading. Blog dataset replacement to ten records/images was not evidenced. [Task 3]
-- Canonical homepage phone frame is `sticky-phone portfolio-card-phone` with `phone-screen`, camera, physical button, reflection, and light-bleed; preserve desktop 310x640 and mobile 275x572 dimensions. [Task 3]
+- Related skill: skills/zeta-bilingual-static-site/SKILL.md. Serve this static checkout with `php -S 127.0.0.1:8080 -t <workspace>`; HTTP 200 does not prove Apache, visual QA, or deployment. [Task 2]
+- SIM generator skipped the shared nav updater; keep `require("./update-site-navigation");` after generation, regenerate, then inspect non-empty desktop/mobile navigation and active state. [Task 1]
+- FAQ source `data/faq.json` has `en`/`cn`; `js/faq.js` renders accordions and matching FAQPage JSON-LD. Preserve paired unique IDs, crawlable fallback, and schema alignment. [Task 3]
+- For true lazy loading, restore URL near viewport, remove `data-src` only on successful load, set `loading="lazy"`/`decoding="async"`, and register dynamic cards too. [Task 2]
+- Immutable caching belongs on versioned CSS/JS; keep unversioned images short-lived. Trace main-thread work before optimization; cache headers do not remove parse/layout/image decode. [Task 1]
 
 ## Failures and how to do differently
 
-- Invalid JSON, duplicate records, or CN parity lag after FAQ bulk edits -> parse JSON immediately; check count, unique IDs, paired IDs/titles, fallback, and schema before closing. [Task 3]
-- Chinese text appears corrupted in PowerShell -> inspect bytes with UTF-8-aware Node/file checks before diagnosing mojibake; avoid default PowerShell bulk writes. [Task 3]
-- Generator regression restores blank menus -> run generator and shared nav updater together, then inspect generated output rather than only source. [Task 1]
-- Do not delete WebPs in `images/mobile`/`images/website`: resolve HTML/JS/JSON/CSS references, confirm JPG files/routes and true `IntersectionObserver` lazy loading (including dynamically inserted blog images), then delete only authorized WebPs. [Task 2]
-- `clean-css-cli` wrote `style.min.css`, but final verification was interrupted -> rerun hash/idempotence, HTTP 200 for `/css/style.min.css?v=0179`, selector check, and `git diff --check`. [Task 1]
+- invalid FAQ JSON, duplicate records, or CN drift -> parse immediately and check counts, paired IDs/titles, fallback, and schema. [Task 3]
+- Chinese looks corrupt in PowerShell -> use UTF-8-aware Node/file bytes, not console display. [Task 3]
+- deleting WebPs after partial search -> resolve HTML/JS/JSON/CSS references, confirm JPG/routes/observer behavior, then delete only authorized files. [Task 2]
+- minified CSS was written but final verification was interrupted -> rerun hash/idempotence, HTTP 200, selector, and `git diff --check`. [Task 1]
 
-# Task Group: Used-Car Vue/Supabase project workflow
-scope: Orient, verify, and make surgical client changes in the Used-Car Vue 3/ViteSSG app while protecting the external-admin schema boundary.
-applies_to: cwd=C:\Users\user\Desktop\used-car; reuse_rule=checkout-specific: app root is `template/`; read `PROJECT_CONTEXT.md` first and treat current source/runtime evidence as stronger than historical docs.
+# Task Group: EDSB Admin phone-only login and Docker-local Auth parity
+scope: Maintain the EDSB Admin phone-first identity contract and reproduce supplied reference only in Docker-local Supabase.
+applies_to: cwd=C:\Users\user\Desktop\EDSB\admin-panel-edsb; reuse_rule=checkout- and state-specific: never run a local parity operation against the VPS; protect shared identity data.
 
-## Task 1: Whole-project audit, SQL-source boundary, localhost, and saved-loan reversal
+## Task 1: Phone-only login and local parity
+
+### rollout_summary_files
+
+- extensions/ad_hoc/notes/2026-09-18T02-15-00-edsb-local-vps-parity.md (cwd=C:\Users\user\Desktop\EDSB\admin-panel-edsb, rollout_path=INSUFFICIENT DATA, updated_at=2026-09-18T02:15:00+00:00, ad-hoc note; Docker-local parity verified)
+- extensions/ad_hoc/notes/2026-09-18T00-00-00-edsb-phone-only-admin-login.md (cwd=C:\Users\user\Desktop\EDSB\admin-panel-edsb, rollout_path=INSUFFICIENT DATA, updated_at=2026-09-18T00:00:00+00:00, ad-hoc note; migration contract verified)
+
+### keywords
+
+- admin-panel-edsb, auth.users.phone, phone/password, 050_edsb_phone_only_admin_users.sql, edsb.users, public."user", Docker-local Supabase, /auth/login
+
+## User preferences
+
+- match supplied identity data only in Docker-local EDSB; never run the parity operation on the VPS. Do not clear shared Auth/public email without explicit owner approval. [Task 1] [ad-hoc note]
+
+## Reusable knowledge
+
+- EDSB login identity is `auth.users.phone`; phone is required in CRUD/profile updates. New Auth identities use `email = NULL`; active EDSB CRUD does not store/expose email. `050_edsb_phone_only_admin_users.sql` implements the contract. [Task 1] [ad-hoc note]
+
+## Failures and how to do differently
+
+- VPS reference is not a generic migration source -> do not carry unrelated linkage or password hashes and never retain credentials in memory. [Task 1]
+
+# Task Group: Local Supabase protection, restore, and Angel Interior systems
+scope: Safely work with protected Docker/Supabase, repair/restore backups, and maintain linked Angel admin/website flows.
+applies_to: cwd=C:\Users\user\Documents\local-supabase; C:\Users\user\Documents\supabase-project-backup-restore; C:\Users\user\Desktop\angel-interior; reuse_rule=stateful: identify active stack/env and obtain explicit same-turn permission before state-changing Docker/Supabase work.
+
+## Task 1: Protected stack, Huwa2 restore, and API exposure
+
+### rollout_summary_files
+
+- rollout_summaries/2026-08-14T02-47-47-8IL6-huwa2_vps_restore_and_postgrest_expose.md (cwd=C:\Users\user\Documents\supabase-project-backup-restore, rollout_path=C:\Users\user\.codex\sessions\2026\08\14\rollout-2026-08-14T10-47-47-019ffe2b-21d6-7ff2-9bea-6cfa6ab17768.jsonl, updated_at=2026-08-14T03:10:24+00:00, thread_id=019ffe2b-21d6-7ff2-9bea-6cfa6ab17768)
+- extensions/ad_hoc/notes/20260608-173510-local-docker-permission-rule.md (cwd=local Docker/Supabase workflows, rollout_path=INSUFFICIENT DATA, updated_at=2026-06-08T17:35:10+00:00, ad-hoc note; absolute protection rule)
+
+### keywords
+
+- local-supabase, Docker, auth.identities, identities_user_id_fkey, atomic restore, PGRST_DB_SCHEMAS, config.toml, role_table_grants
+
+## Task 2: Angel admin RPC, website data, and paid download
+
+### rollout_summary_files
+
+- extensions/ad_hoc/notes/20260529-172016-angel-admin-website-stripe-and-rpc-update.md (cwd=C:\Users\user\Desktop\angel-interior, rollout_path=INSUFFICIENT DATA, updated_at=2026-05-29T17:20:16+00:00, ad-hoc note; admin/website runtime paths)
+- extensions/ad_hoc/notes/20260603-184421-angel-awards-local-supabase-lessons.md (cwd=C:\Users\user\Desktop\angel-interior, rollout_path=INSUFFICIENT DATA, updated_at=2026-06-03T18:44:21+00:00, ad-hoc note; grants/RLS and env diagnosis)
+
+### keywords
+
+- angelInterior.create_user, 064_angel_make_user_rpc_role_status_agnostic.sql, public.role.status, Stripe Checkout, download?session_id, role_table_grants
+
+## User preferences
+
+- local Docker/Supabase state is protected: never rename, reset, prune, stop, recreate, relabel, repoint, or modify it without explicit current-turn permission. [Task 1] [ad-hoc note]
+- Angel fixes should remain surgical, preserve unrelated flows, and verify the visible user flow rather than only code. [Task 2] [ad-hoc note]
+
+## Reusable knowledge
+
+- Validate every `auth.identities.user_id` before restore; preserve original backup and repair a working copy. Configure CLI-managed schema exposure in `[api].schemas` separately from database restoration. [Task 1]
+- Angel empty website while admin has data -> compare env selection, runtime host, and actual Supabase URL before changing frontend. `permission denied` with correct RLS -> inspect `information_schema.role_table_grants`. [Task 2]
+- Angel `column "status" does not exist` during user creation is RPC schema drift, not automatically a Vue bug. Inspect migration contract; use append-only 064 role-status-agnostic migration where applicable and keep README migration index aligned. [Task 2]
+- Paid downloads must verify paid Stripe session metadata against resource identity; retain missing-config/cancel/error states and never expose keys. [Task 2]
+- Related skill: skills/local-supabase-protection/SKILL.md. [Task 1]
+
+## Failures and how to do differently
+
+- Compose-label exposure script fails under CLI-managed stack -> detect CLI project and use CLI config/restart without resetting data. [Task 1]
+- website/admin mismatch -> do not “fix” rendering until both stack targets are proven. [Task 2]
+
+# Task Group: Vue/Vben/Pinia contract-driven paired applications
+scope: Preserve externally specified Store/Function/Input contracts, paired-app boundaries, and visual-only scope.
+applies_to: cwd=C:\Users\user\Desktop\trash-container-app and similar Vben/Pinia apps; reuse_rule=read current source-of-truth contract first; never transfer another project's API/schema assumptions.
+
+## Task 1: CY RORO Trash admin/driver contract
+
+### rollout_summary_files
+
+- extensions/ad_hoc/notes/2026-07-15-cyroro-dual-app-pinia-audit.md (cwd=C:\Users\user\Desktop\trash-container-app, rollout_path=INSUFFICIENT DATA, updated_at=2026-07-15T00:00:00+00:00, ad-hoc note; paired-app audit)
+- extensions/ad_hoc/notes/2026-07-14-pinia-contract-absolute-gate.md (cwd=C:\Users\user\Desktop\trash-container-app, rollout_path=INSUFFICIENT DATA, updated_at=2026-07-14T00:00:00+00:00, ad-hoc note; authoritative contract gate)
+
+### keywords
+
+- Trash Pinia, PiniaStore, Function, Input, getAllBinWIthOrder, web-admin-app, web-driver-app, OrderUpdateInput, DriverTaskUpdateInput, cyroro
+
+## User preferences
+
+- for “design only,” change only the named page/component/property; do not alter content, mapping, status logic, or navigation. Preserve exact public spelling/casing, including `getAllBinWIthOrder`. [Task 1] [ad-hoc note]
+
+## Reusable knowledge
+
+- Google Sheet `Trash` → `Pinia` is public contract. Search both apps for every store/action/input, callers/exports, and persistence boundary. Keep `views -> stores -> utils/types -> API/Supabase`; views do not query Supabase. [Task 1]
+- Stores own API/RPC and typed inputs; helpers own pure mapping. Verify with exact-name searches, read-back, type-check in both apps, build for multi-file/store changes, then visible workflow smoke tests. [Task 1]
+
+## Failures and how to do differently
+
+- visual/local edit reveals contract drift -> repair contract before unrelated work. Reuse old project organization only; never import foreign APIs/schema. [Task 1]
+
+# Task Group: Metadata, SEO/AI search, image assets, and reference-template migration
+scope: Derive truthful public content from active project evidence, use source shells without leaking their identity, and implement measured assets/crawlable loading.
+applies_to: cwd=C:\Users\user\Desktop\ai comment and public-site projects; reuse_rule=project identity/claims always require current evidence; global image cap applies unless a stricter project cap exists.
+
+## Task 1: Project metadata, manifest, SEO, and AI search
+
+### rollout_summary_files
+
+- rollout_summaries/2026-08-10T04-13-53-hwPl-project_agnostic_metadata_and_webmanifest_guidance.md (cwd=C:\Users\user\Desktop\ai comment, rollout_path=\\?\C:\Users\user\.codex\sessions\2026\08\10\rollout-2026-08-10T12-13-53-019fe9e0-8772-7143-8b6b-11cc8a866137.jsonl, updated_at=2026-08-10T04:22:20+00:00, thread_id=019fe9e0-8772-7143-8b6b-11cc8a866137)
+- extensions/ad_hoc/notes/2026-07-20-seo-ai-metadata-auto-checklist.md (cwd=public PHP/HTML/SSR/SSG sites, rollout_path=INSUFFICIENT DATA, updated_at=2026-07-20T00:00:00+00:00, ad-hoc note; discoverability checklist)
+
+### keywords
+
+- (AI) metaTitle.txt, INSUFFICIENT DATA, site.webmanifest, canonical, robots.txt, sitemap.xml, JSON-LD, OAI-SearchBot
+
+## Task 2: Clone-first PHP/reference work and image/lazyload policy
+
+### rollout_summary_files
+
+- extensions/ad_hoc/notes/2026-08-06T18-09-44-html-to-php-website-workflow.md (cwd=PHP website migration workflows, rollout_path=INSUFFICIENT DATA, updated_at=2026-08-06T18:09:44+00:00, ad-hoc note; clone-first workflow)
+- extensions/ad_hoc/notes/2026-08-20T12-00-00-image-generation-asset-policy.md (cwd=workflow-wide, rollout_path=INSUFFICIENT DATA, updated_at=2026-08-20T12:00:00+00:00, ad-hoc note; measurement-first assets)
+- extensions/ad_hoc/notes/2026-09-22T00-15-00-news-progressive-lazyload.md (cwd=D:\backup\zeta-capital\website-zetaCapital, rollout_path=INSUFFICIENT DATA, updated_at=2026-09-22T00:15:00+00:00, ad-hoc note; crawlable progressive cards)
+
+### keywords
+
+- clone first, exact same design, Hierarchical Replica Chunking, index.php, router.php, 1600px, JPG, PNG alpha, data-src, ItemList JSON-LD
+
+## User preferences
+
+- find the “actual project name user are working on rightnow”; use `INSUFFICIENT DATA`, not historical names or invented global claims. [Task 1]
+- “copy and paste”, “duplicate”, “clone”, or “same modules” -> duplicate exact complete source shell first, then alter requested inner content. Screenshot replication requires continuous reference comparison and nested visual chunks. [Task 2] [ad-hoc note]
+- generated images: measurement-first, 1600px maximum (HUWA 1200px), JPG by default; record intended use/dimensions in project evidence. [Task 2] [ad-hoc note]
+
+## Reusable knowledge
+
+- SEO needs truthful route inventory, unique title/description/canonical/H1/visible content, crawlable links, and valid visible-content-backed JSON-LD. Production may allow Googlebot/Bingbot/OAI-SearchBot; localhost/staging stays `noindex, nofollow`. No special AI tag guarantees ranking/citation. [Task 1]
+- Manifest only for real installable apps; evidence all identity/scope/icons. Clone full PHP shell through documented routes/shared fragments; copied sites are visual reference, not target APIs/analytics/identity/claims. [Task 1][Task 2]
+- For progressive news, keep all articles server-rendered + ItemList JSON-LD, reveal batches with sentinel IntersectionObserver, and provide a no-IntersectionObserver reveal-all fallback. [Task 2]
+- Related skills: skills/static-site-metadata-sweep/SKILL.md; skills/html-to-php-website-migration/SKILL.md; skills/hierarchical-replica-chunking/SKILL.md. [Task 1][Task 2]
+
+## Failures and how to do differently
+
+- `rg --literal-path` unsupported -> use `Select-String -LiteralPath`; non-Git workspace needs targeted scans/read-back. [Task 1]
+- reference template leaks stale identity/claims -> treat it read-only and scan rendered target routes. [Task 2]
+- oversized/dynamic images -> resize before use and register late cards with the same observer contract. [Task 2]
+
+# Task Group: Used-Car Vue/Supabase workflow and Chrome SideBySide repair
+scope: Orient and make surgical client changes while protecting external-admin schema evidence; diagnose host-specific Chrome update failures separately.
+applies_to: cwd=C:\Users\user\Desktop\used-car; reuse_rule=checkout/host-specific: app root is `template/`; source/runtime evidence outranks history and Chrome versions must be rechecked.
+
+## Task 1: Audit, schema boundary, local verification, and UI reversal
 
 ### rollout_summary_files
 
@@ -108,134 +272,9 @@ applies_to: cwd=C:\Users\user\Desktop\used-car; reuse_rule=checkout-specific: ap
 
 ### keywords
 
-- PROJECT_CONTEXT.md, LOCAL-SEARCH-MAP.md, template/, ViteSSG, Pinia, Supabase, _archived, Favorites.vue, MyLoans.vue, development.localhost, useSEO.ts, robots.txt, sitemap.xml
+- PROJECT_CONTEXT.md, template/, ViteSSG, _archived, Favorites.vue, MyLoans.vue, development.localhost, useSEO.ts
 
-## User preferences
-
-- when asking to "read and understand my project ... all folder and .md," provide source-grounded whole-project understanding; `sample/` and screenshots are reference-only, not live inventory/business facts. [Task 1]
-- when requesting a targeted UI change then reversal "in both cards pages," make minimal edits and inspect both surfaces before declaring completion. [Task 1]
-- preserve English-only durable knowledge and narrow trigger control; do not add aliases opportunistically. [Task 1]
-
-## Reusable knowledge
-
-- `template/` is Vue 3, Vite, TypeScript, Tailwind v4, Pinia, Vue Router, vue-i18n (`zh/en/ms`), ViteSSG, PWA, and Supabase. [Task 1]
-- Never provision from `template/src/sql/migrations/_archived/`; external admin migrations 001-039 at `D:\admin-panel-used-car\apps\web-antd\src\sql\migrations\` are documented as authoritative, but were unavailable during audit, so live schema is `INSUFFICIENT DATA`. [Task 1]
-- Start from `template/` with `pnpm.cmd run dev:local`; verified host is `http://127.0.0.1:3000`. [Task 1]
-- Saved-loan cards are `Favorites.vue` and `profile/MyLoans.vue`; current verified state has no precise-quote button or `LoanContactSheet.vue`. Existing vehicle contact behavior is `cars/ContactSheet.vue`. [Task 1]
-- SEO readiness requires source -> ViteSSG build -> preview -> rendered HTML -> robots/sitemap -> production crawler/CDN. HTTP 200 alone is not proof. [Task 1]
-
-## Failures and how to do differently
-
-- Default SSG can fail with `Error: supabaseUrl is required.` when env variables are absent -> use `pnpm.cmd exec vite build --mode development.localhost` for local verification; never print keys. [Task 1]
-- Wrong cwd gave false missing-path results -> run checks from `template/` or use absolute paths; favor simple separately quoted PowerShell/rg commands. [Task 1]
-- `pnpm.cmd run type-check` had pre-existing errors -> report it as non-clean; do not attribute all failures to the current change. [Task 1]
-
-# Task Group: Codex configuration, boot routing, and maintenance
-scope: Follow the exact boot sentinel, maintain route-first knowledge, and distinguish current configuration from historical maintenance artifacts.
-applies_to: cwd=C:\Users\user\.codex and boot requests from other cwd; reuse_rule=time-sensitive: re-read current `00_PULSE.md` and router state before edits; historical counts/routes may be stale.
-
-## Task 1: Exact Codex knowledge boot and localhost routing guard
-
-### rollout_summary_files
-
-- rollout_summaries/2026-09-04T01-18-24-1Zuq-codex_boot_and_localhost_test_blocked.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\09\04\rollout-2026-09-04T09-18-24-01a069fe-d709-7e00-b7e6-2069c0077bea.jsonl, updated_at=2026-09-04T01:19:08+00:00, thread_id=01a069fe-d709-7e00-b7e6-2069c0077bea, localhost test correctly blocked)
-
-### keywords
-
-- ai read .codex knowledge, 00_PULSE.md, Agent is Ready, localhost-test, ports 3000 5173 6006
-
-## Task 2: Routing/performance and Git maintenance
-
-### rollout_summary_files
-
-- rollout_summaries/2026-08-20T01-54-45-Rl4o-codex_git_sparse_checkout_and_generated_images_cleanup.md (cwd=C:\Users\user\.codex, rollout_path=\\?\C:\Users\user\.codex\sessions\2026\08\20\rollout-2026-08-20T09-54-45-01a01ce0-bb0d-76b1-898a-dabc3ae2eddc.jsonl, updated_at=2026-08-20T08:30:33+00:00, thread_id=01a01ce0-bb0d-76b1-898a-dabc3ae2eddc, historical nested-Git status; recheck current worktree)
-- rollout_summaries/2026-08-12T07-57-58-bZCY-codex_lean_maintenance_and_memory_compression.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\08\12\rollout-2026-08-12T15-57-58-019ff4fa-668d-74d2-bc92-64724b087b5c.jsonl, updated_at=2026-08-12T08:30:52+00:00, thread_id=019ff4fa-668d-74d2-bc92-64724b087b5c)
-
-### keywords
-
-- Update-CodexRouting.ps1, Audit-CodexRouting.ps1, Test-CodexPerfBenchmark.ps1, knowledge compression, git sparse-checkout, thread-writer-locks, nested memories/.git
-
-## User preferences
-
-- when asking for `.codex` improvements, "find improvement ... to highly improve performances" -> inspect live routes, memory sizes, skills, and benchmarks before recommending/editing. [Task 2]
-- when asking to "take action ... wont make heavy changes," prefer reversible surgical maintenance; preserve skills, secrets, routes, and repository state. [Task 2]
-
-## Reusable knowledge
-
-- Exact trigger `ai read .codex knowledge` reads current `00_PULSE.md` once and replies only `[🟢] Agent is Ready..`; on the next normal turn, enter task state without repeating boot. [Task 1]
-- For localhost testing, discover a runnable application/project root first. `.codex` had no runnable project/listener on 3000/5173/6006, so starting there is a stop condition. [Task 1]
-- Route first and keep deep knowledge lazy. Refresh generated routing via `codex-router/Update-CodexRouting.ps1 -Quiet`, then audit/benchmark/activation as applicable. [Task 2]
-- In sparse checkout, inspect `git status` before staging; historical explicit staging used `git add --sparse -A -- . ':!thread-writer-locks/**'`. [Task 2]
-
-## Failures and how to do differently
-
-- Do not mutate `memories/.git` or other nested Git metadata without explicit cleanup authorization; current status must be rechecked. [Task 2]
-- Large encoded Markdown patches can fail -> inspect exact context and use smaller stable patches; do not treat truncated command output as source evidence. [Task 2]
-
-# Task Group: Local Supabase VPS backup restore and API exposure
-scope: Repair inconsistent auth backup data, run protected atomic Huwa2 restore, and expose the restored schema through the CLI-managed local stack.
-applies_to: cwd=C:\Users\user\Documents\supabase-project-backup-restore; reuse_rule=stateful and checkout-specific: inspect active stack/config and back up before mutations.
-
-## Task 1: Repair Huwa2 auth backup, restore it, and expose `huwa2`
-
-### rollout_summary_files
-
-- rollout_summaries/2026-08-14T02-47-47-8IL6-huwa2_vps_restore_and_postgrest_expose.md (cwd=C:\Users\user\Documents\supabase-project-backup-restore, rollout_path=C:\Users\user\.codex\sessions\2026\08\14\rollout-2026-08-14T10-47-47-019ffe2b-21d6-7ff2-9bea-6cfa6ab17768.jsonl, updated_at=2026-08-14T03:10:24+00:00, thread_id=019ffe2b-21d6-7ff2-9bea-6cfa6ab17768)
-
-### keywords
-
-- huwa2, auth.users, auth.identities, identities_user_id_fkey, 04-auth-rows.sql, atomic restore, PGRST_DB_SCHEMAS, config.toml, com.supabase.cli.project
-
-## User preferences
-
-- when restoring VPS data locally, preserve the original backup and repair only a working copy when possible; treat local database state as protected. [Task 1]
-- when the goal is localhost access, separately verify database restoration and PostgREST API exposure. [Task 1]
-
-## Reusable knowledge
-
-- Validate every `auth.identities.user_id` against `auth.users.id` before restore. Historical repair preserved `04-auth-rows.original.sql`, added 10 placeholder parents to working SQL, and reached 18 users / 26 identities / 0 orphans. [Task 1]
-- Use `C:\Program Files (x86)\Git\bin\bash.exe` for existing `scripts/04-restore-local.sh` on this host. Atomic restore commits only after success. [Task 1]
-- Actual local stack is CLI-managed at `C:\Users\user\Documents\local-supabase`; add schema names in `[api].schemas` of `supabase/config.toml`, back it up, then CLI stop/start without resetting the data volume. [Task 1]
-
-## Failures and how to do differently
-
-- `scripts/06-expose-schema.sh` fails `Could not locate compose file for 'supabase_rest_local-supabase'` because it assumes Compose labels -> detect `com.supabase.cli.project` and use CLI config instead. [Task 1]
-- Recovered placeholder auth records may not be login-capable: source had missing passwords/phone fields. Do not describe DB restoration as fully recovering authentication. [Task 1]
-
-# Task Group: Project-agnostic metadata and webmanifest workflow
-scope: Update reusable SEO/metadata instructions without leaking historical project identities or inventing scope.
-applies_to: cwd=C:\Users\user\Desktop\ai comment; reuse_rule=apply to current-project metadata work only after identity and architecture are evidenced.
-
-## Task 1: Current-project metadata identity, broad truthful scope, and manifest reminder
-
-### rollout_summary_files
-
-- rollout_summaries/2026-08-10T04-13-53-hwPl-project_agnostic_metadata_and_webmanifest_guidance.md (cwd=C:\Users\user\Desktop\ai comment, rollout_path=\\?\C:\Users\user\.codex\sessions\2026\08\10\rollout-2026-08-10T12-13-53-019fe9e0-8772-7143-8b6b-11cc8a866137.jsonl, updated_at=2026-08-10T04:22:20+00:00, thread_id=019fe9e0-8772-7143-8b6b-11cc8a866137)
-
-### keywords
-
-- (AI) metaTitle.txt, INSUFFICIENT DATA, site.webmanifest, Select-String -LiteralPath, project identity, SEO metadata
-
-## User preferences
-
-- when metadata is requested, find the "actual project name user are working on rightnow"; avoid historical project examples and derive exact identity from current evidence. [Task 1]
-- use the broadest accurate industry/category/market/region/country/international scope supported by evidence; never invent global reach. [Task 1]
-- use the project's centralized metadata module/include, not seed/data or unrelated templates. [Task 1]
-
-## Reusable knowledge
-
-- Use `INSUFFICIENT DATA` when identity is unconfirmed. Do not copy names, domains, URLs, social accounts, locations, colors, filenames, or claims from examples/history. [Task 1]
-- Synchronize a manifest only where the project is an installable web app; evidence `name`, `short_name`, `description`, `lang`, `id`, `start_url`, `scope`, display/colors, and existing icons. [Task 1]
-
-## Failures and how to do differently
-
-- `rg --literal-path` is unsupported -> use PowerShell `Select-String -LiteralPath` for exact-file scans. If workspace has no Git repo, use targeted scans/read-back rather than claiming `git diff` verification. [Task 1]
-
-# Task Group: Windows Chrome SideBySide repair
-scope: Diagnose a specific Chrome update failure where the launcher exists but its dependent assembly is missing.
-applies_to: cwd=C:\Users\user\Desktop\used-car; reuse_rule=host-specific and time-sensitive: verify current event, paths, pending files, and versions before action.
-
-## Task 1: Chrome missing SideBySide assembly repair
+## Task 2: Chrome missing SideBySide assembly
 
 ### rollout_summary_files
 
@@ -243,12 +282,47 @@ applies_to: cwd=C:\Users\user\Desktop\used-car; reuse_rule=host-specific and tim
 
 ### keywords
 
-- Chrome, SideBySide, Dependent Assembly, new_chrome.exe, 151.0.7922.175, chrome_proxy.exe
+- Chrome, SideBySide, Dependent Assembly, new_chrome.exe, chrome_proxy.exe, file version
+
+## User preferences
+
+- “read and understand my project ... all folder and .md” -> source-grounded overview; samples/screenshots are reference-only. Targeted UI change then reversal “in both cards pages” -> minimal edits and inspect both surfaces. [Task 1]
 
 ## Reusable knowledge
 
-- For Chrome SideBySide with an existing valid shortcut, inspect event/versioned application files and pending `new_chrome*` before recreating a shortcut. Historical repair replaced launchers only after elevated version-checked backup and verified 151.0.7922.175 process launch. [Task 1]
+- `template/` is Vue/Vite/TypeScript/Pinia/ViteSSG/Supabase. Never provision from `_archived`; start with `pnpm.cmd run dev:local`; missing-env build uses `pnpm.cmd exec vite build --mode development.localhost` without printing keys. [Task 1]
+- For SideBySide, inspect event/versioned files and pending `new_chrome*` before shortcut recreation; use file version/registry/processes, not `chrome.exe --version`. [Task 2]
 
 ## Failures and how to do differently
 
-- `chrome.exe --version` may launch Chrome rather than reliably report version -> use file version, registry, and running processes. [Task 1]
+- wrong cwd yields false paths -> work from `template/` or absolute paths. Pre-existing type-check errors are baseline, not automatically current-change failures. [Task 1]
+
+# Task Group: VIPBillion content imports, metadata, and reusable Vben modules
+scope: Keep VIPBillion Docker imports additive, public copy truthful, and shared admin modules structurally reused.
+applies_to: cwd=C:\Users\user\Desktop\VIPBillion and its approved local-Docker workflow; reuse_rule=project-specific company/title rules apply only to VIPBillion; do not reset or modify unrelated database rows.
+
+## Task 1: Additive news batches, metadata titles, and admin reuse
+
+### rollout_summary_files
+
+- extensions/ad_hoc/notes/20260812-vipbillion-news-fast-batch-workflow.md (cwd=VIPBillion local-Docker workflow, rollout_path=INSUFFICIENT DATA, updated_at=2026-08-12T00:00:00+00:00, ad-hoc note; approved batch gate)
+- extensions/ad_hoc/notes/2026-07-22-vipbillion-metadata-title-location-preference.md (cwd=C:\Users\user\Desktop\VIPBillion\website-vipbillion, rollout_path=INSUFFICIENT DATA, updated_at=2026-07-22T00:00:00+00:00, ad-hoc note; title/location contract)
+
+### keywords
+
+- VIP BILLION MILESTONE TRAVEL & TOURS, 10 40 50 50 50, news.md, additive-only, 1200x630, 400x300, lib/metaData.php, soft delete, partial unique index
+
+## User preferences
+
+- VIPBillion news imports are additive-only: preserve old rows unless a correction is explicit; do not reset/delete/recreate unrelated local Docker/Supabase data. [Task 1] [ad-hoc note]
+- public metadata uses Malaysia-wide wording unless a page is genuinely local; use concise intent-first titles and do not modify customer-editable Supabase records merely for SEO wording. [Task 1] [ad-hoc note]
+
+## Reusable knowledge
+
+- Use `news.md` schema/existing importer. Approved phases are `10, 40, 50, 50, 50`; compact gate checks selected/cumulative counts, JSON/language alignment, company normalization, generated SQL/inserts, proportional images, and one `/news` smoke test. [Task 1]
+- Keep image aspect ratio inside 1200x630 desktop and 400x300 mobile without padding/letterboxing. For soft-deleted slugs, frontend duplicate checks use active rows and DB uniqueness is a partial index `WHERE deleted_at IS NULL`. [Task 1] [ad-hoc note]
+- For “same module,” clone the complete existing module shell before changing inner data/content; retain exact shared drawer/grid behavior. [Task 1] [ad-hoc note]
+
+## Failures and how to do differently
+
+- UI says slug available but submit hits unique constraint -> suspect old full-table uniqueness drift; repair constraint/index to partial active-row uniqueness rather than suffixing deleted slugs. [Task 1]
