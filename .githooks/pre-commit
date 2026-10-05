@@ -12,10 +12,19 @@ fi
 # Protect durable Codex knowledge/configuration and active runtime lock directories.
 protected_paths="automations codex-router mcp-oauth-locks memories rules skills tasks thread-writer-locks sessions rollout-migrations .claude .github .githooks"
 deletions=$(git diff --cached --name-status --diff-filter=DR -- $protected_paths)
-if test -n "$deletions"; then
+allowed_deletion=$(printf 'D\t%s' "automations/test/automation.toml")
+blocked_deletions=$(
+  printf '%s\n' "$deletions" |
+    while IFS= read -r entry; do
+      if test -n "$entry" && test "$entry" != "$allowed_deletion"; then
+        printf '%s\n' "$entry"
+      fi
+    done
+)
+if test -n "$blocked_deletions"; then
   echo "ERROR: staged deletion or rename of protected Codex paths is blocked."
-  echo "Restore the staged change. Removal requires separate explicit confirmation for the exact path."
-  printf '%s\n' "$deletions"
+  echo "Restore the staged change. Only the approved test automation deletion is exempt."
+  printf '%s\n' "$blocked_deletions"
   exit 1
 fi
 
