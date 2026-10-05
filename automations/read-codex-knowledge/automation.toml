@@ -7,4 +7,4 @@ status = "ACTIVE"
 rrule = "RRULE:FREQ=WEEKLY;BYHOUR=10;BYMINUTE=30;BYDAY=SU,MO,TU,WE,TH,FR,SA"
 target_thread_id = "01a10a2a-bbc8-7a60-95f8-cfc69337aa04"
 created_at = 1790648802055
-updated_at = 1791172203202
+updated_at = 1791183387871

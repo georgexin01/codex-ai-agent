@@ -1,0 +1,10 @@
+version = 1
+id = "test"
+kind = "heartbeat"
+name = "Clarify test request"
+prompt = "test"
+status = "ACTIVE"
+rrule = "RRULE:FREQ=WEEKLY;BYHOUR=10;BYMINUTE=15;BYDAY=SU,MO,TU,WE,TH,FR,SA"
+target_thread_id = "01a10ad0-6992-7302-8176-1b39edfbdd7d"
+created_at = 1791182793896
+updated_at = 1791182798098
