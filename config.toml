@@ -4,7 +4,7 @@ approval_policy = "on-request"
 personality = "pragmatic"
 service_tier = "priority"
 
-notify = [ "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\b63ee7ee40c23b77\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
+notify = [ "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\154806497bb51bae\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
 [windows]
 sandbox = "elevated"
 
@@ -230,6 +230,7 @@ dictationDictionary = []
 git-pull-request-merge-method = "merge"
 conversationDetailMode = "STEPS_PROSE"
 worktree-keep-count = 10
+followUpQueueMode = "queue"
 
 [memories]
 disable_on_external_context = true
