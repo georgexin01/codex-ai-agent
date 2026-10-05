@@ -1,5 +1,14 @@
 #!/bin/sh
 
+# A sparse worktree can hide protected directories and make `git add -A`
+# silently skip their changes. Do not create commits from an incomplete view.
+sparse_checkout=$(git config --bool --get core.sparseCheckout 2>/dev/null || printf 'false')
+if test "$sparse_checkout" = "true"; then
+  echo "ERROR: sparse-checkout is enabled for the .codex repository."
+  echo "Disable it with 'git sparse-checkout disable' before staging or committing."
+  exit 1
+fi
+
 # Protect durable Codex knowledge/configuration and active runtime lock directories.
 protected_paths="automations codex-router mcp-oauth-locks memories rules skills tasks thread-writer-locks sessions rollout-migrations .claude .github .githooks"
 deletions=$(git diff --cached --name-status --diff-filter=DR -- $protected_paths)
