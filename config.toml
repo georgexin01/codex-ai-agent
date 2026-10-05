@@ -4,7 +4,7 @@ approval_policy = "on-request"
 personality = "pragmatic"
 service_tier = "priority"
 
-notify = [ "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\154806497bb51bae\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
+notify = [ "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\b63ee7ee40c23b77\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
 [windows]
 sandbox = "elevated"
 
@@ -198,26 +198,26 @@ args = ["mcp"]
 
 [mcp_servers.node_repl]
 args = []
-command = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\154806497bb51bae\bin\node_repl.exe'
+command = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\b63ee7ee40c23b77\bin\node_repl.exe'
 env_vars = ["CODEX_WINDOWS_REGISTERED_CORE"]
 startup_timeout_sec = 120
 
 [mcp_servers.node_repl.env]
 NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
-NODE_REPL_NODE_MODULE_DIRS = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\154806497bb51bae\bin\node_modules'
-NODE_REPL_NODE_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\154806497bb51bae\bin\node.exe'
-NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\user\.codex;C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\154806497bb51bae\bin\node_modules'
+NODE_REPL_NODE_MODULE_DIRS = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\b63ee7ee40c23b77\bin\node_modules'
+NODE_REPL_NODE_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\b63ee7ee40c23b77\bin\node.exe'
+NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\user\.codex;C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\b63ee7ee40c23b77\bin\node_modules'
 CODEX_HOME = 'C:\Users\user\.codex'
-BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab,mcpapps"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 BROWSER_USE_TINYSKY_ENABLED = "1"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.928.31416"
-NODE_REPL_TRUSTED_SERVICES = '{"browser":"C:/Users/user/.codex/plugins/cache/openai-bundled/browser/26.928.31416/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+BROWSER_USE_CODEX_APP_VERSION = "26.924.22138"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"C:/Users/user/.codex/plugins/cache/openai-bundled/browser/26.924.22138/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
 SKY_CUA_NATIVE_PIPE = "1"
-SKY_CUA_NATIVE_PIPE_DIRECTORY = '\\.\pipe\codex-computer-use-9a94291b-9382-4540-a7d7-3bb03515010b'
-CODEX_CLI_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\bin\de8a38d2100ae498\codex.exe'
+SKY_CUA_NATIVE_PIPE_DIRECTORY = '\\.\pipe\codex-computer-use-deb37f47-ab1f-4d55-8a35-5da4370f28e7'
+CODEX_CLI_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\bin\faa963e871dd422c\codex.exe'
 NODE_REPL_UNTRUSTED_ENV_ALLOWLIST = "CODEX_WINDOWS_REGISTERED_CORE"
 
 [mcp_servers.openaiDeveloperDocs]
@@ -230,7 +230,6 @@ dictationDictionary = []
 git-pull-request-merge-method = "merge"
 conversationDetailMode = "STEPS_PROSE"
 worktree-keep-count = 10
-followUpQueueMode = "queue"
 
 [memories]
 disable_on_external_context = true

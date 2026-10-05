@@ -19,7 +19,7 @@ Works across Windows web projects: bilingual static sites, Vue/ViteSSG/Supabase 
 
 - On Windows, favor simple separately quoted PowerShell commands and run checks from the real application root.
 - Local HTTP 200 proves reachability, not crawler readiness, production deployment, Apache rules, or browser visual quality.
-- Parse bilingual JSON after edits; check unique/paired IDs, UTF-8, rendered fallback/schema alignment, and both routes.
+- Parse bilingual JSON after edits; read the current record count rather than reusing historical snapshots, then check unique/paired IDs, UTF-8, rendered fallback/schema alignment, and both routes.
 - For stateful Supabase work, validate backup consistency, preserve originals/config backups, and distinguish DB restore from API exposure.
 - Do not print secrets; use local mode/config without exposing environment values.
 
@@ -57,7 +57,7 @@ Works across Windows web projects: bilingual static sites, Vue/ViteSSG/Supabase 
 #### D:\backup\website-zetasoftware
 
 - FAQ/blog/homepage/portfolio parity: data/faq.json, js/faq.js, data/blogs-cn.json, sticky-phone
-  - desc: Bilingual FAQ source/schema, localized latest blogs/pricing, blog shells, and exact homepage phone-frame reuse; cwd=D:\backup\website-zetasoftware.
+  - desc: Bilingual FAQ source/schema, localized latest blogs/pricing, blog shells, and exact homepage phone-frame reuse; historical 30-record FAQ checks were later superseded by a 40-per-language checkout audit; cwd=D:\backup\website-zetasoftware.
 
 #### C:\Users\user\Desktop\used-car
 

@@ -1,9 +1,12 @@
 #!/bin/sh
 
-if test -n "$(git diff --cached --name-only --diff-filter=D -- skills memories)"; then
-  echo "ERROR: staged deletion of protected skills or memories is blocked."
-  echo "Restore the staged deletion and obtain separate exact-path user confirmation before any removal."
-  git diff --cached --name-only --diff-filter=D -- skills memories
+# Protect durable Codex knowledge/configuration and active runtime lock directories.
+protected_paths="automations codex-router mcp-oauth-locks memories rules skills tasks thread-writer-locks sessions rollout-migrations .claude .github .githooks"
+deletions=$(git diff --cached --name-status --diff-filter=DR -- $protected_paths)
+if test -n "$deletions"; then
+  echo "ERROR: staged deletion or rename of protected Codex paths is blocked."
+  echo "Restore the staged change. Removal requires separate explicit confirmation for the exact path."
+  printf '%s\n' "$deletions"
   exit 1
 fi
 

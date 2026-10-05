@@ -84,13 +84,13 @@ applies_to: cwd=D:\backup\website-zetasoftware; reuse_rule=checkout-specific: re
 - `scripts/format-detail-content.js` selectively groups sentences; `scripts/long-form-intros.js` holds compact shared EN/CN tails. Preserve technical acronyms/proper names while shortening shared copy. [Task 1]
 - Versioned CSS/JS can use `Cache-Control: public, max-age=31536000, immutable`; keep replaceable unversioned images around 30 days until filenames/query strings are versioned; HTML should revalidate. [Task 1]
 - `main.js` combines navigation, lazy images, sliders, testimonials, forms, and optional animation. Take a throttled Chrome trace before main-thread changes; inspect Evaluate Script, layout, animation frames, and image decode. [Task 1]
-- FAQ source is `data/faq.json` with `en`/`cn`; `js/faq.js` renders accordions and matching FAQPage JSON-LD. Preserve 30 paired unique IDs, crawlable fallback HTML, and schema alignment. [Task 3]
+- FAQ source is `data/faq.json` with `en`/`cn`; `js/faq.js` renders accordions and matching FAQPage JSON-LD. The 13-Aug validation had 30 paired IDs, while the later 7-Sep checkout audit reports 40 records per language; read the current dataset, preserve its paired IDs/count, crawlable fallback HTML, and schema alignment. [Task 1][Task 3]
 - `js/home-blogs.js` sorts localized data by date, selects three, escapes text, refreshes Lucide icons, and integrates lazy-image loading. Blog dataset replacement to ten records/images was not evidenced. [Task 3]
 - Canonical homepage phone frame is `sticky-phone portfolio-card-phone` with `phone-screen`, camera, physical button, reflection, and light-bleed; preserve desktop 310x640 and mobile 275x572 dimensions. [Task 3]
 
 ## Failures and how to do differently
 
-- Invalid JSON, duplicate records, or CN parity lag after FAQ bulk edits -> parse JSON immediately; check count, unique IDs, paired IDs/titles, fallback, and schema before closing. [Task 3]
+- Invalid JSON, duplicate records, or CN parity lag after FAQ bulk edits -> parse JSON immediately; check the current count (do not reuse the historical 30-record snapshot), unique IDs, paired IDs/titles, fallback, and schema before closing. [Task 1][Task 3]
 - Chinese text appears corrupted in PowerShell -> inspect bytes with UTF-8-aware Node/file checks before diagnosing mojibake; avoid default PowerShell bulk writes. [Task 3]
 - Generator regression restores blank menus -> run generator and shared nav updater together, then inspect generated output rather than only source. [Task 1]
 - Do not delete WebPs in `images/mobile`/`images/website`: resolve HTML/JS/JSON/CSS references, confirm JPG files/routes and true `IntersectionObserver` lazy loading (including dynamically inserted blog images), then delete only authorized WebPs. [Task 2]
