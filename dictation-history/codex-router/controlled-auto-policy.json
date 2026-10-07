@@ -1,0 +1,58 @@
+{
+  "version": "1.1",
+  "_meta": {
+    "default_reasoning_source": "config.toml -> model_reasoning_effort is the single source of truth for the live default; do not hardcode a value in this file (see memories/2_governance/SINGLE_TRUTH_SOURCE_PROTOCOL.md)"
+  },
+  "model_profile": "gpt-6-luna-high",
+  "reasoning_levels": ["medium", "high"],
+  "default_reasoning": null,
+  "high_effort_use_cases": [
+    "explicit deep, thorough, or review request",
+    "security, authentication, schema, governance, or recovery work",
+    "unresolved ambiguity after a lower-cost check",
+    "verification failure or source conflict"
+  ],
+  "auto_apply": true,
+  "allowed_actions": [
+    "read-only scans",
+    "generated skill activation manifest",
+    "project truth detection report",
+    "route telemetry and benchmark reports",
+    "generated routing refresh after validation"
+  ],
+  "approval_required": [
+    "00_PULSE.md",
+    "AGENTS.md",
+    "memories/0_apex/**",
+    "memories/1_core/**",
+    "memories/2_governance/**",
+    "skills/claude*/**",
+    "any secret, token, cookie, session, auth, or live data"
+  ],
+  "stop_conditions": [
+    "missing route target",
+    "trigger conflict",
+    "unread current target before edit",
+    "uncommitted user change overlaps the target",
+    "verification failure",
+    "low confidence"
+  ],
+  "budgets": {
+    "routine_boot_tokens": 3500,
+    "routine_frontdoor_tokens": 3000,
+    "deep_evidence_files": 8,
+    "deep_context_tokens": 18000,
+    "final_summary_words": 180
+  },
+  "verification": [
+    "codex-router/Find-LargeKnowledge.ps1",
+    "codex-router/Audit-CodexRouting.ps1",
+    "codex-router/Test-CodexPerfBenchmark.ps1",
+    "codex-router/Measure-CodexRouteTelemetry.ps1"
+  ],
+  "rollback": {
+    "required_before_write": true,
+    "generated_outputs_only": true,
+    "never_restore_overlapping_user_changes": true
+  }
+}

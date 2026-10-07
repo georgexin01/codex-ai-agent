@@ -1,0 +1,22 @@
+﻿{
+    "schema_version":  2,
+    "added_count":  2,
+    "modified_count":  7,
+    "removed_count":  0,
+    "added":  [
+                  "memories/phase2_workspace_diff.md",
+                  "memories/skills/vipbillion-news-import-batches/SKILL.md"
+              ],
+    "modified":  [
+                     "memories/2_governance/artifacts/trigger_intent_index.md",
+                     "memories/MEMORY.md",
+                     "memories/2_governance/artifacts/knowledge_relation_router.md",
+                     "skills/NO_DELETE.txt",
+                     "memories/2_governance/artifacts/boot_connection_map.md",
+                     "memories/memory_summary.md",
+                     "memories/2_governance/FRONTMATTER_MAINTENANCE_PROTOCOL.md"
+                 ],
+    "removed":  [
+
+                ]
+}

@@ -1,0 +1,84 @@
+﻿{
+  "version": "1.0",
+  "boot_profile": "ultra-lean",
+  "codex_root_mode": "dynamic",
+  "knowledge_root": "memories",
+  "tier_map": {
+    "tier_0": [
+      "memories/0_apex/GROUND_KERNEL.md",
+      "memories/0_apex/KARPATHY_TIER0_PRINCIPLES.md"
+    ],
+    "tier_1": [
+      "memories/2_governance/PREFLIGHT_CHECKLIST.md"
+    ],
+    "tier_2": [
+      "memories/2_governance/artifacts/skill_path_router.md"
+    ],
+    "tier_3": [
+      "skills"
+    ]
+  },
+  "fallback_chain": [
+    "00_CODEX_START_HERE.md",
+    "CODEX_DYNAMIC_ROUTING.md",
+    "memories/2_governance/artifacts/skill_path_router.md"
+  ],
+  "exclude": [
+    "**/.git",
+    "**/.git/**",
+    "**\\.git",
+    "**\\.git\\**",
+    ".git",
+    ".git/**",
+    ".git\\**",
+    "memories/.git",
+    "memories/.git/**",
+    "memories\\.git",
+    "memories\\.git\\**",
+    "memories/archive",
+    "memories/archive/**",
+    "memories\\archive",
+    "memories\\archive\\**",
+    "memories/rollout_summaries",
+    "memories/rollout_summaries/**",
+    "memories\\rollout_summaries",
+    "memories\\rollout_summaries\\**",
+    "memories/raw_memories.md",
+    "memories/MEMORY_DETAILS.md",
+    "memories\\MEMORY_DETAILS.md",
+    "memories/*_DETAILS.md",
+    "memories\\*_DETAILS.md",
+    "memories/MOBILE_APP_DESIGN_RECIPE_DETAILS.md",
+    "memories\\MOBILE_APP_DESIGN_RECIPE_DETAILS.md",
+    "memories/1_core/HEADER_FOOTER_DESIGN_RULES_DETAILS.md",
+    "memories\\1_core\\HEADER_FOOTER_DESIGN_RULES_DETAILS.md",
+    "memories/extensions/ad_hoc",
+    "memories/extensions/ad_hoc/**",
+    "memories\\extensions\\ad_hoc",
+    "memories\\extensions\\ad_hoc\\**",
+    "memories/2_governance/artifacts/CLEANUP_LOG.md",
+    "memories\\2_governance\\artifacts\\CLEANUP_LOG.md",
+    "memories/2_governance/bridges",
+    "memories/2_governance/bridges/**",
+    "memories\\2_governance\\bridges",
+    "memories\\2_governance\\bridges\\**",
+    "skills/.system",
+    "skills/.system/**",
+    "skills\\.system",
+    "skills\\.system\\**",
+    "skills/normal",
+    "skills/normal/**",
+    "skills\\normal",
+    "skills\\normal\\**",
+    "**/__pycache__",
+    "**/__pycache__/**",
+    "**\\__pycache__",
+    "**\\__pycache__\\**",
+    "**/*.pyc",
+    "**\\*.pyc"
+  ],
+  "roots": [
+    { "kind": "knowledge", "path": "memories" },
+    { "kind": "skill-reference", "path": "skills" }
+  ]
+}

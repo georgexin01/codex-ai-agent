@@ -1,0 +1,100 @@
+{
+  "version": "1.0",
+  "cases": [
+    {
+      "id": "meta-pack-explicit",
+      "prompt": "Please use meta skills and update every public page.",
+      "expected_target": "skills/meta-skills/SKILL.md"
+    },
+    {
+      "id": "meta-pack-audit",
+      "prompt": "Run a full metadata audit before launch.",
+      "expected_target": "skills/meta-skills/SKILL.md"
+    },
+    {
+      "id": "localhost-verification",
+      "prompt": "Please localhost test this project and print the working URLs.",
+      "expected_target": "skills/localhost-test/SKILL.md"
+    },
+    {
+      "id": "cyroro-contract",
+      "prompt": "Run ai cyroro audit against the current stores.",
+      "expected_target": "skills/pinia-contract-workflow/SKILL.md"
+    },
+    {
+      "id": "claude-app-longest-match",
+      "prompt": "Use ai claude app for this mobile PWA.",
+      "expected_target": "skills/claude-app/WORKING_PROGRESS.md"
+    },
+    {
+      "id": "claude-website-longest-match",
+      "prompt": "Use ai claude website for this PHP site.",
+      "expected_target": "skills/claude-website/WORKING_PROGRESS.md"
+    },
+    {
+      "id": "knowledge-fast-validation",
+      "prompt": "Please ai validate knowledge fast before completion.",
+      "expected_target": "codex-router/Validate-CodexKnowledge.ps1"
+    },
+    {
+      "id": "codex-health-pack",
+      "prompt": "Run ai codex health and show the summary.",
+      "expected_target": "codex-router/KnowledgeHealthReport.ps1"
+    },
+    {
+      "id": "route-telemetry",
+      "prompt": "Use ai route telemetry for this trigger.",
+      "expected_target": "codex-router/Measure-CodexRouteTelemetry.ps1"
+    },
+    {
+      "id": "knowledge-compression",
+      "prompt": "Please ai knowledge compression on oversized Markdown.",
+      "expected_target": "memories/2_governance/KNOWLEDGE_COMPRESSION_PROTOCOL.md"
+    },
+    {
+      "id": "project-handoff",
+      "prompt": "Run ai project handoff for this repository.",
+      "expected_target": "skills/project-handoff-doc-stack/SKILL.md"
+    },
+    {
+      "id": "meta-pack-alias",
+      "prompt": "Apply metadata pack to the public website.",
+      "expected_target": "skills/meta-skills/SKILL.md"
+    },
+    {
+      "id": "gpt6-high-profile-small-fix",
+      "prompt": "Use ai gpt-6 luna reasoning for this small verified fix.",
+      "expected_target": "memories/2_governance/LUNA_5_6_REASONING_MODES.md"
+    },
+    {
+      "id": "gpt6-high-profile-security-review",
+      "prompt": "Use ai gpt-6 luna reasoning to review this security-sensitive schema change.",
+      "expected_target": "memories/2_governance/LUNA_5_6_REASONING_MODES.md"
+    },
+    {
+      "id": "gpt6-high-profile-context-efficiency",
+      "prompt": "Use ai gpt-6 luna reasoning to improve context efficiency.",
+      "expected_target": "memories/2_governance/LUNA_5_6_REASONING_MODES.md"
+    },
+    {
+      "id": "gpt6-high-profile-vue-vben",
+      "prompt": "Use ai gpt-6 luna vue vben for this form update.",
+      "expected_target": "memories/extensions/ad_hoc/notes/2026-07-10-luna-5-6-vue-vben-execution-profile.md"
+    },
+    {
+      "id": "negative-stale-route",
+      "prompt": "Use the missing ai opportunity radar skill.",
+      "expect_no_match": true
+    },
+    {
+      "id": "project-truth-detection",
+      "prompt": "Use ai project truth detection before coding.",
+      "expected_target": "codex-router/Detect-CodexProjectTruth.ps1"
+    },
+    {
+      "id": "safe-maintenance-runner",
+      "prompt": "Use ai safe codex maintenance to run automatic checks.",
+      "expected_target": "codex-router/Run-CodexLunaMaintenance.ps1"
+    }
+  ]
+}
