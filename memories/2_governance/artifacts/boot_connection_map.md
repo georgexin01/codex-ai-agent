@@ -6,7 +6,7 @@ contains: ["project type", "frequent knowledge", "frequent skill", "boot preload
 phase: boot-routing
 version: 1.0
 status: active
-date_updated: "2026-08-20"
+date_updated: "2026-10-07"
 evidence_scope: "654 parseable user-message entries from 44 available 2026 session files, 2 locked active files, and 15 curated rollout summaries; older indexed session IDs have no local raw files"
 related:
   - 00_PULSE.md
@@ -44,6 +44,23 @@ Counts are messages containing a project family, not permission to invoke it. Th
 | Localhost/testing | 92 | High when `localhost test`, HTTP, browser, or Playwright appears |
 | Mobile/PWA | 91 | High for mobile, Capacitor, PWA, or app-build wording |
 | Vue/Vben/database | 38 | High-caution lane for Vben, Pinia, Supabase, schema, RLS, or API contracts |
+
+## Ten second-stage recommendations
+
+These are high-value local routes, not ten files to preload. Read the matching front door only when the next task contains the listed signal. The first eight lane priorities follow the message-count snapshot above; the last two are cross-project contracts reflected repeatedly in `memories/MEMORY.md` and `memories/memory_summary.md`, but have no separate count in that snapshot.
+
+| # | Task signal | Primary route | Supporting route | Load gate |
+|---:|---|---|---|---|
+| 1 | Image creation, sizing, or image loading | `skills/imagegen/SKILL.md` | `codex-router/IMAGE_GENERATION_ASSET_POLICY.md`, `memories/1_core/IMAGE_SOURCING_FREE.md` | Only with an image action or asset-performance request |
+| 2 | UI design, screenshot match, or visual review | `skills/design/SKILL.md` | `memories/0_apex/USER_DNA.md`, `memories/2_governance/SCREENSHOT_HYGIENE.md` | Only for a visual/design task |
+| 3 | `.codex` knowledge, routing, or cleanup | `memories/2_governance/artifacts/skill_path_router.md` | `memories/2_governance/artifacts/trigger_intent_index.md`, `memories/2_governance/artifacts/knowledge_relation_router.md`, `memories/2_governance/CODEX_IGNORE_PROTOCOL.md` | Only in `.codex` or a knowledge/routing request |
+| 4 | English/Chinese paired content | Current project source document | `memories/2_governance/BILINGUAL_GATE_PROTOCOL.md` | Only when paired languages or `_en`/`_cn` content exist |
+| 5 | PHP website, public metadata, or search visibility | `skills/claude-website/WORKING_PROGRESS.md` | `skills/meta-content-workflow/SKILL.md`, `skills/seo-ai-search/SKILL.md` | Only for a PHP/site/metadata request |
+| 6 | Local server, HTTP route, or browser test | `skills/localhost-test/SKILL.md` | Current project truth and requested URLs | Only for an explicit local test or runtime check |
+| 7 | Vue mobile, Capacitor, or PWA | `skills/claude-app/WORKING_PROGRESS.md` | `skills/design/app/SKILL.md`, `memories/0_apex/VUE_PINIA_NAMING_REFERENCE.md` | Only for app/mobile/PWA work |
+| 8 | Vben CRUD, Pinia, Supabase, or schema | `skills/claude/README.md` | `skills/pinia-contract-workflow/SKILL.md`, `memories/2_governance/LAA_ECOSYSTEM_API_PROTOCOL.md` | Only after project and live contracts are identified |
+| 9 | Clone, duplicate, or migrate a website template | `skills/template-to-php-project/SKILL.md` | Current source shell and target project truth | Only when copying or converting an existing template |
+| 10 | Project start, handoff, or current source-of-truth discovery | `skills/project-handoff-doc-stack/SKILL.md` | Current `AGENTS.md`, `PROJECT_CONTEXT.md`, `STATUS.md`, or `BLUEPRINT.md` | Only when entering or handing off a project |
 
 ## Project-aware connections
 

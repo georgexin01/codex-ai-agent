@@ -13,7 +13,7 @@
                       "path":  "skills"
                   }
               ],
-    "indexed_files":  275,
+    "indexed_files":  277,
     "entries":  [
                     {
                         "kind":  "knowledge",
@@ -252,8 +252,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\artifacts\\boot_connection_map.md",
                         "relative_id":  "memories/2_governance/artifacts/boot_connection_map.md",
-                        "size":  6835,
-                        "sha256":  "1EF380CFCA79FDD5F00095311C1F6C68BD312E3C69EF5F3A105A3D31F1395453"
+                        "size":  9551,
+                        "sha256":  "BF430517283A5C4E38B0272F00AD36B859EA8AC0ED0A144BECF464DCE76BE06B"
                     },
                     {
                         "kind":  "knowledge",
@@ -268,8 +268,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\artifacts\\knowledge_relation_router.md",
                         "relative_id":  "memories/2_governance/artifacts/knowledge_relation_router.md",
-                        "size":  8419,
-                        "sha256":  "5780683CF144FC2FAF7DE116EAF92D73B91D1DA407673BCD1243E0248CA39775"
+                        "size":  8610,
+                        "sha256":  "6B41BEFD8FAC68FCD350C42696CC324B224D7B3F5DD1AB44A8263678BE3C8409"
                     },
                     {
                         "kind":  "knowledge",
@@ -284,8 +284,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\artifacts\\trigger_intent_index.md",
                         "relative_id":  "memories/2_governance/artifacts/trigger_intent_index.md",
-                        "size":  15988,
-                        "sha256":  "94BD2032F794DC7FD8260488DCA1CBDDC7F6AC74F71FD5A970E9AE8563036F0C"
+                        "size":  16083,
+                        "sha256":  "15A7EB4FBAC141A64D45061C3FE547060BC8ABF613107F63FB36CA95CE6F7A7C"
                     },
                     {
                         "kind":  "knowledge",
@@ -388,8 +388,8 @@
                         "root_relative":  "memories",
                         "relative_path":  "2_governance\\FRONTMATTER_MAINTENANCE_PROTOCOL.md",
                         "relative_id":  "memories/2_governance/FRONTMATTER_MAINTENANCE_PROTOCOL.md",
-                        "size":  4065,
-                        "sha256":  "CE1042870A221F865DB7AFBAFBF46E14596A0DA0008DF9958E6AAF3564DC35C1"
+                        "size":  4390,
+                        "sha256":  "AD92B9B54FD9C7E8D8C6C302342A5C40E9C84A8444C6B065BE681C9A592080D1"
                     },
                     {
                         "kind":  "knowledge",
@@ -580,16 +580,16 @@
                         "root_relative":  "memories",
                         "relative_path":  "MEMORY.md",
                         "relative_id":  "memories/MEMORY.md",
-                        "size":  26049,
-                        "sha256":  "A4F76468A3449C9F1BEBA8FB200F3F4011431F9D9482480B1EC30A7D76560E99"
+                        "size":  27165,
+                        "sha256":  "B51CD67EF23F5164A7DBC982443420EFB807734BD5F41DB77A6AEF2BECE4861C"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "memory_summary.md",
                         "relative_id":  "memories/memory_summary.md",
-                        "size":  5776,
-                        "sha256":  "4AEA5947B4604C566995E4E8DC9A886560100A45EA276883E9CEF8C516C52835"
+                        "size":  5947,
+                        "sha256":  "3913D3B4AC84ABCD5945C8C8CEEF3146A2F7384A5D3417CA87F5BDFBD355D657"
                     },
                     {
                         "kind":  "knowledge",
@@ -598,6 +598,14 @@
                         "relative_id":  "memories/MOBILE_APP_DESIGN_RECIPE.md",
                         "size":  3909,
                         "sha256":  "6626AD337DAABAEFCBEDD7895C61D6126823870250006F9E765D738D4803A23E"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "phase2_workspace_diff.md",
+                        "relative_id":  "memories/phase2_workspace_diff.md",
+                        "size":  283646,
+                        "sha256":  "BDA242EDCB27CFA0CB9949ECD52D0B9DDFEFAEBED9CADCE3D25664016A008CB6"
                     },
                     {
                         "kind":  "knowledge",
@@ -758,6 +766,14 @@
                         "relative_id":  "memories/skills/static-site-metadata-sweep/SKILL.md",
                         "size":  3786,
                         "sha256":  "BE70E91F34079EB920721B14CD14D1A19B7F921990EB7526A017B121698C613A"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "skills\\vipbillion-news-import-batches\\SKILL.md",
+                        "relative_id":  "memories/skills/vipbillion-news-import-batches/SKILL.md",
+                        "size":  2176,
+                        "sha256":  "B1E79E255F4EF32D0B6DFC627D0C354EEDBBE218435F11AFDC663DF58AED80BE"
                     },
                     {
                         "kind":  "knowledge",
@@ -2116,8 +2132,8 @@
                         "root_relative":  "skills",
                         "relative_path":  "NO_DELETE.txt",
                         "relative_id":  "skills/NO_DELETE.txt",
-                        "size":  1036,
-                        "sha256":  "6ECD032C102292BAD99544F594CC6764DFFABE3B03F85988C5EB192FAD57A79E"
+                        "size":  1052,
+                        "sha256":  "B6663812FF31C86F55D84A1474D94B433DB0ADD4B52D34F93D4E1E01B4D3555B"
                     },
                     {
                         "kind":  "skill-reference",

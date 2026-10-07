@@ -239,6 +239,14 @@ Before renaming, moving, archiving, or deleting a routed file:
 3. run route validation
 4. report before/after integrity results
 
+### Missing-content integrity gate
+
+For every `.codex` request, check current Git status and sparse-checkout scope before treating a path as missing. Compare every tracked path and active route target needed by the request with the worktree, and enumerate all absent candidates before editing; a sparse-checkout omission is not a deletion. Search each missing name and its active references in routers, indexes, and Git history to find its current or recoverable location.
+
+For `.codex` updates, record the missing-path baseline before editing. Add an omitted tracked directory back to sparse checkout when the task needs it. Restore an exact tracked file from Git when it is missing and recovery will not overwrite user content or contradict an explicit removal request; otherwise preserve the available state and report the candidate source. Do not recreate missing knowledge from inference.
+
+After the update, run `codex-router/Audit-CodexRouting.ps1 -Detailed` and `codex-router/Validate-CodexKnowledge.ps1`, confirm every changed route target exists, and compare Git status with the baseline. Report recovered, still-missing, sparse-excluded, and intentionally removed paths separately. Do not claim integrity when a required path or route remains unresolved.
+
 Keep durable AI guidance concise English. Preserve application labels, database values, public contracts, sheet values, and status names verbatim.
 
 ### Instruction ownership and Luna Markdown standard

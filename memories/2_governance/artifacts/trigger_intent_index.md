@@ -6,7 +6,7 @@ contains: ["popup modal", "modal", "popup", "button", "click this button", "trig
 phase: routing
 version: 1.0
 status: active
-date_updated: "2026-08-20"
+date_updated: "2026-10-07"
 evidence_scope: "654 parseable user-message entries from available 2026 session JSONL, excluding repeated injected instruction blocks and locked active files"
 related:
   - 00_PULSE.md
@@ -32,7 +32,7 @@ This is a compact retrieval layer. Exact workflow triggers may route work. Natur
 
 | Project/type | Trigger keywords | Meaning and route | Mode |
 |---|---|---|---|
-| Global | `ai read .codex knowledge` | Hydrate compact PULSE context and return only `[🟢] Agent is Ready..` | Sentinel |
+| Global | `ai read .codex knowledge` | On first use per conversation, cache `memory_summary.md` plus the ten-pointer `boot_connection_map.md`; do not open leaf bodies; return only `[🟢] Agent is Ready..` | Sentinel |
 | Global | `localhost test` | Detect the current project, reuse/start the correct server, verify HTTP URLs, and avoid source mutation | Safe check → `skills/localhost-test/SKILL.md` |
 | Global | `ai fast batch workflow`, `ai batch context`, `ai task checkpoint`, `long task checkpoint` | Preserve `DONE`, `ACTIVE`, `NEXT`, `BLOCKED`, `DEFERRED`, and verification state | Route → checkpoint protocol |
 | Codex | `ai knowledge health`, `ai validate knowledge fast` | Run read-only knowledge, route, secret, and target checks | Read-only validation |

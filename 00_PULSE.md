@@ -14,7 +14,7 @@ last_audit: "2026-09-30"
 
 # ⚡ PULSE — Single Boot Read
 
-The only file the boot needs. Consolidates the hot 20% of rules used 80% of the time, the trigger map, and the reasoning profile. Read this, resolve the route, act. Open anything else **only when the task needs it**. Rules here are pointers to canon, not new policy — output and behavior are unchanged.
+PULSE owns the boot contract, safety defaults, trigger map, and reasoning profile. For the exact first-run hydration trigger, read the compact memory summary and only the `Ten second-stage recommendations` section of the boot connection map once per conversation; cache those route pointers and leave linked skill bodies lazy. For every other request, open only the matched route and current project evidence.
 
 ## 0. Boot in one line
 Read PULSE → resolve trigger below → enter the boot/task lifecycle → load only the smallest matching route. Manifest, stubs, and Tier-0 are **lazy** (§6).
@@ -25,8 +25,8 @@ Hydrate PULSE once per chat session, then reuse the in-session distilled context
 
 | stage | required behavior | loading rule |
 |---|---|---|
-| 0. Boot | Read PULSE, resolve the longest matching trigger, and store compact context | PULSE only |
-| 1. Ready | For exact `ai read .codex knowledge`, return only `[🟢] Agent is Ready..` | No summary or extra route reads |
+| 0. Boot | Read PULSE, resolve the longest matching trigger, and store compact context | On the exact first-run trigger, also read `memories/memory_summary.md` and only the `Ten second-stage recommendations` section of `memories/2_governance/artifacts/boot_connection_map.md`; read pointers only, not linked bodies |
+| 1. Ready | For exact `ai read .codex knowledge`, return only `[🟢] Agent is Ready..` | Hydrate once per conversation; show no summary |
 | 2. Second chat | Enter `TASK` state; classify the new request and resolve its route | Do not repeat the sentinel or re-read the tree |
 | 3. Normal work | HYDRATE → GROUND → PLAN → ACT → VERIFY; keep one route/skill family awake | Read only task-relevant files |
 | 4. Deep or risky work | Load Ground Kernel, governance, or full protocol only when risk/trigger requires it | Escalate just-in-time |
@@ -144,7 +144,7 @@ When rules compete, obey this order:
 ## 1. Trigger Map (stop at first match)
 Matching rule: evaluate the longest exact trigger phrase first; never route a standalone `ai` token, and never let a broad trigger shadow a specific one.
 ```yaml
-"ai read .codex knowledge": "read PULSE once, store compact route context, then respond ONLY '[🟢] Agent is Ready..' — skip summaries"
+"ai read .codex knowledge": "first call per conversation: read PULSE, memories/memory_summary.md, and only the Ten second-stage recommendations section of memories/2_governance/artifacts/boot_connection_map.md; cache the 10 route pointers without opening their leaf bodies; respond ONLY '[🟢] Agent is Ready..'. Repeats use cached context and return the same sentinel."
 "ai claude":          "skills/claude/README.md"                    # Vben Admin CRUD builder front door (read README first)
 "ai vben admin":      "skills/claude/README.md"
 "ai admin panel":     "skills/claude/README.md"
@@ -234,7 +234,7 @@ Matching rule: evaluate the longest exact trigger phrase first; never route a st
 route_miss: "image-generation intent (generate/create/make/render/produce + image/photo/banner/logo/illustration/asset) → codex-router/IMAGE_GENERATION_ASSET_POLICY.md → skills/.system/imagegen/SKILL.md; skills → memories/2_governance/artifacts/skill_path_router.md (semantic skill index). knowledge → grep memories/ by filename + frontmatter description/triggers, including excluded cold notes when task terms match, but excluding archive/rollout history and generated logs. manifest = path/integrity index only (no descriptions) — never full-read."
 ```
 
-Sentinel rule: `ai read .codex knowledge` reads only this boot contract, stores compact in-session context, then replies only with the ready sentinel. The next task enters TASK state: resolve its route, load only the required files, and keep the selected lane awake. Do not load the full Luna playbook for routine work, and do not re-read PULSE or `.codex` on every message.
+Sentinel rule: on the first `ai read .codex knowledge` in a conversation, read this boot contract plus `memories/memory_summary.md` and only the `Ten second-stage recommendations` section of `memories/2_governance/artifacts/boot_connection_map.md`; store their compact preferences and route pointers, then reply only with `[🟢] Agent is Ready..`. Do not open the ten linked leaf routes during hydration. Repeated hydration requests reuse cached context. The next task resolves one primary route and at most two supporting routes from current project evidence. Do not load the full Luna playbook for routine work or re-read `.codex` on every message.
 
 ## 1.1 Rules Index (tiny map)
 | Domain | Active rule | Deferred canon |

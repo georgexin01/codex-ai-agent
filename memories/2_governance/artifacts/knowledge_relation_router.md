@@ -5,8 +5,8 @@ triggers: ["ai knowledge relations", "ai related knowledge", "knowledge relation
 phase: routing
 version: 1.0
 status: active
-date_updated: "2026-08-20"
-last_audit: "2026-08-20"
+date_updated: "2026-10-07"
+last_audit: "2026-10-07"
 related:
   - 00_PULSE.md
   - memories/2_governance/artifacts/skill_path_router.md
@@ -82,7 +82,7 @@ For intent-quality coverage: `codex-router/Measure-CodexIntentCoverage.ps1` chec
 
 For stale knowledge proposals: `codex-router/Audit-CodexFreshness.ps1` then `codex-router/Propose-CodexStaleQuarantine.ps1` checks route/reference counts; all candidates remain manual-review-only with no automatic move or deletion.
 
-For route ownership: `codex-router/router-config.json` (`route_ownership`) then `codex-router/Audit-CodexRouting.ps1` allows only same-target boot/fallback duplicates and fails destination conflicts.
+For route ownership: `00_PULSE.md` owns primary triggers, `memories/2_governance/artifacts/skill_path_router.md` owns semantic skill/recipe routes, and `codex-router/router-config.json` owns roots, tiers, exclusions, and fallback paths. `codex-router/Audit-CodexRouting.ps1` verifies target existence, manifest paths, and trigger conflicts; same-target boot/fallback duplicates are allowed.
 
 ## Conditional reference-library policy
 

@@ -5,8 +5,9 @@ triggers: ["ai yaml knowledge", "ai frontmatter audit", "ai metadata index", "fr
 phase: governance
 version: 1.0
 status: authoritative
+date_updated: "2026-10-07"
 read_before_write: true
-last_audit: "2026-08-20"
+last_audit: "2026-10-07"
 related:
   - 00_PULSE.md
   - codex-router/Build-CodexFrontmatterIndex.ps1
@@ -25,10 +26,11 @@ Use Markdown frontmatter as a fast catalog. It tells Codex what a file is for, w
 When the user invokes `ai read .codex knowledge`:
 
 1. Read `00_PULSE.md` for the protected boot and safety contract.
-2. Read or regenerate the compact `codex-router/codex-frontmatter-hot.json` route catalog. The scanner may inspect every entry on disk and write the full `codex-router/codex-frontmatter-index.json` catalog, but the boot context never loads the full catalog.
-3. Use `name`, `description`, `triggers`, `aliases`, `contains`, `phase`, `status`, `date_updated`, and `related` to select the smallest relevant route.
-4. Read full Markdown bodies only for the selected route, current project truth, and the few notes needed to answer the task.
-5. Keep distilled facts, contracts, decisions, and next actions in the active context; do not persist every document or transcript as memory.
+2. On the first hydration in a conversation, read `memories/memory_summary.md` and only the `Ten second-stage recommendations` section of `memories/2_governance/artifacts/boot_connection_map.md`; keep only user-specific durable facts and the ten conditional route pointers.
+3. Do not load `codex-frontmatter-hot.json` during sentinel hydration. Read that compact catalog only when a later task needs route discovery beyond PULSE or when routing is being audited; the full `codex-frontmatter-index.json` remains a maintenance artifact, never a boot read.
+4. Use `name`, `description`, `triggers`, `aliases`, `contains`, `phase`, `status`, `date_updated`, and `related` to select the smallest relevant route.
+5. Read full Markdown bodies only for the selected route, current project truth, and the few notes needed to answer the task.
+6. Keep distilled facts, contracts, decisions, and next actions in the active context; do not persist every document or transcript as memory.
 
 The exact trigger still returns only `[🟢] Agent is Ready..`. The metadata scan is internal preparation and does not expose a long boot report.
 

@@ -1,8 +1,8 @@
 ﻿{
-    "generated_utc":  "2026-10-01T06:12:11.1388842Z",
+    "generated_utc":  "2026-10-07T08:41:29.2535518Z",
     "source_root":  "C:\\Users\\user\\.codex",
     "read_mode":  "compact route metadata only; full catalog and Markdown bodies remain lazy",
-    "file_count":  69,
+    "file_count":  71,
     "fields":  [
                    "path",
                    "triggers",
@@ -21,6 +21,16 @@
                     },
                     {
                         "path":  "codex-router/IMAGE_GENERATION_ASSET_POLICY.md",
+                        "triggers":  "[\"ai imagegen\", \"generate image\", \"generate images\", \"create image\", \"create images\", \"make an image\", \"make images\", \"AI image\", \"image generation\", \"image asset\"]",
+                        "aliases":  "[\"gpt image 2\", \"gpt-image-2\", \"GPT 2.0 images\", \"responsive image asset\", \"fit image to card\", \"image size\", \"image for website\", \"image for mobile app\", \"transparent image\", \"transparent logo\", \"website image\", \"app image\", \"hero image\", \"banner image\", \"card image\", \"profile image\", \"gallery image\", \"ad image\"]"
+                    },
+                    {
+                        "path":  "dictation-history/codex-router/CODEX_ACCESS_PRIORITY_AUDIT.md",
+                        "triggers":  "- ai codex inventory",
+                        "aliases":  "- codex inventory"
+                    },
+                    {
+                        "path":  "dictation-history/codex-router/IMAGE_GENERATION_ASSET_POLICY.md",
                         "triggers":  "[\"ai imagegen\", \"generate image\", \"generate images\", \"create image\", \"create images\", \"make an image\", \"make images\", \"AI image\", \"image generation\", \"image asset\"]",
                         "aliases":  "[\"gpt image 2\", \"gpt-image-2\", \"GPT 2.0 images\", \"responsive image asset\", \"fit image to card\", \"image size\", \"image for website\", \"image for mobile app\", \"transparent image\", \"transparent logo\", \"website image\", \"app image\", \"hero image\", \"banner image\", \"card image\", \"profile image\", \"gallery image\", \"ad image\"]"
                     },

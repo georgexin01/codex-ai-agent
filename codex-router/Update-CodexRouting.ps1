@@ -132,8 +132,9 @@ $changes | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath $changesPath -Enco
 
 $kindCounts = $newEntries | Group-Object kind | Sort-Object Name
 
-# Boot read order (lean): PULSE is the single primary boot read; it embeds the hot
-# rules + trigger map + reasoning profile and marks everything else lazy/deferred.
+# Boot read order (lean): PULSE owns the primary boot contract. The exact first-run
+# sentinel additionally reads a compact memory summary and ten-pointer route section;
+# linked skill bodies and historical notes remain lazy/deferred.
 # The two redirect stubs (BRIDGE, FULL_ACCESS_ROUTING) are superseded by PULSE in boot
 # and intentionally excluded here. START_HERE + REASONING remain canonical deferred refs.
 $startupReadRel = @(
@@ -246,7 +247,7 @@ foreach ($line in $changedPaths) { $dynamic += "- $line" }
 $dynamic += ""
 $dynamic += "## Mandatory Read Order"
 $dynamic += ""
-$dynamic += "Primary boot = 00_PULSE.md only. It embeds hot rules + trigger map + reasoning profile; everything below it is deep/governance (load only when the turn needs it)."
+$dynamic += "Primary boot contract = 00_PULSE.md. On the first exact hydration trigger, also load the compact memory summary and only the ten-pointer section of the boot connection map; do not preload linked skill bodies or history. Other requests load only their matched route and current project evidence."
 $dynamic += ""
 foreach ($m in $mandatoryReadRel) { $dynamic += "- $m" }
 $dynamic += ""

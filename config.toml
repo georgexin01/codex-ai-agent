@@ -2,11 +2,11 @@ model = "gpt-6-luna"
 model_reasoning_effort = "high"
 approval_policy = "on-request"
 personality = "pragmatic"
-service_tier = "priority"
+service_tier = "default"
 
 notify = [ "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\b63ee7ee40c23b77\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
 [windows]
-sandbox = "elevated"
+sandbox = "unelevated"
 
 [projects.'c:\users\user\desktop\quizlaa']
 trust_level = "trusted"
