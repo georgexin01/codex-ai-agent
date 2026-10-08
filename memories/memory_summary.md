@@ -2,87 +2,77 @@ v1
 
 ## User Profile
 
-Works across Windows web projects: bilingual static sites, Vue/ViteSSG/Supabase apps, local Docker/CLI Supabase, and Codex configuration. Values source-grounded project understanding, surgical changes, truthful public content, paired bilingual updates, and verification at the actual runtime/deployment boundary. Uses screenshots/templates as design evidence but expects active-project identity, data, and claims to come from current files or validated sources.
+The user maintains several local Windows projects: a bilingual Zeta Software static site, a Used-Car Vue/Supabase client, local Supabase backups, and Codex configuration. They value source-grounded implementation and verification over generic advice, favor narrow/reversible changes, and often specify exact UI/content contracts. They expect bilingual English/Simplified-Chinese parity where applicable and want unfinished work labeled honestly.
 
 ## User preferences
 
-- In full-access sessions, continue obvious implementation without repetitive step-end confirmation; pause only for a meaningful decision, hidden risk, destructive action, or ambiguity. [ad-hoc note]
-- `ai read .codex knowledge` must return only `[🟢] Agent is Ready..`.
-- For `localhost test`, identify the real application root/runtime and report requested route/status checks; a listener or root 200 alone is insufficient.
-- For bilingual Zeta, English markup/design is canonical; update Chinese counterparts and parity checks in the same task.
-- Preserve unrequested content during focused fixes. For “exact same design” or “clone,” reuse the actual source shell/classes before changing inner content.
-- Derive project identity, scope, metadata, and public claims from active evidence; use `INSUFFICIENT DATA` rather than historical identity or invented facts.
-- Treat local Docker/Supabase state as protected: obtain explicit current-turn permission before state-changing stack/config/schema actions. [ad-hoc note]
-- Keep EDSB Auth/CRUD phone-first; do not clear shared email data or run local parity against VPS without explicit approval. [ad-hoc note]
-- Keep generated project assets outside `.codex`; use measured dimensions, max 1600px (HUWA 1200px), JPG unless genuine alpha needs PNG. [ad-hoc note]
+- For a requested change, preserve unrelated content/behavior and make the smallest effective edit; inspect counterpart pages/languages when the request implies both.
+- Treat “localhost test” as runtime detection plus HTTP readiness checks, not merely starting a process.
+- For project identity, use current project evidence; never carry names, domains, or claims from examples/history. Use `INSUFFICIENT DATA` when evidence is missing.
+- Prefer evidence-backed verification (source checks, syntax/JSON/build checks, HTTP routes, and visual QA boundaries) and explicitly mark incomplete validation.
+- In bilingual static-site work, English structure is the source; localize corresponding `cn/` output and validate parity.
+- Keep destructive or broad maintenance work reversible and scoped; preserve backups and avoid unrequested resets/deletions.
 
 ## General Tips
 
-- On Windows, favor simple separately quoted PowerShell commands and run checks from the actual app root.
-- HTTP 200 proves reachability, not Apache/production/browser/SSG crawler quality.
-- For JSON/bilingual bulk edits: parse, check unique paired IDs, UTF-8, fallback/schema, and both language routes.
-- For dynamic images, use `data-src` + 1x1 SVG placeholder + `IntersectionObserver`; register dynamically added cards and preserve eager UI exclusions.
-- For public SEO, use route inventory, truthful visible-content-backed metadata/schema, production crawler access only when warranted, and `noindex, nofollow` locally; no special AI tag guarantees rankings.
-- For Pinia contracts, inspect the declared Store/Function/Input source first; preserve exact names/casing and keep persistence inside stores.
+- On Windows PowerShell, favor simple separately quoted `rg` commands; use `Select-String -LiteralPath` for exact-path scans.
+- Before localhost checks, locate the real application root. Static Zeta uses PHP at port 8080; Used-Car runs from `template/` with `pnpm.cmd run dev:local` on port 3000.
+- For generated/static output, edit the generator/source of truth, regenerate both languages, then validate output and routes.
+- Do not state performance or visual success from source/HTTP checks alone when browser profiling/visual testing was unavailable.
+- Do not expose secrets; local Supabase builds need the project’s configured local mode rather than printing environment values.
 
 ## What's in Memory
-
-### C:\Users\user\.codex / cross-project workflows
-
-#### 2026-09-24
-
-- Codex routing and localhost project match: 00_PULSE.md, ai read .codex knowledge, NO_DEV_SCRIPT, localhost-project-match
-  - desc: Exact boot sentinel, focused-skill routing, root-Git rule, and listener attribution.
-  - learnings: A package manifest without a dev script is not runtime proof; every requested path must match the intended project. [ad-hoc note]
-
-#### 2026-09-22
-
-- Image assets and progressive loading: 1600px, JPG, data-src, IntersectionObserver, ItemList JSON-LD
-  - desc: Measurement-first generated assets and crawlable progressive news/lazy-image behavior.
-  - learnings: Keep server-rendered content; observer failure must reveal/load all. [ad-hoc note]
-
-### C:\Users\user\Desktop\EDSB\admin-panel-edsb
-
-#### 2026-09-18
-
-- EDSB phone-only Admin login: auth.users.phone, 050_edsb_phone_only_admin_users.sql, Docker-local Supabase
-  - desc: Phone-first identity/CRUD and local-only parity boundary.
-  - learnings: Shared Auth/public email is protected even where active CRUD uses phone only. [ad-hoc note]
 
 ### D:\backup\website-zetasoftware
 
 #### 2026-09-07
 
-- Navigation, content grouping, cache/minify: update-site-navigation.js, format-detail-content.js, style.min.css
-  - desc: Static bilingual generator maintenance, cache policy, main-thread investigation, and incomplete CSS verification.
-  - learnings: Regenerate shared nav after SIM generation; immutable cache only versioned assets.
-- Localhost, image lazyload, JPG/WebP migration: php -S, data-src, images/mobile, images/website
-  - desc: Runtime checks and unfinished two-folder image migration.
-  - learnings: Do not delete WebPs until reference/JPG/route/viewport-loader checks pass.
+- Bilingual static-site audit, navigation, copy, cache, and CSS: generate-standard-internal-management-pages, update-site-navigation, format-detail-content, style.min.css, Cloudflare cache
+  - desc: Search first for generator coupling, English/CN output parity, cache advice, `main.js` diagnostics, or the incomplete minified-CSS verification.
+  - learnings: Run `update-site-navigation` after SIM generation; use a trace before performance edits; minified CSS was written but final served/idempotence checks were interrupted.
+- Localhost, Lighthouse, lazy images, and JPG/WebP boundary: php -S 127.0.0.1:8080, data-src, IntersectionObserver, images/mobile, images/website
+  - desc: Static-server verification and performance work, including the unfinished request to make only two image folders JPG-default and remove their WebPs.
+  - learnings: Do not delete WebPs until cross-format reference auditing and route/image validation finish; current lazy-loader needs true viewport-triggered verification.
+
+### C:\Users\user\.codex
+
+#### 2026-09-04
+
+- Codex boot and localhost-root boundary: 00_PULSE.md, ai read .codex knowledge, localhost-test, ports 3000 5173 6006
+  - desc: Exact boot sentinel and why a localhost scan from the Codex configuration root is not a valid app readiness check.
+  - learnings: Hydrate once; obtain the actual project root before selecting ports and URLs.
+
+### C:\Users\user\Desktop\used-car
+
+#### 2026-08-28
+
+- Used-Car project/audit, schema boundary, and loan cards: PROJECT_CONTEXT.md, archived migrations, Favorites.vue, MyLoans.vue, development.localhost
+  - desc: Vue/ViteSSG project map, external authoritative schema warning, local runtime, and the removed precise-quote UI.
+  - learnings: Work from `template/`; archived migrations are not provisionable; local build requires `--mode development.localhost`.
+- Chrome SideBySide repair: Chrome, missing dependent assembly, new_chrome.exe, 151.0.7922.175
+  - desc: Windows-specific diagnosis for an incomplete Chrome update, not a Used-Car code issue.
+  - learnings: Inspect SideBySide logs, pending launchers, and version data before modifying shortcuts.
 
 ### Older Memory Topics
 
-#### C:\Users\user\Documents\local-supabase / C:\Users\user\Desktop\angel-interior
+#### D:\backup\website-zetasoftware
 
-- Protected Supabase, Huwa2 restore, Angel flows: atomic restore, config.toml, role_table_grants, Stripe Checkout
-  - desc: Protected stack rule, backup/auth repair, API exposure, Angel RPC schema drift, env mismatch, and paid-download session verification. [ad-hoc note]
+- FAQ, latest blogs, services labels, and pricing parity: faq.json, home-blogs.js, pricing-section, Orbitron, Week 1
+  - desc: Exact bilingual content/UI contracts, paired-ID validation, latest-three blog behavior, and services/homepage visual parity; cwd=D:\backup\website-zetasoftware.
 
-#### C:\Users\user\Desktop\trash-container-app
+#### C:\Users\user\.codex
 
-- CY RORO paired Pinia apps: Trash Pinia, getAllBinWIthOrder, OrderUpdateInput, web-admin-app
-  - desc: Google Sheet contract gate, Store-owned persistence, paired app verification, and design-only scope. [ad-hoc note]
+- Lean knowledge/routing maintenance: MEMORY_DETAILS.md, Update-CodexRouting.ps1, Audit-CodexRouting.ps1, Test-CodexPerfBenchmark.ps1
+  - desc: Compact hot-memory routing and validation workflow; cwd=C:\Users\user\.codex. Check current counts before relying on historical benchmark results.
+- Sparse-checkout Git maintenance: git sparse-checkout, git add --sparse, thread-writer-locks, memories/.git
+  - desc: Parent-repository staging/commit workflow, recoverable cleanup, and nested-repository safeguard; cwd=C:\Users\user\.codex.
 
-#### C:\Users\user\Desktop\ai comment / public sites
+#### C:\Users\user\Documents\supabase-project-backup-restore
 
-- Metadata, SEO/AI search, and PHP template migration: INSUFFICIENT DATA, site.webmanifest, robots.txt, clone first
-  - desc: Evidence-only identity/claims, public crawlability, reference-shell boundary, and exact visual replication.
+- Huwa2 restore and API exposure: auth.identities, identities_user_id_fkey, atomic restore, PGRST_DB_SCHEMAS, config.toml
+  - desc: Repairing orphan auth identities in a working backup, atomic local restore, and CLI-managed PostgREST schema exposure; cwd=C:\Users\user\Documents\supabase-project-backup-restore.
 
-#### C:\Users\user\Desktop\used-car
+#### C:\Users\user\Desktop\ai comment
 
-- Used-Car audit and Chrome repair: template/, development.localhost, SideBySide, new_chrome.exe
-  - desc: Vue/SSG source boundary and host-specific incomplete-Chrome-update diagnosis.
-
-#### C:\Users\user\Desktop\VIPBillion
-
-- VIPBillion news, metadata, and module reuse: 10 40 50 50 50, additive-only, lib/metaData.php, soft delete
-  - desc: Compact import gate, Malaysia-wide metadata wording, partial unique slug indexes, and clone-first admin modules. [ad-hoc note]
+- Metadata and `site.webmanifest` guidance: metaTitle.txt, INSUFFICIENT DATA, project identity, Select-String -LiteralPath
+  - desc: Evidence-based current-project identity, truthful scope, centralized metadata, and manifest synchronization rules; cwd=C:\Users\user\Desktop\ai comment.
