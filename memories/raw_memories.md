@@ -767,3 +767,80 @@ References:
 - Pending checks: run clean separate commands for `Get-FileHash`, a second clean-css output comparison, `Invoke-WebRequest http://127.0.0.1:8080/css/style.min.css?v=0179`, selector presence, `git diff --check -- css/style.min.css`, and `git status --short -- css/style.min.css`.
 - Browser availability check: `{"apps":[],"browsers":[]}`.
 
+## Thread `01a1192b-b085-75e1-a18b-2d3afb096a9d`
+updated_at: 2026-10-08T07:03:57+00:00
+cwd: \\?\C:\Users\user\.codex
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\08\rollout-2026-10-08T09-40-56-01a1192b-b085-75e1-a18b-2d3afb096a9d.jsonl
+rollout_summary_file: 2026-10-08T01-40-56-1R8h-codex_sparse_checkout_recovery_and_powershell_alert.md
+
+---
+description: Recovered apparently missing `.codex` memories/skills by identifying sparse-checkout omission, disabling sparse checkout, and distinguishing a PowerShell security warning from Codex approval.
+task: recover-missing-codex-files-and-disable-sparse-checkout
+task_group: codex-repository-recovery
+ task_outcome: success
+cwd: C:\Users\user\.codex
+keywords: sparse-checkout, skip-worktree, git sparse-checkout disable, memories, skills, pre-commit hook, Invoke-WebRequest, UseBasicParsing
+---
+
+### Task 1: Recover missing tracked files
+
+task: diagnose-and-restore-missing-codex-memories-skills
+task_group: codex-repository-recovery
+task_outcome: success
+
+Preference signals:
+- The user asked for the actual cause and safe recovery rather than a generic reset -> future recovery should inspect evidence first and avoid destructive reset/restore operations.
+
+Reusable knowledge:
+- `core.sparseCheckout=true` caused tracked files to be omitted from the worktree. Evidence: 627 tracked files, 531 absent, including 200 `memories` and 259 `skills` files; Git retained them.
+- Expanding sparse checkout restored the exact tracked files while preserving existing edits and untracked files. Final verification showed `TRACKED_ABSENT=0`.
+- Routing audit passed with zero missing mandatory roots, fallback roots, trigger targets, or manifest paths.
+
+Failures and how to do differently:
+- Missing files were initially unreadable because they were not materialized, not because they were deleted. Check Git sparse state and `git ls-files` before searching backups or resetting.
+
+References:
+- `git config --bool core.sparseCheckout`
+- `git ls-files`
+- `git sparse-checkout add ...`
+- `codex-router/Audit-CodexRouting.ps1 -Detailed`
+
+### Task 2: Disable sparse checkout permanently for the worktree
+
+task: disable-sparse-checkout-and-verify-protection
+task_group: git-worktree-safety
+ task_outcome: success
+
+Preference signals:
+- The user requested sparse checkout be disabled “permenent” and asked for confirmation that memories and skills would not go missing -> explain that the current setting is verified off, while no tool/person can be guaranteed never to explicitly change or delete files.
+
+Reusable knowledge:
+- `git sparse-checkout disable` changed `.git/config.worktree` from `true` to `false`.
+- Verification: all 627 tracked files present; status count remained 25 before and after; later `MEMORY_SKILL_TRACKED=522` and `MEMORY_SKILL_MISSING=0`.
+- `.githooks/pre-commit` blocks commits when `core.sparseCheckout=true`, providing a regression guard.
+- The setting is not an absolute lock: an explicit future command can re-enable it, and untracked/ignored files are not protected by Git tracking.
+
+Failures and how to do differently:
+- Avoid claiming absolute permanence. Report the exact verified state and the remaining possibility of intentional future mutation.
+
+References:
+- `git sparse-checkout disable`
+- `.git/config.worktree`: `sparseCheckout = false`, `sparseCheckoutCone = false`
+- `.githooks/pre-commit`: rejects enabled sparse checkout
+
+### Task 3: Identify recurring approval/security alert
+
+task: distinguish-powershell-web-request-warning-from-codex-approval
+task_group: windows-powershell-safety
+ task_outcome: success
+
+Reusable knowledge:
+- The screenshot showed PowerShell 5.1 `Invoke-WebRequest`’s “Security Warning: Script Execution Risk,” not a Codex command-approval dialog.
+- Microsoft’s documented safe avoidance is `Invoke-WebRequest -UseBasicParsing ...`; selecting Yes enables full HTML parsing that may execute page scripts.
+- Codex approvals and PowerShell parsing prompts are separate systems; do not recommend permanently approving the PowerShell warning.
+
+References:
+- `Invoke-WebRequest -UseBasicParsing`
+- Microsoft Learn: `Invoke-WebRequest` security warning and `-UseBasicParsing`
+- OpenAI Codex approvals guidance: approvals may be scoped, but broad approval should be limited to trusted, well-understood commands.
+

@@ -2,7 +2,7 @@ model = "gpt-6-luna"
 model_reasoning_effort = "high"
 approval_policy = "on-request"
 personality = "pragmatic"
-service_tier = "default"
+service_tier = "priority"
 
 notify = [ "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\71e3f41277f96d73\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
 [windows]
@@ -140,6 +140,9 @@ trust_level = "trusted"
 [projects.'d:\project\xhs-tiktok-inbox']
 trust_level = "trusted"
 
+[projects.'d:\project\vipbillion']
+trust_level = "trusted"
+
 [features]
 memories = true
 js_repl = false
@@ -216,7 +219,7 @@ BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
 BROWSER_USE_CODEX_APP_VERSION = "26.930.61225"
 NODE_REPL_TRUSTED_SERVICES = '{"browser":"C:/Users/user/.codex/plugins/cache/openai-bundled/browser/26.930.61225/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
 SKY_CUA_NATIVE_PIPE = "1"
-SKY_CUA_NATIVE_PIPE_DIRECTORY = '\\.\pipe\codex-computer-use-682e8486-b252-433a-9b2c-160b9cfae756'
+SKY_CUA_NATIVE_PIPE_DIRECTORY = '\\.\pipe\codex-computer-use-4ea873e4-4c11-4833-8e6c-eeff1d34089f'
 CODEX_CLI_PATH = 'C:\Users\user\AppData\Local\OpenAI\Codex\bin\5ea220ae823df3d7\codex.exe'
 NODE_REPL_UNTRUSTED_ENV_ALLOWLIST = "CODEX_WINDOWS_REGISTERED_CORE"
 
