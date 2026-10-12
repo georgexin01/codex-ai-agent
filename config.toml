@@ -143,6 +143,9 @@ trust_level = "trusted"
 [projects.'d:\project\vipbillion']
 trust_level = "trusted"
 
+[projects.'d:\backup\zeta-aiseo']
+trust_level = "trusted"
+
 [features]
 memories = true
 js_repl = false
@@ -237,4 +240,4 @@ external-agent-import-sync-enabled = false
 followUpQueueMode = "steer"
 
 [memories]
-disable_on_external_context = true
+disable_on_external_context = false

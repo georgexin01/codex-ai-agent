@@ -1,5 +1,5 @@
 ---
-name: product-development-operating-model
+name: product-development-operating-model-notes
 description: "Project-agnostic operating knowledge for software companies building websites, apps, and digital products, including search visibility and evidence-gated AI content."
 triggers: ["product strategy", "app architecture", "customer value", "UX planning", "metadata", "SEO content", "AI research", "AI search visibility", "keyword research", "AI article generation", "MVP prioritization", "meta update", "meta seo", "news information generate", "ai news generate", "ai news articles generate", "ai search result", "ai google research", "google research", "bing research", "gemini research", "chatgpt search", "search result optimization", "local seo research", "geo research", "keyword catch", "content gap research", "search visibility audit"]
 scope: "Cross-project reasoning overlay; not a product specification and never a substitute for current project evidence."
@@ -257,8 +257,8 @@ For local-market adaptation, keep the market map, language segments, service-are
 
 ## Official references
 
-- [OpenAI: Searching the web with ChatGPT](https://help.openai.com/en/articles/9237897-chatgp)
-- [OpenAI: Publishers and developers FAQ](https://help.openai.com/en/articles/12627856-publishers-and-developers-faq)
+- [OpenAI: Searching the web with ChatGPT](https://help.openai.com/en/articles/9237897-searching-the-web-with-chatgpt)
+- [OpenAI: Overview of OpenAI Crawlers](https://developers.openai.com/api/docs/bots)
 - [Google: Creating helpful, reliable, people-first content](https://developers.google.com/search/docs/fundamentals/creating-helpful-content)
 - [Google: Guidance on generative AI content](https://developers.google.com/search/docs/fundamentals/using-gen-ai-content)
 - [Google: Influencing title links in Google Search](https://developers.google.com/search/docs/appearance/title-link)

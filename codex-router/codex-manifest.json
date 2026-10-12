@@ -13,7 +13,7 @@
                       "path":  "skills"
                   }
               ],
-    "indexed_files":  277,
+    "indexed_files":  278,
     "entries":  [
                     {
                         "kind":  "knowledge",
@@ -580,16 +580,16 @@
                         "root_relative":  "memories",
                         "relative_path":  "MEMORY.md",
                         "relative_id":  "memories/MEMORY.md",
-                        "size":  27165,
-                        "sha256":  "B51CD67EF23F5164A7DBC982443420EFB807734BD5F41DB77A6AEF2BECE4861C"
+                        "size":  24226,
+                        "sha256":  "8992F4964914F57138F9B12ABDA20A4E0E3B72BD140876A41D44C588531DAE98"
                     },
                     {
                         "kind":  "knowledge",
                         "root_relative":  "memories",
                         "relative_path":  "memory_summary.md",
                         "relative_id":  "memories/memory_summary.md",
-                        "size":  5947,
-                        "sha256":  "3913D3B4AC84ABCD5945C8C8CEEF3146A2F7384A5D3417CA87F5BDFBD355D657"
+                        "size":  5259,
+                        "sha256":  "65CE0FB4B91AE1C54D86A08B2ED641BE623282FB589E6A5845847BC46504255F"
                     },
                     {
                         "kind":  "knowledge",
@@ -750,6 +750,14 @@
                         "relative_id":  "memories/skills/localhost-project-match/SKILL.md",
                         "size":  2439,
                         "sha256":  "0B5131B761B7BB26FD350F90FD28396C3026FAA88F246305651247B6AFF4311C"
+                    },
+                    {
+                        "kind":  "knowledge",
+                        "root_relative":  "memories",
+                        "relative_path":  "skills\\localhost-readiness\\SKILL.md",
+                        "relative_id":  "memories/skills/localhost-readiness/SKILL.md",
+                        "size":  2790,
+                        "sha256":  "5104CB34DC20B994419A6251F0A6BE5C34583C61A2291F2D3009B344A0392B24"
                     },
                     {
                         "kind":  "knowledge",
