@@ -2,22 +2,23 @@ v1
 
 ## User Profile
 
-The user maintains several Windows-based projects through Codex: the `.codex` configuration checkout, a bilingual Zeta static website, a Used-Car Vue/Supabase client, and local Supabase restoration tooling. They value agents that investigate and make narrowly scoped repairs, preserve working state, and verify real outcomes. They commonly expect bilingual English/Simplified-Chinese parity, source-grounded project understanding, and actual localhost/HTTP or build checks rather than claims based on an edit alone.
+The user works across Windows-hosted web projects, local Supabase, and their `.codex` setup. They expect agents to inspect the real project/runtime before acting, make narrow reversible changes, preserve bilingual parity and existing content where applicable, and prove results with targeted checks rather than completion claims. They often ask agents to take action directly, but value clear limits when an outcome is interrupted, unverified, or cannot be guaranteed.
 
 ## User preferences
 
-- For `localhost test`, detect the project type, start only the necessary runtime, and verify expected URLs; a running process is not completion.
-- Preserve existing routes, content, images, CSS, and protected local state unless the requested change requires it; make surgical changes and validate both affected surfaces.
-- For bilingual Zeta work, update English and Chinese together and test parity (paired IDs, localized labels, corresponding pages).
-- Derive project identity, metadata claims, and webmanifest values from current evidence; use `INSUFFICIENT DATA` rather than historical/example identity or invented reach.
-- When the user asks for a repair, investigate the actual failure and safely act; report verified state separately from absolute guarantees about later manual/tool changes.
+- Diagnose the actual cause first—especially for missing files, local services, or system errors—and avoid generic resets or destructive recovery.
+- For `localhost test`, infer the project runtime, start only what is needed, and HTTP-check real routes; a running process is not success.
+- Preserve scope: for narrow requests, do not alter unrelated content, routes, styling, configuration, or contact behavior.
+- On bilingual Zeta work, update English/CN in lockstep, preserve structural parity, and validate paired data/visible output.
+- Use current project evidence for identity, metadata, SEO scope, and manifest values; use `INSUFFICIENT DATA` rather than carry forward historical names or claims.
+- Report verified state separately from future guarantees; do not call interrupted or untested work complete.
 
 ## General Tips
 
-- On Windows, favor simple PowerShell invocations when quoting-heavy commands fail; run checks from the true app root.
-- Diagnose missing `.codex` files with Git tracking and sparse-checkout state before restoring/resetting. Sparse checkout is currently disabled in that worktree.
-- Treat local static-server tests as separate from Apache/Cloudflare production behavior; localhost does not exercise `.htaccess` cache/compression rules.
-- Keep secrets out of output and use local-mode configuration for Used-Car builds when default SSG lacks Supabase environment values.
+- On Windows/PowerShell, prefer simple individually quoted commands; run source checks from the real app root. `Invoke-WebRequest -UseBasicParsing` avoids the PowerShell 5.1 parsing warning.
+- Before a destructive or recovery action, capture current Git/state evidence. Sparse checkout can hide tracked files; compare `core.sparseCheckout`, `git ls-files`, and filesystem presence first.
+- Keep secrets redacted. For local Supabase, preserve originals/backups, use transactional restore paths, and verify both data and API exposure.
+- Browser visual QA, production Apache/Cloudflare behavior, and local PHP static-server checks are distinct verification surfaces.
 
 ## What's in Memory
 
@@ -25,42 +26,49 @@ The user maintains several Windows-based projects through Codex: the `.codex` co
 
 #### 2026-10-08
 
-- Sparse-checkout recovery and PowerShell alert: core.sparseCheckout, git sparse-checkout disable, TRACKED_ABSENT, Invoke-WebRequest -UseBasicParsing
-  - desc: Search first for apparently missing `.codex` memories/skills, safe recovery, permanent-setting boundary, or the recurring PowerShell warning.
-  - learnings: Verify tracked presence before repair; pre-commit rejects enabled sparse checkout, but no absolute guarantee prevents future explicit mutation.
+- Sparse-checkout recovery and PowerShell alert: sparse-checkout, git sparse-checkout disable, TRACKED_ABSENT, Invoke-WebRequest -UseBasicParsing
+  - desc: Search first when Codex memories/skills appear missing, Git staging is odd, or a PowerShell web-request warning appears.
+  - learnings: Verify omission versus deletion before recovery; sparse checkout was disabled with a pre-commit regression guard, and the alert is not a Codex approval.
 
 #### 2026-09-04
 
-- Codex boot and localhost routing: 00_PULSE.md, ai read .codex knowledge, localhost-test, ports 3000 5173 6006
-  - desc: Boot sentinel and the failure shield for running localhost checks from the configuration directory instead of an app root.
-  - learnings: Hydrate once; require HTTP readiness checks from the real project root.
+- Codex boot and localhost root boundary: 00_PULSE.md, [🟢] Agent is Ready.., localhost-test, project root
+  - desc: Exact hydration contract plus the stop rule for localhost tests accidentally started from `.codex`.
+  - learnings: Hydrate once; locate the app root and HTTP-check URLs before calling a local test successful.
 
 ### D:\backup\website-zetasoftware
 
 #### 2026-09-07
 
-- Zeta static-site generators, performance, and image migration: update-site-navigation, format-detail-content.js, style.min.css, data-src, images/mobile
-  - desc: Bilingual static-site source map, SIM navigation repair, description grouping, caching, Lighthouse work, and incomplete JPG/WebP migration.
-  - learnings: Regenerate after generator fixes; never delete the two-folder WebPs before reference/JPG audits; local PHP cannot validate `.htaccess` effects.
+- Zeta generators, content formatting, cache, and CSS: generate-standard-internal-management-pages.js, update-site-navigation.js, format-detail-content.js, style.min.css
+  - desc: Bilingual static-site project map, SIM navigation repair, natural description grouping, cache guidance, and incomplete CSS-minification verification.
+  - learnings: Regeneration must call the shared navigation updater; use trace evidence before main-thread code changes; final CSS served/idempotence checks remain needed.
+
+- Zeta static localhost, Lighthouse, and image loading: php -S 127.0.0.1:8080, Lighthouse, WebP, data-src, images/mobile
+  - desc: Static server contract, verified performance work, and the paused JPG/WebP/lazy-loader follow-up.
+  - learnings: Do not delete WebPs or claim JPG migration/true viewport lazy loading until references, assets, routes, and IntersectionObserver behavior are verified.
 
 ### Older Memory Topics
 
 #### C:\Users\user\Desktop\used-car
 
-- Used-Car client audit and loan cards: PROJECT_CONTEXT.md, template, archived migrations, Favorites.vue, MyLoans.vue, development.localhost
-  - desc: Vue/Supabase app orientation, localhost/build workflow, authoritative schema boundary, and surgical saved-loan UI reversal; cwd=C:\Users\user\Desktop\used-car.
+- Used-Car architecture, schema boundary, and saved-loan cards: PROJECT_CONTEXT.md, _archived migrations, development.localhost, Favorites.vue, MyLoans.vue
+  - desc: Use for `cwd=C:\Users\user\Desktop\used-car`; active client is `template/`, archived SQL is not authoritative, and local build needs `development.localhost`.
+
+- Chrome SideBySide repair: new_chrome.exe, Dependent Assembly, 151.0.7922.175
+  - desc: Machine-specific incomplete Chrome-update repair; inspect event/version evidence before elevated launcher replacement.
 
 #### C:\Users\user\Documents\supabase-project-backup-restore
 
-- Huwa2 restore and PostgREST exposure: auth.identities, identities_user_id_fkey, PGRST_DB_SCHEMAS, config.toml
-  - desc: Use for validating/repairing a VPS backup, atomic local restore, and exposing a schema in a CLI-managed Supabase stack; cwd=C:\Users\user\Documents\supabase-project-backup-restore.
+- Huwa2 restore and local PostgREST exposure: auth.identities, identities_user_id_fkey, PGRST_DB_SCHEMAS, [api].schemas
+  - desc: Validate backup foreign keys, preserve originals, atomically restore, then configure the CLI-managed local Supabase API.
+
+#### D:\backup\website-zetasoftware
+
+- Zeta FAQ, homepage blogs, workflow, and pricing parity: faq.json, home-blogs.js, pricing-section, Orbitron
+  - desc: Earlier bilingual content/design changes with exact data, layout, and font-loading contracts.
 
 #### C:\Users\user\Desktop\ai comment
 
-- Evidence-bound metadata and webmanifest: (AI) metaTitle.txt, INSUFFICIENT DATA, site.webmanifest
-  - desc: Use for centralized SEO/manifest guidance that must derive identity and scope from the active project; cwd=C:\Users\user\Desktop\ai comment.
-
-#### C:\Users\user\Desktop\used-car
-
-- Chrome SideBySide repair: Dependent Assembly, new_chrome.exe, 151.0.7922.175
-  - desc: Windows Chrome incomplete-update diagnosis and version-checked launcher repair; recheck live versions before changing system files; cwd=C:\Users\user\Desktop\used-car.
+- Evidence-bound metadata and site.webmanifest: (AI) metaTitle.txt, INSUFFICIENT DATA, site.webmanifest, Open Graph
+  - desc: Reusable metadata rules: derive active project identity/scope from evidence and do not copy historical examples.
