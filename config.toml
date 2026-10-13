@@ -4,7 +4,8 @@ approval_policy = "on-request"
 personality = "pragmatic"
 service_tier = "priority"
 
-notify = [ "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\71e3f41277f96d73\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
+notify = ['C:\Users\user\AppData\Local\OpenAI\Codex\runtimes\cua_node\cfb32733c877621e\bin\node_modules\@oai\sky\bin\windows\codex-computer-use.exe', "turn-ended"]
+
 [windows]
 sandbox = "unelevated"
 
@@ -238,6 +239,7 @@ conversationDetailMode = "STEPS_PROSE"
 worktree-keep-count = 10
 external-agent-import-sync-enabled = false
 followUpQueueMode = "steer"
+browser-annotation-screenshots-mode = "necessary"
 
 [memories]
 disable_on_external_context = false
