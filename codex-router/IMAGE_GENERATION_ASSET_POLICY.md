@@ -145,3 +145,13 @@ Quality gate: <sharp at the rendered CSS size; no blur, halos, banding, or crop 
 ```
 
 This policy controls measurement and final asset handling. It does not replace the image-generation skill’s built-in-versus-CLI rules, project asset conventions, or current model documentation.
+
+## 10. Editorial photo realism and screen integrity
+
+For editorial/blog covers that depict real-world business work, use a documentary photograph direction when it suits the topic: believable locations and materials, natural available light, realistic camera perspective and depth of field, lived-in but tidy surroundings, and restrained sensor grain or ordinary optical imperfections only when plausible. Avoid the sterile symmetry, excessive polish, plastic textures, impossible reflections, and cinematic effects that make a scene look synthetic. Do not add dirt, blur, noise, or accidents as decoration; realism comes from coherent observation and lighting, not a filter.
+
+Let the topic appear through the activity and surroundings rather than a large floating label or staged prop. A relevant phone or computer may sit naturally in the scene, including partly at the edge, as long as the cover still communicates its subject at the measured card and detail crops. Keep people, hands, gaze, furniture, and device orientation physically consistent. Never rotate a screen toward the camera unnaturally or stage someone pointing at it solely to expose the display.
+
+When a visible screen materially helps, design a coherent, finished interface with believable hierarchy, spacing, typography, controls, and task-specific content. Use a generic non-branded illustrative interface unless the user supplied or authorized an exact reference. A real product or official-site screen may be used only from a verified, appropriately licensed/provided source; do not fabricate or impersonate Google, a government portal, or another real service. Never invent policy copy, analytics, customer records, private data, testimonials, or outcomes. If accurate screen text cannot be rendered or checked, keep it minimal or use a natural angle/crop that does not present garbled text as fact. The supplied Zeta pricing comparison image is a legibility and information-hierarchy reference only; do not reproduce its branding, exact layout, wording, or prices unless the task explicitly asks to edit that graphic.
+
+Inspect the finished image at the actual rendered crops. Reject synthetic-looking artifacts, malformed or misleading UI, fake official branding, awkward human/device interaction, or a crop that hides the subject. Prefer a believable, understated scene over forcing a screen into an unrelated topic.

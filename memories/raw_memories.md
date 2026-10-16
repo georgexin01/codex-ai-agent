@@ -1520,6 +1520,91 @@ References:
 - `api/Controllers/BookingController.php` and `api/v1/bookings/create.php`.
 - Validation: `php -l` on edited PHP files, JSON parse checks, and `git diff --check` all passed.
 
+## Thread `01a13d77-69bb-71a1-a74a-b50080a22db5`
+updated_at: 2026-10-16T01:10:55+00:00
+cwd: \\?\D:\project\VIPBillion
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T10-49-58-01a13d77-69bb-71a1-a74a-b50080a22db5.jsonl
+rollout_summary_file: 2026-10-15T02-49-58-3dyZ-vipbillion_website_audit_booking_modal_ux.md
+
+---
+description: VIPBillion website documentation audit, Google Sheet customer-request comparison, and booking confirmation UX/idempotency work; final code checks passed but browser/live verification remained undone
+task: understand-vipbillion-website-and-fix-booking-modal-loading-feedback
+task_group: vipbillion-website
+ task_outcome: partial
+cwd: D:\project\VIPBillion\website-vipbillion
+keywords: VIPBillion, WORKSPACE.md, STATUS.md, MASTER_PLAN.md, Google Sheets, Optimization Plan, booking.php, BookingModel.php, BookingRequestConflictException, dialog, modal, minimum loading, WhatsApp, Instagram, pricing mismatch
+---
+
+### Task 1: Website orientation and documentation
+
+task: understand the VIPBillion PHP website from current source plus Markdown docs
+task_group: project-orientation
+task_outcome: success
+
+Preference signals:
+- The user asked to “understand my website first include .md” -> start future work by reading project orientation/status/plan docs and then verify those claims against current source.
+
+Reusable knowledge:
+- Website entrypoint: `website-vipbillion/index.php`; clean URL routing: `website-vipbillion/router.php`; shared initialization: `website-vipbillion/lib/initData.php`.
+- Website is bilingual EN/CN using `/cn/...`, session/cookie language state, `i18n/en.json`, `i18n/cn.json`, and localized database fields.
+- PHP data access is under `website-vipbillion/api/Models/`; booking/payment paths are present in current source even where root docs describe Phase 2 as removed.
+- Prefer current source/live evidence over stale `API_SETUP_COMPLETE.md`; never copy or retain secrets found in historical docs.
+
+Failures and how to do differently:
+- `website-vipbillion/initData.php` was the wrong path; actual file is `website-vipbillion/lib/initData.php`.
+
+References:
+- `WORKSPACE.md`, `STATUS.md`, `MASTER_PLAN.md`
+- `website-vipbillion/index.php`, `router.php`, `lib/initData.php`
+
+### Task 2: Customer optimization spreadsheet audit
+
+task: compare Google Sheet website requests against code/live pages and summarize in Chinese tables
+task_group: customer-request-audit
+task_outcome: partial
+
+Preference signals:
+- User requested Chinese comparison tables with detailed columns for pages, tasks, changes, problems, and done status -> preserve that table structure and distinguish “sheet says not started” from independently verified code/live status.
+
+Reusable knowledge:
+- Sheet: `https://docs.google.com/spreadsheets/d/1Qk8jzmZERae_gf-nhXqz0vsZ87Zwr3JcUkVW8SnNXVA/edit?gid=1724772122#gid=1724772122`, tab `Optimization Plan`.
+- It contains 13 website actions: 7 P0, 4 P1, 2 P2, including duplicate WhatsApp, Instagram removal, authentic photos, Google Business Profile, CTA consistency, WhatsApp inquiry flow, loading/error states, GTM tracking, pricing consistency, FAQs, service-duration/category corrections, and About-page proof/link cleanup.
+- Evidence found: duplicate WhatsApp output on `/contacts`; Instagram rendering remains in header/footer/contact/service templates; contact submission still uses Apps Script proxy; no clear WhatsApp GTM event found; pricing mismatch RM500 vs RM600; `/services` contains “60–90 Hours” typo; About page includes visitor counts and apparent anchor links.
+
+Failures and how to do differently:
+- Homepage live fetch timed out; do not claim homepage verification without another source.
+- Full Chinese comparison was not completed in this rollout; future agent should produce all 13 rows with evidence and status categories.
+
+References:
+- Live pages: `/contacts`, `/pricing`, `/services`, `/about`
+- Source: `lib/header.php`, `lib/footer.php`, `template/contacts.php`, `template/services.php`, `template/services-single.php`, `template/about.php`, `js/scripts.js`, `lib/sendEmail.php`
+
+### Task 3: Booking modal and loading feedback
+
+task: center booking confirmation modal and slow fast-loading feedback by one second
+task_group: booking-ux
+ task_outcome: partial
+
+Preference signals:
+- User: “all popup modal should be display position center” -> use viewport-centered modal positioning by default.
+- User: “loading speed are too fast slower +1sec to it” -> maintain a minimum 1000 ms loading/feedback period, but do not add delay when the real request already exceeds one second.
+
+Reusable knowledge:
+- `template/booking.php` now has `.booking-confirmation-modal[open]` fixed at `top:50%`, `left:50%`, `transform:translate(-50%,-50%)`.
+- `waitForMinimumLoading(startedAt)` enforces the one-second minimum before processing the response; slow requests are not artificially extended.
+- Booking idempotency was implemented in `api/Models/BookingModel.php` and `api/Controllers/BookingController.php`: same request UUID and matching data reuse the booking; mismatched replay raises `BookingRequestConflictException`.
+- In-memory validation passed for both paid and consultation retries.
+
+Failures and how to do differently:
+- `php -l template/booking.php` and `git diff --check` passed, but no browser visual test or real API request was run.
+- The requested “all popup modal” scope was only implemented for the Booking confirmation dialog; inspect other modal systems (`main-register-container`, header modal, lightGallery) before claiming sitewide centering.
+- Complex PowerShell validation was rejected; use small independent validation commands.
+
+References:
+- `template/booking.php` lines around 261, 536, 1109, 1202
+- `api/Models/BookingModel.php`: `findExistingWebsiteBookingById`, `bookingRequestMatches`, `formatExistingWebsiteBooking`, `BookingRequestConflictException`
+- Validation commands: `php -l template/booking.php`; `git diff --check`
+
 ## Thread `01a13eb8-c451-7ba1-8551-d173ae1acf74`
 updated_at: 2026-10-15T09:58:21+00:00
 cwd: \\?\D:\project\VIPBillion

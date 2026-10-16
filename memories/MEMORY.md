@@ -1,3 +1,85 @@
+# Task Group: VIPBillion public website and booking flow
+scope: PHP bilingual public-site orientation, customer-request audit, CTA/prefill, booking idempotency, and exact-scope modal UI work.
+applies_to: cwd=D:\project\VIPBillion\website-vipbillion; reuse_rule=read project Markdown then reconcile it with current source/live evidence; inspect dirty status and exact shared template source before editing; do not apply admin conventions blindly to public PHP.
+
+## Task 1: Website orientation and Markdown documentation
+
+### rollout_summary_files
+
+- rollout_summaries/2026-10-15T02-49-58-3dyZ-vipbillion_website_audit_booking_modal_ux.md (cwd=D:\project\VIPBillion, rollout_path=C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T10-49-58-01a13d77-69bb-71a1-a74a-b50080a22db5.jsonl, updated_at=2026-10-16T01:10:55+00:00, thread_id=01a13d77-69bb-71a1-a74a-b50080a22db5)
+
+### keywords
+
+- WORKSPACE.md, STATUS.md, MASTER_PLAN.md, website-vipbillion/index.php, router.php, lib/initData.php, i18n/en.json, i18n/cn.json, api/Models, API_SETUP_COMPLETE.md, meta.md
+
+## Task 2: Customer Optimization Plan audit in Chinese
+
+### rollout_summary_files
+
+- rollout_summaries/2026-10-15T02-49-58-3dyZ-vipbillion_website_audit_booking_modal_ux.md (cwd=D:\project\VIPBillion, rollout_path=C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T10-49-58-01a13d77-69bb-71a1-a74a-b50080a22db5.jsonl, updated_at=2026-10-16T01:10:55+00:00, thread_id=01a13d77-69bb-71a1-a74a-b50080a22db5, partial: audit table not delivered)
+
+### keywords
+
+- Google Sheet, Optimization Plan, 1Qk8jzmZERae_gf-nhXqz0vsZ87Zwr3JcUkVW8SnNXVA, WhatsApp, Instagram, GTM, pricing mismatch, RM500, RM600, 60–90 Hours, /contacts, /pricing, /services, /about
+
+## Task 3: Booking confirmation modal, minimum feedback, and idempotency
+
+### rollout_summary_files
+
+- rollout_summaries/2026-10-15T02-49-58-3dyZ-vipbillion_website_audit_booking_modal_ux.md (cwd=D:\project\VIPBillion, rollout_path=C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T10-49-58-01a13d77-69bb-71a1-a74a-b50080a22db5.jsonl, updated_at=2026-10-16T01:10:55+00:00, thread_id=01a13d77-69bb-71a1-a74a-b50080a22db5, browser/live verification unperformed)
+
+### keywords
+
+- template/booking.php, booking-confirmation-modal, waitForMinimumLoading, 1000 ms, BookingModel.php, BookingController.php, BookingRequestConflictException, findExistingWebsiteBookingById, bookingRequestMatches, php -l, git diff --check
+
+## Task 4: Homepage/services quote CTA and booking prefill
+
+### rollout_summary_files
+
+- rollout_summaries/2026-10-15T02-49-20-z2H4-vipbillion_home_hero_h1_and_booking_cta.md (cwd=D:\project\VIPBillion\website-vipbillion, rollout_path=C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T10-49-20-01a13d76-d6b9-7812-aae5-4818b0a53cde.jsonl, updated_at=2026-10-15T08:37:27+00:00, thread_id=01a13d76-d6b9-7812-aae5-4818b0a53cde)
+
+### keywords
+
+- template/booking.php, booking-prefill-session.php, nav.get_quote, service_interest, preselectServiceRoute, fillVehicleOptions, PHP session, php -l
+
+## Task 5: Missed header “View Our Services” CTA request
+
+### rollout_summary_files
+
+- rollout_summaries/2026-10-15T08-40-58-GbCk-vipbillion_header_cta_request_missed.md (cwd=D:\project\VIPBillion\website-vipbillion, rollout_path=C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T16-40-58-01a13eb8-c451-7ba1-8551-d173ae1acf74.jsonl, updated_at=2026-10-15T09:58:21+00:00, thread_id=01a13eb8-c451-7ba1-8551-d173ae1acf74, failed scope adherence)
+
+### keywords
+
+- View Our Services, Get a Quote, /booking, lib/header.php, index.php, template/booking.php, header CTA, request missed
+
+## User preferences
+
+- when the user asks to “understand my website first include .md” -> read orientation/status/plan Markdown and verify it against current source before changes. [Task 1]
+- when the user requests “summarize it all in chinese show me in comparision tables with detailed information.. pages, task, changes, problem, done?” -> deliver Chinese rows with page/area, requested task, current problem, required change, and independently verified status; distinguish sheet state from code/live evidence. [Task 2]
+- when the user says “all popup modal should be display position center” -> use fixed horizontal/vertical viewport centering by default, but inspect each actual modal system before declaring a sitewide change. [Task 3]
+- when the user says “loading speed are too fast slower +1sec to it” -> keep fast submission feedback visible for at least 1000 ms without extending genuinely slow requests. [Task 3]
+- when the user said “read and understand my product first include .md then update below” and requested `View Our Services` → `Get a Quote` to `/booking`, inspect relevant Markdown/source, then make exactly that header change; an attached screenshot does not override explicit text. [Task 5]
+- when the user requested “increase text size 4-5px”, weight 500, and theme green, preserve narrowly scoped visual edits and use existing tokens such as `var(--main-color)`. [Task 4]
+- the user selected “30 天（推荐）” -> use 30-day retention for isolated booking prefill, not browser-cookie application state. [Task 4]
+
+## Reusable knowledge
+
+- Entrypoint is `index.php`, with clean URL routing in `router.php` and shared initialization at `lib/initData.php`; bilingual EN/CN uses `/cn/...`, session/cookie state, `i18n/en.json`, `i18n/cn.json`, and localized database fields. [Task 1]
+- Current source/live behavior outranks stale docs: booking/payment paths exist despite root docs saying Phase 2 commerce was removed; `API_SETUP_COMPLETE.md` is historical and must never be used to retain secrets. `meta.md`, `lib/metaData.php`, and `lib/initData.php` own current public metadata. [Task 1]
+- Optimization Plan has 13 actions (7 P0, 4 P1, 2 P2). Verified audit findings include duplicate WhatsApp on `/contacts`; Instagram conditional output in header/footer/contact/services-single; contact Apps Script proxy rather than WhatsApp; no clear GTM WhatsApp event; RM500/RM600 pricing mismatch; “60–90 Hours” typo; visitor counts/anchors on `/about`. [Task 2]
+- `template/booking.php` centers `.booking-confirmation-modal[open]` with fixed 50%/translate and `waitForMinimumLoading(startedAt)` enforces the 1000-ms floor. Same UUID plus matching data reuses the booking; mismatched replay throws `BookingRequestConflictException`. In-memory paid/consultation retry tests passed. [Task 3]
+- `index.php` routes `/booking` to `template/booking.php`; shared header code is under `lib/header.php` or included partials. Search exact displayed wording before patching. [Task 5]
+- Service CTAs pass `?service=<slug>`; only a unique normalized service/route match preselects route. Otherwise leave route selection to the user. Vehicle default is lowest positive-priced, non-consultation, non-Bus option. [Task 4]
+- `lib/booking-prefill-session.php` holds only name, phone, departure and arrival in a separate server-side session with 30-day TTL; escape values on render and save before insertion so a failed booking can refresh prefill. [Task 4]
+
+## Failures and how to do differently
+
+- Symptom: assumed `website-vipbillion/initData.php` is missing -> cause: wrong path; fix: use `website-vipbillion/lib/initData.php` and current tree. [Task 1]
+- Homepage live fetch timed out; do not claim homepage verification without another source. Finish all 13 Chinese audit rows with evidence-backed states: not started, partially implemented, verified, or not verifiable. [Task 2]
+- `php -l template/booking.php` and `git diff --check` passed, but no browser visual test or real API request was run. Do not use real `/booking` just to test visuals because it may create records/increment visitor tracking; use isolated DB, mock, or fixture. The “all popup modal” request was implemented only for the booking `<dialog>`—inspect `main-register-container`, header modal, and lightGallery before sitewide claims. [Task 3]
+- Symptom: screenshot interpretation points to a different UI than explicit text -> cause: task drift; fix: re-anchor on the requested label, source and route, patch only that source, then lint/read back/test navigation. [Task 5]
+- Normal public-page browser requests record visits; use a non-visitor-counting harness before claiming end-to-end visual/runtime success. [Task 4]
+
 # Task Group: XHS/TikTok inbox Telegram preview
 scope: Vue mock-chat preview orientation, Telegram timeline/date behavior, and upload UI; preserve TikTok/XHS isolation.
 applies_to: cwd=D:\project\xhs-tiktok-inbox; reuse_rule=use only after reconciling stale PROJECT_CONTEXT.md with current PhonePreview.vue/source.
@@ -39,47 +121,6 @@ applies_to: cwd=D:\project\xhs-tiktok-inbox; reuse_rule=use only after reconcili
 
 - Symptom: timeline order derives an October 14 label before the explicit October 8 divider -> cause: per-message timestamp derivation; fix: use explicit divider dates as section boundaries and first-notice history date for pre-divider messages. [Task 1]
 - Symptom: a build changes `dist/index.html` bundle references -> inspect generated artifacts before committing; a passing build is not proof of visual interaction. [Task 1]
-
-# Task Group: VIPBillion public website and booking flow
-scope: PHP bilingual public-site CTA, booking preselection/prefill, and exact-scope UI work.
-applies_to: cwd=D:\project\VIPBillion\website-vipbillion; reuse_rule=inspect dirty status and exact shared template source before editing; do not apply admin conventions blindly to public PHP.
-
-## Task 1: Homepage/services quote CTA and booking prefill
-
-### rollout_summary_files
-
-- rollout_summaries/2026-10-15T02-49-20-z2H4-vipbillion_home_hero_h1_and_booking_cta.md (cwd=D:\project\VIPBillion\website-vipbillion, rollout_path=C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T10-49-20-01a13d76-d6b9-7812-aae5-4818b0a53cde.jsonl, updated_at=2026-10-15T08:37:27+00:00, thread_id=01a13d76-d6b9-7812-aae5-4818b0a53cde)
-
-### keywords
-
-- template/booking.php, booking-prefill-session.php, nav.get_quote, service_interest, preselectServiceRoute, fillVehicleOptions, PHP session, php -l
-
-## Task 2: Missed header “View Our Services” CTA request
-
-### rollout_summary_files
-
-- rollout_summaries/2026-10-15T08-40-58-GbCk-vipbillion_header_cta_request_missed.md (cwd=D:\project\VIPBillion\website-vipbillion, rollout_path=C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T16-40-58-01a13eb8-c451-7ba1-8551-d173ae1acf74.jsonl, updated_at=2026-10-15T09:58:21+00:00, thread_id=01a13eb8-c451-7ba1-8551-d173ae1acf74, failed scope adherence)
-
-### keywords
-
-- View Our Services, Get a Quote, /booking, lib/header.php, index.php, template/booking.php, header CTA, request missed
-
-## User preferences
-
-- when the user said “read and understand my product first include .md then update below” and requested `View Our Services` → `Get a Quote` to `/booking`, inspect relevant Markdown/source, then make exactly that header change; an attached screenshot does not override explicit text. [Task 2]
-- when the user requested “increase text size 4-5px”, weight 500, and theme green, preserve narrowly scoped visual edits and use existing tokens such as `var(--main-color)`. [Task 1]
-- the user selected “30 天（推荐）” -> use 30-day retention for isolated booking prefill, not browser-cookie application state. [Task 1]
-
-## Reusable knowledge
-
-- `index.php` routes `/booking` to `template/booking.php`; shared header code is under `lib/header.php` or included partials. Search exact displayed wording before patching. [Task 2]
-- Service CTAs pass `?service=<slug>`; only a unique normalized service/route match preselects route. Otherwise leave route selection to the user. Vehicle default is lowest positive-priced, non-consultation, non-Bus option. [Task 1]
-- `lib/booking-prefill-session.php` holds only name, phone, departure and arrival in a separate server-side session with 30-day TTL; escape values on render and save before insertion so a failed booking can refresh prefill. [Task 1]
-
-## Failures and how to do differently
-
-- Symptom: screenshot interpretation points to a different UI than explicit text -> cause: task drift; fix: re-anchor on the requested label, source and route, patch only that source, then lint/read back/test navigation. [Task 2]
-- Normal public-page browser requests record visits; use a non-visitor-counting harness before claiming end-to-end visual/runtime success. [Task 1]
 
 # Task Group: Lion Rider orientation, storefront, and admin boundary
 scope: project handoff, PHP/JSON storefront, spare-parts behavior, and separate Vben/Supabase admin.
@@ -356,7 +397,7 @@ applies_to: cwd=all projects; reuse_rule=apply only when compatible with current
 
 ### rollout_summary_files
 
-- rollout_summaries/2026-08-12T08-56-09-fmgd-codex_fast_batch_workflow_protocol.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\08\12\rollout-2026-08-12T16-56-09-019ff52f-a88b-7893-a2b3-9a5e75097d.jsonl, updated_at=2026-08-12T09:01:25+00:00, thread_id=019ff52f-a88b-7893-a2b3-9a5e75097d)
+- Extension evidence retained in `extensions/ad_hoc/notes/`; no rollout summary remains after the deleted-source cleanup. [ad-hoc note]
 
 ### keywords
 

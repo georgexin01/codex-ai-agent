@@ -7,6 +7,12 @@ description: "Generate or edit raster images when the task benefits from AI-crea
 
 Generates or edits images for the current project (for example website assets, game assets, UI mockups, product mockups, wireframes, logo design, photorealistic images, or infographics).
 
+## Editorial photo realism and authentic-looking screens
+
+For editorial or website-cover scenes intended to look photographed, follow the routed `codex-router/IMAGE_GENERATION_ASSET_POLICY.md` section **Editorial photo realism and screen integrity**. Prefer believable documentary photography, natural lighting, coherent camera perspective, real material texture, and modest lived-in details over sterile, overly polished AI imagery. Any grain, flare, focus falloff, or small imperfection must fit the camera and scene; do not add defects as a style filter. Keep the article topic present but understated when that serves the composition, and verify it remains clear in the real crop.
+
+If a phone or computer screen is visible, make it look like a complete, plausible product interface with readable, topic-specific hierarchy and natural device ergonomics. Use a generic non-branded illustrative interface by default. Use an actual Google or other official/product interface only when the user supplied or authorized a verified source image; never generate a fake official screen or imply illustrative content is real. Do not show private/customer data, fabricated analytics or outcomes, logos, or garbled text presented as meaningful. Treat supplied design screenshots as visual-quality references only unless the user explicitly requests an edit or reuse.
+
 ## Top-level modes and rules
 
 This skill has exactly two top-level modes:

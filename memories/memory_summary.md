@@ -2,35 +2,41 @@ v1
 
 ## User Profile
 
-Works across several Windows-based website, Vue/Vite, PHP, Vben/Supabase, and Codex-routing projects. Values exact scope, evidence from current source, bilingual parity where applicable, and concrete verification. Frequently asks agents to understand project Markdown before edits, and expects the requested visible flow—not a nearby interpretation—to be implemented.
+Works across Windows-based PHP/static websites, Vue/Vite apps, Vben/Supabase systems, and Codex-maintenance work. Cares about exact request scope, current-source evidence, bilingual parity, and concrete verification. Often asks for project Markdown to be understood before edits and expects the explicitly requested visible flow—not a nearby screenshot inference—to be changed.
 
 ## User preferences
 
 - In full-access sessions, continue obvious safe work without repetitive confirmation; pause for meaningful decisions, hidden risk, destructive action, or ambiguity. [ad-hoc note]
-- Lead options with a clear recommendation, then brief numbered alternatives. [ad-hoc note]
+- For “read and understand my website/project ... include/all .md”, read the relevant documentation comprehensively, reconcile it with current source, and state any unfinished boundary.
+- Follow explicit text/scope over screenshot inference; make surgical edits and preserve unrelated dirty changes.
+- For audits, use detailed Chinese comparison tables when requested; separate spreadsheet claims from independently verified source/live status.
+- Treat browser/interaction checks as separate from lint, build, HTTP, or diff success; do not claim sitewide modal behavior from one dialog.
 - “Copy and paste”, “duplicate”, “clone”, or “same modules” means clone the exact full module shell first, then edit requested internals. [ad-hoc note]
-- For “read and understand my project/all .md”, be genuinely comprehensive or state the remaining boundary; reconcile documentation with current source.
-- Follow explicit text/scope over a screenshot inference; keep edits surgical and preserve unrelated dirty changes.
-- Use visible/browser interaction checks as a separate gate from build, lint, HTTP, or diff success.
-- Protect local Docker/Supabase state: do not change stack/config/schema/routing/startup state without explicit same-turn permission. [ad-hoc note]
+- Protect local Docker/Supabase state: no stack/config/schema/routing/startup changes without explicit same-turn permission. [ad-hoc note]
 
 ## General Tips
 
-- Route from the smallest relevant project entrypoint; current files/tests/logs/schema outrank memory.
-- On Windows, use simple separately quoted searches and short `Start-Process` invocations; avoid brittle compound PowerShell.
-- For local web tests, prove each requested URL belongs to the intended project; an open port or root 200 is insufficient.
-- Never retain secrets in memory. Use project-owned config and report presence/shape only.
-- AI raster assets: measure target first; max edge 1600px, JPG opaque / PNG real alpha; store in project assets, never `.codex`. [ad-hoc note]
+- Start from the smallest relevant project entrypoint; current files, tests, logs, schema, and live evidence outrank memory and stale docs.
+- On Windows, use simple separately quoted searches and validation commands; avoid brittle compound PowerShell.
+- Never retain secrets; historical setup docs may be stale and credential-like values must be redacted.
+- For local web checks, prove each URL belongs to the intended checkout; an open port or root 200 is insufficient.
+- AI raster assets: measure target first; max edge 1600px, JPG opaque / PNG real alpha; put assets in the project, never `.codex`. [ad-hoc note]
 
 ## What's in Memory
 
 ### D:\project\VIPBillion\website-vipbillion
 
+#### 2026-10-16
+
+- Website orientation, Optimization Plan audit, and booking UX: WORKSPACE.md, Optimization Plan, booking-confirmation-modal, waitForMinimumLoading, BookingRequestConflictException
+  - desc: Public bilingual PHP-site source map, 13-item Google Sheet audit, and booking modal/idempotency work; search first for new VIPBillion website requests.
+  - learnings: Source/live evidence beats stale Phase 2 docs; audit output needs all 13 Chinese rows and browser/live verification remains undone.
+
 #### 2026-10-15
 
-- Header CTA scope and booking flow: View Our Services, Get a Quote, /booking, booking-prefill-session.php
+- Header CTA and booking prefill: View Our Services, Get a Quote, /booking, booking-prefill-session.php
   - desc: Exact public PHP header/CTA routing and 30-day booking prefill guidance.
-  - learnings: A failed rollout changed hero CSS instead of the explicit header request; search the exact label and test navigation first.
+  - learnings: Search the exact label and test navigation; explicit text overrides screenshot inference.
 
 ### D:\project\xhs-tiktok-inbox
 
@@ -48,23 +54,20 @@ Works across several Windows-based website, Vue/Vite, PHP, Vben/Supabase, and Co
   - desc: Separate PHP/JSON storefront from Vben/Supabase admin; exhaustive Markdown orientation is incomplete.
   - learnings: Source says 341 products; exclude stale FC-Moto `knowledge.md`.
 
-### D:\backup\website-zetasoftware
+### Older Memory Topics
 
-#### 2026-10-12
+#### D:\backup\website-zetasoftware
 
 - Bilingual static site: cn/, update-site-navigation, php -S, data-src, images/mobile
-  - desc: EN/CN parity, generator coupling, static performance and safe image migration.
-  - learnings: Never delete the specified WebPs before complete reference/JPG/route validation.
+  - desc: EN/CN parity, generator coupling, static performance and safe image migration; cwd=D:\backup\website-zetasoftware.
 
-### C:\Users\user\.codex
-
-#### 2026-10-08
+#### C:\Users\user\.codex
 
 - Codex routing and Git recovery: 00_PULSE.md, sparse-checkout, memories/.git, UseBasicParsing
-  - desc: Boot sentinel, sparse-checkout diagnosis, root Git boundary and localhost-root mismatch.
-  - learnings: Missing tracked files can be unmaterialized sparse paths, not deletion.
+  - desc: Boot sentinel, sparse-checkout diagnosis, root Git boundary and localhost-root mismatch; cwd=C:\Users\user\.codex.
 
-### Older Memory Topics
+- Cross-project collaboration conventions: clone-first, Hierarchical Replica Chunking, one source of truth
+  - desc: Routed skill use, faithful replicas, project-knowledge conventions, Vben/Pinia and project-boundary rules. [ad-hoc note]
 
 #### C:\Users\user\Documents\supabase-project-backup-restore
 
@@ -90,8 +93,3 @@ Works across several Windows-based website, Vue/Vite, PHP, Vben/Supabase, and Co
 
 - VIPBillion admin/data conventions: isDelete, checkSlugExists, FIUU, additive news import
   - desc: Vben/Supabase soft-delete, slug, attachment, payment and batch-import rules. [ad-hoc note]
-
-#### Cross-project
-
-- Replica and knowledge routing: Hierarchical Replica Chunking, clone-first, one source of truth
-  - desc: User-approved collaboration and high-fidelity design conventions. [ad-hoc note]
