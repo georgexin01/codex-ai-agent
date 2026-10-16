@@ -378,6 +378,48 @@
       "proxyHost": "127.0.0.1",
       "proxyPort": 0,
       "updatedAt": "2026-09-18T05:53:00.487Z"
+    },
+    {
+      "schemaVersion": 2,
+      "appServerProtocolVersion": 2,
+      "appVersion": "26.1007.71326",
+      "channel": "prod",
+      "cliVersion": "26.1007.71326",
+      "entryId": "codex-runtime-e43cb5a5760e8fce0c8ccf3cd9dc6f2b",
+      "extensionBuildChannels": [
+        "prod"
+      ],
+      "extensionIds": [
+        "hehggadaopoacecdllhhajmbjkdcmajg",
+        "odlomjlbamekndcpllcnffbgeohgkmjh"
+      ],
+      "installId": "codex-install-8b23b1bfc3e75e629d6bd1c3ff9f98e2",
+      "nativeHostNames": [
+        "com.openai.codexextension"
+      ],
+      "nativeHostProtocolVersion": 2,
+      "nativeHostVersion": "26.1007.71326",
+      "paths": {
+        "browserClientPath": "C:\\Users\\user\\.codex\\plugins\\cache\\openai-bundled\\chrome\\latest\\scripts\\browser-client.mjs",
+        "browserServicePath": "C:\\Users\\user\\.codex\\plugins\\cache\\openai-bundled\\chrome\\latest\\scripts\\browser-service.mjs",
+        "codexCliPath": "C:\\Users\\user\\.codex\\plugins\\.plugin-appserver\\codex.exe",
+        "codexHome": "C:\\Users\\user\\.codex",
+        "extensionHostPath": "C:\\Users\\user\\.codex\\plugins\\cache\\openai-bundled\\chrome\\latest\\extension-host\\windows\\x64\\extension-host.exe",
+        "nodePath": "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node.exe",
+        "nodeModuleDirs": [
+          "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node_modules"
+        ],
+        "nodeReplPath": "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\a9ba6825a525118c\\bin\\node_repl.exe",
+        "resourcesPath": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1007.9446.0_x64__2p2nqsd0c76g0\\app\\resources"
+      },
+      "presence": {
+        "lastSeenAt": "2026-10-16T01:10:00.875Z",
+        "pid": 12908,
+        "startedAt": "2026-10-16T01:10:00.875Z"
+      },
+      "proxyHost": "127.0.0.1",
+      "proxyPort": 0,
+      "updatedAt": "2026-10-16T01:10:00.875Z"
     }
   ]
 }

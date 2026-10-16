@@ -844,3 +844,719 @@ References:
 - Microsoft Learn: `Invoke-WebRequest` security warning and `-UseBasicParsing`
 - OpenAI Codex approvals guidance: approvals may be scoped, but broad approval should be limited to trusted, well-understood commands.
 
+## Thread `01a12df4-a688-72d0-8aa6-dd792838fc51`
+updated_at: 2026-10-12T06:20:38+00:00
+cwd: \\?\D:\backup\website-zetasoftware
+rollout_path: C:\Users\user\.codex\sessions\2026\10\12\rollout-2026-10-12T10-32-50-01a12df4-a688-72d0-8aa6-dd792838fc51.jsonl
+rollout_summary_file: 2026-10-12T02-32-50-FulX-zeta_website_cleanup_mail_host_seo_audit.md
+
+---
+description: Zeta static bilingual website cleanup, mail-host hardening, and Search Console route audit; cleanup succeeded, SEO redirect was source-edited but production verification remained pending
+task: audit-remove-unused-files-and-fix-mail-host-canonical-routes
+task_group: zeta-static-website-seo-maintenance
+task_outcome: partial
+cwd: D:\backup\website-zetasoftware
+keywords: Zeta, bilingual-static-site, unused-files, legacy-cleanup, htaccess, mail-host, 410, contact.html, canonical, sitemap, Search Console
+---
+
+### Task 1: Remove verified-unused artifacts
+
+task: remove unused images and temporary authoring artifacts without changing current pages
+task_group: zeta-static-website-cleanup
+task_outcome: success
+
+Preference signals:
+- The user first asked to "show to me in list" and later explicitly asked to remove only what is unnecessary and will not affect the current website -> future cleanup should inventory first, classify runtime versus history/tools, then remove only verified-safe exact paths.
+
+Reusable knowledge:
+- The checkout had 1,048 tracked files and 588 HTML files. Four unreferenced images and ten temporary scratch/contact-sheet/test files were removed; generators, archived iOS source PNGs, manifests, and documented assets were preserved.
+- Post-cleanup verification confirmed all 14 targets absent, only intended Git deletions, all 588 HTML files retained, and `non_noindex_canonical_missing_from_sitemap=0`.
+
+Failures and how to do differently:
+- Bulk PowerShell deletion was rejected by the host safety filter; exact-file individual deletion succeeded.
+- Do not treat zero text references as proof that generators or historical source artwork are disposable.
+
+References:
+- Removed: `images/approach/approach-hero-workshop.jpg`, `images/approach/c2c-community-market.jpg`, `images/approach/m2b-business-partner.jpg`, `images/internal-management/internal-hero-operations.jpg`.
+- Removed temporary files under `tmp/`, including four dated square JPGs, contact sheets, `all-blog-titles-2026-10-07.txt`, `receiver-test.txt`, and `stdin-test.txt`.
+
+### Task 2: Harden mail-prefixed host routing
+
+task: ensure mail-prefixed hosts never serve the public website and remove explicit hostname references
+ task_group: apache-htaccess-maintenance
+ task_outcome: success
+
+Reusable knowledge:
+- `.htaccess` now uses `RewriteCond %{HTTP_HOST} ^mail\. [NC]` followed by `RewriteRule ^ - [G,L]`, blocking every host beginning with `mail.` before the catch-all website fallback.
+- Full working-tree search found zero exact hostname occurrences after documentation cleanup. Live sampled mail-host URLs returned HTTP 410.
+
+Failures and how to do differently:
+- Preserve the blocking rule even when removing literal text references; removing it could expose the public fallback on mail hosts.
+- Apache was unavailable locally, so production syntax and DNS/MX/SMTP/IMAP behavior were not verified.
+
+References:
+- `.htaccess` rule: `RewriteCond %{HTTP_HOST} ^mail\\. [NC]` / `RewriteRule ^ - [G,L]`.
+
+### Task 3: Correct legacy contact canonical routing
+
+task: diagnose Search Console URL issues and correct legacy contact filenames
+ task_group: SEO-canonical-sitemap-verification
+ task_outcome: partial
+
+Reusable knowledge:
+- Local/live sitemap parity was verified: 590 unique URLs, zero live-only/local-only differences, zero canonical mismatches, zero sitemap `noindex` URLs, and zero missing blog hreflang sets.
+- `/contact.html` was a real route defect: live response was HTTP 200 serving the homepage with homepage canonical, while `/contact/` was the actual contact page.
+- Added narrow redirects in `.htaccess`: `RewriteRule ^contact\\.html$ /contact/ [R=301,L,NE]` and `RewriteRule ^cn/contact\\.html$ /cn/contact/ [R=301,L,NE]`.
+- Search Console guidance: deploy `.htaccess`, test old URLs with URL Inspection, request indexing for canonical `/contact/` pages, do not request indexing for removed mail-host URLs, and allow days/weeks for recrawl. Sitemap submission does not guarantee indexing.
+
+Failures and how to do differently:
+- The redirect was not production-verified because Apache was unavailable locally; verify after deployment with HTTP status and final URL.
+- “Discovered – currently not indexed” requires URL-specific inspection and quality/internal-link review, not repeated sitemap resubmission.
+
+References:
+- `LocalCount=590`, `LiveCount=590`, `LiveOnly=0`, `LocalOnly=0`.
+- `CanonicalMismatch=0`, `SitemapNoindex=0`, `BlogHreflangMissing=0`.
+- Google guidance: 404/410 for permanently removed URLs; 301 for moved content; sitemap and recrawl requests are discovery signals, not indexing guarantees.
+
+## Thread `01a12e5d-60dd-7b02-9b53-d85577178fce`
+updated_at: 2026-10-12T04:30:11+00:00
+cwd: \\?\D:\backup\zeta-aiseo
+rollout_path: C:\Users\user\.codex\sessions\2026\10\12\rollout-2026-10-12T12-27-14-01a12e5d-60dd-7b02-9b53-d85577178fce.jsonl
+rollout_summary_file: 2026-10-12T04-27-14-dxCe-zeta_aiseo_sitemap_news_route_audit.md
+
+---
+description: Audited Zeta Aiseo sitemap against generated published routes; sitemap was already complete and validation passed.
+task: audit sitemap coverage for all published static/news pages
+task_group: static-site-seo-sitemap
+ task_outcome: success
+cwd: D:\backup\zeta-aiseo
+keywords: sitemap.xml, news.json, generate-news.js, validate-news.js, robots.txt, static-site, SEO
+---
+
+### Task 1: Sitemap and published news coverage
+
+task: Verify or update sitemap.xml so it includes all project pages and published news.
+task_group: static-site SEO and route validation
+task_outcome: success
+
+Reusable knowledge:
+- `data/news.json` had 26 records: 25 published and one draft (`myinvois-svdp-updates-2026`).
+- `sitemap.xml` contained 27 URLs: homepage, `/news/`, and all 25 published article routes; the draft was correctly excluded.
+- `tools/generate-news.js` derives sitemap and robots output from records where `article.published !== false`.
+- `robots.txt` points to `https://aiseo.zetasoftware.my/sitemap.xml`.
+
+Failures and how to do differently:
+- An initial local-route PowerShell check produced false missing paths by constructing `news\\news\\<slug>`; map sitemap URL paths directly to `<route>/index.html` instead.
+- Live deployment, HTTP responses, and indexing remain unverified; local sitemap correctness must not be reported as production verification.
+
+References:
+- `node tools/validate-news.js`
+- Exact output: `PASS: 25 published articles, 1 draft, 3 homepage cards, 12 initial list cards, 27 sitemap URLs.`
+- Final XML route check: `XML parsed; URLs=27; missing_local_routes=0`.
+- Files: `sitemap.xml`, `robots.txt`, `data/news.json`, `tools/generate-news.js`, `tools/validate-news.js`.
+
+## Thread `01a12ec8-5255-7ad1-8475-8fb42dfceea4`
+updated_at: 2026-10-12T06:59:26+00:00
+cwd: \\?\D:\project\xhs-tiktok-inbox
+rollout_path: C:\Users\user\.codex\sessions\2026\10\12\rollout-2026-10-12T14-24-03-01a12ec8-5255-7ad1-8475-8fb42dfceea4.jsonl
+rollout_summary_file: 2026-10-12T06-24-02-dlD6-all_tabs_upload_image_sizing_tiers_popup.md
+
+---
+description: Standardized upload-image preview sizing across all chat tabs and popup/modal using shared longest-side dimension tiers; code and production build verified, browser visuals not verified
+task: global_upload_image_scaling_tiers
+ task_group: xhs-tiktok-inbox-vue-ui
+ task_outcome: success
+cwd: D:\project\xhs-tiktok-inbox
+keywords: Vue, Vite, PhonePreview.vue, UnifiedSettings.vue, telegramImageScale.js, getUploadImageScale, image scaling, popup modal, git diff --check
+---
+
+### Task 1: Global upload image sizing
+
+task: Apply user-defined image-size tiers to all platform tabs and popup/modal previews.
+task_group: xhs-tiktok-inbox-vue-ui
+task_outcome: success
+
+Preference signals:
+- The user explicitly corrected the scope to “all tabs upload images size” and asked to “include the popup modal display also” -> future sizing work should update every platform consumer and modal, not just Telegram.
+- The user specified longest-side thresholds: `>=1000px` 98%, `>=800` 90%, `>=650` 80%, `>=500` 70%, `>=300` 60%, `<300` 50% -> preserve these exact tiers by default.
+
+Reusable knowledge:
+- Shared helper is `src/utils/telegramImageScale.js`, exported as `getUploadImageScale(width, height)`; it scales from `Math.max(width, height)`.
+- Consumers are `src/components/PhonePreview.vue` for chat images and `src/components/UnifiedSettings.vue` for popup/modal images.
+- Existing aspect ratios and per-view base limits remain intact; the helper changes rendered width proportionally after image load and on resize.
+- Initial shared `.img-bubble img` base width was increased from `210px` to `280px` while retaining `max-width: 80vw`.
+
+Failures and how to do differently:
+- Production build and `git diff --check` passed, but no browser screenshot/visual check was performed. Verify representative images in every threshold tier across TikTok, Xiaohongshu, Telegram, and the popup before claiming exact visual parity.
+- GitNexus did not index this workspace; only `.codex` was available. Use current source/import inspection unless the project is explicitly indexed later.
+
+References:
+- `src/utils/telegramImageScale.js`: `getUploadImageScale`; tiers `0.98`, `0.9`, `0.8`, `0.7`, `0.6`, `0.5`.
+- `src/components/PhonePreview.vue`: `.scaled-chat-image`, `setChatImageScale`.
+- `src/components/UnifiedSettings.vue`: `.dialog-manager-image`, `setDialogManagerImageScale`.
+- Verification command: `npm.cmd run build -- --outDir $env:TEMP\xhs-tiktok-inbox-all-image-tier-check` -> Vite build succeeded.
+- Verification command: `git diff --check -- src/utils/telegramImageScale.js src/components/PhonePreview.vue src/components/UnifiedSettings.vue src/assets/css/style.css` -> passed.
+
+## Thread `01a132e6-0be2-72c1-ba80-59225dfa87d3`
+updated_at: 2026-10-13T03:03:56+00:00
+cwd: \\?\D:\project\mincorner
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\13\rollout-2026-10-13T09-35-00-01a132e6-0be2-72c1-ba80-59225dfa87d3.jsonl
+rollout_summary_file: 2026-10-13T01-34-59-HFET-confirm_remark_popup_hardcoded.md
+
+---
+description: Confirmed that the right-side Remark 备注 cart popup uses hardcoded bilingual text in the template.
+task: trace-remark-popup-text-source
+task_group: mincorner-php-ui-audit
+task_outcome: success
+cwd: D:\project\mincorner
+keywords: Remark, 备注, layouts/navigation.php, hardcoded, minicart, booking time, PHP template
+---
+
+### Task 1: Trace Remark popup text source
+
+task: determine whether the Remark 备注 popup content is hardcoded
+task_group: mincorner-php-ui-audit
+task_outcome: success
+
+Preference signals:
+- The user explicitly requested a concise yes/no answer after source inspection -> for similar questions, inspect the source first and lead with the direct yes/no result.
+
+Reusable knowledge:
+- `layouts/navigation.php` contains the minicart popup warning as literal bilingual markup around lines 349–355; it is not populated from a variable or database query.
+- The project also has database-backed product `remark` fields, but those are a separate feature and should not be confused with this fixed cart warning.
+
+Failures and how to do differently:
+- No substantive failure. The initial search output was large, but narrowing to the relevant file and line range confirmed the source efficiently.
+
+References:
+- File: `D:\project\mincorner\layouts\navigation.php`
+- Relevant lines: `349: <b>Remark 备注</b><br>`, `353–355: If the booking time is less than 24 hours...`
+- Verified answer: `Yes — both the Chinese and English text are hardcoded in layouts/navigation.php.`
+
+## Thread `01a1337f-959e-7af3-ba5d-913ed7a4d3f4`
+updated_at: 2026-10-13T08:05:25+00:00
+cwd: \\?\D:\project\VIPBillion
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\13\rollout-2026-10-13T12-22-41-01a1337f-959e-7af3-ba5d-913ed7a4d3f4.jsonl
+rollout_summary_file: 2026-10-13T04-22-41-QlZW-vipbillion_project_and_google_sheet_optimization_audit.md
+
+---
+description: VIPBillion project discovery plus complete Chinese audit of 13 Google Sheet website-optimization actions; no edits made
+ task: understand VIPBillion and map every Optimization Plan spreadsheet row to project files and live pages
+ task_group: vipbillion-project-discovery-and-requirements
+ task_outcome: partial
+ cwd: D:\project\VIPBillion
+ keywords: VIPBillion, Google Sheets, Optimization Plan, PHP, Vue, Vben, Supabase, contacts, WhatsApp, pricing, services, bilingual, mobile QA
+---
+
+### Task 1: Project discovery
+
+task: understand current VIPBillion architecture and source of truth
+task_group: project-orientation
+task_outcome: partial
+
+Preference signals:
+- The user asked the agent to “read and understand my project works now” -> future agents should inspect project truth and active code before proposing changes.
+
+Reusable knowledge:
+- Workspace has two active apps: `admin-panel-vipbillion` (Vue 3/Vben admin) and `website-vipbillion` (PHP bilingual website), with Supabase SQL migrations in `admin-panel-vipbillion/apps/web-antd/src/sql/migrations/`.
+- PHP public entry is `website-vipbillion/index.php`; language routes use `/cn/...`.
+- Root docs conflict with active code: `STATUS.md` says Phase 2 was removed, but active booking/driver/report code and later migrations exist. Verify live Supabase before schema-dependent work.
+
+Failures and how to do differently:
+- `DATABASE.md` conflicts with `driver-job.ts` and migration 156 about `driver_jobs` and `payment_status`; never assume migration application state from docs alone.
+
+References:
+- `WORKSPACE.md`, `STATUS.md`, `DATABASE.md`, `admin-panel-vipbillion/PROJECT_CONTEXT.md`
+- `website-vipbillion/index.php`
+
+### Task 2: Google Sheet requirements audit
+
+task: read every populated spreadsheet row, translate to Chinese, and map requested updates to VIPBillion
+task_group: website-optimization-requirements
+ task_outcome: success
+
+Preference signals:
+- User requested “every single rows” and Chinese tables with ID, page, section, and update content -> preserve all rows in structured tables and map each requirement to concrete files/pages.
+
+Reusable knowledge:
+- Sheet `VIP Billion Website Optimization and Inquiry Conversion`, tab `Optimization Plan`, range `A8:K21`, contains 13 rows, 7 P0 items, all `Not started`, and no comments.
+- Key confirmed live issues: duplicate WhatsApp link on contacts, English pricing mismatch (homepage RM600 vs pricing In City RM500), `60–90 Hours` typo/unit on services, cross-border detail mislabeled as Airport Transfer, and About-page anchors pointing to `#`.
+- Chinese and English live content diverges: Chinese homepage showed no featured services and Chinese service prices/durations differ from English.
+- Likely code locations: `website-vipbillion/template/contacts.php`, `home.php`, `pricing.php`, `services.php`, `services-single.php`, `about.php`; shared `lib/header.php`, `lib/footer.php`, `lib/initData.php`, `lib/sendEmail.php`; admin forms under `admin-panel-vipbillion/apps/web-antd/src/views/{services,pricing-rules,slideshows,vehicles}`.
+
+Failures and how to do differently:
+- Business must confirm prices, service durations/categories, FAQ policies, official social accounts, and authentic imagery before implementation.
+- Mobile QA, form delivery, GTM conversion variables, and Google Business Profile ownership were not verified; label them as pending rather than completed.
+
+References:
+- Sheet URL: `https://docs.google.com/spreadsheets/d/1Qk8jzmZERae_gf-nhXqz0vsZ87Zwr3JcUkVW8SnNXVA/edit#gid=1724772122`
+- Rows: `W23, W01, W02, W03, W04, W08, W11, W12, W14, W15, W16, W18, W26`
+- Sheet range: `'Optimization Plan'!A8:K21`
+
+## Thread `01a133e4-51b0-7453-b814-ec4392e2bdd8`
+updated_at: 2026-10-14T09:53:24+00:00
+cwd: \\?\D:\project\lionrider
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\13\rollout-2026-10-13T14-12-43-01a133e4-51b0-7453-b814-ec4392e2bdd8.jsonl
+rollout_summary_file: 2026-10-13T06-12-43-M5EQ-lionrider_account_mobile_sidebar_and_project_handoff.md
+
+---
+description: Lionrider PHP/JSON storefront handoff plus successful mobile account-sidebar hiding update
+ task: hide customer account sidebar on mobile responsive views
+ task_group: lionrider-website
+ task_outcome: success
+ cwd: D:\project\lionrider\lionrider-website
+ keywords: lionrider, PHP, JSON, status.md, account-sidebar, customer-dashboard, mobile-responsive, css, localhost, 8012
+---
+
+### Task 1: Persistent project handoff
+
+task: document Lionrider website architecture, roadmap, and database boundaries for future work
+task_group: project-context-and-handoff
+task_outcome: success
+
+Preference signals:
+- The user asked the AI to “take highly note” of the planned website overhaul and save it as a cache/status guide -> maintain durable context in `lionrider-website/status.md` for future updates.
+- Current code and latest owner direction take precedence over historical status entries -> inspect live files before making changes.
+
+Reusable knowledge:
+- Website is a PHP front-controller storefront using local JSON fixtures, not a verified Supabase runtime. Keep website DUMMY (`fcmoto`), workspace REAL database docs, and Admin `lionrider` schema/mirror data separate.
+- Main ownership: `index.php`/`router.php` routes; `template/` pages; `lib/` shared shell/data; `css/` and `js/` interactions; product source in `data/product.json` and `data/category.json`.
+
+References:
+- `status.md`, `PROJECT_CONTEXT.md`, `BLUEPRINT.md`, `README.md`, `meta.md`
+
+### Task 2: Mobile account sidebar visibility
+
+task: hide account side menu on narrow mobile screens while preserving desktop/tablet navigation
+task_group: responsive-account-ui
+ task_outcome: success
+
+Preference signals:
+- User said: “if website is in mobile responsive view please hide the above sidemenu” -> default to hiding the account sidebar on mobile content pages, not merely compressing it.
+
+Reusable knowledge:
+- Implemented in `css/style.css` under `@media (max-width: 620px)`:
+  `.customer-dashboard .account-sidebar { display: none; }`
+- Tablet and desktop account navigation remain unchanged. Guest Orders/Wishlist layouts remain unchanged.
+- Default avatar is `assets/media/customer-avatar-default.png` (300×300, 143,309 bytes, transparent corners).
+
+Failures and how to do differently:
+- Signed-in account visual review could not be completed because the local browser session was signed out; future verification should sign in locally and inspect desktop/mobile account pages.
+
+References:
+- `css/style.css` around line 9311
+- `template/account-navigation.php`, `template/account.php`, `template/account-profile.php`, `template/orders.php`, `template/wishlist.php`
+- Verification: stylesheet HTTP 200, mobile hide rule detected, CSS braces `2614/2614`, PHP lint passed, `git diff --check` passed.
+
+## Thread `01a133e7-d37a-7312-a72b-4b6feafda2c3`
+updated_at: 2026-10-14T02:30:50+00:00
+cwd: \\?\D:\project\lionrider
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\13\rollout-2026-10-13T14-16-33-01a133e7-d37a-7312-a72b-4b6feafda2c3.jsonl
+rollout_summary_file: 2026-10-13T06-16-33-OhXB-lionrider_project_handoff_spareparts_localhost_test.md
+
+---
+description: Lion Rider PHP storefront handoff, Spare Parts finder availability filter, and verified localhost runtime
+ task: lionrider website handoff and localhost verification
+task_group: lionrider-website
+ task_outcome: success
+cwd: D:\project\lionrider\lionrider-website
+keywords: PHP, localhost-test, spareparts, Yamaha, Kawasaki, router.php, status.md, JSON catalog, availability filter, 8012
+---
+
+### Task 1: Project handoff snapshot
+
+task: map Lion Rider storefront and preserve durable future-agent context
+task_group: project handoff documentation
+task_outcome: success
+
+Preference signals:
+- The user explicitly asked the agent to understand the project deeply and save the knowledge in `status.md` for future updates -> maintain project-local handoff notes and update them after meaningful changes.
+- The user listed broad future changes but supplied no final redesign specification -> inspect current code/evidence first and do not invent page designs, filter semantics, or database migrations.
+
+Reusable knowledge:
+- Active website root is `D:\project\lionrider\lionrider-website`; it is a PHP storefront separate from `admin-panel-lionrider`.
+- `index.php` is the front controller; `router.php` handles clean routes; shared code is in `lib/`; templates are in `template/`; stylesheet is `css/style.css`; JS modules are in `js/`.
+- Storefront data is JSON-backed and has no Supabase connection. `data/product.json` contains 317 accessory records. Dummy database docs are provisional; workspace-root REAL database docs and Admin schema are separate boundaries.
+- Persistent handoff context is stored at `lionrider-website/status.md`.
+
+Failures and how to do differently:
+- Do not treat historical status entries or proposed database docs as current implementation truth; prefer current code/data and the user’s latest request.
+
+References:
+- `D:\project\lionrider\lionrider-website\status.md`
+- `D:\project\lionrider\PROJECT_CONTEXT.md`
+- `D:\project\lionrider\lionrider-website\BLUEPRINT.md`
+
+### Task 2: Spare Parts finder filter
+
+task: add availability-aware model filtering for Yamaha/Kawasaki Spare Parts pages
+task_group: spareparts finder UI and catalog matching
+task_outcome: success
+
+Reusable knowledge:
+- Main files: `template/spareparts-home.php`, `js/spareparts-finder.js`, `css/style.css`.
+- The default checkbox is “Only show models with available Spare Parts.” It matches normalized make/model values against `spareparts` products, excludes sold-out products, and excludes products whose real variations are all unavailable. Variationless non-sold-out products qualify under the current contract.
+- Current fixture contains zero `spareparts` products. Therefore default counts are 0; disabling the checkbox exposes source-reference models: Yamaha 528, Kawasaki 174.
+- Mobile finder styles begin at `max-width: 760px`, matching the collapsed header; search and A–Z controls stack and the alphabet scrolls horizontally.
+
+Failures and how to do differently:
+- Direct model-name comparison initially failed to map inventory; normalize both product and source model names.
+- A multi-operation patch against the same file failed; use one patch operation per file.
+
+References:
+- Verification commands: `php -l template/spareparts-home.php`; `node --check js/spareparts-finder.js`; `git diff --check`.
+- Browser evidence: Yamaha default 0, unchecked 528, Clear filters restores 0; Kawasaki unchecked 174.
+
+### Task 3: Localhost test
+
+task: start and HTTP-verify Lion Rider website locally
+task_group: localhost runtime verification
+ task_outcome: success
+
+Reusable knowledge:
+- If port 8012 is not listening, start from `D:\project\lionrider\lionrider-website` with:
+  `php -S 127.0.0.1:8012 router.php`
+- Verified URLs all returned HTTP 200 with no PHP error text:
+  `http://127.0.0.1:8012/`
+  `http://127.0.0.1:8012/spareparts/yamaha`
+  `http://127.0.0.1:8012/spareparts/kawasaki`
+- The server was started detached/background and the Admin panel was intentionally not started.
+
+References:
+- PHP executable was available at `C:\Program Files\PHP\php-8.1.18-Win32-vs16-x64\php.exe`.
+
+## Thread `01a134c2-8b36-70d0-b2ec-ded39973bf8f`
+updated_at: 2026-10-14T02:30:41+00:00
+cwd: \\?\D:\project\xhs-tiktok-inbox
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\13\rollout-2026-10-13T18-15-33-01a134c2-8b36-70d0-b2ec-ded39973bf8f.jsonl
+rollout_summary_file: 2026-10-13T10-15-27-ekZ9-telegram_date_divider_sequence_and_sticky_history.md
+
+---
+description: Telegram/chat preview date history was corrected so divider dates define message segments and prevent inferred timestamps from creating an extra date before the oldest divider; build passed, browser visual QA incomplete
+task: stabilize Telegram chat date divider sequence and sticky history label
+task_group: D:\project\xhs-tiktok-inbox
+task_outcome: partial
+cwd: D:\project\xhs-tiktok-inbox
+keywords: PhonePreview.vue, historyDates, firstNoticeHistoryDate, Telegram, date divider, chat-body, scroll, Vite build, git diff --check
+---
+
+### Task 1: Telegram date divider sequence
+
+task: make notice/divider dates authoritative for the Telegram chat timeline
+task_group: Vue chat preview timeline
+task_outcome: partial
+
+Preference signals:
+- The user clarified that the visible date should stay centered beneath the header while scrolling and should not disappear upward; future similar work should treat the screenshot behavior as an acceptance criterion.
+- The user specified the intended chronological sequence as October 8 → October 12 → October 14; future implementations should use explicit divider dates as section boundaries instead of deriving dates independently from each message timestamp.
+
+Reusable knowledge:
+- `src/components/PhonePreview.vue` contains `historyDates`, `defaultHistoryDate`, notice-date parsing, and Telegram scroll behavior.
+- The implemented fix adds `firstNoticeHistoryDate` from the first notice and makes pre-divider/oldest-group messages use that date, preventing a timestamp-derived October 14 from appearing before the October 8 section.
+- Production build passed with `npm.cmd run build -- --outDir C:\Users\user\AppData\Local\Temp\xhs-tiktok-inbox-telegram-ordered-dates-build`; `git diff --check` passed.
+
+Failures and how to do differently:
+- Browser scrolling/visual screenshot QA was not run; do not claim the pinned date is visually correct until testing the Telegram tab with upward scrolling.
+- A complex PowerShell `rg` command failed due to an unterminated quote. Prefer smaller, separately quoted PowerShell commands.
+
+References:
+- File: `D:\project\xhs-tiktok-inbox\src\components\PhonePreview.vue`
+- Symbol: `firstNoticeHistoryDate`
+- Symbol: `historyDates`
+- Final status wording: “The message dates now follow the timeline October 8 → October 12 → October 14, so scrolling upward should show 14 → 12 → 8. Build passed; browser scrolling was not visually tested.”
+
+## Thread `01a137f4-0654-7372-abcd-b822f7242dda`
+updated_at: 2026-10-14T01:26:34+00:00
+cwd: \\?\D:\project\xhs-tiktok-inbox
+rollout_path: C:\Users\user\.codex\sessions\2026\10\14\rollout-2026-10-14T09-08-21-01a137f4-0654-7372-abcd-b822f7242dda.jsonl
+rollout_summary_file: 2026-10-14T01-08-21-BDke-repair_chrome_side_by_side_startup_error.md
+
+---
+description: Repaired a damaged system-wide Chrome installation causing Windows SideBySide startup failures; both pinned shortcuts now launch successfully.
+task: diagnose and repair Chrome Windows SideBySide startup error
+task_group: windows-browser-repair
+task_outcome: success
+cwd: D:\project\xhs-tiktok-inbox
+keywords: Chrome, SideBySide, Event ID 33, missing dependent assembly, MSI, msiexec, exit code 12, Google LLC, Windows
+---
+
+### Task 1: Repair Chrome startup
+
+task: Diagnose and fix Chrome unable to open research pages
+ task_group: Windows browser repair
+task_outcome: success
+
+Reusable knowledge:
+- Both pinned shortcuts targeted the same `C:\Program Files\Google\Chrome\Application\chrome.exe`, proving the issue was global to the Chrome installation.
+- SideBySide Event ID 33 reported missing assembly `154.0.8037.98`; the existing executable was version `154.0.8037.98` while a newer version folder existed.
+- The bundled setup repair returned exit code `12` and left the executable unchanged. Use the complete official Chrome Enterprise MSI instead of patching individual binaries.
+- The MSI was validated at `169848832` bytes with `AuthenticodeSignature: Valid` and signer `Google LLC`, then installed elevated with `msiexec` and exit code `0`.
+- Post-repair Chrome reported version `155.0.8059.80`; direct launch and both pinned shortcuts succeeded, with no new Chrome SideBySide errors.
+
+Failures and how to do differently:
+- The local versioned setup package was incomplete/unusable; repeated non-elevated repair attempts cannot fix a system-level install.
+- Download/install validation should include file size, publisher signature, installer exit code, executable version, process liveness, and fresh SideBySide event check.
+
+References:
+- Error: `Activation context generation failed ... Dependent Assembly 154.0.8037.98 ... could not be found.`
+- Official MSI URL: `https://dl.google.com/dl/chrome/install/googlechromestandaloneenterprise64.msi`
+- Install pattern: `msiexec.exe /i <msi> /qn /norestart /l*v <log>` with elevation.
+- Verification executable: `C:\Program Files\Google\Chrome\Application\chrome.exe`
+
+## Thread `01a1382e-f2e0-7553-aae2-50891763274d`
+updated_at: 2026-10-14T09:44:38+00:00
+cwd: \\?\D:\project\lionrider
+rollout_path: C:\Users\user\.codex\sessions\2026\10\14\rollout-2026-10-14T10-12-43-01a1382e-f2e0-7553-aae2-50891763274d.jsonl
+rollout_summary_file: 2026-10-14T02-12-43-ymqp-lionrider_markdown_orientation_partial.md
+
+---
+description: Partial Lion Rider project Markdown orientation; all-Markdown read request was not completed, but core project boundaries and documentation inconsistencies were identified
+task: read and understand all project Markdown files
+ task_group: project-orientation-and-documentation
+ task_outcome: partial
+cwd: D:\project\lionrider
+keywords: lionrider, project-context, markdown-inventory, php-json-storefront, vben-admin, supabase, documentation-drift, spareparts
+---
+
+### Task 1: Read and understand all project Markdown
+
+task: inventory/read all project `.md` files and understand project contracts
+task_group: project-orientation-and-documentation
+task_outcome: partial
+
+Preference signals:
+- The user asked to understand “my project and all .md” -> treat completeness literally; do not report the task complete after reading only front-door documents.
+
+Reusable knowledge:
+- Workspace: `D:\project\lionrider`. Website: `lionrider-website/` (PHP/JSON, no Supabase connection). Admin: `admin-panel-lionrider/apps/web-antd/` using shared Docker-local Supabase schema `lionrider`.
+- Markdown inventory found 151 files; the workspace root is not a Git repository. `lionrider-website` is a Git repository with 33 pre-existing modified/untracked paths. No files were changed during the rollout.
+- Current source evidence: `lionrider-website/data/product.json` contains 341 products: 317 `accessories` and 24 `spareparts` demo products. `data/spareparts-models.json` reports 1,132 reference models and 8 demo model options across six makes. Demo prices/compatibility are illustrative, not verified inventory or fitment.
+- `knowledge.md` identifies the unrelated `fc-moto` project and conflicts with Lion Rider truth; exclude it from Lion Rider project understanding.
+- Documentation drift exists: `README.md`/`PROJECT_CONTEXT.md` and older status entries say 317 products, while current fixture and newest status say 341. Prefer current source files and newest dated status, and flag stale documentation before relying on it.
+
+Failures and how to do differently:
+- The rollout only partially read the 151 files; bundled Vben docs/translations and the complete historical status log remain unread. Continue the exhaustive read or explicitly narrow scope before claiming completion.
+- Do not modify the existing dirty website repository without first preserving and inspecting its current changes.
+
+References:
+- `PROJECT_CONTEXT.md`
+- `lionrider-website/README.md`
+- `lionrider-website/BLUEPRINT.md`
+- `lionrider-website/status.md`
+- `admin-panel-lionrider/AGENTS.md`
+- `admin-panel-lionrider/CLAUDE.md`
+- `admin-panel-lionrider/SUPABASE.md`
+- `admin-panel-lionrider/LIONRIDER_SETUP_PLAN.md`
+- Evidence commands: `rg --files -g '*.md' -g '**/*.md' -g '!node_modules' -g '!dist' -g '!build'`; `git -C lionrider-website status --short`; PowerShell `ConvertFrom-Json` checks of `data/product.json` and `data/spareparts-models.json`.
+
+## Thread `01a13d1a-7276-78d0-8c19-27b3dca280ee`
+updated_at: 2026-10-15T01:49:31+00:00
+cwd: \\?\D:\project\xhs-tiktok-inbox
+rollout_path: C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T09-08-26-01a13d1a-7276-78d0-8c19-27b3dca280ee.jsonl
+rollout_summary_file: 2026-10-15T01-08-25-vGYm-telegram_sticky_date_click_cycle.md
+
+---
+description: Oriented the XHS/TikTok inbox project from current source and added Telegram-only clickable sticky-date cycling; build passed but browser behavior was not verified
+task: understand-project-and-add-telegram-sticky-date-cycle
+task_group: xhs-tiktok-inbox
+ task_outcome: partial
+cwd: D:\project\xhs-tiktok-inbox
+keywords: Vue, Vite, PhonePreview.vue, UnifiedSettings.vue, PROJECT_CONTEXT.md, Telegram, stickyHistoryDate, historyDates, cycleStickyHistoryDate, npm.cmd run build, git diff --check
+---
+
+### Task 1: Project orientation
+
+task: inspect current Vue project and Markdown handoff
+ task_group: xhs-tiktok-inbox project understanding
+ task_outcome: success
+
+Reusable knowledge:
+- The app is a Vue 3 + Vite JavaScript mock chat generator for fictional TikTok/XHS/Telegram previews, not a real inbox or backend. `App.vue` owns shared state; `UnifiedSettings.vue` edits it; `PhonePreview.vue` renders previews.
+- `PROJECT_CONTEXT.md` is the only root Markdown handoff found, but it was last reviewed 2026-09-14 and was stale in places. Always reconcile it with current source before relying on it.
+- Git was clean and non-sparse. No project GitNexus index was available; direct source inspection was used.
+
+References:
+- `D:\project\xhs-tiktok-inbox\PROJECT_CONTEXT.md`
+- `src/App.vue`
+- `src/components/UnifiedSettings.vue`
+- `src/components/PhonePreview.vue`
+- `src/assets/css/style.css`
+- `src/utils/telegramImageScale.js`
+
+### Task 2: Telegram sticky date click cycling
+
+task: make Telegram sticky history date clickable and cycle distinct dates
+ task_group: xhs-tiktok-inbox Telegram preview
+ task_outcome: partial
+
+Preference signals:
+- The user scoped the update to Telegram/date behavior; preserve platform isolation in future changes.
+- Preserve existing scroll-based sticky-date updates while adding interaction rather than replacing the scroll logic.
+
+Reusable knowledge:
+- `PhonePreview.vue` already computes `historyDates`, `defaultHistoryDate`, and `stickyHistoryDate` and updates the sticky date from Telegram scroll position.
+- The implemented interaction converts the sticky date element to a button and cycles unique `historyDates` newest-to-oldest, wrapping around via `cycleStickyHistoryDate()`.
+- CSS keeps the date sticky and enables pointer interaction with `.chat-body.telegram > button.sticky-history-date`.
+
+Failures and how to do differently:
+- `npm.cmd run build` and `git diff --check` passed, but browser click behavior was not tested; verify the Telegram preview manually before declaring complete.
+- The build modified generated `dist/index.html` bundle references; inspect generated artifacts before committing.
+
+References:
+- Modified: `src/components/PhonePreview.vue`
+- Modified: `src/assets/css/style.css`
+- Symbols: `historyDateOptions`, `cycleStickyHistoryDate`, `stickyHistoryDate`
+- Commands: `npm.cmd run build`; `git diff --check`
+- Validation result: Vite production build passed with only the existing CJS API deprecation warning.
+
+## Thread `01a13d55-251d-7450-85cd-b5903ba42304`
+updated_at: 2026-10-15T04:28:02+00:00
+cwd: \\?\D:\project\xhs-tiktok-inbox
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T10-12-33-01a13d55-251d-7450-85cd-b5903ba42304.jsonl
+rollout_summary_file: 2026-10-15T02-12-32-It36-fix_time_only_telegram_date_markers.md
+
+---
+description: Fixed Telegram time-only date markers so they use the current local date instead of the configured phone date; production build passed.
+task: fix time-only Telegram notice date resolution
+task_group: xhs-tiktok-inbox frontend
+task_outcome: success
+cwd: D:\project\xhs-tiktok-inbox
+keywords: PhonePreview.vue, Telegram, date marker, time-only, getNoticeHistoryTimestamp, Vite, npm run build
+---
+
+### Task 1: Fix time-only Telegram dates
+
+task: make `HH:MM` Telegram notices display today’s date
+task_group: frontend date formatting
+task_outcome: success
+
+Reusable knowledge:
+- In `src/components/PhonePreview.vue`, `getNoticeHistoryTimestamp` handles explicit year/month/day, numeric month/day, named dates, and time-only values.
+- Time-only values matching `/^\\d{1,2}:\\d{2}$/` now use the current local date via `new Date(today.getFullYear(), today.getMonth(), today.getDate())`.
+- Explicit dates remain unchanged and continue using their specified date.
+
+Failures and how to do differently:
+- The rollout’s implementation addressed time-only date inheritance rather than the broader image-described interaction request; future agents should confirm the exact requested UI behavior before editing.
+
+References:
+- File: `src/components/PhonePreview.vue`
+- Validation command: `npm run build` — completed with exit code 0.
+- Validation command: `git diff --check` — completed without reported errors.
+- Implemented comment: `// A time-only Telegram date marker represents the current real-world date.`
+
+## Thread `01a13d76-d6b9-7812-aae5-4818b0a53cde`
+updated_at: 2026-10-15T08:37:27+00:00
+cwd: \\?\D:\project\VIPBillion
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T10-49-20-01a13d76-d6b9-7812-aae5-4818b0a53cde.jsonl
+rollout_summary_file: 2026-10-15T02-49-20-z2H4-vipbillion_home_hero_h1_and_booking_cta.md
+
+---
+description: VIPBillion website hero H1 styling and booking CTA/pre-fill implementation completed with syntax/diff validation; browser verification remains undone
+ task: homepage hero H1 styling plus service-to-booking CTA and booking prefill
+ task_group: vipbillion-website
+ task_outcome: success
+ cwd: D:\project\VIPBillion\website-vipbillion
+ keywords: VIPBillion, PHP, homepage hero, H1, var(--main-color), booking, CTA, service_interest, Supabase, PHP session, bilingual, php -l
+---
+
+### Task 1: Homepage hero H1 styling
+
+task: Update the homepage main banner H1 styling.
+task_group: vipbillion-website-ui
+task_outcome: success
+
+Preference signals:
+- The user asked to “increase text size 4-5px”, add “font weight: 500”, and change the color to the theme green -> preserve narrowly scoped visual edits and use the existing theme token rather than inventing a color.
+
+Reusable knowledge:
+- Homepage hero markup is in `template/home.php` and uses `.home-hero-section .hero-section-title h1` with an anchor containing the slide title.
+- Final CSS uses `color: var(--main-color)`, `font-size: 18px`, and `font-weight: 500` in `css/style.css`.
+
+Failures and how to do differently:
+- Visual browser verification was not run; future agents should verify the rendered homepage in a test environment that does not increment visitor counts.
+
+References:
+- `css/style.css` rule around line 1938.
+- `template/home.php` hero H1 around line 320+.
+
+### Task 2: Booking CTA and service preselection
+
+task: Make quote CTAs lead to booking and carry the selected service.
+task_group: vipbillion-booking-flow
+task_outcome: success
+
+Preference signals:
+- The user accepted: “Carry the chosen service into the form; user selects the booking route when no unique match” -> do not force an ambiguous service-to-route mapping.
+
+Reusable knowledge:
+- Header/home/service CTAs use bilingual `nav.get_quote` and route to `/booking`; service cards append `?service=<slug>`.
+- Booking routes and services come from active Supabase models. A unique normalized match preselects a route; ambiguous matches leave route selection for the user.
+- Vehicle selection defaults to the lowest positive-priced option while excluding consultation/zero-price and Bus options.
+
+References:
+- `template/home.php`, `template/services.php`, `lib/header.php`.
+- `template/booking.php` functions `preselectServiceRoute()` and `fillVehicleOptions()`.
+- Translation keys: `nav.get_quote`, `booking.service_interest`, `booking.select_service_optional`, `contacts.whatsapp_label` in `i18n/en.json` and `i18n/cn.json`.
+
+### Task 3: Booking contact prefill
+
+task: Remember booking contact fields for 30 days without putting them in browser cookies.
+task_group: vipbillion-booking-flow
+ task_outcome: success
+
+Preference signals:
+- The user selected “30 天（推荐）” for session retention -> use a 30-day retention period for the isolated booking prefill.
+
+Reusable knowledge:
+- `lib/booking-prefill-session.php` stores only customer name, phone, departure address, and arrival address in a separate `VBBookingPrefill` PHP session with a 30-day TTL, HttpOnly/Lax cookie settings, and server-side storage.
+- `api/v1/bookings/create.php` loads the helper; `api/Controllers/BookingController.php` saves prefill before attempting insertion, so an invalid/failed booking attempt can still refresh the remembered fields.
+- Values are escaped when rendered into the booking form.
+
+Failures and how to do differently:
+- Runtime/browser behavior was not verified because normal page requests trigger visitor tracking. Use a test harness that bypasses or mocks visitor tracking before claiming end-to-end success.
+
+References:
+- `lib/booking-prefill-session.php`.
+- `api/Controllers/BookingController.php` and `api/v1/bookings/create.php`.
+- Validation: `php -l` on edited PHP files, JSON parse checks, and `git diff --check` all passed.
+
+## Thread `01a13eb8-c451-7ba1-8551-d173ae1acf74`
+updated_at: 2026-10-15T09:58:21+00:00
+cwd: \\?\D:\project\VIPBillion
+rollout_path: C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T16-40-58-01a13eb8-c451-7ba1-8551-d173ae1acf74.jsonl
+rollout_summary_file: 2026-10-15T08-40-58-GbCk-vipbillion_header_cta_request_missed.md
+
+---
+description: The user requested a narrowly scoped header CTA change, but the rollout incorrectly changed unrelated hero-title styling; preserve the exact requested scope and verify booking navigation.
+task: update header “View Our Services” CTA to “Get a Quote” linking to /booking
+task_group: VIPBillion website UI
+ task_outcome: fail
+cwd: D:\project\VIPBillion\website-vipbillion
+keywords: VIPBillion, header, View Our Services, Get a Quote, booking, PHP, PowerShell, index.php, lib/header.php
+---
+
+### Task 1: Header CTA update
+
+task: Change header button text from “View Our Services” to “Get a Quote” and link it to `/booking`.
+task_group: VIPBillion public website
+ task_outcome: fail
+
+Preference signals:
+- The user said: “ai read and understand my product first include .md then update below” and explicitly requested `View Our Services` → `Get a Quote`, navigating to `/booking` -> future agents should inspect project Markdown/source first, then implement exactly this scoped change.
+- The attached screenshot must not override the explicit text request; distinguish document/image content from the user’s actual requested edit.
+
+Reusable knowledge:
+- Worktree: `D:\project\VIPBillion\website-vipbillion`.
+- `/booking` is routed in `index.php` to `/template/booking.php`.
+- Shared header implementation should be located before editing, likely in `lib/header.php` or an included header partial; search exact displayed wording first.
+- Pre-existing modifications existed in `i18n/cn.json`, `i18n/en.json`, `js/scripts.js`, and `template/contacts.php`; inspect status and avoid overwriting them.
+
+Failures and how to do differently:
+- The agent changed unrelated hero H1 CSS and removed inline styles in service/news detail templates instead of updating the requested header CTA. Future agents must stop and re-anchor on the user’s exact request when screenshot interpretation conflicts with it.
+- No requested CTA change was verified. Search for the exact label, patch only its source, verify the generated href resolves to `/booking`, run PHP lint/diff checks, and perform a local request or browser click test if available.
+
+References:
+- Exact user wording: `View Our Services` → `Get a Quote` and navigate to `/booking`.
+- Route: `get(route: '/booking', path_to_include: '/template/booking.php');`
+- Unrelated files changed by the failed rollout: `css/style.css`, `template/services-single.php`, `template/news-single.php`.
+

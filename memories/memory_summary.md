@@ -2,73 +2,96 @@ v1
 
 ## User Profile
 
-The user works across Windows-hosted web projects, local Supabase, and their `.codex` setup. They expect agents to inspect the real project/runtime before acting, make narrow reversible changes, preserve bilingual parity and existing content where applicable, and prove results with targeted checks rather than completion claims. They often ask agents to take action directly, but value clear limits when an outcome is interrupted, unverified, or cannot be guaranteed.
+Works across several Windows-based website, Vue/Vite, PHP, Vben/Supabase, and Codex-routing projects. Values exact scope, evidence from current source, bilingual parity where applicable, and concrete verification. Frequently asks agents to understand project Markdown before edits, and expects the requested visible flow—not a nearby interpretation—to be implemented.
 
 ## User preferences
 
-- Diagnose the actual cause first—especially for missing files, local services, or system errors—and avoid generic resets or destructive recovery.
-- For `localhost test`, infer the project runtime, start only what is needed, and HTTP-check real routes; a running process is not success.
-- Preserve scope: for narrow requests, do not alter unrelated content, routes, styling, configuration, or contact behavior.
-- On bilingual Zeta work, update English/CN in lockstep, preserve structural parity, and validate paired data/visible output.
-- Use current project evidence for identity, metadata, SEO scope, and manifest values; use `INSUFFICIENT DATA` rather than carry forward historical names or claims.
-- Report verified state separately from future guarantees; do not call interrupted or untested work complete.
+- In full-access sessions, continue obvious safe work without repetitive confirmation; pause for meaningful decisions, hidden risk, destructive action, or ambiguity. [ad-hoc note]
+- Lead options with a clear recommendation, then brief numbered alternatives. [ad-hoc note]
+- “Copy and paste”, “duplicate”, “clone”, or “same modules” means clone the exact full module shell first, then edit requested internals. [ad-hoc note]
+- For “read and understand my project/all .md”, be genuinely comprehensive or state the remaining boundary; reconcile documentation with current source.
+- Follow explicit text/scope over a screenshot inference; keep edits surgical and preserve unrelated dirty changes.
+- Use visible/browser interaction checks as a separate gate from build, lint, HTTP, or diff success.
+- Protect local Docker/Supabase state: do not change stack/config/schema/routing/startup state without explicit same-turn permission. [ad-hoc note]
 
 ## General Tips
 
-- On Windows/PowerShell, prefer simple individually quoted commands; run source checks from the real app root. `Invoke-WebRequest -UseBasicParsing` avoids the PowerShell 5.1 parsing warning.
-- Before a destructive or recovery action, capture current Git/state evidence. Sparse checkout can hide tracked files; compare `core.sparseCheckout`, `git ls-files`, and filesystem presence first.
-- Keep secrets redacted. For local Supabase, preserve originals/backups, use transactional restore paths, and verify both data and API exposure.
-- Browser visual QA, production Apache/Cloudflare behavior, and local PHP static-server checks are distinct verification surfaces.
+- Route from the smallest relevant project entrypoint; current files/tests/logs/schema outrank memory.
+- On Windows, use simple separately quoted searches and short `Start-Process` invocations; avoid brittle compound PowerShell.
+- For local web tests, prove each requested URL belongs to the intended project; an open port or root 200 is insufficient.
+- Never retain secrets in memory. Use project-owned config and report presence/shape only.
+- AI raster assets: measure target first; max edge 1600px, JPG opaque / PNG real alpha; store in project assets, never `.codex`. [ad-hoc note]
 
 ## What's in Memory
+
+### D:\project\VIPBillion\website-vipbillion
+
+#### 2026-10-15
+
+- Header CTA scope and booking flow: View Our Services, Get a Quote, /booking, booking-prefill-session.php
+  - desc: Exact public PHP header/CTA routing and 30-day booking prefill guidance.
+  - learnings: A failed rollout changed hero CSS instead of the explicit header request; search the exact label and test navigation first.
+
+### D:\project\xhs-tiktok-inbox
+
+#### 2026-10-15
+
+- Telegram preview dates: PhonePreview.vue, stickyHistoryDate, cycleStickyHistoryDate, getNoticeHistoryTimestamp
+  - desc: Telegram-only sticky/divider/time-only date behavior in the Vue mock-chat preview.
+  - learnings: Build/diff passed; manual click and scrolling acceptance checks remain important.
+
+### D:\project\lionrider
+
+#### 2026-10-14
+
+- Lion Rider project orientation: lionrider-website, product.json, spareparts-models.json, documentation drift
+  - desc: Separate PHP/JSON storefront from Vben/Supabase admin; exhaustive Markdown orientation is incomplete.
+  - learnings: Source says 341 products; exclude stale FC-Moto `knowledge.md`.
+
+### D:\backup\website-zetasoftware
+
+#### 2026-10-12
+
+- Bilingual static site: cn/, update-site-navigation, php -S, data-src, images/mobile
+  - desc: EN/CN parity, generator coupling, static performance and safe image migration.
+  - learnings: Never delete the specified WebPs before complete reference/JPG/route validation.
 
 ### C:\Users\user\.codex
 
 #### 2026-10-08
 
-- Sparse-checkout recovery and PowerShell alert: sparse-checkout, git sparse-checkout disable, TRACKED_ABSENT, Invoke-WebRequest -UseBasicParsing
-  - desc: Search first when Codex memories/skills appear missing, Git staging is odd, or a PowerShell web-request warning appears.
-  - learnings: Verify omission versus deletion before recovery; sparse checkout was disabled with a pre-commit regression guard, and the alert is not a Codex approval.
-
-#### 2026-09-04
-
-- Codex boot and localhost root boundary: 00_PULSE.md, [🟢] Agent is Ready.., localhost-test, project root
-  - desc: Exact hydration contract plus the stop rule for localhost tests accidentally started from `.codex`.
-  - learnings: Hydrate once; locate the app root and HTTP-check URLs before calling a local test successful.
-
-### D:\backup\website-zetasoftware
-
-#### 2026-09-07
-
-- Zeta generators, content formatting, cache, and CSS: generate-standard-internal-management-pages.js, update-site-navigation.js, format-detail-content.js, style.min.css
-  - desc: Bilingual static-site project map, SIM navigation repair, natural description grouping, cache guidance, and incomplete CSS-minification verification.
-  - learnings: Regeneration must call the shared navigation updater; use trace evidence before main-thread code changes; final CSS served/idempotence checks remain needed.
-
-- Zeta static localhost, Lighthouse, and image loading: php -S 127.0.0.1:8080, Lighthouse, WebP, data-src, images/mobile
-  - desc: Static server contract, verified performance work, and the paused JPG/WebP/lazy-loader follow-up.
-  - learnings: Do not delete WebPs or claim JPG migration/true viewport lazy loading until references, assets, routes, and IntersectionObserver behavior are verified.
+- Codex routing and Git recovery: 00_PULSE.md, sparse-checkout, memories/.git, UseBasicParsing
+  - desc: Boot sentinel, sparse-checkout diagnosis, root Git boundary and localhost-root mismatch.
+  - learnings: Missing tracked files can be unmaterialized sparse paths, not deletion.
 
 ### Older Memory Topics
 
-#### C:\Users\user\Desktop\used-car
-
-- Used-Car architecture, schema boundary, and saved-loan cards: PROJECT_CONTEXT.md, _archived migrations, development.localhost, Favorites.vue, MyLoans.vue
-  - desc: Use for `cwd=C:\Users\user\Desktop\used-car`; active client is `template/`, archived SQL is not authoritative, and local build needs `development.localhost`.
-
-- Chrome SideBySide repair: new_chrome.exe, Dependent Assembly, 151.0.7922.175
-  - desc: Machine-specific incomplete Chrome-update repair; inspect event/version evidence before elevated launcher replacement.
-
 #### C:\Users\user\Documents\supabase-project-backup-restore
 
-- Huwa2 restore and local PostgREST exposure: auth.identities, identities_user_id_fkey, PGRST_DB_SCHEMAS, [api].schemas
-  - desc: Validate backup foreign keys, preserve originals, atomically restore, then configure the CLI-managed local Supabase API.
+- Huwa2 restore/PostgREST: auth.identities, atomic restore, PGRST_DB_SCHEMAS, config.toml
+  - desc: Repair orphan identity parents and expose a CLI-managed schema; cwd=C:\Users\user\Documents\supabase-project-backup-restore.
 
-#### D:\backup\website-zetasoftware
+#### C:\Users\user\Desktop\used-car\template
 
-- Zeta FAQ, homepage blogs, workflow, and pricing parity: faq.json, home-blogs.js, pricing-section, Orbitron
-  - desc: Earlier bilingual content/design changes with exact data, layout, and font-loading contracts.
+- Used-Car audit/local mode: PROJECT_CONTEXT.md, archived migrations, development.localhost, Favorites.vue
+  - desc: Vue client schema boundary and safe local runtime verification; cwd=C:\Users\user\Desktop\used-car\template.
 
 #### C:\Users\user\Desktop\ai comment
 
-- Evidence-bound metadata and site.webmanifest: (AI) metaTitle.txt, INSUFFICIENT DATA, site.webmanifest, Open Graph
-  - desc: Reusable metadata rules: derive active project identity/scope from evidence and do not copy historical examples.
+- Metadata identity: metaTitle.txt, site.webmanifest, INSUFFICIENT DATA
+  - desc: Evidence-derived SEO/manifest identity and exact-file verification; cwd=C:\Users\user\Desktop\ai comment.
+
+#### Windows system scope
+
+- Chrome SideBySide repair: Dependent Assembly, Chrome Enterprise MSI, msiexec, AuthenticodeSignature
+  - desc: Evidence-first recovery of global Chrome install failures.
+
+#### D:\project\VIPBillion
+
+- VIPBillion admin/data conventions: isDelete, checkSlugExists, FIUU, additive news import
+  - desc: Vben/Supabase soft-delete, slug, attachment, payment and batch-import rules. [ad-hoc note]
+
+#### Cross-project
+
+- Replica and knowledge routing: Hierarchical Replica Chunking, clone-first, one source of truth
+  - desc: User-approved collaboration and high-fidelity design conventions. [ad-hoc note]
