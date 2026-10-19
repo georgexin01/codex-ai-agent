@@ -1646,38 +1646,331 @@ References:
 - Unrelated files changed by the failed rollout: `css/style.css`, `template/services-single.php`, `template/news-single.php`.
 
 ## Thread `01a14259-1f6b-7bd1-bd04-e127b476e7a8`
-updated_at: 2026-10-16T01:38:54+00:00
+updated_at: 2026-10-19T02:11:19+00:00
 cwd: \\?\C:\Users\user\.codex
-rollout_path: C:\Users\user\.codex\sessions\2026\10\16\rollout-2026-10-16T09-34-59-01a14259-1f6b-7bd1-bd04-e127b476e7a8.jsonl
-rollout_summary_file: 2026-10-16T01-34-59-TSQM-resolve_protected_codex_path_commit_blocker.md
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\16\rollout-2026-10-16T09-34-59-01a14259-1f6b-7bd1-bd04-e127b476e7a8.jsonl
+rollout_summary_file: 2026-10-16T01-34-59-TSQM-resolve_protected_codex_staged_deletion.md
 
----
-description: Diagnosed and fixed a blocked commit caused by a staged deletion of a protected Codex memory file; restored the file and verified the pre-commit hook passes
-task: diagnose-and-clear-protected-path-commit-blocker
-task_group: codex-git-workflow
+description: Diagnosed and fixed a blocked Codex repository commit caused by a staged deletion under protected memories paths; restored the file and verified the pre-commit hook passed.
+task: diagnose-and-recover-protected-staged-deletion
+task_group: codex-git-commit-recovery
 task_outcome: success
 cwd: C:\Users\user\.codex
-keywords: git, pre-commit, protected-paths, staged-deletion, memories/phase2_workspace_diff.md, git-restore, codex-router
----
+keywords: git, pre-commit, protected-paths, staged-deletion, memories/phase2_workspace_diff.md, git-restore, sparse-checkout
 
-### Task 1: Restore protected memory file and unblock commit
+### Task 1: Restore protected staged deletion
 
-task: diagnose-and-clear-protected-path-commit-blocker
-task_group: codex-git-workflow
+task: explain-and-fix-blocked-git-commit
+task_group: codex-git-commit-recovery
 task_outcome: success
 
 Reusable knowledge:
-- The repository pre-commit hook rejects staged deletions under `memories/` and `skills/`.
+- `.git/hooks/pre-commit` blocks staged deletions under `memories/` and `skills/`, reporting: `Blocked commit: staged deletions under protected Codex paths:` and requiring recovery or explicit user approval.
 - `memories/phase2_workspace_diff.md` was staged as deleted, absent from the worktree, present in `HEAD` (279,364 bytes), and still referenced by `codex-router/codex-manifest.json` and `codex-router/codex-frontmatter-index.json`.
-- Restore the file with: `git restore --source=HEAD --staged --worktree -- memories/phase2_workspace_diff.md`
-- Validate with: `git hook run pre-commit`; this passed with exit code 0 after restoration.
+- Recovery command: `git restore --source=HEAD --staged --worktree -- memories/phase2_workspace_diff.md`.
+- After restoration, `git hook run pre-commit` exited successfully; other staged changes remained untouched.
 
 Failures and how to do differently:
-- Do not bypass the hook or delete the file blindly. Recover protected Codex files first, especially when routing indexes still reference them. Sparse-checkout was disabled, so sparse state was not the cause.
+- Do not bypass the hook or commit while the protected deletion is staged. First determine whether the file is absent, tracked in `HEAD`, and still routed. Restore it unless the user explicitly approves deletion.
+- Sparse checkout was checked and was disabled (`core.sparseCheckout=false`), so it was not the cause.
 
 References:
+- `git status --short -- memories/phase2_workspace_diff.md`
+- `git diff --cached --name-only --diff-filter=D -- memories/ skills/`
+- `git hook run pre-commit`
 - Exact blocker: `Blocked commit: staged deletions under protected Codex paths: memories/phase2_workspace_diff.md`
-- Hook logic: `git diff --cached --no-renames --name-only --diff-filter=D -- memories/ skills/`
-- Recovery command: `git restore --source=HEAD --staged --worktree -- memories/phase2_workspace_diff.md`
-- Final verification: no staged protected deletions; `git hook run pre-commit` succeeded; other staged changes remained untouched.
+
+## Thread `01a142e5-b9be-7dd2-b7a7-f6e0cc2311fe`
+updated_at: 2026-10-16T09:08:54+00:00
+cwd: \\?\D:\backup\zeta-aiseo
+rollout_path: C:\Users\user\.codex\sessions\2026\10\16\rollout-2026-10-16T12-08-34-01a142e5-b9be-7dd2-b7a7-f6e0cc2311fe.jsonl
+rollout_summary_file: 2026-10-16T04-08-33-Mk34-zeta_aiseo_project_orientation_cache_busting_v2301.md
+
+---
+description: Project orientation and successful cache-busting update for the Zeta Aiseo static site; requested five-article batch remained incomplete
+ task: zeta-aiseo cache-busting and news-workflow orientation
+task_group: static-site-maintenance
+task_outcome: partial
+cwd: D:\\backup\\zeta-aiseo
+keywords: aiseo-comparison.css, cache busting, v=2301, index.html, news.json, generate-news.js, validate-news.js, NEWS_WORKFLOW, image-generation
+---
+
+### Task 1: Project orientation and five-article preparation
+
+task: Read project Markdown and `.codex` skills, then create five related Aiseo news articles with image-generation guidance
+task_group: Aiseo news publishing
+ task_outcome: partial
+
+Preference signals:
+- The user asked to “read and understand my project” and to use the project Markdown plus `.codex` skills for five new articles and image guides -> future article runs should start with routed project truth and skills.
+
+Reusable knowledge:
+- `data/news.json` is the news source of truth. Use `node tools/generate-news.js`, then `node tools/validate-news.js`.
+- The site is Simplified Chinese, canonical origin `https://aiseo.zetasoftware.my`, with stable ASCII slugs, no public byline, `/news/` and `/news/{slug}/` routes, and local cover constraints of max 900×600 and strictly under 200,000 bytes.
+- At inspection: 45 published articles, one retained draft, and 47 sitemap URLs.
+
+Failures and how to do differently:
+- Five new articles were not created or verified in this rollout; do not report this task as complete.
+- GitNexus did not index the active checkout, so local docs/source were the reliable project evidence.
+
+References:
+- `PROJECT_CONTEXT.md`
+- `NEWS_WORKFLOW.md`
+- `NEWS_STATUS.md`
+- `data/news.json`
+- `tools/generate-news.js`
+- `tools/validate-news.js`
+
+### Task 2: Shared cache-busting version
+
+task: Add `?v=2301` to recently updated CSS/JS references
+task_group: static-site asset maintenance
+task_outcome: success
+
+Preference signals:
+- The user requested the same `?v=2301` on related CSS/JS and asked that future changes update the version directly -> keep one shared version value and a maintenance comment near the references.
+
+Reusable knowledge:
+- The homepage actually loads `assets/main.css`, `/assets/news.css`, `/assets/aiseo-comparison.css`, `assets/main.js`, and `assets/news-images.js`; there is no `style.css`.
+- `assets/aiseo-comparison.css` owns the pricing-table checkmark styles. Local rule: `.aiseo-setup-table__check svg path` uses `fill: none`, `stroke: currentColor`, and visible stroke width.
+- All five versioned local resources and the homepage returned HTTP 200; `git diff --check` passed.
+
+Failures and how to do differently:
+- Production still served unversioned CSS during read-only browser inspection, and its SVG checkmark computed as black fill/no stroke. Deploy both `index.html` and the CSS asset, then re-check live stylesheet URLs and computed styles.
+
+References:
+- `index.html` now contains `assets/main.css?v=2301`, `/assets/news.css?v=2301`, `/assets/aiseo-comparison.css?v=2301`, `assets/main.js?v=2301`, and `assets/news-images.js?v=2301`.
+- Maintenance comment added: increment the shared `v=` value whenever one of these assets changes.
+
+## Thread `01a1438d-4087-7df2-a212-e184982c6c0b`
+updated_at: 2026-10-16T08:24:48+00:00
+cwd: \\?\D:\project\mincorner
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\16\rollout-2026-10-16T15-11-33-01a1438d-4087-7df2-a212-e184982c6c0b.jsonl
+rollout_summary_file: 2026-10-16T07-11-32-MkqL-mincorner_pickup_date_window_security_validation.md
+
+---
+description: Min Corner pickup-date picker and order-finalization security were aligned to one Malaysia-time rule with visible failure alerts and post-cart revalidation.
+task: update pickup datepicker bounds, highlight selectable dates, and reject forged/stale dates during order submission
+task_group: mincorner-php-storefront-checkout
+ task_outcome: success
+cwd: D:\project\mincorner
+keywords: mincorner, cart.php, checkout.php, CartController.php, assets/js/app.js, bootstrap-datepicker, deliveryDate, pickup date, Monday, Malaysia timezone, Failed to order, placeOrderWithoutPayment
+---
+
+### Task 1: Pickup-date selection and secure submission
+
+task: Keep the customer pickup picker and all order-submit paths synchronized.
+task_group: Min Corner storefront checkout
+task_outcome: success
+
+Preference signals:
+- The user asked for the date rule to apply beyond `/cart.php` and specifically requested security validation when users submit dates that cannot be picked -> always validate on the server at cart creation and again at final order confirmation.
+- The user requested a visible alert reading effectively “Failed to order” with the reason -> return structured `title`/`messages` fields and use a modal alert for date-rule failures.
+- The user prefers subtle UI guidance: “some very light lightgray color” and later approximately “5px” gaps -> preserve light-gray eligible cells and 5px calendar spacing.
+
+Reusable knowledge:
+- The only customer date picker is `cart.php`’s `#datepicker`, initialized by shared `assets/js/app.js`; `checkout.php` only displays the stored date as disabled.
+- Admin pickers (`admin/sales-report.php`, admin order reporting) are unrelated and must not inherit pickup restrictions.
+- Canonical current rule implemented in both JavaScript and PHP: Malaysia today + 3 days through 20 calendar days inclusive (`start + 19`), with Monday always unavailable.
+- `cartPickupDateWindow()` centralizes the server window using `Asia/Kuala_Lumpur`; `cartPickupDateUnavailableReason()` centralizes Monday and range errors.
+- Cart submit rejects invalid dates with `title: 'Failed to order'`; `cart.php` displays `Swal.fire({ icon: 'error', title, text })` when `data.title` exists.
+- `placeOrderWithoutPayment` now selects `delivery_date` under lock and rechecks it immediately before stock decrement/order finalization, preventing stale pending orders from bypassing the current date window.
+
+Failures and how to do differently:
+- Initial searches included an incorrectly quoted PowerShell `rg` command and failed with `The string is missing the terminator`; rerun with simpler single-quoted patterns.
+- A first CSS patch failed because the actual existing style used `#eee` and `border-radius: 50px`, not the expected `#f4f4f4`/`0.25rem`; inspect current CSS before patching.
+- No browser verification was performed; future UI changes should visually test the calendar because CSS/date-cell rendering was only syntax/read-back checked.
+
+References:
+- `assets/js/app.js:100-123`: Malaysia-local start date, `+3` start offset, `+19` end offset, `daysOfWeekDisabled: [1]`, `beforeShowDay` class.
+- `assets/css/app.css:409-425`: `.pickup-date-available` light-gray fill, active-date styling, `border-spacing: 5px`.
+- `controller/CartController.php:17-45`: `cartPickupDateWindow()` and `cartPickupDateUnavailableReason()`.
+- `controller/CartController.php:347-372`: cart-submit validation and `Failed to order` response.
+- `controller/CartController.php:500-546`: final saved-date revalidation before order finalization.
+- `cart.php:585-600`: date rejection modal versus normal error toast.
+- `checkout.php:351-355`: finalization error modal uses `orderData.title` and reason text.
+- Verification commands: `php -l controller\CartController.php`, `php -l checkout.php`, `node --check assets\js\app.js`, `git diff --check -- controller/CartController.php checkout.php assets/js/app.js`.
+
+## Thread `01a143c1-5061-73f0-9004-73e8a602dbd3`
+updated_at: 2026-10-16T09:05:43+00:00
+cwd: \\?\D:\backup\zeta-aiseo
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\16\rollout-2026-10-16T16-53-58-01a143c1-5061-73f0-9004-73e8a602dbd3_01a143eb-0564-7c82-a593-25fe88223946.jsonl
+rollout_summary_file: 2026-10-16T08-08-24-ur6z-bilingual_ai_seo_preview_page_navigation.md
+
+---
+description: Added and locally verified bilingual AI SEO preview pages for Zeta Software, sourced from the Aiseo project, with About navigation, language routing, sitemap metadata, concise pricing, and responsive verification.
+task: build bilingual AI SEO preview page and integrate site navigation
+ task_group: website-zetasoftware-ai-seo
+ task_outcome: success
+cwd: D:\backup\website-zetasoftware
+keywords: ai-seo, aiseo, bilingual, navigation, sitemap, hreflang, canonical, generate-ai-seo-pages.js, update-site-navigation.js, languageSwitchers, mobile-menu
+---
+
+### Task 1: Bilingual AI SEO preview pages
+
+task: generate English and Chinese About/AI SEO pages from Aiseo content
+task_group: website-zetasoftware-ai-seo
+task_outcome: success
+
+Preference signals:
+- The user asked for a separate page previewing Aiseo content while directing users to `aiseo.zetasoftware.my` for the complete/latest service details -> similar pages should clearly separate preview information from the authoritative external site.
+- The user asked to list pricing only once and prioritize important customer-facing information -> avoid repeated plan prices.
+
+Reusable knowledge:
+- `scripts/generate-ai-seo-pages.js` generates `/about/ai-seo/` and `/cn/about/ai-seo/`.
+- The generator must select `about/index.html` for English and `cn/about/index.html` for Chinese. Using the English template for both initially produced an English footer on the Chinese page; switching the template path by locale fixed it.
+- English and Chinese pages include canonical links, hreflang language links, Aiseo external links, service scope, domain/ownership options, limitations, and one occurrence each of RM 880, RM 1,280, and RM 2,580.
+
+Failures and how to do differently:
+- A language-route gap initially left `js/main.js` unaware of `/about/ai-seo/`; add exact `ai-seo` entries to both language route maps and `getLanguagePage()` whenever creating a new bilingual route.
+
+References:
+- `D:\backup\website-zetasoftware\scripts\generate-ai-seo-pages.js`
+- `D:\backup\website-zetasoftware\about\ai-seo\index.html`
+- `D:\backup\website-zetasoftware\cn\about\ai-seo\index.html`
+- `D:\backup\website-zetasoftware\css\ai-seo-page.css`
+- Local URLs: `http://127.0.0.1:8082/about/ai-seo/`, `http://127.0.0.1:8082/cn/about/ai-seo/`
+
+### Task 2: Navigation and SEO integration
+
+task: add AI SEO to About navigation, mobile menu, language switching, and sitemap
+task_group: website-zetasoftware-ai-seo
+task_outcome: success
+
+Reusable knowledge:
+- `scripts/update-site-navigation.js` adds AI SEO links to desktop and mobile About menus and reported updating 662 HTML files.
+- `js/main.js` needs `ai-seo` in both `languageRoutes` objects and `/about/ai-seo` in `exactPages` for correct locale switching.
+- `sitemap.xml` contains two AI SEO URLs with `en-MY`, `zh-CN`, and `x-default` alternates.
+
+Failures and how to do differently:
+- Navigation regeneration is broad; the final working-tree path count was 746. Review the full diff before publishing to avoid unintentionally deploying widespread generated changes.
+
+References:
+- Verified mobile menu: `AI SEO` resolves to `/about/ai-seo/`.
+- Sitemap validation showed exactly two AI SEO entries.
+- Syntax checks passed: `node --check scripts/generate-ai-seo-pages.js`, `node --check scripts/update-site-navigation.js`, `node --check js/main.js`.
+
+### Task 3: Local browser and HTTP verification
+
+task: verify rendered English/Chinese pages, images, CSS, footer, and responsive navigation
+task_group: website-zetasoftware-ai-seo
+task_outcome: success
+
+Reusable knowledge:
+- Local HTTP checks returned 200 for both pages, `/css/ai-seo-page.css?v=1`, and both AI SEO image assets.
+- Browser accessibility inspection confirmed the English page, Chinese page, translated Chinese footer, canonical locale links, and mobile About submenu.
+- The Aiseo source was inspected locally at `D:\backup\zeta-aiseo` / `http://127.0.0.1:8081/`; its existing footer included an AI SEO column and external Aiseo link.
+
+Failures and how to do differently:
+- No production deployment or online verification was performed; treat the result as local-only until the existing publishing workflow is explicitly run.
+
+References:
+- Aiseo source check: `http://127.0.0.1:8081/` returned HTTP 200 and title `新山 AI 获客｜让问 AI 的顾客找到你的店`.
+- Main-site page title: `AI SEO Services for Johor Businesses | Zeta Software Sdn Bhd`.
+- Chinese page title: `AI SEO 获客服务 | Zeta Software Sdn Bhd`.
+
+## Thread `01a143d0-2eb2-7b91-8f78-221999fe3aed`
+updated_at: 2026-10-19T02:11:02+00:00
+cwd: \\?\C:\Users\user\.codex
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\16\rollout-2026-10-16T16-24-39-01a143d0-2eb2-7b91-8f78-221999fe3aed.jsonl
+rollout_summary_file: 2026-10-16T08-24-39-QpWZ-codex_precommit_protected_deletions_recovery_push.md
+
+---
+description: Diagnosed a local pre-commit rejection caused by staged deletions under protected Codex paths; restored files, committed remaining changes, and pushed successfully.
+task: diagnose protected-path commit blocker and push Codex repository
+task_group: .codex Git recovery
+task_outcome: success
+cwd: C:\Users\user\.codex
+keywords: git, pre-commit, protected deletions, memories, skills, git restore, sparse checkout, origin/main, 489e2de
+---
+
+### Task 1: Recover protected deletions and push
+
+task: diagnose and resolve blocked commit/push
+task_group: .codex Git recovery
+task_outcome: success
+
+Preference signals:
+- The user asked why the commit could not save/push and then supplied a screenshot showing the same rejection -> future runs should distinguish local hook failures from GitHub-side rejection before troubleshooting the remote.
+
+Reusable knowledge:
+- `C:\Users\user\.codex\.git` is the repository root; `memories/` is tracked content, not a separate repository.
+- `.git/hooks/pre-commit` rejects any staged deletion under `memories/` or `skills/`; it requires restoration or explicit approval.
+- Sparse checkout was disabled (`core.sparseCheckout=false`), so it was not responsible for the missing files.
+- Restoring the 17 protected deletions removed the blocker. The remaining eight staged files committed successfully as `489e2de` and pushed to `origin/main`.
+
+Failures and how to do differently:
+- Do not bypass the hook. First inspect `git diff --cached --name-only --diff-filter=D -- memories/ skills/`, then restore unintended deletions with `git restore --source=HEAD --staged --worktree -- <paths>`.
+- Knowledge validation remained `FAIL` because of pre-existing `.codex-global-state.json` secret-pattern detection and nested `memories/.git`; leave unrelated issues untouched unless explicitly requested.
+
+References:
+- Exact hook error: `Blocked commit: staged deletions under protected Codex paths`
+- Validation: `REMAINING_PROTECTED_DELETIONS=0`
+- Commit/push: `489e2de save`; `main -> main`; final status `## main...origin/main`
+
+## Thread `01a143dd-59c3-74a2-aca5-a3cffdd32833`
+updated_at: 2026-10-16T09:16:47+00:00
+cwd: \\?\D:\backup\website-zetasoftware
+rollout_path: C:\Users\user\.codex\sessions\2026\10\16\rollout-2026-10-16T16-39-02-01a143dd-59c3-74a2-aca5-a3cffdd32833.jsonl
+rollout_summary_file: 2026-10-16T08-39-02-c7D5-zeta_sitemap_audit_and_service_icons.md
+
+---
+description: Audited the bilingual Zeta website sitemap and replaced service-page icons with verified lightweight transparent PNG assets.
+task: sitemap audit and bilingual service icon replacement
+task_group: zeta-website-seo-design
+ task_outcome: success
+cwd: D:\backup\website-zetasoftware
+keywords: sitemap.xml, robots.txt, generate-blog-pages.js, hreflang, canonical, services/index.html, cn/services/index.html, service-icons, transparent PNG
+---
+
+### Task 1: Sitemap audit
+
+task: verify all public bilingual pages and blog articles are represented in sitemap.xml
+task_group: zeta-website-seo
+task_outcome: success
+
+Preference signals:
+- The user asked to “understand all pages” and include “every possible pages… even news blogs articles” -> future sitemap work should inventory generated routes and content data rather than guessing from a small static list.
+- Existing local sitemap edits were preserved rather than overwritten.
+
+Reusable knowledge:
+- Current audit found 660 HTML files, 281 English blog records, 281 merged Chinese records, 562 article routes, and 646 unique sitemap URLs.
+- XML parsed successfully; no duplicate URLs; all blog routes had expected English/Chinese alternates; `robots.txt` referenced the sitemap.
+- Eight compatibility/legacy pages were `noindex` and should not be added as indexable sitemap entries.
+- Sitemap generation logic is in `scripts/generate-blog-pages.js`; blog sources are `data/blogs.json`, `data/blogs-cn.json`, and `data/blogs-cn-additional.json`.
+
+Failures and how to do differently:
+- The initial broad scan produced heavily truncated output; future audits should use focused scripts and summarized counts instead of dumping full project files.
+
+References:
+- `sitemap.xml`
+- `robots.txt`
+- `scripts/generate-blog-pages.js`
+- Verified result: `sitemapUrls: 646`, `uniqueSitemapUrls: 646`, `expectedArticleUrls: 562`, `blogRouteProblems: 0`.
+
+### Task 2: Service-page icon replacement
+
+task: replace unattractive service icons and non-semantic card numbers with topic-specific transparent PNG icons
+task_group: zeta-website-design
+ task_outcome: success
+
+Preference signals:
+- The user requested topic-matched images, transparent PNGs, maximum 200×200px and 200KB, and asked to remove strange `01`, `02`, `03` text -> future visual updates should use semantic assets, keep display sizes small, and preserve numbering only when it represents meaningful process order.
+- The user requested both English and Chinese page parity -> update both language counterparts together.
+
+Reusable knowledge:
+- 11 icons were applied across `services/index.html` and `cn/services/index.html`: 8 service-path cards and 3 service-need cards.
+- Assets are under `images/service-icons/`; local validation reported transparent 200×200px PNGs around 25–50KB each.
+- Shared layout rules are in `css/style.css`; rendered icon sizes were kept at 44–48px.
+- Delivery-process steps `01–04` were intentionally retained because they communicate sequence.
+
+Failures and how to do differently:
+- No functional failure was recorded. Production deployment and production visual verification were not performed.
+
+References:
+- `services/index.html:652`
+- `cn/services/index.html:640`
+- `css/style.css:8095`
+- `images/service-icons/`
+- Verification included local HTTP 200 checks, image dimension/size/transparency checks, and browser preview.
 

@@ -18,12 +18,18 @@ Use this skill for public-search discoverability work. Treat current platform do
 
 1. Inventory every public route and classify it as static, listing family, or record detail. Keep canonical URLs stable and avoid duplicate route variants.
 2. Check the production HTTP response, `robots.txt`, `sitemap.xml`, canonical tags, robots meta/header, and whether important text is present in initial HTML. Prefer SSR/SSG for public content; do not rely on client-only fetches for critical copy.
-3. Give each indexable page a unique title, description, canonical URL, H1, useful H2/H3 sections, descriptive links, image alt text, and Open Graph/Twitter metadata. Keep claims and local facts accurate.
+3. Give each indexable page a unique title, description, canonical URL, H1, useful H2/H3 sections, descriptive links, image alt text, and Open Graph/Twitter metadata. Keep claims and local facts accurate. Honor explicit title-preservation constraints: retain the existing words, add only when helpful, and leave titles unchanged when additions would make them misleading, repetitive, or too long.
 4. Write answer-ready sections: one intent per section, direct answer first, supporting details next, tables/comparisons where useful, and visible FAQs only when the page genuinely answers them. Do not create pages solely for keyword variants.
-5. Add JSON-LD only for entities visibly represented on the page. Prefer `WebSite`, `Organization` or a factual `LocalBusiness`, `WebPage`, `BreadcrumbList`, and relevant `Service`; use `FAQPage`, `Review`, or `AggregateRating` only when the visible content and platform rules support them. Never invent reviews, address, hours, prices, awards, or ratings.
-6. Add a root sitemap with absolute canonical URLs and reference it from `robots.txt`. Submit it to Google Search Console and Bing Webmaster Tools. Use IndexNow for Bing-supported update notifications when credentials and deployment are available.
+5. Add JSON-LD only for entities visibly represented on the page. Prefer `WebSite`, `Organization` or a factual `LocalBusiness`, `WebPage`, `BreadcrumbList`, and relevant `Service`; use `FAQPage`, `Review`, or `AggregateRating` only when the visible content and platform rules support them. Extend accurate existing JSON-LD; do not add duplicate Microdata for the same facts. Never invent reviews, address, hours, prices, awards, or ratings.
+6. Add a root sitemap with absolute canonical URLs and reference it from `robots.txt`. Include only canonical public pages intended for indexing; omit query variants, errors, unreachable templates, and `noindex` routes. Add `lastmod` only when a reliable content-change date exists. Sitemap submission is an optional external step requiring the relevant account and explicit scope.
 7. Permit relevant crawlers through robots/WAF/CDN: Googlebot, Bingbot, and `OAI-SearchBot` for ChatGPT Search. Do not expose private routes, credentials, staging data, or authenticated content.
 8. Verify with route-by-route HTTP checks, rendered/initial HTML inspection, JSON parsing, Rich Results Test, Google URL Inspection, Search Console coverage/performance, Bing Webmaster reports, and crawler/server logs. Report ranking/citation as unguaranteed external outcomes.
+
+## Metadata restraint
+
+- Do not treat every audit item as a required code change. Keep components that are already accurate, complete, and verified; fix only evidenced gaps.
+- Do not add a `meta keywords` tag, arbitrary Microdata, fake AI-specific files, or repeated location keywords. Google's current documentation says the `meta keywords` tag is ignored.
+- Keep localhost and staging out of search while preserving production indexability. `robots.txt` is not access control and does not replace `noindex`.
 
 ## Indexing safety
 

@@ -7,7 +7,8 @@ applies_to: cwd=C:\Users\user\.codex; reuse_rule=recheck current hooks, sparse s
 
 ### rollout_summary_files
 
-- rollout_summaries/2026-10-16T01-34-59-TSQM-resolve_protected_codex_path_commit_blocker.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\10\16\rollout-2026-10-16T09-34-59-01a14259-1f6b-7bd1-bd04-e127b476e7a8.jsonl, updated_at=2026-10-16T01:38:54+00:00, thread_id=01a14259-1f6b-7bd1-bd04-e127b476e7a8, success)
+- rollout_summaries/2026-10-16T08-24-39-QpWZ-codex_precommit_protected_deletions_recovery_push.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\10\16\rollout-2026-10-16T16-24-39-01a143d0-2eb2-7b91-8f78-221999fe3aed.jsonl, updated_at=2026-10-19T02:11:02+00:00, thread_id=01a143d0-2eb2-7b91-8f78-221999fe3aed, success; restored 17 deletions, committed/pushed remaining work)
+- rollout_summaries/2026-10-16T01-34-59-TSQM-resolve_protected_codex_staged_deletion.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\10\16\rollout-2026-10-16T09-34-59-01a14259-1f6b-7bd1-bd04-e127b476e7a8.jsonl, updated_at=2026-10-19T02:11:19+00:00, thread_id=01a14259-1f6b-7bd1-bd04-e127b476e7a8, success; restored one routed file and passed hook)
 - rollout_summaries/2026-10-08T01-40-56-1R8h-codex_sparse_checkout_recovery_and_powershell_alert.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\10\08\rollout-2026-10-08T09-40-56-01a1192b-b085-75e1-a18b-2d3afb096a9d.jsonl, updated_at=2026-10-08T07:03:57+00:00, thread_id=01a1192b-b085-75e1-a18b-2d3afb096a9d, success)
 
 ### keywords
@@ -34,6 +35,7 @@ applies_to: cwd=C:\Users\user\.codex; reuse_rule=recheck current hooks, sparse s
 
 - `00_PULSE.md` is the boot contract; the exact hydration trigger `ai read .codex knowledge` returns only `[🟢] Agent is Ready..`. Hydrate once per chat, then read task-specific routes lazily. [Task 2]
 - A pre-commit hook rejects staged deletions under `memories/` and `skills/`. For an accidentally deleted tracked protected file, recover it with `git restore --source=HEAD --staged --worktree -- <path>` and validate `git hook run pre-commit`. [Task 1]
+- Diagnose a commit rejection as local hook versus remote failure first. Use `git diff --cached --name-only --diff-filter=D -- memories/ skills/`; restore unintended protected files, then run `git diff --cached --check` and the hook before committing. [Task 1]
 - Missing tracked files can be a sparse-checkout omission, not deletion. Inspect `git sparse-checkout list`; the latest recovery disabled sparse checkout permanently. [Task 1]
 - After route/index changes, refresh generated routing with `codex-router/Update-CodexRouting.ps1 -Quiet`; the 2026-08 baseline passed benchmark 32/32, activation 18/18, routing audit with no missing targets/conflicts. [Task 2]
 
@@ -42,6 +44,7 @@ applies_to: cwd=C:\Users\user\.codex; reuse_rule=recheck current hooks, sparse s
 - Symptom: an application localhost test finds no project from `.codex` -> cause: wrong working directory -> rerun from the actual project root; startup alone is not success, HTTP-check real URLs. [Task 2]
 - Symptom: `Validate-CodexKnowledge.ps1` fails on `memories/.git` -> nested Git metadata is pre-existing; do not remove or mutate it without explicit approval. [Task 2]
 - Symptom: PowerShell warns that a command may be unsafe -> distinguish this security warning from Codex approval; inspect the command and policy context rather than assuming user permission was denied. [Task 1]
+- The large-knowledge scanner may omit a deleted file because it scans only files present in the worktree; check staged deletions directly. Pre-existing `.codex-global-state.json` secret-pattern and nested `memories/.git` validator findings are not justification to alter unrelated files. [Task 1]
 
 # Task Group: D:\project\VIPBillion\website-vipbillion — PHP website, booking UX, and optimization audit
 
@@ -227,11 +230,33 @@ applies_to: cwd=D:\backup\website-zetasoftware; reuse_rule=apply edits to EN/CN 
 
 - php -S 127.0.0.1:8080, .htaccess, WebP, data-src, IntersectionObserver, update-site-navigation.js, style.min.css, mail host, canonical redirect
 
+## Task 3: AI SEO preview pages, generated navigation, and locale routing
+
+### rollout_summary_files
+
+- rollout_summaries/2026-10-16T08-08-24-ur6z-bilingual_ai_seo_preview_page_navigation.md (cwd=D:\backup\website-zetasoftware, rollout_path=C:\Users\user\.codex\sessions\2026\10\16\rollout-2026-10-16T16-53-58-01a143c1-5061-73f0-9004-73e8a602dbd3_01a143eb-0564-7c82-a593-25fe88223946.jsonl, updated_at=2026-10-16T09:05:43+00:00, thread_id=01a143c1-5061-73f0-9004-73e8a602dbd3, success; local-only)
+
+### keywords
+
+- ai-seo, generate-ai-seo-pages.js, update-site-navigation.js, languageRoutes, getLanguagePage, exactPages, hreflang, /about/ai-seo/, /cn/about/ai-seo/
+
+## Task 4: Sitemap audit and transparent service-icon replacement
+
+### rollout_summary_files
+
+- rollout_summaries/2026-10-16T08-39-02-c7D5-zeta_sitemap_audit_and_service_icons.md (cwd=D:\backup\website-zetasoftware, rollout_path=C:\Users\user\.codex\sessions\2026\10\16\rollout-2026-10-16T16-39-02-01a143dd-59c3-74a2-aca5-a3cffdd32833.jsonl, updated_at=2026-10-16T09:16:47+00:00, thread_id=01a143dd-59c3-74a2-aca5-a3cffdd32833, success; production unverified)
+
+### keywords
+
+- sitemap.xml, robots.txt, generate-blog-pages.js, blogs.json, blogs-cn.json, hreflang, noindex, services/index.html, service-icons, transparent PNG
+
 ## User preferences
 
 - user requests for bilingual content mean paired English/Chinese records and tracking updates, not English-only completion; quantify exact requested changes such as title percentages and order. [Task 1]
 - when screenshots ask for the “exact same design”, treat homepage markup/CSS and screenshot as active visual source of truth and inspect both languages. [Task 1]
 - `localhost test` means detect site type, start only required server, and verify real URLs; startup alone is not success. [Task 2]
+- for Aiseo-derived preview pages, complete/latest details remain at `aiseo.zetasoftware.my`; make the preview/authoritative-site boundary explicit and avoid repeated plan pricing. [Task 3]
+- Sitemap work must inventory generated routes/content data before deciding coverage. [Task 4]
 
 ## Reusable knowledge
 
@@ -239,11 +264,15 @@ applies_to: cwd=D:\backup\website-zetasoftware; reuse_rule=apply edits to EN/CN 
 - `home-blogs.js` sorts localized data by descending date, takes three, escapes content, renders links, refreshes Lucide, and integrates lazy loading. Services pages must explicitly load the Google-font URL used by homepage for Orbitron token parity. [Task 1]
 - Static checkout has no package manifest/Vite/PHP entry: serve `php -S 127.0.0.1:8080 -t <workspace>`. Local PHP server does not test Apache `.htaccess` gzip/cache/redirect behavior. [Task 2]
 - Generator pipeline matters: use source data/scripts for generated SIM navigation, not hand edits to output. For bulk image transforms, resolve root-relative `images/...` from project root and validate malformed whitespace-before-attribute output. [Task 2]
+- Generate AI SEO from `scripts/generate-ai-seo-pages.js`, selecting `about/index.html` for EN and `cn/about/index.html` for CN. Add a new bilingual route to both `languageRoutes`, `getLanguagePage()`/`exactPages`, generated desktop/mobile navigation, and sitemap alternates; then verify both pages, CSS, images, and locale switching locally. [Task 3]
+- The sitemap audit found 646 unique URLs from 660 HTML files; noindex compatibility pages must stay out. Blog routes derive from `data/blogs.json`, `data/blogs-cn.json`, and `data/blogs-cn-additional.json` through `scripts/generate-blog-pages.js`. [Task 4]
+- Related skill: skills/zeta-bilingual-static-site/SKILL.md. [Task 3][Task 4]
 
 ## Failures and how to do differently
 
 - Do not remove original raster/WebP assets before canonical JPG/lazy-load migration is complete and every intended reference is updated. Browser automation was unavailable in several runs, so manual hard-refresh/production verification remains required for visual/cache/redirect claims. [Task 2]
 - Unicode comparisons and large text patches can corrupt JSON or miss expected HTML context; use UTF-8-safe checks, fresh exact context, and paired-language validation. [Task 1]
+- A locale-specific generator-template mistake can produce an English footer in CN output; correct the template selection and regenerate. Navigation generation touched 662 HTML files (746 working-tree paths), so review the full diff before publish. Production was not verified for Tasks 3-4. [Task 3][Task 4]
 
 # Task Group: C:\Users\user\Desktop\used-car — Vue/Supabase project and Windows Chrome repair
 
@@ -347,8 +376,8 @@ applies_to: cwd=C:\Users\user\Desktop\ai comment; reuse_rule=derive all identity
 
 # Task Group: D:\backup\zeta-aiseo — generated-news sitemap coverage
 
-scope: Audit sitemap entries against generated published Zeta Aiseo news routes.
-applies_to: cwd=D:\backup\zeta-aiseo; reuse_rule=validate current generated routes, not assumed/static article lists.
+scope: Maintain the Chinese Zeta Aiseo static news pipeline, generated sitemap, and shared homepage asset versions.
+applies_to: cwd=D:\backup\zeta-aiseo; reuse_rule=validate current data/generator output rather than assumed article lists; article publishing remains evidence-gated.
 
 ## Task 1: Sitemap and published-news route audit
 
@@ -360,18 +389,35 @@ applies_to: cwd=D:\backup\zeta-aiseo; reuse_rule=validate current generated rout
 
 - sitemap.xml, published news routes, generated routes, zeta-aiseo
 
+## Task 2: News-workflow orientation and shared `?v=2301` cache busting
+
+### rollout_summary_files
+
+- rollout_summaries/2026-10-16T04-08-33-Mk34-zeta_aiseo_project_orientation_cache_busting_v2301.md (cwd=D:\backup\zeta-aiseo, rollout_path=C:\Users\user\.codex\sessions\2026\10\16\rollout-2026-10-16T12-08-34-01a142e5-b9be-7dd2-b7a7-f6e0cc2311fe.jsonl, updated_at=2026-10-16T09:08:54+00:00, thread_id=01a142e5-b9be-7dd2-b7a7-f6e0cc2311fe, partial; cache update succeeded, five articles not delivered)
+
+### keywords
+
+- data/news.json, generate-news.js, validate-news.js, NEWS_WORKFLOW.md, aiseo-comparison.css, ?v=2301, assets/main.css, assets/news.css, assets/news-images.js
+
+## User preferences
+
+- Article work starts by reading project Markdown and routed skills; the shared CSS/JS cache version should be explicit and easy to update. [Task 2]
+
 ## Reusable knowledge
 
 - Sitemap was already complete against generated published news routes; validate route generation and sitemap together before adding entries. [Task 1]
+- `data/news.json` is canonical; run `node tools/generate-news.js` then `node tools/validate-news.js`. Contracts: Simplified Chinese, stable lowercase ASCII slugs, no public byline, `/news/` + `/news/{slug}/`, max 900x600 local covers strictly under 200,000 bytes. [Task 2]
+- The homepage loads `assets/main.css`, `/assets/news.css`, `/assets/aiseo-comparison.css`, `assets/main.js`, and `assets/news-images.js`, not `style.css`. Version all related references together and deploy both `index.html` and changed assets. [Task 2]
 
 ## Failures and how to do differently
 
 - Do not infer missing sitemap coverage from article files alone; compare the actual published-route generator output. [Task 1]
+- Do not treat the incomplete five-article request as a completed publishing run. GitNexus was not indexed for this checkout, so local docs/source are the reliable evidence. A local cache fix does not prove production: inspect live resource URLs and computed SVG checkmark styles after publishing. [Task 2]
 
-# Task Group: D:\project\mincorner — Remark popup text source tracing
+# Task Group: D:\project\mincorner — checkout text tracing and secure pickup-date workflow
 
-scope: Trace bilingual Remark/备注 cart popup text without changing behavior.
-applies_to: cwd=D:\project\mincorner; reuse_rule=source-tracing result is checkout-specific; re-search if template architecture changes.
+scope: Trace cart UI wording and maintain pickup-date rules across browser selection and PHP order finalization.
+applies_to: cwd=D:\project\mincorner; reuse_rule=checkout-specific; preserve existing dirty work and exclude unrelated admin reporting date pickers.
 
 ## Task 1: Confirm Remark popup hardcoding
 
@@ -383,14 +429,27 @@ applies_to: cwd=D:\project\mincorner; reuse_rule=source-tracing result is checko
 
 - Remark, 备注, cart popup, hardcoded bilingual text
 
+## Task 2: Malaysia pickup-date window and post-cart security validation
+
+### rollout_summary_files
+
+- rollout_summaries/2026-10-16T07-11-32-MkqL-mincorner_pickup_date_window_security_validation.md (cwd=D:\project\mincorner, rollout_path=C:\Users\user\.codex\sessions\2026\10\16\rollout-2026-10-16T15-11-33-01a1438d-4087-7df2-a212-e184982c6c0b.jsonl, updated_at=2026-10-16T08:24:48+00:00, thread_id=01a1438d-4087-7df2-a212-e184982c6c0b, success; browser/live order unverified)
+
+### keywords
+
+- cart.php, checkout.php, CartController.php, assets/js/app.js, bootstrap-datepicker, cartPickupDateWindow, cartPickupDateUnavailableReason, Asia/Kuala_Lumpur, Failed to order, placeOrderWithoutPayment
+
 ## User preferences
 
 - user asked whether the Remark popup was hardcoded -> answer source-tracing questions with the exact template/source evidence, not assumptions about translation systems. [Task 1]
+- Validate an unpickable date on cart creation and again immediately before final order creation; return a visible failed-order reason and retain subtle eligible-date guidance. [Task 2]
 
 ## Reusable knowledge
 
 - The right-side Remark/备注 cart popup uses hardcoded bilingual template text. [Task 1]
+- Customer picker is only `cart.php` `#datepicker` in shared `assets/js/app.js`; `checkout.php` displays the stored date. Canonical rule: Malaysia today +3 through start+19 inclusive (20 days), Mondays unavailable. Server helpers centralize range/Monday reasoning; finalization rechecks saved `delivery_date` under lock before stock decrement. [Task 2]
 
 ## Failures and how to do differently
 
 - Keep this as a diagnostic result; do not propose a localization rewrite unless requested. [Task 1]
+- Do not apply customer pickup restrictions to admin reporting pickers. Syntax/diff checks passed but no browser/calendar or live-order run occurred; visually test the date cells and test a safe order path before calling the UI end-to-end complete. [Task 2]

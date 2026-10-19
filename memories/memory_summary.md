@@ -2,95 +2,87 @@ v1
 
 ## User Profile
 
-Works across several locally checked-out web projects and uses Codex for hands-on audits, tightly scoped UI/content changes, infrastructure recovery, and durable project handoffs. Values current source and real verification over stale Markdown, screenshots, or spreadsheet status. Frequently works with bilingual EN/CN sites and expects parity. Uses Windows/PowerShell and asks agents to understand project Markdown before meaningful edits. Prefers evidence-backed progress with clear boundaries when browser/live testing could mutate data.
+Works hands-on across Windows/PowerShell local web projects, often bilingual EN/CN static sites and PHP/Vue/Supabase apps. Uses Codex for source-grounded orientation, surgical implementation, audit reports, and durable handoff. Cares about current files and real verification more than stale Markdown or screenshots; expects explicit boundaries between source, localhost HTTP, browser, and production evidence. Protects existing worktrees, local Docker/Supabase state, credentials, and user-facing flows.
 
 ## User preferences
 
-- Before project changes, “understand my website first include .md” / “all .md”: read orientation docs and reconcile them against current source; do not claim exhaustive orientation after only front-door documents.
-- Follow the explicit requested edit exactly. A screenshot or inferred issue must not replace a narrow request such as `View Our Services` → `Get a Quote` → `/booking`.
-- For bilingual work, update and validate EN/CN pairs rather than declaring English-only completion.
-- For audits, present detailed Chinese comparison tables with pages, task, changes, problem, and done status; distinguish spreadsheet claims from independently verified source/live evidence.
-- Treat browser/live tests that can create bookings or increment visitor metrics as state-changing; use isolated/mocked tests, and report remaining visual/runtime verification honestly.
-- Prefer reversible, surgical maintenance over heavy changes; preserve dirty worktrees, original backups, protected paths, and existing routes.
+- Before meaningful changes, read the project’s relevant Markdown and reconcile it with current source; if asked for “all .md”, do not call a front-door-only pass complete.
+- Follow the requested scope exactly; a screenshot does not authorize adjacent styling or refactors. Verify the named route/label/behavior.
+- For bilingual work, update and validate EN/CN pairs, locale routing, and generated output—not English only.
+- Treat browser/live tests that can create bookings, metrics, or records as state-changing; use safe fixtures where possible and report unperformed gates.
+- In full-access sessions, continue obvious in-scope implementation steps without repetitive confirmation; pause for a real product decision, destructive action, or ambiguous tradeoff. [ad-hoc note]
+- Treat local Docker/Supabase as protected: do not switch, stop, reset, recreate, migrate, or repoint an active stack without explicit same-turn permission. [ad-hoc note]
 
 ## General Tips
 
-- Current source/runtime evidence outranks historical docs; flag documentation drift and never retain secrets found in old configuration docs.
-- On Windows, use small independently quoted PowerShell commands after complex quoting fails. For exact-file scans use `Select-String -LiteralPath`, not unsupported `rg --literal-path`.
-- Build/lint/diff checks validate syntax, not browser UX. Separate source validation from HTTP, browser, and production/host-rule verification.
-- Check Git status before editing; protected Codex `memories/`/`skills/` staged deletions require recovery and pre-commit validation, not bypassing hooks.
+- Current source/runtime/tests outrank historical documentation. Check Git status before edits and preserve unrelated dirty changes.
+- Separate syntax/build/diff checks from HTTP, browser, Apache/host-rule, and production verification.
+- On Windows, use short independently quoted PowerShell commands after complex quoting fails; use `Select-String -LiteralPath` for exact-file scans.
+- For a protected Codex-path commit failure, inspect staged deletions under `memories/ skills/`, restore unintended files from `HEAD`, then run the hook; do not bypass it.
+- Reuse focused procedures when applicable: `skills/zeta-bilingual-static-site/`, `skills/localhost-project-match/`, `skills/local-supabase-protection/`, and `skills/static-site-metadata-sweep/`.
 
 ## What's in Memory
 
-### D:\project\VIPBillion\website-vipbillion
-
-#### 2026-10-16
-
-- VIPBillion booking UX and customer-request audit: WORKSPACE.md, Optimization Plan, booking-confirmation-modal, BookingRequestConflictException, pricing mismatch
-  - desc: Website orientation, 13-row Chinese audit requirements, confirmed issues, centered booking dialog, minimum loading, and idempotency.
-  - learnings: Current code outranks stale Phase-2 docs; no browser/live booking verification yet; use test harnesses that avoid tracking/records.
-
-#### 2026-10-15
-
-- Get a Quote CTA and booking prefill: View Our Services, Get a Quote, /booking, nav.get_quote, VBBookingPrefill
-  - desc: Exact CTA routing, service/route selection, vehicle default, 30-day PHP prefill, plus scope-miss caution.
-  - learnings: Find the exact header label and verify `/booking`; do not substitute unrelated visual edits.
-
 ### C:\Users\user\.codex
 
-#### 2026-10-16
+#### 2026-10-19
 
-- Protected Codex-path commit blocker: pre-commit, staged-deletion, memories/phase2_workspace_diff.md, git restore
-  - desc: Restore protected memory files and validate the hook; sparse-checkout diagnosis and maintenance context are in the same block.
-  - learnings: `git restore --source=HEAD --staged --worktree -- <path>` followed by `git hook run pre-commit` cleared the blocker.
-
-### D:\project\xhs-tiktok-inbox
-
-#### 2026-10-15
-
-- Telegram preview timeline: PhonePreview.vue, historyDates, stickyHistoryDate, getNoticeHistoryTimestamp
-  - desc: Divider ordering, clickable sticky date, time-only markers, and all-tab upload sizing.
-  - learnings: Explicit dividers define segments; build passed but browser scroll/click QA remains necessary. Also includes MSI-validated Chrome SideBySide recovery.
-
-### D:\project\lionrider\lionrider-website
-
-#### 2026-10-14
-
-- Lion Rider storefront handoff and Spare Parts finder: status.md, PHP JSON storefront, spareparts-finder.js, 127.0.0.1:8012
-  - desc: JSON-storefront boundaries, documentation drift, mobile account sidebar, availability-aware model filtering, and local server routes.
-  - learnings: Keep storefront data distinct from admin Supabase; normalize model names and inspect dirty state first.
+- Protected-path Git recovery: pre-commit, staged-deletion, git restore, memories/phase2_workspace_diff.md
+  - desc: Recover protected-memory deletions and distinguish local hook blocks from remote push failures.
+  - learnings: inspect cached deletions directly; `git restore --source=HEAD --staged --worktree -- <path>` plus hook validation cleared the blocker.
 
 ### D:\backup\website-zetasoftware
 
-#### 2026-10-12
+#### 2026-10-16
 
-- Zeta static-site SEO/performance: .htaccess, php -S 127.0.0.1:8080, WebP, data-src, generated navigation
-  - desc: Bilingual static-site parity, hosting rules, image migration safeguards, and generated navigation workflow.
-  - learnings: Local PHP serving cannot validate Apache behavior; keep EN/CN parity and avoid premature original-asset deletion.
+- AI SEO pages and sitemap/service icons: generate-ai-seo-pages.js, update-site-navigation.js, languageRoutes, sitemap.xml, service-icons
+  - desc: Bilingual AI SEO preview generation, navigation/locale integration, sitemap coverage, and PNG service-icon replacement.
+  - learnings: use locale-specific generator templates; new routes need language maps and sitemap alternates; local verification does not prove deployment.
+
+### D:\backup\zeta-aiseo
+
+#### 2026-10-16
+
+- Generated news and shared cache version: data/news.json, generate-news.js, validate-news.js, ?v=2301
+  - desc: Chinese news pipeline, generator/sitemap checks, and homepage CSS/JS cache-busting maintenance.
+  - learnings: data JSON is canonical; incomplete article work is not a publish success; deploy HTML and referenced assets together.
+
+### D:\project\mincorner
+
+#### 2026-10-16
+
+- Secure pickup date: cartPickupDateWindow, Asia/Kuala_Lumpur, Failed to order, placeOrderWithoutPayment
+  - desc: Picker/UI and PHP cart/finalization validation for Malaysia pickup dates; also traces Remark popup source.
+  - learnings: validate forged/stale dates twice and keep admin reporting pickers out of the customer rule.
 
 ### Older Memory Topics
 
+#### D:\project\VIPBillion\website-vipbillion
+
+- Booking UX and request audit: Optimization Plan, Get a Quote, /booking, BookingRequestConflictException
+  - desc: Chinese audit format, exact CTA/pre-fill behavior, centered modal/minimum loading, and safe booking-test boundary; cwd=D:\project\VIPBillion\website-vipbillion.
+
+#### D:\project\xhs-tiktok-inbox
+
+- Telegram preview timeline: PhonePreview.vue, historyDates, stickyHistoryDate, getNoticeHistoryTimestamp
+  - desc: Platform-isolated Telegram date divider/click behavior, cross-tab image sizing, and Chrome SideBySide recovery; cwd=D:\project\xhs-tiktok-inbox.
+
+#### D:\project\lionrider\lionrider-website
+
+- PHP/JSON storefront handoff: status.md, spareparts-finder.js, 127.0.0.1:8012
+  - desc: JSON-storefront boundary, mobile account sidebar, availability-aware model filtering, and localhost checks; cwd=D:\project\lionrider\lionrider-website.
+
 #### C:\Users\user\Desktop\used-car
 
-- Used-Car Vue/Supabase and Chrome repair: PROJECT_CONTEXT.md, archived migrations, development.localhost, SideBySide
-  - desc: cwd=C:\Users\user\Desktop\used-car. `template/` is runnable root; schema migrations belong in missing external admin repo; includes proven Chrome pending-launcher repair.
+- Vue/Supabase boundary and Chrome repair: template, development.localhost, archived migrations, SideBySide
+  - desc: Runnable-root and external-schema authority rules, plus Windows Chrome repair; cwd=C:\Users\user\Desktop\used-car.
 
 #### C:\Users\user\Documents\supabase-project-backup-restore
 
-- Huwa2 VPS restore/PostgREST: auth.identities, identities_user_id_fkey, 04-restore-local.sh, PGRST_DB_SCHEMAS
-  - desc: cwd=C:\Users\user\Documents\supabase-project-backup-restore. Repair orphan identities in a working backup copy, atomic restore, then configure CLI-managed local Supabase API schemas.
+- Huwa2 restore/PostgREST: auth.identities, atomic restore, PGRST_DB_SCHEMAS
+  - desc: Repair a working backup copy, restore safely, and expose the CLI-managed local schema; cwd=C:\Users\user\Documents\supabase-project-backup-restore.
 
 #### C:\Users\user\Desktop\ai comment
 
-- Evidence-bound metadata workflow: (AI) metaTitle.txt, INSUFFICIENT DATA, site.webmanifest
-  - desc: cwd=C:\Users\user\Desktop\ai comment. Project identity and claims must be derived from active evidence, never copied from historic examples.
-
-#### D:\backup\zeta-aiseo
-
-- Generated-news sitemap audit: sitemap.xml, published news routes
-  - desc: cwd=D:\backup\zeta-aiseo. Compare sitemap against actual generated published routes; audit found full coverage.
-
-#### D:\project\mincorner
-
-- Remark popup source: Remark, 备注, hardcoded bilingual text
-  - desc: cwd=D:\project\mincorner. Diagnostic evidence that the right-side cart popup text is template-hardcoded.
+- Evidence-bound metadata: (AI) metaTitle.txt, INSUFFICIENT DATA, site.webmanifest
+  - desc: Derive identity and claims only from active-project evidence; cwd=C:\Users\user\Desktop\ai comment.

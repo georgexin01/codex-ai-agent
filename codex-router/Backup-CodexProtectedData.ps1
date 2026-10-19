@@ -6,6 +6,18 @@ $snapshotRoot = Join-Path $recoveryRoot 'Snapshots'
 $logPath = Join-Path $recoveryRoot 'backup.log'
 $fingerprintPath = Join-Path $recoveryRoot 'latest-fingerprint.txt'
 
+$gitRoot = (& git -C $codexRoot rev-parse --show-toplevel 2>$null | Out-String).Trim()
+$gitBranch = (& git -C $codexRoot branch --show-current 2>$null | Out-String).Trim()
+$gitHead = (& git -C $codexRoot rev-parse HEAD 2>$null | Out-String).Trim()
+if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($gitRoot) -or [string]::IsNullOrWhiteSpace($gitHead)) {
+    throw 'Unable to identify the active Codex Git root and HEAD; no backup written.'
+}
+$resolvedCodexRoot = [System.IO.Path]::GetFullPath($codexRoot).TrimEnd('\')
+$resolvedGitRoot = [System.IO.Path]::GetFullPath($gitRoot).TrimEnd('\')
+if (-not [string]::Equals($resolvedCodexRoot, $resolvedGitRoot, [System.StringComparison]::OrdinalIgnoreCase)) {
+    throw "Active Git root does not match the configured Codex root; no backup written."
+}
+
 # Durable content to version outside .codex. Runtime/auth state is deliberately excluded.
 $protectedDirs = @(
     'automations',
@@ -79,7 +91,8 @@ $sourceFiles = @($sourceFiles | Sort-Object RelativePath)
 $manifestText = ($sourceFiles | ForEach-Object { '{0}|{1}|{2}' -f $_.RelativePath,$_.Length,$_.SHA256 }) -join "`n"
 $sha256 = [System.Security.Cryptography.SHA256]::Create()
 try {
-    $fingerprintBytes = $sha256.ComputeHash([System.Text.Encoding]::UTF8.GetBytes($manifestText))
+$fingerprintInput = "root=$resolvedGitRoot`nbranch=$gitBranch`nhead=$gitHead`n$manifestText"
+$fingerprintBytes = $sha256.ComputeHash([System.Text.Encoding]::UTF8.GetBytes($fingerprintInput))
 }
 finally {
     $sha256.Dispose()
@@ -115,6 +128,23 @@ try {
         }
         New-Item -ItemType Directory -Path (Join-Path $snapshotDir $relDir) -Force | Out-Null
     }
+
+    $currentHead = (& git -C $codexRoot rev-parse HEAD 2>$null | Out-String).Trim()
+    $currentBranch = (& git -C $codexRoot branch --show-current 2>$null | Out-String).Trim()
+    if ($LASTEXITCODE -ne 0 -or $currentHead -ne $gitHead -or $currentBranch -ne $gitBranch) {
+        throw 'Git branch or HEAD changed during snapshot creation; snapshot is not eligible for recovery.'
+    }
+
+    $metadata = [pscustomobject]@{
+        source_root = $resolvedGitRoot
+        branch = $gitBranch
+        head = $gitHead
+        captured_at_utc = [DateTime]::UtcNow.ToString('o')
+        fingerprint = $fingerprint
+        file_count = $sourceFiles.Count
+        recovery_policy = 'Restore only when source_root, branch, and HEAD match the active Codex checkout.'
+    }
+    $metadata | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath (Join-Path $snapshotDir 'snapshot-metadata.json') -Encoding UTF8
 
     $sourceFiles | Export-Csv -LiteralPath (Join-Path $snapshotDir 'snapshot-manifest.csv') -NoTypeInformation -Encoding UTF8
     Set-Content -LiteralPath (Join-Path $snapshotDir 'protected-runtime-directories.txt') -Value ($runtimeLockDirs -join "`r`n") -Encoding UTF8

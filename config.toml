@@ -147,6 +147,12 @@ trust_level = "trusted"
 [projects.'d:\backup\zeta-aiseo']
 trust_level = "trusted"
 
+[projects.'d:\localhost\htdocs_jbtransport']
+trust_level = "trusted"
+
+[projects.'d:\localhost\htdocs_winspro_cermin']
+trust_level = "trusted"
+
 [features]
 memories = true
 js_repl = false
