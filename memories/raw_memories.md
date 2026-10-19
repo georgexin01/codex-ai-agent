@@ -1645,3 +1645,39 @@ References:
 - Route: `get(route: '/booking', path_to_include: '/template/booking.php');`
 - Unrelated files changed by the failed rollout: `css/style.css`, `template/services-single.php`, `template/news-single.php`.
 
+## Thread `01a14259-1f6b-7bd1-bd04-e127b476e7a8`
+updated_at: 2026-10-16T01:38:54+00:00
+cwd: \\?\C:\Users\user\.codex
+rollout_path: C:\Users\user\.codex\sessions\2026\10\16\rollout-2026-10-16T09-34-59-01a14259-1f6b-7bd1-bd04-e127b476e7a8.jsonl
+rollout_summary_file: 2026-10-16T01-34-59-TSQM-resolve_protected_codex_path_commit_blocker.md
+
+---
+description: Diagnosed and fixed a blocked commit caused by a staged deletion of a protected Codex memory file; restored the file and verified the pre-commit hook passes
+task: diagnose-and-clear-protected-path-commit-blocker
+task_group: codex-git-workflow
+task_outcome: success
+cwd: C:\Users\user\.codex
+keywords: git, pre-commit, protected-paths, staged-deletion, memories/phase2_workspace_diff.md, git-restore, codex-router
+---
+
+### Task 1: Restore protected memory file and unblock commit
+
+task: diagnose-and-clear-protected-path-commit-blocker
+task_group: codex-git-workflow
+task_outcome: success
+
+Reusable knowledge:
+- The repository pre-commit hook rejects staged deletions under `memories/` and `skills/`.
+- `memories/phase2_workspace_diff.md` was staged as deleted, absent from the worktree, present in `HEAD` (279,364 bytes), and still referenced by `codex-router/codex-manifest.json` and `codex-router/codex-frontmatter-index.json`.
+- Restore the file with: `git restore --source=HEAD --staged --worktree -- memories/phase2_workspace_diff.md`
+- Validate with: `git hook run pre-commit`; this passed with exit code 0 after restoration.
+
+Failures and how to do differently:
+- Do not bypass the hook or delete the file blindly. Recover protected Codex files first, especially when routing indexes still reference them. Sparse-checkout was disabled, so sparse state was not the cause.
+
+References:
+- Exact blocker: `Blocked commit: staged deletions under protected Codex paths: memories/phase2_workspace_diff.md`
+- Hook logic: `git diff --cached --no-renames --name-only --diff-filter=D -- memories/ skills/`
+- Recovery command: `git restore --source=HEAD --staged --worktree -- memories/phase2_workspace_diff.md`
+- Final verification: no staged protected deletions; `git hook run pre-commit` succeeded; other staged changes remained untouched.
+

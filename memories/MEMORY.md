@@ -1,429 +1,396 @@
-# Task Group: VIPBillion public website and booking flow
-scope: PHP bilingual public-site orientation, customer-request audit, CTA/prefill, booking idempotency, and exact-scope modal UI work.
-applies_to: cwd=D:\project\VIPBillion\website-vipbillion; reuse_rule=read project Markdown then reconcile it with current source/live evidence; inspect dirty status and exact shared template source before editing; do not apply admin conventions blindly to public PHP.
+# Task Group: C:\Users\user\.codex — Codex routing, Git, and protected memory paths
 
-## Task 1: Website orientation and Markdown documentation
+scope: Maintain the Codex configuration repository, its boot/routing contracts, sparse-checkout state, and protected memory files; not an application-project localhost runbook.
+applies_to: cwd=C:\Users\user\.codex; reuse_rule=recheck current hooks, sparse state, and Git status before mutation because these are checkout-specific.
 
-### rollout_summary_files
-
-- rollout_summaries/2026-10-15T02-49-58-3dyZ-vipbillion_website_audit_booking_modal_ux.md (cwd=D:\project\VIPBillion, rollout_path=C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T10-49-58-01a13d77-69bb-71a1-a74a-b50080a22db5.jsonl, updated_at=2026-10-16T01:10:55+00:00, thread_id=01a13d77-69bb-71a1-a74a-b50080a22db5)
-
-### keywords
-
-- WORKSPACE.md, STATUS.md, MASTER_PLAN.md, website-vipbillion/index.php, router.php, lib/initData.php, i18n/en.json, i18n/cn.json, api/Models, API_SETUP_COMPLETE.md, meta.md
-
-## Task 2: Customer Optimization Plan audit in Chinese
+## Task 1: Recover sparse/missing files and unblock protected-path commits
 
 ### rollout_summary_files
 
-- rollout_summaries/2026-10-15T02-49-58-3dyZ-vipbillion_website_audit_booking_modal_ux.md (cwd=D:\project\VIPBillion, rollout_path=C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T10-49-58-01a13d77-69bb-71a1-a74a-b50080a22db5.jsonl, updated_at=2026-10-16T01:10:55+00:00, thread_id=01a13d77-69bb-71a1-a74a-b50080a22db5, partial: audit table not delivered)
+- rollout_summaries/2026-10-16T01-34-59-TSQM-resolve_protected_codex_path_commit_blocker.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\10\16\rollout-2026-10-16T09-34-59-01a14259-1f6b-7bd1-bd04-e127b476e7a8.jsonl, updated_at=2026-10-16T01:38:54+00:00, thread_id=01a14259-1f6b-7bd1-bd04-e127b476e7a8, success)
+- rollout_summaries/2026-10-08T01-40-56-1R8h-codex_sparse_checkout_recovery_and_powershell_alert.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\10\08\rollout-2026-10-08T09-40-56-01a1192b-b085-75e1-a18b-2d3afb096a9d.jsonl, updated_at=2026-10-08T07:03:57+00:00, thread_id=01a1192b-b085-75e1-a18b-2d3afb096a9d, success)
 
 ### keywords
 
-- Google Sheet, Optimization Plan, 1Qk8jzmZERae_gf-nhXqz0vsZ87Zwr3JcUkVW8SnNXVA, WhatsApp, Instagram, GTM, pricing mismatch, RM500, RM600, 60–90 Hours, /contacts, /pricing, /services, /about
+- pre-commit, protected-paths, staged-deletion, memories/phase2_workspace_diff.md, git restore, sparse-checkout, git sparse-checkout disable
 
-## Task 3: Booking confirmation modal, minimum feedback, and idempotency
+## Task 2: Lean maintenance, Git staging, and boot/localhost routing
 
 ### rollout_summary_files
 
-- rollout_summaries/2026-10-15T02-49-58-3dyZ-vipbillion_website_audit_booking_modal_ux.md (cwd=D:\project\VIPBillion, rollout_path=C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T10-49-58-01a13d77-69bb-71a1-a74a-b50080a22db5.jsonl, updated_at=2026-10-16T01:10:55+00:00, thread_id=01a13d77-69bb-71a1-a74a-b50080a22db5, browser/live verification unperformed)
+- rollout_summaries/2026-08-20T01-54-45-Rl4o-codex_git_sparse_checkout_and_generated_images_cleanup.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\08\20\rollout-2026-08-20T09-54-45-01a01ce0-bb0d-76b1-898a-dabc3ae2eddc.jsonl, updated_at=2026-08-20T08:30:33+00:00, thread_id=01a01ce0-bb0d-76b1-898a-dabc3ae2eddc, partial)
+- rollout_summaries/2026-08-12T07-57-58-bZCY-codex_lean_maintenance_and_memory_compression.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\08\12\rollout-2026-08-12T15-57-58-019ff4fa-668d-74d2-bc92-64724b087b5c.jsonl, updated_at=2026-08-12T08:30:52+00:00, thread_id=019ff4fa-668d-74d2-bc92-64724b087b5c, success)
+- rollout_summaries/2026-09-04T01-18-24-1Zuq-codex_boot_and_localhost_test_blocked.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\09\04\rollout-2026-09-04T09-18-24-01a069fe-d709-7e00-b7e6-2069c0077bea.jsonl, updated_at=2026-09-04T01:19:08+00:00, thread_id=01a069fe-d709-7e00-b7e6-2069c0077bea, partial)
 
 ### keywords
 
-- template/booking.php, booking-confirmation-modal, waitForMinimumLoading, 1000 ms, BookingModel.php, BookingController.php, BookingRequestConflictException, findExistingWebsiteBookingById, bookingRequestMatches, php -l, git diff --check
-
-## Task 4: Homepage/services quote CTA and booking prefill
-
-### rollout_summary_files
-
-- rollout_summaries/2026-10-15T02-49-20-z2H4-vipbillion_home_hero_h1_and_booking_cta.md (cwd=D:\project\VIPBillion\website-vipbillion, rollout_path=C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T10-49-20-01a13d76-d6b9-7812-aae5-4818b0a53cde.jsonl, updated_at=2026-10-15T08:37:27+00:00, thread_id=01a13d76-d6b9-7812-aae5-4818b0a53cde)
-
-### keywords
-
-- template/booking.php, booking-prefill-session.php, nav.get_quote, service_interest, preselectServiceRoute, fillVehicleOptions, PHP session, php -l
-
-## Task 5: Missed header “View Our Services” CTA request
-
-### rollout_summary_files
-
-- rollout_summaries/2026-10-15T08-40-58-GbCk-vipbillion_header_cta_request_missed.md (cwd=D:\project\VIPBillion\website-vipbillion, rollout_path=C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T16-40-58-01a13eb8-c451-7ba1-8551-d173ae1acf74.jsonl, updated_at=2026-10-15T09:58:21+00:00, thread_id=01a13eb8-c451-7ba1-8551-d173ae1acf74, failed scope adherence)
-
-### keywords
-
-- View Our Services, Get a Quote, /booking, lib/header.php, index.php, template/booking.php, header CTA, request missed
+- 00_PULSE.md, ai read .codex knowledge, Update-CodexRouting.ps1, Test-CodexPerfBenchmark.ps1, memories/.git, git add --sparse, localhost-test
 
 ## User preferences
 
-- when the user asks to “understand my website first include .md” -> read orientation/status/plan Markdown and verify it against current source before changes. [Task 1]
-- when the user requests “summarize it all in chinese show me in comparision tables with detailed information.. pages, task, changes, problem, done?” -> deliver Chinese rows with page/area, requested task, current problem, required change, and independently verified status; distinguish sheet state from code/live evidence. [Task 2]
-- when the user says “all popup modal should be display position center” -> use fixed horizontal/vertical viewport centering by default, but inspect each actual modal system before declaring a sitewide change. [Task 3]
-- when the user says “loading speed are too fast slower +1sec to it” -> keep fast submission feedback visible for at least 1000 ms without extending genuinely slow requests. [Task 3]
-- when the user said “read and understand my product first include .md then update below” and requested `View Our Services` → `Get a Quote` to `/booking`, inspect relevant Markdown/source, then make exactly that header change; an attached screenshot does not override explicit text. [Task 5]
-- when the user requested “increase text size 4-5px”, weight 500, and theme green, preserve narrowly scoped visual edits and use existing tokens such as `var(--main-color)`. [Task 4]
-- the user selected “30 天（推荐）” -> use 30-day retention for isolated booking prefill, not browser-cookie application state. [Task 4]
+- when maintaining `.codex`, the user asked to “take action ... wont make heavy changes to it” -> favor reversible, surgical changes that preserve routes, skills, secrets, and repository state. [Task 2]
 
 ## Reusable knowledge
 
-- Entrypoint is `index.php`, with clean URL routing in `router.php` and shared initialization at `lib/initData.php`; bilingual EN/CN uses `/cn/...`, session/cookie state, `i18n/en.json`, `i18n/cn.json`, and localized database fields. [Task 1]
-- Current source/live behavior outranks stale docs: booking/payment paths exist despite root docs saying Phase 2 commerce was removed; `API_SETUP_COMPLETE.md` is historical and must never be used to retain secrets. `meta.md`, `lib/metaData.php`, and `lib/initData.php` own current public metadata. [Task 1]
-- Optimization Plan has 13 actions (7 P0, 4 P1, 2 P2). Verified audit findings include duplicate WhatsApp on `/contacts`; Instagram conditional output in header/footer/contact/services-single; contact Apps Script proxy rather than WhatsApp; no clear GTM WhatsApp event; RM500/RM600 pricing mismatch; “60–90 Hours” typo; visitor counts/anchors on `/about`. [Task 2]
-- `template/booking.php` centers `.booking-confirmation-modal[open]` with fixed 50%/translate and `waitForMinimumLoading(startedAt)` enforces the 1000-ms floor. Same UUID plus matching data reuses the booking; mismatched replay throws `BookingRequestConflictException`. In-memory paid/consultation retry tests passed. [Task 3]
-- `index.php` routes `/booking` to `template/booking.php`; shared header code is under `lib/header.php` or included partials. Search exact displayed wording before patching. [Task 5]
-- Service CTAs pass `?service=<slug>`; only a unique normalized service/route match preselects route. Otherwise leave route selection to the user. Vehicle default is lowest positive-priced, non-consultation, non-Bus option. [Task 4]
-- `lib/booking-prefill-session.php` holds only name, phone, departure and arrival in a separate server-side session with 30-day TTL; escape values on render and save before insertion so a failed booking can refresh prefill. [Task 4]
+- `00_PULSE.md` is the boot contract; the exact hydration trigger `ai read .codex knowledge` returns only `[🟢] Agent is Ready..`. Hydrate once per chat, then read task-specific routes lazily. [Task 2]
+- A pre-commit hook rejects staged deletions under `memories/` and `skills/`. For an accidentally deleted tracked protected file, recover it with `git restore --source=HEAD --staged --worktree -- <path>` and validate `git hook run pre-commit`. [Task 1]
+- Missing tracked files can be a sparse-checkout omission, not deletion. Inspect `git sparse-checkout list`; the latest recovery disabled sparse checkout permanently. [Task 1]
+- After route/index changes, refresh generated routing with `codex-router/Update-CodexRouting.ps1 -Quiet`; the 2026-08 baseline passed benchmark 32/32, activation 18/18, routing audit with no missing targets/conflicts. [Task 2]
 
 ## Failures and how to do differently
 
-- Symptom: assumed `website-vipbillion/initData.php` is missing -> cause: wrong path; fix: use `website-vipbillion/lib/initData.php` and current tree. [Task 1]
-- Homepage live fetch timed out; do not claim homepage verification without another source. Finish all 13 Chinese audit rows with evidence-backed states: not started, partially implemented, verified, or not verifiable. [Task 2]
-- `php -l template/booking.php` and `git diff --check` passed, but no browser visual test or real API request was run. Do not use real `/booking` just to test visuals because it may create records/increment visitor tracking; use isolated DB, mock, or fixture. The “all popup modal” request was implemented only for the booking `<dialog>`—inspect `main-register-container`, header modal, and lightGallery before sitewide claims. [Task 3]
-- Symptom: screenshot interpretation points to a different UI than explicit text -> cause: task drift; fix: re-anchor on the requested label, source and route, patch only that source, then lint/read back/test navigation. [Task 5]
-- Normal public-page browser requests record visits; use a non-visitor-counting harness before claiming end-to-end visual/runtime success. [Task 4]
+- Symptom: an application localhost test finds no project from `.codex` -> cause: wrong working directory -> rerun from the actual project root; startup alone is not success, HTTP-check real URLs. [Task 2]
+- Symptom: `Validate-CodexKnowledge.ps1` fails on `memories/.git` -> nested Git metadata is pre-existing; do not remove or mutate it without explicit approval. [Task 2]
+- Symptom: PowerShell warns that a command may be unsafe -> distinguish this security warning from Codex approval; inspect the command and policy context rather than assuming user permission was denied. [Task 1]
 
-# Task Group: XHS/TikTok inbox Telegram preview
-scope: Vue mock-chat preview orientation, Telegram timeline/date behavior, and upload UI; preserve TikTok/XHS isolation.
-applies_to: cwd=D:\project\xhs-tiktok-inbox; reuse_rule=use only after reconciling stale PROJECT_CONTEXT.md with current PhonePreview.vue/source.
+# Task Group: D:\project\VIPBillion\website-vipbillion — PHP website, booking UX, and optimization audit
 
-## Task 1: Telegram date dividers, sticky-date cycling, and time-only notices
+scope: Work on the bilingual VIPBillion public PHP website: orientation, customer-request audit, CTA/booking flow, and booking modal behavior.
+applies_to: cwd=D:\project\VIPBillion\website-vipbillion; reuse_rule=current source/live evidence outranks root Markdown that may be historical; do not make real booking/page requests merely for visual testing because visit tracking or records may change.
 
-### rollout_summary_files
-
-- rollout_summaries/2026-10-15T02-12-32-It36-fix_time_only_telegram_date_markers.md (cwd=D:\project\xhs-tiktok-inbox, rollout_path=C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T10-12-33-01a13d55-251d-7450-85cd-b5903ba42304.jsonl, updated_at=2026-10-15T04:28:02+00:00, thread_id=01a13d55-251d-7450-85cd-b5903ba42304)
-- rollout_summaries/2026-10-15T01-08-25-vGYm-telegram_sticky_date_click_cycle.md (cwd=D:\project\xhs-tiktok-inbox, rollout_path=C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T09-08-26-01a13d1a-7276-78d0-8c19-27b3dca280ee.jsonl, updated_at=2026-10-15T01:49:31+00:00, thread_id=01a13d1a-7276-78d0-8c19-27b3dca280ee, browser behavior unverified)
-- rollout_summaries/2026-10-13T10-15-27-ekZ9-telegram_date_divider_sequence_and_sticky_history.md (cwd=D:\project\xhs-tiktok-inbox, rollout_path=C:\Users\user\.codex\sessions\2026\10\13\rollout-2026-10-13T18-15-33-01a134c2-8b36-70d0-b2ec-ded39973bf8f.jsonl, updated_at=2026-10-14T02:30:41+00:00, thread_id=01a134c2-8b36-70d0-b2ec-ded39973bf8f)
-
-### keywords
-
-- PhonePreview.vue, Telegram, stickyHistoryDate, historyDates, cycleStickyHistoryDate, getNoticeHistoryTimestamp, time-only, date divider, npm run build
-
-## Task 2: Global upload image sizing tiers
+## Task 1: Website orientation and 13-row Optimization Plan audit
 
 ### rollout_summary_files
 
-- rollout_summaries/2026-10-12T06-24-02-dlD6-all_tabs_upload_image_sizing_tiers_popup.md (cwd=D:\project\xhs-tiktok-inbox, rollout_path=C:\Users\user\.codex\sessions\2026\10\12\rollout-2026-10-12T14-24-03-01a12ec8-5255-7ad1-8475-8fb42dfceea4.jsonl, updated_at=2026-10-12T06:59:26+00:00, thread_id=01a12ec8-5255-7ad1-8475-8fb42dfceea4)
+- rollout_summaries/2026-10-15T02-49-58-3dyZ-vipbillion_website_audit_booking_modal_ux.md (cwd=D:\project\VIPBillion, rollout_path=C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T10-49-58-01a13d77-69bb-71a1-a74a-b50080a22db5.jsonl, updated_at=2026-10-16T01:10:55+00:00, thread_id=01a13d77-69bb-71a1-a74a-b50080a22db5, partial)
+- rollout_summaries/2026-10-13T04-22-41-QlZW-vipbillion_project_and_google_sheet_optimization_audit.md (cwd=D:\project\VIPBillion, rollout_path=C:\Users\user\.codex\sessions\2026\10\13\rollout-2026-10-13T12-22-41-01a1337f-959e-7af3-ba5d-913ed7a4d3f4.jsonl, updated_at=2026-10-13T08:05:25+00:00, thread_id=01a1337f-959e-7af3-ba5d-913ed7a4d3f4, success)
 
 ### keywords
 
-- image sizing, all tabs, upload, tiers, popup, UnifiedSettings.vue, PhonePreview.vue
+- WORKSPACE.md, STATUS.md, MASTER_PLAN.md, lib/initData.php, Optimization Plan, Google Sheets, duplicate WhatsApp, Instagram, pricing mismatch, 60–90 Hours
+
+## Task 2: Get a Quote /booking flow, service preselection, and 30-day prefill
+
+### rollout_summary_files
+
+- rollout_summaries/2026-10-15T02-49-20-z2H4-vipbillion_home_hero_h1_and_booking_cta.md (cwd=D:\project\VIPBillion, rollout_path=C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T10-49-20-01a13d76-d6b9-7812-aae5-4818b0a53cde.jsonl, updated_at=2026-10-15T08:37:27+00:00, thread_id=01a13d76-d6b9-7812-aae5-4818b0a53cde, success)
+- rollout_summaries/2026-10-15T08-40-58-GbCk-vipbillion_header_cta_request_missed.md (cwd=D:\project\VIPBillion, rollout_path=C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T16-40-58-01a13eb8-c451-7ba1-8551-d173ae1acf74.jsonl, updated_at=2026-10-15T09:58:21+00:00, thread_id=01a13eb8-c451-7ba1-8551-d173ae1acf74, failed request-routing caution)
+
+### keywords
+
+- View Our Services, Get a Quote, /booking, nav.get_quote, preselectServiceRoute, fillVehicleOptions, booking-prefill-session.php, VBBookingPrefill
+
+## Task 3: Booking confirmation dialog, minimum loading, and idempotency
+
+### rollout_summary_files
+
+- rollout_summaries/2026-10-15T02-49-58-3dyZ-vipbillion_website_audit_booking_modal_ux.md (cwd=D:\project\VIPBillion, rollout_path=C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T10-49-58-01a13d77-69bb-71a1-a74a-b50080a22db5.jsonl, updated_at=2026-10-16T01:10:55+00:00, thread_id=01a13d77-69bb-71a1-a74a-b50080a22db5, partial)
+
+### keywords
+
+- booking-confirmation-modal, waitForMinimumLoading, 1000 ms, BookingModel.php, BookingRequestConflictException, findExistingWebsiteBookingById
 
 ## User preferences
 
-- when changing the preview, the user scoped it to “Telegram/date behavior” and asked that scrolling remain intact -> keep Telegram-only branches isolated and add interaction beside, not instead of, scroll logic. [Task 1]
-- when the visible date should stay centered under the header while scrolling, treat the screenshot behavior as an acceptance criterion; do not declare it visually correct without scrolling QA. [Task 1]
+- when starting VIPBillion work, the user asked to “understand my website first include .md” -> read orientation/status/plan docs, reconcile them against current source, then change only the requested area. [Task 1][Task 2]
+- for request audits, the user requested “summarize it all in chinese show me in comparision tables with detailed information.. pages, task, changes, problem, done?” -> provide Chinese tables and distinguish sheet status from independently verified source/live status. [Task 1]
+- when user requested `View Our Services` → `Get a Quote`, navigating to `/booking`, the attached screenshot did not authorize a different CSS task -> locate the exact label, patch its source only, and verify destination. [Task 2]
+- “all popup modal should be display position center” and “loading speed are too fast slower +1sec to it” -> center dialogs in both viewport axes and show feedback at least 1000 ms without delaying already-slow requests. [Task 3]
 
 ## Reusable knowledge
 
-- The app is a Vue 3 + Vite JavaScript mock chat generator: App.vue owns shared state, UnifiedSettings.vue edits it, and PhonePreview.vue renders previews; it is not a real inbox/backend. [Task 1]
-- In PhonePreview.vue, explicit dates retain their parsing; `HH:MM` values matching `/^\\d{1,2}:\\d{2}$/` represent the current real-world local date. [Task 1]
-- Sticky cycling uses distinct history dates newest-to-oldest and wraps; production build and `git diff --check` passed, but manual Telegram click/scroll QA remains a separate gate. [Task 1]
+- Entry/routing/shared init are `index.php`, `router.php`, and `lib/initData.php`; EN/CN paths use `/cn/...`, `i18n/en.json`, `i18n/cn.json`, localized fields, and models under `api/Models/`. Current booking/payment source exists even where historical docs say Phase 2 was removed. [Task 1]
+- The Optimization Plan has 13 actions (7 P0, 4 P1, 2 P2). Confirmed issues include duplicate WhatsApp on `/contacts`, conditional Instagram rendering, Apps Script contact submission, no clear WhatsApp GTM event, pricing RM500 vs RM600 mismatch, `60–90 Hours`, and About anchors/visitor prominence. Business confirmation is needed before changing prices, durations, categories, FAQs, social accounts, or authentic imagery. [Task 1]
+- CTAs use bilingual `nav.get_quote` to `/booking`; cards append `?service=<slug>`. Only preselect a route for one normalized match; on ambiguity let the user choose. Vehicle default is lowest positive-price non-consultation, non-Bus option. The isolated 30-day server-side `VBBookingPrefill` session stores only name, phone, departure and arrival addresses; escape values when rendering. [Task 2]
+- Current booking dialog CSS is `.booking-confirmation-modal[open] { position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); }`; `waitForMinimumLoading()` enforces the one-second minimum. Same UUID + matching booking data reuses a row; mismatched replay raises `BookingRequestConflictException`. [Task 3]
 
 ## Failures and how to do differently
 
-- Symptom: timeline order derives an October 14 label before the explicit October 8 divider -> cause: per-message timestamp derivation; fix: use explicit divider dates as section boundaries and first-notice history date for pre-divider messages. [Task 1]
-- Symptom: a build changes `dist/index.html` bundle references -> inspect generated artifacts before committing; a passing build is not proof of visual interaction. [Task 1]
+- `API_SETUP_COMPLETE.md` has historical configuration and credential-like material in prior output; do not rely on it as current config and never retain secrets. [Task 1]
+- Browser/live booking verification remains incomplete: use an isolated test DB, mocked API, or visitor-tracking-bypassing fixture. Do not claim end-to-end visual/API success from `php -l`, JSON parsing, or `git diff --check` alone. [Task 2][Task 3]
+- “All popup modal” was only applied to the booking confirmation dialog. Before declaring a sitewide fix, inspect other systems such as `main-register-container`, header modal, and lightGallery. Use smaller PowerShell validation commands when a complex quoted command fails. [Task 3]
 
-# Task Group: Lion Rider orientation, storefront, and admin boundary
-scope: project handoff, PHP/JSON storefront, spare-parts behavior, and separate Vben/Supabase admin.
-applies_to: cwd=D:\project\lionrider; reuse_rule=separate lionrider-website from admin-panel-lionrider; inspect existing dirty website changes first.
+# Task Group: D:\project\xhs-tiktok-inbox — Vue chat preview and Telegram timeline behavior
 
-## Task 1: Project handoff, account sidebar, spare-parts and localhost
+scope: Maintain the fictional TikTok/XHS/Telegram preview generator, especially image sizing and Telegram date-history logic.
+applies_to: cwd=D:\project\xhs-tiktok-inbox; reuse_rule=platform-specific changes must not alter other preview tabs; build validation is necessary but browser interaction QA is a separate gate.
+
+## Task 1: Upload-image size tiers across tabs and popup
 
 ### rollout_summary_files
 
-- rollout_summaries/2026-10-13T06-16-33-OhXB-lionrider_project_handoff_spareparts_localhost_test.md (cwd=D:\project\lionrider\lionrider-website, rollout_path=C:\Users\user\.codex\sessions\2026\10\13\rollout-2026-10-13T14-16-33-01a133e7-d37a-7312-a72b-4b6feafda2c3.jsonl, updated_at=2026-10-14T02:30:50+00:00, thread_id=01a133e7-d37a-7312-a72b-4b6feafda2c3)
-- rollout_summaries/2026-10-13T06-12-43-M5EQ-lionrider_account_mobile_sidebar_and_project_handoff.md (cwd=D:\project\lionrider, rollout_path=C:\Users\user\.codex\sessions\2026\10\13\rollout-2026-10-13T14-12-43-01a133e4-51b0-7453-b814-ec4392e2bdd8.jsonl, updated_at=2026-10-14T09:53:24+00:00, thread_id=01a133e4-51b0-7453-b814-ec4392e2bdd8)
+- rollout_summaries/2026-10-12T06-24-02-dlD6-all_tabs_upload_image_sizing_tiers_popup.md (cwd=D:\project\xhs-tiktok-inbox, rollout_path=C:\Users\user\.codex\sessions\2026\10\12\rollout-2026-10-12T14-24-03-01a12ec8-5255-7ad1-8475-8fb42dfceea4.jsonl, updated_at=2026-10-12T06:59:26+00:00, thread_id=01a12ec8-5255-7ad1-8475-8fb42dfceea4, success)
 
 ### keywords
 
-- lionrider-website, PHP, product.json, spareparts-models.json, mobile sidebar, Spare Parts finder, localhost, Vben admin, schema lionrider
+- UnifiedSettings.vue, PhonePreview.vue, upload image, longest-side, image sizing tiers, popup
 
-## Task 2: Incomplete all-Markdown orientation
+## Task 2: Telegram divider sequence, sticky-date cycle, and time-only markers
+
+### rollout_summary_files
+
+- rollout_summaries/2026-10-15T02-12-32-It36-fix_time_only_telegram_date_markers.md (cwd=D:\project\xhs-tiktok-inbox, rollout_path=C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T10-12-33-01a13d55-251d-7450-85cd-b5903ba42304.jsonl, updated_at=2026-10-15T04:28:02+00:00, thread_id=01a13d55-251d-7450-85cd-b5903ba42304, success)
+- rollout_summaries/2026-10-15T01-08-25-vGYm-telegram_sticky_date_click_cycle.md (cwd=D:\project\xhs-tiktok-inbox, rollout_path=C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T09-08-26-01a13d1a-7276-78d0-8c19-27b3dca280ee.jsonl, updated_at=2026-10-15T01:49:31+00:00, thread_id=01a13d1a-7276-78d0-8c19-27b3dca280ee, partial)
+- rollout_summaries/2026-10-13T10-15-27-ekZ9-telegram_date_divider_sequence_and_sticky_history.md (cwd=D:\project\xhs-tiktok-inbox, rollout_path=C:\Users\user\.codex\sessions\2026\10\13\rollout-2026-10-13T18-15-33-01a134c2-8b36-70d0-b2ec-ded39973bf8f.jsonl, updated_at=2026-10-14T02:30:41+00:00, thread_id=01a134c2-8b36-70d0-b2ec-ded39973bf8f, partial)
+
+### keywords
+
+- PhonePreview.vue, historyDates, stickyHistoryDate, firstNoticeHistoryDate, cycleStickyHistoryDate, getNoticeHistoryTimestamp, Telegram, date divider
+
+## Task 3: System-wide Chrome SideBySide repair
+
+### rollout_summary_files
+
+- rollout_summaries/2026-10-14T01-08-21-BDke-repair_chrome_side_by_side_startup_error.md (cwd=D:\project\xhs-tiktok-inbox, rollout_path=C:\Users\user\.codex\sessions\2026\10\14\rollout-2026-10-14T09-08-21-01a137f4-0654-7372-abcd-b822f7242dda.jsonl, updated_at=2026-10-14T01:26:34+00:00, thread_id=01a137f4-0654-7372-abcd-b822f7242dda, success)
+
+### keywords
+
+- Chrome, SideBySide, Event ID 33, Google Chrome Enterprise MSI, msiexec, 155.0.8059.80
+
+## User preferences
+
+- when changing the chat preview, the user scoped it to Telegram/date behavior -> preserve platform isolation and existing scroll-based sticky-date updates rather than replacing them. [Task 2]
+- the user clarified the visible date stays centered below the header while scrolling and specified October 8 → October 12 → October 14 -> use explicit divider dates as authoritative section boundaries. [Task 2]
+
+## Reusable knowledge
+
+- Vue 3 + Vite mock generator: `App.vue` owns shared state, `UnifiedSettings.vue` edits it, `PhonePreview.vue` renders previews. `PROJECT_CONTEXT.md` is stale in places; reconcile it with current source. [Task 1][Task 2]
+- `PhonePreview.vue` has `historyDates`, `defaultHistoryDate`, `stickyHistoryDate`, `firstNoticeHistoryDate`, and `getNoticeHistoryTimestamp`. Time-only `/^\d{1,2}:\d{2}$/` values use the current local calendar date; explicit dates remain unchanged. [Task 2]
+- The clickable sticky date is a button that cycles unique history dates newest-to-oldest via `cycleStickyHistoryDate()`; CSS uses `.chat-body.telegram > button.sticky-history-date`. [Task 2]
+- Use shared longest-side sizing tiers for upload previews across each tab and modal, then run `npm.cmd run build` and `git diff --check`. [Task 1]
+- For a system-wide Chrome SideBySide error, verify the official Enterprise MSI file size, `AuthenticodeSignature`, publisher, elevated `msiexec` exit code, executable version, direct/pinned launches, and fresh Event ID 33 status. A complete official MSI repaired this installation after bundled setup exit code `12`. [Task 3]
+
+## Failures and how to do differently
+
+- Build success does not demonstrate click/scroll behavior. Manually test Telegram tab scrolling and sticky-date clicks before declaring complete; generated `dist/` references may change during build and need review. [Task 2]
+- A rollout solved time-only inheritance while the image-described interaction was broader; confirm the exact UI acceptance criterion before editing. Prefer small separately quoted PowerShell searches after an unterminated-quote failure. [Task 2]
+- Do not repeat non-elevated local setup attempts for a global broken Chrome install; validate the installer and use a system-level repair. [Task 3]
+
+# Task Group: D:\project\lionrider\lionrider-website — PHP/JSON storefront, handoff, and Spare Parts finder
+
+scope: Maintain Lion Rider storefront architecture, local runtime, responsive account UI, and catalog-derived Spare Parts filtering.
+applies_to: cwd=D:\project\lionrider\lionrider-website; reuse_rule=do not confuse the JSON storefront with admin-panel Supabase work; inspect dirty worktree and current data before editing.
+
+## Task 1: Storefront orientation, Markdown handoff, and mobile account sidebar
 
 ### rollout_summary_files
 
 - rollout_summaries/2026-10-14T02-12-43-ymqp-lionrider_markdown_orientation_partial.md (cwd=D:\project\lionrider, rollout_path=C:\Users\user\.codex\sessions\2026\10\14\rollout-2026-10-14T10-12-43-01a1382e-f2e0-7553-aae2-50891763274d.jsonl, updated_at=2026-10-14T09:44:38+00:00, thread_id=01a1382e-f2e0-7553-aae2-50891763274d, partial)
+- rollout_summaries/2026-10-13T06-12-43-M5EQ-lionrider_account_mobile_sidebar_and_project_handoff.md (cwd=D:\project\lionrider, rollout_path=C:\Users\user\.codex\sessions\2026\10\13\rollout-2026-10-13T14-12-43-01a133e4-51b0-7453-b814-ec4392e2bdd8.jsonl, updated_at=2026-10-14T09:53:24+00:00, thread_id=01a133e4-51b0-7453-b814-ec4392e2bdd8, success)
 
 ### keywords
 
-- PROJECT_CONTEXT.md, BLUEPRINT.md, status.md, AGENTS.md, CLAUDE.md, SUPABASE.md, documentation drift, 341 products
+- status.md, PROJECT_CONTEXT.md, BLUEPRINT.md, PHP JSON storefront, account-sidebar, customer-dashboard, max-width: 620px, documentation drift
+
+## Task 2: Spare Parts availability filter and localhost verification
+
+### rollout_summary_files
+
+- rollout_summaries/2026-10-13T06-16-33-OhXB-lionrider_project_handoff_spareparts_localhost_test.md (cwd=D:\project\lionrider, rollout_path=C:\Users\user\.codex\sessions\2026\10\13\rollout-2026-10-13T14-16-33-01a133e7-d37a-7312-a72b-4b6feafda2c3.jsonl, updated_at=2026-10-14T02:30:50+00:00, thread_id=01a133e7-d37a-7312-a72b-4b6feafda2c3, success)
+
+### keywords
+
+- spareparts-home.php, spareparts-finder.js, Only show models with available Spare Parts, normalize, 127.0.0.1:8012, router.php
 
 ## User preferences
 
-- when the user asks to understand “my project and all .md”, treat completeness literally; do not report success after only front-door documents. [Task 2]
+- when asked to understand “my project and all .md”, treat completeness literally; do not report it complete after front-door docs only. [Task 1]
+- the user asked to “take highly note” of the planned overhaul and save a cache/status guide -> maintain `status.md` after meaningful work, while current files and latest owner direction outrank old status entries. [Task 1]
+- “if website is in mobile responsive view please hide the above sidemenu” -> hide it on mobile rather than merely compress it. [Task 1]
 
 ## Reusable knowledge
 
-- Website is PHP/JSON and has no Supabase connection; the Vben admin uses shared Docker-local Supabase schema `lionrider`. Current fixture has 341 products (317 accessories, 24 spareparts); demo fitment/prices are illustrative. [Task 2]
-- `knowledge.md` is FC-Moto material and conflicts with Lion Rider truth; exclude it. Current source/newest dated status outrank stale docs that still say 317 products. [Task 2]
+- Storefront root is PHP front controller `index.php` with `router.php`, `template/`, `lib/`, `css/`, `js/`, and JSON catalog data. It has no verified Supabase connection; workspace real database docs/admin schema are a separate boundary. [Task 1]
+- `status.md` is the durable storefront handoff. Historical docs drift: old files say 317 products while current fixture/newest status has 341; `knowledge.md` refers to unrelated `fc-moto` and must be excluded. [Task 1]
+- Account sidebar mobile rule: `.customer-dashboard .account-sidebar { display: none; }` under `@media (max-width: 620px)`. [Task 1]
+- Finder default is availability-only; normalize make/model on products and source models, exclude sold-out/all-unavailable real variations, while a non-sold-out variationless product qualifies. Start server with `php -S 127.0.0.1:8012 router.php` and HTTP-check `/`, `/spareparts/yamaha`, `/spareparts/kawasaki`. [Task 2]
 
 ## Failures and how to do differently
 
-- The root is not Git but `lionrider-website` is, with pre-existing modifications; do not modify it before preserving/inspecting its status. [Task 2]
+- Do not modify the existing dirty website repository until checking its pre-existing changes. A 151-file Markdown request was only partially completed; continue exhaustive read or explicitly narrow scope. [Task 1]
+- Direct model-name matching misses catalog records; normalize first. Use one patch operation per file when a multi-operation patch fails. Browser account QA needs a signed-in local session. [Task 2]
 
-# Task Group: Zeta Software bilingual static website
-scope: English/CN parity, static generation, performance, cleanup, SEO and local HTTP verification.
-applies_to: cwd=D:\backup\website-zetasoftware; reuse_rule=English is markup/design source and cn/ is localized counterpart; read status.md and current source before relying on older notes.
+# Task Group: D:\backup\website-zetasoftware — bilingual static-site content, performance, and SEO routing
 
-## Task 1: Bilingual content/design parity and generated navigation
+scope: Maintain Zeta Software static bilingual site parity, generated navigation, images/performance, and hosting/SEO rules.
+applies_to: cwd=D:\backup\website-zetasoftware; reuse_rule=apply edits to EN/CN pair where relevant and distinguish source/local-server validation from production/browser validation.
 
-### rollout_summary_files
-
-- rollout_summaries/2026-08-13T09-01-30-FmzH-zetasoftware_bilingual_faq_homepage_blogs_pricing_parity.md (cwd=D:\backup\website-zetasoftware, rollout_path=C:\Users\user\.codex\sessions\2026\08\13\rollout-2026-08-13T17-01-30-019ffa5a-eb3e-7172-8f41-7b65c41c8a95.jsonl, updated_at=2026-08-13T09:54:49+00:00, thread_id=019ffa5a-eb3e-7172-8f41-7b65c41c8a95)
-- rollout_summaries/2026-09-07T05-57-20-zPhy-zeta_website_project_audit_navigation_content_performance.md (cwd=D:\backup\website-zetasoftware, rollout_path=C:\Users\user\.codex\sessions\2026\09\07\rollout-2026-09-07T13-57-20-01a07a71-4c56-70b0-a1e2-b8a02742ecb4.jsonl, updated_at=2026-09-07T09:41:02+00:00, thread_id=01a07a71-4c56-70b0-a1e2-b8a02742ecb4)
-
-### keywords
-
-- faq.json, js/faq.js, home-blogs.js, update-site-navigation, generate-standard-internal-management-pages, pricing-section, Orbitron, cn/
-
-## Task 2: Static localhost/performance/lazy-load and cleanup
+## Task 1: Bilingual FAQ, homepage/blog, services, and pricing parity
 
 ### rollout_summary_files
 
-- rollout_summaries/2026-10-12T02-32-50-FulX-zeta_website_cleanup_mail_host_seo_audit.md (cwd=D:\backup\website-zetasoftware, rollout_path=C:\Users\user\.codex\sessions\2026\10\12\rollout-2026-10-12T10-32-50-01a12df4-a688-72d0-8aa6-dd792838fc51.jsonl, updated_at=2026-10-12T06:20:38+00:00, thread_id=01a12df4-a688-72d0-8aa6-dd792838fc51)
-- rollout_summaries/2026-09-04T01-20-03-IpkW-zeta_static_site_localhost_performance_image_loading.md (cwd=D:\backup\website-zetasoftware, rollout_path=C:\Users\user\.codex\sessions\2026\09\04\rollout-2026-09-04T09-20-03-01a06a00-5a37-7e72-bbbc-b6b33c856356.jsonl, updated_at=2026-09-07T05:56:45+00:00, thread_id=01a06a00-5a37-7e72-bbbc-b6b33c856356, JPG/WebP migration incomplete)
+- rollout_summaries/2026-08-13T09-01-30-FmzH-zetasoftware_bilingual_faq_homepage_blogs_pricing_parity.md (cwd=D:\backup\website-zetasoftware, rollout_path=C:\Users\user\.codex\sessions\2026\08\13\rollout-2026-08-13T17-01-30-019ffa5a-eb3e-7172-8f41-7b65c41c8a95.jsonl, updated_at=2026-08-13T09:54:49+00:00, thread_id=019ffa5a-eb3e-7172-8f41-7b65c41c8a95, success)
 
 ### keywords
 
-- php -S 127.0.0.1:8080, data-src, IntersectionObserver, images/mobile, images/website, WebP, JPG, .htaccess, mail host, canonical
+- faq.json, js/faq.js, paired IDs, home-blogs.js, pricing-section, Orbitron, services/index.html, cn/services/index.html
+
+## Task 2: Static localhost, image/performance work, navigation generator, and SEO cleanup
+
+### rollout_summary_files
+
+- rollout_summaries/2026-10-12T02-32-50-FulX-zeta_website_cleanup_mail_host_seo_audit.md (cwd=D:\backup\website-zetasoftware, rollout_path=C:\Users\user\.codex\sessions\2026\10\12\rollout-2026-10-12T10-32-50-01a12df4-a688-72d0-8aa6-dd792838fc51.jsonl, updated_at=2026-10-12T06:20:38+00:00, thread_id=01a12df4-a688-72d0-8aa6-dd792838fc51, partial)
+- rollout_summaries/2026-09-07T05-57-20-zPhy-zeta_website_project_audit_navigation_content_performance.md (cwd=D:\backup\website-zetasoftware, rollout_path=C:\Users\user\.codex\sessions\2026\09\07\rollout-2026-09-07T13-57-20-01a07a71-4c56-70b0-a1e2-b8a02742ecb4.jsonl, updated_at=2026-09-07T09:41:02+00:00, thread_id=01a07a71-4c56-70b0-a1e2-b8a02742ecb4, partial)
+- rollout_summaries/2026-09-04T01-20-03-IpkW-zeta_static_site_localhost_performance_image_loading.md (cwd=D:\backup\website-zetasoftware, rollout_path=C:\Users\user\.codex\sessions\2026\09\04\rollout-2026-09-04T09-20-03-01a06a00-5a37-7e72-bbbc-b6b33c856356.jsonl, updated_at=2026-09-07T05:56:45+00:00, thread_id=01a06a00-5a37-7e72-bbbc-b6b33c856356, partial)
+
+### keywords
+
+- php -S 127.0.0.1:8080, .htaccess, WebP, data-src, IntersectionObserver, update-site-navigation.js, style.min.css, mail host, canonical redirect
 
 ## User preferences
 
-- the user expects paired English/Chinese records, structure, visible text, and tracking updates; never report one-language completion without checking the counterpart. [Task 1]
-- when asked for “exact same design”, use the supplied screenshot and existing homepage markup/CSS as active visual source of truth, not a look-alike redesign. [Task 1]
-- for body images, the user specified `data-src` plus 1×1 SVG `src`, excluding logo/icon/header/footer; only delete the specified WebPs after reference/existence validation. [Task 2]
+- user requests for bilingual content mean paired English/Chinese records and tracking updates, not English-only completion; quantify exact requested changes such as title percentages and order. [Task 1]
+- when screenshots ask for the “exact same design”, treat homepage markup/CSS and screenshot as active visual source of truth and inspect both languages. [Task 1]
+- `localhost test` means detect site type, start only required server, and verify real URLs; startup alone is not success. [Task 2]
 
 ## Reusable knowledge
 
-- Serve as static files with `php -S 127.0.0.1:8080 -t <workspace>`; HTTP 200 proves route serving, not browser visual, Apache cache/compression, or production behavior. [Task 2]
-- Related skill: skills/zeta-bilingual-static-site/SKILL.md
-- Generators must render shared navigation or invoke `require("./update-site-navigation");` after generation; otherwise generated SIM pages regress to empty menus. [Task 1]
-- Parse JSON and check count, unique IDs, paired EN/CN IDs and title parity after content edits. `js/home-blogs.js` sorts localized JSON by date and renders latest three. [Task 1]
+- `js/faq.js` selects `/data/faq.json` by `/cn/` and updates visible FAQ + FAQPage JSON-LD. Validate JSON parse, duplicate IDs, counts, paired IDs, and paired title changes after bulk FAQ edits. [Task 1]
+- `home-blogs.js` sorts localized data by descending date, takes three, escapes content, renders links, refreshes Lucide, and integrates lazy loading. Services pages must explicitly load the Google-font URL used by homepage for Orbitron token parity. [Task 1]
+- Static checkout has no package manifest/Vite/PHP entry: serve `php -S 127.0.0.1:8080 -t <workspace>`. Local PHP server does not test Apache `.htaccess` gzip/cache/redirect behavior. [Task 2]
+- Generator pipeline matters: use source data/scripts for generated SIM navigation, not hand edits to output. For bulk image transforms, resolve root-relative `images/...` from project root and validate malformed whitespace-before-attribute output. [Task 2]
 
 ## Failures and how to do differently
 
-- Symptom: bulk HTML/image transform works on relative paths but misses root-relative `images/...` -> resolve those from project root and audit malformed whitespace before attributes. [Task 2]
-- Do not delete WebPs in `images/mobile`/`images/website`: JPG conversion was aborted after a ripgrep regex error. Use a robust reference scan across HTML, JS, JSON, CSS, validate JPEGs/routes, then limit deletion to the two folders. [Task 2]
+- Do not remove original raster/WebP assets before canonical JPG/lazy-load migration is complete and every intended reference is updated. Browser automation was unavailable in several runs, so manual hard-refresh/production verification remains required for visual/cache/redirect claims. [Task 2]
+- Unicode comparisons and large text patches can corrupt JSON or miss expected HTML context; use UTF-8-safe checks, fresh exact context, and paired-language validation. [Task 1]
 
-# Task Group: .codex routing, memory, and Git recovery
-scope: boot contract, routing performance, sparse-checkout recovery, and knowledge-tree maintenance.
-applies_to: cwd=C:\Users\user\.codex; reuse_rule=current files/tests beat historical metrics; Git commands belong at the root repo, not memories/.
+# Task Group: C:\Users\user\Desktop\used-car — Vue/Supabase project and Windows Chrome repair
 
-## Task 1: Boot, lean routing, and localhost boundary
+scope: Orient and verify the Used-Car Vue app, respect external schema ownership, and handle Chrome SideBySide launch failure seen in this workspace.
+applies_to: cwd=C:\Users\user\Desktop\used-car; reuse_rule=the runnable app is template/; archived client migrations are not schema authority.
 
-### rollout_summary_files
-
-- rollout_summaries/2026-10-08T01-40-56-1R8h-codex_sparse_checkout_recovery_and_powershell_alert.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\10\08\rollout-2026-10-08T09-40-56-01a1192b-b085-75e1-a18b-2d3afb096a9d.jsonl, updated_at=2026-10-08T07:03:57+00:00, thread_id=01a1192b-b085-75e1-a18b-2d3afb096a9d)
-- rollout_summaries/2026-08-12T07-57-58-bZCY-codex_lean_maintenance_and_memory_compression.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\08\12\rollout-2026-08-12T15-57-58-019ff4fa-668d-74d2-bc92-64724b087b5c.jsonl, updated_at=2026-08-12T08:30:52+00:00, thread_id=019ff4fa-668d-74d2-bc92-64724b087b5c)
-- rollout_summaries/2026-09-04T01-18-24-1Zuq-codex_boot_and_localhost_test_blocked.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\09\04\rollout-2026-09-04T09-18-24-01a069fe-d709-7e00-b7e6-2069c0077bea.jsonl, updated_at=2026-09-04T01:19:08+00:00, thread_id=01a069fe-d709-7e00-b7e6-2069c0077bea)
-
-### keywords
-
-- 00_PULSE.md, ai read .codex knowledge, Agent is Ready, sparse-checkout, core.sparseCheckout, Audit-CodexRouting.ps1, memories/.git, Invoke-WebRequest -UseBasicParsing
-
-## Task 2: Root Git and generated-image boundary
+## Task 1: Used-Car audit, schema boundary, localhost, and saved-loan UI
 
 ### rollout_summary_files
 
-- rollout_summaries/2026-08-20T01-54-45-Rl4o-codex_git_sparse_checkout_and_generated_images_cleanup.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\08\20\rollout-2026-08-20T09-54-45-01a01ce0-bb0d-76b1-898a-dabc3ae2eddc.jsonl, updated_at=2026-08-20T08:30:33+00:00, thread_id=01a01ce0-bb0d-76b1-898a-dabc3ae2eddc)
+- rollout_summaries/2026-08-27T07-28-15-vpVJ-used_car_project_audit_localhost_sql_loan_card_revision.md (cwd=C:\Users\user\Desktop\used-car, rollout_path=C:\Users\user\.codex\sessions\2026\08\27\rollout-2026-08-27T15-28-15-01a0421e-939f-7453-b375-f3a5f387b2a7.jsonl, updated_at=2026-08-28T09:08:56+00:00, thread_id=01a0421e-939f-7453-b375-f3a5f387b2a7, success)
 
 ### keywords
 
-- root Git only, generated_images, git add --sparse, thread-writer-locks, Recycle Bin, memories/.git
+- PROJECT_CONTEXT.md, template, ViteSSG, archived migrations, admin-panel-used-car, pnpm.cmd run dev:local, development.localhost, Favorites.vue, MyLoans.vue
+
+## Task 2: Chrome SideBySide startup repair
+
+### rollout_summary_files
+
+- rollout_summaries/2026-08-27T01-14-49-nqVw-repair_chrome_side_by_side_startup_error.md (cwd=C:\Users\user\Desktop\used-car, rollout_path=C:\Users\user\.codex\sessions\2026\08\27\rollout-2026-08-27T09-14-50-01a040c8-b2ca-73e0-9fcf-88af85530a0e.jsonl, updated_at=2026-08-27T01:18:15+00:00, thread_id=01a040c8-b2ca-73e0-9fcf-88af85530a0e, success)
+
+### keywords
+
+- Chrome, SideBySide, missing dependent assembly, new_chrome.exe, 151.0.7922.175, chrome_proxy.exe
 
 ## User preferences
 
-- when in full-access mode, avoid repetitive “Step X done — confirm or adjust?” prompts; continue obvious safe implementation, pausing only for a meaningful decision, hidden risk, destructive action, or ambiguous tradeoff. [ad-hoc note]
-- `ai read .codex knowledge` is a small boot read, not a full-tree scan; wake only the relevant project skill family and re-check routing at each new request. [ad-hoc note]
+- “read and understand my project ... all folder and .md” -> give source-grounded understanding and comprehensively inspect project-owned Markdown; reference/sample assets are not live business facts. [Task 1]
+- targeted card changes should remain minimal and be checked in both `Favorites.vue` and `MyLoans.vue`. [Task 1]
 
 ## Reusable knowledge
 
-- `00_PULSE.md` owns boot: exact `ai read .codex knowledge` returns only `[🟢] Agent is Ready..`; hydrate once, then use lazy task-specific reads. [Task 1]
-- Related skill: skills/localhost-project-match/SKILL.md
-- Missing tracked content may be sparse-checkout omission, not deletion: check `core.sparseCheckout`, `git ls-files`, and materialization before backups/reset. Verified guard is `git sparse-checkout disable` plus the pre-commit check; never promise absolute permanence. [Task 1]
-- `C:\Users\user\.codex\.git` is the only Git repo for this tree. `memories/` is ordinary tracked content; never init/clone a nested repo. [ad-hoc note]
-- Keep generated project assets out of `.codex/generated_images`; use the active project's asset folder and update consuming references. [ad-hoc note]
+- Active root `template/` is Vue 3/Vite/TypeScript/Tailwind/Pinia/Vue Router/vue-i18n/ViteSSG/PWA/Supabase. `PROJECT_CONTEXT.md` is the truth map; current source/runtime outranks README/historical handoff. [Task 1]
+- All client SQL migrations are explicitly archived; schema authority is external `D:\admin-panel-used-car\apps\web-antd\src\sql\migrations\` and was absent locally, so live schema is `INSUFFICIENT DATA`. Run local build as `pnpm.cmd exec vite build --mode development.localhost`; default SSG fails `supabaseUrl is required` without injected env. [Task 1]
+- Start local client from `template/` with `pnpm.cmd run dev:local` (port 3000) and HTTP-check routes. [Task 1]
+- Chrome repair: valid shortcut + SideBySide missing assembly means inspect Chrome version directories, `new_chrome*`, and registry before replacing launchers; retain versioned backups and verify launcher version/process, not `chrome.exe --version`. [Task 2]
 
 ## Failures and how to do differently
 
-- A localhost check from `.codex` found no app/listener. Rerun from the actual application root; a port/listener is not proof it serves the intended checkout. [Task 1]
-- PowerShell 5.1 `Invoke-WebRequest` security warning is not a Codex approval prompt; use `-UseBasicParsing` where appropriate and do not broadly approve it. [Task 1]
+- Run source checks from `template/` or absolute paths; complex detached PowerShell launch quoting may fail, while `Start-Process pnpm.cmd` with working directory succeeds. [Task 1]
+- Do not recreate a valid shortcut just because Chrome fails. If installer fails, make elevated, version-checked backup/copy only after identifying a complete pending build. [Task 2]
 
-# Task Group: Local Supabase backup/restore and protected Docker state
-scope: Huwa2 restore/PostgREST exposure plus cross-project local Docker safety.
-applies_to: cwd=C:\Users\user\Documents\supabase-project-backup-restore and C:\Users\user\Documents\local-supabase; reuse_rule=read-only inspection is safe; any stack/config/schema/state change needs explicit same-turn user permission unless a current task explicitly supplied it.
+# Task Group: C:\Users\user\Documents\supabase-project-backup-restore — Huwa2 local restore and PostgREST exposure
 
-## Task 1: Huwa2 VPS backup repair and API exposure
+scope: Safely repair/import the Huwa2 VPS backup into local Supabase and expose its schema through the CLI-managed stack.
+applies_to: cwd=C:\Users\user\Documents\supabase-project-backup-restore; reuse_rule=preserve original backup and Docker-backed local data; exact counts/path are backup-specific.
+
+## Task 1: Repair auth backup, atomic restore, and add Huwa2 to API schemas
 
 ### rollout_summary_files
 
-- rollout_summaries/2026-08-14T02-47-47-8IL6-huwa2_vps_restore_and_postgrest_expose.md (cwd=C:\Users\user\Documents\supabase-project-backup-restore, rollout_path=C:\Users\user\.codex\sessions\2026\08\14\rollout-2026-08-14T10-47-47-019ffe2b-21d6-7ff2-9bea-6cfa6ab17768.jsonl, updated_at=2026-08-14T03:10:24+00:00, thread_id=019ffe2b-21d6-7ff2-9bea-6cfa6ab17768)
+- rollout_summaries/2026-08-14T02-47-47-8IL6-huwa2_vps_restore_and_postgrest_expose.md (cwd=C:\Users\user\Documents\supabase-project-backup-restore, rollout_path=C:\Users\user\.codex\sessions\2026\08\14\rollout-2026-08-14T10-47-47-019ffe2b-21d6-7ff2-9bea-6cfa6ab17768.jsonl, updated_at=2026-08-14T03:10:24+00:00, thread_id=019ffe2b-21d6-7ff2-9bea-6cfa6ab17768, success)
 
 ### keywords
 
-- huwa2, auth.identities, identities_user_id_fkey, atomic restore, PostgREST, PGRST_DB_SCHEMAS, [api].schemas, local-supabase, config.toml
+- huwa2, auth.users, auth.identities, identities_user_id_fkey, atomic restore, 04-auth-rows.sql, PGRST_DB_SCHEMAS, config.toml, Supabase CLI
 
 ## User preferences
 
-- the user treats local Docker/Supabase state as protected: never rename, stop, reset, prune, recreate, repoint, or modify stack/config/schema exposure without explicit permission in that turn. [ad-hoc note]
+- user wanted the VPS-backed `huwa2` available locally while treating original backup and local database state as protected -> repair only a working copy, use atomic restore, and avoid unrelated resets. [Task 1]
 
 ## Reusable knowledge
 
-- Preserve original backup and repair only a working copy. Before restore, verify every `auth.identities.user_id` has a parent `auth.users.id`; failed atomic restore rolls back. [Task 1]
-- Related skill: skills/local-supabase-protection/SKILL.md
-- CLI-managed local stack uses `C:\Users\user\Documents\local-supabase\supabase\config.toml`, `[api].schemas`; update there rather than seeking Compose labels, then verify live `PGRST_DB_SCHEMAS`. [Task 1]
-- For Angel/local web “empty” symptoms, treat env selection, runtime host detection and actual Supabase URL as one evidence chain; correct RLS alone does not prove access—check `information_schema.role_table_grants`. [ad-hoc note]
+- Before restore, validate every `auth.identities.user_id` has `auth.users.id`. This backup had 10 orphan phone identities; adding placeholder parents to the working copy yielded 18 users, 26 identities, 0 orphans. Recovered accounts may lack authenticable passwords/phone data. [Task 1]
+- Use `scripts/04-restore-local.sh`; available Git Bash was `C:\Program Files (x86)\Git\bin\bash.exe`. Successful restore committed transaction, storage policies/85 objects, and deliberately skipped 18 existing edge functions. [Task 1]
+- Local stack is managed by Supabase CLI at `C:\Users\user\Documents\local-supabase`, not Compose. Add `"huwa2"` to `[api].schemas` in `supabase/config.toml`, then `supabase stop --workdir ...` / `supabase start --workdir ...`; verify `PGRST_DB_SCHEMAS`, project/schema, and orphan count. [Task 1]
 
 ## Failures and how to do differently
 
-- `scripts/06-expose-schema.sh` failed with `Could not locate compose file for 'supabase_rest_local-supabase'` because it assumed Compose. Detect `com.supabase.cli.project` and use CLI config. [Task 1]
+- Do not retry a known inconsistent backup unchanged. `scripts/06-expose-schema.sh` fails `Could not locate compose file for 'supabase_rest_local-supabase'` in CLI-managed environments; detect `com.supabase.cli.project` and update CLI config instead. [Task 1]
 
-# Task Group: Used-Car Vue/Supabase workflow
-scope: project orientation, authoritative schema boundary, local Vite verification, and saved-loan UI edits.
-applies_to: cwd=C:\Users\user\Desktop\used-car\template; reuse_rule=client archived SQL is not authoritative; external admin schema must be current and present before provisioning.
+# Task Group: C:\Users\user\Desktop\ai comment — evidence-bound metadata and web manifest guidance
 
-## Task 1: Audit, localhost, SQL boundary, and saved-loan iteration
+scope: Update reusable website metadata instructions without leaking historical project identity or unsupported claims.
+applies_to: cwd=C:\Users\user\Desktop\ai comment; reuse_rule=derive all identity/scope values from the active project only; this is instruction-file guidance, not a specific site’s metadata.
+
+## Task 1: Project-agnostic metaTitle and site.webmanifest workflow
 
 ### rollout_summary_files
 
-- rollout_summaries/2026-08-27T07-28-15-vpVJ-used_car_project_audit_localhost_sql_loan_card_revision.md (cwd=C:\Users\user\Desktop\used-car, rollout_path=C:\Users\user\.codex\sessions\2026\08\27\rollout-2026-08-27T15-28-15-01a0421e-939f-7453-b375-f3a5f387b2a7.jsonl, updated_at=2026-08-28T09:08:56+00:00, thread_id=01a0421e-939f-7453-b375-f3a5f387b2a7)
+- rollout_summaries/2026-08-10T04-13-53-hwPl-project_agnostic_metadata_and_webmanifest_guidance.md (cwd=C:\Users\user\Desktop\ai comment, rollout_path=C:\Users\user\.codex\sessions\2026\08\10\rollout-2026-08-10T12-13-53-019fe9e0-8772-7143-8b6b-11cc8a866137.jsonl, updated_at=2026-08-10T04:22:20+00:00, thread_id=019fe9e0-8772-7143-8b6b-11cc8a866137, success)
 
 ### keywords
 
-- PROJECT_CONTEXT.md, template/, ViteSSG, development.localhost, archived migrations, Favorites.vue, MyLoans.vue, 精准报价, supabaseUrl is required
+- (AI) metaTitle.txt, INSUFFICIENT DATA, project identity, broad scope, site.webmanifest, Select-String -LiteralPath
 
 ## User preferences
 
-- when asked to read “my project ... all folder and .md”, produce source-grounded understanding and comprehensively inspect project-owned Markdown; samples/screenshots are reference-only. [Task 1]
-- for a targeted card change then “remove it from both cards pages”, make minimal edits and check both Favorites.vue and MyLoans.vue. [Task 1]
+- find the “actual project name user are working on rightnow” and avoid copied VIP Billion/direct project names -> derive name from current files, brand, configuration, routes, metadata, and runtime evidence; preserve confirmed spelling/legal suffix. [Task 1]
+- avoid narrow examples “car, door, hotel” and use broader/global meaning only when evidence supports it; metadata belongs in the existing centralized module/include, not seed/data or unrelated templates. [Task 1]
 
 ## Reusable knowledge
 
-- Runnable app root is `template/`; `pnpm.cmd run dev:local` serves port 3000. Use `--mode development.localhost` for builds because default SSG can fail `Error: supabaseUrl is required.` [Task 1]
-- `PROJECT_CONTEXT.md` is truth map but current runtime/source outrank old handoffs. Authoritative migrations were documented in missing external admin repo; archived client migrations must not provision the live schema. [Task 1]
+- Require `INSUFFICIENT DATA` when identity is unconfirmed; do not copy names, domains, URLs, social accounts, locations, colors, page filenames, or claims from example/history. Detail pages can retain confirmed item names; home/category pages can use broader confirmed offerings. [Task 1]
+- Manifest reminder covers evidence-based `name`, `short_name`, `description`, `lang`, `id`, `start_url`, `scope`, `display`, colors, and existing icon paths/MIME/sizes. Do not create a manifest merely for SEO when site is not an installable web app. [Task 1]
 
 ## Failures and how to do differently
 
-- Complex detached PowerShell startup and ripgrep quoting failed; use a short `Start-Process` with explicit `template/` working directory and simple separately quoted searches. [Task 1]
+- `rg --literal-path` is unsupported; use PowerShell `Select-String -LiteralPath` for an exact-file scan. If no Git repo, use read-back and targeted scans rather than `git diff`. [Task 1]
 
-# Task Group: Metadata identity, static SEO, and image assets
-scope: evidence-based metadata/manifest work and global raster/lazy-load contracts.
-applies_to: cwd=C:\Users\user\Desktop\ai comment and cross-project web work; reuse_rule=derive all identity/claims from active project evidence, never copied examples/history.
+# Task Group: D:\backup\zeta-aiseo — generated-news sitemap coverage
 
-## Task 1: Project-agnostic metadata and site.webmanifest guidance
+scope: Audit sitemap entries against generated published Zeta Aiseo news routes.
+applies_to: cwd=D:\backup\zeta-aiseo; reuse_rule=validate current generated routes, not assumed/static article lists.
+
+## Task 1: Sitemap and published-news route audit
 
 ### rollout_summary_files
 
-- rollout_summaries/2026-08-10T04-13-53-hwPl-project_agnostic_metadata_and_webmanifest_guidance.md (cwd=C:\Users\user\Desktop\ai comment, rollout_path=C:\Users\user\.codex\sessions\2026\08\10\rollout-2026-08-10T12-13-53-019fe9e0-8772-7143-8b6b-11cc8a866137.jsonl, updated_at=2026-08-10T04:22:20+00:00, thread_id=019fe9e0-8772-7143-8b6b-11cc8a866137)
+- rollout_summaries/2026-10-12T04-27-14-dxCe-zeta_aiseo_sitemap_news_route_audit.md (cwd=D:\backup\zeta-aiseo, rollout_path=C:\Users\user\.codex\sessions\2026\10\12\rollout-2026-10-12T12-27-14-01a12e5d-60dd-7b02-9b53-d85577178fce.jsonl, updated_at=2026-10-12T04:30:11+00:00, thread_id=01a12e5d-60dd-7b02-9b53-d85577178fce, success)
 
 ### keywords
 
-- metaTitle.txt, project identity, SEO metadata, site.webmanifest, INSUFFICIENT DATA, Select-String -LiteralPath
+- sitemap.xml, published news routes, generated routes, zeta-aiseo
+
+## Reusable knowledge
+
+- Sitemap was already complete against generated published news routes; validate route generation and sitemap together before adding entries. [Task 1]
+
+## Failures and how to do differently
+
+- Do not infer missing sitemap coverage from article files alone; compare the actual published-route generator output. [Task 1]
+
+# Task Group: D:\project\mincorner — Remark popup text source tracing
+
+scope: Trace bilingual Remark/备注 cart popup text without changing behavior.
+applies_to: cwd=D:\project\mincorner; reuse_rule=source-tracing result is checkout-specific; re-search if template architecture changes.
+
+## Task 1: Confirm Remark popup hardcoding
+
+### rollout_summary_files
+
+- rollout_summaries/2026-10-13T01-34-59-HFET-confirm_remark_popup_hardcoded.md (cwd=D:\project\mincorner, rollout_path=C:\Users\user\.codex\sessions\2026\10\13\rollout-2026-10-13T09-35-00-01a132e6-0be2-72c1-ba80-59225dfa87d3.jsonl, updated_at=2026-10-13T03:03:56+00:00, thread_id=01a132e6-0be2-72c1-ba80-59225dfa87d3, success)
+
+### keywords
+
+- Remark, 备注, cart popup, hardcoded bilingual text
 
 ## User preferences
 
-- the user asked for the “actual project name user are working on rightnow” and no historical VIP Billion/direct project examples -> derive identity from active source/config/visible brand, retaining confirmed legal spelling only. [Task 1]
-- use broad/global wording only when evidence supports it; do not invent reach or narrow all examples to “car, door, hotel”. [Task 1]
+- user asked whether the Remark popup was hardcoded -> answer source-tracing questions with the exact template/source evidence, not assumptions about translation systems. [Task 1]
 
 ## Reusable knowledge
 
-- Metadata identity cannot be confirmed -> say `INSUFFICIENT DATA`. Sync manifest `name`, `short_name`, description, lang, id/start_url/scope, display, colors and existing icons only for an installable app. [Task 1]
-- Related skill: skills/static-site-metadata-sweep/SKILL.md
-- Global AI raster policy: measure rendered target first; final edges 30–1600px (never wider than 1600), JPG for opaque assets and PNG only for genuine alpha/artifact-sensitive flat art; verify dimensions and store in project assets. [ad-hoc note]
-- Page-body lazy images keep real URL in `data-src` with a 1×1 SVG `src`; use IntersectionObserver, load-event cleanup, lazy/async decoding, and exclude header/footer/menu/floating UI/background/video. [ad-hoc note]
+- The right-side Remark/备注 cart popup uses hardcoded bilingual template text. [Task 1]
 
 ## Failures and how to do differently
 
-- `rg --literal-path` is unsupported. For exact-file scan use `Select-String -LiteralPath`; when no Git repo exists, use read-back/targeted scans rather than claiming `git diff`. [Task 1]
-
-# Task Group: Windows Chrome SideBySide repair
-scope: global Chrome startup failure caused by incomplete version updates.
-applies_to: cwd=Windows system scope; reuse_rule=only elevate/replace/install after version/event evidence and preserve backups where feasible.
-
-## Task 1: Diagnose and repair missing dependent assembly
-
-### rollout_summary_files
-
-- rollout_summaries/2026-10-14T01-08-21-BDke-repair_chrome_side_by_side_startup_error.md (cwd=D:\project\xhs-tiktok-inbox, rollout_path=C:\Users\user\.codex\sessions\2026\10\14\rollout-2026-10-14T09-08-21-01a137f4-0654-7372-abcd-b822f7242dda.jsonl, updated_at=2026-10-14T01:26:34+00:00, thread_id=01a137f4-0654-7372-abcd-b822f7242dda)
-- rollout_summaries/2026-08-27T01-14-49-nqVw-repair_chrome_side_by_side_startup_error.md (cwd=C:\Users\user\Desktop\used-car, rollout_path=C:\Users\user\.codex\sessions\2026\08\27\rollout-2026-08-27T09-14-50-01a040c8-b2ca-73e0-9fcf-88af85530a0e.jsonl, updated_at=2026-08-27T01:18:15+00:00, thread_id=01a040c8-b2ca-73e0-9fcf-88af85530a0e)
-
-### keywords
-
-- Chrome, SideBySide, Event ID 33, Dependent Assembly, new_chrome.exe, Chrome Enterprise MSI, msiexec, AuthenticodeSignature
-
-## Reusable knowledge
-
-- First determine whether pinned shortcuts target the same root executable and inspect SideBySide event/version directories. A valid shortcut is not the cause when the executable has a missing assembly. [Task 1]
-- If a local setup is incomplete/unusable, validate official installer size/signature/publisher, install elevated, then verify installer exit code, executable version, process liveness, shortcuts and fresh SideBySide events. [Task 1]
-
-## Failures and how to do differently
-
-- `chrome.exe --version` can behave as a browser launch; verify launcher file version and process/event evidence instead. Do not repeatedly run a failing non-elevated repair. [Task 1]
-
-# Task Group: VIPBillion admin, payment, and data conventions
-scope: recurring Vben/Supabase CRUD, attachments, booking/driver-job focus, FIUU and news import rules.
-applies_to: cwd=D:\project\VIPBillion and related VIPBillion admin/site checkouts; reuse_rule=inspect current schema/config first; never expose/reuse credentials.
-
-## Task 1: VIPBillion discovery and Google Sheet optimization audit
-
-### rollout_summary_files
-
-- rollout_summaries/2026-10-13T04-22-41-QlZW-vipbillion_project_and_google_sheet_optimization_audit.md (cwd=D:\project\VIPBillion, rollout_path=C:\Users\user\.codex\sessions\2026\10\13\rollout-2026-10-13T12-22-41-01a1337f-959e-7af3-ba5d-913ed7a4d3f4.jsonl, updated_at=2026-10-13T08:05:25+00:00, thread_id=01a1337f-959e-7af3-ba5d-913ed7a4d3f4)
-
-### keywords
-
-- VIPBillion, Google Sheet, booking, driver job, Vben, Supabase, isDelete, slug, FIUU, news import
-
-## User preferences
-
-- keep focus on booking and driver-job CRUD together; after changes settle, actively flag stale SQL, Vue components, helpers and select options. [ad-hoc note]
-- sort fields default to steps of 1000 (1000, 2000, 3000), not 1. [ad-hoc note]
-
-## Reusable knowledge
-
-- New business tables generally use `isDelete boolean NOT NULL DEFAULT false`; every CRUD read, lookup, dropdown, drawer and workflow query filters `isDelete = false`; delete soft-deletes. Attachment-bearing modules soft-delete related attachment rows, show them in Deleted, and purge both records/storage only from Deleted. [ad-hoc note]
-- Soft-deleted rows must not block slug reuse: active-only duplicate check, `checkSlugExists()`, submit-time recheck, and partial unique index `WHERE deleted_at IS NULL`. A UI-available/submit-unique error suggests legacy full uniqueness drift. [ad-hoc note]
-- FIUU redirect uses `pay.fiuu.com/RMS/pay/{merchantId}` built from booking payload; map responses back to booking fields, retain `returnipn.php` only on result/IPN path, and keep secrets in project config. [ad-hoc note]
-- For local-Docker news imports use additive 10,40,50,50,50 phases; validate counts, bilingual JSON, company name, SQL, proportional 1200x630/400x300 images and `/news`; never reset/alter unrelated rows. [ad-hoc note]
-
-## Failures and how to do differently
-
-- Do not mutate deleted slugs with random suffixes as default, and do not treat only RLS as access proof when direct update behavior indicates grants/trigger/RPC issues. [ad-hoc note]
-
-# Task Group: General collaboration, replica, and project-knowledge conventions
-scope: cross-project working style and durable routing/documentation patterns.
-applies_to: cwd=all projects; reuse_rule=apply only when compatible with current repo contracts and user request; current source remains authoritative.
-
-## Task 1: Cross-project operational conventions
-
-### rollout_summary_files
-
-- Extension evidence retained in `extensions/ad_hoc/notes/`; no rollout summary remains after the deleted-source cleanup. [ad-hoc note]
-
-### keywords
-
-- best answer first, clone-first, Hierarchical Replica Chunking, one source of truth, project knowledge template, verification, screenshot replica
-
-## User preferences
-
-- for options/rankings, lead with the recommended answer, then concise numbered alternatives so selection is fast. [ad-hoc note]
-- when the user says “copy and paste”, “duplicate”, “clone”, or “same modules”, locate and duplicate the exact full module shell first; preserve layout/spacing/drawer-grid behavior, then change only requested inner content. [ad-hoc note]
-- for screenshot replicas, keep the reference actively monitored throughout the task and use Hierarchical Replica Chunking: bands → nested visual chunks → structure/spacing/type/palette/image composition per chunk. [ad-hoc note]
-
-## Reusable knowledge
-
-- Use the five-point routing rule: one boot doc, one trigger per task, one file per purpose, one verification step per action, one source of truth per project. [ad-hoc note]
-- Related skill: skills/awake-skill-routing/SKILL.md, skills/clone-first-module-duplication/SKILL.md, skills/hierarchical-replica-chunking/SKILL.md, skills/html-to-php-website-migration/SKILL.md
-- Project knowledge should identify source of truth, routing, rules, examples, verification and exceptions; self-describing frontmatter is a router aid, not a substitute for project truth. [ad-hoc note]
-- Prefer current files, tests, logs and schema over memory; execute surgically and verify read-back/lint/build/smoke before completion. [ad-hoc note]
-- Angel: keep provided tester credentials out of memory; use a user-verified historic source rather than guessing, align auth/profile/business user records when the explicitly requested tester workflow applies, and keep demo login values blank/non-sensitive. Admin RPC `column "status" does not exist` is schema drift: inspect migrations/schema before Vue and use append-only compatibility migration. [ad-hoc note]
-- Angel paid downloads: inspect checkout route, download route and `lib/downloadData.php` together; a real download requires a paid Stripe session whose metadata matches the resource. Preserve missing-config/cancel/error fallbacks, keep runtime keys secret, and separate first-party warnings from browser-extension/embed noise. [ad-hoc note]
-- EDSB admin is phone-first: new Auth identity defaults to `email = NULL`; do not clear shared existing emails without owner approval. Local VPS parity applies only to local Docker, never VPS, and must not copy another project's active-project pointer. [ad-hoc note]
-- Genie Skin Beauty: `download-template/` is read-only visual reference; edit `website-genieskinbeauty/` and never carry VIPBillion inherited names/content into Genie. [ad-hoc note]
-- HTML-to-PHP replica sites: clone the full reference shell, migrate through router/shared `lib/`/`template/` and project-owned assets, remove stale source-specific endpoints, then validate syntax, route matrix (including expected 404), JSON/catalog counts and visible controls. [ad-hoc note]
-- Vben/Pinia work: preserve store contracts, relation bindings and active-row filters; reset CRUD drawers to top on opening (including nested content) and update table body, summary and horizontal scroll together when columns change. [ad-hoc note]
-- Zeta Capital news keeps full server-rendered crawlable cards/JSON-LD, initially reveals 12 then 3 via IntersectionObserver, and provides a no-observer fallback; its card images follow the data-src SVG-placeholder rule. [ad-hoc note]
-
-## Failures and how to do differently
-
-- Do not turn a screenshot replica into a flat element checklist or redesign it before cloning the requested source. Do not load unrelated skills/knowledge trees when a small routed read suffices. [ad-hoc note]
-- Never infer an active project/stack from a similar checkout, a loaded port, or an old note; establish current root, env/runtime target and source-of-truth path first. [ad-hoc note]
+- Keep this as a diagnostic result; do not propose a localization rewrite unless requested. [Task 1]
