@@ -255,3 +255,9 @@ browser-annotation-screenshots-mode = "necessary"
 
 [memories]
 disable_on_external_context = false
+
+[hooks.state.'C:\Users\user\.codex\hooks.json:post_tool_use:0:0']
+trusted_hash = "sha256:4d587e826e541df31dcd5e76cf355cfd115eae12e0dae129b73d225991306267"
+
+[hooks.state.'C:\Users\user\.codex\hooks.json:user_prompt_submit:0:0']
+trusted_hash = "sha256:f14b06b744a7d89d86aab23553112500d8dc5b1cd78632ca8ea0f9bab2037c25"
