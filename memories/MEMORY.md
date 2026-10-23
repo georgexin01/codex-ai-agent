@@ -7,6 +7,7 @@ applies_to: cwd=C:\Users\user\.codex; reuse_rule=recheck current hooks, sparse s
 
 ### rollout_summary_files
 
+- rollout_summaries/2026-10-19T02-13-47-jXyC-codex_sparse_checkout_recovery_and_automated_protection.md (cwd=C:\Users\user\.codex, rollout_path=\\?\C:\Users\user\.codex\sessions\2026\10\19\rollout-2026-10-19T10-13-47-01a151ef-b986-7c32-a74a-1a7d506e4466.jsonl, updated_at=2026-10-22T02:14:13+00:00, thread_id=01a151ef-b986-7c32-a74a-1a7d506e4466, success; recurring recovery/protection verified)
 - rollout_summaries/2026-10-16T08-24-39-QpWZ-codex_precommit_protected_deletions_recovery_push.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\10\16\rollout-2026-10-16T16-24-39-01a143d0-2eb2-7b91-8f78-221999fe3aed.jsonl, updated_at=2026-10-19T02:11:02+00:00, thread_id=01a143d0-2eb2-7b91-8f78-221999fe3aed, success; restored 17 deletions, committed/pushed remaining work)
 - rollout_summaries/2026-10-16T01-34-59-TSQM-resolve_protected_codex_staged_deletion.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\10\16\rollout-2026-10-16T09-34-59-01a14259-1f6b-7bd1-bd04-e127b476e7a8.jsonl, updated_at=2026-10-19T02:11:19+00:00, thread_id=01a14259-1f6b-7bd1-bd04-e127b476e7a8, success; restored one routed file and passed hook)
 - rollout_summaries/2026-10-08T01-40-56-1R8h-codex_sparse_checkout_recovery_and_powershell_alert.md (cwd=C:\Users\user\.codex, rollout_path=C:\Users\user\.codex\sessions\2026\10\08\rollout-2026-10-08T09-40-56-01a1192b-b085-75e1-a18b-2d3afb096a9d.jsonl, updated_at=2026-10-08T07:03:57+00:00, thread_id=01a1192b-b085-75e1-a18b-2d3afb096a9d, success)
@@ -36,7 +37,8 @@ applies_to: cwd=C:\Users\user\.codex; reuse_rule=recheck current hooks, sparse s
 - `00_PULSE.md` is the boot contract; the exact hydration trigger `ai read .codex knowledge` returns only `[🟢] Agent is Ready..`. Hydrate once per chat, then read task-specific routes lazily. [Task 2]
 - A pre-commit hook rejects staged deletions under `memories/` and `skills/`. For an accidentally deleted tracked protected file, recover it with `git restore --source=HEAD --staged --worktree -- <path>` and validate `git hook run pre-commit`. [Task 1]
 - Diagnose a commit rejection as local hook versus remote failure first. Use `git diff --cached --name-only --diff-filter=D -- memories/ skills/`; restore unintended protected files, then run `git diff --cached --check` and the hook before committing. [Task 1]
-- Missing tracked files can be a sparse-checkout omission, not deletion. Inspect `git sparse-checkout list`; the latest recovery disabled sparse checkout permanently. [Task 1]
+- Missing tracked files can be a sparse-checkout omission, not deletion. Compare every `git ls-files` path with the worktree, inspect both local/worktree `core.sparseCheckout`, then run `git sparse-checkout disable`; latest checks reached 666/666 present with both values false. [Task 1]
+- `C:\Users\user\AppData\Local\CodexDataRecovery\Scripts\Protect-Codex.ps1` verifies root/branch/HEAD, disables sparse checkout, restores only absent files from active index or hash-verified snapshots, and calls `Backup-CodexProtectedData.ps1`. The independent `Codex Protected Data Hourly Backup` task runs at logon, hourly, and daily at 10:15; preserve automation IDs/states and immutable snapshots. [Task 1]
 - After route/index changes, refresh generated routing with `codex-router/Update-CodexRouting.ps1 -Quiet`; the 2026-08 baseline passed benchmark 32/32, activation 18/18, routing audit with no missing targets/conflicts. [Task 2]
 
 ## Failures and how to do differently
@@ -45,6 +47,7 @@ applies_to: cwd=C:\Users\user\.codex; reuse_rule=recheck current hooks, sparse s
 - Symptom: `Validate-CodexKnowledge.ps1` fails on `memories/.git` -> nested Git metadata is pre-existing; do not remove or mutate it without explicit approval. [Task 2]
 - Symptom: PowerShell warns that a command may be unsafe -> distinguish this security warning from Codex approval; inspect the command and policy context rather than assuming user permission was denied. [Task 1]
 - The large-knowledge scanner may omit a deleted file because it scans only files present in the worktree; check staged deletions directly. Pre-existing `.codex-global-state.json` secret-pattern and nested `memories/.git` validator findings are not justification to alter unrelated files. [Task 1]
+- The process that re-enables sparse checkout is unproven; do not blame ChatGPT or VS Code. `memories/phase2_workspace_diff.md` is generated: restore only if absent, never edit, compress, or rewrite it. [Task 1]
 
 # Task Group: D:\project\VIPBillion\website-vipbillion — PHP website, booking UX, and optimization audit
 
@@ -55,7 +58,7 @@ applies_to: cwd=D:\project\VIPBillion\website-vipbillion; reuse_rule=current sou
 
 ### rollout_summary_files
 
-- rollout_summaries/2026-10-15T02-49-58-3dyZ-vipbillion_website_audit_booking_modal_ux.md (cwd=D:\project\VIPBillion, rollout_path=C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T10-49-58-01a13d77-69bb-71a1-a74a-b50080a22db5.jsonl, updated_at=2026-10-16T01:10:55+00:00, thread_id=01a13d77-69bb-71a1-a74a-b50080a22db5, partial)
+- rollout_summaries/2026-10-15T02-49-58-3dyZ-vipbillion_booking_feedback_verification.md (cwd=D:\project\VIPBillion, rollout_path=\\?\C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T10-49-58-01a13d77-69bb-71a1-a74a-b50080a22db5.jsonl, updated_at=2026-10-19T02:41:11+00:00, thread_id=01a13d77-69bb-71a1-a74a-b50080a22db5, partial)
 - rollout_summaries/2026-10-13T04-22-41-QlZW-vipbillion_project_and_google_sheet_optimization_audit.md (cwd=D:\project\VIPBillion, rollout_path=C:\Users\user\.codex\sessions\2026\10\13\rollout-2026-10-13T12-22-41-01a1337f-959e-7af3-ba5d-913ed7a4d3f4.jsonl, updated_at=2026-10-13T08:05:25+00:00, thread_id=01a1337f-959e-7af3-ba5d-913ed7a4d3f4, success)
 
 ### keywords
@@ -169,7 +172,7 @@ applies_to: cwd=D:\project\lionrider\lionrider-website; reuse_rule=do not confus
 ### rollout_summary_files
 
 - rollout_summaries/2026-10-14T02-12-43-ymqp-lionrider_markdown_orientation_partial.md (cwd=D:\project\lionrider, rollout_path=C:\Users\user\.codex\sessions\2026\10\14\rollout-2026-10-14T10-12-43-01a1382e-f2e0-7553-aae2-50891763274d.jsonl, updated_at=2026-10-14T09:44:38+00:00, thread_id=01a1382e-f2e0-7553-aae2-50891763274d, partial)
-- rollout_summaries/2026-10-13T06-12-43-M5EQ-lionrider_account_mobile_sidebar_and_project_handoff.md (cwd=D:\project\lionrider, rollout_path=C:\Users\user\.codex\sessions\2026\10\13\rollout-2026-10-13T14-12-43-01a133e4-51b0-7453-b814-ec4392e2bdd8.jsonl, updated_at=2026-10-14T09:53:24+00:00, thread_id=01a133e4-51b0-7453-b814-ec4392e2bdd8, success)
+- rollout_summaries/2026-10-13T06-12-43-M5EQ-lionrider_project_handoff_localhost_spareparts_years_filter.md (cwd=D:\project\lionrider, rollout_path=\\?\C:\Users\user\.codex\sessions\2026\10\13\rollout-2026-10-13T14-12-43-01a133e4-51b0-7453-b814-ec4392e2bdd8.jsonl, updated_at=2026-10-20T07:05:10+00:00, thread_id=01a133e4-51b0-7453-b814-ec4392e2bdd8, partial)
 
 ### keywords
 
@@ -433,7 +436,7 @@ applies_to: cwd=D:\project\mincorner; reuse_rule=checkout-specific; preserve exi
 
 ### rollout_summary_files
 
-- rollout_summaries/2026-10-16T07-11-32-MkqL-mincorner_pickup_date_window_security_validation.md (cwd=D:\project\mincorner, rollout_path=C:\Users\user\.codex\sessions\2026\10\16\rollout-2026-10-16T15-11-33-01a1438d-4087-7df2-a212-e184982c6c0b.jsonl, updated_at=2026-10-16T08:24:48+00:00, thread_id=01a1438d-4087-7df2-a212-e184982c6c0b, success; browser/live order unverified)
+- rollout_summaries/2026-10-16T07-11-32-MkqL-mincorner_pickup_datepicker_validation.md (cwd=D:\project\mincorner, rollout_path=\\?\C:\Users\user\.codex\sessions\2026\10\16\rollout-2026-10-16T15-11-33-01a1438d-4087-7df2-a212-e184982c6c0b.jsonl, updated_at=2026-10-19T04:35:06+00:00, thread_id=01a1438d-4087-7df2-a212-e184982c6c0b, success; browser/live order unverified)
 
 ### keywords
 
@@ -523,4 +526,3 @@ applies_to: cwd=C:\Users\user\Desktop\wms-erp; reuse_rule=keep the no-database, 
 - Symptom: broad removal leaves prices visible -> fallback strings live in PHP templates as well as translation JSON; scan rendered EN/CN/MY routes for `$[0-9]`, `999.00`, `349.00`, `From`, `Bermula`, USD, and Chinese currency phrases. Final checks were HTTP 200, `price-pattern-count=0`, PHP lint, JavaScript syntax, and JSON parsing. [Task 1]
 - Direct web retrieval initially failed -> use the available Chrome binding with live accessibility/screenshot evidence. `BLUEPRINT.md` retains mobile-footer and long-page comparison gaps, so do not claim a 100% replica until those checks are rerun. [Task 2]
 - Related skill: skills/hierarchical-replica-chunking/SKILL.md. [Task 2]
-
