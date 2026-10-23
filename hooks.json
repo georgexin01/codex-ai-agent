@@ -1,0 +1,31 @@
+{
+  "description": "Local .codex knowledge hydration and privacy-minimal retrieval usage history.",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File \"C:\\Users\\user\\.codex\\codex-router\\Invoke-CodexKnowledgeHook.ps1\" -Event UserPromptSubmit",
+            "commandWindows": "powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File \"C:\\Users\\user\\.codex\\codex-router\\Invoke-CodexKnowledgeHook.ps1\" -Event UserPromptSubmit",
+            "additionalContextLimit": 4000,
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "^(Read|exec_command|Bash)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File \"C:\\Users\\user\\.codex\\codex-router\\Invoke-CodexKnowledgeHook.ps1\" -Event PostToolUse",
+            "commandWindows": "powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File \"C:\\Users\\user\\.codex\\codex-router\\Invoke-CodexKnowledgeHook.ps1\" -Event PostToolUse",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}
