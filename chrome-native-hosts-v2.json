@@ -214,6 +214,48 @@
     {
       "schemaVersion": 2,
       "appServerProtocolVersion": 2,
+      "appVersion": "26.1016.51333",
+      "channel": "prod",
+      "cliVersion": "26.1016.51333",
+      "entryId": "codex-runtime-7e66a5468f2968464f99c49db116b474",
+      "extensionBuildChannels": [
+        "prod"
+      ],
+      "extensionIds": [
+        "hehggadaopoacecdllhhajmbjkdcmajg",
+        "odlomjlbamekndcpllcnffbgeohgkmjh"
+      ],
+      "installId": "codex-install-33ca0977ed045a3111f427640b8bab9e",
+      "nativeHostNames": [
+        "com.openai.codexextension"
+      ],
+      "nativeHostProtocolVersion": 2,
+      "nativeHostVersion": "26.1016.51333",
+      "paths": {
+        "browserClientPath": "C:\\Users\\user\\.codex\\plugins\\cache\\openai-bundled\\chrome\\latest\\scripts\\browser-client.mjs",
+        "browserServicePath": "C:\\Users\\user\\.codex\\plugins\\cache\\openai-bundled\\chrome\\latest\\scripts\\browser-service.mjs",
+        "codexCliPath": "C:\\Users\\user\\.codex\\plugins\\.plugin-appserver\\codex.exe",
+        "codexHome": "C:\\Users\\user\\.codex",
+        "extensionHostPath": "C:\\Users\\user\\.codex\\plugins\\cache\\openai-bundled\\chrome\\latest\\extension-host\\windows\\x64\\extension-host.exe",
+        "nodePath": "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\2fbcd108736f9c20\\bin\\node.exe",
+        "nodeModuleDirs": [
+          "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\2fbcd108736f9c20\\bin\\node_modules"
+        ],
+        "nodeReplPath": "C:\\Users\\user\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\2fbcd108736f9c20\\bin\\node_repl.exe",
+        "resourcesPath": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1016.6573.0_x64__2p2nqsd0c76g0\\app\\resources"
+      },
+      "presence": {
+        "lastSeenAt": "2026-10-23T01:12:50.222Z",
+        "pid": 44552,
+        "startedAt": "2026-10-23T01:12:50.222Z"
+      },
+      "proxyHost": "127.0.0.1",
+      "proxyPort": 0,
+      "updatedAt": "2026-10-23T01:12:50.222Z"
+    },
+    {
+      "schemaVersion": 2,
+      "appServerProtocolVersion": 2,
       "appVersion": "26.928.31416",
       "channel": "prod",
       "cliVersion": "26.928.31416",

@@ -1094,59 +1094,84 @@ References:
 - Sheet range: `'Optimization Plan'!A8:K21`
 
 ## Thread `01a133e4-51b0-7453-b814-ec4392e2bdd8`
-updated_at: 2026-10-14T09:53:24+00:00
+updated_at: 2026-10-20T07:05:10+00:00
 cwd: \\?\D:\project\lionrider
 rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\13\rollout-2026-10-13T14-12-43-01a133e4-51b0-7453-b814-ec4392e2bdd8.jsonl
-rollout_summary_file: 2026-10-13T06-12-43-M5EQ-lionrider_account_mobile_sidebar_and_project_handoff.md
+rollout_summary_file: 2026-10-13T06-12-43-M5EQ-lionrider_project_handoff_localhost_spareparts_years_filter.md
 
 ---
-description: Lionrider PHP/JSON storefront handoff plus successful mobile account-sidebar hiding update
- task: hide customer account sidebar on mobile responsive views
+description: Lionrider PHP/JSON project handoff plus diagnosis of missing BMW Spare Parts Years filter
+ task: lionrider project handoff and BMW spareparts years-filter diagnosis
  task_group: lionrider-website
  task_outcome: success
  cwd: D:\project\lionrider\lionrider-website
- keywords: lionrider, PHP, JSON, status.md, account-sidebar, customer-dashboard, mobile-responsive, css, localhost, 8012
+ keywords: lionrider, status.md, PHP, JSON, spareparts, years-filter, template/spareparts-home.php, spareparts-models.json, localhost-8012
 ---
 
-### Task 1: Persistent project handoff
+### Task 1: Project handoff and durable status
 
-task: document Lionrider website architecture, roadmap, and database boundaries for future work
-task_group: project-context-and-handoff
+task: Document Lionrider website structure, ongoing redesign direction, and data/database boundaries.
+task_group: lionrider-website project knowledge
 task_outcome: success
 
 Preference signals:
-- The user asked the AI to “take highly note” of the planned website overhaul and save it as a cache/status guide -> maintain durable context in `lionrider-website/status.md` for future updates.
-- Current code and latest owner direction take precedence over historical status entries -> inspect live files before making changes.
+- The user asked AI to “take highly note” of the planned website overhaul and save it as a cache/status guide -> preserve this context proactively for future updates.
+- The user wants header/navigation, filters, pages, dummy database docs, REAL database docs, and related Markdown treated as an ongoing coordinated scope -> keep these areas aligned and do not make isolated assumptions.
 
 Reusable knowledge:
-- Website is a PHP front-controller storefront using local JSON fixtures, not a verified Supabase runtime. Keep website DUMMY (`fcmoto`), workspace REAL database docs, and Admin `lionrider` schema/mirror data separate.
-- Main ownership: `index.php`/`router.php` routes; `template/` pages; `lib/` shared shell/data; `css/` and `js/` interactions; product source in `data/product.json` and `data/category.json`.
+- Active website is PHP/JSON: `index.php` dispatches through `router.php`; templates are in `template/`, shared layout/data in `lib/`, styling in `css/`, behavior in `js/`.
+- Main catalog/navigation ownership: `lib/header.php`, `js/desktop-navigation.js`, `js/mobile-navigation.js`, `template/product-list.php`, `js/product-list.js`.
+- Website source fixtures are `data/product.json`, `data/category.json`, `data/news.json`, and `data/videos.json`; private demo fixtures are `data/customers.json` and `data/orders.json`.
+- Website DUMMY database docs (`fcmoto`) are proposed and separate from workspace-root REAL database docs and the Admin `lionrider` schema/mirror. The website remains JSON-backed.
+- Durable handoff was added to `lionrider-website/status.md`; current code/data and latest owner direction outrank historical status entries.
 
 References:
-- `status.md`, `PROJECT_CONTEXT.md`, `BLUEPRINT.md`, `README.md`, `meta.md`
+- `D:\project\lionrider\lionrider-website\status.md`
+- `D:\project\lionrider\lionrider-website\BLUEPRINT.md`
+- `D:\project\lionrider\lionrider-website\index.php`
 
-### Task 2: Mobile account sidebar visibility
+### Task 2: Localhost verification
 
-task: hide account side menu on narrow mobile screens while preserving desktop/tablet navigation
-task_group: responsive-account-ui
- task_outcome: success
-
-Preference signals:
-- User said: “if website is in mobile responsive view please hide the above sidemenu” -> default to hiding the account sidebar on mobile content pages, not merely compressing it.
+task: Start and verify the Lionrider PHP storefront locally.
+task_group: localhost testing
+ task_outcome: partial
 
 Reusable knowledge:
-- Implemented in `css/style.css` under `@media (max-width: 620px)`:
-  `.customer-dashboard .account-sidebar { display: none; }`
-- Tablet and desktop account navigation remain unchanged. Guest Orders/Wishlist layouts remain unchanged.
-- Default avatar is `assets/media/customer-avatar-default.png` (300×300, 143,309 bytes, transparent corners).
+- Start with `php -S 127.0.0.1:8012 index.php` from `D:\project\lionrider\lionrider-website`.
+- Existing port 80 served a directory index and port 8080 served another PHP site; use 8012 for Lionrider and avoid duplicate/reused servers.
+- Verified HTTP 200 for `/`, `/welcome`, `/about`, `/contact`, `/product/all`, `/product/search?query=NHK`, `/news`, news detail, `/sitemap.xml`, `/catalog/products.json`, `/css/style.css`, `/js/product-list.js`, and `/favicon/site.webmanifest`.
+- `/product/accessories` returned 404; Accessories selection is implemented via the welcome page/session mode flow, not a direct registered route.
 
 Failures and how to do differently:
-- Signed-in account visual review could not be completed because the local browser session was signed out; future verification should sign in locally and inspect desktop/mobile account pages.
+- A complex `Start-Process` command with log redirection was blocked by shell policy; simpler detached start via `Start-Process php.exe -ArgumentList @('-S','127.0.0.1:8012','index.php')` worked.
 
 References:
-- `css/style.css` around line 9311
-- `template/account-navigation.php`, `template/account.php`, `template/account-profile.php`, `template/orders.php`, `template/wishlist.php`
-- Verification: stylesheet HTTP 200, mobile hide rule detected, CSS braces `2614/2614`, PHP lint passed, `git diff --check` passed.
+- Server command: `php -S 127.0.0.1:8012 index.php`
+- Verified server PID: `8648`
+
+### Task 3: BMW Spare Parts Years filter
+
+task: Explain why Years is missing on `/spareparts/bmw` or similar make pages.
+task_group: spareparts finder debugging
+task_outcome: success
+
+Reusable knowledge:
+- `template/spareparts-home.php` builds `$yearOptions` from each model’s `years` array and renders the Years filter only when the options array is non-empty.
+- `js/spareparts-finder.js` expects model rows to carry year membership in `data-years` and filters using that metadata.
+- `/spareparts/bmw` returned HTTP 200 with 32 model rows, Displacement and Series filters, but no Years filter.
+- `data/spareparts-models.json` has 1,288 models total; BMW has 32 models and all have empty `years` and `yearRanges`. Honda/Yamaha/Kawasaki/Suzuki have populated year ranges for many models.
+- Root cause is missing BMW data, not removed UI code. Add verified BMW year ranges to the authoritative model source and regenerate; do not invent fitment years.
+
+Failures and how to do differently:
+- Do not “fix” this by forcing a generic Years list for BMW. The project status says year/displacement/series values must come from each make’s model data, and model references do not automatically prove part fitment.
+
+References:
+- `template/spareparts-home.php:82-87`
+- `template/spareparts-home.php:257`
+- `js/spareparts-finder.js:53-80`
+- `data/spareparts-models.json`
+- `tools/rebuild-spareparts-model-data.php`
+- Exact symptom: `/spareparts/bmw` shows Displacement and Series but no Years filter because `$yearOptions === []`.
 
 ## Thread `01a133e7-d37a-7312-a72b-4b6feafda2c3`
 updated_at: 2026-10-14T02:30:50+00:00
@@ -1521,89 +1546,47 @@ References:
 - Validation: `php -l` on edited PHP files, JSON parse checks, and `git diff --check` all passed.
 
 ## Thread `01a13d77-69bb-71a1-a74a-b50080a22db5`
-updated_at: 2026-10-16T01:10:55+00:00
+updated_at: 2026-10-19T02:41:11+00:00
 cwd: \\?\D:\project\VIPBillion
 rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\15\rollout-2026-10-15T10-49-58-01a13d77-69bb-71a1-a74a-b50080a22db5.jsonl
-rollout_summary_file: 2026-10-15T02-49-58-3dyZ-vipbillion_website_audit_booking_modal_ux.md
+rollout_summary_file: 2026-10-15T02-49-58-3dyZ-vipbillion_booking_feedback_verification.md
 
 ---
-description: VIPBillion website documentation audit, Google Sheet customer-request comparison, and booking confirmation UX/idempotency work; final code checks passed but browser/live verification remained undone
-task: understand-vipbillion-website-and-fix-booking-modal-loading-feedback
-task_group: vipbillion-website
- task_outcome: partial
+description: VIPBillion booking UX implementation verified statically for loading, success/failure modals, recovery actions, and duplicate-submission protection; runtime browser/database verification intentionally not performed
+task: verify-booking-loading-modals-retry-whatsapp-idempotency
+task_group: vipbillion-website-booking-ux
+ task_outcome: success
 cwd: D:\project\VIPBillion\website-vipbillion
-keywords: VIPBillion, WORKSPACE.md, STATUS.md, MASTER_PLAN.md, Google Sheets, Optimization Plan, booking.php, BookingModel.php, BookingRequestConflictException, dialog, modal, minimum loading, WhatsApp, Instagram, pricing mismatch
+keywords: VIPBillion, booking.php, booking-confirmation-modal, loading, waitForMinimumLoading, Retry, WhatsApp, Close, duplicate submission, idempotency, BookingModel, W12
 ---
 
-### Task 1: Website orientation and documentation
+### Task 1: Verify booking submission UX
 
-task: understand the VIPBillion PHP website from current source plus Markdown docs
-task_group: project-orientation
+task: verify loading, success/failure popup, Retry/WhatsApp/Close, and duplicate-submit prevention
+task_group: VIPBillion website booking UX
 task_outcome: success
 
 Preference signals:
-- The user asked to “understand my website first include .md” -> start future work by reading project orientation/status/plan docs and then verify those claims against current source.
+- The user explicitly required loading, success/failure popup alerts, “Retry” or “WhatsApp 联系”, “关闭button”, and duplicate-submission prevention -> future verification should check each state independently and report code-level versus runtime evidence.
+- The user prefers Chinese, compact status/result tables, and comparison of requested status against actual source evidence.
 
 Reusable knowledge:
-- Website entrypoint: `website-vipbillion/index.php`; clean URL routing: `website-vipbillion/router.php`; shared initialization: `website-vipbillion/lib/initData.php`.
-- Website is bilingual EN/CN using `/cn/...`, session/cookie language state, `i18n/en.json`, `i18n/cn.json`, and localized database fields.
-- PHP data access is under `website-vipbillion/api/Models/`; booking/payment paths are present in current source even where root docs describe Phase 2 as removed.
-- Prefer current source/live evidence over stale `API_SETUP_COMPLETE.md`; never copy or retain secrets found in historical docs.
+- `template/booking.php` shows loading immediately and enforces a minimum 1000 ms display via `waitForMinimumLoading`; after 3 seconds it changes to a still-sending warning.
+- Success is shown only when the API returns `success === true` and a booking identifier. The success modal is centered with `.booking-confirmation-modal[open]` and offers payment or WhatsApp plus Close.
+- Submission failures/result uncertainty use the same centered modal with Retry when safe, WhatsApp, and Close; form values are not cleared.
+- Duplicate prevention uses `isSubmitting`, disabled fieldset/button, a client UUID in `booking_id`, and server-side matching in `BookingModel`. Reusing the same UUID with matching details returns the existing request; conflicting details produce HTTP 409 and suppress Retry.
 
 Failures and how to do differently:
-- `website-vipbillion/initData.php` was the wrong path; actual file is `website-vipbillion/lib/initData.php`.
+- Browser/live verification was not performed to avoid visitor-tracking writes and real booking creation. Treat final status as statically verified, not runtime verified.
+- W12 in the Google Sheet remains `Not started`; keep spreadsheet status separate from local code status.
+- Inline validation errors for missing/invalid fields remain non-modal; only submission outcomes use the popup.
 
 References:
-- `WORKSPACE.md`, `STATUS.md`, `MASTER_PLAN.md`
-- `website-vipbillion/index.php`, `router.php`, `lib/initData.php`
-
-### Task 2: Customer optimization spreadsheet audit
-
-task: compare Google Sheet website requests against code/live pages and summarize in Chinese tables
-task_group: customer-request-audit
-task_outcome: partial
-
-Preference signals:
-- User requested Chinese comparison tables with detailed columns for pages, tasks, changes, problems, and done status -> preserve that table structure and distinguish “sheet says not started” from independently verified code/live status.
-
-Reusable knowledge:
-- Sheet: `https://docs.google.com/spreadsheets/d/1Qk8jzmZERae_gf-nhXqz0vsZ87Zwr3JcUkVW8SnNXVA/edit?gid=1724772122#gid=1724772122`, tab `Optimization Plan`.
-- It contains 13 website actions: 7 P0, 4 P1, 2 P2, including duplicate WhatsApp, Instagram removal, authentic photos, Google Business Profile, CTA consistency, WhatsApp inquiry flow, loading/error states, GTM tracking, pricing consistency, FAQs, service-duration/category corrections, and About-page proof/link cleanup.
-- Evidence found: duplicate WhatsApp output on `/contacts`; Instagram rendering remains in header/footer/contact/service templates; contact submission still uses Apps Script proxy; no clear WhatsApp GTM event found; pricing mismatch RM500 vs RM600; `/services` contains “60–90 Hours” typo; About page includes visitor counts and apparent anchor links.
-
-Failures and how to do differently:
-- Homepage live fetch timed out; do not claim homepage verification without another source.
-- Full Chinese comparison was not completed in this rollout; future agent should produce all 13 rows with evidence and status categories.
-
-References:
-- Live pages: `/contacts`, `/pricing`, `/services`, `/about`
-- Source: `lib/header.php`, `lib/footer.php`, `template/contacts.php`, `template/services.php`, `template/services-single.php`, `template/about.php`, `js/scripts.js`, `lib/sendEmail.php`
-
-### Task 3: Booking modal and loading feedback
-
-task: center booking confirmation modal and slow fast-loading feedback by one second
-task_group: booking-ux
- task_outcome: partial
-
-Preference signals:
-- User: “all popup modal should be display position center” -> use viewport-centered modal positioning by default.
-- User: “loading speed are too fast slower +1sec to it” -> maintain a minimum 1000 ms loading/feedback period, but do not add delay when the real request already exceeds one second.
-
-Reusable knowledge:
-- `template/booking.php` now has `.booking-confirmation-modal[open]` fixed at `top:50%`, `left:50%`, `transform:translate(-50%,-50%)`.
-- `waitForMinimumLoading(startedAt)` enforces the one-second minimum before processing the response; slow requests are not artificially extended.
-- Booking idempotency was implemented in `api/Models/BookingModel.php` and `api/Controllers/BookingController.php`: same request UUID and matching data reuse the booking; mismatched replay raises `BookingRequestConflictException`.
-- In-memory validation passed for both paid and consultation retries.
-
-Failures and how to do differently:
-- `php -l template/booking.php` and `git diff --check` passed, but no browser visual test or real API request was run.
-- The requested “all popup modal” scope was only implemented for the Booking confirmation dialog; inspect other modal systems (`main-register-container`, header modal, lightGallery) before claiming sitewide centering.
-- Complex PowerShell validation was rejected; use small independent validation commands.
-
-References:
-- `template/booking.php` lines around 261, 536, 1109, 1202
-- `api/Models/BookingModel.php`: `findExistingWebsiteBookingById`, `bookingRequestMatches`, `formatExistingWebsiteBooking`, `BookingRequestConflictException`
-- Validation commands: `php -l template/booking.php`; `git diff --check`
+- `D:\project\VIPBillion\website-vipbillion\template\booking.php`
+- `D:\project\VIPBillion\website-vipbillion\api\Models\BookingModel.php`
+- `D:\project\VIPBillion\website-vipbillion\api\Controllers\BookingController.php`
+- W12: `Success messages, loading behavior and failed-submission recovery`
+- Validation: `php -l template/booking.php`; `php -l api/Controllers/BookingController.php`; `php -l api/Models/BookingModel.php`; embedded JavaScript `node --check`; `git diff --check`
 
 ## Thread `01a13eb8-c451-7ba1-8551-d173ae1acf74`
 updated_at: 2026-10-15T09:58:21+00:00
@@ -1743,53 +1726,52 @@ References:
 - Maintenance comment added: increment the shared `v=` value whenever one of these assets changes.
 
 ## Thread `01a1438d-4087-7df2-a212-e184982c6c0b`
-updated_at: 2026-10-16T08:24:48+00:00
+updated_at: 2026-10-19T04:35:06+00:00
 cwd: \\?\D:\project\mincorner
 rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\16\rollout-2026-10-16T15-11-33-01a1438d-4087-7df2-a212-e184982c6c0b.jsonl
-rollout_summary_file: 2026-10-16T07-11-32-MkqL-mincorner_pickup_date_window_security_validation.md
+rollout_summary_file: 2026-10-16T07-11-32-MkqL-mincorner_pickup_datepicker_validation.md
 
 ---
-description: Min Corner pickup-date picker and order-finalization security were aligned to one Malaysia-time rule with visible failure alerts and post-cart revalidation.
-task: update pickup datepicker bounds, highlight selectable dates, and reject forged/stale dates during order submission
-task_group: mincorner-php-storefront-checkout
- task_outcome: success
+description: Updated Min Corner pickup-date availability, security validation, alerts, highlighting, and post-cart finalization checks.
+task: pickup datepicker and order submission validation
+task_group: D:\project\mincorner PHP storefront
+task_outcome: success
 cwd: D:\project\mincorner
-keywords: mincorner, cart.php, checkout.php, CartController.php, assets/js/app.js, bootstrap-datepicker, deliveryDate, pickup date, Monday, Malaysia timezone, Failed to order, placeOrderWithoutPayment
+keywords: bootstrap-datepicker, deliveryDate, CartController.php, checkout.php, Asia/Kuala_Lumpur, Monday, Failed to order, beforeShowDay
 ---
 
-### Task 1: Pickup-date selection and secure submission
+### Task 1: Pickup date window and security validation
 
-task: Keep the customer pickup picker and all order-submit paths synchronized.
-task_group: Min Corner storefront checkout
+task: Synchronize customer pickup picker and all order-submit checks.
+task_group: PHP storefront checkout flow
 task_outcome: success
 
 Preference signals:
-- The user asked for the date rule to apply beyond `/cart.php` and specifically requested security validation when users submit dates that cannot be picked -> always validate on the server at cart creation and again at final order confirmation.
-- The user requested a visible alert reading effectively “Failed to order” with the reason -> return structured `title`/`messages` fields and use a modal alert for date-rule failures.
-- The user prefers subtle UI guidance: “some very light lightgray color” and later approximately “5px” gaps -> preserve light-gray eligible cells and 5px calendar spacing.
+- The user explicitly said this must apply “not /cart pages only” and requested server-side rejection for dates users manually submit -> always validate availability at both cart creation and final order submission.
+- The user requested an alert saying “failed to order.. reason..” -> use a visible SweetAlert with title `Failed to order` and a specific reason for invalid, Monday, or out-of-window dates.
+- The user specified start today + 3 days, 20 inclusive calendar days, with Mondays permanently disabled -> keep picker and backend calculations identical.
+- The user requested very light gray highlighting and about 5px calendar gaps -> preserve the CSS styling.
 
 Reusable knowledge:
-- The only customer date picker is `cart.php`’s `#datepicker`, initialized by shared `assets/js/app.js`; `checkout.php` only displays the stored date as disabled.
-- Admin pickers (`admin/sales-report.php`, admin order reporting) are unrelated and must not inherit pickup restrictions.
-- Canonical current rule implemented in both JavaScript and PHP: Malaysia today + 3 days through 20 calendar days inclusive (`start + 19`), with Monday always unavailable.
-- `cartPickupDateWindow()` centralizes the server window using `Asia/Kuala_Lumpur`; `cartPickupDateUnavailableReason()` centralizes Monday and range errors.
-- Cart submit rejects invalid dates with `title: 'Failed to order'`; `cart.php` displays `Swal.fire({ icon: 'error', title, text })` when `data.title` exists.
-- `placeOrderWithoutPayment` now selects `delivery_date` under lock and rechecks it immediately before stock decrement/order finalization, preventing stale pending orders from bypassing the current date window.
+- Only customer pickup picker: `cart.php` input `#datepicker[name=deliveryDate]`, initialized in `assets/js/app.js`.
+- `checkout.php` only displays the stored date as disabled and submits `orderId`/`orderNumber`; it cannot select a new date, so finalization must revalidate the stored date server-side.
+- Shared helpers in `controller/CartController.php`: `cartPickupDateWindow()` and `cartPickupDateUnavailableReason()` use `Asia/Kuala_Lumpur`, start `today + 3 days`, end `start + 19 days`, and reject ISO weekday 1 (Monday).
+- Current example for Oct 16, 2026: bounds Oct 19–Nov 7 inclusive; Mondays Oct 19, Oct 26, Nov 2 are rejected; first selectable date is Oct 20.
+- `assets/js/app.js` uses `daysOfWeekDisabled: [1]`, matching `DateTimeImmutable::format('N') === 1` on the server.
+- `beforeShowDay` returns class `pickup-date-available`; `assets/css/app.css` gives it a subtle gray fill and sets `.datepicker table { border-collapse: separate !important; border-spacing: 5px; }`.
 
 Failures and how to do differently:
-- Initial searches included an incorrectly quoted PowerShell `rg` command and failed with `The string is missing the terminator`; rerun with simpler single-quoted patterns.
-- A first CSS patch failed because the actual existing style used `#eee` and `border-radius: 50px`, not the expected `#f4f4f4`/`0.25rem`; inspect current CSS before patching.
-- No browser verification was performed; future UI changes should visually test the calendar because CSS/date-cell rendering was only syntax/read-back checked.
+- An initial patch attempt failed because CSS had already been changed from `#f4f4f4`/`0.25rem` to `#eee`/`50px`; inspect current CSS before patching.
+- A broad PowerShell `rg` command had quoting errors; simplify quoting when searching mixed PHP/JS patterns.
+- Browser verification was not run; future UI changes should perform a browser check if the environment supports it.
 
 References:
-- `assets/js/app.js:100-123`: Malaysia-local start date, `+3` start offset, `+19` end offset, `daysOfWeekDisabled: [1]`, `beforeShowDay` class.
-- `assets/css/app.css:409-425`: `.pickup-date-available` light-gray fill, active-date styling, `border-spacing: 5px`.
-- `controller/CartController.php:17-45`: `cartPickupDateWindow()` and `cartPickupDateUnavailableReason()`.
-- `controller/CartController.php:347-372`: cart-submit validation and `Failed to order` response.
-- `controller/CartController.php:500-546`: final saved-date revalidation before order finalization.
-- `cart.php:585-600`: date rejection modal versus normal error toast.
-- `checkout.php:351-355`: finalization error modal uses `orderData.title` and reason text.
-- Verification commands: `php -l controller\CartController.php`, `php -l checkout.php`, `node --check assets\js\app.js`, `git diff --check -- controller/CartController.php checkout.php assets/js/app.js`.
+- `assets/js/app.js:105-123`
+- `assets/css/app.css:409-425`
+- `cart.php:563-615`
+- `controller/CartController.php:17-49, 351-372, 500-552`
+- `checkout.php:149, 335-355`
+- Verification commands: `php -l controller\CartController.php`; `php -l checkout.php`; `node --check assets\js\app.js`; `git diff --check`
 
 ## Thread `01a143c1-5061-73f0-9004-73e8a602dbd3`
 updated_at: 2026-10-16T09:05:43+00:00
@@ -1973,4 +1955,762 @@ References:
 - `css/style.css:8095`
 - `images/service-icons/`
 - Verification included local HTTP 200 checks, image dimension/size/transparency checks, and browser preview.
+
+## Thread `01a151ef-b986-7c32-a74a-1a7d506e4466`
+updated_at: 2026-10-22T02:14:13+00:00
+cwd: \\?\C:\Users\user\.codex
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\19\rollout-2026-10-19T10-13-47-01a151ef-b986-7c32-a74a-1a7d506e4466.jsonl
+rollout_summary_file: 2026-10-19T02-13-47-jXyC-codex_sparse_checkout_recovery_and_automated_protection.md
+
+---
+description: Repeated `.codex` sparse-checkout omissions were recovered, automations restored, and external Windows protection installed; future agents must verify full tracked-path presence and sparse settings before claiming success.
+task: recover-and-protect-codex-repository-from-recurring-sparse-checkout-omissions
+task_group: codex-repository-recovery
+task_outcome: success
+cwd: C:\Users\user\.codex
+keywords: sparse-checkout, git-sparse-checkout-disable, Protect-Codex.ps1, Backup-CodexProtectedData.ps1, CodexDataRecovery, automation.toml, Audit-CodexRouting, phase2_workspace_diff
+---
+
+### Task 1: Recover missing tracked `.codex` content
+
+task: diagnose and recover missing memories, skills, automations, router files, and other tracked `.codex` paths
+
+task_group: codex-repository-recovery
+task_outcome: success
+
+Preference signals:
+- The user repeatedly asked to recover “memories, skills, automation and others missing folder and files” -> inspect the entire tracked repository, not only `memories/` and `skills/`.
+- The user suspects ChatGPT/VS Code, but the evidence only proves sparse checkout was re-enabled -> state the Git evidence and do not blame a specific application.
+- Preserve existing work and avoid destructive replacement -> never overwrite present files; preserve modifications, untracked files, locks, and automation states.
+
+Reusable knowledge:
+- Active root is `C:\Users\user\.codex`, branch `main`; there is one Git worktree.
+- Sparse checkout repeatedly returned in the worktree. Incidents hid 551/666 tracked paths on 2026-10-20, 635/666 on 2026-10-22, and later 21 tracked plus 4 untracked protected files while sparse mode was false.
+- `git sparse-checkout disable` plus exact-path verification restored the tracked tree. Final checks repeatedly reached `tracked=666; missing=0; sparseLocal=false; sparseWorktree=false`.
+- `memories/phase2_workspace_diff.md` is generated and says not to edit; restore it only when absent.
+
+Failures and how to do differently:
+- Do not infer deletion from a missing file. First compare `git ls-files` against `Test-Path`, inspect both sparse config values, and record branch/HEAD/status.
+- The responsible process remains unknown; do not attribute recurrence to ChatGPT or VS Code without new evidence.
+
+References:
+- `git -C C:\Users\user\.codex sparse-checkout disable`
+- `git -C C:\Users\user\.codex config --local --get core.sparseCheckout`
+- `git -C C:\Users\user\.codex config --worktree --get core.sparseCheckout`
+- Latest observed HEAD: `090192e8caa9a3c20e3497fc98a292e2d9f08197`
+- Incident log: `%LOCALAPPDATA%\CodexDataRecovery\protection.log`
+
+### Task 2: Automated backup and daily recovery protection
+
+task: provide immutable snapshots, hourly/logon recovery, and daily 10:15 integrity checks
+
+task_group: codex-repository-recovery
+task_outcome: success
+
+Preference signals:
+- The user asked for a backup so future requests can revert to a known state -> keep the original baseline immutable and never replace a complete snapshot with an incomplete one.
+- The user asked to restore more than five prior daily tasks -> recover exact definitions and preserve ACTIVE/PAUSED states; do not create duplicate schedules.
+
+Reusable knowledge:
+- External wrapper: `C:\Users\user\AppData\Local\CodexDataRecovery\Scripts\Protect-Codex.ps1` verifies the exact root, records incidents, disables sparse checkout, restores absent tracked files from the active index or a matching SHA-256 snapshot, and invokes `C:\Users\user\.codex\codex-router\Backup-CodexProtectedData.ps1`.
+- Windows Task Scheduler task `Codex Protected Data Hourly Backup` runs at user logon, hourly, and daily at 10:15 local time. Successful runs showed `LastResult=0`; the task is least privilege and uses the external wrapper so it survives `.codex` omissions.
+- Snapshots are stored under `%LOCALAPPDATA%\CodexDataRecovery\Snapshots`; metadata must match exact source root, branch, and HEAD, and every manifest hash must verify before recovery.
+- Codex heartbeat automation ID `ai-my-memories-and-skills-maybe-more-folder-and-files-went-missing-again-the-sam` is active daily at 10:15 Asia/Kuala_Lumpur.
+- Six automation definitions were restored/present: the recovery task, paused `daily-codex-maintenance`, active `keyword-planner`, active `read-codex-knowledge`, active Google Search Console report, and active Zeta news articles.
+- Immutable recovery artifacts: `C:\Users\user\Documents\Codex\2026-10-19\new-chat\outputs\Codex-Recovery\baseline-2026-10-19` and `...\automation-definitions-2026-10-19`.
+
+Failures and how to do differently:
+- `git restore` could not restore automation files because they were absent from the current index; exact files were recovered from verified commit `489e2debf2d6d31edc44620f34feca98834e12f8` via `git archive` and extraction.
+- The heartbeat alone is insufficient when the desktop app is closed; rely on the external Windows task for independent recovery.
+- Validator remains `FAIL` for pre-existing secret-like global-state detection and nested `memories/.git`; do not print the flagged value or remove the nested metadata without explicit approval.
+
+References:
+- `C:\Users\user\AppData\Local\CodexDataRecovery\Scripts\Protect-Codex.ps1`
+- `C:\Users\user\.codex\codex-router\Backup-CodexProtectedData.ps1`
+- `Codex Protected Data Hourly Backup`
+- `Audit-CodexRouting.ps1 -Detailed`: zero missing mandatory/fallback roots, missing trigger targets, missing manifest paths, and trigger conflicts.
+- Final 2026-10-22 evidence: latest snapshot `Snapshot-20261022-100318-881`, 628 files, root/branch/HEAD matched, zero missing payloads and hash mismatches; all 666 tracked paths present.
+
+## Thread `01a15202-69e2-7f71-a276-521ae3da16d3`
+updated_at: 2026-10-19T04:16:51+00:00
+cwd: \\?\D:\project\VIPBillion
+rollout_path: C:\Users\user\.codex\sessions\2026\10\19\rollout-2026-10-19T10-34-12-01a15202-69e2-7f71-a276-521ae3da16d3.jsonl
+rollout_summary_file: 2026-10-19T02-34-12-HKhR-vipbillion_booking_modal_loading_flow_request.md
+
+---
+description: User requested a specific VIPBillion booking submission UX sequence, but implementation and verification did not occur in this rollout.
+task: update VIPBillion booking submission loading and confirmation modal flow
+task_group: D:\project\VIPBillion\website-vipbillion booking UX
+task_outcome: uncertain
+cwd: D:\project\VIPBillion\website-vipbillion
+keywords: VIPBillion, booking.php, booking-confirmation-dialog, loading-modal, FIUU, WhatsApp, pending, BookingController, BookingModel
+---
+
+### Task 1: Booking modal loading sequence
+
+task: update booking form submission feedback and modal exit behavior
+task_group: VIPBillion website booking UX
+task_outcome: uncertain
+
+Preference signals:
+- When submitting the booking form, the user asked to keep the existing submit-button loading animation and add a new centered animated loading popup, with fade-in/fade-out and about “+0.5 sec” longer loading feedback -> future implementations should preserve the button state while sequencing a separate centered loading modal.
+- The user asked that the loading popup be hidden/removed when the second “Request Received” modal appears -> modal transitions should explicitly clean up the first overlay.
+- The user asked for a light-gray popup close button -> apply this visual treatment to the close action.
+- The user stressed that “Contact us on whatsapp”, “Continue to payment”, and “Closed” must all close modal UI and restore the original form submit button to an enabled, reactive state -> every modal exit path needs one shared cleanup/reset function.
+- The user specified that payment goes to FIUU, WhatsApp includes all booking details plus the FIUU URL, and closing cancels payment but leaves the booking as `pending` for admin follow-up -> preserve these distinct post-submit outcomes.
+
+Reusable knowledge:
+- Primary website file is `D:\project\VIPBillion\website-vipbillion\template\booking.php`; booking server code is in `api/Controllers/BookingController.php` and `api/Models/BookingModel.php`.
+- The existing page already has `booking-confirmation-dialog`, `booking-confirmation-primary`, `booking-confirmation-secondary`, and `booking-confirmation-close` elements and localized strings for payment, WhatsApp, retry, and close flows.
+- Existing source edits in the website worktree must be preserved; prior status showed the booking controller/model/template were modified.
+
+Failures and how to do differently:
+- No code edits, destination verification, tests, or user confirmation were completed before the rollout ended. Resume with current-file inspection, make the smallest patch, and verify via static/read-back checks without submitting a real booking.
+
+References:
+- User wording: “new animated loading effect design in a popup modal in center of pages”; “close all popup modal”; “default submit form button … need to be reactive”; “continue to fiuu payment”; “contact us on whatsapp … booking detail needed all info and fiuu payment gateway url”; booking remains “status = pending”.
+- Relevant paths: `template/booking.php`, `api/Controllers/BookingController.php`, `api/Models/BookingModel.php`.
+
+## Thread `01a1525d-a811-7490-9fd4-24474a32aefa`
+updated_at: 2026-10-19T07:56:42+00:00
+cwd: \\?\D:\localhost\htdocs_jbtransport
+rollout_path: C:\Users\user\.codex\sessions\2026\10\19\rollout-2026-10-19T12-13-52-01a1525d-a811-7490-9fd4-24474a32aefa.jsonl
+rollout_summary_file: 2026-10-19T04-13-52-fcBc-jbtransport_audit_localhost_prices_whatsapp_build.md
+
+---
+description: JBTransport project audit plus local homepage pricing and WhatsApp-link maintenance; local build verified, production intentionally not uploaded
+ task: audit_project_update_homepage_prices_and_whatsapp_links
+ task_group: php-website-maintenance
+ task_outcome: partial
+ cwd: D:\localhost\htdocs_jbtransport
+ keywords: JBTransport, PROJECT_CONTEXT.md, PHP, webpack, localhost, wa.link/gmxz65, booking.js, npm run build, Google Sheets, Apps Script
+---
+
+### Task 1: Project audit and durable context
+
+task: inspect every project page, content source, data integration, and documentation; create project understanding notes if needed
+task_group: project orientation and handoff
+task_outcome: success
+
+Preference signals:
+- The user asked to “read and study my current project, check every single pages and information inside” and create Markdown if needed -> future agents should inspect current source broadly and leave a durable project guide rather than relying on chat-only findings.
+- The user wanted purpose, page contents, updates, and database/dummy-data structure separated from unsupported assumptions -> report source-verified facts and clearly mark live/external behavior as unverified.
+
+Reusable knowledge:
+- `routes.php` maps clean routes to generated `dist/*.php`; edit source under `template/`, `js/`, and `scss/`, then rebuild.
+- Public route inventory: `/`, `/pricing`, `/booking`, `/services`, `/reviews`, `/about`, `/contact`, `/privacy-policy`, `/desaru`; blog templates exist but blog routes are not declared.
+- Reviews use Google Sheets; booking data is sent to Google Apps Script and then WhatsApp; no local SQL schema/migrations were found.
+- `PROJECT_CONTEXT.md` was added and its relative Markdown links were verified.
+
+Failures and how to do differently:
+- Git history cannot reliably establish prior upgrades because parent/tree objects are missing. Do not claim dated historical changes from this checkout.
+
+References:
+- `PROJECT_CONTEXT.md`
+- `routes.php`
+- `template/lib/fetch.php`
+- `template/lib/form.php`
+- `js/booking.js`
+
+### Task 2: Localhost verification
+
+task: localhost test this project
+task_group: local PHP runtime verification
+task_outcome: partial
+
+Reusable knowledge:
+- Port 8000 was an unrelated PHP server serving another site; Apache ports 80/443 returned a directory listing rather than JBTransport.
+- A temporary PHP server on `127.0.0.1:8013` with a temporary router served this checkout without modifying project configuration.
+
+Failures and how to do differently:
+- Always identify the listener’s command line and inspect returned page content before reusing an existing localhost port.
+
+References:
+- Temporary server: `php -S 127.0.0.1:8013 -t D:\localhost\htdocs_jbtransport <temporary-router>`
+
+### Task 3: Homepage price update
+
+task: change homepage hero to “Private Car SG TO MY From $90 / KL Trips From $340”
+task_group: homepage content maintenance
+ task_outcome: success locally, not published
+
+Preference signals:
+- The user specified exact replacement wording and later explicitly answered “No, keep it local” to publishing -> preserve exact text locally and never upload production files without explicit approval.
+
+Reusable knowledge:
+- Final local `template/home.php` and generated `dist/home.php` contain `$90` and `$340`.
+- Live `jbtransport.com.my` remained on `$80/$300` because production upload was declined.
+
+References:
+- `template/home.php:22`
+- `dist/home.php`
+
+### Task 4: WhatsApp links and build behavior
+
+task: point fixed site WhatsApp buttons to `wa.link/gmxz65`, keep booking form personalized, rebuild
+ task_group: WhatsApp CTA and webpack build
+ task_outcome: success locally; production not published
+
+Preference signals:
+- The user asked to ensure all WhatsApp links use `wa.link/gmxz65` -> shared/static links should use the exact shortlink.
+- After a temporary booking-form change, the user said the booking form should “stay at where it was before” -> preserve dynamic customer booking details in the booking form and treat fixed CTA links separately.
+
+Reusable knowledge:
+- Fixed/static links in `template/home.php`, `template/desaru.php`, `template/lib/header.php`, `template/lib/footer.php`, and `template/lib/callToAction.php` use `https://wa.link/gmxz65`; eight source occurrences were verified.
+- `js/booking.js` final behavior remains a dynamic `api.whatsapp.com/send/?phone=601161722982&text=...` URL containing name, phone, car, passengers, trip, date/time, and pickup/drop-off addresses.
+- `js/booking copy.js` was restored to its prior backup behavior and is not the active webpack entry.
+- `npm.cmd run build` succeeded; final bundle `dist/booking.4a75cdaec64293cba993.js` contains the personalized WhatsApp URL and does not contain `wa.link/gmxz65`.
+- PHP lint passed for final generated homepage, booking page, header, and footer.
+- Build produces asset-size/performance warnings but exit code 0.
+
+Failures and how to do differently:
+- A fixed shortlink’s prefilled offer message cannot carry the booking form’s customer-specific fields. Do not replace the dynamic booking URL unless the user explicitly chooses to discard those fields.
+- The build needs `img/home-banner-1.jpg`, which is absent because it was already deleted. A temporary copy from `dist/img/home-banner-1.jpg` was used only during build and removed afterward; do not treat this as a permanent restoration.
+- Production was intentionally not uploaded; local verification does not imply live-site update.
+
+References:
+- `template/lib/header.php`
+- `template/lib/footer.php`
+- `template/lib/callToAction.php`
+- `template/home.php`
+- `template/desaru.php`
+- `js/booking.js`
+- `js/booking copy.js`
+- `dist/booking.4a75cdaec64293cba993.js`
+- `npm.cmd run build`
+- Verification strings: `bundle_has_personalized_whatsapp=True`, `bundle_has_fixed_shortlink=False`, `fixed_cta_links=8`, `temp_banner_exists=False`
+
+## Thread `01a15348-7043-73b2-9ffd-3cc73e8df818`
+updated_at: 2026-10-20T06:47:04+00:00
+cwd: \\?\D:\localhost\htdocs_winspro_cermin
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\19\rollout-2026-10-19T16-30-19-01a15348-7043-73b2-9ffd-3cc73e8df818.jsonl
+rollout_summary_file: 2026-10-19T08-30-18-1yFW-fix_contact_modal_success_green_theme.md
+
+---
+description: Fixed contact-result modal state theming after discovering the global green primary color used a stale red RGB variable; source checks passed, browser rendering was not verified.
+task: correct contact modal success/error CSS theming
+task_group: php-website-css
+task_outcome: success
+cwd: D:\localhost\htdocs_winspro_cermin
+keywords: contact-result-modal, style2.css, scheme-1.css, primary-color-rgb, CSS variables, green theme, git diff --check
+---
+
+### Task 1: Correct contact modal state colors
+
+task: Make success modal border, glow/shadow, background tint, button, and focus ring green while preserving red failure styling.
+task_group: php-website-css
+task_outcome: success
+
+Preference signals:
+- The user corrected the first attempt with: “make sure css when success this border is green, and box shadow also are themes greeen here” and provided a screenshot -> future visual CSS fixes should check every related accent, not just one border/top edge.
+
+Reusable knowledge:
+- `lib/htmlHead.php` loads `style.css`, `colors/scheme-1.css`, then `style2.css`; use `css/style2.css` for this modal override.
+- `scheme-1.css` has a mismatch: `--primary-color: #4bb392` is green, but `--primary-color-rgb: 233, 2, 30` is red. Do not use the global RGB variable for success effects without correcting or overriding it.
+- The fix defines `--contact-accent-rgb: 75, 179, 146` in `.contact-result-card`, driving border, radial gradient, box shadow, button hover/focus shadow, and focus outline. Error overrides use `239, 98, 98`; partial uses `240, 195, 109`.
+
+Failures and how to do differently:
+- Initial implementation reused stale `var(--primary-color-rgb)`, causing red visual accents despite a green primary color. Inspect both CSS color variables when rendered colors disagree.
+- `git diff --check` and CSS read-back passed; browser rendering remained unverified.
+
+References:
+- `css/style2.css:214-297`
+- `css/colors/scheme-1.css`
+- `template/home.php:719-729`
+- `git diff --check`
+
+## Thread `01a15350-92fc-7ee0-aef2-e7cb703ff30a`
+updated_at: 2026-10-19T09:10:07+00:00
+cwd: \\?\D:\localhost\htdocs_winspro_cermin
+rollout_path: C:\Users\user\.codex\sessions\2026\10\19\rollout-2026-10-19T16-39-12-01a15350-92fc-7ee0-aef2-e7cb703ff30a.jsonl
+rollout_summary_file: 2026-10-19T08-39-11-rSxs-winspro_project_orientation_database_limitations.md
+
+---
+description: Source-grounded orientation of the Winspro PHP website; homepage is hardcoded, `/contact` is broken, SQL dump is not live truth, and PHP CLI DB verification was blocked by driver/runtime limitations.
+task: orient_winspro_project_pages_markdown_database
+ task_group: php-website-project-orientation
+task_outcome: partial
+cwd: D:\localhost\htdocs_winspro_cermin
+keywords: PHP, Winspro, template/home.php, PROJECT_CONTEXT.md, PROJECT_STATUS.md, Doctrine DBAL, MySQL driver, website_com_db, hardcoded homepage, contact route
+---
+
+### Task 1: Project and database orientation
+
+task: Read all project pages, project Markdown, and database information to understand the current Winspro project.
+task_group: php-website-project-orientation
+task_outcome: partial
+
+Preference signals:
+- The user asked to read “all pages and information include database” and “all .md in this project” -> future orientation should inspect documentation, routes/templates, backend/API wiring, SQL definitions, and runtime evidence comprehensively.
+- Existing worktree changes were preserved and reported rather than overwritten -> always check `git status` and avoid touching unrelated dirty files.
+- Current source was used to challenge stale handoff claims -> source/runtime evidence should outrank historical documentation.
+
+Reusable knowledge:
+- Public route `/` renders `template/home.php`; `/contact` is registered in `index.php` but `template/contact.php` does not exist.
+- Homepage content is hardcoded in PHP: services, reviews, FAQ, contact/meta values, gallery entries, and pricing. `template/pricing.php` contains 407 pricing rows.
+- Gallery anchor currently exists at `template/home.php:266`; the handoff statement that Gallery lacks an ID is stale. FAQ still has no `id="faq"`.
+- Contact form is not wired: `action="#"`, validation selectors do not match the form, and the referenced `contact.php` endpoint is absent.
+- DB reads in `lib/initData.php` are commented out, so changing DB rows will not currently change the public homepage.
+- `website_com_db (base).sql` defines 17 tables and contains inserted rows only for `otps`, `settings`, and `users`; it is a dated snapshot, not proof of current local/cPanel state. It names `website_db`, while dev config names `winspro.my_db`.
+- A read-only live DB check was not completed. MySQL service/port 3306 were reachable, but the PHP CLI environment did not provide a usable MySQL driver path for Doctrine verification. No data was changed.
+
+Failures and how to do differently:
+- Validate handoff claims against current source before repeating them; Gallery was a concrete stale-doc example.
+- Do not call Doctrine `Connection::connect()` directly from global scope because it is protected; issue a harmless DBAL query instead.
+- Before claiming live row counts, enable/use a PHP runtime with the required MySQL PDO driver and run read-only schema/count queries.
+- Keep SQL-dump facts separate from live DB facts and do not import the dump just to populate the homepage.
+
+References:
+- `D:\localhost\htdocs_winspro_cermin\PROJECT_CONTEXT.md`
+- `D:\localhost\htdocs_winspro_cermin\PROJECT_STATUS.md`
+- `D:\localhost\htdocs_winspro_cermin\index.php`
+- `D:\localhost\htdocs_winspro_cermin\template\home.php`
+- `D:\localhost\htdocs_winspro_cermin\template\pricing.php`
+- `D:\localhost\htdocs_winspro_cermin\lib\initData.php`
+- `D:\localhost\htdocs_winspro_cermin\api\Website\Config.php`
+- `D:\localhost\htdocs_winspro_cermin\api\Website\Helper.php`
+- `D:\localhost\htdocs_winspro_cermin\website_com_db (base).sql`
+- Evidence strings: `gallery_anchor_present=True`, `faq_section_id_present=False`, `contact_template_exists=False`, `MYSQL_3306_REACHABLE=True`
+
+## Thread `01a15364-cc37-7c83-b5e5-f8d162e8fceb`
+updated_at: 2026-10-19T10:04:45+00:00
+cwd: \\?\D:\project\lionrider
+rollout_path: C:\Users\user\.codex\sessions\2026\10\19\rollout-2026-10-19T17-01-17-01a15364-cc37-7c83-b5e5-f8d162e8fceb.jsonl
+rollout_summary_file: 2026-10-19T09-01-17-iPb5-lionrider_project_orientation_admin_login_preparation.md
+
+---
+description: Lion Rider workspace orientation and Admin login preparation; project boundaries were verified, but login remained unsubmitted because the password was not available
+ task: orient lionrider workspace and prepare local Admin login
+ task_group: lionrider-project-orientation
+ task_outcome: partial
+ cwd: D:\project\lionrider
+ keywords: lionrider, lionrider-website, admin-panel-lionrider, hash-routing, auth-login, super_admin, local-supabase, lionrider-schema, JSON-catalog, RLS
+---
+
+### Task 1: Project/data-source orientation
+
+task: inspect Lion Rider Markdown, page routes, JSON fixtures, and current Docker database read-only
+task_group: project orientation and data boundaries
+task_outcome: partial
+
+Reusable knowledge:
+- `lionrider-website` is a separate PHP/JSON storefront and does not connect to Supabase. Its current catalog includes 317 Accessories and 60 Spare Parts demo rows, with 1,364 variations.
+- `admin-panel-lionrider` is the Vben Admin app; its primary app is `apps/web-antd/` and its business schema is `lionrider` in the shared Docker Supabase project `local-supabase`.
+- Current live read-only counts included: 1 Lion Rider user, 76 permissions, 1 REAL product, 34 brands, 64 models, 2 product subcategories, 317 website-catalog mirror products, and 1,364 mirror variants. All inspected Lion Rider tables had RLS enabled.
+- Preserve all shared Supabase schemas. Never reset, drop, rename, or replace the shared stack. Do not confuse provisional website Dummy docs/mirror tables with the REAL Admin ecommerce contract.
+
+Failures and how to do differently:
+- Root `D:\project\lionrider` is not itself a Git repository; inspect Git status separately in `lionrider-website` and `admin-panel-lionrider`.
+- PowerShell quoting can corrupt SQL involving quoted identifiers. Prefer SQL through stdin/files or carefully avoid inline quoted identifiers.
+
+References:
+- `D:\project\lionrider\PROJECT_CONTEXT.md`
+- `D:\project\lionrider\lionrider-website\README.md`
+- `D:\project\lionrider\lionrider-website\BLUEPRINT.md`
+- `D:\project\lionrider\admin-panel-lionrider\SUPABASE.md`
+- `D:\project\lionrider\admin-panel-lionrider\LIONRIDER_SETUP_PLAN.md`
+
+### Task 2: Admin login preparation
+
+task: open local Lion Rider Admin login and identify the existing super-admin account without submitting credentials
+task_group: local Admin authentication
+ task_outcome: partial
+
+Preference signals:
+- The user asked for project understanding before action; inspect current routes and live state first.
+- Do not request, expose, or store the password unless the user supplies it for the immediate login attempt.
+
+Reusable knowledge:
+- Admin uses hash routing. Correct login URL: `http://127.0.0.1:5173/#/auth/login`.
+- The login username is a phone number, validated by `PHONE_PATTERN = /^6\d{9,11}$/`; auth calls `signInWithPassword({ phone, password })`.
+- The live database has one active linked Lion Rider `super_admin` account at role level 10 with CRUD permissions across 19 resources.
+- The browser tab was left open with the account identifier prefilled; password remained blank and no login was submitted.
+
+Failures and how to do differently:
+- `/auth/login` without `#/` showed only the app shell. Use the configured hash URL.
+- A first SQL lookup failed from PowerShell quote escaping around `public."user"`; a simpler unquoted identifier query succeeded.
+
+References:
+- `admin-panel-lionrider/apps/web-antd/src/router/routes/core.ts`
+- `admin-panel-lionrider/apps/web-antd/src/router/guard.ts`
+- `admin-panel-lionrider/apps/web-antd/src/types/user.ts`
+- `admin-panel-lionrider/apps/web-antd/src/api/core/supabase-auth.ts`
+- `http://127.0.0.1:5173/#/auth/login`
+
+## Thread `01a1536e-965a-7530-bdb6-4580f1ac6a50`
+updated_at: 2026-10-20T01:13:27+00:00
+cwd: \\?\C:\Users\user\.codex
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\19\rollout-2026-10-19T17-11-59-01a1536e-965a-7530-bdb6-4580f1ac6a50.jsonl
+rollout_summary_file: 2026-10-19T09-11-58-oISI-diagnose_local_supabase_studio_54323_refused.md
+
+---
+description: Diagnosed missing local Supabase Studio on port 54323; database remained running, but recovery was not executed.
+task: restore-local-supabase-studio-gui
+task_group: local-supabase-docker-cli
+ task_outcome: partial
+cwd: C:\Users\user\Documents\local-supabase
+keywords: Supabase, Docker, Studio, ERR_CONNECTION_REFUSED, port-54323, supabase-start, workdir, port-54322
+---
+
+### Task 1: Restore local Supabase Studio
+
+task: identify and recover missing Studio service at localhost:54323
+task_group: local-supabase-docker-cli
+task_outcome: partial
+
+Preference signals:
+- The user asked the agent to determine what happened and how to fix the missing tables GUI; similar future runs should diagnose the service state and provide an exact recovery command.
+- The assistant kept the initial investigation read-only and requested explicit permission before stopping the running stack; preserve this caution for database-backed local environments.
+
+Reusable knowledge:
+- The intended local project is `C:\Users\user\Documents\local-supabase`, managed by Supabase CLI rather than a manually maintained Compose project.
+- `supabase\config.toml` enables Studio on port `54323`; the database/API stack can remain healthy while Studio is stopped.
+- Evidence showed `supabase_studio_local-supabase` absent/stopped and no listener on `54323`, while the database on `54322` and API gateway on `54321` were listening.
+- Running plain `supabase start` from `C:\Users\user` targeted another project and failed with `Bind for 0.0.0.0:54322 failed: port is already allocated`. Always use explicit `--workdir`.
+- The intended project command reported `supabase start is already running` while Studio remained stopped; a normal stop/start is required to apply the enabled service configuration.
+
+Failures and how to do differently:
+- Do not use `supabase start` from a parent/home directory when multiple local projects or an existing stack exist. Use `supabase start --workdir "C:\Users\user\Documents\local-supabase"`.
+- Do not use `supabase db reset` or `supabase stop --no-backup`; those are unnecessary and risk data loss.
+- The proposed stop/start was not executed, so the fix remains unverified.
+
+References:
+- Symptom: `ERR_CONNECTION_REFUSED` at `http://localhost:54323/`
+- Diagnostic evidence: `Test-NetConnection -ComputerName 127.0.0.1 -Port 54323` returned `False`; Docker listed no Studio container; CLI listed `supabase_studio_local-supabase` among stopped services.
+- Recovery: `supabase stop --workdir "C:\Users\user\Documents\local-supabase"` followed by `supabase start --workdir "C:\Users\user\Documents\local-supabase"`.
+
+## Thread `01a15386-dc2c-7960-b09f-d844e3f54561`
+updated_at: 2026-10-20T01:13:15+00:00
+cwd: \\?\C:\Users\user\.codex
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\19\rollout-2026-10-19T17-38-30-01a15386-dc2c-7960-b09f-d844e3f54561.jsonl
+rollout_summary_file: 2026-10-19T09-38-29-PdHX-recover_protected_codex_staged_deletions.md
+
+---
+description: Recovered 18 protected `.codex` files that blocked a Git commit; routing audit passed, but commit/push remained unverified and knowledge validation still flagged `.codex-global-state.json`.
+task: recover protected Codex staged deletions before commit/push
+task_group: C:\Users\user\.codex
+task_outcome: partial
+cwd: C:\Users\user\.codex
+keywords: git restore, protected paths, staged deletions, commit hook, Audit-CodexRouting.ps1, Validate-CodexKnowledge.ps1, .codex-global-state.json
+---
+
+### Task 1: Recover protected staged deletions
+
+task: clear the commit hook blocker without disturbing unrelated staged changes
+task_group: codex-git-recovery
+task_outcome: partial
+
+Preference signals:
+- When the user reported the protected-path hook failure, the recovery targeted only the listed deleted files; similar future work should avoid broad resets and preserve unrelated staged changes.
+- The assistant stopped after recovery and explicitly did not commit or push; future agents should verify or ask before changing remote/repository history.
+
+Reusable knowledge:
+- In `C:\Users\user\.codex`, 18 staged deletions were tracked in `HEAD` but missing from the worktree. Restore the exact deletion list with `git restore --source=HEAD --staged --worktree -- <paths>`.
+- The worktree was not sparse (`fatal: this worktree is not sparse`), so sparse-checkout was not the cause.
+- Final recovery checks showed `REMAINING_STAGED_DELETIONS=0` and `MISSING_RECOVERED_PATHS=0`; unrelated staged changes remained.
+- `Audit-CodexRouting.ps1 -Detailed` exited 0 with no missing routes/targets or trigger conflicts.
+- `Validate-CodexKnowledge.ps1` exited 1 because of one secret-like pattern in `.codex-global-state.json`; do not print or expose the flagged value. It also reported an oversized `memories/phase2_workspace_diff.md` warning.
+
+Failures and how to do differently:
+- The original commit was blocked by: `Blocked commit: staged deletions under protected Codex paths ... Recover the files or obtain explicit user approval before removing them.`
+- Recovery succeeded, but commit and push were not retried, so remote synchronization is unverified. Retry commit, then push, and inspect any new hook output.
+- Do not edit `memories/phase2_workspace_diff.md`; it identifies itself as a generated snapshot not to be edited. Treat it as a separate compression/maintenance decision.
+
+References:
+- `git diff --cached --name-only --diff-filter=D`
+- `git restore --source=HEAD --staged --worktree -- $paths`
+- `./codex-router/Audit-CodexRouting.ps1 -Detailed`
+- `./codex-router/Validate-CodexKnowledge.ps1`
+- `./codex-router/Find-LargeKnowledge.ps1`
+- Final evidence: `AUDIT_EXIT=0 VALIDATE_EXIT=1 REMAINING_STAGED_DELETIONS=0 MISSING_RECOVERED_PATHS=0`
+
+## Thread `01a153ad-4a10-7462-ae4b-3ce33711809b`
+updated_at: 2026-10-21T01:27:51+00:00
+cwd: \\?\D:\project\lionrider
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\19\rollout-2026-10-19T18-20-28-01a153ad-4a10-7462-ae4b-3ce33711809b.jsonl
+rollout_summary_file: 2026-10-19T10-20-28-wz0L-lionrider_audit_and_news_permission_fix.md
+
+---
+description: Lion Rider workspace audit established website/Admin/database boundaries and fixed Docker-local News permission denial with Lion Rider-only grants; browser CRUD remains unverified.
+task: audit Lion Rider project and repair News CRUD permissions
+task_group: lionrider
+ task_outcome: partial
+cwd: D:\project\lionrider
+keywords: lionrider, supabase, docker-local, news, permissions, RLS, column-privileges, PHP, Vben, JSON-catalog
+---
+
+### Task 1: Project audit and status handoff
+
+task: inspect Lion Rider website, Admin panel, Markdown, dummy/REAL database state, and local Docker Supabase
+task_group: lionrider project audit
+task_outcome: partial
+
+Preference signals:
+- The user asked to understand “all pages website, admin panel” and “read all .md,” and record the result into Markdown -> future audits should create a durable status handoff and clearly separate current evidence from historical notes.
+- The user asked whether dummy data, Docker-local Supabase, and schema `lionrider` were correctly set up and what was missing -> answer with verified/not-verified/missing distinctions.
+
+Reusable knowledge:
+- `D:\project\lionrider` is a container with separate `lionrider-website` (PHP/local JSON) and `admin-panel-lionrider` (Vben Admin) workspaces.
+- Admin targets schema `lionrider` in shared Docker-local Supabase; do not reset/drop/replace the shared stack or schemas.
+- Storefront remains JSON-backed and separate from Supabase. Current fixture audit found 377 products: 317 accessories and 60 spare parts. Local website mirror had 317 products and 1,364 variants, so it is not identical to the current fixture.
+- Live audits and current status docs outrank older dated Markdown claims. Authenticated browser and production flows were not verified without a browser tab.
+
+Failures and how to do differently:
+- `supabase db query` rejected a multi-statement prepared query; use one statement or a JSON aggregate query.
+- Avoid broad generated/upstream Markdown dumps and fragile PowerShell one-liners; use focused reads and smaller commands.
+
+References:
+- `PROJECT_CONTEXT.md`
+- `PROJECT_STATUS.md`
+- `REAL-DATABASE-STRUCTURE.md`
+- `admin-panel-lionrider/SUPABASE.md`
+- `admin-panel-lionrider/LIONRIDER_SETUP_PLAN.md`
+- `lionrider-website/status.md`
+
+### Task 2: News permission repair
+
+task: resolve Docker-local `permission denied for table news` and enable Lion Rider News CRUD
+task_group: lionrider Supabase News permissions
+task_outcome: partial
+
+Preference signals:
+- The user asked whether News needed permissions “from other schema” and asked to include News permissions -> explain that authorization is local to schema `lionrider`, then make the smallest scoped grant/RLS fix.
+- The user said the Lion Rider goal could be paused later -> honor an explicit “pause the Lion Rider goal” as a scope stop.
+
+Reusable knowledge:
+- Root cause was stale column-level INSERT/UPDATE grants after adding News `htmlContent` and SEO fields, not missing permissions from another schema.
+- Applied `admin-panel-lionrider/supabase/migrations/20261020140004_lionrider_news_crud_permissions.sql` locally. It grants current authenticated write columns and gives text News IDs a UUID default; existing RLS and `super_admin` permission rows remain in force.
+- Verified 41 News rows, 41 unique slugs, 5 RLS policies, 4 active `super_admin` News actions, anonymous published-only SELECT, and current payload column INSERT/UPDATE privileges.
+- Authenticated browser create/save remained unverified because no browser tab was connected. Later migration readback showed 54 migrations applied through `20261020140005`.
+
+Failures and how to do differently:
+- Table-level privilege checks can remain false when writes are intentionally column-granted; verify each payload column using `has_column_privilege`.
+
+References:
+- `admin-panel-lionrider/supabase/migrations/20261020140004_lionrider_news_crud_permissions.sql`
+- `docs/modules/news.md`
+- `docs/owner-requests/images/news-permission-denied.png`
+- Verification values: `rows=41`, `distinct_slugs=41`, `policies=5`, `super_admin_actions=4`.
+
+## Thread `01a156eb-4fb0-7501-9ccd-0ad629f44528`
+updated_at: 2026-10-20T02:01:51+00:00
+cwd: \\?\D:\project\mincorner
+rollout_path: C:\Users\user\.codex\sessions\2026\10\20\rollout-2026-10-20T09-27-04-01a156eb-4fb0-7501-9ccd-0ad629f44528.jsonl
+rollout_summary_file: 2026-10-20T01-27-04-DnS0-mincorner_admin_order_responsive_table_widths.md
+
+---
+description: Partially completed Min Corner Admin Orders responsive-table migration and date-column width refinement; local code checks passed, live deployment remained blocked
+ task: update admin/order.php to reuse product.php responsive DataTables behavior and narrow Payment Date/Collect Date columns
+ task_group: mincorner-admin-ui
+ task_outcome: partial
+ cwd: D:\project\mincorner
+ keywords: mincorner, admin/order.php, admin/product.php, DataTables, dt-responsive, responsive, min-tablet, Payment Date, Collect Date, delivery_date, php-lint
+---
+
+### Task 1: Orders responsive table and narrow date columns
+
+task: Make `admin/order.php` use the same mobile responsive table method as `admin/product.php`, then reduce only Payment Date and Collect Date widths
+task_group: mincorner-admin-ui
+task_outcome: partial
+
+Preference signals:
+- The user said to “use same tables setting or method same function like `/products.php` pages tables do” -> compare against the working Products page and reuse its DataTables configuration.
+- The user said to reduce date-column width “without effecting others tables settings” -> scope CSS to Orders columns 8 and 9 only; preserve other widths and behavior.
+
+Reusable knowledge:
+- Reference implementation is `admin/product.php`: DataTables table class includes `dt-responsive` and responsive mode is enabled.
+- Local Orders patch in `admin/order.php`: add `class="dt-responsive"`, set `responsive: true`, retain `scrollX: false`, add `min-tablet` targets, and add a mobile override so fixed percentage widths do not defeat responsive layout.
+- Payment Date and Collect Date are columns 8 and 9. Their local width was changed to `5.75% !important` under `#datatables_wrapper`, leaving other column selectors unchanged.
+
+Failures and how to do differently:
+- Live mobile appearance and upload were not verified because cPanel/browser file upload access was blocked. Deploy first, then test `/admin/order.php` at a mobile viewport and confirm the DataTables `+/-` child-row control.
+- Preserve unrelated dirty files: `checkout.php`, `include/manual-payment-modal.php`, and untracked `include.zip`; do not reset or clean them.
+
+References:
+- `D:\project\mincorner\admin\product.php`
+- `D:\project\mincorner\admin\order.php`
+- `php -l admin\order.php` => `No syntax errors detected in admin\order.php`
+- `git diff --check` passed
+
+### Task 2: Add Collect Date to order popup
+
+task: Show Collect Date below Payment Date and before Dining Preference in the Order details modal
+task_group: mincorner-admin-ui
+task_outcome: success locally, live unverified
+
+Preference signals:
+- User requested the field order Payment Date -> Collect Date -> Dining Preference, with Address last -> preserve this ordering in future popup changes.
+
+Reusable knowledge:
+- `admin/controller/OrderController.php` already returns `delivery_date` and `delivery_time` in `getOrderDetails`; no backend query change was required.
+- Popup rendering uses `.collect-date`, displays `-` for missing/invalid dates, and safely inserts the combined date/time with `.text()`.
+
+References:
+- `admin/controller/OrderController.php`: `delivery_date`, `delivery_time`
+- `admin/order.php`: `.collect-date`, `collectDateText`
+
+## Thread `01a158a1-2bed-7f01-a73e-548bb33a1142`
+updated_at: 2026-10-20T10:38:45+00:00
+cwd: \\?\D:\project\lionrider
+rollout_path: \\?\C:\Users\user\.codex\sessions\2026\10\20\rollout-2026-10-20T17-25-20-01a158a1-2bed-7f01-a73e-548bb33a1142.jsonl
+rollout_summary_file: 2026-10-20T09-25-19-uL7k-lionrider_project_orientation_partner_retirement.md
+
+---
+description: Lion Rider project orientation followed by successful retirement of the unused Partner Admin/database entity; key workflow is evidence-first, preserve dirty website state, and verify local Supabase plus Admin build
+task: retire unused Partner entity from Lion Rider Admin and local Supabase, reconcile project docs
+ task_group: lionrider-admin-supabase-maintenance
+ task_outcome: success
+cwd: D:\project\lionrider
+keywords: lionrider, admin-panel-lionrider, lionrider-website, Supabase, partner-retirement, 20261020140005, RLS, Vben, typecheck, build
+---
+
+### Task 1: Project orientation
+
+task: understand Lion Rider website, Admin panel, database, and existing Markdown before future Admin work
+task_group: lionrider-project-orientation
+task_outcome: partial
+
+Preference signals:
+- The user asked to “understand my project website and admin-panel also read all existing .md to understand the project situation” -> begin future Lion Rider work with current project docs/source orientation and explicitly separate current evidence from stale historical notes.
+- Existing dirty storefront worktree changes must be preserved; the workspace root is not itself a Git worktree.
+
+Reusable knowledge:
+- Website is `D:\project\lionrider\lionrider-website`; Admin is `D:\project\lionrider\admin-panel-lionrider\apps\web-antd`; Admin uses Supabase schema `lionrider` in shared Docker project `local-supabase`.
+- Current owner contract is REAL-only for business data; DUMMY docs are fixture/provenance references. Do not drop mirror tables without explicit destructive authorization.
+- Root `knowledge.md` is unrelated copied FC-Moto guidance. Prefer `PROJECT_CONTEXT.md`, latest `PROJECT_STATUS.md`, `OWNER_REQUEST_LEDGER.md`, live DB/source, and Admin `AGENTS.md`/`CLAUDE.md`.
+
+Failures and how to do differently:
+- PowerShell regex path search failed with malformed `\p` escaping; use `Select-String -SimpleMatch` for literal Windows paths.
+- Avoid full-tree/full-Markdown dumping because bundled Vben docs cause truncation; read project front doors and current handoff docs first.
+
+References:
+- `PROJECT_CONTEXT.md`
+- `PROJECT_STATUS.md`
+- `OWNER_REQUEST_LEDGER.md`
+- `admin-panel-lionrider/AGENTS.md`
+- `admin-panel-lionrider/CLAUDE.md`
+- `lionrider-website/status.md`
+
+### Task 2: Retire Partner entity
+
+task: remove unused `partner` table/function/permissions and Admin module while retaining static Partner Program content
+task_group: lionrider-admin-supabase-schema
+ task_outcome: success
+
+Preference signals:
+- The user’s project direction separates database entities from static marketing pages -> retiring Partner data must not remove `/partner-program` copy or promotional images.
+
+Reusable knowledge:
+- Pre-change evidence: `lionrider.partner` had 0 rows, no incoming foreign keys, no matching Storage objects, and four permission rows.
+- Migration `admin-panel-lionrider/supabase/migrations/20261020140005_lionrider_retire_partner.sql` deletes Partner permission rows, drops `lionrider.soft_delete_partner(integer)`, and drops `lionrider.partner`.
+- Admin Partner route/store/types/labels and owner-content branches were removed. No Partner references remained in active Admin source.
+- Post-state verified via Docker SQL: 29 Lion Rider tables; all 29 have RLS/policies; 103 policies; 108 permissions across 27 resources; Partner table/function/permissions/storage objects absent.
+- `supabase db push --local --dry-run` ultimately reported the local database up to date.
+- `pnpm --filter @vben/web-antd typecheck` passed; `pnpm --filter @vben/web-antd build` passed with existing warnings.
+
+Failures and how to do differently:
+- A first backup using inline PowerShell/psql quoting failed; use SQL piped through Docker stdin or a SQL file.
+- The first retirement filename conflicted with migration ordering/history; inspect `supabase migration list --local` and choose an unused timestamp before applying.
+- Historical status sections still contain old counts/Partner mentions; update current checkpoint sections and label older material as historical rather than assuming every occurrence is active.
+
+References:
+- `tmp/partner_retirement_permissions_prechange_20261020.csv`
+- `admin-panel-lionrider/supabase/migrations/20261020140005_lionrider_retire_partner.sql`
+- `admin-panel-lionrider/apps/web-antd/src/router/routes/index.ts`
+- `admin-panel-lionrider/apps/web-antd/src/router/access.ts`
+- `PROJECT_STATUS.md`
+- `OWNER_REQUEST_LEDGER.md`
+
+## Thread `01a1617a-3aaa-7a12-90f4-f0f0e31e43ca`
+updated_at: 2026-10-22T09:06:37+00:00
+cwd: \\?\C:\Users\user\Desktop\wms-erp
+rollout_path: C:\Users\user\.codex\sessions\2026\10\22\rollout-2026-10-22T10-39-22-01a1617a-3aaa-7a12-90f4-f0f0e31e43ca.jsonl
+rollout_summary_file: 2026-10-22T02-39-22-S65s-wms_erp_ecosire_replica_price_removal.md
+
+---
+description: Hardcoded PHP ECOSIRE Advanced WMS replica in wms-erp; overall visual replica remained partially unverified, but all monetary price displays were successfully removed across EN/CN/MY.
+task: remove-all-prices-from-ecosire-wms-php-replica
+task_group: php-website-replica
+ task_outcome: success
+cwd: C:\Users\user\Desktop\wms-erp
+keywords: PHP, ECOSIRE, Advanced WMS, EN/CN/MY, i18n, price removal, HTTP 200, php -l, router.php
+---
+
+### Task 1: Remove all prices
+
+task: remove every visible monetary amount from the single-page replica while preserving quote CTAs and layout.
+task_group: wms-erp pricing/content cleanup
+task_outcome: success
+
+Preference signals:
+- The user asked to hide all forms of pricing, including “$999.00”, “From $999.00”, “$349.00”, and localized equivalents -> scan source files, locale catalogs, and rendered HTML rather than replacing only one literal.
+
+Reusable knowledge:
+- Removed the hero price row, product-description pricing language, related-card price/starting-price elements, and sticky quote-bar amount.
+- Updated `i18n/en.json`, `i18n/cn.json`, and `i18n/my.json`; quote buttons and Pricing navigation remain.
+- Bumped `lib/htmlHead.php` asset version from `117` to `118`.
+
+Failures and how to do differently:
+- Initial broad search found pricing in both PHP defaults and locale data; always inspect fallback strings in templates as well as translations.
+
+References:
+- `template/pages/advanced-wms.php`
+- `lib/footer.php`
+- `i18n/en.json`, `i18n/cn.json`, `i18n/my.json`
+- Verification: EN/CN/MY local routes each returned HTTP 200 with `price-pattern-count=0`; PHP lint passed for page/footer; locale JSON parsing passed.
+
+### Task 2: Replica implementation status
+
+task: replicate the live ECOSIRE Advanced WMS page in hardcoded PHP with responsive/theme/language behavior.
+task_group: wms-erp visual replica
+ task_outcome: partial
+
+Reusable knowledge:
+- Local server: `php -S 127.0.0.1:8010 router.php`; target `/apps/erpnext/erpnext-advanced-wms`.
+- Shared layout is in `lib/`; page body in `template/pages/advanced-wms.php`; styles in `css/style.css` and `css/replica-fidelity.css`; behavior in `js/main.js`.
+- Live/source comparison verified many desktop/mobile sections, themes, language modal, and no-overflow checks, but `BLUEPRINT.md` still records pending fine-grained mobile footer and remaining long-page visual comparisons. Do not claim 100% replica completion without those checks.
+
+References:
+- `BLUEPRINT.md`
+- `README.md`
+- Live reference: `https://ecosire.com/apps/erpnext/erpnext-advanced-wms`
+
+## Thread `01a162f5-2355-7a71-8122-57fc2417c292`
+updated_at: 2026-10-22T09:37:22+00:00
+cwd: \\?\D:\localhost\htdocs_winspro_cermin
+rollout_path: C:\Users\user\.codex\sessions\2026\10\22\rollout-2026-10-22T17-33-15-01a162f5-2355-7a71-8122-57fc2417c292.jsonl
+rollout_summary_file: 2026-10-22T09-33-14-YLOq-create_root_google_sitemap_winspro.md
+
+---
+description: Created and locally verified a physical root sitemap.xml for the Winspro PHP site; production access remains unverified.
+task: create physical Google Search Console sitemap
+ task_group: PHP website SEO
+ task_outcome: success
+cwd: D:\localhost\htdocs_winspro_cermin
+keywords: sitemap.xml, Google Search Console, robots.txt, .htaccess, PHP, winspro.my, published articles
+---
+
+### Task 1: Create root sitemap
+
+task: create physical sitemap.xml from canonical public routes
+task_group: PHP website SEO
+task_outcome: success
+
+Preference signals:
+- The user said “direct create one for me” after discussion of the existing dynamic endpoint -> similar requests should result in directly creating the requested artifact, not only recommending the existing implementation.
+
+Reusable knowledge:
+- `index.php` routes `/sitemap.xml` to `template/sitemap.php`; `robots.txt` already declares `https://winspro.my/sitemap.xml`.
+- Created root `sitemap.xml` with 52 unique absolute URLs: `https://winspro.my/`, `/news`, and 50 published article URLs from `data/news_articles.php`.
+- Updated `.htaccess` with `RewriteCond %{REQUEST_URI} !^/sitemap\.xml$` so Apache serves the physical file directly.
+- Local validation showed the static file parses, contains 52 unique URLs, matches `php template/sitemap.php`, includes the corrected article slug `beza-kaca-laminated-dengan-tempered-kereta`, and excludes `/contact`.
+
+Failures and how to do differently:
+- Initial inline `php -r` commands failed from PowerShell quoting/parse errors; prefer the existing PHP generator output or a script/file-based generation approach.
+- Production `https://winspro.my/sitemap.xml` and `robots.txt` could not be confirmed because requests timed out or were inaccessible. Deployment and Search Console submission are still pending.
+
+References:
+- Files: `sitemap.xml`, `.htaccess`, `robots.txt`, `index.php`, `template/sitemap.php`, `data/news_articles.php`.
+- Validation evidence: `FileUrlCount=52`, `UniqueUrlCount=52`, `MatchesCurrentGenerator=True`, `RobotsDeclaresSitemap=True`, `ApacheSkipsRewrite=True`.
+- Submit after deployment: `https://winspro.my/sitemap.xml`.
 

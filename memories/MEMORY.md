@@ -453,3 +453,74 @@ applies_to: cwd=D:\project\mincorner; reuse_rule=checkout-specific; preserve exi
 
 - Keep this as a diagnostic result; do not propose a localization rewrite unless requested. [Task 1]
 - Do not apply customer pickup restrictions to admin reporting pickers. Syntax/diff checks passed but no browser/calendar or live-order run occurred; visually test the date cells and test a safe order path before calling the UI end-to-end complete. [Task 2]
+# Task Group: D:\localhost\htdocs_winspro_cermin — physical Google sitemap for Winspro
+
+scope: Maintain the PHP site's root sitemap and Apache routing for Google Search Console; distinguish locally validated generation from deployed availability.
+applies_to: cwd=D:\localhost\htdocs_winspro_cermin; reuse_rule=regenerate the physical sitemap whenever published article data changes, and do not claim production or Search Console success without external verification.
+
+## Task 1: Create a physical root Google-compatible sitemap
+
+### rollout_summary_files
+
+- rollout_summaries/2026-10-22T09-33-14-YLOq-create_root_google_sitemap_winspro.md (cwd=D:\localhost\htdocs_winspro_cermin, rollout_path=C:\Users\user\.codex\sessions\2026\10\22\rollout-2026-10-22T17-33-15-01a162f5-2355-7a71-8122-57fc2417c292.jsonl, updated_at=2026-10-22T09:37:22+00:00, thread_id=01a162f5-2355-7a71-8122-57fc2417c292, success; local only)
+
+### keywords
+
+- sitemap.xml, winspro.my, Google Search Console, robots.txt, .htaccess, template/sitemap.php, data/news_articles.php, ApacheSkipsRewrite
+
+## User preferences
+
+- when the user said “direct create one for me” after hearing that a dynamic sitemap already existed -> create the requested physical artifact rather than only recommending the dynamic alternative. [Task 1]
+
+## Reusable knowledge
+
+- `index.php` already routes `/sitemap.xml` to `template/sitemap.php` and `robots.txt` declares `https://winspro.my/sitemap.xml`; a root `sitemap.xml` was created with 52 unique absolute canonical URLs (home, `/news`, 50 published articles). [Task 1]
+- Apache must bypass the dynamic rewrite for the physical file: `RewriteCond %{REQUEST_URI} !^/sitemap\.xml$`. Generate from `php template/sitemap.php` / `data/news_articles.php`; the corrected slug is `beza-kaca-laminated-dengan-tempered-kereta`, and `/contact` stays excluded. [Task 1]
+
+## Failures and how to do differently
+
+- Symptom: inline `php -r` sitemap generation fails in PowerShell with quoting/parse errors -> use the existing PHP generator output or a script/file-based command. [Task 1]
+- Local validation confirmed `FileUrlCount=52`, uniqueness, generator parity, robots declaration, and rewrite exclusion; production requests timed out, so deploy both files and submit the URL in Search Console before claiming live availability. [Task 1]
+
+# Task Group: C:\Users\user\Desktop\wms-erp — ECOSIRE Advanced WMS PHP replica and price removal
+
+scope: Maintain the hardcoded, multilingual PHP replica of the ECOSIRE Advanced WMS route, with visual-fidelity boundaries and exhaustive displayed-price removal.
+applies_to: cwd=C:\Users\user\Desktop\wms-erp; reuse_rule=keep the no-database, EN/CN/MY static architecture and verify all locales; visual replica completion remains checkout-specific and partial.
+
+## Task 1: Remove all displayed monetary prices while retaining quote CTAs
+
+### rollout_summary_files
+
+- rollout_summaries/2026-10-22T02-39-22-S65s-wms_erp_ecosire_replica_price_removal.md (cwd=C:\Users\user\Desktop\wms-erp, rollout_path=C:\Users\user\.codex\sessions\2026\10\22\rollout-2026-10-22T10-39-22-01a1617a-3aaa-7a12-90f4-f0f0e31e43ca.jsonl, updated_at=2026-10-22T09:06:37+00:00, thread_id=01a1617a-3aaa-7a12-90f4-f0f0e31e43ca, success)
+
+### keywords
+
+- ECOSIRE, Advanced WMS, price-pattern-count=0, `$999.00`, `$349.00`, sticky_price_from, related_starting, i18n/en.json, i18n/cn.json, i18n/my.json
+
+## Task 2: Replica implementation status and fidelity boundary
+
+### rollout_summary_files
+
+- rollout_summaries/2026-10-22T02-39-22-S65s-wms_erp_ecosire_replica_price_removal.md (cwd=C:\Users\user\Desktop\wms-erp, rollout_path=C:\Users\user\.codex\sessions\2026\10\22\rollout-2026-10-22T10-39-22-01a1617a-3aaa-7a12-90f4-f0f0e31e43ca.jsonl, updated_at=2026-10-22T09:06:37+00:00, thread_id=01a1617a-3aaa-7a12-90f4-f0f0e31e43ca, partial)
+
+### keywords
+
+- php -S 127.0.0.1:8010 router.php, /apps/erpnext/erpnext-advanced-wms, advanced-wms.php, replica-fidelity.css, BLUEPRINT.md, language modal, no-horizontal-overflow
+
+## User preferences
+
+- the user asked to hide every price, including “$999.00”, “From $999.00”, “$349.00”, and localized equivalents -> scan templates, locale catalogs, and rendered HTML for monetary variants, not one literal. [Task 1]
+- for a close single-page duplication, preserve hardcoded PHP, responsive/theme behavior, shared includes, and EN/CN/MY together; inspect the live/reference layout rather than redesigning generically. [Task 2]
+- when the user says “wait” then “skip that last request” -> stop immediately and make no further edits for that request. [Task 2]
+
+## Reusable knowledge
+
+- Price removal covered the hero row, product copy, related-card price/starting-price elements, sticky quote amount, and localized keys; quote CTAs and Pricing navigation remain. `lib/htmlHead.php` cache version advanced `117` to `118`. [Task 1]
+- Serve locally with `php -S 127.0.0.1:8010 router.php`. The page body is `template/pages/advanced-wms.php`; shared shell is `lib/`; CSS is `css/style.css` and `css/replica-fidelity.css`; behavior is `js/main.js`. Preview-only quote/newsletter forms do not save or send data. [Task 2]
+
+## Failures and how to do differently
+
+- Symptom: broad removal leaves prices visible -> fallback strings live in PHP templates as well as translation JSON; scan rendered EN/CN/MY routes for `$[0-9]`, `999.00`, `349.00`, `From`, `Bermula`, USD, and Chinese currency phrases. Final checks were HTTP 200, `price-pattern-count=0`, PHP lint, JavaScript syntax, and JSON parsing. [Task 1]
+- Direct web retrieval initially failed -> use the available Chrome binding with live accessibility/screenshot evidence. `BLUEPRINT.md` retains mobile-footer and long-page comparison gaps, so do not claim a 100% replica until those checks are rerun. [Task 2]
+- Related skill: skills/hierarchical-replica-chunking/SKILL.md. [Task 2]
+
